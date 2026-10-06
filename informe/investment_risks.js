@@ -16,7 +16,7 @@ const G = path.join(__dirname, "..", "graficos");
 
 const PAGE_W = 12240, MARGIN = 620;
 const CONTENT = PAGE_W - 2 * MARGIN;   // 11000
-const LEFT = 6050, GUTTER = 250, RIGHT = CONTENT - LEFT - GUTTER;
+const LEFT = 6950, GUTTER = 250, RIGHT = CONTENT - LEFT - GUTTER;
 const DXA_PER_PX = 96 / 1440;          // image sizes are in px at 96 dpi
 
 const none = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
@@ -74,24 +74,10 @@ const cell = (children, width, extra = {}) => new TableCell({
   children, width: { size: width, type: WidthType.DXA }, borders: noBorders,
   margins: { top: 0, bottom: 0, left: 0, right: 0 }, ...extra });
 
-// Left column: risk matrix + methodology, then risk sections
-const MATRIX_W = 2700;
-const matrixRow = new Table({
-  width: { size: LEFT, type: WidthType.DXA }, columnWidths: [MATRIX_W, LEFT - MATRIX_W],
-  borders: noBorders,
-  rows: [new TableRow({ children: [
-    cell(figure(1, "Risk matrix", "matriz_riesgo.png", MATRIX_W), MATRIX_W),
-    cell([
-      new Paragraph({ spacing: { before: 60, after: 40 }, children: [
-        new TextRun({ text: "Risk assessment", bold: true, color: NAVY, font: FONT, size: 16 })] }),
-      body([ph("[Explain how likelihood and impact were scored (1–5) and which risks fall in the high-risk zone.]")], { align: AlignmentType.LEFT }),
-      body([ph("[Key takeaway: the risk that matters most for the investment thesis and the recommendation.]")], { align: AlignmentType.LEFT }),
-    ], LEFT - MATRIX_W, { margins: { top: 0, bottom: 0, left: 200, right: 0 } }),
-  ] })],
-});
-
+// Left column (~65%): all text. Right column (~35%): the four figures.
 const left = [
-  matrixRow,
+  sectionHeader("Risk assessment"),
+  body([ph("[Explain how likelihood and impact were scored (1–5) in Figure 1 and which risks fall in the high-risk zone.]")]),
   sectionHeader("Operational risks"),
   ...risk("OR1", "EBITDA margin compression"),
   ...risk("OR2", "slowdown in same-store rent growth"),
@@ -103,16 +89,15 @@ const left = [
   ...risk("MR1", "FX exposure in Peru and Colombia"),
   sectionHeader("Regulatory & ESG risks"),
   ...risk("RR1", "related-party transactions"),
+  sectionHeader("Sensitivity analysis"),
+  body([ph("[Comment on Figures 2–4: which drivers move the value per share most, the downside versus the base case, and whether the recommendation holds.]")]),
 ];
 
-const FIG_W = RIGHT;
 const right = [
-  ...figure(2, "Operational risk tornado (value per share, CLP)", "tornado_operacional.png", FIG_W),
-  ...figure(3, "Value per share sensitivity: WACC vs g", "heatmap_sensibilidad_wacc.png", FIG_W),
-  ...figure(4, "Earnings sensitivity to a rise in the UF", "reajuste_uf.png", FIG_W),
-  sectionHeader("Sensitivity analysis"),
-  body([ph("[Comment on Figures 2–4: which drivers move the value per share most, and the downside versus the base case.]")]),
-  body([ph("[Conclusion: whether the recommendation holds under the downside scenarios.]")]),
+  ...figure(1, "Risk matrix", "matriz_riesgo.png", Math.round(RIGHT * 0.86)),
+  ...figure(2, "Operational risk tornado (value per share, CLP)", "tornado_operacional.png", RIGHT),
+  ...figure(3, "Value per share sensitivity: WACC vs g", "heatmap_sensibilidad_wacc.png", RIGHT),
+  ...figure(4, "Earnings sensitivity to a rise in the UF", "reajuste_uf.png", RIGHT),
 ];
 
 const doc = new Document({
