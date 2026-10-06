@@ -12,7 +12,7 @@ const RED = "E9004B";
 const GREY = "5F5F5F";
 const PLACEHOLDER = "808081"; // marker color: post-processed into Word placeholders
 const FONT = "Arial";
-const G = path.join(__dirname, "..", "graficos");
+const G = path.join(__dirname, "..", "graficos", "informe");
 
 const PAGE_W = 12240, MARGIN = 620;
 const CONTENT = PAGE_W - 2 * MARGIN;   // 11000
@@ -53,11 +53,10 @@ function risk(id, hint) {
 }
 
 function image(file, widthDxa) {
-  const [w, h] = { "matriz_riesgo.png": [1600, 1800], "tornado_operacional.png": [2400, 1500],
-                   "heatmap_sensibilidad_wacc.png": [2400, 1500], "reajuste_uf.png": [3200, 1800] }[file];
+  const data = fs.readFileSync(path.join(G, file));
+  const w = data.readUInt32BE(16), h = data.readUInt32BE(20);
   const wpx = widthDxa * DXA_PER_PX;
-  return new ImageRun({ type: "png", data: fs.readFileSync(path.join(G, file)),
-                        transformation: { width: wpx, height: wpx * h / w },
+  return new ImageRun({ type: "png", data, transformation: { width: wpx, height: wpx * h / w },
                         altText: { title: file, description: file, name: file } });
 }
 
@@ -94,10 +93,10 @@ const left = [
 ];
 
 const right = [
-  ...figure(1, "Risk matrix", "matriz_riesgo.png", Math.round(RIGHT * 0.86)),
-  ...figure(2, "Operational risk tornado (value per share, CLP)", "tornado_operacional.png", RIGHT),
-  ...figure(3, "Value per share sensitivity: WACC vs g", "heatmap_sensibilidad_wacc.png", RIGHT),
-  ...figure(4, "Earnings sensitivity to a rise in the UF", "reajuste_uf.png", RIGHT),
+  ...figure(1, "Risk matrix", "fig1_matriz_riesgo.png", RIGHT),
+  ...figure(2, "Operational risk tornado (value per share, CLP)", "fig2_tornado.png", RIGHT),
+  ...figure(3, "Value per share sensitivity: WACC vs g", "fig3_heatmap.png", RIGHT),
+  ...figure(4, "Earnings sensitivity to a rise in the UF", "fig4_uf.png", RIGHT),
 ];
 
 const doc = new Document({
