@@ -15,14 +15,13 @@ from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm, to_rgb
 from matplotlib.patches import Rectangle
 
 from heatmap_sensibilidad_wacc import GS, NEUTRO, color_texto, leer_insumos, valor_por_accion
-from reajuste_uf import ESCENARIOS, VARIACION_BASE, impacto
+from reajuste_uf import ESCENARIOS, ROJO_CLARO, VARIACION_BASE, impacto
 from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA, leer_grilla
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
 ANCHO = 3800 / 1440  # pulgadas: columna derecha de informe/investment_risks.js
 ALTOS = {"matriz": 2.55, "tornado": 2.55, "heatmap": 2.0, "uf": 1.75}
 DPI = 400
-ROJO_UF, ROJO_UF_CLARO, AZUL = "#b23a48", "#e8c3c8", "#14284b"
 
 NOMBRES_CORTOS = {
     "EBITDA margin": "EBITDA margin",
@@ -153,15 +152,15 @@ def uf(salida):
     for y, v in zip(range(len(ESCENARIOS))[::-1], ESCENARIOS):
         base = v == VARIACION_BASE
         valor = impacto(v)
-        ax.barh(y, valor, height=0.55, color=ROJO_UF if base else ROJO_UF_CLARO,
-                edgecolor=ROJO_UF, linewidth=0 if base else 0.5, hatch=None if base else "////")
+        ax.barh(y, valor, height=0.55, color=ROJO if base else ROJO_CLARO,
+                edgecolor=ROJO, linewidth=0 if base else 0.5, hatch=None if base else "////")
         ax.text(valor - 600, y, f"{valor:,.0f}".replace("-", "−"), ha="right", va="center",
-                fontsize=5.5, fontweight="bold", color=ROJO_UF if base else AZUL)
+                fontsize=5.5, fontweight="bold", color=ROJO if base else NEGRO)
         ax.text(700, y + 0.1, f"+{v}%", ha="left", va="center", fontsize=6,
-                fontweight="bold", color=AZUL)
+                fontweight="bold", color=NEGRO)
         ax.text(700, y - 0.22, "base case" if base else "linear extrap.", ha="left",
                 va="center", fontsize=4.5, color=TINTA_SECUNDARIA)
-    ax.axvline(0, color=AZUL, linewidth=0.8)
+    ax.axvline(0, color=NEGRO, linewidth=0.8)
     ax.set_xlim(-49_000, 1_000)
     ax.set_ylim(-0.55, len(ESCENARIOS) - 0.45)
     ax.set_yticks([])
