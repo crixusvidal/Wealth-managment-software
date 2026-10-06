@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="648pt" viewBox="0 0 1152 648" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-06T20:38:25.210334</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 648 
+L 1152 648 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 149.76 537.84 
+L 702.72 537.84 
+L 702.72 278.64 
+L 149.76 278.64 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 228.454497 537.84 
+L 228.454497 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #d5d9e0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="228.454497" y="549.697422" transform="rotate(-0 228.454497 549.697422)">−40.000</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 333.380493 537.84 
+L 333.380493 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #d5d9e0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="333.380493" y="549.697422" transform="rotate(-0 333.380493 549.697422)">−30.000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 438.30649 537.84 
+L 438.30649 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #d5d9e0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="438.30649" y="549.697422" transform="rotate(-0 438.30649 549.697422)">−20.000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 543.232486 537.84 
+L 543.232486 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #d5d9e0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="543.232486" y="549.697422" transform="rotate(-0 543.232486 549.697422)">−10.000</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 648.158482 537.84 
+L 648.158482 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #d5d9e0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="648.158482" y="549.697422" transform="rotate(-0 648.158482 549.697422)">0</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #5a6782" x="426.24" y="569.458125" transform="rotate(-0 426.24 569.458125)">Impacto estimado en resultado (millones de CLP)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 648.158482 349.92 
+L 512.835425 349.92 
+L 512.835425 304.56 
+L 648.158482 304.56 
+z
+" clip-path="url(#p86aac07209)" style="fill: url(#h42d73ebc92); stroke: #b23a48; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 648.158482 430.92 
+L 377.512367 430.92 
+L 377.512367 385.56 
+L 648.158482 385.56 
+z
+" clip-path="url(#p86aac07209)" style="fill: url(#h42d73ebc92); stroke: #b23a48; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 648.158482 511.92 
+L 242.18931 511.92 
+L 242.18931 466.56 
+L 648.158482 466.56 
+z
+" clip-path="url(#p86aac07209)" style="fill: #b23a48"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 648.158482 537.84 
+L 648.158482 278.64 
+" clip-path="url(#p86aac07209)" style="fill: none; stroke: #14284b; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #14284b" x="503.392085" y="331.39625" transform="rotate(-0 503.392085 331.39625)">−12.897</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="656.552562" y="331.39625" transform="rotate(-0 656.552562 331.39625)">+1%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #14284b" x="368.069028" y="412.39625" transform="rotate(-0 368.069028 412.39625)">−25.794</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="656.552562" y="412.39625" transform="rotate(-0 656.552562 412.39625)">+2%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #b23a48" x="232.74597" y="493.39625" transform="rotate(-0 232.74597 493.39625)">−38.691</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="656.552562" y="493.39625" transform="rotate(-0 656.552562 493.39625)">+3%</text>
+   </g>
+  </g>
+  <g id="patch_6">
+   <path d="M 71.424 200.88 
+L 314.496 200.88 
+Q 328.32 200.88 328.32 193.104 
+L 328.32 140.616 
+Q 328.32 132.84 314.496 132.84 
+L 71.424 132.84 
+Q 57.6 132.84 57.6 140.616 
+L 57.6 193.104 
+Q 57.6 200.88 71.424 200.88 
+z
+" style="fill: #ffffff; stroke: #14284b; stroke-width: 2; stroke-linejoin: miter"/>
+  </g>
+  <g id="patch_7">
+   <path d="M 347.599512 166.86 
+Q 381.597857 166.86 413.360134 166.86 
+" style="fill: none; stroke: #5a6782; stroke-width: 2; stroke-linecap: round"/>
+   <path d="M 402.960134 161.66 
+L 413.360134 166.86 
+L 402.960134 172.06 
+z
+" style="fill: #5a6782; stroke: #5a6782; stroke-width: 2; stroke-linecap: round"/>
+  </g>
+  <g id="patch_8">
+   <path d="M 448.704 200.88 
+L 691.776 200.88 
+Q 705.6 200.88 705.6 193.104 
+L 705.6 140.616 
+Q 705.6 132.84 691.776 132.84 
+L 448.704 132.84 
+Q 434.88 132.84 434.88 140.616 
+L 434.88 193.104 
+Q 434.88 200.88 448.704 200.88 
+z
+" style="fill: #ffffff; stroke: #14284b; stroke-width: 2; stroke-linejoin: miter"/>
+  </g>
+  <g id="patch_9">
+   <path d="M 724.879512 166.86 
+Q 758.877857 166.86 790.640134 166.86 
+" style="fill: none; stroke: #5a6782; stroke-width: 2; stroke-linecap: round"/>
+   <path d="M 780.240134 161.66 
+L 790.640134 166.86 
+L 780.240134 172.06 
+z
+" style="fill: #5a6782; stroke: #5a6782; stroke-width: 2; stroke-linecap: round"/>
+  </g>
+  <g id="patch_10">
+   <path d="M 825.984 200.88 
+L 1069.056 200.88 
+Q 1082.88 200.88 1082.88 193.104 
+L 1082.88 140.616 
+Q 1082.88 132.84 1069.056 132.84 
+L 825.984 132.84 
+Q 812.16 132.84 812.16 140.616 
+L 812.16 193.104 
+Q 812.16 200.88 825.984 200.88 
+z
+" style="fill: #ffffff; stroke: #b23a48; stroke-width: 2; stroke-linejoin: miter"/>
+  </g>
+  <g id="patch_11">
+   <path d="M 149.76 600.696 
+L 170.496 600.696 
+L 170.496 583.848 
+L 149.76 583.848 
+z
+" style="fill: #b23a48"/>
+  </g>
+  <g id="patch_12">
+   <path d="M 437.76 600.696 
+L 458.496 600.696 
+L 458.496 583.848 
+L 437.76 583.848 
+z
+" style="fill: url(#h42d73ebc92); stroke: #b23a48; stroke-linejoin: miter"/>
+  </g>
+  <g id="patch_13">
+   <path d="M 817.92 489.24 
+L 1082.88 489.24 
+Q 1094.4 489.24 1094.4 482.76 
+L 1094.4 301.32 
+Q 1094.4 294.84 1082.88 294.84 
+L 817.92 294.84 
+Q 806.4 294.84 806.4 301.32 
+L 806.4 482.76 
+Q 806.4 489.24 817.92 489.24 
+z
+" style="fill: #f4f6f9"/>
+  </g>
+  <g id="patch_14">
+   <path d="M 806.4 489.24 
+L 812.16 489.24 
+L 812.16 294.84 
+L 806.4 294.84 
+z
+" style="fill: #14284b; stroke: #14284b; stroke-linejoin: miter"/>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 28px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="57.6" y="55.08" transform="rotate(-0 57.6 55.08)">Mallplaza: sensibilidad al aumento de la UF</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #5a6782" x="57.6" y="85.536" transform="rotate(-0 57.6 85.536)">El reajuste de la deuda indexada reduce el resultado contable</text>
+  </g>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="78.336" y="156.213188" transform="rotate(-0 78.336 156.213188)">1</text>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #14284b" x="192.96" y="172.825" transform="rotate(-0 192.96 172.825)">Sube la UF</text>
+  </g>
+  <g id="text_17">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="455.616" y="156.213188" transform="rotate(-0 455.616 156.213188)">2</text>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(479.2 162.425)">Aumenta el valor de</text>
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(497.8175 183.225)">la deuda en CLP</text>
+  </g>
+  <g id="text_19">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b23a48" x="832.896" y="156.213188" transform="rotate(-0 832.896 156.213188)">3</text>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #b23a48" transform="translate(859.98125 160.8125)">Resultado negativo</text>
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; fill: #b23a48" transform="translate(892.34875 181.6125)">por reajuste</text>
+  </g>
+  <g id="text_21">
+   <text style="font-style: italic; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="57.6" y="230.04" transform="rotate(-0 57.6 230.04)">La cantidad de UF adeudada permanece constante.</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #5a6782" transform="translate(703.872 253.220937)">Aumento del</text>
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #5a6782" transform="translate(703.872 266.420938)">valor de la UF</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="178.56" y="595.629656" transform="rotate(-0 178.56 595.629656)">Punto base del análisis (+3%)</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #14284b" x="466.56" y="595.629656" transform="rotate(-0 466.56 595.629656)">Extrapolación lineal (+1% y +2%)</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 340.229062)">No es una caída del precio</text>
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 363.882187)">del bono ni una salida</text>
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 384.929062)">inmediata de caja por el</text>
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 408.882187)">mismo monto: es el aumento</text>
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 430.229062)">de la obligación expresada</text>
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #14284b" transform="translate(831.744 450.930234)">en pesos.</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #5a6782" transform="translate(57.6 619.744)">Punto base del análisis: +3% de UF → −38.691 millones de CLP, atribuido a la Nota 26 de los EEFF de junio de 2026. Pendiente de corroboración directa del texto original.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #5a6782" transform="translate(57.6 633.744)">Los escenarios de +1% y +2% son extrapolaciones lineales, no cifras adicionales divulgadas por la compañía.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p86aac07209">
+   <rect x="149.76" y="278.64" width="552.96" height="259.2"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="h42d73ebc92" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#e8c3c8"/>
+   <path d="M -36 36 
+L 36 -36 
+M -32 40 
+L 40 -32 
+M -28 44 
+L 44 -28 
+M -24 48 
+L 48 -24 
+M -20 52 
+L 52 -20 
+M -16 56 
+L 56 -16 
+M -12 60 
+L 60 -12 
+M -8 64 
+L 64 -8 
+M -4 68 
+L 68 -4 
+M 0 72 
+L 72 0 
+M 4 76 
+L 76 4 
+M 8 80 
+L 80 8 
+M 12 84 
+L 84 12 
+M 16 88 
+L 88 16 
+M 20 92 
+L 92 20 
+M 24 96 
+L 96 24 
+M 28 100 
+L 100 28 
+M 32 104 
+L 104 32 
+M 36 108 
+L 108 36 
+" style="fill: #b23a48; stroke: #b23a48; stroke-width: 1.0; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+ </defs>
+</svg>
