@@ -39,16 +39,10 @@ def graficar(ruta_csv, salida):
     riesgos = leer_riesgos(ruta_csv)
 
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
-    fig = plt.figure(figsize=(14, 8), dpi=200)
+    fig = plt.figure(figsize=(8, 8), dpi=200)
     fig.patch.set_facecolor("white")
 
-    fig.add_artist(Rectangle((0.05, 0.9), 0.007, 0.055, color=ROJO,
-                             transform=fig.transFigure))
-    fig.text(0.064, 0.91, "RISK MATRIX", fontsize=22, fontweight="bold", color=NEGRO)
-    fig.text(0.05, 0.865, "Mallplaza · key risks by likelihood and impact",
-             fontsize=11, color=TINTA_SECUNDARIA)
-
-    ax = fig.add_axes([0.1, 0.12, 0.5, 0.7])
+    ax = fig.add_axes([0.16, 0.14, 0.8, 0.8])
     for x in range(1, 6):
         for y in range(1, 6):
             _, _, color = nivel(x * y)
@@ -68,7 +62,7 @@ def graficar(ruta_csv, salida):
             ax.add_patch(Circle((x + dx, y + dy), 0.16, facecolor=color,
                                 edgecolor=NEGRO, linewidth=1, zorder=3))
             ax.text(x + dx, y + dy, r["id"], ha="center", va="center", zorder=4,
-                    fontsize=10, fontweight="bold",
+                    fontsize=11, fontweight="bold",
                     color="white" if color == ROJO else NEGRO)
 
     ax.set_xlim(0.5, 5.5)
@@ -76,40 +70,13 @@ def graficar(ruta_csv, salida):
     ax.set_aspect("equal")
     ax.set_xticks(range(1, 6), ETIQUETAS)
     ax.set_yticks(range(1, 6), ETIQUETAS)
-    ax.set_xlabel("Likelihood", color=TINTA_SECUNDARIA, fontsize=11, labelpad=10)
-    ax.set_ylabel("Impact", color=TINTA_SECUNDARIA, fontsize=11, labelpad=10)
+    ax.set_xlabel("Likelihood", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
+    ax.set_ylabel("Impact", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
     ax.tick_params(length=0, colors=NEGRO, labelsize=10)
     for lado in ax.spines.values():
         lado.set_visible(False)
 
-    # Lista de riesgos ordenada por puntaje
-    x0, y = 0.63, 0.8
-    fig.text(x0, y, "Risks", fontsize=12, fontweight="bold", color=NEGRO)
-    y -= 0.05
-    for r in sorted(riesgos, key=lambda r: -r["likelihood"] * r["impact"]):
-        _, nombre, color = nivel(r["likelihood"] * r["impact"])
-        fig.text(x0 + 0.009, y + 0.007, f"{r['id']:>2}", ha="center", va="center",
-                 fontsize=8, fontweight="bold", family="DejaVu Sans Mono",
-                 color="white" if color == ROJO else NEGRO,
-                 bbox=dict(boxstyle="circle,pad=0.3", facecolor=color,
-                           edgecolor=NEGRO, linewidth=0.8))
-        fig.text(x0 + 0.025, y, r["risk"], fontsize=10.5, color=NEGRO)
-        fig.text(0.96, y, f"L{r['likelihood']} × I{r['impact']} · {nombre}",
-                 ha="right", fontsize=9, color=TINTA_SECUNDARIA)
-        y -= 0.052
-
-    # Leyenda de niveles
-    y -= 0.03
-    for i, (_, nombre, color) in enumerate(NIVELES):
-        fig.add_artist(Rectangle((x0 + i * 0.1, y), 0.018, 0.022,
-                                 facecolor=tinte(color, 0.45),
-                                 transform=fig.transFigure))
-        fig.text(x0 + i * 0.1 + 0.024, y + 0.004, nombre, fontsize=9.5,
-                 color=TINTA_SECUNDARIA)
-
-    fig.text(0.05, 0.03, "Score = likelihood × impact (1–5 scale). "
-             "Low ≤ 4 · Medium 5–9 · High ≥ 10.   Source: Team analysis.",
-             fontsize=8, color=TINTA_SECUNDARIA)
+    fig.text(0.16, 0.025, "Source: Team analysis.", fontsize=9, color=TINTA_SECUNDARIA)
 
     fig.savefig(salida, facecolor="white")
     print(f"Gráfico guardado en {salida}")
