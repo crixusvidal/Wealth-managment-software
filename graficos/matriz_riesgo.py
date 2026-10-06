@@ -1,9 +1,10 @@
 """Matriz de riesgo (likelihood x impact) con colores corporativos Mallplaza.
 
-Lee los riesgos de un CSV con columnas id, risk, likelihood, impact (escala 1-5).
+Sin argumentos dibuja la matriz vacía. Para ubicar riesgos, pasar un CSV con
+columnas id, risk, likelihood, impact (escala 1-5).
 
 Uso:
-    python graficos/matriz_riesgo.py [riesgos.csv] [salida.png]
+    python graficos/matriz_riesgo.py [--riesgos riesgos.csv] [salida.png]
 """
 import csv
 import sys
@@ -35,14 +36,20 @@ def leer_riesgos(ruta):
                 for r in csv.DictReader(f)]
 
 
-def graficar(ruta_csv, salida):
-    riesgos = leer_riesgos(ruta_csv)
+def graficar(salida, ruta_csv=None):
+    riesgos = leer_riesgos(ruta_csv) if ruta_csv else []
 
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
-    fig = plt.figure(figsize=(8, 8), dpi=200)
+    fig = plt.figure(figsize=(8, 9), dpi=200)
     fig.patch.set_facecolor("white")
 
-    ax = fig.add_axes([0.16, 0.14, 0.8, 0.8])
+    fig.add_artist(Rectangle((0.06, 0.915), 0.009, 0.05, color=ROJO,
+                             transform=fig.transFigure))
+    fig.text(0.078, 0.925, "RISK MATRIX", fontsize=22, fontweight="bold", color=NEGRO)
+    fig.text(0.06, 0.885, "Mallplaza · likelihood and impact", fontsize=11,
+             color=TINTA_SECUNDARIA)
+
+    ax = fig.add_axes([0.16, 0.12, 0.8, 0.72])
     for x in range(1, 6):
         for y in range(1, 6):
             _, _, color = nivel(x * y)
@@ -83,6 +90,10 @@ def graficar(ruta_csv, salida):
 
 
 if __name__ == "__main__":
-    aqui = Path(__file__).parent
-    graficar(sys.argv[1] if len(sys.argv) > 1 else aqui / "riesgos.csv",
-             sys.argv[2] if len(sys.argv) > 2 else aqui / "matriz_riesgo.png")
+    args = sys.argv[1:]
+    ruta_csv = None
+    if "--riesgos" in args:
+        i = args.index("--riesgos")
+        ruta_csv = args[i + 1]
+        del args[i:i + 2]
+    graficar(args[0] if args else Path(__file__).parent / "matriz_riesgo.png", ruta_csv)
