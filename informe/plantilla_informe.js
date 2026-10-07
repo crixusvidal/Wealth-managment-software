@@ -211,7 +211,7 @@ function keyDataTable() {
   });
 }
 
-function investmentSummaryPage() {
+function investmentSummaryPage(figuresLeft = false) {
   const left = [
     ...writeHere("Recommendation and target price", "BUY / HOLD / SELL, target price, upside and time horizon."),
     ...writeHere("Investment thesis", "the two or three main reasons behind the recommendation."),
@@ -226,77 +226,76 @@ function investmentSummaryPage() {
     ...emptyFigure("Figure title, e.g. Valuation summary"),
   ];
   return [
-    pageTitle([run("INVESTMENT SUMMARY", { bold: true, color: NAVY, size: 30 })], true),
-    twoColumns(left, right, ROW_H),
+    pageTitle([run("INVESTMENT SUMMARY", { bold: true, color: NAVY, size: 30 })]),
+    twoColumns(left, right, ROW_H, figuresLeft),
   ];
 }
 
-// Page budget (10 pages): Investment Summary 1 · Business Description 0.5 · Industry 2 ·
-// ESG 1.5 · Financial Analysis 2 · Valuation 2 · Investment Risks 1. (The former Conclusion
-// page was split between Industry and ESG; rebalance by moving subsections between blocks.)
-// The figure column alternates: right on odd pages, left on even pages.
+// Order (team diagram): Business Description 0.5 · Industry 2 · ESG 1.5 · Financial Analysis 2 ·
+// Valuation 2 · Investment Risks 1 · Investment Summary 1 = 10 pages. Rebalance by moving
+// subsections between blocks. The figure column alternates: right on odd pages, left on even.
 function bodyPages() {
   figureNo = 0;
   const L = { figuresLeft: true };
   const half = { height: HALF_H, boxH: HALF_BOX_H };
   const halfCont = { height: HALF_CONT_H, boxH: HALF_BOX_H };
   return [
-    ...investmentSummaryPage(),                                                     // p1 right
-    ...standardPage("BUSINESS DESCRIPTION", [                                        // p2 left, top half
+    ...standardPage("BUSINESS DESCRIPTION", [                                        // p1 right, top half
       ["Who we are and what we do", "company overview, history and listing."],
       ["Business model", "fixed and variable rents, parking and services."],
       ["Geographic footprint and asset mix", "portfolio by country, GLA and asset type."],
       ["Key growth drivers", "pipeline, expansions and acquisitions."],
       ["Corporate structure and governance", "controlling shareholder and corporate structure."],
-    ], ["Figure title, e.g. GLA and revenue by country"], { ...L, ...half }),
-    ...standardPage("INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING", [                // p2 left, bottom half
+    ], ["Figure title, e.g. GLA and revenue by country"], { ...half, newPage: false }),
+    ...standardPage("INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING", [                // p1 right, bottom half
       ["Industry overview (retail and shopping malls)", "structure of the retail and mall industry in Chile, Peru and Colombia."],
       ["Market size and growth", "market size, growth and penetration."],
-    ], ["Figure title, e.g. Retail sales growth by country"], { ...L, ...half, newPage: false }),
-    ...standardPage(null, [                                                          // p3 right
+    ], ["Figure title, e.g. Retail sales growth by country"], { ...half, newPage: false }),
+    ...standardPage(null, [                                                          // p2 left
       ["Competitive dynamics", "main competitors and recent moves."],
       ["Porter's five forces", "assessment of each force and its intensity."],
       ["Mallplaza's competitive position", "advantages versus peers (location, scale, mix)."],
     ], ["Figure title, e.g. Porter's five forces", "Figure title, e.g. Peer comparison: occupancy and rent",
-        "Figure title, e.g. Market share by operator"]),
-    ...standardPage(null, [                                                          // p4 left, top half
+        "Figure title, e.g. Market share by operator"], L),
+    ...standardPage(null, [                                                          // p3 right, top half
       ["Barriers to entry and bargaining power", "land, permits, capital, and tenant and supplier power."],
       ["Industry outlook and key trends", "e-commerce, mixed-use projects and consumption trends."],
-    ], ["Figure title, e.g. Industry outlook"], { ...L, ...halfCont }),
-    ...standardPage("ESG", [                                                          // p4 left, bottom half
+    ], ["Figure title, e.g. Industry outlook"], halfCont),
+    ...standardPage("ESG", [                                                          // p3 right, bottom half
       ["Environmental management", "energy, emissions, water and certifications."],
       ["Social impact and community relations", "employees, tenants, visitors and communities."],
-    ], ["Figure title, e.g. Energy and emissions intensity"], { ...L, ...half, newPage: false }),
-    ...standardPage(null, [                                                          // p5 right
+    ], ["Figure title, e.g. Energy and emissions intensity"], { ...half, newPage: false }),
+    ...standardPage(null, [                                                          // p4 left
       ["Corporate governance", "board, independence, related parties and incentives."],
       ["Regulatory compliance and standards", "regulation and reporting standards that apply."],
       ["ESG risks and opportunities", "material ESG issues and their link to value."],
     ], ["Figure title, e.g. ESG scorecard", "Figure title, e.g. Board composition",
-        "Figure title, e.g. Materiality matrix"]),
-    ...standardPage("FINANCIAL ANALYSIS", [                                           // p6 left
+        "Figure title, e.g. Materiality matrix"], L),
+    ...standardPage("FINANCIAL ANALYSIS", [                                           // p5 right
       ["Historical results and trends", "revenue, EBITDA and FFO over time and what drove them."],
       ["Margin and profitability analysis", "EBITDA margin by country and profitability trends."],
       ["Cash flow", "operating cash flow, capex and dividends."],
     ], ["Figure title, e.g. Revenue and EBITDA 2021–2025", "Figure title, e.g. EBITDA margin by country",
-        "Figure title, e.g. FFO bridge"], L),
-    ...standardPage(null, [                                                          // p7 right
+        "Figure title, e.g. FFO bridge"]),
+    ...standardPage(null, [                                                          // p6 left
       ["Capital structure and liquidity", "net debt, maturities, UF exposure and liquidity."],
       ["Key ratios (ROIC, ROE, leverage)", "ratio analysis and comparison with peers."],
     ], ["Figure title, e.g. Debt maturity profile", "Figure title, e.g. Net debt/EBITDA and LTV",
-        "Figure title, e.g. DuPont ROE decomposition"]),
-    ...standardPage("VALUATION", [                                                    // p8 left
+        "Figure title, e.g. DuPont ROE decomposition"], L),
+    ...standardPage("VALUATION", [                                                    // p7 right
       ["Valuation methodology (DCF + comps)", "methods used and their weighting."],
       ["Key assumptions", "growth, margins, capex and terminal value."],
       ["Cash flow projections", "FCFF forecast 2026E–2031E."],
     ], ["Figure title, e.g. Valuation summary (football field)", "Figure title, e.g. Key assumptions",
-        "Figure title, e.g. FCFF 2026E–2031E"], L),
-    ...standardPage(null, [                                                          // p9 right
+        "Figure title, e.g. FCFF 2026E–2031E"]),
+    ...standardPage(null, [                                                          // p8 left
       ["Cost of capital (WACC, Ke)", "risk-free rate, beta, ERP, country risk and cost of debt."],
       ["Sensitivity and scenario analysis", "bear, base and bull cases and their drivers."],
       ["Value per share and upside", "value per share versus the current price."],
     ], ["Figure title, e.g. WACC build-up", "Figure title, e.g. Scenario analysis",
-        "Figure title, e.g. Target price vs. current price"]),
-    ...riskPage(false, true),                                                         // p10 left
+        "Figure title, e.g. Target price vs. current price"], L),
+    ...riskPage(),                                                                    // p9 right
+    ...investmentSummaryPage(true),                                                   // p10 left
   ];
 }
 
