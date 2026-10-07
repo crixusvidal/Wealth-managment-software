@@ -19,8 +19,8 @@ from reajuste_uf import ESCENARIOS, ROJO_CLARO, VARIACION_BASE, impacto
 from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA, leer_grilla
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
-ANCHO = 3800 / 1440  # pulgadas: columna derecha de informe/investment_risks.js
-ALTOS = {"matriz": 2.55, "tornado": 2.55, "heatmap": 2.0, "uf": 1.75}
+ANCHO = 3550 / 1440  # pulgadas: columna derecha (A4) de informe/plantilla_informe.js
+ALTOS = {"matriz": 2.55, "tornado": 2.55, "heatmap": 1.95, "uf": 1.7}
 DPI = 400
 
 NOMBRES_CORTOS = {
@@ -81,7 +81,7 @@ def tornado(ruta_fa, ruta_tornado, salida):
     filas.sort(key=lambda r: (base - r[1], r[2] - r[1]))
 
     fig = nueva_figura("tornado")
-    ax = fig.add_axes([0.37, 0.19, 0.61, 0.74])
+    ax = fig.add_axes([0.41, 0.19, 0.57, 0.74])
     for y, (nombre, lo, hi) in enumerate(filas):
         ax.barh(y, lo - base, left=base, height=0.6, color=ROJO)
         ax.barh(y, hi - base, left=base, height=0.6, color=CELESTE)
@@ -96,7 +96,7 @@ def tornado(ruta_fa, ruta_tornado, salida):
             fontsize=5.5, fontweight="bold", color=NEGRO, zorder=4,
             bbox={"facecolor": "white", "edgecolor": "none", "pad": 1})
     extremo = max(max(abs(lo - base), abs(hi - base)) for _, lo, hi in filas)
-    ax.set_xlim(base - extremo * 1.35, base + extremo * 1.35)
+    ax.set_xlim(base - extremo * 1.55, base + extremo * 1.4)
     ax.set_ylim(-0.6, len(filas) - 0.2)
     ax.set_yticks([])
     ax.xaxis.set_major_formatter(lambda x, _: f"{x:,.0f}")
@@ -105,7 +105,7 @@ def tornado(ruta_fa, ruta_tornado, salida):
     ax.set_axisbelow(True)
     limpiar(ax)
     ax.set_xlabel("Value per share (CLP)", fontsize=5.5, color=TINTA_SECUNDARIA, labelpad=2)
-    for x, color, texto in ((0.37, ROJO, "Historical low"), (0.64, CELESTE, "Historical high")):
+    for x, color, texto in ((0.41, ROJO, "Historical low"), (0.67, CELESTE, "Historical high")):
         fig.add_artist(Rectangle((x, 0.035), 0.025, 0.03, color=color, transform=fig.transFigure))
         fig.text(x + 0.035, 0.05, texto, fontsize=5, color=NEGRO, va="center")
     fuente(fig)
@@ -123,7 +123,7 @@ def heatmap(ruta_fa, salida):
     norm = TwoSlopeNorm(vmin=z.min(), vcenter=z[i_b, j_b], vmax=z.max())
 
     fig = nueva_figura("heatmap")
-    ax = fig.add_axes([0.15, 0.24, 0.83, 0.74])
+    ax = fig.add_axes([0.18, 0.24, 0.8, 0.74])
     ax.imshow(z, cmap=cmap, norm=norm, aspect="auto")
     for i in range(z.shape[0]):
         for j in range(z.shape[1]):
@@ -148,7 +148,7 @@ def heatmap(ruta_fa, salida):
 
 def uf(salida):
     fig = nueva_figura("uf")
-    ax = fig.add_axes([0.04, 0.27, 0.8, 0.66])
+    ax = fig.add_axes([0.04, 0.27, 0.74, 0.66])
     for y, v in zip(range(len(ESCENARIOS))[::-1], ESCENARIOS):
         base = v == VARIACION_BASE
         valor = impacto(v)
