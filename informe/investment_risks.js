@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell,
-  WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign, LineRuleType,
+  WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign,
 } = require("docx");
 
 const NAVY = "14284B";
@@ -39,13 +39,16 @@ function sectionHeader(text) {
   });
 }
 
-// Free-writing area under a subtitle: one content control that accepts any number of
-// paragraphs, followed by an empty spacer that reserves room on the page.
-function zone(hint, reserve) {
+// Risk title and description share one paragraph: writing continues right after the title.
+function risk(id, hint) {
   return [
-    body([ph(hint)], { after: 0 }),
-    new Paragraph({ children: [], spacing: { before: 0, after: 0, line: reserve,
-                                              lineRule: LineRuleType.EXACT } }),
+    body([new TextRun({ text: `${id}: `, bold: true, color: RED, font: FONT, size: 16 }),
+          ph(`[Risk title, e.g. ${hint}.]`, { bold: true }),
+          new TextRun({ text: " ", font: FONT, size: 16 }),
+          ph("[Describe the risk: what could happen, how likely it is, and its impact on revenue, EBITDA or value per share; reference Figures 1–4 where relevant.]")],
+         { after: 10 }),
+    body([new TextRun({ text: "Mitigants: ", bold: true, color: NAVY, font: FONT, size: 16 }),
+          ph("[How the company or the thesis offsets this risk.]")], { after: 50 }),
   ];
 }
 
@@ -70,20 +73,23 @@ const cell = (children, width, extra = {}) => new TableCell({
   children, width: { size: width, type: WidthType.DXA }, borders: noBorders,
   margins: { top: 0, bottom: 0, left: 0, right: 0 }, ...extra });
 
-// Left column (~65%): subtitles with free-writing areas. Right column (~35%): figures.
+// Left column (~65%): all text. Right column (~35%): the four figures.
 const left = [
   sectionHeader("Risk assessment"),
-  ...zone("[Write here: how likelihood and impact were scored (1–5) in Figure 1 and which risks fall in the high-risk zone.]", 500),
+  body([ph("[Explain how likelihood and impact were scored (1–5) in Figure 1 and which risks fall in the high-risk zone.]")]),
   sectionHeader("Operational risks"),
-  ...zone("[Write here. Suggested format per risk: OR1 – title (e.g. EBITDA margin compression), description, impact on value (Figure 2) and mitigants. Continue with OR2, OR3…]", 2800),
+  ...risk("OR1", "EBITDA margin compression"),
+  ...risk("OR2", "slowdown in same-store rent growth"),
+  ...risk("OR3", "higher maintenance capex"),
   sectionHeader("Financial risks"),
-  ...zone("[Write here. e.g. FR1 – revaluation of UF-indexed debt (Figure 4); FR2 – higher cost of capital (Figure 3). Include description and mitigants.]", 1700),
+  ...risk("FR1", "revaluation of UF-indexed debt"),
+  ...risk("FR2", "higher cost of capital"),
   sectionHeader("Market & macroeconomic risks"),
-  ...zone("[Write here. e.g. MR1 – FX exposure in Peru and Colombia. Include description and mitigants.]", 1100),
+  ...risk("MR1", "FX exposure in Peru and Colombia"),
   sectionHeader("Regulatory & ESG risks"),
-  ...zone("[Write here. e.g. RR1 – related-party transactions. Include description and mitigants.]", 1100),
+  ...risk("RR1", "related-party transactions"),
   sectionHeader("Sensitivity analysis"),
-  ...zone("[Write here: which drivers move the value per share most (Figures 2–4), the downside versus the base case, and whether the recommendation holds.]", 1900),
+  body([ph("[Comment on Figures 2–4: which drivers move the value per share most, the downside versus the base case, and whether the recommendation holds.]")]),
 ];
 
 const right = [
@@ -122,16 +128,17 @@ const doc = new Document({
   }],
 });
 
-// Wrap each placeholder paragraph in a block-level content control: clicking selects the
-// hint, typing replaces it with normal text, and Enter adds paragraphs inside the area.
+// Wrap each placeholder run in a content control: clicking it selects the hint and
+// typing replaces it with normal (non-italic, dark) text.
 function toContentControls(xml) {
   let id = 1000;
-  return xml.replace(/<w:p>(?:(?!<\/w:p>).)*?w:val="808081"(?:(?!<\/w:p>).)*?<\/w:p>/gs, (p) => {
-    const size = (p.match(/<w:sz w:val="(\d+)"\/>/) || [, "16"])[1];
-    const rPr = `<w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:cs="${FONT}"/>` +
+  return xml.replace(/<w:r>(?:(?!<\/w:r>).)*?w:val="808081"(?:(?!<\/w:r>).)*?<\/w:r>/gs, (run) => {
+    const bold = /<w:b\/>|<w:b w:val="true"\/>/.test(run) ? "<w:b/><w:bCs/>" : "";
+    const size = (run.match(/<w:sz w:val="(\d+)"\/>/) || [, "16"])[1];
+    const rPr = `<w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:cs="${FONT}"/>${bold}` +
                 `<w:color w:val="1A1A1A"/><w:sz w:val="${size}"/><w:szCs w:val="${size}"/></w:rPr>`;
     return `<w:sdt><w:sdtPr>${rPr}<w:id w:val="${id++}"/><w:showingPlcHdr/></w:sdtPr>` +
-           `<w:sdtContent>${p}</w:sdtContent></w:sdt>`;
+           `<w:sdtContent>${run}</w:sdtContent></w:sdt>`;
   });
 }
 
