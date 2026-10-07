@@ -9,6 +9,7 @@ const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, Header, Footer,
   PageNumber, WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign, HeightRule,
+  LineRuleType,
 } = require("docx");
 
 const NAVY = "14284B";
@@ -25,6 +26,7 @@ const MARGIN = { top: 1000, bottom: 900, left: 620, right: 620, header: 450, foo
 const CONTENT_W = PAGE.width - MARGIN.left - MARGIN.right;   // 10666
 const RIGHT = 3550, GUTTER = 216, LEFT = CONTENT_W - RIGHT - GUTTER;  // ~65% / ~33%
 const ROW_H = 14100;          // reserves the rest of the page under the page title
+const ROW_H_CONT = 14560;     // continuation page: no title, so the columns get its space
 const ROW_H_SUMMARY = 13650;  // same, on pages that also carry a summary bar
 const BOX_H = 4300;           // empty figure box: three per page
 const HALF_H = 6550;          // half-page block (title + columns) on a shared page
@@ -134,11 +136,17 @@ function writeHere(title, hint) {
 
 // Body page block: subtitles with writing areas and a column of figure slots. A half-page
 // block (height HALF_H) starts without a page break when newPage is false.
+// A continuation page (no title) passes title = null and only breaks the page.
 function standardPage(title, subsections, figures, o = {}) {
+  const start = title
+    ? pageTitle([run(title, { bold: true, color: NAVY, size: 30 })], o.newPage === false)
+    : new Paragraph({ pageBreakBefore: true, spacing: { before: 0, after: 0, line: 20, lineRule: LineRuleType.EXACT },
+                      children: [] });
   return [
-    pageTitle([run(title, { bold: true, color: NAVY, size: 30 })], o.newPage === false),
+    start,
     twoColumns(subsections.flatMap(([t, h]) => writeHere(t, h)),
-               figures.flatMap((f) => emptyFigure(f, o.boxH)), o.height || ROW_H, o.figuresLeft),
+               figures.flatMap((f) => emptyFigure(f, o.boxH)),
+               o.height || (title ? ROW_H : ROW_H_CONT), o.figuresLeft),
   ];
 }
 
@@ -240,7 +248,7 @@ function bodyPages() {
       ["Market size and growth", "market size, growth and penetration."],
     ], ["Figure title, e.g. Retail sales growth by country"],
     { ...L, height: HALF_H, boxH: HALF_BOX_H, newPage: false }),
-    ...standardPage("INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING", [                // p3 right
+    ...standardPage(null, [                                                          // p3 right (Industry cont.)
       ["Competitive dynamics", "main competitors and recent moves."],
       ["Porter's five forces", "assessment of each force and its intensity."],
       ["Mallplaza's competitive position", "advantages versus peers (location, scale, mix)."],
@@ -261,7 +269,7 @@ function bodyPages() {
       ["Cash flow", "operating cash flow, capex and dividends."],
     ], ["Figure title, e.g. Revenue and EBITDA 2021–2025", "Figure title, e.g. EBITDA margin by country",
         "Figure title, e.g. FFO bridge"]),
-    ...standardPage("FINANCIAL ANALYSIS", [                                           // p6 left
+    ...standardPage(null, [                                                          // p6 left (FA cont.)
       ["Capital structure and liquidity", "net debt, maturities, UF exposure and liquidity."],
       ["Key ratios (ROIC, ROE, leverage)", "ratio analysis and comparison with peers."],
     ], ["Figure title, e.g. Debt maturity profile", "Figure title, e.g. Net debt/EBITDA and LTV",
@@ -272,7 +280,7 @@ function bodyPages() {
       ["Cash flow projections", "FCFF forecast 2026E–2031E."],
     ], ["Figure title, e.g. Valuation summary (football field)", "Figure title, e.g. Key assumptions",
         "Figure title, e.g. FCFF 2026E–2031E"]),
-    ...standardPage("VALUATION", [                                                    // p8 left
+    ...standardPage(null, [                                                          // p8 left (Valuation cont.)
       ["Cost of capital (WACC, Ke)", "risk-free rate, beta, ERP, country risk and cost of debt."],
       ["Sensitivity and scenario analysis", "bear, base and bull cases and their drivers."],
       ["Value per share and upside", "value per share versus the current price."],
