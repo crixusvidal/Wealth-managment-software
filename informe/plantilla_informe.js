@@ -9,7 +9,7 @@ const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, Header, Footer,
   PageNumber, WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign, HeightRule,
-  LineRuleType,
+  LineRuleType, HeadingLevel,
 } = require("docx");
 
 const NAVY = "14284B";
@@ -28,8 +28,9 @@ const RIGHT = 3550, GUTTER = 216, LEFT = CONTENT_W - RIGHT - GUTTER;  // ~65% / 
 const ROW_H = 14100;          // reserves the rest of the page under the page title
 const ROW_H_CONT = 14560;     // continuation page: no title, so the columns get its space
 const ROW_H_SUMMARY = 13650;  // same, on pages that also carry a summary bar
-const BOX_H = 4300;           // empty figure box: three per page
+const BOX_H = 4050;           // empty figure box: three per page
 const HALF_H = 6550;          // half-page block (title + columns) on a shared page
+const HALF_CONT_H = 6950;     // half-page continuation block (no title) at the top of a page
 const HALF_BOX_H = 5200;      // one figure box in a half-page block
 const DXA_PER_PX = 96 / 1440;
 
@@ -50,13 +51,14 @@ function body(children, o = {}) {
 
 function pageTitle(children, noBreak) {
   return new Paragraph({
-    children, pageBreakBefore: !noBreak, spacing: { after: 80 },
+    children, heading: HeadingLevel.HEADING_1, pageBreakBefore: !noBreak, spacing: { after: 80 },
     border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: NAVY, space: 2 } },
   });
 }
 
 function sectionHeader(text) {
   return new Paragraph({
+    heading: HeadingLevel.HEADING_2,
     children: [run(text.toUpperCase(), { bold: true, color: NAVY })],
     border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: RED, space: 1 } },
     spacing: { before: 100, after: 50 },
@@ -102,7 +104,7 @@ function box(width, height, hint) {
   return new Table({
     width: { size: width, type: WidthType.DXA }, columnWidths: [width], borders: noBorders,
     rows: [new TableRow({
-      height: { value: height, rule: HeightRule.EXACT },
+      height: { value: height, rule: HeightRule.ATLEAST },
       children: [cell([new Paragraph({ alignment: AlignmentType.CENTER, children: [ph(hint, { size: 14 })] })],
                       width, { verticalAlign: VerticalAlign.CENTER,
                                shading: { type: ShadingType.CLEAR, color: "auto", fill: BOX } })],
@@ -214,6 +216,7 @@ function investmentSummaryPage() {
     ...writeHere("Recommendation and target price", "BUY / HOLD / SELL, target price, upside and time horizon."),
     ...writeHere("Investment thesis", "the two or three main reasons behind the recommendation."),
     ...writeHere("Valuation summary", "DCF and multiples result and how they support the target price."),
+    ...writeHere("Catalysts and drivers", "events or trends that could unlock value and their timing."),
     ...writeHere("Key risks", "the risks that could change the recommendation (see Investment Risks)."),
   ];
   const right = [
@@ -228,73 +231,72 @@ function investmentSummaryPage() {
   ];
 }
 
-// Page budget (10 pages): Investment Summary 1 · Business Description 0.5 · Industry 1.5 ·
-// ESG 1 · Financial Analysis 2 · Valuation 2 · Investment Risks 1 · Conclusion 1.
+// Page budget (10 pages): Investment Summary 1 · Business Description 0.5 · Industry 2 ·
+// ESG 1.5 · Financial Analysis 2 · Valuation 2 · Investment Risks 1. (The former Conclusion
+// page was split between Industry and ESG; rebalance by moving subsections between blocks.)
 // The figure column alternates: right on odd pages, left on even pages.
 function bodyPages() {
   figureNo = 0;
   const L = { figuresLeft: true };
+  const half = { height: HALF_H, boxH: HALF_BOX_H };
+  const halfCont = { height: HALF_CONT_H, boxH: HALF_BOX_H };
   return [
     ...investmentSummaryPage(),                                                     // p1 right
-    ...standardPage("BUSINESS DESCRIPTION", [                                        // p2 left (top half)
+    ...standardPage("BUSINESS DESCRIPTION", [                                        // p2 left, top half
       ["Who we are and what we do", "company overview, history and listing."],
       ["Business model", "fixed and variable rents, parking and services."],
       ["Geographic footprint and asset mix", "portfolio by country, GLA and asset type."],
       ["Key growth drivers", "pipeline, expansions and acquisitions."],
       ["Corporate structure and governance", "controlling shareholder and corporate structure."],
-    ], ["Figure title, e.g. GLA and revenue by country"], { ...L, height: HALF_H, boxH: HALF_BOX_H }),
-    ...standardPage("INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING", [                // p2 left (bottom half)
+    ], ["Figure title, e.g. GLA and revenue by country"], { ...L, ...half }),
+    ...standardPage("INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING", [                // p2 left, bottom half
       ["Industry overview (retail and shopping malls)", "structure of the retail and mall industry in Chile, Peru and Colombia."],
       ["Market size and growth", "market size, growth and penetration."],
-    ], ["Figure title, e.g. Retail sales growth by country"],
-    { ...L, height: HALF_H, boxH: HALF_BOX_H, newPage: false }),
-    ...standardPage(null, [                                                          // p3 right (Industry cont.)
+    ], ["Figure title, e.g. Retail sales growth by country"], { ...L, ...half, newPage: false }),
+    ...standardPage(null, [                                                          // p3 right
       ["Competitive dynamics", "main competitors and recent moves."],
       ["Porter's five forces", "assessment of each force and its intensity."],
       ["Mallplaza's competitive position", "advantages versus peers (location, scale, mix)."],
-      ["Barriers to entry and bargaining power", "land, permits, capital, and tenant and supplier power."],
     ], ["Figure title, e.g. Porter's five forces", "Figure title, e.g. Peer comparison: occupancy and rent",
         "Figure title, e.g. Market share by operator"]),
-    ...standardPage("ESG", [                                                          // p4 left
+    ...standardPage(null, [                                                          // p4 left, top half
+      ["Barriers to entry and bargaining power", "land, permits, capital, and tenant and supplier power."],
+      ["Industry outlook and key trends", "e-commerce, mixed-use projects and consumption trends."],
+    ], ["Figure title, e.g. Industry outlook"], { ...L, ...halfCont }),
+    ...standardPage("ESG", [                                                          // p4 left, bottom half
       ["Environmental management", "energy, emissions, water and certifications."],
       ["Social impact and community relations", "employees, tenants, visitors and communities."],
+    ], ["Figure title, e.g. Energy and emissions intensity"], { ...L, ...half, newPage: false }),
+    ...standardPage(null, [                                                          // p5 right
       ["Corporate governance", "board, independence, related parties and incentives."],
       ["Regulatory compliance and standards", "regulation and reporting standards that apply."],
       ["ESG risks and opportunities", "material ESG issues and their link to value."],
-    ], ["Figure title, e.g. ESG scorecard", "Figure title, e.g. Energy and emissions intensity",
-        "Figure title, e.g. Board composition"], L),
-    ...standardPage("FINANCIAL ANALYSIS", [                                           // p5 right
+    ], ["Figure title, e.g. ESG scorecard", "Figure title, e.g. Board composition",
+        "Figure title, e.g. Materiality matrix"]),
+    ...standardPage("FINANCIAL ANALYSIS", [                                           // p6 left
       ["Historical results and trends", "revenue, EBITDA and FFO over time and what drove them."],
       ["Margin and profitability analysis", "EBITDA margin by country and profitability trends."],
       ["Cash flow", "operating cash flow, capex and dividends."],
     ], ["Figure title, e.g. Revenue and EBITDA 2021–2025", "Figure title, e.g. EBITDA margin by country",
-        "Figure title, e.g. FFO bridge"]),
-    ...standardPage(null, [                                                          // p6 left (FA cont.)
+        "Figure title, e.g. FFO bridge"], L),
+    ...standardPage(null, [                                                          // p7 right
       ["Capital structure and liquidity", "net debt, maturities, UF exposure and liquidity."],
       ["Key ratios (ROIC, ROE, leverage)", "ratio analysis and comparison with peers."],
     ], ["Figure title, e.g. Debt maturity profile", "Figure title, e.g. Net debt/EBITDA and LTV",
-        "Figure title, e.g. DuPont ROE decomposition"], L),
-    ...standardPage("VALUATION", [                                                    // p7 right
+        "Figure title, e.g. DuPont ROE decomposition"]),
+    ...standardPage("VALUATION", [                                                    // p8 left
       ["Valuation methodology (DCF + comps)", "methods used and their weighting."],
       ["Key assumptions", "growth, margins, capex and terminal value."],
       ["Cash flow projections", "FCFF forecast 2026E–2031E."],
     ], ["Figure title, e.g. Valuation summary (football field)", "Figure title, e.g. Key assumptions",
-        "Figure title, e.g. FCFF 2026E–2031E"]),
-    ...standardPage(null, [                                                          // p8 left (Valuation cont.)
+        "Figure title, e.g. FCFF 2026E–2031E"], L),
+    ...standardPage(null, [                                                          // p9 right
       ["Cost of capital (WACC, Ke)", "risk-free rate, beta, ERP, country risk and cost of debt."],
       ["Sensitivity and scenario analysis", "bear, base and bull cases and their drivers."],
       ["Value per share and upside", "value per share versus the current price."],
     ], ["Figure title, e.g. WACC build-up", "Figure title, e.g. Scenario analysis",
-        "Figure title, e.g. Target price vs. current price"], L),
-    ...riskPage(),                                                                    // p9 right
-    ...standardPage("CONCLUSION", [                                                   // p10 left
-      ["General conclusion", "how the analysis fits together into the investment case."],
-      ["Investment recommendation", "final recommendation and the reasoning behind it."],
-      ["Catalysts and drivers", "events or trends that could unlock value and their timing."],
-      ["Key risks", "the main risks to the recommendation."],
-      ["Target price", "final target price and upside versus the current price."],
-    ], ["Figure title, e.g. Investment case summary", "Figure title, e.g. Catalyst timeline",
-        "Figure title, e.g. Scenario target prices"], L),
+        "Figure title, e.g. Target price vs. current price"]),
+    ...riskPage(false, true),                                                         // p10 left
   ];
 }
 
@@ -331,19 +333,38 @@ function section(children, prefix) {
   };
 }
 
-const styles = { default: { document: { run: { font: FONT, size: 16 } } } };
+// Built-in Heading 1/2 restyled to match the template (keeps Word's navigation pane working).
+const heading = (size) => ({ run: { font: FONT, size, bold: true, color: NAVY },
+                             paragraph: { keepNext: true } });
+const styles = {
+  default: {
+    document: { run: { font: FONT, size: 16, color: "1A1A1A" } },
+    heading1: heading(30),
+    heading2: heading(16),
+  },
+};
 
-// Wrap each placeholder run in a content control: clicking it selects the hint and
-// typing replaces it with normal (non-italic, dark) text.
+// Turn placeholder text into Word content controls: clicking selects the hint and typing
+// replaces it with normal text. A paragraph made only of placeholder text becomes one
+// block-level control (Enter adds paragraphs inside it); a placeholder that shares a
+// paragraph with fixed text ("OR1:", "Mitigants:") becomes an inline control.
 function toContentControls(xml) {
   let id = 1000;
-  return xml.replace(/<w:r>(?:(?!<\/w:r>).)*?w:val="808081"(?:(?!<\/w:r>).)*?<\/w:r>/gs, (r) => {
+  const RUN = /<w:r>(?:(?!<\/w:r>).)*?<\/w:r>/gs;
+  const isPh = (r) => r.includes('w:val="808081"');
+  const rPr = (r) => {
     const bold = /<w:b\/>|<w:b w:val="true"\/>/.test(r) ? "<w:b/><w:bCs/>" : "";
     const size = (r.match(/<w:sz w:val="(\d+)"\/>/) || [, "16"])[1];
-    const rPr = `<w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:cs="${FONT}"/>${bold}` +
-                `<w:color w:val="1A1A1A"/><w:sz w:val="${size}"/><w:szCs w:val="${size}"/></w:rPr>`;
-    return `<w:sdt><w:sdtPr>${rPr}<w:id w:val="${id++}"/><w:showingPlcHdr/></w:sdtPr>` +
-           `<w:sdtContent>${r}</w:sdtContent></w:sdt>`;
+    return `<w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:cs="${FONT}"/>${bold}` +
+           `<w:color w:val="1A1A1A"/><w:sz w:val="${size}"/><w:szCs w:val="${size}"/></w:rPr>`;
+  };
+  const sdt = (props, content) => `<w:sdt><w:sdtPr>${props}<w:id w:val="${id++}"/>` +
+                                  `<w:showingPlcHdr/></w:sdtPr><w:sdtContent>${content}</w:sdtContent></w:sdt>`;
+  return xml.replace(/<w:p>(?:(?!<\/w:p>).)*?<\/w:p>/gs, (p) => {
+    const runs = p.match(RUN) || [];
+    if (!runs.some(isPh)) return p;
+    if (runs.every(isPh)) return sdt(rPr(runs[0]), p);
+    return p.replace(RUN, (r) => (isPh(r) ? sdt(rPr(r), r) : r));
   });
 }
 
