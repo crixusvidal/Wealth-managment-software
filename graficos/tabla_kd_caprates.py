@@ -33,7 +33,8 @@ def leer_peers(ruta):
     for r in range(7, 15):
         ev = lt.cell(r, 8).value
         peers.append((lt.cell(r, 1).value, lt.cell(r, 3).value, lt.cell(r, 2).value,
-                      ev / lt.cell(r, 10).value, lt.cell(r, 10).value / ev, nt.cell(r, 10).value / ev))
+                      ev / lt.cell(r, 10).value, lt.cell(r, 10).value / ev, nt.cell(r, 10).value / ev,
+                      lt.cell(r, 6).value / ev))  # LTV = deuda neta / EV de mercado
     assert all(p[3] for p in peers), "recalcular el libro antes de graficar"
     return peers
 
@@ -70,7 +71,7 @@ def graficar(ruta, salida):
     fig.text(0.065, 0.94, "COSTO DE LA DEUDA Y CAP RATES DE COMPARABLES", fontsize=20,
              fontweight="bold", color=NEGRO)
     fig.text(0.05, 0.912, "Mallplaza · Kd usado en la WACC vs cap rate implícito (EBITDA / EV) "
-             "de los peers · EBITDA como proxy de NOI", fontsize=11, color=TINTA_SECUNDARIA)
+             "y LTV de los peers · EBITDA como proxy de NOI", fontsize=11, color=TINTA_SECUNDARIA)
 
     fig.text(0.05, 0.875, "1. Costo de la deuda (Kd) en la WACC", fontsize=12.5, fontweight="bold",
              color=NEGRO)
@@ -89,13 +90,13 @@ def graficar(ruta, salida):
              "Forecast). El modelo original usaba 3,60% real, sin escudo fiscal.", fontsize=8.5,
              color=TINTA_SECUNDARIA)
 
-    fig.text(0.05, y - 0.03, "2. Cap rate implícito de los comparables (EBITDA / EV)", fontsize=12.5,
+    fig.text(0.05, y - 0.03, "2. Cap rate implícito (EBITDA / EV) y LTV de los comparables", fontsize=12.5,
              fontweight="bold", color=NEGRO)
     filas_cr = []
-    for nombre, pais, grupo, evx, cl, cn in peers:
+    for nombre, pais, grupo, evx, cl, cn, ltv in peers:
         g = "Objetivo" if grupo == "Target" else grupo
         nota = "*" if nombre == "IRSA" else ""
-        filas_cr.append(((nombre, pais, g, mult(evx), pct(cl), pct(cn) + nota),
+        filas_cr.append(((nombre, pais, g, mult(evx), pct(cl), pct(cn) + nota, pct(ltv, 1)),
                          "target" if grupo == "Target" else None))
     core = [p for p in peers if p[2] == "Core"]
     chile = [p for p in core if p[1] == "Chile"]
@@ -103,11 +104,12 @@ def graficar(ruta, salida):
     for nombre, grupo, f in (("Mediana core", core, st.median), ("Promedio Chile", chile, st.mean),
                              ("Mediana Brasil", brasil, st.median)):
         filas_cr.append(((nombre, "", "", mult(f(p[3] for p in grupo)), pct(f(p[4] for p in grupo)),
-                          pct(f(p[5] for p in grupo))), "dest"))
-    y = tabla(fig, y - 0.07, [0.06, 0.30, 0.42, 0.66, 0.79, 0.93],
-              ["Empresa", "País", "Grupo", "EV/EBITDA LTM", "Cap rate LTM", "Cap rate NTM"],
-              filas_cr, 0.034, ["left", "left", "left", "right", "right", "right"])
-    fig.text(0.05, y - 0.003, "* IRSA: consenso de un solo analista; no representativo.", fontsize=8.5,
+                          pct(f(p[5] for p in grupo)), pct(f(p[6] for p in grupo), 1)), "dest"))
+    y = tabla(fig, y - 0.07, [0.06, 0.25, 0.355, 0.60, 0.715, 0.83, 0.94],
+              ["Empresa", "País", "Grupo", "EV/EBITDA LTM", "Cap rate LTM", "Cap rate NTM", "LTV"],
+              filas_cr, 0.034, ["left", "left", "left", "right", "right", "right", "right"])
+    fig.text(0.05, y - 0.003, "LTV = deuda neta / EV de mercado (Bloomberg, 30-jun-2026). "
+             "* IRSA: consenso de un solo analista; no representativo.", fontsize=8.5,
              color=TINTA_SECUNDARIA)
     fig.text(0.05, 0.02, "Fuente: Bloomberg (precios al 30-sep-2026; LTM 3T25–2T26; consenso BEst); "
              "modelo de valuación del equipo. Análisis del equipo.", fontsize=8.5, color=TINTA_SECUNDARIA)
