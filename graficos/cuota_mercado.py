@@ -6,16 +6,25 @@ Uso:
     python graficos/cuota_mercado.py <Comparables_..._valoracion.xlsx> [salida.png]
 """
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
+from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
+from sensibilidad_wacc import NEGRO, ROJO, TINTA_SECUNDARIA
 
-EMPRESAS = [("Mallplaza", ROJO, "white"), ("Parque Arauco", CELESTE, NEGRO),
-            ("Cencosud Shopping", AMARILLO, NEGRO)]
+VERDE_PARQUE_ARAUCO = "#56d371"  # color entregado por el equipo
+MORADO_CENCOSUD = "#3a0d7f"      # color entregado por el equipo
+EMPRESAS = [("Mallplaza", ROJO, "white"), ("Parque Arauco", VERDE_PARQUE_ARAUCO, NEGRO),
+            ("Cencosud Shopping", MORADO_CENCOSUD, "white")]
+# Logos opcionales: si existe el PNG, reemplaza el nombre a la derecha del área.
+LOGOS = Path(__file__).parent / "logos"
+ARCHIVOS_LOGO = {"Mallplaza": "mallplaza.png", "Parque Arauco": "parque_arauco.png",
+                 "Cencosud Shopping": "cencosud_shopping.png"}
+ALTO_LOGO_PX = 70  # alto del logo en el PNG final (dpi 200)
 
 # Ingresos consolidados (MM CLP) que no están en el libro Bloomberg. Verificar contra los EEFF (CMF).
 EXTERNOS = {
@@ -77,8 +86,17 @@ def graficar(ruta, salida):
             marca = "*" if (nombre, x) in ESTIMADOS else ""
             ax.text(x + dx, b + v / 2, f"{c:.0%}{marca}", ha="center", va="center", fontsize=11,
                     fontweight="bold", color=texto)
-        ax.text(años[-1] + 0.08, base[-1] + fila[-1] / 2, nombre, ha="left", va="center",
-                fontsize=11, fontweight="bold", color=NEGRO)
+        logo = LOGOS / ARCHIVOS_LOGO[nombre]
+        if logo.exists():
+            img = plt.imread(logo)
+            caja = OffsetImage(img, zoom=ALTO_LOGO_PX / img.shape[0] / 2)  # savefig dpi 200 = 2× dpi 100
+            ax.add_artist(AnnotationBbox(caja, (años[-1], base[-1] + fila[-1] / 2), xybox=(14, 0),
+                                         xycoords="data", boxcoords="offset points",
+                                         box_alignment=(0, 0.5), frameon=False,
+                                         annotation_clip=False))
+        else:
+            ax.text(años[-1] + 0.08, base[-1] + fila[-1] / 2, nombre, ha="left", va="center",
+                    fontsize=11, fontweight="bold", color=NEGRO)
         base = base + fila
     for i, (x, t) in enumerate(zip(años, total)):
         crec = "" if i == 0 else f"\n+{t / total[i - 1] - 1:.1%} YoY"
