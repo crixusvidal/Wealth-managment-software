@@ -32,31 +32,42 @@ def graficar(ruta, salida):
     años, ing = leer(ruta)
     cuota = ing / ing.sum(axis=0)
 
+    total = ing.sum(axis=0) / 1000  # MM CLP -> miles de millones (CLP bn)
+    cagr = (total[-1] / total[0]) ** (1 / (len(años) - 1)) - 1
+
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
     fig = plt.figure(figsize=(12, 7), dpi=200)
     fig.patch.set_facecolor("white")
     fig.add_artist(Rectangle((0.05, 0.905), 0.008, 0.055, color=ROJO, transform=fig.transFigure))
-    fig.text(0.065, 0.915, "REVENUE SHARE OF LISTED CHILEAN MALL OPERATORS", fontsize=20,
+    fig.text(0.065, 0.915, "LISTED CHILEAN MALL OPERATORS: REVENUE AND SHARE", fontsize=20,
              fontweight="bold", color=NEGRO)
-    fig.text(0.05, 0.87, "Mallplaza, Parque Arauco and Cencosud Shopping · share of combined "
-             "consolidated revenue (Chile, Peru, Colombia)", fontsize=11, color=TINTA_SECUNDARIA)
+    fig.text(0.05, 0.87, f"Mallplaza, Parque Arauco and Cencosud Shopping · combined revenue (CLP bn) "
+             f"grew {cagr:.0%} a year · labels show each company's share",
+             fontsize=11, color=TINTA_SECUNDARIA)
 
-    ax = fig.add_axes([0.07, 0.14, 0.72, 0.68])
-    ax.stackplot(años, cuota, colors=[e[1] for e in EMPRESAS], edgecolor="white", linewidth=1.5)
+    ax = fig.add_axes([0.08, 0.14, 0.71, 0.66])
+    capas = ing / 1000
+    ax.stackplot(años, capas, colors=[e[1] for e in EMPRESAS], edgecolor="white", linewidth=1.5)
     base = np.zeros(len(años))
-    for (nombre, color, texto), fila in zip(EMPRESAS, cuota):
-        for x, b, v in zip(años, base, fila):
+    for (nombre, color, texto), fila, cuota_fila in zip(EMPRESAS, capas, cuota):
+        for x, b, v, c in zip(años, base, fila, cuota_fila):
             dx = 0.12 if x == años[0] else -0.12 if x == años[-1] else 0
-            ax.text(x + dx, b + v / 2, f"{v:.0%}", ha="center", va="center", fontsize=11,
+            ax.text(x + dx, b + v / 2, f"{c:.0%}", ha="center", va="center", fontsize=11,
                     fontweight="bold", color=texto)
         ax.text(años[-1] + 0.08, base[-1] + fila[-1] / 2, nombre, ha="left", va="center",
                 fontsize=11, fontweight="bold", color=NEGRO)
         base = base + fila
+    for i, (x, t) in enumerate(zip(años, total)):
+        crec = "" if i == 0 else f"\n+{t / total[i - 1] - 1:.1%} YoY"
+        dx = 0.12 if i == 0 else -0.12 if i == len(años) - 1 else 0
+        ax.text(x + dx, t + total.max() * 0.03, f"{t:,.0f}{crec}", ha="center", va="bottom",
+                fontsize=10.5, fontweight="bold", color=NEGRO, linespacing=1.3)
 
     ax.set_xlim(años[0], años[-1])
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, total.max() * 1.22)
     ax.set_xticks(años, [f"FY{a}" for a in años])
-    ax.yaxis.set_major_formatter(lambda y, _: f"{y:.0%}")
+    ax.yaxis.set_major_formatter(lambda y, _: f"{y:,.0f}")
+    ax.set_ylabel("Revenue (CLP bn, nominal)", color=TINTA_SECUNDARIA, labelpad=8)
     ax.tick_params(length=0, colors=TINTA_SECUNDARIA, labelsize=10)
     ax.tick_params(axis="x", pad=8)
     ax.tick_params(axis="y", pad=6)
