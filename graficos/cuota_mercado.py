@@ -24,7 +24,7 @@ EMPRESAS = [("Mallplaza", ROJO, "white"), ("Parque Arauco", VERDE_PARQUE_ARAUCO,
 LOGOS = Path(__file__).parent / "logos"
 ARCHIVOS_LOGO = {"Mallplaza": "mallplaza.png", "Parque Arauco": "parque_arauco.png",
                  "Cencosud Shopping": "cencosud_shopping.png"}
-ALTO_LOGO_PX = 70  # alto del logo en el PNG final (dpi 200)
+ANCHO_LOGO_PX = {"Mallplaza": 95, "Parque Arauco": 200, "Cencosud Shopping": 230}  # ancho en el PNG final
 
 # Ingresos consolidados (MM CLP) que no están en el libro Bloomberg. Verificar contra los EEFF (CMF).
 EXTERNOS = {
@@ -89,7 +89,7 @@ def graficar(ruta, salida):
         logo = LOGOS / ARCHIVOS_LOGO[nombre]
         if logo.exists():
             img = plt.imread(logo)
-            caja = OffsetImage(img, zoom=ALTO_LOGO_PX / img.shape[0] / 2)  # savefig dpi 200 = 2× dpi 100
+            caja = OffsetImage(img, zoom=ANCHO_LOGO_PX[nombre] / img.shape[1] / 2)  # savefig dpi 200 = 2× dpi 100
             ax.add_artist(AnnotationBbox(caja, (años[-1], base[-1] + fila[-1] / 2), xybox=(14, 0),
                                          xycoords="data", boxcoords="offset points",
                                          box_alignment=(0, 0.5), frameon=False,
