@@ -1,10 +1,10 @@
 """Gráfico de sensibilidad del valor por acción de Mallplaza a la WACC y a g.
 
 Lee la grilla "Sensibilidad: valor por acción (CLP) — WACC (filas) vs g (columnas)"
-de la hoja DCF_Valuation del archivo de exhibits y guarda un PNG.
+de la hoja DCF del modelo consolidado y guarda un PNG.
 
 Uso:
-    python graficos/sensibilidad_wacc.py <Mallplaza_FA_Exhibits.xlsx> [salida.png]
+    python graficos/sensibilidad_wacc.py <Valoracion_Consolidada.xlsx> [salida.png]
 """
 import sys
 
@@ -20,27 +20,13 @@ NEGRO = "#000000"
 TINTA_SECUNDARIA = "#5f5f5f"
 GRILLA = "#e6e6e6"
 
-TITULO_GRILLA = "Sensibilidad: valor por acción (CLP) — WACC (filas) vs g (columnas)"
-
-
 def leer_grilla(ruta):
-    ws = openpyxl.load_workbook(ruta, data_only=True)["DCF_Valuation"]
-    fila_titulo = next(
-        c.row for fila in ws.iter_rows() for c in fila if c.value == TITULO_GRILLA
-    )
-    encabezado = fila_titulo + 1
-    gs = [ws.cell(encabezado, c).value for c in range(4, 7)]
-    waccs, valores = [], {g: [] for g in gs}
-    r = encabezado + 1
-    while ws.cell(r, 3).value is not None:
-        waccs.append(ws.cell(r, 3).value)
-        for i, g in enumerate(gs):
-            valores[g].append(ws.cell(r, 4 + i).value)
-        r += 1
-    wacc_base = ws["J31"].value
-    g_base = ws["J37"].value
-    precio = ws["J50"].value
-    return waccs, valores, wacc_base, g_base, precio
+    """Grilla WACC (filas) vs g (columnas) de la hoja DCF del modelo consolidado (B60:F65)."""
+    ws = openpyxl.load_workbook(ruta, data_only=True)["DCF"]
+    gs = [ws.cell(60, c).value for c in range(3, 7)]
+    waccs = [ws.cell(r, 2).value for r in range(61, 66)]
+    valores = {g: [ws.cell(r, 3 + i).value for r in range(61, 66)] for i, g in enumerate(gs)}
+    return waccs, valores, ws["B34"].value, ws["B35"].value, ws["B46"].value
 
 
 def pct(x, decimales=1):
@@ -58,7 +44,7 @@ def graficar(ruta_xlsx, salida):
     fig, ax = plt.subplots(figsize=(9, 5.5), dpi=200)
     fig.patch.set_facecolor("white")
 
-    estilos = [(CELESTE, "o"), (ROJO, "s"), (AMARILLO, "^")]
+    estilos = [(CELESTE, "o"), (ROJO, "s"), (AMARILLO, "^"), (TINTA_SECUNDARIA, "D")]
     x = [w * 100 for w in waccs]
     for (g, serie), (color, marcador) in zip(valores.items(), estilos):
         es_base = abs(g - g_base) < 1e-9
@@ -79,20 +65,20 @@ def graficar(ruta_xlsx, salida):
                edgecolor=NEGRO, linewidth=1.5, zorder=4)
     ax.annotate(
         f"Caso base\nWACC {pct(wacc_base, 2)} · g {pct(g_base)}\nCLP {miles(base)}",
-        (wacc_base * 100, base), xytext=(-125, -55), textcoords="offset points",
+        (wacc_base * 100, base), xytext=(40, 55), textcoords="offset points",
         fontsize=9, color=NEGRO,
         arrowprops=dict(arrowstyle="-", color=NEGRO, linewidth=0.8),
     )
 
     # Precio de referencia
     ax.axhline(precio, color=NEGRO, linewidth=1, linestyle=(0, (4, 3)), zorder=2)
-    ax.text(x[0], precio, f"Precio implícito CLP {miles(precio)}",
+    ax.text(x[0], precio, f"Precio de mercado CLP {miles(precio)}",
             va="bottom", ha="left", fontsize=9, color=NEGRO)
 
     ax.set_xticks(x)
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: pct(v / 100, 2)))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: miles(v)))
-    ax.set_ylim(1400, precio * 1.06)
+    ax.set_ylim(min(min(v) for v in valores.values()) * 0.92, precio * 1.06)
     ax.set_xlim(x[0] - 0.15, x[-1] + 0.35)
     ax.set_xlabel("WACC nominal CLP", color=TINTA_SECUNDARIA)
     ax.set_ylabel("Valor por acción (CLP)", color=TINTA_SECUNDARIA)
@@ -111,7 +97,7 @@ def graficar(ruta_xlsx, salida):
              "DCF (FCFF), valor por acción en CLP según WACC y crecimiento perpetuo g",
              fontsize=10, color=TINTA_SECUNDARIA)
     ax.legend(loc="upper right", bbox_to_anchor=(1, 0.86), frameon=False, fontsize=9)
-    fig.text(0.07, 0.01, "Fuente: Mallplaza_FA_Exhibits, hoja DCF_Valuation.",
+    fig.text(0.07, 0.01, "Fuente: modelo de valoración consolidado del equipo (hoja DCF). Precio al 30-09-2026.",
              fontsize=8, color=TINTA_SECUNDARIA)
 
     fig.tight_layout(rect=(0.02, 0.03, 1, 0.9))

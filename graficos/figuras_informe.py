@@ -4,7 +4,8 @@ Se dibujan al tamaño exacto de impresión (ancho de la columna derecha de la pl
 Investment Risks) a 400 dpi, sin título (lo pone el pie de figura en Word).
 
 Uso:
-    python graficos/figuras_informe.py <FA_Exhibits.xlsx> <Tornado_Sensibilidad.xlsx> [carpeta_salida]
+    python graficos/figuras_informe.py <FA_Exhibits.xlsx> <Valoracion_Consolidada.xlsx> \\
+        <Tornado_Sensibilidad.xlsx> [carpeta_salida]
 """
 import sys
 from pathlib import Path
@@ -14,9 +15,9 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm, to_rgb
 from matplotlib.patches import Rectangle
 
-from heatmap_sensibilidad_wacc import GS, NEUTRO, color_texto, leer_insumos, valor_por_accion
+from heatmap_sensibilidad_wacc import NEUTRO, color_texto, grilla
 from reajuste_uf import ESCENARIOS, ROJO_CLARO, VARIACION_BASE, impacto
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA, leer_grilla
+from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
 ANCHO = 3550 / 1440  # pulgadas: columna derecha (A4) de informe/plantilla_informe.js
@@ -72,8 +73,8 @@ def matriz(salida):
     fig.savefig(salida, dpi=DPI, facecolor="white")
 
 
-def tornado(ruta_fa, ruta_tornado, salida):
-    m, _ = leer_modelo(ruta_fa)
+def tornado(ruta_fa, ruta_vf, ruta_tornado, salida):
+    m, _ = leer_modelo(ruta_fa, ruta_vf)
     base = proyectar(m)[2]
     filas = []
     for nombre, _, k_lo, k_hi in escenarios(m, leer_rangos(ruta_tornado)):
@@ -112,13 +113,8 @@ def tornado(ruta_fa, ruta_tornado, salida):
     fig.savefig(salida, dpi=DPI, facecolor="white")
 
 
-def heatmap(ruta_fa, salida):
-    waccs, _, wacc_base, g_base, _ = leer_grilla(ruta_fa)
-    insumos = leer_insumos(ruta_fa)
-    waccs = sorted(waccs, reverse=True)
-    z = np.array([[valor_por_accion(w, g, *insumos) for g in GS] for w in waccs])
-    i_b = waccs.index(wacc_base)
-    j_b = int(np.argmin([abs(g - g_base) for g in GS]))
+def heatmap(ruta_vf, salida):
+    waccs, GS, z, i_b, j_b, _ = grilla(ruta_vf)
     cmap = LinearSegmentedColormap.from_list("mallplaza", [ROJO, NEUTRO, CELESTE])
     norm = TwoSlopeNorm(vmin=z.min(), vcenter=z[i_b, j_b], vmax=z.max())
 
@@ -177,13 +173,13 @@ def uf(salida):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         sys.exit(__doc__)
-    salida = Path(sys.argv[3] if len(sys.argv) > 3 else Path(__file__).parent / "informe")
+    salida = Path(sys.argv[4] if len(sys.argv) > 4 else Path(__file__).parent / "informe")
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans"})
     matriz(salida / "fig1_matriz_riesgo.png")
-    tornado(sys.argv[1], sys.argv[2], salida / "fig2_tornado.png")
-    heatmap(sys.argv[1], salida / "fig3_heatmap.png")
+    tornado(sys.argv[1], sys.argv[2], sys.argv[3], salida / "fig2_tornado.png")
+    heatmap(sys.argv[2], salida / "fig3_heatmap.png")
     uf(salida / "fig4_uf.png")
     print(f"Figuras guardadas en {salida}")
