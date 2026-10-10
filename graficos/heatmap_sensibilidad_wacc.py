@@ -1,8 +1,9 @@
 """Mapa de calor de la sensibilidad del valor por acción de Mallplaza (WACC vs g).
 
-Usa el DCF del modelo consolidado (hoja DCF): replica la fórmula de la grilla
-(celda C61: valor terminal normalizado con reinversión g real / RONIC) y verifica
-que coincide con la grilla original del Excel (B61:F65).
+Muestra el precio objetivo (80% DCF + 20% múltiplos, hoja Precio_Objetivo) en una grilla
+5 x 5 con el caso base al centro. El DCF replica la fórmula de la grilla de la hoja DCF
+(celda C61: valor terminal normalizado con reinversión g real / RONIC) y se verifica contra
+la grilla original del Excel (B61:F65).
 Rojo = valor bajo el caso base, celeste = sobre el caso base.
 
 Uso:
@@ -51,17 +52,29 @@ def valor_por_accion(wacc, g, x):
     return (vp + vt - x["ajustes"]) / x["acciones"]
 
 
+PASOS_G = [-0.01, -0.005, 0.0, 0.005, 0.01]  # g alrededor del caso base: 5 x 5 con la base al centro
+
+
 def grilla(ruta):
-    """WACC (filas, de mayor a menor), g (columnas), valores verificados vs Excel."""
-    waccs, gs, z_xl, wacc_base, g_base, precio = leer_grilla(ruta)
+    """Precio objetivo (80% DCF + 20% múltiplos) por WACC (filas, de mayor a menor) y g.
+
+    El DCF de cada celda se recalcula con la fórmula de la grilla del Excel y se verifica contra
+    ella en las g que el Excel trae; el valor por múltiplos queda fijo (no depende de WACC ni g).
+    """
+    waccs, gs_xl, z_xl, wacc_base, g_base, precio = leer_grilla(ruta)
     x = leer_insumos(ruta)
-    z = np.array([[valor_por_accion(w, g, x) for g in gs] for w in waccs])
-    assert np.allclose(z, z_xl, atol=1e-6), "la grilla no coincide con el Excel"
-    orden = np.argsort(waccs)[::-1]
-    waccs = [waccs[i] for i in orden]
-    z = z[orden]
+    for i, w in enumerate(waccs):
+        for j, g in enumerate(gs_xl):
+            assert abs(valor_por_accion(w, g, x) - z_xl[i, j]) < 1e-6, "la grilla no coincide con el Excel"
+    po = openpyxl.load_workbook(ruta, data_only=True)["Precio_Objetivo"]
+    peso, multiplos = po["B14"].value, po["B13"].value
+    gs = [round(g_base + p, 6) for p in PASOS_G]
+    waccs = sorted(waccs, reverse=True)
+    z = np.array([[peso * valor_por_accion(w, g, x) + (1 - peso) * multiplos for g in gs]
+                  for w in waccs])
     i_base = int(np.argmin([abs(w - wacc_base) for w in waccs]))
-    j_base = int(np.argmin([abs(g - g_base) for g in gs]))
+    j_base = gs.index(round(g_base, 6))
+    assert abs(z[i_base, j_base] - po["B15"].value) < 1e-6, "el centro debe ser el precio objetivo"
     return waccs, gs, z, i_base, j_base, precio
 
 
@@ -84,6 +97,7 @@ def graficar(ruta_xlsx, salida):
     base = z[i_base, j_base]
     d = openpyxl.load_workbook(ruta_xlsx, data_only=True)["DCF"]
     ronic, wacc_real = d["B55"].value, d["B54"].value
+    multiplos = openpyxl.load_workbook(ruta_xlsx, data_only=True)["Precio_Objetivo"]["B13"].value
 
     cmap = LinearSegmentedColormap.from_list("mallplaza", [ROJO, NEUTRO, CELESTE])
     norm = TwoSlopeNorm(vmin=z.min(), vcenter=base, vmax=z.max())
@@ -94,9 +108,9 @@ def graficar(ruta_xlsx, salida):
 
     fig.add_artist(Rectangle((0.05, 0.905), 0.008, 0.055, color=ROJO,
                              transform=fig.transFigure))
-    fig.text(0.065, 0.915, "SENSITIVITY ANALYSIS", fontsize=22,
+    fig.text(0.065, 0.915, "TARGET PRICE SENSITIVITY", fontsize=22,
              fontweight="bold", color=NEGRO)
-    fig.text(0.05, 0.87, "Mallplaza · value per share (CLP) by nominal WACC and terminal growth",
+    fig.text(0.05, 0.87, "Mallplaza · target price (CLP) = 80% DCF + 20% EV/EBITDA multiples, by nominal WACC and terminal growth",
              fontsize=11, color=TINTA_SECUNDARIA)
 
     ax = fig.add_axes([0.1, 0.24, 0.87, 0.58])
@@ -126,15 +140,15 @@ def graficar(ruta_xlsx, salida):
     cb = fig.colorbar(im, cax=cax, orientation="horizontal")
     cb.set_ticks([z.min(), base, z.max()])
     cb.set_ticklabels([miles(z.min()),
-                       f"{miles(base)}\nbase case (WACC {pct(wacc_base, 2)} · g {pct(g_base)})",
+                       f"{miles(base)}\ntarget price (WACC {pct(wacc_base, 2)} · g {pct(g_base)})",
                        miles(z.max())])
     cb.outline.set_visible(False)
     cax.tick_params(length=0, colors=TINTA_SECUNDARIA, labelsize=9)
-    cax.set_title("Value per share (CLP)", fontsize=9, color=TINTA_SECUNDARIA,
+    cax.set_title("Target price (CLP)", fontsize=9, color=TINTA_SECUNDARIA,
                   loc="left")
 
     fig.text(0.05, 0.015,
-             "Higher g lowers value: terminal growth needs reinvestment at a " + pct(ronic) + " real RONIC, below the "
+             "Multiples value held at CLP " + miles(multiplos) + ". Higher g lowers value: terminal growth needs reinvestment at a " + pct(ronic) + " real RONIC, below the "
              + pct(wacc_real) + " real WACC. Share price CLP " + miles(precio) + ". Source: Team analysis.",
              fontsize=8, color=TINTA_SECUNDARIA)
 
