@@ -53,21 +53,22 @@ def limpiar(ax):
 def matriz(salida):
     fig = nueva_figura("matriz")
     ax = fig.add_axes([0.2, 0.2, 0.78, 0.77])
-    etiquetas = ["Very low", "Low", "Medium", "High", "Very high"]
-    for x in range(1, 6):
-        for y in range(1, 6):
+    etiquetas = ["Low", "Medium", "High"]
+    n = len(etiquetas)
+    for x in range(1, n + 1):  # x = impacto, y = probabilidad
+        for y in range(1, n + 1):
             p = x * y
-            color = CELESTE if p <= 4 else AMARILLO if p <= 9 else ROJO
+            color = CELESTE if p <= 2 else AMARILLO if p <= 4 else ROJO
             tinte = tuple(1 - 0.5 * (1 - c) for c in to_rgb(color))
             ax.add_patch(Rectangle((x - 0.5, y - 0.5), 1, 1, facecolor=tinte,
                                    edgecolor="white", linewidth=1.5))
-    ax.set_xlim(0.5, 5.5)
-    ax.set_ylim(0.5, 5.5)
-    ax.set_xticks(range(1, 6), etiquetas)
-    ax.set_yticks(range(1, 6), etiquetas)
-    ax.tick_params(length=0, colors=NEGRO, labelsize=5, pad=2)
-    ax.set_xlabel("Likelihood", fontsize=6, color=TINTA_SECUNDARIA, labelpad=3)
-    ax.set_ylabel("Impact", fontsize=6, color=TINTA_SECUNDARIA, labelpad=3)
+    ax.set_xlim(0.5, n + 0.5)
+    ax.set_ylim(0.5, n + 0.5)
+    ax.set_xticks(range(1, n + 1), etiquetas)
+    ax.set_yticks(range(1, n + 1), etiquetas)
+    ax.tick_params(length=0, colors=NEGRO, labelsize=5.5, pad=2)
+    ax.set_xlabel("Impact", fontsize=6, color=TINTA_SECUNDARIA, labelpad=3)
+    ax.set_ylabel("Likelihood", fontsize=6, color=TINTA_SECUNDARIA, labelpad=3)
     limpiar(ax)
     fuente(fig)
     fig.savefig(salida, dpi=DPI, facecolor="white")

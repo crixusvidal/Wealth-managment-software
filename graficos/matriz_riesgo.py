@@ -1,7 +1,7 @@
-"""Matriz de riesgo (likelihood x impact) con colores corporativos Mallplaza.
+"""Matriz de riesgo 3 x 3 (impacto en el eje X, probabilidad en el eje Y) con colores corporativos Mallplaza.
 
 Sin argumentos dibuja la matriz vacía. Para ubicar riesgos, pasar un CSV con
-columnas id, risk, likelihood, impact (escala 1-5).
+columnas id, risk, likelihood, impact (escala 1-3).
 
 Uso:
     python graficos/matriz_riesgo.py [--riesgos riesgos.csv] [salida.png]
@@ -17,9 +17,10 @@ from matplotlib.patches import Circle, Rectangle
 
 from sensibilidad_wacc import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
 
-ETIQUETAS = ["Very low", "Low", "Medium", "High", "Very high"]
-# Nivel por puntaje likelihood x impact
-NIVELES = [(4, "Low", CELESTE), (9, "Medium", AMARILLO), (25, "High", ROJO)]
+ETIQUETAS = ["Low", "Medium", "High"]
+N = len(ETIQUETAS)
+# Nivel por puntaje likelihood x impact (1-9)
+NIVELES = [(2, "Low", CELESTE), (4, "Medium", AMARILLO), (9, "High", ROJO)]
 
 
 def tinte(color, fuerza):
@@ -46,12 +47,12 @@ def graficar(salida, ruta_csv=None):
     fig.add_artist(Rectangle((0.06, 0.915), 0.009, 0.05, color=ROJO,
                              transform=fig.transFigure))
     fig.text(0.078, 0.925, "RISK MATRIX", fontsize=22, fontweight="bold", color=NEGRO)
-    fig.text(0.06, 0.885, "Mallplaza · likelihood and impact", fontsize=11,
+    fig.text(0.06, 0.885, "Mallplaza · impact and likelihood", fontsize=11,
              color=TINTA_SECUNDARIA)
 
     ax = fig.add_axes([0.16, 0.12, 0.8, 0.72])
-    for x in range(1, 6):
-        for y in range(1, 6):
+    for x in range(1, N + 1):
+        for y in range(1, N + 1):
             _, _, color = nivel(x * y)
             ax.add_patch(Rectangle((x - 0.5, y - 0.5), 1, 1, facecolor=tinte(color, 0.45),
                                    edgecolor="white", linewidth=3))
@@ -59,27 +60,27 @@ def graficar(salida, ruta_csv=None):
     # Riesgos: círculos numerados; varios en la misma celda se reparten
     por_celda = defaultdict(list)
     for r in riesgos:
-        por_celda[(r["likelihood"], r["impact"])].append(r)
+        por_celda[(r["impact"], r["likelihood"])].append(r)
     desfases = {1: [(0, 0)], 2: [(-0.2, 0), (0.2, 0)],
                 3: [(-0.22, 0.15), (0.22, 0.15), (0, -0.2)],
                 4: [(-0.2, 0.18), (0.2, 0.18), (-0.2, -0.18), (0.2, -0.18)]}
     for (x, y), grupo in por_celda.items():
         for r, (dx, dy) in zip(grupo, desfases[len(grupo)]):
             _, _, color = nivel(x * y)
-            ax.add_patch(Circle((x + dx, y + dy), 0.16, facecolor=color,
+            ax.add_patch(Circle((x + dx, y + dy), 0.13, facecolor=color,
                                 edgecolor=NEGRO, linewidth=1, zorder=3))
             ax.text(x + dx, y + dy, r["id"], ha="center", va="center", zorder=4,
                     fontsize=11, fontweight="bold",
                     color="white" if color == ROJO else NEGRO)
 
-    ax.set_xlim(0.5, 5.5)
-    ax.set_ylim(0.5, 5.5)
+    ax.set_xlim(0.5, N + 0.5)
+    ax.set_ylim(0.5, N + 0.5)
     ax.set_aspect("equal")
-    ax.set_xticks(range(1, 6), ETIQUETAS)
-    ax.set_yticks(range(1, 6), ETIQUETAS)
-    ax.set_xlabel("Likelihood", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
-    ax.set_ylabel("Impact", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
-    ax.tick_params(length=0, colors=NEGRO, labelsize=10)
+    ax.set_xticks(range(1, N + 1), ETIQUETAS)
+    ax.set_yticks(range(1, N + 1), ETIQUETAS)
+    ax.set_xlabel("Impact", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
+    ax.set_ylabel("Likelihood", color=TINTA_SECUNDARIA, fontsize=12, labelpad=10)
+    ax.tick_params(length=0, colors=NEGRO, labelsize=11)
     for lado in ax.spines.values():
         lado.set_visible(False)
 
