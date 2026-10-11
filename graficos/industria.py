@@ -291,19 +291,24 @@ def market_share_paises(wb, salida):
 # 6. Cinco fuerzas de Porter --------------------------------------------------------------------
 def porter(wb, salida):
     ws = wb["PORTER"]
-    notas = {ws.cell(r, 1).value: ws.cell(r, 2).value for r in range(2, ws.max_row + 1)}
+    # Promedio simple de Chile, Perú y Colombia (columnas C:E), redondeado al entero más cercano
+    # con los ,5 hacia arriba (2,4 → 2; 2,5 → 3)
+    notas = {ws.cell(r, 1).value: sum(ws.cell(r, c).value for c in (3, 4, 5)) / 3
+             for r in range(2, ws.max_row + 1)}
     orden = [("Poder de negociación de los locatarios", "Bargaining power\nof tenants"),
              ("Poder de negociación de los proveedores", "Bargaining power\nof suppliers"),
              ("Amenaza de sustitutos (e-commerce)", "Threat of substitutes\n(e-commerce)"),
              ("Amenaza de nuevos entrantes", "Threat of\nnew entrants"),
              ("Rivalidad entre competidores", "Rivalry among\ncompetitors")]
-    valores = [math.ceil(notas[k]) for k, _ in orden]  # redondeo hacia arriba (instrucción del equipo)
+    valores = [math.floor(notas[k] + 0.5 + 1e-9) for k, _ in orden]
+    for (k, _), v in zip(orden, valores):
+        print(f"  Porter · {k}: promedio {notas[k]:.2f} → {v}")
     n = len(orden)
     ang = np.linspace(0, 2 * np.pi, n, endpoint=False)
     fig = figura(6.2, 4.7, "PORTER'S FIVE FORCES, 2Q26",
                  "Shopping centers in Chile, Peru and Colombia · 1 = weak force (attractive "
                  "industry), 5 = strong force",
-                 ["Scores rounded up; country scores weighted by Mallplaza GLA (2Q26).",
+                 ["Score = average of Chile, Peru and Colombia, rounded to the nearest integer (.5 up).",
                   "Source: Team analysis (Porter_industria_2Q26)."])
     ax = fig.add_axes(caja(fig, [0.2, 0.1, 0.6, 0.7]), polar=True)
     ax.set_theta_zero_location("N")
