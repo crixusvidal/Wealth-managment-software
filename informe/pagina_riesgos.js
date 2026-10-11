@@ -29,7 +29,7 @@ const LANG = {
         { cod: "OR1", nombre: "Deterioro operacional.", texto: "Caídas de margen EBITDA, rentas, tráfico u ocupación hacia sus mínimos históricos. El peor caso, un margen de 75,8%, reduce el valor DCF a CLP 1.671 (−10,0%), y el piso histórico del crecimiento de rentas en mismas tiendas lo lleva a CLP 1.782 (−4,0%) (Figura 24).", tag: "No sistemático · Prob. media · Impacto bajo",
           mit: "métricas estables: margen EBITDA de 76,2% (2022) a 80,5% (2025) y ocupación entre 95,5% y 96,6% en 2024-25. Tras el COVID, los ingresos del 1T22 ya superaban en 18% a los del 1T19." },
         { cod: "OR2", nombre: "Tiendas ancla.", texto: "Las anclas, en su mayoría del grupo Falabella, atraen el flujo de visitas. Su reducción o salida bajaría las visitas y las rentas de las tiendas menores. El impacto va de −1,3% a −4,0% (Figura 24).", tag: "No sistemático · Prob. baja · Impacto medio",
-          mit: "contratos de largo plazo (duración remanente promedio de 6,7 años) y capacidad probada de reconvertir espacios ancla en tiendas menores con mayor renta por m²." }] },
+          mit: "contratos de largo plazo (duración remanente promedio de 7,1 años) y capacidad probada de reconvertir espacios ancla en tiendas menores con mayor renta por m²." }] },
       { titulo: "RIESGOS FINANCIEROS", riesgos: [
         { cod: "FR1", nombre: "Tasas de interés y costo de capital.", texto: "Un alza de tasas largas elevaría la WACC y el costo de refinanciar la deuda y el pipeline. La probabilidad es alta: el UST 10Y pasó de 4,98% (Rf del modelo) a 5,22% al 8-oct-26, máximo en 24 años (desde 2002); la Fed subió su tasa en septiembre y las tasas largas locales también suben. Con WACC +50 pb y +100 pb, el precio objetivo cae 6,5% y 12,3% (Figura 25).", tag: "Sistemático · Prob. alta · Impacto alto",
           mit: "79% de la deuda en UF a tasa fija, duración de ~6,7 años, DFN/EBITDA de 2,36x y rating AA+/BBB acotan el traspaso al costo de la deuda; los arriendos en UF compensan alzas inflacionarias. El alza de la tasa de descuento del patrimonio no es cubrible." }] },
@@ -46,7 +46,7 @@ const LANG = {
         { cod: "RR2", nombre: "Regulatorio y político.", texto: "Cambios en el impuesto corporativo y en la permisología generan incertidumbre sobre el pipeline (USD 613 MM, 170.200 m² hasta 2028). Un retraso en permisos posterga ingresos, con sensibilidad acotada.", tag: "Sistemático · Prob. media · Impacto bajo",
           mit: "gobiernos pro mercado en los tres países (Kast, Fujimori, De La Espriella). La Ley 21.770 acorta los plazos de permisos y la Ley de Reconstrucción baja el impuesto corporativo de 27% a 23% en 2029 (el modelo usa 27%)." }] },
       { titulo: "ANÁLISIS DE SENSIBILIDAD", parrafos: [
-        "El valor es más sensible a la tasa de descuento que a la operación: el peor caso operacional (margen EBITDA) resta 10,0% (Figura 24) y +100 pb de WACC restan 12,3% al precio objetivo (Figura 25). El precio actual implica un cap rate cercano a 6,0%, frente a 10,1% en el DCF: el mercado descuenta una tasa baja, lo que aumenta la exposición de la acción a un alza de tasas. Un g mayor resta valor: el RONIC (5,0%) es menor que la WACC real (7,2%). Hasta la mejor celda de la Figura 25 (CLP 2.487) queda bajo el precio (CLP 3.555): la recomendación se mantiene."] },
+        "El valor es más sensible a la tasa de descuento que a la operación: el peor caso operacional (margen EBITDA) resta 10,0% al valor DCF (Figura 24), mientras que +100 pb de WACC restan 17,2% (12,3% del precio objetivo, Figura 25). El precio actual implica un cap rate cercano a 6,0%, frente a 10,1% en el DCF: el mercado descuenta una tasa baja y la acción queda más expuesta a un alza de tasas. Un g mayor resta valor: RONIC 5,0% < WACC real 7,2%. Hasta la mejor celda de la Figura 25 (CLP 2.487) queda bajo el precio (3.555): se mantiene la recomendación."] },
     ],
     figuras: [
       { n: "Figura 23:", t: "Matriz de riesgos", img: "es_fig23_matriz.png", alto: ALTOS.matriz,
@@ -54,7 +54,7 @@ const LANG = {
       { n: "Figura 24:", t: "Tornado de riesgo operacional (CLP por acción)", img: "es_fig24_tornado.png", alto: ALTOS.tornado,
         fuente: "Límites = mínimo y máximo histórico de cada variable: releases de resultados de Mallplaza 4T23–2T26 (margen EBITDA, ocupación, rentas y ventas en mismas tiendas, visitas) y EEFF (capex de mantención 2024 y UDM 2T26; rango de crecimiento de la tasación, Nota 11). WACC terminal 10,41% y g 3,0% constantes. Fuente: Mallplaza; análisis del equipo." },
       { n: "Figura 25:", t: "Sensibilidad del precio objetivo: WACC vs g (CLP)", img: "es_fig25_heatmap.png", alto: ALTOS.heatmap,
-        fuente: "Precio objetivo = 80% DCF + 20% múltiplos EV/EBITDA (CLP 2.951). Fuente: análisis del equipo." },
+        fuente: "Precio objetivo = 80% DCF + 20% múltiplos EV/EBITDA (CLP 2.951). La columna g = 2,0% usa la fórmula de la hoja Sensibilidad. Fuente: equipo." },
       { n: "Figura 26:", t: "Sensibilidad de la utilidad a un alza de la UF", img: "es_fig26_uf.png", alto: ALTOS.uf,
         fuente: "+3% = sensibilidad reportada; +1% y +2% por extrapolación lineal. Fuente: EEFF de Mallplaza a jun-26, Nota 26." },
     ],
@@ -71,7 +71,7 @@ const LANG = {
         { cod: "OR1", nombre: "Operating deterioration.", texto: "EBITDA margin, rents, footfall or occupancy falling to their historical lows. The worst case, a 75.8% margin, cuts DCF value to CLP 1,671 (−10.0%), and the historical floor of same-store rent growth takes it to CLP 1,782 (−4.0%) (Figure 24).", tag: "Non‑systematic · Medium likelihood · Low impact",
           mit: "stable metrics: EBITDA margin rose from 76.2% (2022) to 80.5% (2025) and occupancy held between 95.5% and 96.6% in 2024-25. After COVID, 1Q22 revenue was already 18% above 1Q19." },
         { cod: "OR2", nombre: "Anchor stores.", texto: "Anchors, mostly from the Falabella group, drive footfall. Shrinking or losing them would lower visits and rents from smaller stores. In 2025 Mallplaza already converted 14,000 m² of large-format space in five malls. The impact is bounded by the traffic and rent bars of the tornado (−1.3% to −4.0%, Figure 24).", tag: "Non‑systematic · Low likelihood · Medium impact",
-          mit: "long-term leases (average remaining term of 6.7 years) and a proven ability to convert anchor space into smaller stores with higher rent per m²." }] },
+          mit: "long-term leases (average remaining term of 7.1 years) and a proven ability to convert anchor space into smaller stores with higher rent per m²." }] },
       { titulo: "FINANCIAL RISKS", riesgos: [
         { cod: "FR1", nombre: "Interest rates and cost of capital.", texto: "Higher long-term rates would raise the WACC and the cost of refinancing debt and the pipeline. Likelihood is high: the 10Y UST moved from 4.98% (model Rf) to 5.22% on 8-Oct-26, a 24-year high (since 2002); the Fed hiked in September and the Central Bank of Chile reports rising local long-term rates. With WACC +50 bp and +100 bp, the target price falls 6.5% and 12.3% (Figure 25).", tag: "Systematic · High likelihood · High impact",
           mit: "79% of debt is fixed-rate in UF, with ~6.7 years of duration, 2.36x net debt/EBITDA and AA+/BBB ratings, which limit the pass-through to the cost of debt; UF-linked rents offset inflation. A higher cost of equity cannot be hedged." }] },
@@ -88,7 +88,7 @@ const LANG = {
         { cod: "RR2", nombre: "Regulatory and political.", texto: "Changes to corporate tax and permitting create uncertainty when evaluating pipeline projects (USD 613 million, 170,200 m² to 2028). Permit delays push back revenue, although the value sensitivity is limited.", tag: "Systematic · Medium likelihood · Low impact",
           mit: "pro-market governments in all three countries (Kast, Fujimori, De La Espriella). Law 21,770 shortens permitting times, and the Reconstruction Law cuts corporate tax from 27% to 23% in 2029 (the model uses 27%)." }] },
       { titulo: "SENSITIVITY ANALYSIS", parrafos: [
-        "Value is more sensitive to the discount rate than to operations. The worst operating case, EBITDA margin, takes 10.0% off value (Figure 24), while +100 bp of WACC takes 12.3% off the target price (Figure 25). The current price implies a cap rate close to 6.0%, versus 10.1% in the DCF: the market prices in a low discount rate, which increases the stock's exposure to higher rates. A higher g lowers value because RONIC (5.0%) is below the real WACC (7.2%). Even the best cell in Figure 25 (CLP 2,487) is below the CLP 3,555 share price, so the recommendation stands."] },
+        "Value is more sensitive to the discount rate than to operations. The worst operating case, EBITDA margin, takes 10.0% off DCF value (Figure 24), while +100 bp of WACC takes 17.2% off (12.3% of the target price, Figure 25). The current price implies a cap rate close to 6.0%, versus 10.1% in the DCF: the market prices in a low discount rate, which increases the stock's exposure to higher rates. A higher g lowers value because RONIC (5.0%) is below the real WACC (7.2%). Even the best cell in Figure 25 (CLP 2,487) is below the CLP 3,555 share price, so the recommendation stands."] },
     ],
     figuras: [
       { n: "Figure 23:", t: "Risk matrix", img: "en_fig23_matriz.png", alto: ALTOS.matriz,
@@ -96,7 +96,7 @@ const LANG = {
       { n: "Figure 24:", t: "Operational risk tornado (CLP per share)", img: "en_fig24_tornado.png", alto: ALTOS.tornado,
         fuente: "Limits = historical low and high of each driver: Mallplaza earnings releases 4Q23–2Q26 (EBITDA margin, occupancy, same-store rent and sales, visitors) and financial statements (maintenance capex 2024 and LTM 2Q26; appraisal growth range, Note 11). terminal WACC 10.41% and g 3.0% held constant. Source: Mallplaza; Team analysis." },
       { n: "Figure 25:", t: "Target price sensitivity: WACC vs g (CLP)", img: "en_fig25_heatmap.png", alto: ALTOS.heatmap,
-        fuente: "Target price = 80% DCF + 20% EV/EBITDA multiples (CLP 2,951). Source: Team analysis." },
+        fuente: "Target price = 80% DCF + 20% EV/EBITDA multiples (CLP 2,951). The g = 2.0% column uses the same formula as the Sensibilidad sheet. Source: Team analysis." },
       { n: "Figure 26:", t: "Earnings sensitivity to a rise in the UF", img: "en_fig26_uf.png", alto: ALTOS.uf,
         fuente: "+3% = reported sensitivity; +1% and +2% linear extrapolation. Source: Mallplaza financial statements Jun-26, Note 26." },
     ],
