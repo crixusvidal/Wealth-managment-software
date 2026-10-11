@@ -28,8 +28,8 @@ MULTIPLOS = [("P", 5, "EV/EBITDA LTM", "K5", True), ("Q", 6, "EV/EBITDA NTM", "O
 
 def leer(ruta):
     wb = openpyxl.load_workbook(ruta, data_only=True)
-    c, po, s, d = wb["Comparables"], wb["Precio_Objetivo"], wb["Supuestos"], wb["DCF"]
-    deuda, nci, acciones = s["B15"].value, s["B12"].value, s["B10"].value
+    c, po, s = wb["Comparables"], wb["Precio_Objetivo"], wb["Supuestos"]
+    deuda, nci, acciones = s["B14"].value, s["B11"].value, s["B9"].value
     filas = []
     for col, r_po, nombre, celda, es_ev in MULTIPLOS:
         metrica = c[celda].value
@@ -41,8 +41,9 @@ def leer(ruta):
             ev = m * metrica
             pares.append((c[f"A{r}"].value, m, (ev - deuda - nci if es_ev else ev) / acciones))
         filas.append((nombre, es_ev, pares, po[f"B{r_po}"].value, po[f"D{r_po}"].value))
-    grilla = [d.cell(r, k).value for r in range(61, 66) for k in range(3, 7)]
-    dcf = (min(grilla), d["B45"].value, max(grilla))
+    sens = wb["Sensibilidad"]   # tabla 1 de v2: WACC ±1 pp en paralelo vs g 2,5–4,0%
+    grilla = [sens.cell(r, k).value for r in range(6, 11) for k in range(2, 6)]
+    dcf = (min(grilla), po["B12"].value, max(grilla))
     pe = (po["B8"].value, po["D8"].value)
     return filas, dcf, pe, po["B15"].value, po["B16"].value, po["B14"].value
 
@@ -60,7 +61,7 @@ def graficar(ruta, salida):
 
     ax = fig.add_axes([0.25, 0.2, 0.71, 0.63])
     n = len(filas) + 1
-    # DCF: rango de la grilla de sensibilidad (WACC ±1 pp, g 3,0–4,5%)
+    # DCF: rango de la grilla de sensibilidad (WACC ±1 pp en paralelo, g 2,5–4,0%, modelo v2)
     y = n - 1
     ax.barh(y, dcf[2] - dcf[0], left=dcf[0], height=0.5, color=ROJO_CLARO)
     ax.plot([dcf[1]] * 2, [y - 0.3, y + 0.3], color=ROJO, linewidth=3, solid_capstyle="butt")
@@ -71,7 +72,7 @@ def graficar(ruta, salida):
                 fontsize=8.5, color=TINTA_SECUNDARIA, zorder=4, bbox=FONDO)
     ax.text(-0.02, y + 0.12, "DCF (FCFF)", transform=ax.get_yaxis_transform(), ha="right",
             va="center", fontsize=10.5, fontweight="bold", color=NEGRO)
-    ax.text(-0.02, y - 0.2, "WACC ±1 pp · g 3.0–4.5%", transform=ax.get_yaxis_transform(),
+    ax.text(-0.02, y - 0.2, "WACC ±1 pp · g 2.5–4.0%", transform=ax.get_yaxis_transform(),
             ha="right", va="center", fontsize=8.5, color=TINTA_SECUNDARIA)
 
     for y, (nombre, es_ev, pares, mult, valor) in zip(range(n - 2, -1, -1), filas):
