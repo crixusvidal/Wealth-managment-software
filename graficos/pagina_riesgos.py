@@ -28,7 +28,7 @@ AZUL = "#14284B"  # azul de títulos del informe
 
 # Riesgos: código → (categoría, probabilidad 1-3, impacto 1-3), igual que el texto de la página
 RIESGOS = {"OR1": ("op", 2, 1), "OR2": ("op", 1, 2), "FR1": ("fin", 3, 3), "MR1": ("mac", 3, 2),
-           "MR2": ("mac", 1, 2), "RR1": ("reg", 1, 3), "RR2": ("reg", 2, 1)}
+           "MR2": ("mac", 1, 2), "MR3": ("mac", 2, 2), "RR1": ("reg", 1, 3), "RR2": ("reg", 2, 1)}
 CATEGORIAS = {"op": (AZUL, "white"), "fin": (ROJO, "white"), "mac": (AMARILLO, NEGRO),
               "reg": (CELESTE, NEGRO)}
 

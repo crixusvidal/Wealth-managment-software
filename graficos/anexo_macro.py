@@ -42,7 +42,7 @@ T = {
                     "m": ["Deuda UF: UF +3% = −CLP 38.691 MM; rentas UF compensan",
                           "WACC +100 pb = precio objetivo −12,4%", "Ventas de locatarios y tráfico",
                           "Financiamiento y riesgo país (CRP 1,41% en el Ke)"],
-                    "r": ["MR1", "FR1", "MR1 · MR2", "FR1"]}},
+                    "r": ["MR1", "FR1", "MR1 · MR2", "FR1 · MR3"]}},
     "en": {"meses": "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(),
            "ucrania": "Ukraine\ninvasion", "ormuz": "Hormuz\nconflict", "val": "Valuation",
            "usd": "USD per barrel", "pais": ["US", "Germany", "France", "Chile"],
@@ -56,7 +56,7 @@ T = {
                     "m": ["UF debt: UF +3% = −CLP 38,691 MM; UF rents offset",
                           "WACC +100 bp = target price −12.4%", "Tenant sales and footfall",
                           "Funding and country risk (1.41% CRP in Ke)"],
-                    "r": ["MR1", "FR1", "MR1 · MR2", "FR1"]}},
+                    "r": ["MR1", "FR1", "MR1 · MR2", "FR1 · MR3"]}},
 }
 
 
