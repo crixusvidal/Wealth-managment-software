@@ -303,13 +303,11 @@ def propiedad(lang, salida):
     ax.set_xlim(0, 100)
     ax.set_ylim(-0.5, 0.5)
     limpio(ax)
-    textos = [f"{t['acc'][k]}  {num(v, lang, 2)}%" for k, v in ACCIONISTAS]
-    hueco = (1 - sum(len(x) for x in textos) * 0.0095 - 0.03 * len(textos)) / (len(textos) - 1)
-    x = 0.0
-    for texto, c in zip(textos, colores):  # leyenda espaciada según el largo de cada etiqueta
-        fig.add_artist(Rectangle((x, 0.1), 0.018, 0.13, transform=fig.transFigure, color=c))
-        fig.text(x + 0.026, 0.165, texto, fontsize=6, va="center", color=NEGRO)
-        x += 0.03 + len(texto) * 0.0095 + hueco
+    for i, ((k, v), c) in enumerate(zip(ACCIONISTAS, colores)):  # 5 columnas iguales, 2 líneas
+        x = i * 0.2
+        fig.add_artist(Rectangle((x, 0.06), 0.014, 0.2, transform=fig.transFigure, color=c))
+        fig.text(x + 0.022, 0.21, t["acc"][k], fontsize=6, va="center", color=NEGRO)
+        fig.text(x + 0.022, 0.1, f"{num(v, lang, 2)}%", fontsize=6, fontweight="bold", va="center", color=NEGRO)
     guardar(fig, salida)
 
 
@@ -347,6 +345,55 @@ def residuos_pais(lang, salida):
     guardar(fig, salida)
 
 
+# Anexo · Directorio con fotos ---------------------------------------------------------------------
+FOTOS = Path(__file__).parent / "fotos_directorio"
+DIRECTORES = [  # (archivo, nombre, profesión es/en, cargo es/en)
+    ("1_cardone", "Sergio Cardone Solari", ("Ingeniero Comercial", "Business engineer"), ("Presidente", "Chairman")),
+    ("2_furst_paul", "Paul Fürst Gwinner", ("Ingeniero Comercial", "Business engineer"), ("Director", "Director")),
+    ("3_solari", "Carlo Solari Donaggio", ("Ingeniero Civil", "Civil engineer"), ("Director", "Director")),
+    ("4_puentes", "Alejandro Puentes Bruno", ("Ingeniero Comercial", "Business engineer"), ("Director", "Director")),
+    ("5_eyzaguirre", "Pablo Eyzaguirre Court", ("Ingeniero Civil", "Civil engineer"), ("Director", "Director")),
+    ("6_gonzalez", "Dafne González Lizama", ("Abogada", "Lawyer"), ("Directora", "Director")),
+    ("7_ostale", "Enrique Ostalé Cambiaso", ("Ingeniero Comercial", "Business engineer"), ("Director", "Director")),
+    ("8_furst_ian", "Ian Fürst Garmendia", ("Ingeniero Comercial", "Business engineer"), ("Director", "Director")),
+    ("9_ovalle", "Manuel Ovalle Edwards", ("Ingeniero Civil", "Civil engineer"),
+     ("Director\nindependiente\nPdte. Comité Dir.", "Independent\ndirector\nChair, Dir. Committee")),
+]
+
+
+def directorio(lang, salida):
+    i_lang = 0 if lang == "es" else 1
+    fig = figura(COMPLETO, 1.75)
+    n_col, ancho_celda = 9, 1 / 9
+    for k, (archivo, nombre, prof, cargo) in enumerate(DIRECTORES):
+        x0 = k * ancho_celda
+        img = plt.imread(FOTOS / f"{archivo}.png")
+        lado = ancho_celda * 0.86
+        alto_rel = lado * COMPLETO / 1.75            # foto cuadrada en pulgadas
+        ax = fig.add_axes([x0 + (ancho_celda - lado) / 2, 0.965 - alto_rel, lado, alto_rel])
+        h, w = img.shape[:2]
+        yy, xx = np.ogrid[:h, :w]
+        mascara = (xx - w / 2) ** 2 + (yy - h / 2) ** 2 > (min(h, w) / 2) ** 2
+        img = img.copy()
+        img[mascara] = 1.0                            # recorte circular sobre blanco
+        ax.imshow(img)
+        indep = k == 8
+        presi = k == 0
+        ax.add_patch(Circle((w / 2 - 0.5, h / 2 - 0.5), min(h, w) / 2 - 2, fill=False,
+                            edgecolor=ROJO if indep else (AZUL if presi else "#d5d9e0"),
+                            linewidth=2.2 if (indep or presi) else 0.8))
+        ax.axis("off")
+        cx = x0 + ancho_celda / 2
+        y = 0.965 - alto_rel - 0.04
+        partes = nombre.split(" ")
+        fig.text(cx, y, " ".join(partes[:-2]) + "\n" + " ".join(partes[-2:]), ha="center", va="top",
+                 fontsize=5.6, fontweight="bold", color=ROJO if indep else AZUL, linespacing=1.15)
+        fig.text(cx, y - 0.17, prof[i_lang], ha="center", va="top", fontsize=4.8, color=TINTA_SECUNDARIA)
+        fig.text(cx, y - 0.26, cargo[i_lang], ha="center", va="top", fontsize=4.8,
+                 fontweight="bold" if (indep or presi) else "normal", color=NEGRO, linespacing=1.15)
+    guardar(fig, salida)
+
+
 if __name__ == "__main__":
     salida = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).parent / "informe" / "esg"
     salida.mkdir(parents=True, exist_ok=True)
@@ -360,4 +407,5 @@ if __name__ == "__main__":
         propiedad(lang, salida / f"{lang}_AE1_propiedad.png")
         relacionamiento(lang, salida / f"{lang}_AE2_relacionamiento.png")
         residuos_pais(lang, salida / f"{lang}_AE3_residuos_pais.png")
+        directorio(lang, salida / f"{lang}_AE4_directorio.png")
     print(f"Figuras guardadas en {salida}")

@@ -13,7 +13,7 @@ const FUENTE = "Arial", ANCHO = 10666, COL_TEXTO = 6900, COL_SEP = 216, COL_FIG 
 const MEDIA = 5225;
 const FIG = path.join(__dirname, "..", "graficos", "informe", "esg");
 const PX = 96;
-const ALTO = { E1: 2.0, E2: 1.75, E3: 1.8, E4: 1.7, E5: 1.7, AE1: 1.0, AE2: 1.15, AE3: 1.45 }; // = graficos/esg.py
+const ALTO = { E1: 2.0, E2: 1.75, E3: 1.8, E4: 1.7, E5: 1.7, AE1: 1.0, AE2: 1.15, AE3: 1.45, AE4: 1.75 }; // = graficos/esg.py
 
 const run = (text, o = {}) => new TextRun({ text, font: FUENTE, size: o.size || 16, bold: o.bold,
   italics: o.italics, color: o.color || TINTA });
@@ -72,6 +72,7 @@ const L = {
         ["AFP Provida S.A. para Fondo de Pensión C", "37.746.440", "1,72%"], ["Banco Santander por cuenta de inversión extranjera", "35.594.345", "1,63%"],
         ["AFP Capital S.A. Fondo de Pensión tipo C", "34.539.038", "1,58%"], ["AFP Habitat S.A. Fondo de Pensión tipo B", "30.039.097", "1,37%"]] },
       s2: "2. DIRECTORIO (ELEGIDO EL 22-04-2025)",
+      f2: ["Figura S2:", "Miembros del Directorio (rojo: director independiente; azul: presidente)"],
       t2: { cols: ["Director", "Profesión", "Cargo"], anchos: [3600, 2700, 4366], filas: [
         ["Sergio Cardone Solari", "Ingeniero Comercial", "Presidente"], ["Paul Fürst Gwinner", "Ingeniero Comercial", "Director"],
         ["Carlo Solari Donaggio", "Ingeniero Civil", "Director"], ["Alejandro Puentes Bruno", "Ingeniero Comercial", "Director"],
@@ -87,12 +88,12 @@ const L = {
         ["Denuncias de acoso laboral, sexual y de violencia en el trabajo", "8"]] },
       n3: "Fuente: Memoria Mallplaza 2025.",
       s4: "4. MODELO DE RELACIONAMIENTO CON GRUPOS DE INTERÉS",
-      f4: ["Figura S2:", "Proceso de implementación del modelo de relacionamiento", "Fuente: Memoria Mallplaza 2025."],
+      f4: ["Figura S3:", "Proceso de implementación del modelo de relacionamiento", "Fuente: Memoria Mallplaza 2025."],
       s5: "5. CULTURA ORGANIZACIONAL: ENCUESTA DE CULTURA 2025",
       kpis: [["75%", "Engagement", "−2 pp vs 2024 · meta 2025: 80%"], ["37", "eNPS", "−10 vs 2024"], ["88%", "Liderazgo", "+2 pp vs 2024"], ["93%", "Participación", "+3 pp vs 2024"]],
       n5: "El liderazgo (88%) se consolida como el principal activo para apalancar la estrategia. Fuente: Memoria Mallplaza 2025.",
       s6: "6. RESIDUOS, 2025",
-      f6: ["Figura S3:", "Generación de residuos por país", "Fuente: Memoria Mallplaza 2025."],
+      f6: ["Figura S4:", "Generación de residuos por país", "Fuente: Memoria Mallplaza 2025."],
       r6: [
         "**32.424,86 toneladas** de residuos a nivel regional: 76% en Chile, 16% en Colombia y 7% en Perú.",
         "**46,2% valorizado:** 14.987,57 t de residuos no peligrosos se destinaron a valorización energética con biogás (40,4%), reciclaje (36,1%) y compostaje (23,5%); el resto se destinó a eliminación, principalmente rellenos sanitarios.",
@@ -146,6 +147,7 @@ const L = {
         ["AFP Provida S.A. Pension Fund C", "37,746,440", "1.72%"], ["Banco Santander on behalf of foreign investors", "35,594,345", "1.63%"],
         ["AFP Capital S.A. Pension Fund C", "34,539,038", "1.58%"], ["AFP Habitat S.A. Pension Fund B", "30,039,097", "1.37%"]] },
       s2: "2. BOARD OF DIRECTORS (ELECTED 22-APR-2025)",
+      f2: ["Figure S2:", "Board members (red: independent director; blue: chairman)"],
       t2: { cols: ["Director", "Profession", "Position"], anchos: [3600, 2700, 4366], filas: [
         ["Sergio Cardone Solari", "Business engineer", "Chairman"], ["Paul Fürst Gwinner", "Business engineer", "Director"],
         ["Carlo Solari Donaggio", "Civil engineer", "Director"], ["Alejandro Puentes Bruno", "Business engineer", "Director"],
@@ -161,12 +163,12 @@ const L = {
         ["Complaints of workplace, sexual harassment and violence at work", "8"]] },
       n3: "Source: Mallplaza Annual Report 2025.",
       s4: "4. STAKEHOLDER ENGAGEMENT MODEL",
-      f4: ["Figure S2:", "Implementation process of the engagement model", "Source: Mallplaza Annual Report 2025."],
+      f4: ["Figure S3:", "Implementation process of the engagement model", "Source: Mallplaza Annual Report 2025."],
       s5: "5. ORGANISATIONAL CULTURE: 2025 CULTURE SURVEY",
       kpis: [["75%", "Engagement", "−2 pp vs 2024 · 2025 target: 80%"], ["37", "eNPS", "−10 vs 2024"], ["88%", "Leadership", "+2 pp vs 2024"], ["93%", "Participation", "+3 pp vs 2024"]],
       n5: "Leadership (88%) is the main asset to leverage the strategy. Source: Mallplaza Annual Report 2025.",
       s6: "6. WASTE, 2025",
-      f6: ["Figure S3:", "Waste generation by country", "Source: Mallplaza Annual Report 2025."],
+      f6: ["Figure S4:", "Waste generation by country", "Source: Mallplaza Annual Report 2025."],
       r6: [
         "**32,424.86 tonnes** of waste across the region: 76% in Chile, 16% in Colombia and 7% in Peru.",
         "**46.2% recovered:** 14,987.57 t of non-hazardous waste went to energy recovery through biogas (40.4%), recycling (36.1%) and composting (23.5%); the rest went to disposal, mainly sanitary landfills.",
@@ -261,7 +263,8 @@ function anexo(lang) {
     titulo(A.titulo), lead(A.lead),
     subtitulo(A.s1, 60), caption(A.f1[0], A.f1[1], 20), imagen(`${lang}_AE1_propiedad.png`, ANCHO / 1440, ALTO.AE1), fuente(A.f1[2]),
     new Paragraph({ spacing: { before: 80 }, children: [] }), tabla(A.t1, [1, 2]),
-    subtitulo(A.s2, 160), tabla(A.t2), fuente(A.n2),
+    subtitulo(A.s2, 160), caption(A.f2[0], A.f2[1], 20),
+    imagen(`${lang}_AE4_directorio.png`, ANCHO / 1440, ALTO.AE4), fuente(A.n2),
     subtitulo(A.s3, 160), tabla(A.t3, [1]), fuente(A.n3),
     subtitulo(A.s4, 160), caption(A.f4[0], A.f4[1], 20), imagen(`${lang}_AE2_relacionamiento.png`, ANCHO / 1440, ALTO.AE2), fuente(A.f4[2]),
     subtitulo(A.s5, 160), kpis(A.kpis), fuente(A.n5),
