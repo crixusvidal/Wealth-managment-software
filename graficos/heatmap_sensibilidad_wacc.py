@@ -1,9 +1,9 @@
 """Mapa de calor de la sensibilidad del valor por acción de Mallplaza (WACC vs g).
 
 Muestra el precio objetivo (80% DCF + 20% múltiplos, hoja Precio_Objetivo) en una grilla
-5 x 5 con el caso base al centro. El DCF replica la fórmula de la grilla de la hoja DCF
-(celda C61: valor terminal normalizado con reinversión g real / RONIC) y se verifica contra
-la grilla original del Excel (B61:F65).
+5 x 5 con el caso base al centro (modelo v2: WACC por período, desplazamiento paralelo de ±1 pp
+vs g de 2,0% a 4,0%). El DCF replica la lógica de la hoja Sensibilidad y se verifica contra su
+tabla 1; la columna g = 2,0% no existe en el Excel y se calcula con la misma fórmula.
 Rojo = valor bajo el caso base, celeste = sobre el caso base.
 
 Uso:
@@ -22,60 +22,61 @@ from sensibilidad_wacc import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
 NEUTRO = "#f2f2f2"
 
 
+PASOS_G = [-0.01, -0.005, 0.0, 0.005, 0.01]   # g alrededor del caso base (5 columnas)
+PASOS_W = [-0.01, -0.005, 0.0, 0.005, 0.01]   # desplazamiento paralelo de la WACC (5 filas)
+
+
 def leer_insumos(ruta):
+    """Modelo v2: cada período se descuenta con su propia WACC (hoja DCF, fila 25)."""
     wb = openpyxl.load_workbook(ruta, data_only=True)
     d, s, ex = wb["DCF"], wb["Supuestos"], wb["Expansion"]
     v = lambda c: s[c].value
     return {"fcff": np.array([d[f"{c}22"].value for c in "CDEFGH"]),
-            "periodos": np.array([d[f"{c}24"].value for c in "CDEFGH"]),
-            "ing_norm": d["I29"].value, "ebit_norm": d["I31"].value,
-            "tax": v("B48"), "da": v("B46"), "mant": v("B47"), "k_ct": v("B73") * v("B74"),
-            "inflacion": v("B35"), "ronic": ex["B44"].value,
-            "ajustes": v("B11") + v("B12"), "acciones": v("B10")}
+            "waccs": np.array([d[f"{c}25"].value for c in "CDEFGH"]), "wacc_t": d["I25"].value,
+            "frac": np.array([d[f"{c}26"].value for c in "CDEFGH"]),
+            "ing_norm": d["C34"].value, "ebitda_norm": d["C35"].value,
+            "tax": v("B59"), "da": v("B57"), "mant": v("B58"), "k_ct": v("B84") * v("B85"),
+            "inflacion": v("B34"), "ronic": ex["C38"].value,
+            "ajustes": v("B10") + v("B11"), "acciones": v("B9")}
 
 
-def leer_grilla(ruta):
-    d = openpyxl.load_workbook(ruta, data_only=True)["DCF"]
-    gs = [d.cell(60, c).value for c in range(3, 7)]
-    waccs = [d.cell(r, 2).value for r in range(61, 66)]
-    z = np.array([[d.cell(r, c).value for c in range(3, 7)] for r in range(61, 66)])
-    return waccs, gs, z, d["B34"].value, d["B35"].value, d["B46"].value
-
-
-def valor_por_accion(wacc, g, x):
-    vp = np.sum(x["fcff"] / (1 + wacc) ** x["periodos"])
-    nopat = x["ebit_norm"] * (1 + g) * (1 - x["tax"])
+def dcf_por_accion(d_wacc, g, x):
+    """Valor DCF por acción con la WACC de todos los períodos desplazada en d_wacc (hoja Sensibilidad)."""
+    w = x["waccs"] + d_wacc
+    cierre = np.cumprod((1 + w) ** -x["frac"])
+    mitad = np.concatenate([[1.0], cierre[:-1]]) * (1 + w) ** -(x["frac"] / 2)
+    ing, ebitda = x["ing_norm"] * (1 + g), x["ebitda_norm"] * (1 + g)
+    ebit = ebitda - x["da"] * ing
+    nopat = ebit * (1 - x["tax"])
     g_real = (1 + g) / (1 + x["inflacion"]) - 1
-    fcff_t = (nopat + (x["da"] - x["mant"]) * x["ing_norm"] * (1 + g)
-              - x["k_ct"] * x["ing_norm"] * g - g_real / x["ronic"] * nopat)
-    vt = fcff_t / (wacc - g) / (1 + wacc) ** 5.5
-    return (vp + vt - x["ajustes"]) / x["acciones"]
-
-
-PASOS_G = [-0.01, -0.005, 0.0, 0.005, 0.01]  # g alrededor del caso base: 5 x 5 con la base al centro
+    fcff_t = (nopat + x["da"] * ing - x["mant"] * ing - x["k_ct"] * (ing - x["ing_norm"])
+              - g_real / x["ronic"] * nopat)
+    vt = fcff_t / (x["wacc_t"] + d_wacc - g) * cierre[-1]
+    return (np.sum(x["fcff"] * mitad) + vt - x["ajustes"]) / x["acciones"]
 
 
 def grilla(ruta):
-    """Precio objetivo (80% DCF + 20% múltiplos) por WACC (filas, de mayor a menor) y g.
+    """Precio objetivo (peso DCF × DCF + resto × múltiplos) por WACC (filas, mayor a menor) y g (columnas).
 
-    El DCF de cada celda se recalcula con la fórmula de la grilla del Excel y se verifica contra
-    ella en las g que el Excel trae; el valor por múltiplos queda fijo (no depende de WACC ni g).
+    El DCF de cada celda se recalcula con la lógica de la hoja Sensibilidad y se verifica contra ella;
+    el valor por múltiplos queda fijo (no depende de la WACC ni de g).
     """
-    waccs, gs_xl, z_xl, wacc_base, g_base, precio = leer_grilla(ruta)
+    wb = openpyxl.load_workbook(ruta, data_only=True)
     x = leer_insumos(ruta)
-    for i, w in enumerate(waccs):
-        for j, g in enumerate(gs_xl):
-            assert abs(valor_por_accion(w, g, x) - z_xl[i, j]) < 1e-6, "la grilla no coincide con el Excel"
-    po = openpyxl.load_workbook(ruta, data_only=True)["Precio_Objetivo"]
-    peso, multiplos = po["B14"].value, po["B13"].value
+    po, sens, s = wb["Precio_Objetivo"], wb["Sensibilidad"], wb["Supuestos"]
+    g_base, peso, multiplos = s["B88"].value, po["B14"].value, po["B13"].value
+    for r in range(6, 11):      # verificación contra la tabla 1 del Excel
+        for c in range(2, 6):
+            esperado = sens.cell(r, c).value
+            calculado = dcf_por_accion(sens.cell(r, 1).value, sens.cell(5, c).value, x)
+            assert abs(calculado - esperado) < 1e-6, (r, c, calculado, esperado)
     gs = [round(g_base + p, 6) for p in PASOS_G]
-    waccs = sorted(waccs, reverse=True)
-    z = np.array([[peso * valor_por_accion(w, g, x) + (1 - peso) * multiplos for g in gs]
-                  for w in waccs])
-    i_base = int(np.argmin([abs(w - wacc_base) for w in waccs]))
-    j_base = gs.index(round(g_base, 6))
+    deltas = sorted(PASOS_W, reverse=True)       # +1 pp arriba, −1 pp abajo
+    waccs = [x["wacc_t"] + dw for dw in deltas]
+    z = np.array([[peso * dcf_por_accion(dw, g, x) + (1 - peso) * multiplos for g in gs] for dw in deltas])
+    i_base, j_base = deltas.index(0.0), gs.index(round(g_base, 6))
     assert abs(z[i_base, j_base] - po["B15"].value) < 1e-6, "el centro debe ser el precio objetivo"
-    return waccs, gs, z, i_base, j_base, precio
+    return waccs, gs, z, i_base, j_base, po["B16"].value
 
 
 def pct(x, decimales=1):
@@ -96,7 +97,7 @@ def graficar(ruta_xlsx, salida):
     wacc_base, g_base = waccs[i_base], GS[j_base]
     base = z[i_base, j_base]
     d = openpyxl.load_workbook(ruta_xlsx, data_only=True)["DCF"]
-    ronic, wacc_real = d["B55"].value, d["B54"].value
+    ronic, wacc_real = d["C59"].value, d["C58"].value
     multiplos = openpyxl.load_workbook(ruta_xlsx, data_only=True)["Precio_Objetivo"]["B13"].value
 
     cmap = LinearSegmentedColormap.from_list("mallplaza", [ROJO, NEUTRO, CELESTE])
@@ -131,7 +132,7 @@ def graficar(ruta_xlsx, salida):
     ax.set_yticks(range(len(waccs)), [pct(w, 2) for w in waccs])
     ax.set_xlabel("Terminal growth rate (g, nominal)", color=TINTA_SECUNDARIA,
                   labelpad=10)
-    ax.set_ylabel("WACC (nominal, CLP)", color=TINTA_SECUNDARIA, labelpad=10)
+    ax.set_ylabel("Terminal WACC (all periods shifted in parallel, ±1 pp)", color=TINTA_SECUNDARIA, labelpad=10)
     ax.tick_params(length=0, colors=NEGRO, labelsize=12)
     for lado in ax.spines.values():
         lado.set_visible(False)
@@ -140,7 +141,7 @@ def graficar(ruta_xlsx, salida):
     cb = fig.colorbar(im, cax=cax, orientation="horizontal")
     cb.set_ticks([z.min(), base, z.max()])
     cb.set_ticklabels([miles(z.min()),
-                       f"{miles(base)}\ntarget price (WACC {pct(wacc_base, 2)} · g {pct(g_base)})",
+                       f"{miles(base)}\ntarget price (terminal WACC {pct(wacc_base, 2)} · g {pct(g_base)})",
                        miles(z.max())])
     cb.outline.set_visible(False)
     cax.tick_params(length=0, colors=TINTA_SECUNDARIA, labelsize=9)

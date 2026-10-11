@@ -69,7 +69,7 @@ const L = {
       cols: ["Canal", "2022–2026", "Efecto en Mallplaza", "En el modelo", "Riesgo"],
       filas: [
         ["Energía e inflación", "Brent USD 71 → 114 (feb–sep-26); inflación mundial 4,1% → 4,7%", "Reajusta la deuda en UF (79% del total); los arriendos en UF compensan", "UF +3% = −CLP 38.691 MM de utilidad (Fig. 26)", "MR1"],
-        ["Tasas largas", "UST 10Y 4,1% → 5,2%; Bund 2,9% → 3,6% (dic-25 → oct-26)", "Mayor WACC y costo de refinanciar el pipeline", "Rf 4,98%; WACC +100 pb = precio objetivo −12,4% (Fig. 25)", "FR1"],
+        ["Tasas largas", "UST 10Y 4,1% → 5,2%; Bund 2,9% → 3,6% (dic-25 → oct-26)", "Mayor WACC y costo de refinanciar el pipeline", "Rf 4,98%; WACC +100 pb = precio objetivo −12,3% (Fig. 25)", "FR1"],
         ["Consumo y PIB", "PIB Chile 2026: 0,25–0,75%; IPC 3,9%", "Menores ventas de locatarios, tráfico y nuevos formatos", "Tornado: tráfico −1,3% / +2,4% del valor (Fig. 24)", "MR1 · MR2"],
         ["Fragmentación", "Aranceles de EE.UU.; menores flujos a emergentes", "Monedas volátiles y financiamiento más caro", "CRP ponderado 1,41% en el Ke; deuda en moneda local y derivados de cobertura (Análisis Razonado 2T26)", "FR1 · MR3"],
       ],
@@ -77,13 +77,13 @@ const L = {
     },
     vigilar: { titulo: "6. QUÉ VIGILAR", cols: ["Indicador", "Último dato", "Señal de alerta", "Qué implica para Mallplaza"],
       filas: [
-        ["UST 10Y", "5,22% (8-oct-26)", "Sobre 5,5% de forma sostenida", "≈ WACC +50 pb: precio objetivo de CLP 2.095 a ~1.957 (Fig. 25)"],
+        ["UST 10Y", "5,22% (8-oct-26)", "Sobre 5,5% de forma sostenida", "≈ WACC +50 pb: precio objetivo de CLP 2.076 a ~1.940 (Fig. 25)"],
         ["Brent", "USD 114 (sep-26)", "Sobre USD 120 o cierre prolongado de Ormuz", "Más inflación y UF: mayor reajuste de la deuda (MR1)"],
         ["IPC Chile", "3,9% (IPoM jun-26)", "Sobre 4% por dos trimestres", "TPM sin recortes; consumo y ventas de locatarios débiles"],
         ["PIB Chile", "0,25–0,75% 2026 (IPoM)", "Contracción en dos trimestres", "Menor tráfico y ventas; presión sobre la ocupación (Fig. 24)"],
         ["Spread Francia–Alemania", "117 pb (30-sep-26)", "Sobre 150 pb", "Contagio fiscal: más presión sobre las tasas largas globales (FR1)"],
       ], anchos: [1900, 1900, 2700, 4166] },
-    cierre: "**Lectura para el inversionista.** El entorno eleva la probabilidad de los dos riesgos más severos del informe (FR1 y MR1). El modelo usa una Rf de 4,98% y una WACC nominal de 10,37%; con el UST 10Y sobre 5,2% en octubre, el sesgo de la tasa de descuento es al alza, lo que refuerza la recomendación.",
+    cierre: "**Lectura para el inversionista.** El entorno eleva la probabilidad de los dos riesgos más severos del informe (FR1 y MR1). El modelo usa una Rf de 4,98% y una WACC nominal terminal de 10,41% (10,54% en 2S26E); con el UST 10Y sobre 5,2% en octubre, el sesgo de la tasa de descuento es al alza, lo que refuerza la recomendación.",
   },
   en: {
     archivo: "Mallplaza_Anexo_Macro_EN.docx", pie: "A-",
@@ -126,7 +126,7 @@ const L = {
       cols: ["Channel", "2022–2026", "Effect on Mallplaza", "In the model", "Risk"],
       filas: [
         ["Energy and inflation", "Brent USD 71 → 114 (Feb–Sep-26); world inflation 4.1% → 4.7%", "Indexes UF debt (79% of total); UF-linked rents offset it", "UF +3% = −CLP 38,691 MM of earnings (Fig. 26)", "MR1"],
-        ["Long-term rates", "10Y UST 4.1% → 5.2%; Bund 2.9% → 3.6% (Dec-25 → Oct-26)", "Higher WACC and cost of refinancing the pipeline", "Rf 4.98%; WACC +100 bp = target price −12.4% (Fig. 25)", "FR1"],
+        ["Long-term rates", "10Y UST 4.1% → 5.2%; Bund 2.9% → 3.6% (Dec-25 → Oct-26)", "Higher WACC and cost of refinancing the pipeline", "Rf 4.98%; WACC +100 bp = target price −12.3% (Fig. 25)", "FR1"],
         ["Consumption and GDP", "Chile 2026 GDP: 0.25–0.75%; CPI 3.9%", "Lower tenant sales, footfall and demand for new formats", "Tornado: traffic −1.3% / +2.4% of value (Fig. 24)", "MR1 · MR2"],
         ["Fragmentation", "US tariffs; lower flows to emerging markets", "Volatile currencies and costlier funding", "1.41% weighted CRP in Ke; debt in local currency and hedging derivatives (MD&A 2Q26)", "FR1 · MR3"],
       ],
@@ -134,13 +134,13 @@ const L = {
     },
     vigilar: { titulo: "6. WHAT TO WATCH", cols: ["Indicator", "Latest", "Warning sign", "What it means for Mallplaza"],
       filas: [
-        ["10Y UST", "5.22% (8-Oct-26)", "Sustained above 5.5%", "≈ WACC +50 bp: target price from CLP 2,095 to ~1,957 (Fig. 25)"],
+        ["10Y UST", "5.22% (8-Oct-26)", "Sustained above 5.5%", "≈ WACC +50 bp: target price from CLP 2,076 to ~1,940 (Fig. 25)"],
         ["Brent", "USD 114 (Sep-26)", "Above USD 120 or a prolonged Hormuz closure", "Higher inflation and UF: larger debt indexation (MR1)"],
         ["Chile CPI", "3.9% (Jun-26 MPR)", "Above 4% for two quarters", "No rate cuts; weak consumption and tenant sales"],
         ["Chile GDP", "0.25–0.75% 2026 (MPR)", "Two quarters of contraction", "Lower footfall and sales; pressure on occupancy (Fig. 24)"],
         ["France–Germany spread", "117 bp (30-Sep-26)", "Above 150 bp", "Fiscal contagion: more pressure on global long-term rates (FR1)"],
       ], anchos: [1900, 1900, 2700, 4166] },
-    cierre: "**Investor takeaway.** The backdrop raises the likelihood of the report's two most severe risks (FR1 and MR1). The model uses a 4.98% Rf and a 10.37% nominal WACC; with the 10Y UST above 5.2% in October, the bias on the discount rate is upward, which reinforces the recommendation.",
+    cierre: "**Investor takeaway.** The backdrop raises the likelihood of the report's two most severe risks (FR1 and MR1). The model uses a 4.98% Rf and a 10.41% terminal nominal WACC (10.54% in 2H26E); with the 10Y UST above 5.2% in October, the bias on the discount rate is upward, which reinforces the recommendation.",
   },
 };
 

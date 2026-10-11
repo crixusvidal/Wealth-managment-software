@@ -59,23 +59,25 @@ def leer_modelo(ruta_fa, ruta_vf):
     s, fb, ex, d = wb["Supuestos"], wb["Forecast_Base"], wb["Expansion"], wb["DCF"]
     v = lambda c: s[c].value
     m.update({
-        "acciones": v("B10"), "dfn": v("B11"), "nci": v("B12"),
-        "ing_1s26": v("B43"), "ebitda_1s26": v("B44"), "ing25": v("B45"),
-        "da": v("B46"), "mant": v("B47"), "tax_lp": v("B48"),
-        "pago_t2": v("B57"), "mix": v("B64"), "margen_cl": v("B65"), "margen_pe": v("B66"),
-        "rampa": (v("B67"), v("B68"), v("B69")), "yield_input": v("B70"),
-        "k_ct": v("B73") * v("B74"), "g": v("B77"), "inflacion": v("B35"),
+        "acciones": v("B9"), "dfn": v("B10"), "nci": v("B11"),
+        "ing_1s26": v("B54"), "ebitda_1s26": v("B55"), "ing25": v("B56"),
+        "da": v("B57"), "mant": v("B58"), "tax_lp": v("B59"),
+        "pago_t2": v("B68"), "mix": v("B75"), "margen_cl": v("B76"), "margen_pe": v("B77"),
+        "rampa": (v("B78"), v("B79"), v("B80")), "yield_input": v("B81"),
+        "k_ct": v("B84") * v("B85"), "g": v("B88"), "inflacion": v("B34"),
         "tax": fila(fb, 11, "CDEFGH"), "capex_proy": fila(fb, 14, "CDEFGH"),
         "costo_m2": fila(ex, 7, "CDEFGH"), "año": fila(ex, 5, "CDEFGH"),
-        "cohortes": [(ex[f"A{r}"].value, ex[f"B{r}"].value) for r in range(13, 18)],
-        "periodos": fila(d, 24, "CDEFGH"), "wacc": wb["WACC"]["B43"].value})
+        "cohortes": [(ex[f"A{r}"].value, ex[f"B{r}"].value) for r in range(12, 17)],
+        # WACC por período (v2): cada período se descuenta con su propia WACC
+        "waccs": fila(d, 25, "CDEFGH"), "wacc_t": d["I25"].value, "fracciones": fila(d, 26, "CDEFGH")})
+    m["wacc"] = m["wacc_t"]
     control = {"ingresos": fila(fb, 5, "CDEFGH"), "fcff": fila(d, 22, "CDEFGHI"),
-               "valor": d["B45"].value}
+               "valor": d["C49"].value}
     return m, control
 
 
 def proyectar(m, d_occ=0.0, d_ss_corto=0.0, d_park_corto=0.0, d_margen=0.0,
-              mant=None, ss_largo=None, wacc=None, g=None):
+              mant=None, ss_largo=None, d_wacc=0.0, g=None):
     """Devuelve ingresos base 2026E–2031E, FCFF 2S26E–terminal y valor por acción."""
     ingresos = np.zeros(5)
     ebitda = np.zeros(5)
@@ -128,7 +130,6 @@ def proyectar(m, d_occ=0.0, d_ss_corto=0.0, d_park_corto=0.0, d_margen=0.0,
 
     # DCF (hoja DCF)
     mant = m["mant"] if mant is None else mant
-    wacc = m["wacc"] if wacc is None else wacc
     g = m["g"] if g is None else g
     rev = base + ing_exp
     ebd = ebitda_base + ing_exp * margen_exp
@@ -149,8 +150,11 @@ def proyectar(m, d_occ=0.0, d_ss_corto=0.0, d_park_corto=0.0, d_margen=0.0,
     fcff_t = (nopat_t + m["da"] * ing_norm * (1 + g) - mant * ing_norm * (1 + g)
               - m["k_ct"] * ing_norm * g - g_real / ronic * nopat_t)
 
-    vp = np.sum(fcff / (1 + wacc) ** m["periodos"])
-    vt = fcff_t / (wacc - g) / (1 + wacc) ** 5.5
+    w = m["waccs"] + d_wacc                       # desplazamiento paralelo de la WACC (todos los períodos)
+    cierre = np.cumprod((1 + w) ** -m["fracciones"])     # factor de descuento al cierre de cada período
+    mitad = np.concatenate([[1.0], cierre[:-1]]) * (1 + w) ** -(m["fracciones"] / 2)
+    vp = np.sum(fcff * mitad)
+    vt = fcff_t / (m["wacc_t"] + d_wacc - g) * cierre[-1]
     valor = (vp + vt - m["dfn"] - m["nci"]) / m["acciones"]
     return base_cal, np.append(fcff, fcff_t), valor
 
@@ -261,7 +265,7 @@ def graficar(ruta_fa, ruta_vf, ruta_tornado, salida):
         fig.add_artist(Rectangle((x, 0.045), 0.014, 0.02, color=color,
                                  transform=fig.transFigure))
         fig.text(x + 0.02, 0.055, texto, va="center", fontsize=9, color=NEGRO)
-    fig.text(0.62, 0.055, f"WACC {m['wacc']:.2%} · g {m['g']:.1%} held constant",
+    fig.text(0.62, 0.055, f"Terminal WACC {m['wacc']:.2%} · g {m['g']:.1%} held constant",
              va="center", fontsize=9, color=TINTA_SECUNDARIA)
     fig.text(0.05, 0.015, "Source: Team analysis.", fontsize=8, color=TINTA_SECUNDARIA)
 
