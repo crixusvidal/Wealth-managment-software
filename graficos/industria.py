@@ -18,11 +18,11 @@ from matplotlib.colors import to_rgb
 from matplotlib.patches import Patch
 
 from cuota_mercado import MORADO_CENCOSUD, VERDE_PARQUE_ARAUCO
-from sensibilidad_wacc import CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 COLOR = {"Mallplaza": ROJO, "Parque Arauco": VERDE_PARQUE_ARAUCO, "Cenco Malls": MORADO_CENCOSUD}
 TEXTO = {"Mallplaza": "white", "Parque Arauco": NEGRO, "Cenco Malls": "white"}
-GRIS_OSCURO, GRIS_CLARO = "#8c8c8c", "#d9d9d9"
+GRIS_OSCURO, GRIS_CLARO = "#8c8c8c", "#d9d9d9"  # solo grilla y líneas auxiliares
 DPI = 300
 
 
@@ -104,8 +104,8 @@ def pipeline(wb, salida):
     ax.yaxis.set_major_formatter(lambda y, _: miles(y))
     ax.set_ylabel("GLA (m²)", color=TINTA_SECUNDARIA)
     limpiar(ax)
-    ax.legend(handles=[Patch(facecolor=GRIS_OSCURO, label="Organic"),
-                       Patch(facecolor=tinte(GRIS_OSCURO, 0.35), hatch="///", edgecolor="white",
+    ax.legend(handles=[Patch(facecolor=TINTA_SECUNDARIA, label="Organic"),
+                       Patch(facecolor=tinte(TINTA_SECUNDARIA, 0.35), hatch="///", edgecolor="white",
                              label="Acquisitions")],
               loc="upper right", frameon=False, fontsize=9)
     guardar(fig, salida)
@@ -120,7 +120,7 @@ def oferta_demanda(wb, salida):
     ax = fig.add_axes([0.08, 0.13, 0.9, 0.82])
     xs = [0, 1, 2, 3.4]
     for x, (anio, oferta, consumo) in zip(xs, filas):
-        for dx, v, color in ((-0.19, oferta, CELESTE), (0.19, consumo, GRIS_OSCURO)):
+        for dx, v, color in ((-0.19, oferta, CELESTE), (0.19, consumo, AMARILLO)):
             ax.bar(x + dx, v * 100, width=0.36, color=color)
             ax.text(x + dx, v * 100 + 0.1, f"{v * 100:.1f}%", ha="center", va="bottom", fontsize=9,
                     color=NEGRO)
@@ -131,7 +131,7 @@ def oferta_demanda(wb, salida):
     ax.yaxis.set_major_formatter(lambda y, _: f"{y:.0f}%")
     limpiar(ax)
     ax.legend(handles=[Patch(color=CELESTE, label="New GLA supply (trio, Chile)"),
-                       Patch(color=GRIS_OSCURO, label="Real private consumption (IPoM)")],
+                       Patch(color=AMARILLO, label="Real private consumption (IPoM)")],
               loc="upper left", frameon=False, fontsize=9)
     guardar(fig, salida)
 
@@ -144,7 +144,8 @@ def contratos(wb, salida):
         emp, tramo, pct, dur = (ws.cell(r, c).value for c in range(1, 5))
         datos.setdefault(emp, {"tramos": [], "dur": dur})["tramos"].append((tramo, pct))
     empresas = sorted(datos, key=lambda e: datos[e]["dur"])  # mayor duración arriba
-    rampa = ["#d6eaf8", "#a9d2ef", CELESTE, "#3a87bd", "#1d5a87"]
+    # Vence antes = más riesgo: rojo → amarillo → celeste (paleta Mallplaza)
+    rampa = [ROJO, tinte(ROJO, 0.45), AMARILLO, tinte(CELESTE, 0.55), CELESTE]
     fig = figura(7, 3.2)
     ax = fig.add_axes([0.17, 0.08, 0.66, 0.76])
     for y, emp in enumerate(empresas):
@@ -154,7 +155,7 @@ def contratos(wb, salida):
                     linewidth=1.2)
             if pct >= 0.05:
                 ax.text(izq + pct * 50, y, f"{pct * 100:.1f}%", ha="center", va="center",
-                        fontsize=8, color=NEGRO if i < 2 else "white")
+                        fontsize=8, color="white" if i == 0 else NEGRO)
             izq += pct * 100
         ax.text(103, y, f"{datos[emp]['dur']:.1f} yrs", va="center", fontsize=11,
                 fontweight="bold", color=NEGRO)
@@ -175,8 +176,9 @@ def contratos(wb, salida):
 # 5. Market share estático por país -------------------------------------------------------------
 def market_share_paises(wb, salida):
     ws = wb["MS_estatico_2Q26"]
-    roles = {"Líder fuera del trío": ("Leader outside the trio", GRIS_OSCURO),
-             "Otros": ("Others", GRIS_CLARO)}
+    otros = tinte(CELESTE, 0.35)
+    roles = {"Líder fuera del trío": ("Leader outside the trio", AMARILLO),
+             "Otros": ("Others", otros)}
     paises = {}
     for r in range(2, ws.max_row + 1):
         pais, emp, rol = ws.cell(r, 1).value, ws.cell(r, 2).value, ws.cell(r, 4).value
@@ -190,7 +192,7 @@ def market_share_paises(wb, salida):
     for k, (pais, filas) in enumerate(paises.items()):
         ax = fig.add_axes([0.02 + k * 0.33, 0.14, 0.29, 0.68])
         valores = [f[2] for f in filas]
-        colores = [COLOR.get(f[0], roles.get(f[1], (None, GRIS_CLARO))[1]) for f in filas]
+        colores = [COLOR.get(f[0], roles.get(f[1], (None, otros))[1]) for f in filas]
         cuñas, _ = ax.pie(valores, colors=colores, startangle=90, counterclock=False,
                           wedgeprops={"width": 0.38, "edgecolor": "white", "linewidth": 1.5})
         for cuña, (emp, rol, v, nota) in zip(cuñas, filas):
@@ -198,7 +200,7 @@ def market_share_paises(wb, salida):
             marca = "*" if nota and "pro forma" in nota else ""
             fuera = v < 0.05
             radio = 1.22 if fuera else 0.81
-            claro = colores[filas.index((emp, rol, v, nota))] in (GRIS_CLARO, VERDE_PARQUE_ARAUCO)
+            claro = colores[filas.index((emp, rol, v, nota))] in (otros, VERDE_PARQUE_ARAUCO, AMARILLO)
             ax.text(radio * math.cos(ang), radio * math.sin(ang), f"{v:.0%}{marca}",
                     ha="center", va="center", fontsize=9, fontweight="bold",
                     color=NEGRO if fuera or claro else "white")
@@ -212,8 +214,8 @@ def market_share_paises(wb, salida):
     fig.legend(handles=[Patch(color=COLOR["Mallplaza"], label="Mallplaza"),
                         Patch(color=COLOR["Cenco Malls"], label="Cenco Malls"),
                         Patch(color=COLOR["Parque Arauco"], label="Parque Arauco"),
-                        Patch(color=GRIS_OSCURO, label="Leader outside the trio"),
-                        Patch(color=GRIS_CLARO, label="Others")],
+                        Patch(color=AMARILLO, label="Leader outside the trio"),
+                        Patch(color=otros, label="Others")],
                loc="upper center", bbox_to_anchor=(0.5, 0.99), ncol=5, frameon=False, fontsize=9)
     fig.text(0.02, 0.02, "* Pro forma, includes Gran Plaza. Share of GLA among the main operators "
              "of each country.", fontsize=7.5, color=TINTA_SECUNDARIA)
