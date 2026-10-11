@@ -1,4 +1,4 @@
-# Industry figures: titles and sources for the Word captions
+# Industry figures: titles and sources (already printed inside each PNG; use this list for the Word figure index)
 
 | File | Title | Source |
 |---|---|---|
