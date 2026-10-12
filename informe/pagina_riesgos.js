@@ -20,7 +20,7 @@ const LANG = {
   es: {
     archivo: "Mallplaza_Investment_Risks_ES.docx", lang: "es-CL", pagina: "Página ",
     titulo: "RIESGOS DE INVERSIÓN",
-    intro: "El perfil de riesgo de Mallplaza es moderado: su operación es resiliente y el valor depende sobre todo de variables de mercado. El principal riesgo, de probabilidad alta, es un alza de las tasas de largo plazo, que presiona el rendimiento de los bonos y eleva la WACC; le siguen la inflación y un menor dinamismo macro. Ni siquiera los escenarios favorables justifican el precio de mercado a la fecha del informe.",
+    intro: "El perfil de riesgo de Mallplaza es moderado: su operación es resiliente y el valor depende sobre todo de variables de mercado. El principal riesgo, de probabilidad alta, es un alza de las tasas de largo plazo, que presiona el rendimiento de los bonos y eleva la WACC. Ni siquiera los escenarios favorables justifican el precio de mercado a la fecha del informe.",
     mitigantes: "Mitigantes: ",
     secciones: [
       { titulo: "EVALUACIÓN DE RIESGOS", parrafos: [
@@ -60,7 +60,7 @@ const LANG = {
   en: {
     archivo: "Mallplaza_Investment_Risks_EN.docx", lang: "en-US", pagina: "Page ",
     titulo: "INVESTMENT RISKS",
-    intro: "Mallplaza's risk profile is moderate: its operations are resilient and value depends mainly on market variables. The main risk, with high likelihood, is a rise in long-term rates, which pushes up bond yields and the WACC; it is followed by inflation and weaker macro momentum. Not even the favourable scenarios justify the market price at the report date.",
+    intro: "Mallplaza's risk profile is moderate: its operations are resilient and value depends mainly on market variables. The main risk, with high likelihood, is a rise in long-term rates, which pushes up bond yields and the WACC. Not even the favourable scenarios justify the market price at the report date.",
     mitigantes: "Mitigants: ",
     secciones: [
       { titulo: "RISK ASSESSMENT", parrafos: [
