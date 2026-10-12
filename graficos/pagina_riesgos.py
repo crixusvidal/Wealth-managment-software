@@ -8,6 +8,7 @@ Uso:
     python graficos/pagina_riesgos.py <FA_Exhibits.xlsx> <Valoracion_Consolidada.xlsx> \\
         <Tornado_Sensibilidad.xlsx> [carpeta_salida]
 """
+import copy
 import sys
 from pathlib import Path
 
@@ -17,17 +18,17 @@ from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm, to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle
 
 from heatmap_sensibilidad_wacc import NEUTRO, color_texto, grilla
-from reajuste_uf import ESCENARIOS, ROJO_CLARO, VARIACION_BASE, impacto
+from reajuste_uf import ESCENARIOS, IMPACTO_BASE, VARIACION_BASE, impacto
 from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
 ANCHO = 3550 / 1440  # pulgadas: columna de figuras de la plantilla (3550 twips)
-ALTOS = {"matriz": 2.15, "tornado": 2.35, "heatmap": 1.75, "uf": 1.3}
+ALTOS = {"matriz": 2.15, "tornado": 2.35, "heatmap": 1.75, "uf": 1.5}
 DPI = 400
 AZUL = "#14284B"  # azul de títulos del informe
 
 # Riesgos: código → (categoría, probabilidad 1-3, impacto 1-3), igual que el texto de la página
-RIESGOS = {"OR1": ("op", 2, 1), "OR2": ("op", 1, 2), "FR1": ("fin", 3, 3), "MR1": ("mac", 3, 2),
+RIESGOS = {"OR1": ("op", 2, 2), "OR2": ("op", 1, 1), "FR1": ("fin", 3, 3), "MR1": ("mac", 3, 2),
            "MR2": ("mac", 1, 2), "MR3": ("mac", 2, 2), "RR1": ("reg", 1, 3), "RR2": ("reg", 2, 1)}
 CATEGORIAS = {"op": (AZUL, "white"), "fin": (ROJO, "white"), "mac": (AMARILLO, NEGRO),
               "reg": (CELESTE, NEGRO)}
@@ -40,8 +41,8 @@ TEXTOS = {
            "base": "Base case", "eje_tornado": "DCF value per share (CLP)",
            "bajo": "Historical low", "alto": "Historical high",
            "g": "Terminal growth (g, nominal)", "wacc": "WACC (nominal)",
-           "uf_eje": "Impact on earnings (CLP million)", "uf_base": "reported",
-           "uf_ext": "linear extrap."},
+           "uf_eje": "Change in target price (CLP per share)", "uf_rentas": "UF-indexed rents",
+           "uf_deuda": "UF debt", "uf_neto": "Net effect", "uf_util": "earnings"},
     "es": {"niveles_i": ["Bajo", "Medio", "Alto"], "niveles_p": ["Baja", "Media", "Alta"],
            "impacto": "Impacto", "prob": "Probabilidad",
            "cat": {"op": "Operacional", "fin": "Financiero", "mac": "Mercado y macro",
@@ -49,8 +50,8 @@ TEXTOS = {
            "base": "Caso base", "eje_tornado": "Valor DCF por acción (CLP)",
            "bajo": "Mínimo histórico", "alto": "Máximo histórico",
            "g": "Crecimiento terminal (g, nominal)", "wacc": "WACC (nominal)",
-           "uf_eje": "Impacto en la utilidad (CLP MM)", "uf_base": "reportado",
-           "uf_ext": "extrap. lineal"},
+           "uf_eje": "Cambio en el precio objetivo (CLP por acción)", "uf_rentas": "Rentas indexadas a UF",
+           "uf_deuda": "Deuda en UF", "uf_neto": "Efecto neto", "uf_util": "utilidad"},
 }
 # Tornado: nombre del modelo → (etiqueta EN, etiqueta ES, rango ES cuando no es numérico)
 NOMBRES_TORNADO = {
@@ -225,33 +226,73 @@ def heatmap(lang, ruta_vf, salida):
 
 
 # Sensibilidad a la UF --------------------------------------------------------------------------
-def uf(lang, salida):
+PESO_DCF, MULTIPLOS, OBJETIVO = 0.8, 2951.39, 2075.73  # Precio_Objetivo B14, B13, B15 (modelo v2)
+EXPOSICION_UF = -IMPACTO_BASE / (VARIACION_BASE / 100)    # MM CLP de deuda neta en UF (Nota 26)
+
+
+def sensibilidad_uf(m, s):
+    """Shock de nivel de la UF de s (0,01 = 1%) que se materializa en 2027E.
+
+    Rentas: el IPC de Chile de 2027E sube s (rentas, estacionamientos e ingreso por m² de la
+    expansión quedan s más altos desde 2027E; el margen fijo escala los costos) y el costo por m²
+    de la expansión sube s por la fracción Chile. Deuda: la deuda neta en UF sube s (exposición
+    implícita en la Nota 26). WACC y g sin cambio. Devuelve (rentas, deuda) en CLP por acción
+    sobre el precio objetivo: rentas pesan 80% (solo DCF); la deuda resta en ambos métodos.
+    """
+    mm = copy.deepcopy(m)
+    mm["ipc"]["cl"][0] += s
+    mm["costo_m2"][1:] *= 1 + s * m["mix"]
+    rentas = PESO_DCF * (proyectar(mm)[2] - proyectar(m)[2])
+    deuda = -s * EXPOSICION_UF / m["acciones"]
+    return rentas, deuda
+
+
+def uf(lang, m, salida):
     t = TEXTOS[lang]
     fig = figura("uf")
-    ax = fig.add_axes([0.04, 0.27, 0.72, 0.7])
+    ax = fig.add_axes([0.33, 0.3, 0.64, 0.67])
+    filas = []
     for y, v in zip(range(len(ESCENARIOS))[::-1], ESCENARIOS):
-        es_base = v == VARIACION_BASE
-        valor = impacto(v)
-        ax.barh(y, valor, height=0.55, color=ROJO if es_base else ROJO_CLARO, edgecolor=ROJO,
-                linewidth=0 if es_base else 0.5, hatch=None if es_base else "////")
-        ax.text(valor - 700, y, num(valor, lang), ha="right", va="center", fontsize=5.2,
-                fontweight="bold", color=ROJO if es_base else NEGRO)
-        ax.text(800, y + 0.12, f"UF +{v}%", ha="left", va="center", fontsize=5.4,
-                fontweight="bold", color=NEGRO)
-        ax.text(800, y - 0.22, t["uf_base"] if es_base else t["uf_ext"], ha="left", va="center",
-                fontsize=4.4, color=TINTA_SECUNDARIA)
+        rentas, deuda = sensibilidad_uf(m, v / 100)
+        neto = rentas + deuda
+        filas.append((v, rentas, deuda, neto))
+        ax.barh(y + 0.15, rentas, height=0.28, color=CELESTE)
+        ax.barh(y - 0.15, deuda, height=0.28, color=ROJO)
+        ax.text(rentas + 0.8, y + 0.15, num(rentas, lang, 1), va="center", fontsize=4.6, color=NEGRO)
+        ax.text(deuda - 0.8, y - 0.15, num(deuda, lang, 1), va="center", ha="right", fontsize=4.6,
+                color=NEGRO)
+        ax.plot(neto, y, marker="D", markersize=3.6, color=NEGRO, zorder=4, linestyle="none")
+        ax.text(neto, y + 0.36, f"{'+' if neto > 0 else ''}{num(neto, lang, 1)} "
+                f"({'+' if neto > 0 else ''}{pct(neto / OBJETIVO, lang)})", ha="center", va="bottom",
+                fontsize=4.6, fontweight="bold", color=NEGRO, zorder=5,
+                bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.3})
+        ax.text(-0.04, y + 0.12, f"UF +{v}%", transform=ax.get_yaxis_transform(), ha="right",
+                va="center", fontsize=5.4, fontweight="bold", color=NEGRO)
+        ax.text(-0.04, y - 0.2, f"{t['uf_util']} {num(impacto(v), lang)} MM",
+                transform=ax.get_yaxis_transform(), ha="right", va="center", fontsize=4.2,
+                color=TINTA_SECUNDARIA)
     ax.axvline(0, color=NEGRO, linewidth=0.7)
-    ax.set_xlim(-52_000, 1_000)
-    ax.set_ylim(-0.55, len(ESCENARIOS) - 0.45)
+    ax.set_xlim(-30, 50)
+    ax.set_ylim(-0.5, len(ESCENARIOS) - 0.25)
     ax.set_yticks([])
-    ax.set_xticks([-40_000, -30_000, -20_000, -10_000, 0])
+    ax.set_xticks([-20, 0, 20, 40])
     ax.xaxis.set_major_formatter(lambda x, _: num(x, lang))
     ax.tick_params(axis="x", length=0, colors=TINTA_SECUNDARIA, labelsize=4.6, pad=1.5)
     ax.grid(axis="x", color=GRILLA, linewidth=0.4)
     ax.set_axisbelow(True)
     limpiar(ax)
     ax.set_xlabel(t["uf_eje"], fontsize=5, color=TINTA_SECUNDARIA, labelpad=2)
+    leyenda = ((0.05, CELESTE, "s", t["uf_rentas"]), (0.43, ROJO, "s", t["uf_deuda"]),
+               (0.72, NEGRO, "D", t["uf_neto"]))
+    for x, color, forma, texto in leyenda:
+        if forma == "s":
+            fig.add_artist(Rectangle((x, 0.03), 0.03, 0.035, color=color, transform=fig.transFigure))
+        else:
+            fig.add_artist(plt.Line2D([x + 0.015], [0.0475], marker="D", markersize=3.2, color=color,
+                                      transform=fig.transFigure))
+        fig.text(x + 0.04, 0.0475, texto, fontsize=4.8, color=NEGRO, va="center")
     guardar(fig, salida)
+    return filas
 
 
 if __name__ == "__main__":
@@ -267,8 +308,10 @@ if __name__ == "__main__":
         matriz(lang, salida / f"{lang}_fig23_matriz.png")
         base, filas = tornado(lang, m, rangos, salida / f"{lang}_fig24_tornado.png")
         heatmap(lang, ruta_vf, salida / f"{lang}_fig25_heatmap.png")
-        uf(lang, salida / f"{lang}_fig26_uf.png")
+        filas_uf = uf(lang, m, salida / f"{lang}_fig26_uf.png")
     print(f"Base DCF {base:,.2f}")
     for etiqueta, rango, lo, hi in reversed(filas):
         print(f"  {etiqueta:26s} {rango:28s} {lo:7.0f} ({lo / base - 1:+.1%})  {hi:7.0f} ({hi / base - 1:+.1%})")
+    for v, rentas, deuda, neto in filas_uf:
+        print(f"  UF +{v}%: rentas {rentas:+.1f}  deuda {deuda:+.1f}  neto {neto:+.1f} ({neto / OBJETIVO:+.2%})")
     print(f"Figuras guardadas en {salida}")
