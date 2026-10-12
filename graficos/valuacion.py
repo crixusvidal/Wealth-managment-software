@@ -5,7 +5,8 @@ V7 (múltiplos vs tasa local) queda fuera: falta la NTN-B de Brasil (pendiente d
 V8 es el gráfico del equipo. Sin título ni fuente en la imagen: van en el Word (informe/valuacion.js).
 
 Uso:
-    python graficos/valuacion.py <Mallplaza_Figuras_Valuacion.xlsx> [carpeta_salida]
+    python graficos/valuacion.py <Mallplaza_Figuras_Valuacion.xlsx> [carpeta_salida | -] [Valoracion_Consolidada_v2.xlsx]
+    (con el modelo v2 también genera V9: valor implícito por múltiplo de cada par)
 """
 import sys
 from pathlib import Path
@@ -24,7 +25,7 @@ CLARO = "#eef1f6"
 ANCHO = 3550 / 1440          # columna de figuras del informe (pulgadas)
 COMPLETO = 10666 / 1440      # ancho completo (anexo)
 DPI = 400
-ALTOS = {"V1": 1.85, "V2": 1.9, "V3": 2.35, "V4": 2.3, "V5": 1.75, "V6": 1.95, "W1": 1.9}
+ALTOS = {"V9": 2.15, "V1": 1.85, "V2": 1.9, "V3": 2.35, "V4": 2.3, "V5": 1.75, "V6": 1.95, "W1": 1.9}
 
 T = {
     "es": {"cpa": "CLP por acción", "objetivo": "Precio objetivo", "precio": "Precio actual",
@@ -361,6 +362,64 @@ def v6(lang, wb, salida):
     guardar(fig, salida)
 
 
+# V9 · Valor implícito por múltiplo de cada par (football field del equipo, tamaño columna) -------
+def v9(lang, ruta_v2, salida):
+    from cuota_mercado import MORADO_CENCOSUD, VERDE_PARQUE_ARAUCO
+    from football_field import COLOR_PAR, leer
+    filas, dcf, _, objetivo, precio, _ = leer(ruta_v2)
+    t = T[lang]
+    fig = figura("V9")
+    ax = fig.add_axes([0.3, 0.2, 0.67, 0.76])
+    n = len(filas) + 1
+    caja = {"facecolor": "white", "edgecolor": "none", "pad": 0.4}
+    y = n - 1
+    ax.barh(y, dcf[2] - dcf[0], left=dcf[0], height=0.5, color=tinte(ROJO, 0.35), linewidth=0)
+    ax.plot([dcf[1]] * 2, [y - 0.3, y + 0.3], color=ROJO, linewidth=1.4, solid_capstyle="butt")
+    ax.text(dcf[1], y + 0.33, num(dcf[1], lang), ha="center", va="bottom", fontsize=4.4, fontweight="bold", color=ROJO)
+    ax.text(-0.03, y + 0.12, "DCF (FCFF)", transform=ax.get_yaxis_transform(), ha="right", va="center",
+            fontsize=4.8, fontweight="bold", color=NEGRO)
+    ax.text(-0.03, y - 0.22, "±100 pb · g 2,5–4,0%" if lang == "es" else "±100 bp · g 2.5–4.0%",
+            transform=ax.get_yaxis_transform(), ha="right", va="center", fontsize=4, color=TINTA_SECUNDARIA)
+    for y, (nombre, es_ev, pares, mult, valor) in zip(range(n - 2, -1, -1), filas):
+        vals = [p[2] for p in pares]
+        ax.barh(y, max(vals) - min(vals), left=min(vals), height=0.5, color=tinte(CELESTE, 0.45) if es_ev else "white",
+                edgecolor=CELESTE, linewidth=0 if es_ev else 0.4, hatch=None if es_ev else "////////")
+        for par, _, v in sorted(pares, key=lambda p: p[0] in COLOR_PAR):
+            chile = par in COLOR_PAR
+            ax.scatter(v, y, s=9 if chile else 5, color=COLOR_PAR.get(par, CELESTE), edgecolor="white",
+                       linewidth=0.4, zorder=3 + chile)
+        ax.plot([valor] * 2, [y - 0.3, y + 0.3], color=NEGRO, linewidth=1.4, solid_capstyle="butt", zorder=5)
+        ax.text(valor, y + 0.33, num(valor, lang), ha="center", va="bottom", fontsize=4.4, fontweight="bold",
+                color=NEGRO, zorder=6, bbox=caja)
+        ax.text(-0.03, y + 0.12, nombre.replace(" Jun-26", ""), transform=ax.get_yaxis_transform(), ha="right",
+                va="center", fontsize=4.8, fontweight="bold", color=NEGRO)
+        detalle = (f"ponderado {num(mult, lang, 1)}x" if lang == "es" else f"weighted {num(mult, lang, 1)}x") + \
+            ("" if es_ev else " · ref.")
+        ax.text(-0.03, y - 0.22, detalle, transform=ax.get_yaxis_transform(), ha="right", va="center", fontsize=4,
+                color=TINTA_SECUNDARIA)
+    ax.axvline(objetivo, color=AMARILLO, linewidth=1.0, zorder=2)
+    ax.axvline(precio, color=NEGRO, linewidth=0.7, linestyle=(0, (3, 2)), zorder=2)
+    ax.text(objetivo - 40, -0.75, f"{t['objetivo']} {num(objetivo, lang)}", ha="right", va="center", fontsize=4.4,
+            fontweight="bold", color=NEGRO)
+    ax.text(precio + 40, -0.75, f"{t['precio']} {num(precio, lang)}", ha="left", va="center", fontsize=4.4,
+            fontweight="bold", color=NEGRO)
+    xs = [p[2] for f in filas for p in f[2]] + [dcf[0], dcf[2], precio]
+    ax.set_xlim(min(xs) - 200, max(xs) + 200)
+    ax.set_ylim(-1.05, n - 0.25)
+    ax.set_yticks([])
+    ax.xaxis.set_major_formatter(lambda x, _: num(x, lang))
+    estilo(ax)
+    ax.set_xlabel(t["cpa"], fontsize=4.6, color=TINTA_SECUNDARIA, labelpad=1.5)
+    punto = lambda c, txt: plt.Line2D([], [], marker="o", linestyle="", markersize=3, markerfacecolor=c,
+                                      markeredgecolor="white", label=txt)
+    fig.legend(handles=[punto(VERDE_PARQUE_ARAUCO, "Parque Arauco"), punto(MORADO_CENCOSUD, "Cencosud"),
+                        punto(CELESTE, "Multiplan, Allos, Iguatemi, IRSA"),
+                        plt.Line2D([], [], color=NEGRO, linewidth=1.4, label="Ponderado" if lang == "es" else "Weighted")],
+               loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4, frameon=False, fontsize=3.9,
+               handletextpad=0.2, columnspacing=0.6)
+    guardar(fig, salida)
+
+
 # W1 · Anexo WACC: WACC nominal y D/E por período -----------------------------------------------
 def w1(lang, wb, salida):
     tt = T[lang]["w1"]
@@ -422,9 +481,9 @@ def exportar_wacc(wb, ruta):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    salida = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(__file__).parent / "informe" / "valuacion"
+    salida = Path(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] != "-" else Path(__file__).parent / "informe" / "valuacion"
     salida.mkdir(parents=True, exist_ok=True)
-    plt.rcParams.update({"font.family": "DejaVu Sans"})
+    plt.rcParams.update({"font.family": "DejaVu Sans", "hatch.linewidth": 0.4})
     wb = openpyxl.load_workbook(sys.argv[1], data_only=True)
     for lang in ("es", "en"):
         for nombre, fn in (("V1_football", v1), ("V2_tasas", v2), ("V3_value_driver", v3),
@@ -432,4 +491,7 @@ if __name__ == "__main__":
                            ("W1_wacc_periodo", w1)):
             fn(lang, wb, salida / f"{lang}_{nombre}.png")
     exportar_wacc(wb, salida / "datos_wacc.json")
+    if len(sys.argv) > 3:   # modelo consolidado v2 para el football field de pares
+        for lang in ("es", "en"):
+            v9(lang, sys.argv[3], salida / f"{lang}_V9_pares.png")
     print(f"Figuras guardadas en {salida}")

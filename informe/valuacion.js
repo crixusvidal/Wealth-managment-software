@@ -14,7 +14,7 @@ const FUENTE = "Arial", ANCHO = 10666, COL_TEXTO = 6900, COL_SEP = 216, COL_FIG 
 const FIG = path.join(__dirname, "..", "graficos", "informe", "valuacion");
 const D = JSON.parse(fs.readFileSync(path.join(FIG, "datos_wacc.json"), "utf8"));
 const PX = 96;
-const ALTO = { V1: 1.85, V2: 1.9, V3: 2.35, V4: 2.3, V5: 1.75, V6: 1.95, W1: 1.9 }; // = graficos/valuacion.py
+const ALTO = { V9: 2.15, V1: 1.85, V2: 1.9, V3: 2.35, V4: 2.3, V5: 1.75, V6: 1.95, W1: 1.9 }; // = graficos/valuacion.py
 const PAG_ALTO = 13900; // alto útil de la columna de texto por página (twips)
 
 const fmt = (lang) => (x, dec = 1) => {
@@ -35,7 +35,8 @@ const L = {
         figuras: [
           ["Figura 30:", "Capital de trabajo: un supuesto que no mueve el precio (±1,2%)", "V4_capital_trabajo", "Fuente: EEFF Mallplaza; análisis del equipo."],
           ["Figura 31:", "El mercado paga 6,0%; nuestros flujos valen 10,1%", "V5_cap_rate", "Gran Plaza: hecho posterior, no entra al modelo. Fuente: Mallplaza; Bloomberg; DF; análisis del equipo."],
-          ["Figura 32:", "El precio exige una WACC 285 pb menor", "V6_dcf_inverso", "Fuente: análisis del equipo."]] },
+          ["Figura 32:", "El precio exige una WACC 285 pb menor", "V6_dcf_inverso", "Fuente: análisis del equipo."],
+          ["Figura 33:", "Valor implícito por múltiplo de cada par vs DCF y precio (CLP por acción)", "V9_pares", "Precio objetivo = 80% DCF + 20% EV/EBITDA LTM. P/E excluido (incluye revalorización de propiedades). Set de pares = empresas con beta en la WACC. Fuente: Bloomberg (precios al 30-09-26); análisis del equipo."]] },
     ],
     anexo: {
       titulo: "ANEXO [Z]: CONSTRUCCIÓN DE LA WACC",
@@ -79,7 +80,8 @@ const L = {
         figuras: [
           ["Figure 30:", "Working capital: an assumption that does not move the price (±1.2%)", "V4_capital_trabajo", "Source: Mallplaza financial statements; Team analysis."],
           ["Figure 31:", "The market pays 6.0%; our cash flows are worth 10.1%", "V5_cap_rate", "Gran Plaza: subsequent event, not in the model. Source: Mallplaza; Bloomberg; DF; Team analysis."],
-          ["Figure 32:", "The price requires a WACC 285 bp lower", "V6_dcf_inverso", "Source: Team analysis."]] },
+          ["Figure 32:", "The price requires a WACC 285 bp lower", "V6_dcf_inverso", "Source: Team analysis."],
+          ["Figure 33:", "Value implied by each peer's multiple vs DCF and price (CLP per share)", "V9_pares", "Target = 80% DCF + 20% EV/EBITDA LTM. P/E excluded (includes property revaluation). Peer set = companies with a WACC beta. Source: Bloomberg (prices at 30-Sep-26); Team analysis."]] },
     ],
     anexo: {
       titulo: "APPENDIX [Z]: WACC CONSTRUCTION",
