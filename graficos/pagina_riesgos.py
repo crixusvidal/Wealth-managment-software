@@ -23,7 +23,7 @@ from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECU
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
 ANCHO = 3550 / 1440  # pulgadas: columna de figuras de la plantilla (3550 twips)
-ALTOS = {"matriz": 2.15, "tornado": 2.35, "heatmap": 1.75, "uf": 1.5}
+ALTOS = {"matriz": 2.05, "tornado": 2.15, "heatmap": 1.7, "uf": 1.4}
 DPI = 400
 AZUL = "#14284B"  # azul de títulos del informe
 
