@@ -5,7 +5,8 @@ Lee Excel_bussines_para_armar_graficos.xlsx:
   - NA: activos Tier A por GLA (miles de m²), coloreados por país.
   - NB: tiendas por departamento, % del GLA total, 2020–2T26.
 Al ancho de la columna de figuras del informe. Sin título ni fuente en la imagen: van en el Word
-(ver negocio/pies_de_figura.md).
+(ver negocio/pies_de_figura.md). Además genera una copia con título y fuente dentro de la imagen
+(sufijo _titulado), con el formato de la referencia del Excel, para compartir fuera del Word.
 
 Uso:
     python graficos/negocio.py <Excel_bussines_para_armar_graficos.xlsx> [carpeta_salida]
@@ -168,6 +169,52 @@ def nb(lang, tiendas, salida):
     guardar(fig, salida)
 
 
+PIES = {
+    "es": {"N1": ("Figura 1:", "GLA por país (2T26) e ingresos por fuente (UDM a jun-2026)",
+                  "Fuente: Plaza S.A., Release de Resultados 2T26 (p. 19) y Presentación Institucional 2T26 (p. 16)."),
+           "NA": ("Anexo A:", "Activos Tier A por GLA, 2T26 (miles de m²)",
+                  "Fuente: Plaza S.A., Presentación Institucional 2T26 (p. 12). Tier A = 46,4% del GLA total."),
+           "NB": ("Anexo B:", "Tiendas por departamento, % del GLA total",
+                  "Fuente: Plaza S.A., Presentación Institucional 2T26 (p. 17).")},
+    "en": {"N1": ("Figure 1:", "GLA by country (2Q26) and revenue by source (LTM Jun-2026)",
+                  "Source: Plaza S.A., 2Q26 Earnings Release (p. 19) and 2Q26 Institutional Presentation (p. 16)."),
+           "NA": ("Appendix A:", "Tier A assets by GLA, 2Q26 (thousand m²)",
+                  "Source: Plaza S.A., 2Q26 Institutional Presentation (p. 12). Tier A = 46.4% of total GLA."),
+           "NB": ("Appendix B:", "Department stores, % of total GLA",
+                  "Source: Plaza S.A., 2Q26 Institutional Presentation (p. 17).")},
+}
+
+
+def titulado(png, clave, lang, salida):
+    """Copia de la figura con título (arriba) y fuente (abajo) dentro de la imagen."""
+    import textwrap
+    n, titulo, fuente = PIES[lang][clave]
+    img = plt.imread(png)
+    alto_img = ANCHO * img.shape[0] / img.shape[1]
+    lineas_t = textwrap.wrap(f"{n} {titulo}", 44)
+    lineas_f = textwrap.wrap(fuente, 62)
+    cab, pie = 0.12 + 0.13 * len(lineas_t), 0.08 + 0.1 * len(lineas_f)
+    h = alto_img + cab + pie
+    fig = plt.figure(figsize=(ANCHO, h))
+    fig.patch.set_facecolor("white")
+    ax = fig.add_axes([0, pie / h, 1, alto_img / h])
+    ax.imshow(img)
+    ax.axis("off")
+    y = 1 - 0.06 / h
+    for k, linea in enumerate(lineas_t):
+        if k == 0:
+            t = fig.text(0.03, y, n, fontsize=7, fontweight="bold", color=AZUL, va="top")
+            ancho_n = t.get_window_extent(fig.canvas.get_renderer()).width / fig.bbox.width
+            fig.text(0.03 + ancho_n + 0.012, y, linea[len(n):].strip(), fontsize=7, color=AZUL, va="top")
+        else:
+            fig.text(0.03, y, linea, fontsize=7, color=AZUL, va="top")
+        y -= 0.13 / h
+    for k, linea in enumerate(lineas_f):
+        fig.text(0.03, (pie - 0.06 - k * 0.1) / h, linea, fontsize=5, style="italic",
+                 color=TINTA_SECUNDARIA, va="top")
+    guardar(fig, salida)
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -179,4 +226,8 @@ if __name__ == "__main__":
         n1(lang, gla, ingresos, salida / f"{lang}_N1_gla_ingresos.png")
         na(lang, activos, salida / f"{lang}_NA_activos_tier_a.png")
         nb(lang, tiendas, salida / f"{lang}_NB_tiendas_departamento.png")
+        for clave, archivo in (("N1", "N1_gla_ingresos"), ("NA", "NA_activos_tier_a"),
+                               ("NB", "NB_tiendas_departamento")):
+            titulado(salida / f"{lang}_{archivo}.png", clave, lang,
+                     salida / f"{lang}_{archivo}_titulado.png")
     print(f"Figuras guardadas en {salida}")
