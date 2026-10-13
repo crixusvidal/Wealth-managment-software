@@ -237,7 +237,7 @@ def contratos(wb, salida):
 
 
 # 5. Market share estático por país -------------------------------------------------------------
-def market_share_paises(wb, salida):
+def market_share_paises(wb, salida, vertical=False):
     ws = wb["MS_estatico_2Q26"]
     otros = tinte(CELESTE, 0.35)
     roles = {"Líder fuera del trío": ("Leader outside the trio", AMARILLO),
@@ -250,14 +250,17 @@ def market_share_paises(wb, salida):
         resto = 1 - sum(f[2] for f in filas if f[1] != "Otros")
         paises[pais] = [(e, ro, resto if ro == "Otros" else v, n) for e, ro, v, n in filas]
 
-    fig = figura(9, 3.6, "GLA MARKET SHARE BY COUNTRY, 2Q26",
+    fig = figura(4.2 if vertical else 9, 7.0 if vertical else 3.6, "GLA MARKET SHARE BY COUNTRY, 2Q26",
                  "Share of GLA among the main shopping center operators of each country",
                  ["* Pro forma, includes Gran Plaza (4.3% without it). Trio share = Mallplaza + "
                   "Cenco Malls + Parque Arauco.",
                   "Source: Plaza S.A., Institutional Presentation 2Q26 (slide 7); Team analysis."])
     nombres_pais = {"Chile": "Chile", "Perú": "Peru", "Colombia": "Colombia"}
     for k, (pais, filas) in enumerate(paises.items()):
-        ax = fig.add_axes(caja(fig, [0.02 + k * 0.33, 0.0, 0.29, 0.86]))
+        if vertical:  # donuts apilados, uno por fila
+            ax = fig.add_axes(caja(fig, [0.0, 0.62 - k * 0.31, 1.0, 0.31]))
+        else:
+            ax = fig.add_axes(caja(fig, [0.02 + k * 0.33, 0.0, 0.29, 0.86]))
         valores = [f[2] for f in filas]
         colores = [COLOR.get(f[0], roles.get(f[1], (None, otros))[1]) for f in filas]
         cuñas, _ = ax.pie(valores, colors=colores, startangle=90, counterclock=False,
@@ -274,17 +277,26 @@ def market_share_paises(wb, salida):
         ax.text(0, 0, nombres_pais[pais], ha="center", va="center", fontsize=12,
                 fontweight="bold", color=NEGRO)
         trio = sum(f[2] for f in filas if f[0] in COLOR)
-        ax.text(0, -1.42, f"Trio share: {trio:.0%}", ha="center", va="center", fontsize=10,
-                color=NEGRO)
-        ax.set_xlim(-1.3, 1.3)
-        ax.set_ylim(-1.55, 1.3)
+        if vertical:
+            ax.text(1.55, 0.12, "Trio share", ha="left", va="center", fontsize=9,
+                    color=TINTA_SECUNDARIA)
+            ax.text(1.55, -0.2, f"{trio:.0%}", ha="left", va="center", fontsize=16,
+                    fontweight="bold", color=NEGRO)
+            ax.set_xlim(-1.45, 2.65)
+            ax.set_ylim(-1.3, 1.3)
+            ax.set_aspect("equal")
+        else:
+            ax.text(0, -1.42, f"Trio share: {trio:.0%}", ha="center", va="center", fontsize=10,
+                    color=NEGRO)
+            ax.set_xlim(-1.3, 1.3)
+            ax.set_ylim(-1.55, 1.3)
     fig.legend(handles=[Patch(color=COLOR["Mallplaza"], label="Mallplaza"),
                         Patch(color=COLOR["Cenco Malls"], label="Cenco Malls"),
                         Patch(color=COLOR["Parque Arauco"], label="Parque Arauco"),
                         Patch(color=AMARILLO, label="Leader outside the trio"),
                         Patch(color=otros, label="Others")],
-               loc="upper center", bbox_to_anchor=(0.5, yc(fig, 1.02)), ncol=5, frameon=False,
-               fontsize=9)
+               loc="upper center", bbox_to_anchor=(0.5, yc(fig, 1.02)), ncol=2 if vertical else 5,
+               frameon=False, fontsize=9)
     guardar(fig, salida)
 
 
@@ -428,6 +440,7 @@ if __name__ == "__main__":
     oferta_demanda(wb, salida / "ind3_oferta_vs_consumo.png")
     contratos(wb, salida / "ind4_vencimiento_contratos.png")
     market_share_paises(wb, salida / "ind5_market_share_paises.png")
+    market_share_paises(wb, salida / "ind5b_market_share_paises_vertical.png", vertical=True)
     porter(wb, salida / "ind6_porter.png")
     market_share_chile(wb, salida / "ind7_market_share_chile.png")
     eficiencia(wb, salida / "ind8_ebitda_m2.png")
