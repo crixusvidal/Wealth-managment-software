@@ -408,22 +408,26 @@ def market_share_chile(wb, salida):
 # 8. Eficiencia operativa: EBITDA por m² -------------------------------------------------------
 def eficiencia(wb, salida):
     ws = wb["EF. OPERATIVA (CLPM2)"]
-    filas = [(ws.cell(r, 1).value, ws.cell(r, 2).value * 1e6 / ws.cell(r, 3).value * 4)
+    filas = [(ws.cell(r, 1).value, ws.cell(r, 2).value * 1e6 / ws.cell(r, 3).value)  # trimestral
              for r in range(6, 9)]
+    promedio = sum(f[1] for f in filas) / len(filas)
+    brecha = max(f[1] for f in filas) / min(f[1] for f in filas) - 1
+    assert abs(promedio - ws["D9"].value) < 1e-6 and abs(brecha - ws["D10"].value) < 1e-9
     filas.sort(key=lambda f: f[1])
     fig = figura(7, 2.6, "OPERATING EFFICIENCY: EBITDA PER M² OF GLA, 2Q26",
-                 "2Q26 EBITDA annualized (×4) / GLA at 30-Jun-2026 · CLP",
-                 ["Source: Mallplaza, Cenco Malls and Parque Arauco 2Q26 earnings reports; "
+                 "2Q26 quarterly EBITDA / GLA at 30-Jun-2026 · CLP",
+                 [f"Simple average: CLP {promedio:,.0f}. Max–min gap: {brecha:.1%}.",
+                  "Source: Mallplaza, Cenco Malls and Parque Arauco 2Q26 earnings reports; "
                   "Team analysis."])
     ax = fig.add_axes(caja(fig, [0.17, 0.16, 0.76, 0.82]))
     for y, (emp, v) in enumerate(filas):
         ax.barh(y, v / 1000, height=0.58, color=COLOR[emp])
-        ax.text(v / 1000 + 3, y, f"{v / 1000:,.0f}k", va="center", fontsize=10.5,
+        ax.text(v / 1000 + 0.8, y, f"{v / 1000:,.1f}k", va="center", fontsize=10.5,
                 fontweight="bold", color=NEGRO)
     ax.set_yticks(range(len(filas)), [f[0] for f in filas], fontsize=10, color=NEGRO)
-    ax.set_xlim(0, 270)
+    ax.set_xlim(0, 68)
     ax.xaxis.set_major_formatter(lambda v, _: f"{v:,.0f}k")
-    ax.set_xlabel("EBITDA per m² of GLA, 2Q26 annualized (CLP)", color=TINTA_SECUNDARIA)
+    ax.set_xlabel("EBITDA per m² of GLA, 2Q26 quarterly (CLP)", color=TINTA_SECUNDARIA)
     limpiar(ax, grilla="x")
     guardar(fig, salida)
 

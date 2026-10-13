@@ -10,4 +10,4 @@
 | ind5b_market_share_paises_vertical.png | GLA market share by country, 2Q26 (vertical layout) | Plaza S.A., Institutional Presentation 2Q26, slide 7. |
 | ind6_porter.png | Porter's five forces: shopping centers in Chile, Peru and Colombia | Team analysis (Porter_industria_2Q26). |
 | ind7_market_share_chile.png | Share of Chilean GLA within the trio and trio GLA growth (2Q22 = 100) | 2Q22–2Q26 earnings reports of the three companies; Team analysis. |
-| ind8_ebitda_m2.png | Operating efficiency: EBITDA per m² of GLA, 2Q26 annualized | 2Q26 earnings reports of the three companies; Team analysis. |
+| ind8_ebitda_m2.png | Operating efficiency: EBITDA per m² of GLA, 2Q26 quarterly | 2Q26 earnings reports of the three companies; Team analysis. |
