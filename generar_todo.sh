@@ -36,4 +36,5 @@ node riesgos/documento/pagina_riesgos.js
 node esg/documento/esg.js
 node macro/anexo/anexo_macro.js
 node plantilla_informe/documento/plantilla_informe.js
-python3 informe_final/graficos/maquetar.py   # Word + PDF del informe consolidado (ES y EN), sin títulos huérfanos
+python3 informe_final/graficos/maquetar.py   # Word del informe consolidado (ES y EN)
+python3 informe_final/typst/armar.py         # PDF final: cuerpo en Typst (gráficos al costado) + anexos

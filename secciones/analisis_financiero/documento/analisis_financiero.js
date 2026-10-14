@@ -356,7 +356,7 @@ function documento(lang) {
 }
 
 // Documento de la sección → ../documento · anexo → ../anexo (archivos separados, mismo formato)
-module.exports = { documento, L, figura1, FIG };
+module.exports = { documento, L, figura1, FIG, FA1, FA1_AÑOS, loc };
 
 if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {

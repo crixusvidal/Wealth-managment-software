@@ -58,6 +58,7 @@ const F = require("../../comun/formato");
 F.OPCIONES.filasPorCita = true;
 const C = require("./cuerpo");
 const MEDIR = process.argv.includes("--medir");
+const SOLO = (process.argv.find((a) => a.startsWith("--solo=")) || "").slice(7);
 const S = path.join(__dirname, "..", "..");
 const negocio = require(path.join(S, "negocio/documento/negocio.js"));
 const industria = require(path.join(S, "industria/documento/industria.js"));
@@ -207,19 +208,22 @@ function informe(lang = "es") {
   const cuerpo = C.hijos(plan, posiciones, (fig, fn) => con(fig.clave, fn), finales);
   const anexos = [...d.negocio.sections[1].children, ...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),
     ...corrida("a_fa", d.fa.sections[1]), ...corrida("a_valuacion", d.valuacion.sections[1]), ...corrida("a_macro", d.macro.sections[0])];
+  // Para Typst: solo los anexos o solo la página de Riesgos (renumerados), que se insertan como PDF
+  if (SOLO === "anexos") return new Document({ styles: F.ESTILOS, sections: [seccion({ children: anexos }, NUEVA, { start: 1 }, A)] });
+  if (SOLO === "riesgos") return new Document({ styles: F.ESTILOS, sections: [seccion({ children: d.riesgos.sections[0].children }, NUEVA, { start: 1 }, P)] });
   return new Document({
     styles: F.ESTILOS,
     sections: [seccion({ children: cuerpo }, NUEVA, { start: 1 }, P), seccion({ children: anexos }, NUEVA, { start: 1 }, A)],
   });
 }
 
-module.exports = { informe, MAPAS };
+module.exports = { informe, MAPAS, renumerar, con, RES, ABS, riesgos, negocio, industria, esg, fa, valuacion, macro };
 
 if (require.main === module) (async () => {
   const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
   const langs = args.length ? args : ["es", "en"];
   for (const lang of langs) {
-    const salida = path.join(__dirname, `Mallplaza_Informe_CFA_${lang.toUpperCase()}${MEDIR ? "_medir" : ""}.docx`);
+    const salida = path.join(__dirname, `Mallplaza_Informe_CFA_${lang.toUpperCase()}${MEDIR ? "_medir" : ""}${SOLO ? "_" + SOLO : ""}.docx`);
     fs.writeFileSync(salida, await Packer.toBuffer(informe(lang)));
     console.log(salida);
   }
