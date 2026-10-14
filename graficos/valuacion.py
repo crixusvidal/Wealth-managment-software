@@ -25,7 +25,7 @@ CLARO = "#eef1f6"
 ANCHO = 3550 / 1440          # columna de figuras del informe (pulgadas)
 COMPLETO = 10666 / 1440      # ancho completo (anexo)
 DPI = 400
-ALTOS = {"V9": 2.15, "V1": 1.85, "V2": 1.9, "V3": 2.35, "V4": 2.3, "V5": 1.75, "V6": 1.95, "W1": 1.9}
+ALTOS = {"V7": 2.45, "V9": 2.15, "V1": 2.0, "V2": 1.9, "V3": 2.35, "V4": 2.3, "V5": 1.75, "V6": 1.95, "W1": 1.9}
 
 T = {
     "es": {"cpa": "CLP por acción", "objetivo": "Precio objetivo", "precio": "Precio actual",
@@ -33,8 +33,11 @@ T = {
                   "DCF FCFF (WACC ±100 pb, g 2,5–4,0%)": ("DCF FCFF", "±100 pb · g 2,5–4,0%"),
                   "APV (chequeo)": ("APV", "chequeo"),
                   "Múltiplos EV/EBITDA (100% set común – 100% Chile)": ("EV/EBITDA LTM", "set común – Chile"),
-                  "Múltiplos EV/EBITDA NTM / EV/EBIT LTM": ("NTM · EV/EBIT", "múltiplos alternativos")},
+                  "Múltiplos EV/EBITDA NTM / EV/EBIT LTM": ("NTM · EV/EBIT", "múltiplos alternativos"),
+                  "Rango 52 semanas (intradía, 01-10-25 a 30-09-26)": ("Precio 52 semanas", "oct-25 – sep-26")},
            "real": "Tasa real (UF)",
+           "v7": {"a": "EV/EBITDA LTM (x) vs bono real local a 10 años", "b": "Spread real: cap rate − bono real local (pb)",
+                  "cl": "Chile", "br": "Brasil", "med": "Mediana", "mp": "Mallplaza"},
            "v2": {"Bono en UF 10 años BCCh (real)": "Bono UF 10a (BCCh)",
                   "Bono en pesos 10 años BCCh (nominal)": "Bono en pesos 10a (BCCh)",
                   "Base del modelo: Rf UST + CRP Chile, convertida a CLP": "Rf del modelo (UST + CRP)",
@@ -66,8 +69,11 @@ T = {
                   "DCF FCFF (WACC ±100 pb, g 2,5–4,0%)": ("DCF FCFF", "±100 bp · g 2.5–4.0%"),
                   "APV (chequeo)": ("APV", "cross-check"),
                   "Múltiplos EV/EBITDA (100% set común – 100% Chile)": ("EV/EBITDA LTM", "peer set – Chile"),
-                  "Múltiplos EV/EBITDA NTM / EV/EBIT LTM": ("NTM · EV/EBIT", "alternative multiples")},
+                  "Múltiplos EV/EBITDA NTM / EV/EBIT LTM": ("NTM · EV/EBIT", "alternative multiples"),
+                  "Rango 52 semanas (intradía, 01-10-25 a 30-09-26)": ("52-week price", "Oct-25 – Sep-26")},
            "real": "Real rate (UF)",
+           "v7": {"a": "EV/EBITDA LTM (x) vs local 10Y real bond", "b": "Real spread: cap rate − local real bond (bp)",
+                  "cl": "Chile", "br": "Brazil", "med": "Median", "mp": "Mallplaza"},
            "v2": {"Bono en UF 10 años BCCh (real)": "10Y UF bond (BCCh)",
                   "Bono en pesos 10 años BCCh (nominal)": "10Y peso bond (BCCh)",
                   "Base del modelo: Rf UST + CRP Chile, convertida a CLP": "Model Rf (UST + CRP)",
@@ -125,7 +131,7 @@ def celdas(ws, rango):
 def v1(lang, wb, salida):
     t = T[lang]
     ws = wb["V1_Football"]
-    filas = [f for f in celdas(ws, "A5:D10") if f[1] is not None]      # la fila de 52 semanas está pendiente
+    filas = [f for f in celdas(ws, "A5:D10") if f[1] is not None]      # incluye el rango de 52 semanas
     objetivo, precio = ws["B12"].value, ws["B13"].value
     fig = figura("V1")
     ax = fig.add_axes([0.42, 0.17, 0.55, 0.78])
@@ -133,7 +139,8 @@ def v1(lang, wb, salida):
     for k, (metodo, lo, hi, centro) in enumerate(filas):
         y = n - 1 - k
         dcf, apv = metodo.startswith("DCF"), metodo.startswith("APV")
-        color = ROJO if dcf else (AZUL if apv else CELESTE)
+        semanas = metodo.startswith("Rango 52")
+        color = ROJO if dcf else (AZUL if apv else GRIS if semanas else CELESTE)
         if hi - lo > 1:
             ax.barh(y, hi - lo, left=lo, height=0.55, color=tinte(color, 0.35) if dcf and "50" not in metodo else color,
                     linewidth=0)
@@ -152,17 +159,76 @@ def v1(lang, wb, salida):
                 fontsize=4.1, color=TINTA_SECUNDARIA)
     ax.axvline(objetivo, color=AMARILLO, linewidth=1.1, zorder=2)
     ax.axvline(precio, color=NEGRO, linewidth=0.8, linestyle=(0, (3, 2)), zorder=2)
-    ax.text(objetivo + 30, -0.55, f"{t['objetivo']} {num(objetivo, lang)}", ha="left", va="bottom", fontsize=4.6,
+    ax.text(objetivo - 30, -1.1, f"{t['objetivo']} {num(objetivo, lang)}", ha="right", va="bottom", fontsize=4.6,
             fontweight="bold", color=NEGRO, bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.6})
     ax.text(precio, n - 0.45, f"{t['precio']} {num(precio, lang)}", ha="right", va="bottom", fontsize=4.6,
             fontweight="bold", color=NEGRO, bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.6})
-    ax.set_xlim(900, 3900)
-    ax.set_xticks([1000, 1500, 2000, 2500, 3000, 3500])
-    ax.set_ylim(-0.6, n + 0.1)
+    ax.set_xlim(900, 5100)
+    ax.set_xticks([1000, 2000, 3000, 4000, 5000])
+    ax.set_ylim(-1.2, n + 0.1)
     ax.set_yticks([])
     ax.xaxis.set_major_formatter(lambda x, _: num(x, lang))
     estilo(ax)
     ax.set_xlabel(t["cpa"], fontsize=4.8, color=TINTA_SECUNDARIA, labelpad=2)
+    guardar(fig, salida)
+
+
+# V7 · Múltiplos vs tasa local: la brecha Chile–Brasil es de tasas, no de prima ----------------------
+def v7(lang, wb, salida):
+    t = T[lang]["v7"]
+    ws = wb["V7_Multiplos"]
+    pares = [(ws[f"A{r}"].value, ws[f"B{r}"].value, ws[f"C{r}"].value, ws[f"E{r}"].value, ws[f"F{r}"].value)
+             for r in range(8, 14)]
+    med = {"Chile": (ws["C15"].value, ws["F15"].value), "Brasil": (ws["C16"].value, ws["F16"].value)}
+    corto = {"Mallplaza (precio actual)": "Mallplaza", "Cencosud Shopping": "Cencosud S."}
+    color = {"Chile": ROJO, "Brasil": AMARILLO}
+    fig = figura("V7")
+    # Panel A: múltiplo vs bono real local (etiquetas separadas verticalmente dentro de cada país)
+    ax = fig.add_axes([0.1, 0.6, 0.86, 0.32])
+    for pais in ("Chile", "Brasil"):
+        grupo = sorted([p for p in pares if p[1] == pais], key=lambda p: -p[2])
+        y_prev = None
+        for nombre, _, mult, bono, _ in grupo:
+            mp = nombre.startswith("Mallplaza")
+            ax.scatter(bono * 100, mult, s=16 if mp else 9, marker="D" if mp else "o", zorder=4,
+                       color=AZUL if mp else color[pais], edgecolor="white", linewidth=0.4)
+            y_lab = mult if y_prev is None else min(mult, y_prev - 1.25)
+            y_prev = y_lab
+            ax.text(bono * 100 + 0.3, y_lab, f"{corto.get(nombre, nombre)} {num(mult, lang, 1)}x", fontsize=3.8,
+                    va="center", color=AZUL if mp else NEGRO, fontweight="bold" if mp else "normal")
+    for pais, (m, _) in med.items():
+        x = (0.025 if pais == "Chile" else ws["E6"].value) * 100
+        ax.plot([x - 0.6, x + 0.2], [m, m], color=color[pais], linewidth=0.8, linestyle=(0, (2, 1)))
+        ax.text(x - 0.7, m, f"{t['med']} {num(m, lang, 1)}x", fontsize=3.6, ha="right", va="center",
+                color=TINTA_SECUNDARIA)
+    ax.set_xlim(-3.2, 11)
+    ax.set_ylim(5.5, 20.5)
+    ax.set_xticks([0, 2.5, 5, 7.5, 10])
+    ax.xaxis.set_major_formatter(lambda x, _: num(x, lang, 1) + "%")
+    ax.set_yticks([8, 12, 16, 20])
+    estilo(ax, grilla="y")
+    ax.tick_params(labelsize=4.3)
+    ax.set_title(t["a"], fontsize=4.6, color=TINTA_SECUNDARIA, loc="left", pad=3)
+    # Panel B: spread real (barras horizontales), medianas destacadas
+    ax = fig.add_axes([0.3, 0.04, 0.62, 0.43])
+    filas = [(corto.get(n, n), pais, sp) for n, pais, _, _, sp in pares if pais == "Chile"]
+    filas.append((f"{t['med']} {t['cl']}", "Chile", med["Chile"][1]))
+    filas += [(n, pais, sp) for n, pais, _, _, sp in pares if pais == "Brasil"]
+    filas.append((f"{t['med']} {t['br']}", "Brasil", med["Brasil"][1]))
+    for k, (nombre, pais, sp) in enumerate(filas):
+        y = len(filas) - 1 - k
+        es_med, mp = nombre.startswith(t["med"]), nombre == "Mallplaza"
+        ax.barh(y, sp, height=0.66, color=AZUL if mp else color[pais], alpha=1 if es_med or mp else 0.5, zorder=3)
+        ax.text(sp + 8, y, num(sp, lang), va="center", fontsize=3.9, fontweight="bold" if es_med else "normal",
+                color=NEGRO)
+        ax.text(-12, y, nombre, ha="right", va="center", fontsize=3.9, fontweight="bold" if es_med or mp else "normal",
+                color=AZUL if mp else NEGRO)
+    ax.set_xlim(0, 600)
+    ax.set_ylim(-0.6, len(filas) - 0.4)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    estilo(ax, grilla=None)
+    fig.text(0.1, 0.5, t["b"], fontsize=4.6, color=TINTA_SECUNDARIA, va="center")
     guardar(fig, salida)
 
 
@@ -488,7 +554,7 @@ if __name__ == "__main__":
     for lang in ("es", "en"):
         for nombre, fn in (("V1_football", v1), ("V2_tasas", v2), ("V3_value_driver", v3),
                            ("V4_capital_trabajo", v4), ("V5_cap_rate", v5), ("V6_dcf_inverso", v6),
-                           ("W1_wacc_periodo", w1)):
+                           ("W1_wacc_periodo", w1), ("V7_multiplos", v7)):
             fn(lang, wb, salida / f"{lang}_{nombre}.png")
     exportar_wacc(wb, salida / "datos_wacc.json")
     if len(sys.argv) > 3:   # modelo consolidado v2 para el football field de pares
