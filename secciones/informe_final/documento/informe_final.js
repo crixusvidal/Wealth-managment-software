@@ -40,10 +40,9 @@ docx.TextRun = class extends TextRunOriginal {
 
 // Modo continuo: sin saltos de página forzados ni filas que no puedan partirse entre páginas -----
 const ParagraphOriginal = docx.Paragraph;
-const esTitulo = () => false;   // sin "conservar con el siguiente": en LibreOffice impide partir las filas
 docx.Paragraph = class extends ParagraphOriginal {
   constructor(o) {
-    if (o && typeof o === "object") o = { ...o, pageBreakBefore: false, ...(esTitulo(o) ? { keepNext: true } : {}) };
+    if (o && typeof o === "object") o = { ...o, pageBreakBefore: false, keepNext: false };   // "conservar con el siguiente" impide partir filas en LibreOffice
     super(o);
   }
 };
@@ -51,6 +50,7 @@ const TableRowOriginal = docx.TableRow;
 docx.TableRow = class extends TableRowOriginal {
   constructor(o) { super(o && o.cantSplit ? { ...o, cantSplit: false } : o); }
 };
+const PageBreakOriginal = docx.PageBreak;
 docx.PageBreak = class extends TextRunOriginal { constructor() { super({ text: "" }); } };
 
 const { Document, Packer, SectionType, Paragraph, Table, TableRow, TableCell, WidthType, ShadingType, BorderStyle, VerticalAlign, AlignmentType } = docx;
@@ -150,13 +150,21 @@ function abstract(lang) {
     new Paragraph({ spacing: { after: 160 }, children: [] })];
 }
 
+// Secciones de 2 páginas (FA, Valuación): en el informe corrido sus páginas se unen en una sola fila
+// (texto seguido a la izquierda, figuras seguidas a la derecha), sin el hueco entre la página 1 y la 2.
+function corrido(modulo, lang, fn) {
+  const X = modulo.L[lang], original = X.paginas;
+  X.paginas = [{ texto: original.flatMap((p) => p.texto), figuras: original.flatMap((p) => p.figuras) }, { texto: [], figuras: [] }];
+  try { return fn(); } finally { X.paginas = original; }
+}
+
 function informe(lang = "es") {
   const d = {
     negocio: con("negocio", () => negocio.documento(lang)),
     industria: con("industria", () => industria.documento(lang)),
     esg: con("esg", () => esg.documento(lang)),
-    fa: con("fa", () => fa.documento(lang)),
-    valuacion: con("valuacion", () => valuacion.documento(lang)),
+    fa: con("fa", () => corrido(fa, lang, () => fa.documento(lang))),
+    valuacion: con("valuacion", () => corrido(valuacion, lang, () => valuacion.documento(lang))),
     riesgos: con("riesgos", () => riesgos.documento(Object.values(riesgos.LANG).find((x) => x.archivo.endsWith(`_${lang.toUpperCase()}.docx`)))),
     macro: con("macro", () => macro.documento(lang)),
   };
@@ -170,24 +178,18 @@ function informe(lang = "es") {
   // informe_final/graficos/maquetar.py revisando el PDF); el resto corre seguido.
   const archivoSaltos = path.join(__dirname, `saltos_${lang}.json`);
   const saltos = new Set(fs.existsSync(archivoSaltos) ? JSON.parse(fs.readFileSync(archivoSaltos, "utf8")) : []);
-  const corrida = (clave, s, pie) => saltos.has(clave) ? seccion(s, NUEVA, null, pie) : seccion(conEspacio(s), CONT, null, pie);
+  const corrida = (clave, s) => (saltos.has(clave)
+    ? [new Paragraph({ children: [new PageBreakOriginal()] }), ...s.children] : conEspacio(s).children);
+  // Una sola sección para el cuerpo y otra para los anexos: LibreOffice no parte una tabla que viene justo
+  // después de un salto de sección continuo, así que las secciones del informe se encadenan dentro de una misma sección.
+  const cuerpo = [...abstract(lang), ...d.negocio.sections[0].children,
+    ...corrida("industria", d.industria.sections[0]), ...corrida("esg", d.esg.sections[0]), ...corrida("fa", d.fa.sections[0]),
+    ...corrida("valuacion", d.valuacion.sections[0]), ...corrida("riesgos", d.riesgos.sections[0]), ...corrida("resumen", { children: resumen(lang) })];
+  const anexos = [...d.negocio.sections[1].children, ...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),
+    ...corrida("a_fa", d.fa.sections[1]), ...corrida("a_valuacion", d.valuacion.sections[1]), ...corrida("a_macro", d.macro.sections[0])];
   return new Document({
     styles: F.ESTILOS,
-    sections: [
-      seccion({ ...d.negocio.sections[0], children: [...abstract(lang), ...d.negocio.sections[0].children] }, NUEVA, { start: 1 }, P),
-      corrida("industria", d.industria.sections[0], P),
-      corrida("esg", d.esg.sections[0], P),
-      corrida("fa", d.fa.sections[0], P),
-      corrida("valuacion", d.valuacion.sections[0], P),
-      corrida("riesgos", d.riesgos.sections[0], P),
-      corrida("resumen", { children: resumen(lang) }, P),
-      seccion(d.negocio.sections[1], NUEVA, { start: 1 }, A),
-      corrida("a_industria", d.industria.sections[1], A),
-      corrida("a_esg", d.esg.sections[1], A),
-      corrida("a_fa", d.fa.sections[1], A),
-      corrida("a_valuacion", d.valuacion.sections[1], A),
-      corrida("a_macro", d.macro.sections[0], A),
-    ],
+    sections: [seccion({ children: cuerpo }, NUEVA, { start: 1 }, P), seccion({ children: anexos }, NUEVA, { start: 1 }, A)],
   });
 }
 

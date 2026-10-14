@@ -1,8 +1,9 @@
 """Arma el informe consolidado (ES y EN) en Word y PDF, con las secciones corridas una tras otra
 (cada una empieza a mitad de página, justo después de la anterior, como los anexos).
 
-Revisa el PDF y avisa si el título de una sección quedó solo al pie de una página. Con --saltos, esas
-secciones pasan a empezar en página nueva (informe_final/documento/saltos_<lang>.json); por defecto no.
+Revisa el PDF: si el título de una sección quedó solo al pie de una página, esa sección pasa a empezar en
+la página siguiente (informe_final/documento/saltos_<lang>.json). Con --saltos, también las que quedan con
+menos de 4 líneas debajo del título.
 
 Uso (desde secciones/):
     python informe_final/graficos/maquetar.py [es] [en]
@@ -45,8 +46,9 @@ def huerfanos(pdf):
         lineas = [l for l in lineas if not PIE.match(l) and "CFA Institute Research Challenge" not in l]
         for i, l in enumerate(lineas):
             for clave, rx in TITULOS.items():
-                if re.match(rx, l) and len(lineas) - i - 1 < 4:
-                    out.append(clave)
+                quedan = len(lineas) - i - 1
+                if re.match(rx, l) and quedan < 4:
+                    out.append((clave, quedan))
     return out
 
 
@@ -56,10 +58,14 @@ def main(langs, saltos=False):
         archivo.write_text("[]")
         for vuelta in range(6):
             pdf = armar(lang)
-            nuevos = [k for k in huerfanos(pdf) if k not in json.loads(archivo.read_text())]
-            if nuevos and not saltos:
-                print(lang, "títulos al pie de página (sin salto):", nuevos)
-            if not nuevos or not saltos:
+            ya = json.loads(archivo.read_text())
+            # título solo (sin ninguna línea debajo): siempre pasa a la página siguiente; con --saltos, también
+            # los que quedan con pocas líneas
+            nuevos = [k for k, q in huerfanos(pdf) if k not in ya and (saltos or q < 2)]
+            avisos = [k for k, q in huerfanos(pdf) if k not in ya and k not in nuevos]
+            if avisos:
+                print(lang, "títulos al pie de página con poco texto debajo (sin salto):", avisos)
+            if not nuevos:
                 break
             archivo.write_text(json.dumps(json.loads(archivo.read_text()) + nuevos[:1]))   # de a uno: cada salto mueve lo que sigue
         paginas = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
