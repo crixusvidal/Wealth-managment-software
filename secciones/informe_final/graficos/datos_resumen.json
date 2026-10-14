@@ -1,0 +1,19 @@
+{
+ "precio_objetivo": 2075.726691910319,
+ "precio": 3555,
+ "potencial": -0.4161106351869708,
+ "dcf": 1856.8119971801468,
+ "multiplos": 2951.385470831009,
+ "peso_dcf": 0.8,
+ "acciones_mm": 2190,
+ "capitalizacion_mm": 7785450,
+ "rango_52s": [
+  2470,
+  4700
+ ],
+ "dividendo": 69.4134824442579,
+ "dividend_yield": 0.0195255928113243,
+ "dfn_mm": 1285740,
+ "ebitda_udm_mm": 544935,
+ "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx (Supuestos B8–B13, Precio_Objetivo B12–B17, Deuda D16); Mallplaza_Figuras_Valuacion_recalc.xlsx (V1_Football, rango 52 semanas)"
+}

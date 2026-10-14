@@ -22,11 +22,17 @@ python3 riesgos/graficos/pagina_riesgos.py $FA $V2 $TOR
 python3 esg/graficos/esg.py
 python3 macro/graficos/anexo_macro.py
 python3 plantilla_informe/graficos/figuras_informe.py $FA $V2 $TOR
+python3 informe_final/graficos/datos_resumen.py $V2 $V/Mallplaza_Figuras_Valuacion_recalc.xlsx
 
 echo "== Documentos (Word)"
+# Negocio, Industria y ESG (español) leen el texto de */documento/borrador/texto.json, extraído de los
+# borradores del equipo con comun/borrador_a_json.py y luego corregido solo en datos; no se regenera aquí.
+node negocio/documento/negocio.js
+node industria/documento/industria.js
 node valuacion/documento/valuacion.js
 node analisis_financiero/documento/analisis_financiero.js
 node riesgos/documento/pagina_riesgos.js
 node esg/documento/esg.js
 node macro/anexo/anexo_macro.js
 node plantilla_informe/documento/plantilla_informe.js
+node informe_final/documento/informe_final.js

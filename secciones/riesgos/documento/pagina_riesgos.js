@@ -157,7 +157,7 @@ function documento(L) {
       cel(COL_SEP, [new Paragraph({ children: [] })]),
       cel(COL_FIG, columnaFiguras(L)),
     ] })] });
-  return new Document({
+  return ({
     styles: { default: { document: { run: { font: FUENTE, size: 16 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [{
       properties: { page: { size: { width: 11906, height: 16838 },
@@ -182,10 +182,12 @@ function documento(L) {
   });
 }
 
-(async () => {
+module.exports = { documento, LANG };
+
+if (require.main === module) (async () => {
   for (const L of Object.values(LANG)) {
     const salida = path.join(__dirname, L.archivo);
-    fs.writeFileSync(salida, await Packer.toBuffer(documento(L)));
+    fs.writeFileSync(salida, await Packer.toBuffer(new Document(documento(L))));
     console.log(salida);
   }
 })();

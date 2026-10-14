@@ -289,20 +289,34 @@ function pie(prefijo) {
     run(prefijo, { size: 14, color: GRIS }), new TextRun({ children: [PageNumber.CURRENT], font: FUENTE, size: 14, color: GRIS })] })] });
 }
 
+// Cuerpo en español: texto del borrador del equipo (borrador/CFA_ESG_PLAZA_beta_3.docx → borrador/texto.json,
+// con comun/borrador_a_json.py), sin cambios, en el formato principal y con los gráficos del repo.
+// Inglés: traducción de la versión anterior (seccionInforme) hasta que se traduzca el borrador.
+const BORRADOR = path.join(__dirname, "borrador", "texto.json");
+function cuerpo(lang) {
+  if (lang !== "es" || !fs.existsSync(BORRADOR)) return seccionInforme(lang);
+  const { seccionBorrador } = require("../../comun/formato");
+  const figs = ["E1_scorecard", "E2_metas", "E3_energia_residuos", "E4_social", "E5_gobierno"];
+  const imagenes = Object.fromEntries(figs.map((n, i) => [`image${i + 1}.png`, [path.join(FIG, `es_${n}.png`), ALTO[n.split("_")[0]]]]));
+  return seccionBorrador(JSON.parse(fs.readFileSync(BORRADOR, "utf8")), { imagenes, soloCuerpo: true }).cuerpo;
+}
+
 function documento(lang) {
   const X = L[lang];
   const pagina = { size: { width: 11906, height: 16838 }, margin: { top: 1000, right: 620, bottom: 900, left: 620, header: 450, footer: 400 } };
   return ({
     styles: { default: { document: { run: { font: FUENTE, size: 16 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [
-      { properties: { page: pagina }, headers: { default: encabezado() }, footers: { default: pie(X.pag) }, children: seccionInforme(lang) },
+      { properties: { page: pagina }, headers: { default: encabezado() }, footers: { default: pie(X.pag) }, children: cuerpo(lang) },
       { properties: { page: { ...pagina, pageNumbers: { start: 1 } } }, headers: { default: encabezado() }, footers: { default: pie(X.pagAnexo) }, children: anexo(lang) },
     ],
   });
 }
 
 // Documento de la sección → ../documento · anexo → ../anexo (archivos separados, mismo formato)
-(async () => {
+module.exports = { documento, L };
+
+if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {
     const d = documento(lang);
     const salidas = [[0, path.join(__dirname, L[lang].archivo)],

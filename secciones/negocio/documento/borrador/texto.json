@@ -1,0 +1,149 @@
+{
+ "origen": "Business_Description_BORRADOR_FINAL.docx",
+ "bloques": [
+  {
+   "tipo": "titulo",
+   "texto": "DESCRIPCIÓN DEL NEGOCIO"
+  },
+  {
+   "tipo": "pagina",
+   "filas": [
+    {
+     "izq": [
+      {
+       "tipo": "h1",
+       "texto": "DE UN MALL EN LA FLORIDA A 37 CENTROS URBANOS EN LA REGIÓN ANDINA"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Mallplaza nació en 1990 con Mallplaza Vespucio, construido desde cero en La Florida, y 35 años después es uno de los principales actores del retail real estate de la Región Andina, con 37 centros urbanos y 2,36 millones de m² de GLA en Chile, Perú y Colombia (Figura 1). Llegó a Perú en 2007 con Mallplaza Trujillo, abrió su capital en la Bolsa de Santiago en 2018 y hoy su controlador es Falabella S.A., con 53,1% de la propiedad a diciembre de 2025. Su negocio, sin embargo, sigue siendo el mismo que en su origen, arrendar m². El arriendo explica 81,4% de los ingresos de los últimos doce meses (UDM) y el resto proviene de estacionamientos, servicios comerciales y publicidad. Como el 93% de ese arriendo es fijo y en Chile se reajusta en UF, los ingresos son muy predecibles, y la empresa además logra hacerlos crecer en términos reales. En Chile el arriendo de mismos contratos (SSR) aumentó 6,5% UDM frente a un IPC de 4,3%, sin que sus locatarios lo resientan, pues el arriendo equivale a apenas 9,9% de sus ventas (costo de ocupación), casi lo mismo que un año antes (9,7%). Tampoco se trata de un buen año aislado, ya que entre 1T23 y 2T26 el SSR de Chile promedió 6,9% contra una inflación de 4,8%.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "UN MIX DE LOCATARIOS QUE SE REINVENTA Y MÁRGENES ALTOS POR DISEÑO"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Ese poder de precio descansa en un mix de locatarios que la empresa ha sabido reinventar. Las tiendas por departamento, que en 2020 ocupaban 26,7% del GLA, bajaron a 19,0% en 2T26, luego de que Mallplaza reconvirtiera desde 2019 cerca de 146.000 m² de grandes tiendas hacia marcas como IKEA, H&M y Decathlon (Anexo B). Hoy el 32,2% del GLA se destina a comercio esencial y servicios de tráfico diario, como supermercados, mejoramiento del hogar, servicios públicos y salud, que generan visitas de alta frecuencia, y otro 21,5% a retail de especialidad. Ningún cliente domina los ingresos, ya que los cinco mayores locatarios suman 18% y las empresas relacionadas, 15,7%. A esto se suma una estructura de costos liviana, con un costo de ventas de 6,2% de los ingresos y gastos de administración de 13,9%, lo que deja un margen EBITDA de 80,5% UDM.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "EL VALOR SE CONCENTRA EN 10 ACTIVOS TIER A"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "La historia de crecimiento se escribe en sus mejores activos. Diez centros, siete en Chile, dos en Colombia y uno en Perú, son Tier A, y con 46,4% del GLA generan más del 60% del EBITDA (Anexo A). Hacia ellos apunta la inversión, pues las ampliaciones en construcción de Trébol, Oeste, Norte, Trujillo y La Serena buscan llevar los activos Tier A a más del 70% del GLA.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     "der": [
+      {
+       "tipo": "caption",
+       "n": "Figura 1:",
+       "texto": "GLA por país (2T26) e ingresos por fuente (UDM a jun-2026)"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image1.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A., Release de Resultados 2Q26 (p.19) y Presentación Institucional 2Q26 (p.16).",
+         false,
+         true
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "ANEXOS: DESCRIPCIÓN DEL NEGOCIO"
+  },
+  {
+   "tipo": "figuras",
+   "filas": [
+    [
+     [
+      {
+       "tipo": "caption",
+       "n": "Anexo A:",
+       "texto": "Activos Tier A por GLA, 2T26 (miles de m²)"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image2.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A., Presentación Institucional 2Q26 (p.12). Tier A = 46,4% del GLA total.",
+         false,
+         true
+        ]
+       ]
+      }
+     ],
+     [
+      {
+       "tipo": "caption",
+       "n": "Anexo B:",
+       "texto": "Tiendas por departamento, % del GLA total"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image3.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A., Presentación Institucional 2Q26 (p.17).",
+         false,
+         true
+        ]
+       ]
+      }
+     ]
+    ]
+   ]
+  }
+ ]
+}

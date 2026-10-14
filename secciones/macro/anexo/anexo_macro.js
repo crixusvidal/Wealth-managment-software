@@ -244,7 +244,7 @@ function documento(lang) {
       border: { left: { style: BorderStyle.SINGLE, size: 24, color: ROJO, space: 6 } },
       indent: { left: 120, right: 120 }, children: rico(X.cierre, { size: 16, boldColor: ROJO }) }),
   ];
-  return new Document({
+  return ({
     styles: { default: { document: { run: { font: FUENTE, size: 15 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [{
       properties: { page: { size: { width: 11906, height: 16838 },
@@ -259,10 +259,12 @@ function documento(lang) {
   });
 }
 
-(async () => {
+module.exports = { documento, L };
+
+if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {
     const salida = path.join(__dirname, L[lang].archivo);
-    fs.writeFileSync(salida, await Packer.toBuffer(documento(lang)));
+    fs.writeFileSync(salida, await Packer.toBuffer(new Document(documento(lang))));
     console.log(salida);
   }
 })();

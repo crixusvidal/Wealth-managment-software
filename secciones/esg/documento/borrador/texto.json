@@ -1,0 +1,679 @@
+{
+ "origen": "CFA_ESG_PLAZA_beta_3.docx",
+ "bloques": [
+  {
+   "tipo": "titulo",
+   "texto": "ENVIROMENTAL, SOCIAL AND GOVERNANCE (ESG)"
+  },
+  {
+   "tipo": "pagina",
+   "filas": [
+    {
+     "izq": [
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "El enfoque ESG de PLAZA es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su modelo de negocios respetando los parámetros ESG y así contribuir a un desarrollo sostenible, lo que le da oportunidad de optar a beneficios financieros externos y de su propia operación. Respecto al cumplimiento de dichos parámetros, Bloomberg califica a la empresa con 3.39 puntos, lo que está por debajo de la media (5-6 pts) de la industria a nivel global y de su competencia directa en Chile (figura E1), pero esto se contra resta con el perfil “verde” de la empresa a nivel local, ya que esta figura como una de las principales REM a nivel regional. ",
+         false,
+         false
+        ],
+        [
+         "Potential financial benefits:",
+         true,
+         false
+        ],
+        [
+         " En cuanto a los beneficios propios de la operación, la implementación de un sistema de gestión de la energía (SGE) certificado por la ISO 50.001, se traduce en un mejor desempeño energético, por ende, en una reducción de costos operativos. Las oportunidades de optar a beneficios externos locales van ligadas a la imagen ESG de la empresa, en Chile existe la ley de I+D (CORFO) dónde PLAZA puede alcanzar hasta un 55% de rebaja de impuestos de 1ª categoría; Perú reconoce a la empresa con 2 estrellas de 4 en “Huella de Carbono Perú”, lo que aporta a la imagen de la empresa para obtener más fácilmente permisos y licencias dentro del país, y Colombia tiene la ley 2.099 de 2021, que permite obtener descuentos aplicables a la renta por inversiones en control, conservación y mejoramiento del medio ambiente.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "ENVIROMENTAL"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "El enfoque de PLAZA es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del desempeño ambiental, para esto han fijado tres focos de acción estratégica sobre los parámetros ESG, los cuales son: Eficiencia energética e hídrica, huella de carbono y gestión de residuos. El principal objetivo de PLAZA es alcanzar la carbono neutralidad, estableciendo una proyección de ser Net Zero en emisiones de directas e indirectas para 2035 (65.6% succes rate 2025). ",
+         false,
+         false
+        ],
+        [
+         "Sustentability índices:",
+         true,
+         false
+        ],
+        [
+         " La compañía está presente en DJSI Chile, DJSI MILA y es la única empresa REM de Sudamérica en ser parte del MSCI ESG, con una clasificación de “BBB”, lo que le da exposición a ETF’s, por otra parte, tiene los siguientes reconocimientos: S&P Sustentability Yearbook ; Morningstar Sustainalytics le da una calificación de 14.4 de riesgo y Huella de Carbono Perú (2/4 estrellas), lo que aporta a su imagen ESG. ",
+         false,
+         false
+        ],
+        [
+         "Energy:",
+         true,
+         false
+        ],
+        [
+         " PLAZA se ha propuesto disminuir en un 22% la intensidad energética del gasto común para el 2035 (35.5% succes rate 2025; figura E2). La meta propuesta de eficiencia eléctrica es que el 100% sea de energías renovables en 2026 (89.3% succes rate). En 2025 la proporción anual fue 0.16 MWh/m2 (Energía/GLA), siendo 0.14 renovable y 0.014 no renovable) (figura E3).",
+         false,
+         false
+        ],
+        [
+         " Water:",
+         true,
+         false
+        ],
+        [
+         " Fijó el objetivo en disminuir en un 30% el consumo directo de agua para 2025, lo que se logró en un 100,9% esto se ve influenciado por sus certificaciones LEED y EDGGE. En 2025 la proporción anual fue 0.77 m3/m2 (Agua/GLA) y 0.66 m3/m2 mensual en diciembre. ",
+         false,
+         false
+        ],
+        [
+         "HCFC:",
+         true,
+         false
+        ],
+        [
+         " Estableció el objetivo de eliminar el 100% del uso de HCFC para 2030 (14.9% succes rate 2025), esto es vital para la gestión de emisiones GEI, dónde Bloomberg reconoce a PLAZA como Líder de la industria global. Waste: PLAZA propuso un 60% de valorización de residuos generados el 2025 (94.8% succes rate; figura E3 y Anexo [Y], figura S4), además de buscar desviar el 75% de residuos sólidos de los vertederos para el 2027. Informa haber eliminado el 97% de los plásticos de un solo uso de la operación. ",
+         false,
+         false
+        ],
+        [
+         "Climate management: ",
+         true,
+         false
+        ],
+        [
+         "PLAZA adopta las recomendaciones TCFD para integrar los riesgos físicos y de transición, acompañado de un Due Diligence ambiental en adquisiciones de activos, esto bajo el programa de cumplimiento ambiental alineado con la ISO 14.001 y monitoreado por el comité de sustentabilidad.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "SOCIAL"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo, como un principio de creación de valor compartido situando a las personas de sus grupos de interés en el centro de su estrategia alineado con la ISO 45.001 y las directrices de la OIT, incorporando en 2025 el programa de detección y respuesta ante riesgos de su política de derechos humanos, de esta forma PLAZA gestiona sus stakeholders asegurando una vinculación transparente, utilizando mecanismos como diálogos comunitarios y evaluaciones de materialidad (Anexo [Y], figura S3), estando alerta a cualquier incidencia social a través de su canal de integridad, además de ser reconocido por CADEM en el puesto 31 de 385 “Marcas Ciudadanas”, siendo ganadora de la categoría “Centros Comerciales” (2026). Respecto a los empleados, estos son capacitados e incluso tienen disposición de programas específicos para quienes están por jubilarse (Anexo [Y], sección 5), además de evaluar a sus proveedores con criterios de sostenibilidad (55.3% de los proveedores regionales y 38,4% de los extranjeros). PLAZA gestiona la relación con sus clientes (arrendatarios) a través de un modelo de relacionamiento enfocado en la propuesta de valor y experiencia, evaluando la satisfacción de estos con la medición NPS, donde en 2025 aumentó a 13% (figura E4). Para gestionar emergencias, cada centro cuenta con manuales de emergencias adaptados a los contextos geográficos locales, ejecutando simulacros para prevenir y educar a la comunidad (en 2025 se ejecutaron 52 simulacros) y en cuanto a la privacidad, PLAZA implemento la ISO/IEC 27.001, asegurando la confidencialidad, integridad y disponibilidad de la información ante riesgos cibernéticos.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "En materia de diversidad, las mujeres representan el 53.2% de la fuerza laboral total, donde ocupan el 42% de los puestos directivos (figura E4) y hay una brecha salarial entre hombres y mujeres con Media de 28% a nivel regional. La meta al 2028 es que el 60% de los establecimientos estén certificados como espacios inclusivos, además PLAZA obtuvo “Sello Mayor”, distinción que certifica la adaptación física y operacional para las personas mayores.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     "der": [
+      {
+       "tipo": "caption",
+       "n": "Figura E1:",
+       "texto": "Puntaje ESG de Bloomberg y ratings externos."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image1.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: Bloomberg (puntaje ESG); MSCI, Morningstar Sustainalytics, S&P Global, Huella Perú; Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figura E2:",
+       "texto": "Metas ambientales: avance a 2025."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image2.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figura E3:",
+       "texto": "Energía renovable y valorización de residuos, 2025."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image3.png"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Valorización: porcentaje sobre los residuos no peligrosos; el desglose suma 100% de lo valorizado. Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figura E4:",
+       "texto": "Indicadores sociales."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image4.png"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "NPS = % de promotores (notas 9–10) menos % de detractores (0–6). Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "pagina",
+   "filas": [
+    {
+     "izq": [
+      {
+       "tipo": "h1",
+       "texto": "GOVERNANCE"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "El gobierno corporativo se rige bajo los principios del G20 y de la OCDE, alineado con la NCG 461 de la CMF, todo esto busca una gestión transparente con control de riesgos y una estructura sólida para dar seguimiento a la estrategia corporativa y compromisos ESG. ",
+         false,
+         false
+        ],
+        [
+         "Structure of the board of directors and committees:",
+         true,
+         false
+        ],
+        [
+         " En 2025 el Directorio compuesto por 9 miembros (sólo uno es catalogado como independiente; figura E5 y Anexo [Y], figura S2) es el responsable de definir objetivos, estrategias y políticas de PLAZA, mientras que el comité de directores (compuesto por 3 integrantes) busca revisar los balances y estados financieros, mitigando así los riesgos de agencia. Ambos órganos en conjunto supervisan la gestión de riesgos dirigida por el comité del equipo ejecutivo y el gerente general. En el último semestre de 2025 el gerente general Fernando de Peña Iver presentó su renuncia, pactando su efectividad al terminar el año, por lo que en 2026 asumió el cargo Pablo Pulido Sierra. ",
+         false,
+         false
+        ],
+        [
+         "Shareholders: ",
+         true,
+         false
+        ],
+        [
+         "PLAZA tiene un modelo de control concentrado, donde es controlado por Falabella S.A. medio de su filial Desarrollos Inmobiliarios SpA (53,05% de las acciones; Anexo [Y], figura S1), los minoritarios que tengan el 1% tienen derecho a proponer candidatos de director, los accionistas son el órgano superior encargado de designar al directorio, auditores externos y aprobar políticas de dividendos. ",
+         false,
+         false
+        ],
+        [
+         "Ethics, audits and controls:",
+         true,
+         false
+        ],
+        [
+         " El marco ético está respaldado por el código de integridad y el modelo de prevención del delito, para así construir una guía de acción de la organización, además PLAZA opera la plataforma Autocompliance para el registro de reuniones con funcionarios públicos y la gestión de regalos e invitaciones, junto con un canal de integridad confidencial para el reporte de irregularidades sin riesgo para el emisor. Bajo supervisión del comité de directores se establece un modelo de control, realizando una auditoría interna reportada al comité mensualmente que monitorea las acciones correctivas, en paralelo el comité debe designar a auditores externos y agencias clasificadoras de riesgo para que analicen la compañía, además de auditar los estados financieros con auditores independientes. En cuanto a sanciones a nivel regional 2025, PLAZA no tiene sanciones a la libre competencia ni de corrupción, pero tiene 27 sanciones a los derechos de los clientes/consumidores, 2 a los derechos de los trabajadores, 1 a la superintendencia medioambiental y 8 de acoso laboral/sexual (Anexo [Y], sección 3).",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     "der": [
+      {
+       "tipo": "caption",
+       "n": "Figura E5:",
+       "texto": "Incentivos ESG y composición del Directorio."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image5.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "ANEXO [Y]: GOBIERNO CORPORATIVO Y SOSTENIBILIDAD"
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "Información de respaldo de la sección ESG: estructura de propiedad, Directorio, cumplimiento, modelo de relacionamiento con grupos de interés, cultura organizacional y residuos. Fuente principal: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "1. ESTRUCTURA DE PROPIEDAD (31-12-2025)"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S1:",
+   "texto": "Participación por tipo de accionista"
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025 (NCG 461 2.3.3). No hay ADRs ni certificados emitidos en el extranjero.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Diez mayores accionistas",
+     "Acciones",
+     "% de acciones"
+    ],
+    [
+     "Desarrollos Inmobiliarios SpA (Falabella)",
+     "1.161.849.244",
+     "53,05%"
+    ],
+    [
+     "Inversiones Avenida Borgoño Limitada",
+     "197.439.955",
+     "9,02%"
+    ],
+    [
+     "Banchile Corredores de Bolsa S.A.",
+     "59.447.149",
+     "2,71%"
+    ],
+    [
+     "BCI Corredor de Bolsa S.A.",
+     "53.553.765",
+     "2,45%"
+    ],
+    [
+     "AFP Habitat S.A. para Fondo de Pensión C",
+     "50.733.976",
+     "2,32%"
+    ],
+    [
+     "Bolsa de Comercio de Santiago, Bolsa de Valores",
+     "41.532.310",
+     "1,90%"
+    ],
+    [
+     "AFP Provida S.A. para Fondo de Pensión C",
+     "37.746.440",
+     "1,72%"
+    ],
+    [
+     "Banco Santander por cuenta de inversión extranjera",
+     "35.594.345",
+     "1,63%"
+    ],
+    [
+     "AFP Capital S.A. Fondo de Pensión tipo C",
+     "34.539.038",
+     "1,58%"
+    ],
+    [
+     "AFP Habitat S.A. Fondo de Pensión tipo B",
+     "30.039.097",
+     "1,37%"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ]
+   ],
+   "anchos": [
+    6266,
+    2200,
+    2200
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "2. DIRECTORIO (ELEGIDO EL 22-04-2025)"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S2:",
+   "texto": "Miembros del Directorio (rojo: director independiente; azul: presidente)"
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "9 miembros titulares, sin suplentes; un director independiente. Cada director tiene como máximo cuatro cargos en otras sociedades que cotizan en bolsa. Tomás Müller, Manuela Sánchez y Juan Pablo Montero fueron directores hasta el 22-04-2025. Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "3. ÉTICA Y CUMPLIMIENTO, 2025"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Materia",
+     "Casos"
+    ],
+    [
+     "Incumplimientos de la legislación y normativas",
+     "0"
+    ],
+    [
+     "Corrupción",
+     "0"
+    ],
+    [
+     "Incumplimientos de derechos de los clientes (Ley 19.496 de Protección de los Derechos del Consumidor)",
+     "27"
+    ],
+    [
+     "Incumplimientos de derechos de los trabajadores",
+     "2"
+    ],
+    [
+     "Procedimientos de la Superintendencia del Medio Ambiente",
+     "1"
+    ],
+    [
+     "Denuncias de acoso laboral, sexual y de violencia en el trabajo",
+     "8"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     true
+    ],
+    [
+     true,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ]
+   ],
+   "anchos": [
+    8666,
+    2000
+   ]
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "4. MODELO DE RELACIONAMIENTO CON GRUPOS DE INTERÉS"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S3:",
+   "texto": "Proceso de implementación del modelo de relacionamiento"
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "5. CULTURA ORGANIZACIONAL: ENCUESTA DE CULTURA 2025"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "75%\nEngagement\n−2 pp vs 2024 · meta 2025: 80%",
+     "",
+     "37\neNPS\n−10 vs 2024",
+     "",
+     "88%\nLiderazgo\n+2 pp vs 2024",
+     "",
+     "93%\nParticipación\n+3 pp vs 2024"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ]
+   ],
+   "anchos": [
+    2576,
+    120,
+    2576,
+    120,
+    2576,
+    120,
+    2578
+   ]
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "El liderazgo (88%) se consolida como el principal activo para apalancar la estrategia. Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "6. RESIDUOS, 2025"
+  },
+  {
+   "tipo": "figuras",
+   "filas": [
+    [
+     [
+      {
+       "tipo": "caption",
+       "n": "Figura S4:",
+       "texto": "Generación de residuos por país"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image9.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     [
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "32.424,86 toneladas",
+         true,
+         false
+        ],
+        [
+         " de residuos a nivel regional: 76% en Chile, 16% en Colombia y 7% en Perú.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "46,2% valorizado:",
+         true,
+         false
+        ],
+        [
+         " 14.987,57 t de residuos no peligrosos se destinaron a valorización energética con biogás (40,4%), reciclaje (36,1%) y compostaje (23,5%); el resto se destinó a eliminación, principalmente rellenos sanitarios.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Residuos peligrosos:",
+         true,
+         false
+        ],
+        [
+         " 9,03 t, una cifra marginal por la naturaleza de la operación.",
+         false,
+         false
+        ]
+       ]
+      }
+     ]
+    ]
+   ]
+  }
+ ]
+}

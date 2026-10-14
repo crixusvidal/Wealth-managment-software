@@ -1,0 +1,67 @@
+{
+ "correcciones": [
+  {
+   "seccion": "industria",
+   "viejo": "coherente con márgenes EBITDA que van de 78% a 90%",
+   "nuevo": "coherente con márgenes EBITDA que van de 71% a 90%",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!Peers_inputs!F33 = 0,7093 (Parque Arauco 2025: EBITDA 272.233 / ingresos 383.793); Mallplaza_Valoracion_Consolidada_v2.xlsx!Datos_BBG!G14/H14 = 294.411 / 416.367 = 70,7% (PA LTM); Cencosud Peers_inputs!F20 = 0,901; Mallplaza DCF_Valuation!H17 = 80,5%",
+   "motivo": "El margen EBITDA más bajo del trío es el de Parque Arauco (~71% en 2025 y UDM), no 78%; el techo de 90% (Cencosud) sí coincide."
+  },
+  {
+   "seccion": "industria",
+   "viejo": "Participaciones estables y márgenes de 78-90%",
+   "nuevo": "Participaciones estables y márgenes de 71-90%",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!Peers_inputs!F33 = 0,7093 (PA 2025); v2!Datos_BBG!H14/G14 = 70,7% (PA LTM); Peers_inputs!F20 = 0,901 (Cencosud)",
+   "motivo": "Misma cifra en el Anexo D (Rivalidad): el piso del rango es el margen de Parque Arauco, ~71% según el modelo."
+  }
+ ],
+ "no_verificables": [
+  {"seccion": "negocio", "dato": "37 centros urbanos; fundación 1990; Perú 2007; IPO 2018", "nota": "Memoria/presentación institucional; no está en los modelos."},
+  {"seccion": "negocio", "dato": "93% del arriendo es fijo", "nota": "Release/presentación 2Q26; ningún modelo lo contiene (coincide con Industria y Valuación)."},
+  {"seccion": "negocio", "dato": "SSR Chile 6,5% UDM vs IPC 4,3%; promedio 1T23–2T26 6,9% vs 4,8%", "nota": "No está en los modelos. El tornado de Riesgos usa SSR consolidado 2Q26 de 5,4% y FA cita renta en mismas tiendas +5,5% (1S26): perímetros distintos, conviene rotular cada uno."},
+  {"seccion": "negocio", "dato": "Costo de ocupación 9,9% (9,7% un año antes)", "nota": "No verificable; el modelo de tornado (Supuestos!D10) trae 9,6% consolidado 2Q26 (renta + gastos comunes). Si el 9,9% es Chile, rotularlo."},
+  {"seccion": "negocio", "dato": "146.000 m² reconvertidos; 32,2% comercio esencial; 21,5% retail de especialidad; top 5 = 18%; relacionadas 15,7%; costo de ventas 6,2%; GAV 13,9%; Tier A >60% del EBITDA; Tier A >70% del GLA tras ampliaciones", "nota": "Fuentes de presentación/release; no están en los modelos. Tier A = 46,4% sí cuadra (suma de Graf 2 = 1.095,1 mil m² / 2.360.135)."},
+  {"seccion": "industria", "dato": "Bancos de terrenos 618.200 m² (Mallplaza) y 640.136 m² (Cenco); QINTO 30.000 m²", "nota": "Reportes de las empresas; no están en Excel_DATA_INDUSTRY."},
+  {"seccion": "industria", "dato": "Ventas reales 2T26: trío −2,5%, Mallplaza +1,0%, PA −1,7%, Cenco −5,9%", "nota": "No están en el modelo de Industria."},
+  {"seccion": "industria", "dato": "Visitas 52,7 MM vs 32,5 MM; venta mensual por m² CLP 289.788 (+5,8%); visitas +4,4% Chile, +1,3% Perú, +2,5% Colombia; SSS Perú 7,0% y Colombia 9,0%", "nota": "Release 2Q26; no están en los modelos."},
+  {"seccion": "industria", "dato": "219.900 m² orgánicos en Chile 2026–2028", "nota": "Consistente con OFERTA VS DEMANDA ESPERADA!B5 (6,687% acumulado sobre ~3,29 MM m²), pero el desglose por operador en Chile no está explícito en el modelo."},
+  {"seccion": "esg", "dato": "Metas ambientales (Net Zero 2035, 65,6%; −22% intensidad energética, 35,5%; 100% renovable 2026, 89,3%; agua 100,9%; HCFC 14,9%; residuos 94,8%), MSCI BBB, Sustainalytics 14,4, CADEM 31/385, mujeres 53,2% / 42%, brecha 28%, NPS 13%, 52 simulacros, encuesta de cultura, residuos 32.424,86 t", "nota": "Memoria 2025; el Excel ESG solo contiene el puntaje Bloomberg (3,39) y las sanciones (0/27/2/1/8/0), que coinciden con el texto."},
+  {"seccion": "esg", "dato": "Participación de Falabella 53,05% y tabla de 10 mayores accionistas", "nota": "Memoria 2025; no está en los modelos. Negocio usa 53,1% (redondeo de 53,05%, aceptable)."},
+  {"seccion": "analisis_financiero", "dato": "\"Cerca de dos tercios del alza de 29% en Chile vino de una menor tasa de descuento\"", "nota": "El 29% no se puede reconstruir: las propiedades de inversión de Chile suben 31,6% en 2025 en Inputs (C120→C121), incluidas adiciones; la revalorización de Chile no está separada en el modelo."},
+  {"seccion": "analisis_financiero", "dato": "Margen de segmento Perú 83%, Chile 80%, Colombia 73%; Chile +2,4 pp por recuperación de gastos comunes", "nota": "Forecast!J101–J103 solo trae UDM 2T26 (Chile 80,4%, Perú 83,5%, Colombia 75,1%) y 2024 (79,5%, 78,9% pro forma, 67,7%); no hay margen 2025 por segmento."},
+  {"seccion": "analisis_financiero", "dato": "GAV +18,1%, remuneraciones +18,9%, incobrables 0,64% vs 1,22%, impuesto al patrimonio Colombia CLP 1,7 mil MM; EBITDA 1S26 +7,4%", "nota": "No están en los modelos (EBITDA 1S25 no está en Inputs)."},
+  {"seccion": "analisis_financiero", "dato": "Conversión 98,7% del EBITDA antes de impuestos; impuesto pagado 15% del resultado operacional; flujo operativo 1S26 +38,6%, 59% cobranzas de diciembre", "nota": "Impuestos pagados y flujo 1S25 no están en el modelo (solo la brecha EBITDA − flujo operativo en v2 Capital_Trabajo)."},
+  {"seccion": "analisis_financiero", "dato": "Compromisos de inversión CLP 78 mil MM (jun-26) vs 18 mil MM (dic-25); capex en propiedades 1S26 CLP 81 mil MM (+176%)", "nota": "Inputs!C55 trae capex total 1S26 de 84.241 (coincide con 84,2 del texto); el desglose de 81 mil MM no está. El modelo de tornado (Variables Excluidas!C8) cita 68.507 MM para 1H26: contradicción entre modelos."},
+  {"seccion": "analisis_financiero", "dato": "Deuda bruta 79% UF / 14% PEN / 7% COP; 95% largo plazo; duración 6,6 años; costo nominal ~7% en 2025; rating AAA Feller Rate (25-sep-26)", "nota": "79% UF sí está (v2 Supuestos!B47); el resto viene de EEFF/Feller y no está en los modelos."},
+  {"seccion": "analisis_financiero", "dato": "Crecimiento real que la compañía supone para Chile en su tasación: 0,4–0,9%", "nota": "El modelo cita la Nota 11 de jun-25 con rango Chile 0,1%–1,1% (Forecast!J56; DCF_Valuation!P37). Si el 0,4–0,9% es de la Nota 11 de jun-26, citarlo; si no, contradice al modelo."},
+  {"seccion": "analisis_financiero", "dato": "ROIC 2025 de 7,3% (y 6,5% / 6,6% en Anexo 3); días de cobro, razón corriente", "nota": "El ROIC no se calcula en los Excel; razón corriente 2,50x, caja/pasivos 1,71x y días de cobro 66→50 solo están en la tabla A3 del propio .js."},
+  {"seccion": "valuacion", "dato": "DCF con la tasa de los tasadores CLP 2.660; escenarios bear 1.712 / bull 2.595; DCF al 30-sep ~2.118; Kd 4,33% → WACC +12 pb y PO 2.042; impuesto 23% → +3,9%", "nota": "Salen de réplicas del DCF documentadas en narrativa_y_coherencia.md; no hay celda en v2 ni en Figuras_Valuacion."},
+  {"seccion": "valuacion", "dato": "Fibra Danhos debe repartir el 95% de su resultado fiscal", "nota": "Régimen FIBRA; no está en los modelos."},
+  {"seccion": "macro", "dato": "UST 10Y 5,22% el 8-oct-26 \"máximo en 24 años (desde 2002)\"; spread Francia–Alemania 117 pb al 30-sep y ~150 pb en octubre", "nota": "Datos diarios no están en macro_2022_2026.xlsx (solo promedios mensuales). Ver inconsistencias: la nota de Tasas10Y!G59 cita 5,26% el 29-sep."},
+  {"seccion": "macro", "dato": "UF +3% = −CLP 38.691 MM de utilidad (Fig. 26)", "nota": "Viene del cálculo de Riesgos (Nota 26); no hay celda en los modelos (v2 Deuda!E13 da 38.694 de reajuste UF 2028, un concepto distinto)."}
+ ],
+ "inconsistencias_sin_resolver": [
+  {"secciones": "industria (cuerpo y Anexo D) vs Excel_DATA_INDUSTRY!PORTER y Figura 4", "detalle": "El texto da locatarios = 1 y sustitutos = 2 (Anexo D: Chile 1/1/1, sustitutos 2/2/2, nota final ponderada por GLA). El modelo trae notas por país con medios puntos (nuevos entrantes Chile 1,5; locatarios Chile 1,5, Perú 2, Col 2; sustitutos 2,5 en los tres) y industria.py dibuja la Figura 4 con el promedio simple redondeado: locatarios 2 y sustitutos 3. El texto cita otro archivo (Porter_industria_2Q26.xlsx) que no está en el repo. Hay que decidir qué notas valen: si vale el modelo, cambian notas, metodología (simple vs ponderado por GLA) y la frase del límite de 1,5, lo que va más allá de un cambio de dato."},
+  {"secciones": "valuacion / industria / riesgos (RR2) vs analisis_financiero y modelo v2", "detalle": "Pipeline: Industria y Valuación hablan de USD 613 MM y 170.200 m² (v2 Supuestos!B69/B70, Excel Industria PIPELINE!F12), cifra que incluye 46.500 m² y USD 134 MM de 'Otros proyectos Chile' sin fecha. El forecast de v2 y de FA solo proyecta 123.700 m² con fecha (8.900 / 72.950 / 41.850) y USD 445 MM remanentes (Forecast!C41:F42 y J124:J134); 613/170.200 solo sirve para el costo por m². Valuación dice 'Proyectamos … el pipeline anunciado (USD 613 MM y 170.200 m²)', que no es lo que proyecta el modelo. Industria fecha los 46.500 m² en 2028 (y por eso habla de 114.400 m² en Chile al 2028); FA y v2 los tratan como sin fecha."},
+  {"secciones": "analisis_financiero (texto)", "detalle": "\"Sin estos dos últimos, el margen de 1S26 sería 80,4%, 1,1 pp más\": con un margen 1S26 de 79,7% (DCF_Valuation!I17 = 79,69%), 80,4% es +0,7 pp; 79,7 + 1,1 = 80,8%. Uno de los dos números está mal, y el modelo no trae el ajuste para decidir cuál."},
+  {"secciones": "valuacion y riesgos (OR1) vs analisis_financiero", "detalle": "Margen 'mínimo/máximo histórico' de 75,8% / 81,3% (bear/bull de Valuación, OR1): son trimestrales (Tornado!Supuestos!E11/F11: 4Q23 y 3Q25). La serie anual del modelo va de 76,2% (2022) a 80,5% (2025), que es la que usa FA. El dato está en el modelo; falta el rótulo 'trimestral' (no es un cambio de dato). Además, la base del tornado es 80,6% (2Q26) y no el 80,5% UDM de v2."},
+  {"secciones": "valuacion vs macro", "detalle": "Macro Chile 2026: Valuación usa inflación esperada 4,1% y PIB 1,6% (Figuras_Valuacion V7!B22:B23, EEE jun-26); el anexo macro usa IPC 3,9% y PIB 0,25–0,75% (macro!Chile!B7:C7, IPoM jun-26); el forecast de FA usa IPC 2026E 3,7% (Forecast!D6, ECFC). Las tres cifras están en modelos distintos: unificar la fuente."},
+  {"secciones": "macro y valuacion (y riesgos FR1)", "detalle": "UST 10Y 5,22% el 8-oct-26 como 'máximo en 24 años (desde 2002)': macro_2022_2026!Tasas10Y!G59 anota 5,26% diario el 29-sep-26 y FA E7_WACC!B45 trae 5,228% el 28-sep-26, así que 5,22% el 8-oct no sería el máximo; además, en jun-2007 el UST tocó ~5,26% (revision_narrativa_agente.md). Verificar con Bloomberg antes de tocar."},
+  {"secciones": "valuacion (Anexo Z) vs modelo", "detalle": "Estructura actual de la WACC: deuda bruta 1.579.315 (dic-25) y market cap 7.905.900 (precio implícito 3.610) en v2 Supuestos!B36/B37 y datos_wacc.json. A jun-26/30-sep corresponderían 1.633.361 (v2 APV!C12) y 7.785.450 (v2 Comparables!F5). El texto cuadra con el modelo; el problema es del modelo (fechas mezcladas)."},
+  {"secciones": "industria", "detalle": "\"Mallplaza cedió 1,2 pp dentro del trío\": el modelo da −1,2615 pp (MS_evolutivo_Chile!D20), que redondea a 1,3 pp; la lectura del propio Excel dice '~1,2 pp'. Diferencia de redondeo: se deja a decisión del equipo."},
+  {"secciones": "analisis_financiero", "detalle": "\"5,0 pp de la caída de 8,0 pp vinieron de revalorizar\": E5_Leverage!B15 = −4,94 pp (redondea a 4,9) y B12−B16 = 8,02 pp. Diferencia de redondeo: se deja a decisión del equipo."},
+  {"secciones": "analisis_financiero (tabla A6, fuera de L.es)", "detalle": "EBITDA / propiedades de inversión 2025: la tabla dice PA 7,6% y Cencosud 7,8%; el modelo da 7,55% y 7,75% (Peers_inputs!F41 y F53, que redondean a 7,5% y 7,7%). Es una constante numérica común a ES/EN, no un string de L.es: revisar."},
+  {"secciones": "negocio vs esg vs riesgos", "detalle": "Participación de Falabella: 53,1% (Negocio) vs 53,05% (ESG, RR1). Ambas salen de la Memoria y 53,1% es redondeo de 53,05%; unificar el formato si se quiere."}
+ ],
+ "riesgos_notas": [
+  "FR1 dice 'rating AA+/BBB'; FA dice AAA (Feller Rate, 25-sep-26). Unificar a AAA.",
+  "FR1 dice duración de la deuda de ~6,7 años; FA dice 6,6 años (Nota 14). Figuras_Valuacion!Estructura_Valuacion!A17 ya lo marcaba ('6,7 años' aparece como duración de contratos y de deuda; los contratos son 7,1 años según Industria).",
+  "FR1: 'el UST 10Y pasó de 4,98% (Rf del modelo)': 4,98% es la Rf de Tasa_WACC (v2 Supuestos!B17), no el UST al 30-jun-26, que fue 4,47% (FA E7_WACC!G6; macro Tasas10Y 2026-06 = 4,47). Además, el 'máximo en 24 años' está en duda (ver inconsistencias).",
+  "RR2: 'pipeline (USD 613 MM, 170.200 m² hasta 2028)': el modelo solo tiene fecha para 123.700 m² (USD 445 MM remanentes); los 46.500 m² / USD 134 MM restantes no tienen fecha (FA Forecast!J43).",
+  "OR1: margen mínimo histórico de 75,8% es trimestral (4Q23, Tornado!Supuestos!E11); en el mitigante se usa la serie anual 76,2%–80,5%. Rotular.",
+  "OR1 (mitigante): ocupación 'entre 95,5% y 96,6% en 2024-25'; el modelo del tornado usa un mínimo de 95,1% (1Q24) y un máximo de 96,6% (Supuestos!E7/F7).",
+  "MR3: el sol de CLP 268 a 290 entre 2026 y 2031 coincide con FA Forecast!D15 (268,0) e I15 (290,4). Colombia ~11% (v2 WACC!C20 = 10,5%) y 28% Perú+Colombia, correctos.",
+  "FR1: sensibilidad −6,5% / −12,3% del precio objetivo con WACC +50/+100 pb, correcta (v2 Sensibilidad!C9/C10 con 80/20: 1.940 y 1.820).",
+  "MR1: 'UF 3% más alta resta CLP 38.691 MM (Nota 26)' y +1,1% neto: no hay celda en los modelos para verificarlo."
+ ]
+}
