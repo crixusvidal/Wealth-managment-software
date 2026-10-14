@@ -1,8 +1,8 @@
-"""Arma el informe consolidado (ES y EN) en Word y PDF, con las secciones corridas una tras otra.
+"""Arma el informe consolidado (ES y EN) en Word y PDF, con las secciones corridas una tras otra
+(cada una empieza a mitad de página, justo después de la anterior, como los anexos).
 
-Si el título de una sección queda solo al pie de una página (su contenido empieza en la siguiente),
-esa sección pasa a empezar en página nueva: se anota en informe_final/documento/saltos_<lang>.json,
-se vuelve a armar y se repite hasta que no quede ningún título huérfano.
+Revisa el PDF y avisa si el título de una sección quedó solo al pie de una página. Con --saltos, esas
+secciones pasan a empezar en página nueva (informe_final/documento/saltos_<lang>.json); por defecto no.
 
 Uso (desde secciones/):
     python informe_final/graficos/maquetar.py [es] [en]
@@ -50,14 +50,16 @@ def huerfanos(pdf):
     return out
 
 
-def main(langs):
+def main(langs, saltos=False):
     for lang in langs:
         archivo = DOC / f"saltos_{lang}.json"
         archivo.write_text("[]")
         for vuelta in range(6):
             pdf = armar(lang)
             nuevos = [k for k in huerfanos(pdf) if k not in json.loads(archivo.read_text())]
-            if not nuevos:
+            if nuevos and not saltos:
+                print(lang, "títulos al pie de página (sin salto):", nuevos)
+            if not nuevos or not saltos:
                 break
             archivo.write_text(json.dumps(json.loads(archivo.read_text()) + nuevos[:1]))   # de a uno: cada salto mueve lo que sigue
         paginas = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
@@ -65,4 +67,5 @@ def main(langs):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or ["es", "en"])
+    args = [a for a in sys.argv[1:] if a != "--saltos"]
+    main(args or ["es", "en"], "--saltos" in sys.argv)

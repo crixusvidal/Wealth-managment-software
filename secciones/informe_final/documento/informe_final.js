@@ -2,7 +2,7 @@
 // figuras (1…N) y los anexos (1…M), actualizando cada cita del texto. El texto de cada sección no cambia:
 // solo se reemplazan las etiquetas de figura/anexo según el mapa de renumeración de esa sección.
 //
-// Cuerpo: Negocio → Industria → ESG → Análisis Financiero → Valuación → Riesgos → Resumen de inversión
+// Cuerpo: Abstract → Negocio → Industria → ESG → Análisis Financiero → Valuación → Riesgos → Resumen de inversión
 // Anexos: Negocio → Industria → ESG → Análisis Financiero → Valuación → Macro
 // Todo corrido: cada sección (y cada anexo) empieza inmediatamente después de la anterior; solo el bloque
 // de anexos parte en página nueva (cambia la numeración a A-1).
@@ -40,7 +40,7 @@ docx.TextRun = class extends TextRunOriginal {
 
 // Modo continuo: sin saltos de página forzados ni filas que no puedan partirse entre páginas -----
 const ParagraphOriginal = docx.Paragraph;
-const esTitulo = (o) => o.border?.bottom?.size === 8;   // subtítulos (rojo): no quedan solos al pie de una columna
+const esTitulo = () => false;   // sin "conservar con el siguiente": en LibreOffice impide partir las filas
 docx.Paragraph = class extends ParagraphOriginal {
   constructor(o) {
     if (o && typeof o === "object") o = { ...o, pageBreakBefore: false, ...(esTitulo(o) ? { keepNext: true } : {}) };
@@ -55,6 +55,7 @@ docx.PageBreak = class extends TextRunOriginal { constructor() { super({ text: "
 
 const { Document, Packer, SectionType, Paragraph, Table, TableRow, TableCell, WidthType, ShadingType, BorderStyle, VerticalAlign, AlignmentType } = docx;
 const F = require("../../comun/formato");
+F.OPCIONES.filasPorCita = true;
 const S = path.join(__dirname, "..", "..");
 const negocio = require(path.join(S, "negocio/documento/negocio.js"));
 const industria = require(path.join(S, "industria/documento/industria.js"));
@@ -110,10 +111,43 @@ function resumen(lang) {
   const nada = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
   const celda = (w, children) => new TableCell({ width: { size: w, type: WidthType.DXA }, verticalAlign: VerticalAlign.TOP,
     borders: { top: nada, bottom: nada, left: nada, right: nada }, children });
+  const sinB = { top: nada, bottom: nada, left: nada, right: nada, insideHorizontal: nada, insideVertical: nada };
+  const cuerpo = new Table({ width: { size: F.ANCHO, type: WidthType.DXA }, columnWidths: [F.COL_TEXTO, F.COL_SEP, F.COL_FIG], borders: sinB,
+    rows: [new TableRow({ children: [celda(F.COL_TEXTO, izq), celda(F.COL_SEP, [F.vacia()]), celda(F.COL_FIG, der)] })] });
+  // Todo el resumen (título incluido) en una fila que no se parte: si no cabe, pasa entero a la página siguiente
+  return [new Table({ width: { size: F.ANCHO, type: WidthType.DXA }, columnWidths: [F.ANCHO], borders: sinB,
+    rows: [new TableRowOriginal({ cantSplit: true, children: [celda(F.ANCHO, [F.titulo(X.titulo), cuerpo, F.vacia()])] })] })];
+}
+
+// Abstract: tesis en un párrafo + franja de datos clave (cifras del modelo v2) --------------------
+const ABS = {
+  es: { titulo: "ABSTRACT", loc: "de-DE",
+    texto: "Mallplaza (Plaza S.A.) es el mayor operador de centros comerciales de la región andina: 37 centros y 2,36 millones de m² de GLA en Chile, Perú y Colombia, con ingresos casi tan predecibles como un bono (81,4% arriendos, 93% de renta fija y reajustada en UF en Chile) y un margen EBITDA de 80,5%. Es un gran negocio, pero a CLP 3.555 el mercado lo paga como si sus flujos estuvieran casi libres de riesgo. Ponderando 80% nuestro DCF y 20% los múltiplos de pares, llegamos a un precio objetivo de CLP 2.076 y recomendamos VENDER. El desacuerdo con el mercado no está en los flujos, sino en la tasa: el precio exige una WACC de 7,56%, 285 pb bajo nuestro 10,41%, y un cap rate de 6,0% frente al 10,1% que implican nuestros flujos. Crecer no rescata el precio, porque cada m² nuevo rinde 5,0% real frente a una WACC real de 7,2%, y ni el escenario bull (CLP 2.627) ni la tasa de los tasadores (CLP 2.719) alcanzan la cotización. El riesgo principal para la tesis es una nueva compresión de las tasas largas.",
+    rotulos: ["Recomendación", "Precio objetivo", "Precio (30-sep-26)", "Potencial"], rec: "VENDER" },
+  en: { titulo: "ABSTRACT", loc: "en-US",
+    texto: "Mallplaza (Plaza S.A.) is the largest shopping center operator in the Andean region: 37 centers and 2.36 million m² of GLA in Chile, Peru and Colombia, with revenue almost as predictable as a bond (81.4% rents, 93% fixed and UF-indexed in Chile) and an 80.5% EBITDA margin. It is a great business, but at CLP 3,555 the market prices it as if its cash flows were nearly risk-free. Weighting our DCF at 80% and peer multiples at 20%, we reach a target price of CLP 2,076 and recommend SELL. Our disagreement with the market is not about cash flows but about the discount rate: the price requires a 7.56% WACC, 285 bp below our 10.41%, and a 6.0% cap rate against the 10.1% implied by our cash flows. Growth does not rescue the price, because each new m² earns a 5.0% real return against a 7.2% real WACC, and neither the bull case (CLP 2,627) nor the appraisers' rate (CLP 2,719) reaches the share price. The main risk to the thesis is a further compression of long-term rates.",
+    rotulos: ["Recommendation", "Target price", "Price (30-Sep-26)", "Upside / downside"], rec: "SELL" },
+};
+function abstract(lang) {
+  const X = ABS[lang];
+  const R = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "graficos", "datos_resumen.json"), "utf8"));
+  const n = (x, d = 0) => x.toLocaleString(X.loc, { minimumFractionDigits: d, maximumFractionDigits: d });
+  const valores = [X.rec, `CLP ${n(R.precio_objetivo)}`, `CLP ${n(R.precio)}`, n(R.potencial * 100, 1).replace("-", "−") + "%"];
+  const nada = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+  const ancho = F.ANCHO / 4;
+  const caja = (i) => new TableCell({ width: { size: ancho, type: WidthType.DXA }, verticalAlign: VerticalAlign.CENTER,
+    shading: { type: ShadingType.CLEAR, color: "auto", fill: i === 0 ? F.ROJO : F.AZUL },
+    borders: { top: nada, bottom: nada, left: { style: BorderStyle.SINGLE, size: 12, color: "FFFFFF" }, right: nada },
+    margins: { top: 60, bottom: 60, left: 120, right: 120 },
+    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [F.run(X.rotulos[i], { size: 13, color: "FFFFFF" })] }),
+      new Paragraph({ alignment: AlignmentType.CENTER, children: [F.run(valores[i], { size: 26, bold: true, color: "FFFFFF" })] })] });
   return [F.titulo(X.titulo),
-    new Table({ width: { size: F.ANCHO, type: WidthType.DXA }, columnWidths: [F.COL_TEXTO, F.COL_SEP, F.COL_FIG],
+    new Paragraph({ alignment: AlignmentType.JUSTIFIED, spacing: { after: 80, line: 240, lineRule: "auto" },
+      shading: { type: ShadingType.CLEAR, color: "auto", fill: F.FONDO }, children: [F.run(X.texto, { size: 17 })] }),
+    new Table({ width: { size: F.ANCHO, type: WidthType.DXA }, columnWidths: [ancho, ancho, ancho, ancho],
       borders: { top: nada, bottom: nada, left: nada, right: nada, insideHorizontal: nada, insideVertical: nada },
-      rows: [new TableRow({ children: [celda(F.COL_TEXTO, izq), celda(F.COL_SEP, [F.vacia()]), celda(F.COL_FIG, der)] })] })];
+      rows: [new TableRow({ children: [0, 1, 2, 3].map(caja) })] }),
+    new Paragraph({ spacing: { after: 160 }, children: [] })];
 }
 
 function informe(lang = "es") {
@@ -140,7 +174,7 @@ function informe(lang = "es") {
   return new Document({
     styles: F.ESTILOS,
     sections: [
-      seccion(d.negocio.sections[0], NUEVA, { start: 1 }, P),
+      seccion({ ...d.negocio.sections[0], children: [...abstract(lang), ...d.negocio.sections[0].children] }, NUEVA, { start: 1 }, P),
       corrida("industria", d.industria.sections[0], P),
       corrida("esg", d.esg.sections[0], P),
       corrida("fa", d.fa.sections[0], P),

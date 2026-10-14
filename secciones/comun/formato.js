@@ -63,9 +63,22 @@ const pie = (p) => new Footer({ children: [new Paragraph({ alignment: AlignmentT
 function columna(bloques, anchoTw, img) {
   const out = [];
   let previo = null;
-  for (const b of bloques) {
+  for (let k = 0; k < bloques.length; k++) {
+    const b = bloques[k];
     const primero = !out.length;
     if (b.tipo === "h1") out.push(subtitulo(b.texto, primero ? 20 : 90));
+    else if (b.tipo === "caption" && bloques[k + 1]?.tipo === "imagen") {
+      // título, gráfico y fuente en un mismo párrafo: nunca quedan separados por un salto de página
+      const [archivo, alto] = img(bloques[k + 1].archivo), anchoIn = anchoTw / 1440;
+      const nota = bloques[k + 2] && ["fuente", "p"].includes(bloques[k + 2].tipo) ? bloques[k + 2].runs : null;
+      out.push(new Paragraph({ keepLines: true, spacing: { before: primero ? 20 : 90, after: 20, line: 240, lineRule: LineRuleType.AUTO }, children: [
+        run(b.n + " ", { bold: true, color: AZUL, size: 14 }), run(b.texto, { color: AZUL, size: 14 }), new TextRun({ break: 1 }),
+        new ImageRun({ type: "png", data: fs.readFileSync(archivo), transformation: { width: Math.round(anchoIn * 96), height: Math.round((alto || altoPng(archivo, anchoIn)) * 96) } }),
+        ...(nota ? [new TextRun({ break: 1 }), ...nota.map(([t, , i]) => run(t, { size: 11, color: GRIS, italics: i }))] : [])] }));
+      k += nota ? 2 : 1;
+      previo = "fuente";
+      continue;
+    }
     else if (b.tipo === "caption") out.push(caption(b.n, b.texto, primero ? 20 : 90));
     else if (b.tipo === "imagen") { const [archivo, alto] = img(b.archivo); out.push(imagen(archivo, anchoTw / 1440, alto)); }
     else if (b.tipo === "fuente" || (b.tipo === "p" && previo === "imagen")) out.push(fuente(b.runs));
@@ -73,6 +86,42 @@ function columna(bloques, anchoTw, img) {
     previo = b.tipo;
   }
   return out.length ? out : [vacia()];
+}
+
+// Informe consolidado (texto corrido): cada fila lleva el bloque de texto que cita a sus figuras, para que
+// la sección pueda empezar a mitad de página y cada gráfico quede junto al párrafo que lo cita.
+const OPCIONES = { filasPorCita: false };
+const textoBloque = (b) => b.texto || (b.runs || []).map((r) => r[0]).join("");
+// Alto estimado (pulgadas) de un bloque de texto de la columna izquierda y de un grupo de figura
+const altoTexto = (bs) => bs.reduce((h, b) => h + (b.tipo === "h1" ? 0.3 : Math.ceil(textoBloque(b).length / 118) * 0.158 + 0.06), 0);
+function porCita(filas, img) {
+  const izq = filas.flatMap((f) => f.izq), der = filas.flatMap((f) => f.der);
+  const grupos = [];
+  der.forEach((b) => { if (b.tipo === "caption" || !grupos.length) grupos.push([]); grupos[grupos.length - 1].push(b); });
+  // Subsecciones: cortes en cada subtítulo
+  const cortes = [0, ...izq.map((b, i) => (b.tipo === "h1" && i > 0 ? i : -1)).filter((i) => i > 0)];
+  const subsec = (i) => cortes.filter((c) => c <= i).length - 1;
+  const filasN = cortes.map((c, k) => ({ izq: izq.slice(c, cortes[k + 1] ?? izq.length), der: [] }));
+  grupos.forEach((g) => {
+    const m = /^(?:Figura|Figure)\s+(\S+?):$/.exec(g[0].n || "");
+    const rx = m ? new RegExp(`(Figuras?|Figures?)\\s+${m[1]}(?![\\w.])`, "gi") : null;
+    // la subsección que más la cita (empate: la última)
+    let mejor = 0, max = -1;
+    filasN.forEach((fl, k) => {
+      const n = rx ? fl.izq.reduce((a, b) => a + (textoBloque(b).match(rx) || []).length, 0) : 0;
+      if (n >= max && n > 0) { max = n; mejor = k; }
+    });
+    filasN[mejor].der.push(...g);
+  });
+  // Si el texto de una fila es mucho más bajo que sus figuras, se une con la siguiente (sin huecos)
+  const altoFig = (bs) => bs.reduce((h, b) => h + (b.tipo === "imagen" ? (img(b.archivo)[1] || altoPng(img(b.archivo)[0], COL_FIG / 1440)) + 0.05 : 0.17), 0);
+  const out = [];
+  filasN.forEach((fl) => {
+    const prev = out[out.length - 1];
+    if (prev && altoTexto(prev.izq) < 1.1 * altoFig(prev.der)) { prev.izq.push(...fl.izq); prev.der.push(...fl.der); }
+    else out.push({ izq: [...fl.izq], der: [...fl.der] });
+  });
+  return out;
 }
 
 // Sección completa a partir del JSON del borrador. opciones.imagenes: { "image1.png": ruta | [ruta, altoIn] }
@@ -95,9 +144,10 @@ function seccionBorrador(json, opciones) {
       const nivel1 = destino.length === 0 || /^(ANEXO|APPENDI)/.test(b.texto);
       destino.push(nivel1 ? titulo(b.texto, esAnexo && destino.length > 0) : subtitulo(b.texto, 140));
     } else if (b.tipo === "pagina") {
-      b.filas.forEach((f) => destino.push(new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [COL_TEXTO, COL_SEP, COL_FIG],
+      const filas = OPCIONES.filasPorCita ? porCita(b.filas, img) : b.filas;
+      destino.push(new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [COL_TEXTO, COL_SEP, COL_FIG],
         borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
-        rows: [new TableRow({ children: [celda(COL_TEXTO, columna(f.izq, COL_TEXTO, img)), celda(COL_SEP, [vacia()]), celda(COL_FIG, columna(f.der, COL_FIG, img))] })] })));
+        rows: filas.map((f) => new TableRow({ children: [celda(COL_TEXTO, columna(f.izq, COL_TEXTO, img)), celda(COL_SEP, [vacia()]), celda(COL_FIG, columna(f.der, COL_FIG, img))] })) }));
     } else if (b.tipo === "figuras") {
       b.filas.forEach((f) => destino.push(new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [MEDIA, COL_SEP, MEDIA],
         borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
@@ -119,5 +169,5 @@ function seccionBorrador(json, opciones) {
 
 module.exports = {
   AZUL, ROJO, TINTA, GRIS, FONDO, FUENTE, ANCHO, COL_TEXTO, COL_SEP, COL_FIG, MEDIA, PAGINA, ESTILOS,
-  run, titulo, subtitulo, caption, fuente, parrafo, tabla, imagen, altoPng, encabezado, pie, seccionBorrador, vacia,
+  run, titulo, subtitulo, caption, fuente, parrafo, tabla, imagen, altoPng, encabezado, pie, seccionBorrador, vacia, OPCIONES, porCita,
 };
