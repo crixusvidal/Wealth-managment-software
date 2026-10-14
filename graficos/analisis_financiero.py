@@ -114,7 +114,7 @@ def cascada(ax, pasos, colores, etiquetas, fmt, ancho=0.62):
             ax.text(x, nivel + max(v, 0), fmt(v, signo=True), ha="center", va="bottom",
                     fontsize=4.4, color=NEGRO)
             if x + 1 < len(pasos):
-                ax.plot([x + ancho / 2, x + 1 - ancho / 2], [nivel + v] * 2, color=GRIS,
+                ax.plot([x + ancho / 2, x + 1 - ancho / 2], [nivel + v] * 2, color=NEGRO,
                         linewidth=0.4, zorder=2)
             nivel += v
         niveles.append(nivel)
@@ -248,7 +248,7 @@ def fa7(lang, salida):
     ax = fig.add_axes([0.02, 0.42, 0.96, 0.44])
     x = np.arange(len(FA7_AÑOS))
     base = np.zeros(len(x))
-    for clave, color in (("real", GRIS), ("pipe", ROJO), ("mant", CELESTE), ("exp", AMARILLO)):
+    for clave, color in (("real", AZUL), ("pipe", ROJO), ("mant", CELESTE), ("exp", AMARILLO)):
         v = np.array(FA7[clave])
         ax.bar(x, v, bottom=base, width=0.66, color=color, zorder=3)
         base += v
@@ -272,7 +272,7 @@ def fa7(lang, salida):
     limpiar(ax2)
     ax2.tick_params(axis="x", labelsize=4)
     ax2.text(-0.45, 4.88, t["fa7_dfn"], fontsize=4.2, color=TINTA_SECUNDARIA, va="top")
-    for i, (color, texto) in enumerate(zip((GRIS, ROJO, CELESTE, AMARILLO), t["fa7"])):
+    for i, (color, texto) in enumerate(zip((AZUL, ROJO, CELESTE, AMARILLO), t["fa7"])):
         xx, yy = 0.03 + (i % 2) * 0.5, 0.965 - (i // 2) * 0.04
         fig.add_artist(Rectangle((xx, yy - 0.013), 0.022, 0.026, color=color, transform=fig.transFigure))
         fig.text(xx + 0.03, yy, texto, fontsize=4.1, color=NEGRO, va="center")

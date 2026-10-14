@@ -25,7 +25,7 @@ CLARO = "#eef1f6"
 ANCHO = 3550 / 1440          # columna de figuras del informe (pulgadas)
 COMPLETO = 10666 / 1440      # ancho completo (anexo)
 DPI = 400
-ALTOS = {"V7": 2.45, "V9": 2.15, "V1": 2.0, "V2": 1.9, "V3": 2.35, "V4": 2.3, "V5": 1.75, "V6": 1.95, "W1": 1.9}
+ALTOS = {"V7": 2.25, "V9": 1.95, "V1": 1.85, "V2": 1.7, "V3": 2.05, "V4": 1.8, "V5": 1.6, "V6": 1.75, "W1": 1.9}
 
 T = {
     "es": {"cpa": "CLP por acción", "objetivo": "Precio objetivo", "precio": "Precio actual",
@@ -140,9 +140,9 @@ def v1(lang, wb, salida):
         y = n - 1 - k
         dcf, apv = metodo.startswith("DCF"), metodo.startswith("APV")
         semanas = metodo.startswith("Rango 52")
-        color = ROJO if dcf else (AZUL if apv else GRIS if semanas else CELESTE)
+        color = (ROJO if "50" in metodo else AZUL) if dcf else (AZUL if apv else NEGRO if semanas else CELESTE)
         if hi - lo > 1:
-            ax.barh(y, hi - lo, left=lo, height=0.55, color=tinte(color, 0.35) if dcf and "50" not in metodo else color,
+            ax.barh(y, hi - lo, left=lo, height=0.55, color=color,
                     linewidth=0)
             caja = {"facecolor": "white", "edgecolor": "none", "pad": 0.4}
             ax.text(lo - 25, y, num(lo, lang), ha="right", va="center", fontsize=4.4, color=TINTA_SECUNDARIA,
@@ -218,7 +218,7 @@ def v7(lang, wb, salida):
     for k, (nombre, pais, sp) in enumerate(filas):
         y = len(filas) - 1 - k
         es_med, mp = nombre.startswith(t["med"]), nombre == "Mallplaza"
-        ax.barh(y, sp, height=0.66, color=AZUL if mp else color[pais], alpha=1 if es_med or mp else 0.5, zorder=3)
+        ax.barh(y, sp, height=0.66, color=AZUL if mp else (NEGRO if es_med else color[pais]), zorder=3)
         ax.text(sp + 8, y, num(sp, lang), va="center", fontsize=3.9, fontweight="bold" if es_med else "normal",
                 color=NEGRO)
         ax.text(-12, y, nombre, ha="right", va="center", fontsize=3.9, fontweight="bold" if es_med or mp else "normal",
@@ -242,7 +242,7 @@ def v2(lang, wb, salida):
     ax = fig.add_axes([0.47, 0.15, 0.5, 0.83])
     for y, (nombre, _, real) in enumerate(filas):
         color = ROJO if "implícita" in nombre else AZUL if nombre.startswith("Nuestra WACC") else \
-            tinte(AZUL, 0.45) if nombre.startswith("Nuestro Ke") else CELESTE
+            NEGRO if nombre.startswith("Nuestro Ke") else CELESTE
         ax.barh(y, real * 100, height=0.6, color=color, linewidth=0)
         ax.text(real * 100 + 0.1, y, pct(real, lang), va="center", fontsize=4.6, fontweight="bold", color=NEGRO)
         ax.text(-0.03, y, t["v2"][nombre], transform=ax.get_yaxis_transform(), ha="right", va="center",
@@ -282,7 +282,7 @@ def v3(lang, wb, salida):
         y = 0.62 - k * 0.22
         base = abs(gn - 0.03) < 1e-9
         if base:
-            axt.add_patch(Rectangle((0, y - 0.11), 1, 0.22, color=tinte(AMARILLO, 0.3), transform=axt.transAxes))
+            axt.add_patch(Rectangle((0, y - 0.11), 1, 0.22, color=AMARILLO, transform=axt.transAxes))
         vals = [pct(gn, lang), pct(gr, lang), pct(reinv, lang), num(valor, lang),
                 ("±0,0%" if lang == "es" else "±0.0%") if base else pct(delta, lang)]
         for x, v, a in zip(xs, vals, alin):
@@ -292,11 +292,11 @@ def v3(lang, wb, salida):
     ax = fig.add_axes([0.13, 0.12, 0.84, 0.4])
     serie = celdas(ws, "A24:D27")
     gs = [f[0] * 100 for f in serie]
-    for j, (color, nombre) in enumerate(zip([ROJO, GRIS, CELESTE], t["series"])):
+    for j, (color, nombre) in enumerate(zip([ROJO, NEGRO, CELESTE], t["series"])):
         ys = [f[j + 1] for f in serie]
         ax.plot(gs, ys, color=color, linewidth=1.2, marker="o", markersize=2.4, markeredgecolor="white",
                 markeredgewidth=0.4)
-        ax.text(gs[-1] + 0.05, ys[-1], nombre, fontsize=4.2, color=color if color != GRIS else TINTA_SECUNDARIA,
+        ax.text(gs[-1] + 0.05, ys[-1], nombre, fontsize=4.2, color=color,
                 va="center", fontweight="bold")
     ax.set_xlim(-0.05, 2.6)
     ax.set_ylim(85, 110)
@@ -324,7 +324,7 @@ def v4(lang, wb, salida):
         ax.text(k, max(inicio, acum) / 1000 + 3, ("+" if s > 0 else "−") + num(v / 1000, lang), ha="center",
                 va="bottom", fontsize=4.4, color=NEGRO)
         if k < len(comp) - 1:
-            ax.plot([k + 0.31, k + 0.69], [acum / 1000] * 2, color=GRIS, linewidth=0.4)
+            ax.plot([k + 0.31, k + 0.69], [acum / 1000] * 2, color=NEGRO, linewidth=0.3)
     assert abs(acum - total) < 1, "la cascada debe cerrar en el CTN"
     ax.bar(len(comp), total / 1000, width=0.62, color=AZUL, linewidth=0)
     ax.text(len(comp), total / 1000 + 3, num(total / 1000, lang), ha="center", va="bottom", fontsize=4.6,
@@ -347,7 +347,7 @@ def v4(lang, wb, salida):
         y = 0.72 - k * 0.165
         base = r == 17
         if base:
-            axt.add_patch(Rectangle((0, y - 0.08), 1, 0.16, color=tinte(AMARILLO, 0.3), transform=axt.transAxes))
+            axt.add_patch(Rectangle((0, y - 0.08), 1, 0.16, color=AMARILLO, transform=axt.transAxes))
         d = ws[f"F{r}"].value
         vals = [t["esc"][k], pct(ws[f"C{r}"].value, lang), num(ws[f"E{r}"].value, lang),
                 ("±0,0%" if lang == "es" else "±0.0%") if base else ("+" if d > 0 else "") + pct(d, lang)]
@@ -365,7 +365,7 @@ def v5(lang, wb, salida):
     fig = figura("V5")
     ax = fig.add_axes([0.42, 0.14, 0.55, 0.84])
     for y, (nombre, v) in enumerate(filas):
-        color = ROJO if nombre.startswith("Nuestro") else GRIS if "Gran Plaza" in nombre else CELESTE
+        color = ROJO if nombre.startswith("Nuestro") else AMARILLO if "Gran Plaza" in nombre else CELESTE
         ax.barh(y, v * 100, height=0.6, color=color, linewidth=0)
         ax.text(v * 100 + 0.12, y, pct(v, lang), va="center", fontsize=4.6, fontweight="bold", color=NEGRO)
         ax.text(-0.03, y, t["v5"][nombre], transform=ax.get_yaxis_transform(), ha="right", va="center",
@@ -439,8 +439,8 @@ def v9(lang, ruta_v2, salida):
     n = len(filas) + 1
     caja = {"facecolor": "white", "edgecolor": "none", "pad": 0.4}
     y = n - 1
-    ax.barh(y, dcf[2] - dcf[0], left=dcf[0], height=0.5, color=tinte(ROJO, 0.35), linewidth=0)
-    ax.plot([dcf[1]] * 2, [y - 0.3, y + 0.3], color=ROJO, linewidth=1.4, solid_capstyle="butt")
+    ax.barh(y, dcf[2] - dcf[0], left=dcf[0], height=0.5, color=ROJO, linewidth=0)
+    ax.plot([dcf[1]] * 2, [y - 0.3, y + 0.3], color=NEGRO, linewidth=1.4, solid_capstyle="butt")
     ax.text(dcf[1], y + 0.33, num(dcf[1], lang), ha="center", va="bottom", fontsize=4.4, fontweight="bold", color=ROJO)
     ax.text(-0.03, y + 0.12, "DCF (FCFF)", transform=ax.get_yaxis_transform(), ha="right", va="center",
             fontsize=4.8, fontweight="bold", color=NEGRO)
@@ -448,11 +448,11 @@ def v9(lang, ruta_v2, salida):
             transform=ax.get_yaxis_transform(), ha="right", va="center", fontsize=4, color=TINTA_SECUNDARIA)
     for y, (nombre, es_ev, pares, mult, valor) in zip(range(n - 2, -1, -1), filas):
         vals = [p[2] for p in pares]
-        ax.barh(y, max(vals) - min(vals), left=min(vals), height=0.5, color=tinte(CELESTE, 0.45) if es_ev else "white",
+        ax.barh(y, max(vals) - min(vals), left=min(vals), height=0.5, color=CELESTE if es_ev else "white",
                 edgecolor=CELESTE, linewidth=0 if es_ev else 0.4, hatch=None if es_ev else "////////")
         for par, _, v in sorted(pares, key=lambda p: p[0] in COLOR_PAR):
             chile = par in COLOR_PAR
-            ax.scatter(v, y, s=9 if chile else 5, color=COLOR_PAR.get(par, CELESTE), edgecolor="white",
+            ax.scatter(v, y, s=9 if chile else 5, color=COLOR_PAR.get(par, AZUL), edgecolor="white",
                        linewidth=0.4, zorder=3 + chile)
         ax.plot([valor] * 2, [y - 0.3, y + 0.3], color=NEGRO, linewidth=1.4, solid_capstyle="butt", zorder=5)
         ax.text(valor, y + 0.33, num(valor, lang), ha="center", va="bottom", fontsize=4.4, fontweight="bold",
@@ -479,7 +479,7 @@ def v9(lang, ruta_v2, salida):
     punto = lambda c, txt: plt.Line2D([], [], marker="o", linestyle="", markersize=3, markerfacecolor=c,
                                       markeredgecolor="white", label=txt)
     fig.legend(handles=[punto(VERDE_PARQUE_ARAUCO, "Parque Arauco"), punto(MORADO_CENCOSUD, "Cencosud"),
-                        punto(CELESTE, "Multiplan, Allos, Iguatemi, IRSA"),
+                        punto(AZUL, "Multiplan, Allos, Iguatemi, IRSA"),
                         plt.Line2D([], [], color=NEGRO, linewidth=1.4, label="Ponderado" if lang == "es" else "Weighted")],
                loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4, frameon=False, fontsize=3.9,
                handletextpad=0.2, columnspacing=0.6)
@@ -496,7 +496,7 @@ def w1(lang, wb, salida):
     ax = fig.add_axes([0.1, 0.14, 0.78, 0.8])
     x = np.arange(len(wacc))
     ax2 = ax.twinx()
-    ax2.bar(x, de, width=0.55, color=tinte(CELESTE, 0.45), linewidth=0, zorder=1)
+    ax2.bar(x, de, width=0.55, color=CELESTE, linewidth=0, zorder=1)
     for xi, v in zip(x, de):
         ax2.text(xi, 1.5, pct(v / 100, lang), ha="center", va="bottom", fontsize=5, color=AZUL, fontweight="bold")
     ax.plot(x, wacc, color=ROJO, linewidth=1.5, marker="o", markersize=3.2, markeredgecolor="white",
@@ -517,7 +517,7 @@ def w1(lang, wb, salida):
     ax.yaxis.set_major_formatter(lambda y, _: pct(y / 100, lang, 2))
     ax2.yaxis.set_major_formatter(lambda y, _: f"{y:.0f}%")
     ax.legend(handles=[plt.Line2D([], [], color=ROJO, marker="o", markersize=3, label=tt["wacc"]),
-                       Patch(color=tinte(CELESTE, 0.45), label=tt["de"])],
+                       Patch(color=CELESTE, label=tt["de"])],
               loc="upper right", frameon=False, fontsize=5)
     guardar(fig, salida)
 
