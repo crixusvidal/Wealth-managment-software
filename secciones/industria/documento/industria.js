@@ -1,5 +1,5 @@
 // Sección Análisis de la Industria y Posicionamiento Competitivo + anexos, en el formato principal del informe.
-// Texto: borrador del equipo (borrador/Industria_Mallplaza_BORRADOR_FINAL.docx → borrador/texto.json con
+// Texto: borrador del equipo (inglés: borrador/texto_en.json, traducción fiel del mismo) (borrador/Industria_Mallplaza_BORRADOR_FINAL.docx → borrador/texto.json con
 // comun/borrador_a_json.py), sin cambios. Gráficos: los del repo (graficos/industria.py), en vez de las capturas.
 // Uso: node industria/documento/industria.js
 const fs = require("fs");
@@ -16,13 +16,13 @@ const IMAGENES = { "image1.png": "ind5b_market_share_paises_vertical", "image2.p
 const ALTOS = fs.existsSync(path.join(FIG, "altos.json")) ? JSON.parse(fs.readFileSync(path.join(FIG, "altos.json"), "utf8")) : {};
 
 function documento(lang = "es") {
-  const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", "texto.json"), "utf8"));
+  const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
   const imagenes = Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [path.join(FIG, `${lang}_${n}.png`), ALTOS[n]]]));
   const { cuerpo, anexo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG });
   return {
     styles: F.ESTILOS,
     sections: [
-      { properties: { page: F.PAGINA }, headers: { default: F.encabezado() }, footers: { default: F.pie("Página ") }, children: cuerpo },
+      { properties: { page: F.PAGINA }, headers: { default: F.encabezado() }, footers: { default: F.pie(lang === "es" ? "Página " : "Page ") }, children: cuerpo },
       { properties: { page: { ...F.PAGINA, pageNumbers: { start: 1 } } }, headers: { default: F.encabezado() }, footers: { default: F.pie("A-") }, children: anexo },
     ],
   };
@@ -31,10 +31,13 @@ function documento(lang = "es") {
 module.exports = { documento };
 
 if (require.main === module) (async () => {
-  const d = documento("es");
-  const salidas = [[0, path.join(__dirname, ARCHIVO)], [1, path.join(__dirname, "..", "anexo", ARCHIVO.replace(".docx", "_Anexo.docx"))]];
-  for (const [k, salida] of salidas) {
-    fs.writeFileSync(salida, await Packer.toBuffer(new Document({ ...d, sections: [d.sections[k]] })));
-    console.log(salida);
+  for (const lang of ["es", "en"]) {
+    const d = documento(lang);
+    const archivo = ARCHIVO.replace("_ES", lang === "es" ? "_ES" : "_EN");
+    const salidas = [[0, path.join(__dirname, archivo)], [1, path.join(__dirname, "..", "anexo", archivo.replace(".docx", "_Anexo.docx"))]];
+    for (const [k, salida] of salidas) {
+      fs.writeFileSync(salida, await Packer.toBuffer(new Document({ ...d, sections: [d.sections[k]] })));
+      console.log(salida);
+    }
   }
 })();

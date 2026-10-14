@@ -89,10 +89,10 @@ function seccionBorrador(json, opciones) {
   json.bloques.forEach((b) => {
     if (opciones.soloCuerpo && destino === partes.anexo) return;
     if (b.tipo === "titulo") {
-      const esAnexo = /^(ANEXO|APPENDIX)/.test(b.texto);
+      const esAnexo = /^(ANEXO|APPENDI)/.test(b.texto);
       if (esAnexo && destino === partes.cuerpo) destino = partes.anexo;
       if (opciones.soloCuerpo && destino === partes.anexo) return;
-      const nivel1 = destino.length === 0 || /^(ANEXO|APPENDIX)/.test(b.texto);
+      const nivel1 = destino.length === 0 || /^(ANEXO|APPENDI)/.test(b.texto);
       destino.push(nivel1 ? titulo(b.texto, esAnexo && destino.length > 0) : subtitulo(b.texto, 140));
     } else if (b.tipo === "pagina") {
       b.filas.forEach((f) => destino.push(new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [COL_TEXTO, COL_SEP, COL_FIG],

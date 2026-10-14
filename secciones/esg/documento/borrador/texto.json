@@ -3,7 +3,7 @@
  "bloques": [
   {
    "tipo": "titulo",
-   "texto": "ENVIROMENTAL, SOCIAL AND GOVERNANCE (ESG)"
+   "texto": "AMBIENTAL, SOCIAL Y GOBIERNO CORPORATIVO (ESG)"
   },
   {
    "tipo": "pagina",
@@ -14,17 +14,17 @@
        "tipo": "p",
        "runs": [
         [
-         "El enfoque ESG de PLAZA es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su modelo de negocios respetando los parámetros ESG y así contribuir a un desarrollo sostenible, lo que le da oportunidad de optar a beneficios financieros externos y de su propia operación. Respecto al cumplimiento de dichos parámetros, Bloomberg califica a la empresa con 3.39 puntos, lo que está por debajo de la media (5-6 pts) de la industria a nivel global y de su competencia directa en Chile (figura E1), pero esto se contra resta con el perfil “verde” de la empresa a nivel local, ya que esta figura como una de las principales REM a nivel regional. ",
+         "El enfoque ESG de Plaza es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su modelo de negocios respetando los parámetros ESG y así contribuir a un desarrollo sostenible, lo que le da oportunidad de optar a beneficios financieros externos y de su propia operación. Respecto al cumplimiento de dichos parámetros, Bloomberg califica a la empresa con 3,39 puntos, lo que está por debajo de la media (5–6 puntos) de la industria a nivel global y de su competencia directa en Chile (Figura E1), pero esto se contrarresta con el perfil “verde” de la empresa a nivel local, ya que figura como una de las principales REM a nivel regional. ",
          false,
          false
         ],
         [
-         "Potential financial benefits:",
+         "Beneficios financieros potenciales:",
          true,
          false
         ],
         [
-         " En cuanto a los beneficios propios de la operación, la implementación de un sistema de gestión de la energía (SGE) certificado por la ISO 50.001, se traduce en un mejor desempeño energético, por ende, en una reducción de costos operativos. Las oportunidades de optar a beneficios externos locales van ligadas a la imagen ESG de la empresa, en Chile existe la ley de I+D (CORFO) dónde PLAZA puede alcanzar hasta un 55% de rebaja de impuestos de 1ª categoría; Perú reconoce a la empresa con 2 estrellas de 4 en “Huella de Carbono Perú”, lo que aporta a la imagen de la empresa para obtener más fácilmente permisos y licencias dentro del país, y Colombia tiene la ley 2.099 de 2021, que permite obtener descuentos aplicables a la renta por inversiones en control, conservación y mejoramiento del medio ambiente.",
+         " En cuanto a los beneficios propios de la operación, la implementación de un sistema de gestión de la energía (SGE) certificado por la ISO 50001, se traduce en un mejor desempeño energético, por ende, en una reducción de costos operativos. Las oportunidades de optar a beneficios externos locales van ligadas a la imagen ESG de la empresa, en Chile existe la Ley I+D (CORFO) donde Plaza puede alcanzar hasta un 55% de rebaja de impuestos de 1ª categoría; Perú reconoce a la empresa con 2 estrellas de 4 en “Huella de Carbono Perú”, lo que aporta a la imagen de la empresa para obtener más fácilmente permisos y licencias dentro del país, y Colombia tiene la Ley 2099 de 2021, que permite obtener descuentos aplicables a la renta por inversiones en control, conservación y mejoramiento del medio ambiente.",
          false,
          false
         ]
@@ -32,43 +32,43 @@
       },
       {
        "tipo": "h1",
-       "texto": "ENVIROMENTAL"
+       "texto": "AMBIENTAL"
       },
       {
        "tipo": "p",
        "runs": [
         [
-         "El enfoque de PLAZA es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del desempeño ambiental, para esto han fijado tres focos de acción estratégica sobre los parámetros ESG, los cuales son: Eficiencia energética e hídrica, huella de carbono y gestión de residuos. El principal objetivo de PLAZA es alcanzar la carbono neutralidad, estableciendo una proyección de ser Net Zero en emisiones de directas e indirectas para 2035 (65.6% succes rate 2025). ",
+         "El enfoque de Plaza es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del desempeño ambiental, para esto han fijado tres focos de acción estratégica sobre los parámetros ESG, los cuales son: Eficiencia energética e hídrica, huella de carbono y gestión de residuos. El principal objetivo de Plaza es alcanzar la carbono neutralidad, estableciendo una proyección de ser Net Zero en emisiones directas e indirectas para 2035 (65,6% de avance 2025). ",
          false,
          false
         ],
         [
-         "Sustentability índices:",
+         "Índices de sostenibilidad:",
          true,
          false
         ],
         [
-         " La compañía está presente en DJSI Chile, DJSI MILA y es la única empresa REM de Sudamérica en ser parte del MSCI ESG, con una clasificación de “BBB”, lo que le da exposición a ETF’s, por otra parte, tiene los siguientes reconocimientos: S&P Sustentability Yearbook ; Morningstar Sustainalytics le da una calificación de 14.4 de riesgo y Huella de Carbono Perú (2/4 estrellas), lo que aporta a su imagen ESG. ",
+         " La compañía está presente en DJSI Chile, DJSI MILA y es la única empresa REM de Sudamérica en ser parte del MSCI ESG, con una clasificación de “BBB”, lo que le da exposición a ETFs, por otra parte, tiene los siguientes reconocimientos: S&P Global Sustainability Yearbook; Morningstar Sustainalytics le da una calificación de 14,4 de riesgo y Huella de Carbono Perú (2/4 estrellas), lo que aporta a su imagen ESG. ",
          false,
          false
         ],
         [
-         "Energy:",
+         "Energía:",
          true,
          false
         ],
         [
-         " PLAZA se ha propuesto disminuir en un 22% la intensidad energética del gasto común para el 2035 (35.5% succes rate 2025; figura E2). La meta propuesta de eficiencia eléctrica es que el 100% sea de energías renovables en 2026 (89.3% succes rate). En 2025 la proporción anual fue 0.16 MWh/m2 (Energía/GLA), siendo 0.14 renovable y 0.014 no renovable) (figura E3).",
+         " Plaza se ha propuesto disminuir en un 22% la intensidad energética del gasto común para el 2035 (35,5% de avance 2025; Figura E2). La meta propuesta de eficiencia eléctrica es que el 100% sea de energías renovables en 2026 (89,3% de avance). En 2025 la proporción anual fue 0,16 MWh/m² (Energía/GLA), siendo 0,14 renovable y 0,014 no renovable (Figura E3).",
          false,
          false
         ],
         [
-         " Water:",
+         "Agua:",
          true,
          false
         ],
         [
-         " Fijó el objetivo en disminuir en un 30% el consumo directo de agua para 2025, lo que se logró en un 100,9% esto se ve influenciado por sus certificaciones LEED y EDGGE. En 2025 la proporción anual fue 0.77 m3/m2 (Agua/GLA) y 0.66 m3/m2 mensual en diciembre. ",
+         " Fijó el objetivo de disminuir en un 30% el consumo directo de agua para 2025, lo que se logró en un 100,9% esto se ve influenciado por sus certificaciones LEED y EDGE. En 2025 la proporción anual fue 0,77 m³/m² (Agua/GLA) y 0,66 m³/m² mensual en diciembre. ",
          false,
          false
         ],
@@ -78,17 +78,27 @@
          false
         ],
         [
-         " Estableció el objetivo de eliminar el 100% del uso de HCFC para 2030 (14.9% succes rate 2025), esto es vital para la gestión de emisiones GEI, dónde Bloomberg reconoce a PLAZA como Líder de la industria global. Waste: PLAZA propuso un 60% de valorización de residuos generados el 2025 (94.8% succes rate; figura E3 y Anexo [Y], figura S4), además de buscar desviar el 75% de residuos sólidos de los vertederos para el 2027. Informa haber eliminado el 97% de los plásticos de un solo uso de la operación. ",
+         " Estableció el objetivo de eliminar el 100% del uso de HCFC para 2030 (14,9% de avance 2025), esto es vital para la gestión de emisiones GEI, donde Bloomberg reconoce a Plaza como Líder de la industria global. ",
          false,
          false
         ],
         [
-         "Climate management: ",
+         "Residuos:",
          true,
          false
         ],
         [
-         "PLAZA adopta las recomendaciones TCFD para integrar los riesgos físicos y de transición, acompañado de un Due Diligence ambiental en adquisiciones de activos, esto bajo el programa de cumplimiento ambiental alineado con la ISO 14.001 y monitoreado por el comité de sustentabilidad.",
+         " Plaza propuso un 60% de valorización de residuos generados el 2025 (94,8% de avance; Figura E3 y Anexo [Y], figura S4), además de buscar desviar el 75% de residuos sólidos de los vertederos para el 2027. Informa haber eliminado el 97% de los plásticos de un solo uso de la operación. ",
+         false,
+         false
+        ],
+        [
+         "Gestión climática:",
+         true,
+         false
+        ],
+        [
+         " Plaza adopta las recomendaciones TCFD para integrar los riesgos físicos y de transición, acompañado de un Due Diligence ambiental en adquisiciones de activos, esto bajo el programa de cumplimiento ambiental alineado con la ISO 14001 y monitoreado por el comité de sustentabilidad.",
          false,
          false
         ]
@@ -102,7 +112,7 @@
        "tipo": "p",
        "runs": [
         [
-         "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo, como un principio de creación de valor compartido situando a las personas de sus grupos de interés en el centro de su estrategia alineado con la ISO 45.001 y las directrices de la OIT, incorporando en 2025 el programa de detección y respuesta ante riesgos de su política de derechos humanos, de esta forma PLAZA gestiona sus stakeholders asegurando una vinculación transparente, utilizando mecanismos como diálogos comunitarios y evaluaciones de materialidad (Anexo [Y], figura S3), estando alerta a cualquier incidencia social a través de su canal de integridad, además de ser reconocido por CADEM en el puesto 31 de 385 “Marcas Ciudadanas”, siendo ganadora de la categoría “Centros Comerciales” (2026). Respecto a los empleados, estos son capacitados e incluso tienen disposición de programas específicos para quienes están por jubilarse (Anexo [Y], sección 5), además de evaluar a sus proveedores con criterios de sostenibilidad (55.3% de los proveedores regionales y 38,4% de los extranjeros). PLAZA gestiona la relación con sus clientes (arrendatarios) a través de un modelo de relacionamiento enfocado en la propuesta de valor y experiencia, evaluando la satisfacción de estos con la medición NPS, donde en 2025 aumentó a 13% (figura E4). Para gestionar emergencias, cada centro cuenta con manuales de emergencias adaptados a los contextos geográficos locales, ejecutando simulacros para prevenir y educar a la comunidad (en 2025 se ejecutaron 52 simulacros) y en cuanto a la privacidad, PLAZA implemento la ISO/IEC 27.001, asegurando la confidencialidad, integridad y disponibilidad de la información ante riesgos cibernéticos.",
+         "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo, como un principio de creación de valor compartido situando a las personas de sus grupos de interés en el centro de su estrategia alineado con la ISO 45001 y las directrices de la OIT, incorporando en 2025 el programa de detección y respuesta ante riesgos de su política de derechos humanos, de esta forma Plaza gestiona sus stakeholders asegurando una vinculación transparente, utilizando mecanismos como diálogos comunitarios y evaluaciones de materialidad (Anexo [Y], figura S3), estando alerta a cualquier incidencia social a través de su canal de integridad, además de ser reconocido por CADEM en el puesto 31 de 385 “Marcas Ciudadanas”, siendo ganadora de la categoría “Centros Comerciales” (2026). Respecto a los empleados, estos son capacitados e incluso tienen disposición de programas específicos para quienes están por jubilarse (Anexo [Y], sección 5), además de evaluar a sus proveedores con criterios de sostenibilidad (55,3% de los proveedores regionales y 38,4% de los extranjeros). Plaza gestiona la relación con sus clientes (arrendatarios) a través de un modelo de relacionamiento enfocado en la propuesta de valor y experiencia, evaluando la satisfacción de estos con la medición NPS, donde en 2025 aumentó a 13% (Figura E4). Para gestionar emergencias, cada centro cuenta con manuales de emergencias adaptados a los contextos geográficos locales, ejecutando simulacros para prevenir y educar a la comunidad (en 2025 se ejecutaron 52 simulacros) y en cuanto a la privacidad, Plaza implementó la ISO/IEC 27001, asegurando la confidencialidad, integridad y disponibilidad de la información ante riesgos cibernéticos.",
          false,
          false
         ]
@@ -112,7 +122,7 @@
        "tipo": "p",
        "runs": [
         [
-         "En materia de diversidad, las mujeres representan el 53.2% de la fuerza laboral total, donde ocupan el 42% de los puestos directivos (figura E4) y hay una brecha salarial entre hombres y mujeres con Media de 28% a nivel regional. La meta al 2028 es que el 60% de los establecimientos estén certificados como espacios inclusivos, además PLAZA obtuvo “Sello Mayor”, distinción que certifica la adaptación física y operacional para las personas mayores.",
+         "En materia de diversidad, las mujeres representan el 53,2% de la fuerza laboral total, donde ocupan el 42% de los puestos directivos (Figura E4) y hay una brecha salarial media entre hombres y mujeres de 28% a nivel regional. La meta al 2028 es que el 60% de los establecimientos estén certificados como espacios inclusivos, además Plaza obtuvo “Sello Mayor”, distinción que certifica la adaptación física y operacional para las personas mayores.",
          false,
          false
         ]
@@ -207,7 +217,7 @@
      "izq": [
       {
        "tipo": "h1",
-       "texto": "GOVERNANCE"
+       "texto": "GOBIERNO CORPORATIVO"
       },
       {
        "tipo": "p",
@@ -218,32 +228,32 @@
          false
         ],
         [
-         "Structure of the board of directors and committees:",
+         "Directorio y comités:",
          true,
          false
         ],
         [
-         " En 2025 el Directorio compuesto por 9 miembros (sólo uno es catalogado como independiente; figura E5 y Anexo [Y], figura S2) es el responsable de definir objetivos, estrategias y políticas de PLAZA, mientras que el comité de directores (compuesto por 3 integrantes) busca revisar los balances y estados financieros, mitigando así los riesgos de agencia. Ambos órganos en conjunto supervisan la gestión de riesgos dirigida por el comité del equipo ejecutivo y el gerente general. En el último semestre de 2025 el gerente general Fernando de Peña Iver presentó su renuncia, pactando su efectividad al terminar el año, por lo que en 2026 asumió el cargo Pablo Pulido Sierra. ",
+         " En 2025 el Directorio compuesto por 9 miembros (sólo uno es catalogado como independiente; Figura E5 y Anexo [Y], figura S2) es el responsable de definir objetivos, estrategias y políticas de Plaza, mientras que el comité de directores (compuesto por 3 integrantes) busca revisar los balances y estados financieros, mitigando así los riesgos de agencia. Ambos órganos en conjunto supervisan la gestión de riesgos dirigida por el comité del equipo ejecutivo y el gerente general. En el último semestre de 2025 el gerente general Fernando de Peña Iver presentó su renuncia, pactando su efectividad al terminar el año, por lo que en 2026 asumió el cargo Pablo Pulido Sierra. ",
          false,
          false
         ],
         [
-         "Shareholders: ",
+         "Accionistas:",
          true,
          false
         ],
         [
-         "PLAZA tiene un modelo de control concentrado, donde es controlado por Falabella S.A. medio de su filial Desarrollos Inmobiliarios SpA (53,05% de las acciones; Anexo [Y], figura S1), los minoritarios que tengan el 1% tienen derecho a proponer candidatos de director, los accionistas son el órgano superior encargado de designar al directorio, auditores externos y aprobar políticas de dividendos. ",
+         " Plaza tiene un modelo de control concentrado, donde es controlado por Falabella S.A. por medio de su filial Desarrollos Inmobiliarios SpA (53,05% de las acciones; Anexo [Y], figura S1), los minoritarios que tengan el 1% tienen derecho a proponer candidatos de director, los accionistas son el órgano superior encargado de designar al directorio, auditores externos y aprobar políticas de dividendos. ",
          false,
          false
         ],
         [
-         "Ethics, audits and controls:",
+         "Ética, auditoría y control:",
          true,
          false
         ],
         [
-         " El marco ético está respaldado por el código de integridad y el modelo de prevención del delito, para así construir una guía de acción de la organización, además PLAZA opera la plataforma Autocompliance para el registro de reuniones con funcionarios públicos y la gestión de regalos e invitaciones, junto con un canal de integridad confidencial para el reporte de irregularidades sin riesgo para el emisor. Bajo supervisión del comité de directores se establece un modelo de control, realizando una auditoría interna reportada al comité mensualmente que monitorea las acciones correctivas, en paralelo el comité debe designar a auditores externos y agencias clasificadoras de riesgo para que analicen la compañía, además de auditar los estados financieros con auditores independientes. En cuanto a sanciones a nivel regional 2025, PLAZA no tiene sanciones a la libre competencia ni de corrupción, pero tiene 27 sanciones a los derechos de los clientes/consumidores, 2 a los derechos de los trabajadores, 1 a la superintendencia medioambiental y 8 de acoso laboral/sexual (Anexo [Y], sección 3).",
+         " El marco ético está respaldado por el código de integridad y el modelo de prevención del delito, para así construir una guía de acción de la organización, además Plaza opera la plataforma Autocompliance para el registro de reuniones con funcionarios públicos y la gestión de regalos e invitaciones, junto con un canal de integridad confidencial para el reporte de irregularidades sin riesgo para el emisor. Bajo supervisión del comité de directores se establece un modelo de control, realizando una auditoría interna reportada al comité mensualmente que monitorea las acciones correctivas, en paralelo el comité debe designar a auditores externos y agencias clasificadoras de riesgo para que analicen la compañía, además de auditar los estados financieros con auditores independientes. En cuanto a sanciones a nivel regional 2025, Plaza no tiene sanciones a la libre competencia ni de corrupción, pero tiene 27 sanciones a los derechos de los clientes/consumidores, 2 a los derechos de los trabajadores, 1 a la superintendencia medioambiental y 8 de acoso laboral/sexual (Anexo [Y], sección 3).",
          false,
          false
         ]

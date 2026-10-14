@@ -47,7 +47,7 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | Distribuciones adicionales 2S26E–2031E | CLP 1,79 billones | v2 Deuda H25 |
 | Cap rate implícito: mercado / DCF / pares Chile / libro / tasadores | 6,0% / 10,1% / 6,4% / 7,5% / 5,55% real | v2 Precio_Objetivo C; DCF C56 |
 | WACC que justifica el precio | 7,56% (−285 pb) | Figuras_Valuacion V6 |
-| Escenarios (precio objetivo) | Bear 1.712 · Base 2.076 · Bull 2.595 · Tasadores 2.719 | réplica del DCF v2 |
+| Escenarios (precio objetivo) | Bear 1.713 · Base 2.076 · Bull 2.627 · Tasadores 2.719 | réplica del DCF v2 |
 | Dividendo esperado | ~CLP 69 por acción (2,0%) | v2 Deuda (2027E ordinario) |
 | Mezcla de ingresos para el CRP | 71,8% Chile · 17,7% Perú · 10,5% Colombia | v2 WACC C16:C20 |
 | Deuda en UF | 79% | Release 2T26 |
@@ -87,9 +87,9 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 | 8 | Tramos de inflación y moneda de la Figura 3 de FA | FA | Derivados de los totales del borrador; reemplazar si hay valores exactos |
 | 9 | Consenso de precio objetivo (ANR) | Valuación | Pendiente de Bloomberg; dato de alto impacto para el texto |
 | 10 | Fuentes políticas de RR2 (Chile, Perú, Colombia) | Riesgos | Tomadas de resúmenes de búsqueda; verificar cada URL antes de entregar |
-| 12 | Bull de Valuación: cuerpo CLP 2.595 vs réplica del DCF 2.627 (Anexo 18) | Valuación | Decidir definición del escenario o corregir el cuerpo |
+| 12 | Bull de Valuación: cuerpo CLP 2.595 vs réplica del DCF 2.627 (Anexo 18) | Valuación | Resuelto: el cuerpo usa la réplica del DCF v2 (bear 1.713, bull 2.627; márgenes trimestrales del tornado) |
 | 13 | Pipeline USD 613 MM / 170.200 m² (texto) vs 123.700 m² / USD 445 MM con fecha (modelo) | Industria / Valuación / Riesgos | Sin resolver |
-| 11 | Rebaja del impuesto corporativo a 23% (Ley de Reconstrucción) | Riesgos / Valuación | No incluida en el modelo (+3,9% al precio objetivo si se aplica) |
+| 11 | Rebaja del impuesto corporativo a 23% (Ley de Reconstrucción) | Riesgos / Valuación | No incluida en el modelo (+5,1% al precio objetivo si se aplica) |
 
 ## 6. Preguntas que probablemente hará el jurado
 

@@ -1,0 +1,619 @@
+{
+ "origen": "Industria_Mallplaza_BORRADOR_FINAL.docx",
+ "bloques": [
+  {
+   "tipo": "titulo",
+   "texto": "INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING"
+  },
+  {
+   "tipo": "pagina",
+   "filas": [
+    {
+     "izq": [
+      {
+       "tipo": "h1",
+       "texto": "AN INDUSTRY THAT IS CONCENTRATED IN CHILE AND FRAGMENTED IN PERU AND COLOMBIA"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "In retail real estate, shopping center operators do not sell products; they lease square meters of gross leasable area (GLA) to their tenants in exchange for income that is mostly fixed and indexed to each country's inflation. At Mallplaza, for example, 93% of rental income is fixed. For this reason, we measure market share by GLA rather than by sales, and on that basis Mallplaza, Cenco Malls and Parque Arauco together manage 3.4 million m² in Chile alone.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Market structure, however, varies from country to country (Figure 2). In Chile, the trio holds 76% of the GLA of the main operators (CR3) and the partial HHI reaches at least 2,126 points, typical of a highly concentrated market, with Mallplaza as leader (33%) followed by Cenco (29%) and Parque Arauco (14%). In Peru and Colombia, by contrast, the trio accounts for only 37% and 13% of GLA, respectively, leadership is held by an outside operator with 29% and 9%, respectively, and Mallplaza ranks second in both markets. Fragmentation is greatest in Colombia, where most shopping centers are strata-titled (multi-owner), which forces professional operators to grow by acquiring single-owner assets, as Mallplaza did with Gran Plaza.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "NEW SUPPLY IN CHILE GROWS IN LINE WITH CONSUMPTION, WITH PRESSURE IN 2027-2028"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Between 2026 and 2028, the trio will add 219,900 m² of organic GLA in Chile that will compete for consumer spending, equivalent to 6.7% of its current GLA; this figure excludes offices and multifamily, which do not depend on consumption, as well as acquisitions, which merely change ownership. Over the same period, the Central Bank of Chile projects cumulative private consumption growth of 6.4% (Figure 3), so new supply is advancing practically in line with expected demand. The timing, however, is uneven: 2026 adds almost no space (+0.2%), and pressure is concentrated in 2027 and 2028, when supply (+2.9% and +3.5%) outpaces consumption (+2.1% and +2.7%).",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "The starting point is challenging, as in 2Q26 real tenant sales of the trio in Chile fell 2.5% YoY. Mallplaza was the only one to grow in real terms (+1.0%), versus declines at Parque Arauco (−1.7%) and Cenco (−5.9%). Even so, tenants continue to demand space, and consolidated occupancy at the three companies has ranged between 93% and 99% since 2Q22, even through the cycle of high inflation and interest rates (Appendix B). Outside Chile, the balance is more comfortable: dated new supply is limited to Mallplaza expansions in Peru (55,800 m²), is practically nil in Colombia, and coexists with Mallplaza same-store sales (SSS) that grew 7.0% in Peru and 9.0% in Colombia in local currency.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "AN ATTRACTIVE INDUSTRY WHOSE ONLY INTENSE FORCE IS RIVALRY"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "To assess the industry's attractiveness, we analyze Porter's five forces in each country on a scale of 1 (weak) to 5 (intense) and weight them by Mallplaza's GLA in Chile (62%), Peru (26%) and Colombia (12%) (Figure 4; evidence in Appendix D). The result describes an attractive industry, consistent with EBITDA margins ranging from 71% to 90% across the three operators, in which the only intense force is rivalry.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Rivalry (4)",
+         true,
+         false
+        ],
+        [
+         " is played out not on price but on experience and assets. Mallplaza devotes more than half of its GLA to non-traditional, experience and entertainment formats, Cenco opened QINTO with 30,000 m² of food and dining at Costanera, and Parque Arauco is adding dining floors at Kennedy, while competition to acquire assets is intensifying, with Minka and Plaza Central changing hands in the past year and Parque Arauco announcing the purchase of Quilín and Chicureo. We do not assign the maximum score because the trio's shares in Chile have remained stable since 2Q22 (Appendix C) and margins show no erosion.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     "der": [
+      {
+       "tipo": "caption",
+       "n": "Figure 2:",
+       "texto": "Market share by GLA and concentration, 2Q26"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image1.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A., Institutional Presentation 2Q26 (slide 7); team analysis. Colombia pro forma, including Gran Plaza.",
+         false,
+         true
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figure 3:",
+       "texto": "New GLA supply in Chile vs expected private consumption, 2026-2028"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image2.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "2Q26 reports of Plaza S.A., Parque Arauco and Cenco Malls; Central Bank of Chile, Monetary Policy Report (IPoM) Sep-2026 (Table II.1); team analysis. Organic consumption-dependent GLA only.",
+         false,
+         true
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "izq": [
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "The threat of ",
+         false,
+         false
+        ],
+        [
+         "new entrants (2)",
+         true,
+         false
+        ],
+        [
+         " is limited, because developing a shopping center is highly capital-intensive (Mallplaza's expansion pipeline totals USD 613 million for 170,200 m²) and much of the scarce urban land is already in the hands of incumbents, with land banks of 618,200 m² at Mallplaza and 640,136 m² at Cenco, although the barrier is lower in Peru and especially in Colombia. The ",
+         false,
+         false
+        ],
+        [
+         "bargaining power of tenants (1)",
+         true,
+         false
+        ],
+        [
+         " is weak, given that occupancy in Chile reaches 96-99%, leases are long (Figure 6) and tenants are highly fragmented, to the point that the top five account for only 18% of Mallplaza's revenue. Evidence of this is that Mallplaza has raised its rents in Chile above inflation for more than three years (6.9% versus 4.8% on average between 1Q23 and 2Q26) without its tenants' occupancy cost spiking. The exception is department stores, which as anchors negotiate better terms, although their weight has already fallen to 19.0% of GLA. ",
+         false,
+         false
+        ],
+        [
+         "Suppliers (1)",
+         true,
+         false
+        ],
+        [
+         " carry little weight, because common-area expenses are passed through to tenants and cost of sales represents only 6.2% of Mallplaza's revenue. Finally, ",
+         false,
+         false
+        ],
+        [
+         "substitutes (2)",
+         true,
+         false
+        ],
+        [
+         " are a low threat: e-commerce takes sales away from tenants, but fixed rent protects the operator and foot traffic keeps growing, as shown by the 4.4% increase at Mallplaza Chile in 2Q26.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "MALLPLAZA TURNS ITS SCALE INTO THE MOST PRODUCTIVE M² OF THE TRIO"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Mallplaza turns its scale into the highest EBITDA per m² of the trio, at CLP 59,451 in 2Q26 versus 58,384 at Cenco and 55,738 at Parque Arauco (Figure 5). That advantage stems from high-traffic urban locations, which in Chile received 52.7 million visits in the quarter versus 32.5 million at Cenco, and from monthly sales per m² of CLP 289,788 in Chile, 5.8% higher than a year earlier. The gap with Cenco is narrow and is partly explained by Cenco having added Plaza Central in June, with just one month of EBITDA in the quarter.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "In terms of share, Mallplaza has ceded 1.2 pp within the trio in Chile since 2Q22, mainly because Parque Arauco added Kennedy Oriente (70,000 m²) through an acquisition while Mallplaza grew only through expansions, an organic strategy that its 114,400 m² pipeline in Chile through 2028 allows it to sustain.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "h1",
+       "texto": "LONG LEASES TO DEFEND ITS POSITION"
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "That position is backed by long-duration leases. The weighted average remaining lease term at Mallplaza is 7.1 years and 57% of its GLA expires in more than five years (Figure 6), placing it between Cenco (8.7 years) and Parque Arauco (5.0 years) with a useful balance: it secures enough revenue to weather the supply pressure of 2027-2028 while leaving 15.1% of GLA expiring within two years to reset rents if demand allows.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "In an attractive industry, but one with high rivalry and supply that will outpace consumption in 2027-2028, the operators with the most productive assets and the most stable leases will gain share and profitability. Mallplaza leads in scale in Chile and in productivity per m², and is the only one of the trio with growing real sales, which leaves it well positioned to defend its profitability. Its main risk is its exposure to Chile, which accounts for 62% of its GLA and where consumption currently looks weaker.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     "der": [
+      {
+       "tipo": "caption",
+       "n": "Figure 4:",
+       "texto": "Porter's five forces, 1-5 scale"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image3.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "team analysis based on 2Q26 reports (Appendix D). 1 = weak force; 5 = intense force.",
+         false,
+         true
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figure 5:",
+       "texto": "EBITDA per m² of GLA, 2Q26 quarterly (CLP)"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image4.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A. Earnings Release 2Q26; Cenco Malls Earnings Presentation 2Q26; Parque Arauco 2Q26 Report; team analysis. 2Q26 EBITDA / consolidated GLA as of June 30, 2026.",
+         false,
+         true
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figure 6:",
+       "texto": "Lease expiry profile (% of GLA) and weighted average remaining term, 2Q26"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image5.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A. Earnings Release 2Q26 (p.7); Cenco Malls Earnings Presentation 2Q26 (p.14); Parque Arauco 2Q26 Report (p.7) and Investor Presentation 2Q26 (slide 17). GLA-weighted; assumption for Mallplaza.",
+         false,
+         true
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "APPENDICES: INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING"
+  },
+  {
+   "tipo": "figuras",
+   "filas": [
+    [
+     [
+      {
+       "tipo": "caption",
+       "n": "Appendix A:",
+       "texto": "GLA pipeline 2026-2028: organic vs acquisitions (m²)"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image6.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A. 2Q26 reports and 2025 Annual Report; Parque Arauco Investor Presentation 2Q26; Cenco Malls Corporate Presentation 2Q26. Dated projects only.",
+         false,
+         true
+        ]
+       ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Appendix C:",
+       "texto": "Market share within the trio in Chile, 2Q22-2Q26 (% of GLA)"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image7.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "2Q22-2Q26 earnings reports of the three companies; team analysis.",
+         false,
+         true
+        ]
+       ]
+      }
+     ],
+     [
+      {
+       "tipo": "caption",
+       "n": "Appendix B:",
+       "texto": "Consolidated occupancy rate, 2Q22-2Q26"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image8.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "2Q22-2Q26 earnings reports of the three companies. Each company defines occupancy differently; Mallplaza includes Open Plaza since 2Q25.",
+         false,
+         true
+        ]
+       ]
+      }
+     ]
+    ]
+   ]
+  },
+  {
+   "tipo": "caption",
+   "n": "Appendix D:",
+   "texto": "Porter's five forces by country and key evidence"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Force",
+     "Chile",
+     "Peru",
+     "Colombia",
+     "Final",
+     "Key evidence"
+    ],
+    [
+     "Rivalry",
+     "4",
+     "4",
+     "4",
+     "4",
+     "CR3 76% / 37% / 13%; race to reinvest in experience; asset acquisitions (Minka, Plaza Central; Quilín and Chicureo announced); supply above consumption in 2027-28. Stable shares and margins of 71-90%."
+    ],
+    [
+     "New entrants",
+     "1",
+     "2",
+     "3",
+     "2",
+     "Capital-intensive (USD 613 million for 170,200 m² at Mallplaza); incumbents' land banks; Peru and Colombia less concentrated; most malls in Colombia are strata-titled (multi-owner)."
+    ],
+    [
+     "Bargaining power of tenants",
+     "1",
+     "2",
+     "2",
+     "1",
+     "Chile occupancy 96-99%; average lease terms of 5.0-8.7 years; top 5 = 18% of Mallplaza revenue; Chile SSR above CPI (6.9% vs 4.8%, 1Q23-2Q26); department stores 19.0% of GLA."
+    ],
+    [
+     "Bargaining power of suppliers",
+     "1",
+     "1",
+     "1",
+     "1",
+     "Common-area expenses passed through to tenants (2025 Annual Report, note 2.20); cost of sales 6.2% of Mallplaza revenue."
+    ],
+    [
+     "Substitutes",
+     "2",
+     "2",
+     "2",
+     "2",
+     "93% of Mallplaza rental income is fixed; 2Q26 visits +4.4% Chile, +1.3% Peru, +2.5% Colombia; shift toward experience. No official e-commerce data by country."
+    ]
+   ],
+   "negrita": [
+    [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false,
+     false,
+     true,
+     false
+    ],
+    [
+     false,
+     false,
+     false,
+     false,
+     true,
+     false
+    ],
+    [
+     false,
+     false,
+     false,
+     false,
+     true,
+     false
+    ],
+    [
+     false,
+     false,
+     false,
+     false,
+     true,
+     false
+    ],
+    [
+     false,
+     false,
+     false,
+     false,
+     true,
+     false
+    ]
+   ],
+   "anchos": [
+    1700,
+    620,
+    620,
+    800,
+    620,
+    6306
+   ]
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Source: ",
+     false,
+     false
+    ],
+    [
+     "team analysis. 1-5 scale in whole numbers; final score = weighted average by Mallplaza GLA as of 2Q26 (Chile 61.9%, Peru 26.2%, Colombia 11.9%), rounded to the nearest integer. For new entrants, the weighted score sits at the threshold (1.5) and the team sets it at 2 given lower barriers to entry in Peru and Colombia. Detail and sources for each data point in Porter_industria_2Q26.xlsx.",
+     false,
+     true
+    ]
+   ]
+  },
+  {
+   "tipo": "caption",
+   "n": "Appendix E:",
+   "texto": "Key assumptions"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Topic",
+     "Assumption"
+    ],
+    [
+     "Market share",
+     "Measured by GLA (not by sales) across the main operators in each country (slide 7, Institutional Presentation 2Q26). Partial HHI: it is a floor."
+    ],
+    [
+     "Pipeline",
+     "Only projects with dates in official reports as of 2Q26 and the 2025 Annual Report; for date ranges, the end of the range is used; acquisitions are not new supply for the industry."
+    ],
+    [
+     "Supply vs demand",
+     "Chile only and only consumption-dependent m² (excludes offices and multifamily); base GLA excludes Cenco's offices. Private consumption from the Sep-2026 IPoM is used as a demand indicator, not as a sales forecast."
+    ],
+    [
+     "EBITDA per m²",
+     "EBITDA as defined by each company (none includes IAS 40 revaluation gains); 2Q26 EBITDA not annualized; consolidated GLA at 100% of controlled assets."
+    ],
+    [
+     "Leases",
+     "Profile and term weighted by GLA: explicit for Cenco and in Parque Arauco's profile; assumption for Mallplaza."
+    ],
+    [
+     "Real sales",
+     "Chile tenant sales 2Q26 vs 2Q25 deflated by 12-month CPI as of June 2026 (4.3%; INE, release dated July 8, 2026). Cenco 2Q25 calculated from its published change (−1.9%)."
+    ],
+    [
+     "Dates",
+     "Company data as of June 30, 2026; macro projections from the September 2026 IPoM, as the most recent available."
+    ]
+   ],
+   "negrita": [
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ]
+   ],
+   "anchos": [
+    1700,
+    8966
+   ]
+  }
+ ]
+}
