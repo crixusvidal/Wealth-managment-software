@@ -22,6 +22,8 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | 6 | ESG | Calidad del gobierno y sostenibilidad | Perfil "verde" local fuerte pero puntaje Bloomberg bajo (3,39); 1 de 9 directores independiente; interlocking con Falabella (53,05%) | `secciones/esg` |
 | A | Anexos | Respaldo | WACC por período (Valuación), supuestos y estados resumidos (FA), macro 2022–2026, ESG | `*/anexo` |
 
+**Abstract (condicional).** El equipo quiere incluir un abstract si sobra espacio dentro de las 10 páginas de cuerpo. Hoy no sobra: ESG ocupa 2 páginas y la plantilla le asigna 1,5. Si se libera espacio, va antes de Business Description (unas 150 palabras): tesis, recomendación VENDER, precio objetivo CLP 2.076 frente a CLP 3.555 y por qué el desacuerdo está en la tasa.
+
 **Cómo se encadenan:** Business e Industry dicen "es un gran negocio" → Financial Analysis dice "pero crece ~3% real y su utilidad está inflada por la tasación" → Valuation dice "y a este precio el mercado ya paga más de lo que esos flujos valen" → Risks dice "lo que puede cambiar la conclusión es la tasa, no la operación" → ESG agrega el matiz de gobierno (interlocking).
 
 ## 3. Cifras ancla (fuente única)
