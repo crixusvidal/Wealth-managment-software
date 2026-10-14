@@ -1,26 +1,18 @@
-"""Tornado de riesgo operacional de Mallplaza: impacto en el valor por acción.
+"""Motor del tornado de riesgo operacional de Mallplaza (biblioteca).
 
 Replica el motor Forecast del archivo de exhibits y el DCF del modelo consolidado
-(expansión continua, capital de trabajo, valor terminal normalizado; verifica que
-reproduce ingresos, FCFF y valor por acción del Excel) y mueve cada variable
-operacional a su mínimo y máximo histórico (hoja Supuestos del archivo de tornado,
-más rangos documentados en el propio Forecast), dejando todo lo demás en el caso base.
-
-Uso:
-    python graficos/tornado_operacional.py <FA_Exhibits.xlsx> <Valoracion_Consolidada.xlsx> \\
-        <Tornado_Sensibilidad.xlsx> [salida.png]
+(expansión continua, capital de trabajo, valor terminal normalizado) y mueve cada variable
+operacional a su mínimo y máximo histórico (hoja Supuestos del archivo de tornado), dejando
+todo lo demás en el caso base. La usa pagina_riesgos.py (Figura 24).
 """
 import sys
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
-from matplotlib.patches import Rectangle
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
 import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
-from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 AÑOS = "EFGHI"  # 2027E–2031E en la hoja Forecast de Exhibits
 CORTO = [0, 1]  # 2027–2028: horizonte del tornado (2026 ya está anclado al 1S26 real)
@@ -199,85 +191,3 @@ def escenarios(m, rangos):
     out.append(("Tenant sales growth 2027–28", f"{lo:.1%} – {hi:.1%} (variable rent)",
                 {"d_ss_corto": s * d_lo}, {"d_ss_corto": s * d_hi}))
     return out
-
-
-def miles(x):
-    return f"{x:,.0f}"
-
-
-def graficar(ruta_fa, ruta_vf, ruta_tornado, salida):
-    m, control = leer_modelo(ruta_fa, ruta_vf)
-    ingresos, fcff, base = proyectar(m)
-    assert np.allclose(ingresos, control["ingresos"], rtol=1e-9), "ingresos"
-    assert np.allclose(fcff, control["fcff"], atol=1.0), "FCFF"
-    assert abs(base - control["valor"]) < 0.01, (base, control["valor"])
-
-    filas = []
-    for nombre, rango, k_lo, k_hi in escenarios(m, leer_rangos(ruta_tornado)):
-        v_lo, v_hi = proyectar(m, **k_lo)[2], proyectar(m, **k_hi)[2]
-        filas.append((nombre, rango, v_lo, v_hi))
-    filas.sort(key=lambda r: (base - r[2], r[3] - r[2]))
-
-    for nombre, rango, v_lo, v_hi in reversed(filas):
-        print(f"{nombre:38s} {rango:32s} {v_lo:8.0f} {v_hi:8.0f}  "
-              f"({v_lo / base - 1:+.1%} / {v_hi / base - 1:+.1%})")
-
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
-    fig = plt.figure(figsize=(12, 7.5), dpi=200)
-    fig.patch.set_facecolor("white")
-    fig.add_artist(Rectangle((0.05, 0.905), 0.008, 0.055, color=ROJO,
-                             transform=fig.transFigure))
-    fig.text(0.065, 0.915, "OPERATIONAL RISK TORNADO", fontsize=22,
-             fontweight="bold", color=NEGRO)
-    fig.text(0.05, 0.87, "Mallplaza · DCF value per share (CLP) when each operating driver "
-             "moves to its historical low or high · ranked by downside", fontsize=11, color=TINTA_SECUNDARIA)
-
-    ax = fig.add_axes([0.31, 0.13, 0.62, 0.68])
-    y = np.arange(len(filas))
-    for yi, (nombre, rango, v_lo, v_hi) in zip(y, filas):
-        ax.barh(yi, v_lo - base, left=base, height=0.62, color=ROJO)
-        ax.barh(yi, v_hi - base, left=base, height=0.62, color=CELESTE)
-        for v, lado in ((v_lo, -1), (v_hi, 1)):
-            if abs(v - base) < 0.5:
-                continue
-            ax.text(v + lado * 12, yi, f"{miles(v)}  ({v / base - 1:+.1%})",
-                    va="center", ha="left" if lado > 0 else "right",
-                    fontsize=9.5, color=NEGRO)
-        ax.text(-0.02, yi + 0.1, nombre, transform=ax.get_yaxis_transform(),
-                ha="right", va="center", fontsize=10.5, fontweight="bold", color=NEGRO)
-        ax.text(-0.02, yi - 0.2, rango, transform=ax.get_yaxis_transform(),
-                ha="right", va="center", fontsize=8.5, color=TINTA_SECUNDARIA)
-
-    ax.axvline(base, color=NEGRO, linewidth=1.2, zorder=3)
-    ax.text(base, len(filas) - 0.35, f"Base case {miles(base)}", ha="center",
-            va="bottom", fontsize=9.5, fontweight="bold", color=NEGRO, zorder=4,
-            bbox={"facecolor": "white", "edgecolor": "none", "pad": 2})
-    extremo = max(max(abs(r[2] - base), abs(r[3] - base)) for r in filas)
-    ax.set_xlim(base - extremo * 1.45, base + extremo * 1.45)
-    ax.set_ylim(-0.6, len(filas) - 0.1)
-    ax.set_yticks([])
-    ax.xaxis.set_major_formatter(lambda x, _: miles(x))
-    ax.tick_params(axis="x", length=0, colors=TINTA_SECUNDARIA, labelsize=9)
-    ax.grid(axis="x", color=GRILLA, linewidth=0.8)
-    ax.set_axisbelow(True)
-    for lado in ax.spines.values():
-        lado.set_visible(False)
-    ax.set_xlabel("Value per share (CLP)", color=TINTA_SECUNDARIA, labelpad=8)
-
-    for x, color, texto in ((0.31, ROJO, "Historical low"), (0.45, CELESTE, "Historical high")):
-        fig.add_artist(Rectangle((x, 0.045), 0.014, 0.02, color=color,
-                                 transform=fig.transFigure))
-        fig.text(x + 0.02, 0.055, texto, va="center", fontsize=9, color=NEGRO)
-    fig.text(0.62, 0.055, f"Terminal WACC {m['wacc']:.2%} · g {m['g']:.1%} held constant",
-             va="center", fontsize=9, color=TINTA_SECUNDARIA)
-    fig.text(0.05, 0.015, "Source: Team analysis.", fontsize=8, color=TINTA_SECUNDARIA)
-
-    fig.savefig(salida, facecolor="white")
-    print(f"Gráfico guardado en {salida}")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        sys.exit(__doc__)
-    graficar(sys.argv[1], sys.argv[2], sys.argv[3],
-             sys.argv[4] if len(sys.argv) > 4 else Path(__file__).parent / "figuras" / "tornado_operacional.png")

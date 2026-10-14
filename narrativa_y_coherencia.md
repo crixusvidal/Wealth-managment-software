@@ -58,6 +58,18 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 4. **Colores.** Solo la paleta institucional de `secciones/comun/estilo.py` (rojo, celeste, amarillo, negro, azul; verde y morado solo para Parque Arauco y Cencosud). Sin grises ni tonos pastel en series.
 5. **Figuras.** Sin título ni fuente dentro de la imagen del informe (van en el Word). Las versiones "_titulado" son solo para compartir fuera del informe.
 6. **Margen 2026E.** 79,7% es el año calendario; 79,8% es solo el semestre 2S26E. No mezclarlos.
+7. **Solo dos versiones.** De cada documento y cada gráfico se conservan solo la versión actual y la penúltima; las anteriores se eliminan junto con el código Python que solo servía para generarlas (siguen en el historial de git). Las variantes de una misma versión (ES/EN, docx/pdf, normal/"_titulado") no cuentan como versiones. Los modelos Excel quedan fuera de esta regla.
+
+### Versiones vigentes (actual → penúltima)
+
+| Elemento | Actual | Penúltima |
+|---|---|---|
+| Página de Riesgos | `riesgos/documento/Mallplaza_Investment_Risks_*.docx` | `plantilla_informe/documento/Investment_Risks_template.docx` |
+| Figuras de Riesgos (matriz, tornado, mapa de calor, UF) | `riesgos/.../es_/en_fig23–26` | `plantilla_informe/.../fig1–fig4` |
+| Football field | `valuacion/.../es_/en_V1_football.png` | `valuacion/.../football_field.png` |
+| Cuota de mercado por país | `industria/.../ind5b_market_share_paises_vertical.png` | `industria/.../ind5_market_share_paises.png` |
+
+Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado_operacional`, `heatmap_sensibilidad_wacc`, `reajuste_uf`) y la grilla `sensibilidad_wacc` de Valuación (modelo VF), con `matriz_riesgo.py` y `sensibilidad_wacc.py`. `tornado_operacional.py`, `heatmap_sensibilidad_wacc.py` y `reajuste_uf.py` quedan solo como bibliotecas de cálculo de `pagina_riesgos.py`.
 
 ## 5. Inconsistencias conocidas y decisiones pendientes
 

@@ -15,14 +15,10 @@ python3 industria/graficos/industria.py industria/modelos/Excel_DATA_INDUSTRY.xl
 python3 industria/graficos/cuota_mercado.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
 python3 valuacion/graficos/valuacion.py $V/Mallplaza_Figuras_Valuacion_recalc.xlsx - $V2
 python3 valuacion/graficos/football_field.py $V2
-python3 valuacion/graficos/sensibilidad_wacc.py $V/Mallplaza_Valoracion_Consolidada_VF.xlsx
 python3 valuacion/graficos/tabla_kd_caprates.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
 python3 valuacion/graficos/tabla_multiplos_implicitos.py $FA
 python3 analisis_financiero/graficos/analisis_financiero.py
 python3 riesgos/graficos/pagina_riesgos.py $FA $V2 $TOR
-python3 riesgos/graficos/tornado_operacional.py $FA $V2 $TOR
-python3 riesgos/graficos/heatmap_sensibilidad_wacc.py $V2
-python3 riesgos/graficos/reajuste_uf.py riesgos/graficos/figuras/reajuste_uf
 python3 esg/graficos/esg.py
 python3 macro/graficos/anexo_macro.py
 python3 plantilla_informe/graficos/figuras_informe.py $FA $V2 $TOR
