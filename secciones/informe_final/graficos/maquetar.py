@@ -55,7 +55,7 @@ def huerfanos(pdf):
 
 # Posiciones de las figuras flotantes ------------------------------------------------------------
 ALTO_PAG, ARRIBA, ABAJO = 841.89, 50.0, 841.89 - 45.0     # A4 en puntos; márgenes 1000 / 900 twips
-SEP = 6.0                                                 # separación vertical entre figuras (pt)
+SEP = 4.0                                                 # separación vertical entre figuras (pt)
 
 
 def tokens(texto):
@@ -99,7 +99,7 @@ def ubicar(plan, pdf):
     return pos
 
 
-def posicionar(plan, pdf):
+def posicionar(plan, pdf, adelantar=frozenset()):
     """Ubica cada figura junto al párrafo que la cita. Devuelve (posiciones, espacios): si las figuras de una
     sección no terminan antes del siguiente bloque de ancho completo, ese bloque necesita bajar (espacios)."""
     pos = ubicar(plan, pdf)
@@ -124,6 +124,8 @@ def posicionar(plan, pdf):
             for p in range(p0, p1 + 1):
                 obst.setdefault(p, []).append((y0 if p == p0 else ARRIBA, y1 if p == p1 else ABAJO))
         p, y = pos[fig["cita"]]
+        if fig.get("clave") in adelantar and p > 0:     # último recurso: puede subir hasta una página antes de su cita
+            p, y = p - 1, y
         h = fig["alto"] * 72
         for _ in range(300):
             y = max(y, ARRIBA)
@@ -158,9 +160,45 @@ def posicionar(plan, pdf):
 def main(langs, saltos=False):
     for lang in langs:
         (DOC / f"posiciones_{lang}.json").unlink(missing_ok=True)
-        pdf_m = armar(lang, medir=True)
-        plan = json.loads((DOC / f"plan_{lang}.json").read_text())
-        pos, finales = posicionar(plan, pdf_m)
+        # Gráficos al costado del texto. Si alguno no cabe antes del siguiente bloque de ancho completo, se achica
+        # el alto de los gráficos de ese tramo (hasta 70%) y se vuelve a medir. Lo que igual no quepa (idealmente
+        # ninguno, a lo más 2) va en una fila de dos al cierre de la sección.
+        archivo_esc = DOC / f"escalas_{lang}.json"
+        escalas = {}
+        archivo_esc.write_text("{}")
+        for vuelta in range(14):
+            pdf_m = armar(lang, medir=True)
+            plan = json.loads((DOC / f"plan_{lang}.json").read_text())
+            pos, finales = posicionar(plan, pdf_m)
+            fuera = [i for v in finales.values() for i in v]
+            print(lang, "vuelta", vuelta, "escalas:", escalas, "abajo:", len(fuera), flush=True)
+            if not fuera:
+                break
+            figs = {f["id"]: f for f in plan["figuras"]}
+            secc = {figs[i]["clave"] for i in fuera}
+            pag0 = min((v["pagina"] for k, v in pos.items() if figs[int(k)]["clave"] in secc), default=0)
+            claves = secc | {figs[int(k)]["clave"] for k, v in pos.items() if v["pagina"] >= pag0}
+            nuevas = {c: round(max(0.65, escalas.get(c, 1.0) * 0.93), 3) for c in claves}
+            if all(nuevas[c] >= escalas.get(c, 1.0) for c in claves):
+                if len(fuera) <= 1:
+                    break                               # ya en el mínimo legible
+                # aún quedan 2 o más abajo: también se achican los de la página anterior del tramo
+                claves = claves | {figs[int(k)]["clave"] for k, v in pos.items() if v["pagina"] >= pag0 - 1}
+                nuevas = {c: round(max(0.65, escalas.get(c, 1.0) * 0.93), 3) for c in claves}
+                if all(nuevas[c] >= escalas.get(c, 1.0) for c in claves):
+                    break
+            escalas.update(nuevas)
+            archivo_esc.write_text(json.dumps(escalas))
+        fuera = [i for v in finales.values() for i in v]
+        if fuera:
+            figs = {f["id"]: f for f in plan["figuras"]}
+            pdf_m = armar(lang, medir=True)
+            adel = frozenset(figs[i]["clave"] for i in fuera) | frozenset(escalas)
+            pos2, fin2 = posicionar(plan, pdf_m, adel)
+            n2 = sum(len(v) for v in fin2.values())
+            print(lang, "adelantando", sorted(adel), "abajo:", n2)
+            if n2 < len(fuera):
+                pos, finales = pos2, fin2
         (DOC / f"finales_{lang}.json").write_text(json.dumps(finales, indent=1))
         print(lang, "figuras en grilla al cierre de sección:", {k: [plan["figuras"][i]["n"] for i in v] for k, v in finales.items()})
         (DOC / f"posiciones_{lang}.json").write_text(json.dumps(pos, indent=1))

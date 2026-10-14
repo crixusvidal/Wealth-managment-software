@@ -31,7 +31,9 @@ const textoRuns = (runs) => runs.map((r) => r[0]).join("");
 
 // Figura: título + gráfico + fuente, en una tabla de la columna derecha
 const ALTO_MAX = 1.8;   // pulgadas
-function medidas(fig, anchoTw = F.COL_FIG, altoMax = ALTO_MAX) {
+// Escala del alto máximo por sección (la ajusta maquetar.py para que todas las figuras quepan al costado del texto)
+const ESCALAS = {};
+function medidas(fig, anchoTw = F.COL_FIG, altoMax = ALTO_MAX * (ESCALAS[fig.clave] || 1)) {
   const w = anchoTw / 1440, h = F.altoPng(fig.archivo, w);
   return h > altoMax ? [w * altoMax / h, altoMax] : [w, h];
 }
@@ -143,7 +145,7 @@ function hijos(plan, posiciones, envolver = (fig, fn) => fn(), finales = {}) {
 }
 const resumenPlan = (plan) => ({
   elementos: plan.elementos.map((e, i) => ({ i, tipo: e.tipo, barrera: !!e.barrera, inicio: (e.inicio || "").slice(0, 120) })),
-  figuras: plan.figuras.map((f) => ({ id: f.id, n: f.n, cita: f.cita, alto: altoFigura(f) })),
+  figuras: plan.figuras.map((f) => ({ id: f.id, n: f.n, cita: f.cita, clave: f.clave, alto: altoFigura(f) })),
 });
 
-module.exports = { nuevoPlan, ancho, texto, seccionBorrador, seccionModulo, hijos, resumenPlan };
+module.exports = { ESCALAS, nuevoPlan, ancho, texto, seccionBorrador, seccionModulo, hijos, resumenPlan };

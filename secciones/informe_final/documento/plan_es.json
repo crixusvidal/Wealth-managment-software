@@ -570,151 +570,176 @@
    "id": 0,
    "n": "Figura 1:",
    "cita": 3,
+   "clave": "negocio",
    "alto": 2.5000000000000004
   },
   {
    "id": 1,
    "n": "Figura 2:",
    "cita": 11,
+   "clave": "industria",
    "alto": 2.5000000000000004
   },
   {
    "id": 2,
    "n": "Figura 3:",
    "cita": 13,
+   "clave": "industria",
    "alto": 2.369665532879819
   },
   {
    "id": 3,
    "n": "Figura 4:",
    "cita": 16,
+   "clave": "industria",
    "alto": 2.365
   },
   {
    "id": 4,
    "n": "Figura 5:",
    "cita": 20,
+   "clave": "industria",
    "alto": 1.9671712018140592
   },
   {
    "id": 5,
    "n": "Figura 6:",
    "cita": 18,
+   "clave": "industria",
    "alto": 2.2690419501133787
   },
   {
    "id": 6,
    "n": "Figura E1:",
    "cita": 26,
+   "clave": "esg",
    "alto": 2.5000000000000004
   },
   {
    "id": 7,
    "n": "Figura E2:",
    "cita": 28,
+   "clave": "esg",
    "alto": 2.205197205318909
   },
   {
    "id": 8,
    "n": "Figura E3:",
    "cita": 28,
+   "clave": "esg",
    "alto": 2.5000000000000004
   },
   {
    "id": 9,
    "n": "Figura E4:",
    "cita": 30,
+   "clave": "esg",
    "alto": 2.2651915708812265
   },
   {
    "id": 10,
    "n": "Figura E5:",
    "cita": 33,
+   "clave": "esg",
    "alto": 2.290191570881226
   },
   {
    "id": 11,
    "n": "Figura 2:",
    "cita": 39,
-   "alto": 2.745
+   "clave": "fa",
+   "alto": 2.115
   },
   {
    "id": 12,
    "n": "Figura 3:",
    "cita": 43,
-   "alto": 2.855
+   "clave": "fa",
+   "alto": 2.2250000000000005
   },
   {
    "id": 13,
    "n": "Figura 4:",
    "cita": 49,
-   "alto": 2.670197205318909
+   "clave": "fa",
+   "alto": 2.0900000000000003
   },
   {
    "id": 14,
    "n": "Figura 5:",
    "cita": 54,
-   "alto": 2.72
+   "clave": "fa",
+   "alto": 2.0900000000000003
   },
   {
    "id": 15,
    "n": "Figura 6:",
    "cita": 55,
-   "alto": 2.72
+   "clave": "fa",
+   "alto": 2.0900000000000003
   },
   {
    "id": 16,
    "n": "Figura 7:",
    "cita": 52,
-   "alto": 2.745
+   "clave": "fa",
+   "alto": 2.115
   },
   {
    "id": 17,
    "n": "Figura 27:",
    "cita": 66,
-   "alto": 2.5000000000000004
+   "clave": "valuacion",
+   "alto": 1.87
   },
   {
    "id": 18,
    "n": "Figura 28:",
    "cita": 72,
-   "alto": 2.290191570881226
+   "clave": "valuacion",
+   "alto": 1.7600000000000002
   },
   {
    "id": 19,
    "n": "Figura 29:",
    "cita": 75,
-   "alto": 2.39
+   "clave": "valuacion",
+   "alto": 1.7600000000000002
   },
   {
    "id": 20,
    "n": "Figura 30:",
    "cita": 77,
-   "alto": 2.5000000000000004
+   "clave": "valuacion",
+   "alto": 1.87
   },
   {
    "id": 21,
    "n": "Figura 31:",
    "cita": 80,
-   "alto": 2.6100000000000003
+   "clave": "valuacion",
+   "alto": 1.9800000000000004
   },
   {
    "id": 22,
    "n": "Figura 32:",
    "cita": 83,
-   "alto": 2.5000000000000004
+   "clave": "valuacion",
+   "alto": 1.87
   },
   {
    "id": 23,
    "n": "Figura 33:",
    "cita": 86,
-   "alto": 2.30018030200586
+   "clave": "valuacion",
+   "alto": 1.87
   },
   {
    "id": 24,
    "n": "Figura 34:",
    "cita": 86,
-   "alto": 2.205197205318909
+   "clave": "valuacion",
+   "alto": 1.6250000000000004
   }
  ]
 }

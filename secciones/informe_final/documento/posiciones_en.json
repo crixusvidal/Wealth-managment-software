@@ -13,21 +13,21 @@
  },
  "2": {
   "elemento": 17,
-  "offset": 1009,
+  "offset": 969,
   "pagina": 2,
-  "y": 236.0
+  "y": 234.0
  },
  "3": {
   "elemento": 20,
-  "offset": 424,
+  "offset": 344,
   "pagina": 2,
-  "y": 412.6
+  "y": 408.6
  },
  "5": {
   "elemento": 24,
-  "offset": 824,
+  "offset": 704,
   "pagina": 2,
-  "y": 588.9
+  "y": 582.9
  },
  "4": {
   "elemento": 29,
@@ -37,39 +37,39 @@
  },
  "6": {
   "elemento": 29,
-  "offset": -2014,
+  "offset": -2054,
   "pagina": 3,
-  "y": 187.9
+  "y": 185.9
  },
  "7": {
   "elemento": 30,
-  "offset": 1249,
+  "offset": 1169,
   "pagina": 3,
-  "y": 364.2
+  "y": 360.2
  },
  "8": {
   "elemento": 33,
-  "offset": 252,
+  "offset": 132,
   "pagina": 3,
-  "y": 529.0
+  "y": 523.0
  },
  "9": {
   "elemento": 37,
-  "offset": 120,
+  "offset": 80,
   "pagina": 4,
-  "y": 195.1
+  "y": 193.1
  },
  "10": {
   "elemento": 41,
-  "offset": 201,
+  "offset": 121,
   "pagina": 4,
-  "y": 364.2
+  "y": 360.2
  },
  "11": {
   "elemento": 46,
-  "offset": 560,
+  "offset": 440,
   "pagina": 4,
-  "y": 525.3
+  "y": 519.3
  },
  "12": {
   "elemento": 54,
@@ -78,36 +78,60 @@
   "y": 50.0
  },
  "13": {
-  "elemento": 58,
-  "offset": 792,
+  "elemento": 57,
+  "offset": 778,
   "pagina": 5,
-  "y": 251.8
+  "y": 204.5
  },
  "16": {
-  "elemento": 63,
-  "offset": 607,
+  "elemento": 61,
+  "offset": -19,
   "pagina": 5,
-  "y": 450.1
+  "y": 359.0
  },
  "14": {
+  "elemento": 65,
+  "offset": 56,
+  "pagina": 5,
+  "y": 515.2
+ },
+ "15": {
   "elemento": 72,
   "offset": 6,
   "pagina": 6,
   "y": 50.0
  },
- "15": {
-  "elemento": 76,
-  "offset": 1851,
-  "pagina": 6,
-  "y": 251.8
- },
  "17": {
-  "elemento": 81,
-  "offset": 910,
+  "elemento": 76,
+  "offset": 745,
   "pagina": 6,
-  "y": 445.8
+  "y": 196.6
  },
  "18": {
+  "elemento": 78,
+  "offset": 541,
+  "pagina": 6,
+  "y": 335.2
+ },
+ "19": {
+  "elemento": 68,
+  "offset": 953,
+  "pagina": 5,
+  "y": 669.7
+ },
+ "20": {
+  "elemento": 82,
+  "offset": 188,
+  "pagina": 6,
+  "y": 473.8
+ },
+ "21": {
+  "elemento": 84,
+  "offset": 742,
+  "pagina": 6,
+  "y": 612.5
+ },
+ "22": {
   "elemento": 89,
   "offset": -403,
   "pagina": 7,

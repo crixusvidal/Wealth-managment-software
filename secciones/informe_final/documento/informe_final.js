@@ -184,6 +184,9 @@ function informe(lang = "es") {
     ? [new Paragraph({ children: [new PageBreakOriginal()] }), ...s.children] : conEspacio(s).children);
   // Cuerpo: texto corrido con figuras flotantes en la columna derecha (ver cuerpo.js); los bloques de ancho
   // completo (títulos, leads, abstract, Riesgos, Resumen) se mantienen como están.
+  const archivoEsc = path.join(__dirname, `escalas_${lang}.json`);
+  for (const k of Object.keys(C.ESCALAS)) delete C.ESCALAS[k];
+  if (fs.existsSync(archivoEsc)) Object.assign(C.ESCALAS, JSON.parse(fs.readFileSync(archivoEsc, "utf8")));
   const plan = C.nuevoPlan();
   C.ancho(plan, abstract(lang), "ABSTRACT");
   con("negocio", () => C.seccionBorrador(plan, negocio.textoDe(lang), negocio.imagenesDe(lang), "negocio"));
