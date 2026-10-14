@@ -153,7 +153,7 @@ const caption = (n, t) => new Paragraph({ spacing: { before: 40, after: 30, ...l
   children: [run(n + " ", { bold: true, color: AZUL, size: 14 }), run(t, { color: AZUL, size: 14 })] });
 const fuente = (t) => new Paragraph({ spacing: { before: 10, after: 0, ...linea(216) },
   children: [run(t, { size: 11, color: GRIS })] });
-const imagen = (archivo, anchoIn, altoIn) => new Paragraph({ spacing: { before: 0, after: 20 }, children: [
+const imagen = (archivo, anchoIn, altoIn) => new Paragraph({ spacing: { before: 0, after: 20, line: 240, lineRule: LineRuleType.AUTO }, children: [
   new ImageRun({ type: "png", data: fs.readFileSync(path.join(FIG, archivo)),
     transformation: { width: Math.round(anchoIn * PX), height: Math.round(altoIn * PX) } })] });
 const texto = (t, despues = 50) => new Paragraph({ alignment: AlignmentType.JUSTIFIED,
@@ -245,7 +245,7 @@ function documento(lang) {
       indent: { left: 120, right: 120 }, children: rico(X.cierre, { size: 16, boldColor: ROJO }) }),
   ];
   return new Document({
-    styles: { default: { document: { run: { font: FUENTE, size: 15 } } } },
+    styles: { default: { document: { run: { font: FUENTE, size: 15 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [{
       properties: { page: { size: { width: 11906, height: 16838 },
         margin: { top: 1000, right: 620, bottom: 900, left: 620, header: 450, footer: 400 } } },

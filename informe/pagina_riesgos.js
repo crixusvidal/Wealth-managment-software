@@ -136,7 +136,7 @@ function columnaFiguras(L) {
   L.figuras.forEach((f, k) => {
     out.push(new Paragraph({ spacing: { before: k === 0 ? 40 : 100, after: 30, line: 228, lineRule: LineRuleType.AUTO },
       children: [run(f.n + " ", { bold: true, color: AZUL, size: 14 }), run(f.t, { color: AZUL, size: 14 })] }));
-    out.push(new Paragraph({ spacing: { before: 0, after: 20 }, children: [
+    out.push(new Paragraph({ spacing: { before: 0, after: 20, line: 240, lineRule: LineRuleType.AUTO }, children: [
       new ImageRun({ type: "png", data: fs.readFileSync(path.join(FIG_DIR, f.img)),
         transformation: { width: Math.round(ANCHO_FIG * PULGADA_PX), height: Math.round(f.alto * PULGADA_PX) } })] }));
     out.push(new Paragraph({ spacing: { before: 0, after: 0, line: 216, lineRule: LineRuleType.AUTO },
@@ -158,7 +158,7 @@ function documento(L) {
       cel(COL_FIG, columnaFiguras(L)),
     ] })] });
   return new Document({
-    styles: { default: { document: { run: { font: FUENTE, size: 16 } } } },
+    styles: { default: { document: { run: { font: FUENTE, size: 16 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [{
       properties: { page: { size: { width: 11906, height: 16838 },
         margin: { top: 1000, right: 620, bottom: 900, left: 620, header: 450, footer: 400 },

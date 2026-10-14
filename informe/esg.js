@@ -186,7 +186,7 @@ const parrafo = (t, despues = 60) => new Paragraph({ alignment: AlignmentType.JU
 const caption = (n, t, antes = 100) => new Paragraph({ spacing: { before: antes, after: 30, ...linea() },
   children: [run(n + " ", { bold: true, color: AZUL, size: 14 }), run(t, { color: AZUL, size: 14 })] });
 const fuente = (t) => new Paragraph({ spacing: { before: 10, after: 0, ...linea(216) }, children: [run(t, { size: 11, color: GRIS })] });
-const imagen = (archivo, anchoIn, altoIn) => new Paragraph({ spacing: { before: 0, after: 20 }, children: [
+const imagen = (archivo, anchoIn, altoIn) => new Paragraph({ spacing: { before: 0, after: 20, line: 240, lineRule: LineRuleType.AUTO }, children: [
   new ImageRun({ type: "png", data: fs.readFileSync(path.join(FIG, archivo)),
     transformation: { width: Math.round(anchoIn * PX), height: Math.round(altoIn * PX) } })] });
 const celda = (w, children, extra = {}) => new TableCell({ width: { size: w, type: WidthType.DXA }, borders: sinBordes,
@@ -293,7 +293,7 @@ function documento(lang) {
   const X = L[lang];
   const pagina = { size: { width: 11906, height: 16838 }, margin: { top: 1000, right: 620, bottom: 900, left: 620, header: 450, footer: 400 } };
   return new Document({
-    styles: { default: { document: { run: { font: FUENTE, size: 16 } } } },
+    styles: { default: { document: { run: { font: FUENTE, size: 16 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [
       { properties: { page: pagina }, headers: { default: encabezado() }, footers: { default: pie(X.pag) }, children: seccionInforme(lang) },
       { properties: { page: { ...pagina, pageNumbers: { start: 1 } } }, headers: { default: encabezado() }, footers: { default: pie(X.pagAnexo) }, children: anexo(lang) },
