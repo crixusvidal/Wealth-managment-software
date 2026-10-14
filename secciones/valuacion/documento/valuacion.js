@@ -1,5 +1,5 @@
 // Sección Valuación (texto del borrador del equipo, cifras sincronizadas con el modelo v2, citas a figuras)
-// + Anexo de construcción de la WACC, en español e inglés. Figuras pendientes = recuadro punteado.
+// + Anexos [B] DCF, [C] supuestos, [E] múltiplos, [F] escenarios y [Z] construcción de la WACC, en español e inglés. Figuras pendientes = recuadro punteado.
 // Figuras y datos: graficos/informe/valuacion/ (python graficos/valuacion.py <Mallplaza_Figuras_Valuacion.xlsx>).
 // Uso: node informe/valuacion.js
 const fs = require("fs");
@@ -181,7 +181,7 @@ const nada = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
 const sinBordes = { top: nada, bottom: nada, left: nada, right: nada };
 const linea = (l = 228) => ({ line: l, lineRule: LineRuleType.AUTO });
 const vacia = () => new Paragraph({ children: [] });
-const titulo = (t) => new Paragraph({ spacing: { after: 80 }, border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: AZUL, space: 2 } },
+const titulo = (t, antes = 0, salto = false) => new Paragraph({ pageBreakBefore: salto, spacing: { before: antes, after: 80 }, border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: AZUL, space: 2 } },
   children: [run(t, { bold: true, color: AZUL, size: 30 })] });
 const subtitulo = (t, antes = 110) => new Paragraph({ spacing: { before: antes, after: 50 },
   border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: ROJO, space: 1 } }, children: [run(t, { bold: true, color: AZUL })] });
@@ -262,7 +262,7 @@ function anexo(lang) {
   const filasD = A.filasD.map(([r, n, u]) => [n, ...D.periodos[r].map((x) => u === "x" ? f(x, 2) + "x" : u === "b" ? f(x, 3) : pc(x, u === "%" ? 1 : 2))]);
   const filasF = A.filasF.map(([n, k, u]) => [n, u === "pb" ? `${f(D.rf[k], 0)} ${lang === "es" ? "pb" : "bp"}` : u === "clp" ? f(D.rf[k], 0) : pc(D.rf[k])]);
   return [
-    titulo(A.titulo),
+    titulo(A.titulo, 0, true),
     new Paragraph({ alignment: AlignmentType.JUSTIFIED, spacing: { after: 60, ...linea() }, shading: { type: ShadingType.CLEAR, color: "auto", fill: FONDO }, children: [run(A.lead)] }),
     ...A.formulas.map((t) => new Paragraph({ spacing: { after: 10 }, indent: { left: 240 }, children: [run(t, { size: 14, color: AZUL, bold: true })] })),
     subtitulo(A.sA, 140), tabla(A.colsA, [4800, 2400, 3466], filasA, { derecha: [1] }),
@@ -278,6 +278,233 @@ function anexo(lang) {
             children: [run(t, i === A.notasF.length - 1 ? { size: 11, color: GRIS } : { size: 14 })] }))]),
       ] })] }),
   ];
+}
+
+// Anexos [B], [C], [E] y [F]: datos de graficos/figuras/datos_anexos.json (graficos/anexos_valuacion.py, modelo v2)
+const DA = JSON.parse(fs.readFileSync(path.join(FIG, "datos_anexos.json"), "utf8"));
+const AX = {
+  es: {
+    mm: "CLP MM", cpa: "CLP/acción", per: ["2S26E", "2027E", "2028E", "2029E", "2030E", "2031E", "Terminal"],
+    pb: "pb", paises: { Chile: "Chile", Brasil: "Brasil", Argentina: "Argentina", "México": "México" },
+    B: {
+      titulo: "ANEXO [B]: FLUJO DE CAJA DESCONTADO",
+      lead: (v) => `FCFF en CLP nominales desde el 30-jun-26, con convención de mitad de período y la WACC de cada período (Anexo [Z]). El valor terminal usa el FCFF 2032E con g de ${v.g} nominal (0% real, sin reinversión porque el RONIC queda bajo la WACC real) y la WACC terminal de ${v.w}, e incluye ${v.m2} m² de GLA que maduran después de 2031. Explica el ${v.vtev} del EV.`,
+      sA: "A. FLUJO DE CAJA LIBRE DE LA FIRMA POR PERÍODO (CLP MM)",
+      filas: [["Ingresos totales", "ing", "mm"], ["EBITDA", "ebitda", "mm"], ["Margen EBITDA", "margen", "%"], ["Tasa de impuesto en caja", "tasa", "%"],
+        ["NOPAT", "nopat", "mm"], ["(+) D&A", "da", "mm"], ["Capex base (pipeline + mantención)", "capex_base", "mm"],
+        ["Capex de expansión / reinversión terminal", "capex_exp", "mm"], ["Inversión en capital de trabajo", "ct", "mm"], ["FCFF", "fcff", "mm"],
+        ["WACC nominal del período", "wacc", "%2"], ["Factor de descuento (mitad del período)", "fd", "f"], ["VP del FCFF / del valor terminal", "vp", "mm"]],
+      sB: "B. DEL VALOR DE EMPRESA AL VALOR POR ACCIÓN",
+      colsB: ["Concepto", "CLP MM", "CLP/acción"],
+      puente: ["VP del FCFF explícito (2S26E–2031E)", "VP del valor terminal", "Valor de empresa (EV)", "(−) Deuda financiera neta 30-jun-26", "(−) Minoritarios (libro)", "Valor del patrimonio / por acción"],
+      sC: "C. SENSIBILIDAD DEL VALOR DCF (CLP/ACCIÓN)",
+      esquina: "Δ WACC \\ g",
+      nota: (v) => `Valor terminal al 31-dic-31: CLP ${v.vt} MM (cap rate implícito ${v.cap}; EV/EBITDA UDM implícito ${v.mult}). 2S26E: medio año. Fuente: modelo v2, hojas DCF y Sensibilidad; ${v.acc} MM de acciones.`,
+    },
+    C: {
+      titulo: "ANEXO [C]: SUPUESTOS DE LA PROYECCIÓN",
+      lead: (v) => `El forecast base sigue el motor operativo del equipo (pipeline anunciado hasta 2028); desde ${v.primer} se suma una expansión continua al ritmo histórico de apertura. Los ingresos 2026E son año calendario; el período 2S26E descuenta el 1S26 real (CLP ${v.ing1s} MM de ingresos).`,
+      sA: "A. PROYECCIÓN DE INGRESOS, CAPEX Y CAPITAL DE TRABAJO (CLP MM)",
+      filas: [["Ingresos base (año calendario)", "ing_cal", "mm"], ["Crecimiento de ingresos totales", "crec", "%"], ["Ingresos de la expansión continua", "ing_exp", "mm"],
+        ["Margen EBITDA base", "margen", "%"], ["Tasa de impuesto en caja", "tasa", "%"], ["Capex de proyectos en curso (USD MM)", "capex_usd", "u1"],
+        ["USDCLP promedio", "usdclp", "u0"], ["Capex de proyectos en curso", "capex_proy", "mm"], ["Capex de mantención + TI (5,5% de ingresos)", "mant", "mm"],
+        ["Capex base total", "capex_base", "mm"], ["Capex de expansión continua", "capex_exp", "mm"], ["Costo por m² de expansión (CLP MM, IPC)", "costo_m2", "u2"],
+        ["Inversión en capital de trabajo", "ct", "mm"]],
+      destacar: [9],
+      sB: "B. EXPANSIÓN CONTINUA", sC: "C. OPERACIÓN, CAPITAL Y VALOR TERMINAL", cols: ["Supuesto", "Valor"],
+      expansion: (v) => [["GLA nuevo por año desde " + v.primer, `${v.gla} m²`], ["Base: promedio orgánico 2022, 2023 y 2025", `${v.gla22} / ${v.gla23} / ${v.gla25} m²`],
+        ["Pipeline en curso (Release 2Q26)", `USD ${v.pipe} MM / ${v.m2} m²`], ["Costo por m² (= pipeline)", `USD ${v.costo}`],
+        ["Desembolso del capex", `${v.t2} en t−2 / ${v.t1} en t−1`], ["Rampa de ingresos (año 1 / 2 / 3+)", v.rampa],
+        ["Mix Chile / Perú; margen EBITDA", `${v.mix} / ${v.mixpe}; ${v.mcl} / ${v.mpe}`], ["Yield on cost / RONIC real después de impuestos", `${v.yld} / ${v.ronic}`]],
+      operacion: (v) => [["Margen EBITDA UDM 2T26", v.mudm], ["Capex de mantención + TI", `${v.mant} de los ingresos`], ["D&A / ingresos", v.da],
+        ["Impuesto en caja", `${v.tax0} → ${v.taxlp} (2030)`], ["Capital de trabajo neto / ingresos (dic-25)", v.ct],
+        ["Deudores / arriendos anticipados (dic-25, CLP MM)", `${v.deud} / ${v.antic}`], ["g terminal nominal (real)", `${v.g} (0,0%)`],
+        ["DFN/EBITDA objetivo; Kd real por vuelta", `${v.dfn}x en ${v.anio}; +${v.spread} pb`], ["Payout sobre utilidad distribuible", v.payout]],
+      nota: "Fuente: modelo v2, hojas Forecast_Base, Expansion, Capital_Trabajo y Supuestos (Release 2Q26; EEFF dic-25; Exhibits v6).",
+    },
+    E: {
+      titulo: "ANEXO [E]: MÚLTIPLOS COMPARABLES",
+      lead: (v) => `Usamos el mismo set de pares que la beta de la WACC. EV/EBITDA UDM es el método principal (neutral al apalancamiento y a la revalorización NIC 40); el múltiplo pondera ${v.cl} la mediana chilena y ${v.set} la del set común. P/E y P/BV mezclan pares a valor razonable y a costo: solo referencia. Precio al 30-sep-26; deuda neta Bloomberg y tipo de cambio al 30-jun-26.`,
+      sA: "A. PARES (CLP MM; MÚLTIPLOS EN VECES)",
+      cols: ["Empresa", "País", "Market cap", "EV", "EBITDA UDM", "EV/EBITDA UDM", "EV/EBITDA NTM", "EV/EBIT UDM", "P/E UDM", "P/BV"],
+      excluida: " (excluida)", est: ["Mediana set común (6)", "Mediana Chile (2)", "Ponderado 70/30"],
+      sB: "B. VALOR POR MÚLTIPLO", colsB: ["Múltiplo", "Ponderado", "Métrica CLP MM", "CLP/acción"],
+      metodos: ["EV/EBITDA UDM (principal)", "EV/EBITDA NTM", "EV/EBIT UDM", "P/E UDM (ref.)", "P/BV (ref.)"],
+      sC: "C. SENSIBILIDAD A LA PONDERACIÓN", colsC: ["Peso Chile", "Múltiplo", "Valor múlt.", "Precio obj.", "Δ"],
+      nota: (v) => `Puente: ${v.mult}x × EBITDA UDM CLP ${v.ebitda} MM = EV ${v.ev} − deuda neta Bloomberg ${v.deuda} − minoritarios ${v.nci} = CLP ${v.valor} por acción (${v.acc} MM de acciones). Fibra Danhos queda fuera por su régimen FIBRA y por no tener beta en la WACC; IRSA reporta bajo NIC 29. Fuente: Bloomberg; modelo v2, hojas Comparables y Precio_Objetivo; Figuras_Valuacion, V7.`,
+    },
+    F: {
+      titulo: "ANEXO [F]: ESCENARIOS Y ROBUSTEZ",
+      lead: (v) => `Ningún escenario ni método alternativo alcanza el precio de CLP ${v.precio}. Los escenarios se calculan con la réplica del DCF v2 (reproduce exactamente el valor base) y el precio objetivo mantiene el ${v.peso} DCF y el valor por múltiplos de CLP ${v.mult}.`,
+      sA: "A. ESCENARIOS", cols: ["Escenario", "Supuestos", "DCF (CLP)", "Precio objetivo", "vs precio"],
+      esc: (v) => [["Bear", `WACC +${v.dw} pb en todos los períodos; margen EBITDA ${v.mlo} (mínimo histórico) en vez de ${v.m26}`],
+        ["Base", `Modelo v2: WACC ${v.w0} → ${v.wt}; g ${v.g}; margen ${v.m26}`],
+        ["Bull", `WACC −${v.dw} pb; g ${v.gb}; margen ${v.mhi} (máximo histórico); impuesto en caja con techo de ${v.tax}`],
+        ["Tasadores", `WACC nominal ${v.wtas} (${v.wtasr} real, Nota 11) en todos los períodos`]],
+      sB: "B. MÉTODOS Y SUPUESTOS ALTERNATIVOS", colsB: ["Prueba", "DCF (CLP)", "Precio obj.", "vs precio"],
+      rob: (v) => [`APV (Ku ${v.ku}): valor sin deuda`, "(+) escudos fiscales de la deuda", "= APV por acción", `Rf bono en pesos ${v.bono} (WACC ${v.efecto} pb)`,
+        `DCF VF: WACC constante ${v.wvf}`, `WACC implícita en el precio: ${v.wimp}`],
+      sC: "C. OBJETIVO DE DEUDA VS SPREAD (DCF, CLP)", esquina: "DFN/EBITDA \\ spread", actual: " (actual)",
+      nota: "Bear y bull: margen EBITDA del mínimo/máximo histórico (Earnings Releases 4Q23 y 3Q25) en todos los años; el bull no recalcula el escudo fiscal de la WACC. Fuente: réplica del DCF v2 (riesgos/graficos/tornado_operacional.py); modelo v2, hojas APV, Sensibilidad (tabla 2, estática) y DCF; Figuras_Valuacion, WACC_Construccion y V6.",
+    },
+  },
+  en: {
+    mm: "CLP million", cpa: "CLP/share", per: ["2H26E", "2027E", "2028E", "2029E", "2030E", "2031E", "Terminal"],
+    pb: "bp", paises: { Chile: "Chile", Brasil: "Brazil", Argentina: "Argentina", "México": "Mexico" },
+    B: {
+      titulo: "APPENDIX [B]: DISCOUNTED CASH FLOW",
+      lead: (v) => `FCFF in nominal CLP from 30-Jun-26, with the mid-period convention and each period's WACC (Appendix [Z]). Terminal value uses 2032E FCFF with ${v.g} nominal g (0% real, no reinvestment because RONIC is below the real WACC) and the ${v.w} terminal WACC, and includes ${v.m2} m² of GLA maturing after 2031. It accounts for ${v.vtev} of EV.`,
+      sA: "A. FREE CASH FLOW TO THE FIRM BY PERIOD (CLP MILLION)",
+      filas: [["Total revenue", "ing", "mm"], ["EBITDA", "ebitda", "mm"], ["EBITDA margin", "margen", "%"], ["Cash tax rate", "tasa", "%"],
+        ["NOPAT", "nopat", "mm"], ["(+) D&A", "da", "mm"], ["Base capex (pipeline + maintenance)", "capex_base", "mm"],
+        ["Expansion capex / terminal reinvestment", "capex_exp", "mm"], ["Investment in working capital", "ct", "mm"], ["FCFF", "fcff", "mm"],
+        ["Nominal WACC of the period", "wacc", "%2"], ["Discount factor (mid-period)", "fd", "f"], ["PV of FCFF / of terminal value", "vp", "mm"]],
+      sB: "B. FROM ENTERPRISE VALUE TO VALUE PER SHARE",
+      colsB: ["Item", "CLP million", "CLP/share"],
+      puente: ["PV of explicit FCFF (2H26E–2031E)", "PV of terminal value", "Enterprise value (EV)", "(−) Net financial debt 30-Jun-26", "(−) Minorities (book)", "Equity value / per share"],
+      sC: "C. DCF VALUE SENSITIVITY (CLP/SHARE)",
+      esquina: "Δ WACC \\ g",
+      nota: (v) => `Terminal value at 31-Dec-31: CLP ${v.vt} million (implied cap rate ${v.cap}; implied LTM EV/EBITDA ${v.mult}). 2H26E: half year. Source: model v2, DCF and Sensibilidad sheets; ${v.acc} million shares.`,
+    },
+    C: {
+      titulo: "APPENDIX [C]: FORECAST ASSUMPTIONS",
+      lead: (v) => `The base forecast follows the team's operating engine (announced pipeline to 2028); from ${v.primer} a continuous expansion is added at the historical opening pace. 2026E revenue is calendar-year; the 2H26E period deducts actual 1H26 (CLP ${v.ing1s} million of revenue).`,
+      sA: "A. REVENUE, CAPEX AND WORKING CAPITAL FORECAST (CLP MILLION)",
+      filas: [["Base revenue (calendar year)", "ing_cal", "mm"], ["Total revenue growth", "crec", "%"], ["Continuous-expansion revenue", "ing_exp", "mm"],
+        ["Base EBITDA margin", "margen", "%"], ["Cash tax rate", "tasa", "%"], ["Capex on projects under way (USD million)", "capex_usd", "u1"],
+        ["Average USDCLP", "usdclp", "u0"], ["Capex on projects under way", "capex_proy", "mm"], ["Maintenance + IT capex (5.5% of revenue)", "mant", "mm"],
+        ["Total base capex", "capex_base", "mm"], ["Continuous-expansion capex", "capex_exp", "mm"], ["Expansion cost per m² (CLP million, CPI)", "costo_m2", "u2"],
+        ["Investment in working capital", "ct", "mm"]],
+      destacar: [9],
+      sB: "B. CONTINUOUS EXPANSION", sC: "C. OPERATIONS, CAPITAL AND TERMINAL VALUE", cols: ["Assumption", "Value"],
+      expansion: (v) => [["New GLA per year from " + v.primer, `${v.gla} m²`], ["Basis: organic average 2022, 2023 and 2025", `${v.gla22} / ${v.gla23} / ${v.gla25} m²`],
+        ["Pipeline under way (2Q26 release)", `USD ${v.pipe} million / ${v.m2} m²`], ["Cost per m² (= pipeline)", `USD ${v.costo}`],
+        ["Capex disbursement", `${v.t2} in t−2 / ${v.t1} in t−1`], ["Revenue ramp (year 1 / 2 / 3+)", v.rampa],
+        ["Chile / Peru mix; EBITDA margin", `${v.mix} / ${v.mixpe}; ${v.mcl} / ${v.mpe}`], ["Yield on cost / real after-tax RONIC", `${v.yld} / ${v.ronic}`]],
+      operacion: (v) => [["LTM 2Q26 EBITDA margin", v.mudm], ["Maintenance + IT capex", `${v.mant} of revenue`], ["D&A / revenue", v.da],
+        ["Cash tax rate", `${v.tax0} → ${v.taxlp} (2030)`], ["Net working capital / revenue (Dec-25)", v.ct],
+        ["Receivables / advance rents (Dec-25, CLP million)", `${v.deud} / ${v.antic}`], ["Nominal (real) terminal g", `${v.g} (0.0%)`],
+        ["Target net debt/EBITDA; real Kd per turn", `${v.dfn}x in ${v.anio}; +${v.spread} bp`], ["Payout on distributable income", v.payout]],
+      nota: "Source: model v2, Forecast_Base, Expansion, Capital_Trabajo and Supuestos sheets (2Q26 release; Dec-25 financial statements; Exhibits v6).",
+    },
+    E: {
+      titulo: "APPENDIX [E]: COMPARABLE MULTIPLES",
+      lead: (v) => `We use the same peer set as the WACC beta. LTM EV/EBITDA is the main method (neutral to leverage and to IAS 40 revaluation); the multiple weights the Chilean median at ${v.cl} and the common-set median at ${v.set}. P/E and P/BV mix fair-value and cost-basis peers: reference only. Price at 30-Sep-26; Bloomberg net debt and FX at 30-Jun-26.`,
+      sA: "A. PEERS (CLP MILLION; MULTIPLES IN TIMES)",
+      cols: ["Company", "Country", "Market cap", "EV", "LTM EBITDA", "EV/EBITDA LTM", "EV/EBITDA NTM", "EV/EBIT LTM", "P/E LTM", "P/BV"],
+      excluida: " (excluded)", est: ["Common-set median (6)", "Chile median (2)", "Weighted 70/30"],
+      sB: "B. VALUE BY MULTIPLE", colsB: ["Multiple", "Weighted", "Metric (CLP mn)", "CLP/share"],
+      metodos: ["EV/EBITDA LTM (main)", "EV/EBITDA NTM", "EV/EBIT LTM", "P/E LTM (ref.)", "P/BV (ref.)"],
+      sC: "C. SENSITIVITY TO THE WEIGHTING", colsC: ["Chile weight", "Multiple", "Mult. value", "Target", "Δ"],
+      nota: (v) => `Bridge: ${v.mult}x × LTM EBITDA of CLP ${v.ebitda} million = EV ${v.ev} − Bloomberg net debt ${v.deuda} − minorities ${v.nci} = CLP ${v.valor} per share (${v.acc} million shares). Fibra Danhos is excluded for its FIBRA regime and because it has no beta in the WACC; IRSA reports under IAS 29. Source: Bloomberg; model v2, Comparables and Precio_Objetivo sheets; Figuras_Valuacion, V7.`,
+    },
+    F: {
+      titulo: "APPENDIX [F]: SCENARIOS AND ROBUSTNESS",
+      lead: (v) => `No scenario or alternative method reaches the CLP ${v.precio} price. Scenarios are computed with the DCF v2 replica (which reproduces the base value exactly), and the target keeps the ${v.peso} DCF weight and the CLP ${v.mult} multiples value.`,
+      sA: "A. SCENARIOS", cols: ["Scenario", "Assumptions", "DCF (CLP)", "Target price", "vs price"],
+      esc: (v) => [["Bear", `WACC +${v.dw} bp in every period; EBITDA margin ${v.mlo} (historical low) instead of ${v.m26}`],
+        ["Base", `Model v2: WACC ${v.w0} → ${v.wt}; g ${v.g}; margin ${v.m26}`],
+        ["Bull", `WACC −${v.dw} bp; g ${v.gb}; margin ${v.mhi} (historical high); cash tax capped at ${v.tax}`],
+        ["Appraisers", `Nominal WACC ${v.wtas} (${v.wtasr} real, Note 11) in every period`]],
+      sB: "B. ALTERNATIVE METHODS AND INPUTS", colsB: ["Test", "DCF (CLP)", "Target", "vs price"],
+      rob: (v) => [`APV (Ku ${v.ku}): unlevered value`, "(+) tax shields of debt", "= APV per share", `Rf peso bond ${v.bono} (WACC ${v.efecto} bp)`,
+        `DCF VF: constant WACC ${v.wvf}`, `WACC implied by the price: ${v.wimp}`],
+      sC: "C. DEBT TARGET VS SPREAD (DCF, CLP)", esquina: "ND/EBITDA \\ spread", actual: " (current)",
+      nota: "Bear and bull: EBITDA margin at the historical low/high (4Q23 and 3Q25 earnings releases) in every year; the bull case does not recompute the WACC tax shield. Source: DCF v2 replica (riesgos/graficos/tornado_operacional.py); model v2, APV, Sensibilidad (table 2, static) and DCF sheets; Figuras_Valuacion, WACC_Construccion and V6.",
+    },
+  },
+};
+
+const NB = "\u00a0"; // celda vacía con la altura de la fuente de la tabla
+const lead = (t) => new Paragraph({ alignment: AlignmentType.JUSTIFIED, spacing: { after: 40, ...linea(216) },
+  shading: { type: ShadingType.CLEAR, color: "auto", fill: FONDO }, children: [run(t, { size: 15 })] });
+const dosColumnas = (izq, der) => new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [MEDIA, COL_SEP, MEDIA],
+  borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
+  rows: [new TableRow({ cantSplit: true, children: [celda(MEDIA, izq), celda(COL_SEP, [vacia()]), celda(MEDIA, der)] })] });
+
+function anexosValuacion(lang) {
+  const T = AX[lang], f = fmt(lang);
+  const pc = (x, dec = 1) => f(x * 100, dec) + "%";
+  const mm = (x) => f(x, 0);
+  const pb = (x) => `${x > 0 ? "+" : ""}${f(x, 0)}`;
+  const celdaFmt = (x, u) => x === null || x === undefined ? NB : u === "mm" ? mm(x) : u === "%" ? pc(x) : u === "%2" ? pc(x, 2)
+    : u === "f" ? f(x, 4) : u === "u0" ? f(x, 0) : u === "u1" ? f(x, 1) : f(x, 2);
+  const der = (n, desde = 1) => Array.from({ length: n - desde }, (_, i) => i + desde);
+  const anchosPer = [2866, 1100, 1100, 1100, 1100, 1100, 1100, 1200];
+  const out = [];
+
+  // [B] DCF
+  const B = DA.B, P = B.puente, V = B.vt;
+  out.push(titulo(T.B.titulo), lead(T.B.lead({ g: pc(V.g), w: pc(V.wacc_t, 2), m2: f(V.m2_maduro, 0), vtev: pc(V.vt_ev, 0) })));
+  out.push(subtitulo(T.B.sA, 80));
+  const filasB = T.B.filas.map(([n, k, u]) => {
+    const vals = B.filas[k].slice();
+    if (k === "vp") vals[6] = P.vp_vt;
+    return [n, ...vals.map((x) => celdaFmt(x, u))];
+  });
+  out.push(tabla(["", ...T.per], anchosPer, filasB, { derecha: der(8), destacar: [9] }));
+  const filasP = [[P.vp_exp, P.ps_exp], [P.vp_vt, P.ps_vt], [P.ev, P.ev / P.acciones], [P.dfn, P.dfn / P.acciones], [P.nci, P.nci / P.acciones],
+    [P.patrimonio, P.valor]].map(([a, b], i) => [T.B.puente[i], mm(a), mm(b)]);
+  const sens = B.sens.v.map((r, i) => [`${pb(B.sens.dw[i] * 1e4)} ${T.pb}`, ...r.map((x) => mm(x))]);
+  out.push(dosColumnas(
+    [subtitulo(T.B.sB, 100), tabla(T.B.colsB, [3025, 1200, 1000], filasP, { derecha: [1, 2], destacar: [5] })],
+    [subtitulo(T.B.sC, 100), tabla([T.B.esquina, ...B.sens.g.map((g) => "g " + pc(g))], [1225, 1000, 1000, 1000, 1000], sens, { derecha: [1, 2, 3, 4], destacar: [2] })]));
+  out.push(fuente(T.B.nota({ vt: mm(V.vt), cap: pc(V.cap_ev), mult: f(V.ev_ebitda, 1) + "x", acc: mm(P.acciones) })));
+
+  // [C] Supuestos
+  const C = DA.C, S = C.sup;
+  out.push(titulo(T.C.titulo, 260), lead(T.C.lead({ primer: S.primer, ing1s: mm(S.ing_1s26) })));
+  out.push(subtitulo(T.C.sA, 80));
+  const filasC = T.C.filas.map(([n, k, u]) => [n, ...C.filas[k].map((x) => celdaFmt(x, u))]);
+  out.push(tabla(["", ...T.per.slice(0, 6)], [3466, 1200, 1200, 1200, 1200, 1200, 1200], filasC, { derecha: der(7), destacar: T.C.destacar }));
+  const vC = { primer: S.primer, gla: mm(S.gla_anual), gla22: mm(S.gla_22), gla23: mm(S.gla_23), gla25: mm(S.gla_25), pipe: f(S.pipe_usd, 1), m2: mm(S.pipe_m2),
+    costo: mm(S.costo_usd_m2), t2: pc(S.pago_t2, 0), t1: pc(1 - S.pago_t2, 0), rampa: S.rampa.map((x) => pc(x, 0)).join(" / "),
+    mix: pc(S.mix_cl), mixpe: pc(1 - S.mix_cl), mcl: pc(S.margen_cl, 0), mpe: pc(S.margen_pe, 0), yld: pc(S.yield), ronic: pc(S.ronic),
+    mudm: pc(S.ebitda_ltm / S.ing_ltm), mant: pc(S.mant), da: pc(S.da, 2), tax0: pc(C.filas.tasa[0]), taxlp: pc(S.tax_lp, 0), ct: pc(S.ct_ing),
+    deud: mm(S.deudores), antic: mm(S.anticip), g: pc(S.g), dfn: f(S.dfn_obj, 1), anio: S.anio_obj, spread: f(S.spread * 1e4, 0), payout: pc(S.payout, 0) };
+  out.push(dosColumnas(
+    [subtitulo(T.C.sB, 100), tabla(T.C.cols, [2925, 2300], T.C.expansion(vC), { derecha: [1] })],
+    [subtitulo(T.C.sC, 100), tabla(T.C.cols, [2925, 2300], T.C.operacion(vC), { derecha: [1] })]));
+  out.push(fuente(T.C.nota));
+
+  // [E] Múltiplos
+  const E = DA.E, PE = E.puente;
+  const xm = (x) => (x === null || x === undefined ? NB : f(x, 1) + "x");
+  out.push(titulo(T.E.titulo, 0, true), lead(T.E.lead({ cl: pc(E.peso_cl, 0), set: pc(1 - E.peso_cl, 0) })));
+  out.push(subtitulo(T.E.sA, 80));
+  const filasE = E.pares.map((p) => [p.nombre + (p.set === 0 ? T.E.excluida : ""), T.paises[p.pais] || p.pais, mm(p.mcap), mm(p.ev), mm(p.ebitda), ...p.m.map(xm)]);
+  ["med_set", "med_cl", "pond"].forEach((k, i) => filasE.push([T.E.est[i], NB, NB, NB, NB, ...E.est[k].map(xm)]));
+  out.push(tabla(T.E.cols, [2066, 900, 1150, 1150, 1100, 900, 900, 850, 800, 850], filasE, { derecha: der(10, 2), destacar: [0, filasE.length - 1] }));
+  const filasM = E.metodos.map(([mult, met, val], i) => [T.E.metodos[i], xm(mult), mm(met), mm(val)]);
+  const base = E.pond.find((r) => Math.abs(r[0] - E.peso_cl) < 1e-9);
+  const filasW = E.pond.map(([w, mult, val, po, d]) => [pc(w, 0), xm(mult), mm(val), mm(po), (d > 0 ? "+" : "") + pc(d)]);
+  out.push(dosColumnas(
+    [subtitulo(T.E.sB, 100), tabla(T.E.colsB, [1925, 900, 1300, 1100], filasM, { derecha: [1, 2, 3], destacar: [0] })],
+    [subtitulo(T.E.sC, 100), tabla(T.E.colsC, [1025, 900, 1100, 1100, 1100], filasW, { derecha: [0, 1, 2, 3, 4], destacar: [E.pond.indexOf(base)] })]));
+  out.push(fuente(T.E.nota({ mult: f(PE.mult, 2), ebitda: mm(PE.ebitda), ev: mm(PE.ev), deuda: mm(PE.deuda_bbg), nci: mm(PE.nci), valor: mm(PE.valor), acc: mm(PE.acciones) })));
+
+  // [F] Escenarios y robustez
+  const F = DA.F, Q = F.param, ES = F.esc;
+  const obj = (x) => F.peso * x + (1 - F.peso) * F.mult;
+  const vs = (x) => pc(x / F.precio - 1);
+  out.push(titulo(T.F.titulo, 260), lead(T.F.lead({ precio: mm(F.precio), peso: pc(F.peso, 0), mult: mm(F.mult) })));
+  out.push(subtitulo(T.F.sA, 80));
+  const w0 = DA.B.filas.wacc[0];
+  const textos = T.F.esc({ dw: f(Q.dw_bear * 1e4, 0), mlo: pc(Q.m_lo), m26: pc(Q.margen26), w0: pc(w0, 2), wt: pc(Q.wacc_t, 2), g: pc(DA.B.vt.g),
+    gb: pc(Q.g_bull), mhi: pc(Q.m_hi), tax: pc(Q.tax_bull, 0), wtas: pc(Q.wacc_tas, 2), wtasr: pc(Q.wacc_tas_real, 2) });
+  const filasF = ["bear", "base", "bull", "tas"].map((k, i) => [...textos[i], mm(ES[k].dcf), mm(ES[k].po), pc(ES[k].vs)]);
+  out.push(tabla(T.F.cols, [1250, 5616, 1200, 1400, 1200], filasF, { derecha: [2, 3, 4], destacar: [1] }));
+  const A = F.apv, R = F.rf;
+  const nr = T.F.rob({ ku: pc(A.ku, 2), bono: pc(R.bono, 2), efecto: pb(R.efecto), wvf: pc(F.vf.wacc, 2), wimp: pc(F.implicita.wacc, 2), brecha: pb(F.implicita.brecha) });
+  const filasR = [[nr[0], mm(A.sin_deuda), NB, NB], [nr[1], mm(A.escudos), NB, NB], [nr[2], mm(A.valor), mm(obj(A.valor)), vs(obj(A.valor))],
+    [nr[3], mm(R.dcf), mm(R.po), vs(R.po)], [nr[4], mm(F.vf.dcf), mm(obj(F.vf.dcf)), vs(obj(F.vf.dcf))], [nr[5], mm(F.precio), NB, NB]];
+  const filasD = F.deuda.filas.map(([t, ...v], i) => [f(t, i ? 1 : 2) + "x" + (i ? "" : T.F.actual), ...v.map((x) => mm(x))]);
+  const iBase = F.deuda.filas.findIndex((r) => Math.abs(r[0] - DA.C.sup.dfn_obj) < 1e-9);
+  out.push(dosColumnas(
+    [subtitulo(T.F.sB, 100), tabla(T.F.colsB, [2625, 850, 900, 850], filasR, { derecha: [1, 2, 3], destacar: [2] })],
+    [subtitulo(T.F.sC, 100), tabla([T.F.esquina, ...F.deuda.spread.map((s) => `${f(s * 1e4, 0)} ${T.pb}`)], [1825, 1100, 1150, 1150], filasD, { derecha: [1, 2, 3], destacar: [iBase] })]));
+  out.push(fuente(T.F.nota));
+  return out;
 }
 
 const encabezado = () => new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT,
@@ -296,13 +523,15 @@ function documento(lang) {
         children: [titulo(X.titulo),
           new Paragraph({ alignment: AlignmentType.JUSTIFIED, spacing: { after: 80, ...linea() }, shading: { type: ShadingType.CLEAR, color: "auto", fill: FONDO }, children: [run(X.lead)] }),
           ...X.paginas.flatMap((p, k) => k ? [new Paragraph({ pageBreakBefore: true, spacing: { after: 0 }, children: [] }), pagina(lang, p)] : [pagina(lang, p)])] },
-      { properties: { page: { ...pag, pageNumbers: { start: 1 } } }, headers: { default: encabezado() }, footers: { default: pie(X.pagA) }, children: anexo(lang) },
+      { properties: { page: { ...pag, pageNumbers: { start: 1 } } }, headers: { default: encabezado() }, footers: { default: pie(X.pagA) }, children: [...anexosValuacion(lang), ...anexo(lang)] },
     ],
   });
 }
 
 // Documento de la sección → ../documento · anexo → ../anexo (archivos separados, mismo formato)
-(async () => {
+module.exports = { documento, L };
+
+if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {
     const d = documento(lang);
     const salidas = [[0, path.join(__dirname, L[lang].archivo)],
