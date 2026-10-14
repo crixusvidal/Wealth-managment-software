@@ -11,9 +11,12 @@ const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const ARCHIVO = "Mallplaza_Negocio_ES.docx";
 const IMAGENES = { "image1.png": "N1_gla_ingresos", "image2.png": "NA_activos_tier_a", "image3.png": "NB_tiendas_departamento" };
 
+const imagenesDe = (lang) => Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, path.join(FIG, `${lang}_${n}.png`)]));
+const textoDe = (lang) => JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
+
 function documento(lang = "es") {
   const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
-  const imagenes = Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, path.join(FIG, `${lang}_${n}.png`)]));
+  const imagenes = imagenesDe(lang);
   const { cuerpo, anexo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG });
   return {
     styles: F.ESTILOS,
@@ -24,7 +27,7 @@ function documento(lang = "es") {
   };
 }
 
-module.exports = { documento };
+module.exports = { documento, imagenesDe, textoDe };
 
 if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {

@@ -15,9 +15,12 @@ const IMAGENES = { "image1.png": "ind5b_market_share_paises_vertical", "image2.p
   "image7.png": "ind7_market_share_chile", "image8.png": "ind1_ocupacion" };
 const ALTOS = fs.existsSync(path.join(FIG, "altos.json")) ? JSON.parse(fs.readFileSync(path.join(FIG, "altos.json"), "utf8")) : {};
 
+const imagenesDe = (lang) => Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [path.join(FIG, `${lang}_${n}.png`), ALTOS[n]]]));
+const textoDe = (lang) => JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
+
 function documento(lang = "es") {
   const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
-  const imagenes = Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [path.join(FIG, `${lang}_${n}.png`), ALTOS[n]]]));
+  const imagenes = imagenesDe(lang);
   const { cuerpo, anexo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG });
   return {
     styles: F.ESTILOS,
@@ -28,7 +31,7 @@ function documento(lang = "es") {
   };
 }
 
-module.exports = { documento };
+module.exports = { documento, imagenesDe, textoDe };
 
 if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {

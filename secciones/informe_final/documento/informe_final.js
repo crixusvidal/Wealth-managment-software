@@ -42,13 +42,13 @@ docx.TextRun = class extends TextRunOriginal {
 const ParagraphOriginal = docx.Paragraph;
 docx.Paragraph = class extends ParagraphOriginal {
   constructor(o) {
-    if (o && typeof o === "object") o = { ...o, pageBreakBefore: false, keepNext: false };   // "conservar con el siguiente" impide partir filas en LibreOffice
+    if (o && typeof o === "object") o = { ...o, pageBreakBefore: false, keepNext: !!o.mantenerConSiguiente };   // en tablas impide partir filas (LibreOffice); solo títulos del texto corrido   // "conservar con el siguiente" impide partir filas en LibreOffice
     super(o);
   }
 };
 const TableRowOriginal = docx.TableRow;
 docx.TableRow = class extends TableRowOriginal {
-  constructor(o) { super(o && o.cantSplit ? { ...o, cantSplit: false } : o); }
+  constructor(o) { super(o && o.cantSplit && !o.noPartir ? { ...o, cantSplit: false } : o); }   // noPartir: grilla de figuras
 };
 const PageBreakOriginal = docx.PageBreak;
 docx.PageBreak = class extends TextRunOriginal { constructor() { super({ text: "" }); } };
@@ -56,6 +56,8 @@ docx.PageBreak = class extends TextRunOriginal { constructor() { super({ text: "
 const { Document, Packer, SectionType, Paragraph, Table, TableRow, TableCell, WidthType, ShadingType, BorderStyle, VerticalAlign, AlignmentType } = docx;
 const F = require("../../comun/formato");
 F.OPCIONES.filasPorCita = true;
+const C = require("./cuerpo");
+const MEDIR = process.argv.includes("--medir");
 const S = path.join(__dirname, "..", "..");
 const negocio = require(path.join(S, "negocio/documento/negocio.js"));
 const industria = require(path.join(S, "industria/documento/industria.js"));
@@ -180,11 +182,26 @@ function informe(lang = "es") {
   const saltos = new Set(fs.existsSync(archivoSaltos) ? JSON.parse(fs.readFileSync(archivoSaltos, "utf8")) : []);
   const corrida = (clave, s) => (saltos.has(clave)
     ? [new Paragraph({ children: [new PageBreakOriginal()] }), ...s.children] : conEspacio(s).children);
-  // Una sola sección para el cuerpo y otra para los anexos: LibreOffice no parte una tabla que viene justo
-  // después de un salto de sección continuo, así que las secciones del informe se encadenan dentro de una misma sección.
-  const cuerpo = [...abstract(lang), ...d.negocio.sections[0].children,
-    ...corrida("industria", d.industria.sections[0]), ...corrida("esg", d.esg.sections[0]), ...corrida("fa", d.fa.sections[0]),
-    ...corrida("valuacion", d.valuacion.sections[0]), ...corrida("riesgos", d.riesgos.sections[0]), ...corrida("resumen", { children: resumen(lang) })];
+  // Cuerpo: texto corrido con figuras flotantes en la columna derecha (ver cuerpo.js); los bloques de ancho
+  // completo (títulos, leads, abstract, Riesgos, Resumen) se mantienen como están.
+  const plan = C.nuevoPlan();
+  C.ancho(plan, abstract(lang), "ABSTRACT");
+  con("negocio", () => C.seccionBorrador(plan, negocio.textoDe(lang), negocio.imagenesDe(lang), "negocio"));
+  con("industria", () => C.seccionBorrador(plan, industria.textoDe(lang), industria.imagenesDe(lang), "industria"));
+  con("esg", () => C.seccionBorrador(plan, esg.textoDe(lang), esg.imagenesDe(lang), "esg"));
+  con("fa", () => C.seccionModulo(plan, fa.L[lang], fa.FIG, lang, "fa", { leadDestacado: true, antes: fa.figura1(lang), inicioAntes: fa.L[lang].fa1[0] + " " + fa.L[lang].fa1[1] }));
+  con("valuacion", () => C.seccionModulo(plan, valuacion.L[lang], valuacion.FIG, lang, "valuacion"));
+  C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...d.riesgos.sections[0].children], lang === "es" ? "RIESGOS DE INVERSIÓN" : "INVESTMENT RISKS", true);
+  C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...resumen(lang)], lang === "es" ? "RESUMEN DE INVERSIÓN" : "INVESTMENT SUMMARY", true);
+  const archivoPos = path.join(__dirname, `posiciones_${lang}.json`);
+  // Al medir, las figuras también van (en su párrafo de cita): así el texto se mide con la misma estructura
+  // que tendrá el documento final y las posiciones calculadas siguen valiendo.
+  const posiciones = MEDIR ? Object.fromEntries(plan.figuras.map((f) => [f.id, { elemento: f.cita, offset: 0, marcador: true }]))
+    : fs.existsSync(archivoPos) ? JSON.parse(fs.readFileSync(archivoPos, "utf8")) : null;
+  if (MEDIR) fs.writeFileSync(path.join(__dirname, `plan_${lang}.json`), JSON.stringify(C.resumenPlan(plan), null, 1));
+  const archivoFin = path.join(__dirname, `finales_${lang}.json`);
+  const finales = !MEDIR && fs.existsSync(archivoFin) ? JSON.parse(fs.readFileSync(archivoFin, "utf8")) : {};
+  const cuerpo = C.hijos(plan, posiciones, (fig, fn) => con(fig.clave, fn), finales);
   const anexos = [...d.negocio.sections[1].children, ...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),
     ...corrida("a_fa", d.fa.sections[1]), ...corrida("a_valuacion", d.valuacion.sections[1]), ...corrida("a_macro", d.macro.sections[0])];
   return new Document({
@@ -196,9 +213,10 @@ function informe(lang = "es") {
 module.exports = { informe, MAPAS };
 
 if (require.main === module) (async () => {
-  const langs = process.argv.slice(2).length ? process.argv.slice(2) : ["es", "en"];
+  const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+  const langs = args.length ? args : ["es", "en"];
   for (const lang of langs) {
-    const salida = path.join(__dirname, `Mallplaza_Informe_CFA_${lang.toUpperCase()}.docx`);
+    const salida = path.join(__dirname, `Mallplaza_Informe_CFA_${lang.toUpperCase()}${MEDIR ? "_medir" : ""}.docx`);
     fs.writeFileSync(salida, await Packer.toBuffer(informe(lang)));
     console.log(salida);
   }

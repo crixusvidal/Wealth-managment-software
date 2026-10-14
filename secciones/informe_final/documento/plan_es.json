@@ -1,0 +1,720 @@
+{
+ "elementos": [
+  {
+   "i": 0,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "ABSTRACT"
+  },
+  {
+   "i": 1,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "DESCRIPCIÓN DEL NEGOCIO"
+  },
+  {
+   "i": 2,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "DE UN MALL EN LA FLORIDA A 37 CENTROS URBANOS EN LA REGIÓN ANDINA"
+  },
+  {
+   "i": 3,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza nació en 1990 con Mallplaza Vespucio, construido desde cero en La Florida, y 35 años después es uno de los pri"
+  },
+  {
+   "i": 4,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "UN MIX DE LOCATARIOS QUE SE REINVENTA Y MÁRGENES ALTOS POR DISEÑO"
+  },
+  {
+   "i": 5,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Ese poder de precio descansa en un mix de locatarios que la empresa ha sabido reinventar. Las tiendas por departamento, "
+  },
+  {
+   "i": 6,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "EL VALOR SE CONCENTRA EN 10 ACTIVOS TIER A"
+  },
+  {
+   "i": 7,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La historia de crecimiento se escribe en sus mejores activos. Diez centros, siete en Chile, dos en Colombia y uno en Per"
+  },
+  {
+   "i": 8,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "ANÁLISIS DE LA INDUSTRIA Y POSICIONAMIENTO COMPETITIVO"
+  },
+  {
+   "i": 9,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "UNA INDUSTRIA CONCENTRADA EN CHILE Y FRAGMENTADA EN PERÚ Y COLOMBIA"
+  },
+  {
+   "i": 10,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "En el retail real estate, los operadores de centros comerciales no venden productos, sino que arriendan metros cuadrados"
+  },
+  {
+   "i": 11,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La estructura del mercado, sin embargo, cambia de un país a otro (Figura 2). En Chile el trío concentra el 76% del GLA d"
+  },
+  {
+   "i": 12,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LA OFERTA NUEVA EN CHILE CRECE AL RITMO DEL CONSUMO, CON PRESIÓN EN 2027-2028"
+  },
+  {
+   "i": 13,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Entre 2026 y 2028 el trío agregará en Chile 219.900 m² orgánicos que competirán por el gasto de los consumidores, equiva"
+  },
+  {
+   "i": 14,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El punto de partida es exigente, porque en el 2T26 las ventas reales de los locatarios del trío en Chile cayeron 2,5% a/"
+  },
+  {
+   "i": 15,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "UNA INDUSTRIA ATRACTIVA, CUYA ÚNICA FUERZA INTENSA ES LA RIVALIDAD"
+  },
+  {
+   "i": 16,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Para evaluar el atractivo de la industria analizamos las cinco fuerzas de Porter en cada país, en una escala de 1 (débil"
+  },
+  {
+   "i": 17,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La rivalidad (4) no se juega en precio, sino en experiencia y en activos. Mallplaza destina más de la mitad de su GLA a "
+  },
+  {
+   "i": 18,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La amenaza de nuevos entrantes (2) es acotada, porque desarrollar un centro comercial exige mucho capital (la cartera de"
+  },
+  {
+   "i": 19,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "MALLPLAZA CONVIERTE SU ESCALA EN EL M² MÁS PRODUCTIVO DEL TRÍO"
+  },
+  {
+   "i": 20,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza convierte su escala en el EBITDA por m² más alto del trío, con 59.451 CLP en el 2T26 frente a 58.384 de Cenco "
+  },
+  {
+   "i": 21,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "En participación, Mallplaza cedió 1,2 pp dentro del trío en Chile desde el 2T22, principalmente porque Parque Arauco sum"
+  },
+  {
+   "i": 22,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "CONTRATOS LARGOS PARA DEFENDER SU POSICIÓN"
+  },
+  {
+   "i": 23,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Esa posición está respaldada por contratos de larga duración. El plazo promedio remanente de los contratos de Mallplaza "
+  },
+  {
+   "i": 24,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "En una industria atractiva, pero con rivalidad alta y una oferta que se adelantará al consumo en 2027-2028, ganarán part"
+  },
+  {
+   "i": 25,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "AMBIENTAL, SOCIAL Y GOBIERNO CORPORATIVO (ESG)"
+  },
+  {
+   "i": 26,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El enfoque ESG de Plaza es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su model"
+  },
+  {
+   "i": 27,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "AMBIENTAL"
+  },
+  {
+   "i": 28,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El enfoque de Plaza es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del d"
+  },
+  {
+   "i": 29,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SOCIAL"
+  },
+  {
+   "i": 30,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo, como un principio d"
+  },
+  {
+   "i": 31,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "En materia de diversidad, las mujeres representan el 53,2% de la fuerza laboral total, donde ocupan el 42% de los puesto"
+  },
+  {
+   "i": 32,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "GOBIERNO CORPORATIVO"
+  },
+  {
+   "i": 33,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El gobierno corporativo se rige bajo los principios del G20 y de la OCDE, alineado con la NCG 461 de la CMF, todo esto b"
+  },
+  {
+   "i": 34,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "ANÁLISIS FINANCIERO"
+  },
+  {
+   "i": 35,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El motor de arriendos de Mallplaza crece cerca de 3% real, con un margen EBITDA de 80% y un apalancamiento sobre flujos "
+  },
+  {
+   "i": 36,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "Figura 1: El ROE normalizado de 8–10% es el retorno real; el ROE reportado depende de la tasación"
+  },
+  {
+   "i": 37,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La utilidad reportada sigue al tasador; el FFO sigue al negocio"
+  },
+  {
+   "i": 38,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Bajo NIC 40, la revalorización de las propiedades de inversión pasa por resultados. En 2025, una ganancia por valor razo"
+  },
+  {
+   "i": 39,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Sin las ganancias por valor razonable netas de impuesto diferido, la utilidad distribuible auditada fue CLP 369 mil MM y"
+  },
+  {
+   "i": 40,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Descompuesto, el ROE normalizado de 2025 (9,7%) es un margen neto normalizado de 56,5% por una rotación de activos de ap"
+  },
+  {
+   "i": 41,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Dos tercios del crecimiento de 2025 fueron comprados; el orgánico real es cerca de 3%"
+  },
+  {
+   "i": 42,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Los ingresos subieron 76% entre 2022 y 2025, pero 21,8 pp del 32,2% de 2025 vinieron del perímetro: el portafolio peruan"
+  },
+  {
+   "i": 43,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Sin moneda ni inflación, el crecimiento reportado de 7,4% en 1S26 baja a cerca de 3,0% real (Figura 3). Chile creció 2,8"
+  },
+  {
+   "i": 44,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El crecimiento es contractual, no de ventas. La renta variable es 5,1% de los ingresos y cayó 1,1% en 1S26 mientras las "
+  },
+  {
+   "i": 45,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El margen subió por mix y recuperación de gastos; el apalancamiento operativo se agotó"
+  },
+  {
+   "i": 46,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El margen EBITDA subió de 76,2% en 2022 a 80,5% en 2025 por dos razones. Perú consolida con un margen de segmento de 83%"
+  },
+  {
+   "i": 47,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Con el costo de ventas en 6% de los ingresos y costos operativos totales cercanos a 20%, queda poco costo fijo que dilui"
+  },
+  {
+   "i": 48,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La caja cubre el dividendo 2,6x; el techo es la política, no la liquidez"
+  },
+  {
+   "i": 49,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025, convirtiendo 98,7% del EBITDA antes de impu"
+  },
+  {
+   "i": 50,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El salto de 38,6% del flujo operativo en 1S26 no es capacidad de generación: el 59% corresponde a cobranzas de diciembre"
+  },
+  {
+   "i": 51,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La política de dividendos reparte 40% de la utilidad distribuible con un año de rezago, por lo que la caja retenida es a"
+  },
+  {
+   "i": 52,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El capex está subiendo. Los compromisos contractuales de inversión aumentaron a CLP 78 mil MM en junio de 2026 desde CLP"
+  },
+  {
+   "i": 53,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Los indicadores de flujo justifican el AAA; los ratios contables lo exageran"
+  },
+  {
+   "i": 54,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El LTV bajó de 26,9% a 18,8% en 2025, pero 5,0 pp de la caída de 8,0 pp vinieron de revalorizar el denominador; con las "
+  },
+  {
+   "i": 55,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La deuda bruta de CLP 1.633 mil MM está 79% en UF, 14% en PEN y 7% en COP, en línea con las monedas de los ingresos; el "
+  },
+  {
+   "i": 56,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Hay un pasivo que no aparece en el LTV: los impuestos diferidos, CLP 1.313,7 mil MM a junio de 2026, casi 80% de la deud"
+  },
+  {
+   "i": 57,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cencosud S"
+  },
+  {
+   "i": 58,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El forecast proyecta lo que respalda la historia, incluido el ritmo de expansión"
+  },
+  {
+   "i": 59,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Los ingresos crecen 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,4%), a medida que el crecimiento real en mismas"
+  },
+  {
+   "i": 60,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Lo que esto significa para la valoración"
+  },
+  {
+   "i": 61,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El análisis deja tres conclusiones para el modelo. Primero, la base de utilidades correcta es la caja: usamos el EBITDA "
+  },
+  {
+   "i": 62,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Tercero, el retorno sobre el capital a valor razonable es bajo. El ROIC de 2025, con NOPAT al 27% sobre el capital inver"
+  },
+  {
+   "i": 63,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "VALUACIÓN"
+  },
+  {
+   "i": 64,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Recomendamos VENDER Mallplaza con un precio objetivo de CLP 2.076 por acción, 41,6% bajo el cierre de CLP 3.555 del 30-s"
+  },
+  {
+   "i": 65,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "UN PRECIO QUE NINGÚN MÉTODO ALCANZA"
+  },
+  {
+   "i": 66,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "En doce meses la acción subió de CLP 2.470 a 4.700 y hoy cotiza en CLP 3.555. Ninguno de nuestros métodos llega a ese pr"
+  },
+  {
+   "i": 67,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La Figura 27 resume la tesis en una imagen. El APV, que valora la empresa sin deuda y suma aparte los escudos fiscales, "
+  },
+  {
+   "i": 68,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LA HISTORIA ESTÁ EN LA TASA"
+  },
+  {
+   "i": 69,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Proyectamos el flujo de caja libre de la firma en CLP nominales desde el 30-jun-26, con horizonte explícito hasta 2031E "
+  },
+  {
+   "i": 70,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Esa tasa se mueve con la estructura de capital. Mallplaza usa su capacidad de deuda para crecer, como en 2024 tras compr"
+  },
+  {
+   "i": 71,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Construimos el Ke en dólares porque sus tres insumos están en esa moneda: la Rf del Tesoro de EE.UU., la prima por riesg"
+  },
+  {
+   "i": 72,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Aquí aparece la primera señal: a CLP 3.555 el patrimonio rinde ~4,4% real, apenas 80 pb sobre el costo real de la deuda "
+  },
+  {
+   "i": 73,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "CRECER NO RESCATA EL PRECIO"
+  },
+  {
+   "i": 74,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "No es que seamos pesimistas con la operación. Proyectamos un margen EBITDA de 79,7% en 2026E (sin revalorizaciones, bajo"
+  },
+  {
+   "i": 75,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El capex sigue el plan de la compañía: el pipeline y la mantención (5,5% de los ingresos) llevan el capex base a un máxi"
+  },
+  {
+   "i": 76,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Dos supuestos merecen una explicación. La tasa de impuesto en caja parte en 16,8% porque hoy la compañía usa goodwill tr"
+  },
+  {
+   "i": 77,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 6,9% sobre su costo, un RONIC real de 5,0% después de impuestos"
+  },
+  {
+   "i": 78,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Por eso el horizonte explícito incluye el capex y la maduración de los proyectos que abren hasta 2032 (108.301 m² de GLA"
+  },
+  {
+   "i": 79,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LOS PARES CONFIRMAN LA DIRECCIÓN, NO LA MAGNITUD"
+  },
+  {
+   "i": 80,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La"
+  },
+  {
+   "i": 81,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El contexto macro explica la diferencia. Al 30-jun-26 Brasil tenía una Selic de 14,25%, un bono nominal a 10 años de 14,"
+  },
+  {
+   "i": 82,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Elegimos el set con el mismo criterio que la beta. IRSA se mantiene con cautela, porque reporta bajo NIC 29 y su consens"
+  },
+  {
+   "i": 83,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cencosud Shopping, pero su EBITDA por m² es solo 1,8% "
+  },
+  {
+   "i": 84,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Puesto en precios: a la mediana chilena por sí sola la acción valdría CLP 3.294 (−7%); al múltiplo de Cencosud, CLP 2.62"
+  },
+  {
+   "i": 85,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LO QUE EL MERCADO TENDRÍA QUE CREER"
+  },
+  {
+   "i": 86,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate de 6,0%, frente a 10,1% en nuestro DCF"
+  },
+  {
+   "i": 87,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Llevamos la tesis a sus extremos. En un caso bear (WACC +100 pb y el margen trimestral mínimo de 75,8%) el precio objeti"
+  },
+  {
+   "i": 88,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El APV también dice cuánto vale de verdad la deuda. De sus CLP 1.894 por acción, CLP 1.632 corresponden a la empresa sin"
+  },
+  {
+   "i": 89,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Tampoco cambian el resultado los detalles de calendario. Con un dividendo esperado de ~CLP 69 por acción (2,0%), el reto"
+  },
+  {
+   "i": 90,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Así llegamos a CLP 2.076 (80% × 1.857 + 20% × 2.951): 10,8x EBITDA, un cap rate de 9,3% y 0,94x el valor libro. Llevar e"
+  },
+  {
+   "i": 91,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Lo que vigilaremos: la tasación de la Nota 11 en cada cierre (la tasa real de descuento es el puente entre nuestro valor"
+  },
+  {
+   "i": 92,
+   "tipo": "ancho",
+   "barrera": true,
+   "inicio": "RIESGOS DE INVERSIÓN"
+  },
+  {
+   "i": 93,
+   "tipo": "ancho",
+   "barrera": true,
+   "inicio": "RESUMEN DE INVERSIÓN"
+  }
+ ],
+ "figuras": [
+  {
+   "id": 0,
+   "n": "Figura 1:",
+   "cita": 3,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 1,
+   "n": "Figura 2:",
+   "cita": 11,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 2,
+   "n": "Figura 3:",
+   "cita": 13,
+   "alto": 2.369665532879819
+  },
+  {
+   "id": 3,
+   "n": "Figura 4:",
+   "cita": 16,
+   "alto": 2.365
+  },
+  {
+   "id": 4,
+   "n": "Figura 5:",
+   "cita": 20,
+   "alto": 1.9671712018140592
+  },
+  {
+   "id": 5,
+   "n": "Figura 6:",
+   "cita": 18,
+   "alto": 2.2690419501133787
+  },
+  {
+   "id": 6,
+   "n": "Figura E1:",
+   "cita": 26,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 7,
+   "n": "Figura E2:",
+   "cita": 28,
+   "alto": 2.205197205318909
+  },
+  {
+   "id": 8,
+   "n": "Figura E3:",
+   "cita": 28,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 9,
+   "n": "Figura E4:",
+   "cita": 30,
+   "alto": 2.2651915708812265
+  },
+  {
+   "id": 10,
+   "n": "Figura E5:",
+   "cita": 33,
+   "alto": 2.290191570881226
+  },
+  {
+   "id": 11,
+   "n": "Figura 2:",
+   "cita": 39,
+   "alto": 2.745
+  },
+  {
+   "id": 12,
+   "n": "Figura 3:",
+   "cita": 43,
+   "alto": 2.855
+  },
+  {
+   "id": 13,
+   "n": "Figura 4:",
+   "cita": 49,
+   "alto": 2.670197205318909
+  },
+  {
+   "id": 14,
+   "n": "Figura 5:",
+   "cita": 54,
+   "alto": 2.72
+  },
+  {
+   "id": 15,
+   "n": "Figura 6:",
+   "cita": 55,
+   "alto": 2.72
+  },
+  {
+   "id": 16,
+   "n": "Figura 7:",
+   "cita": 52,
+   "alto": 2.745
+  },
+  {
+   "id": 17,
+   "n": "Figura 27:",
+   "cita": 66,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 18,
+   "n": "Figura 28:",
+   "cita": 72,
+   "alto": 2.290191570881226
+  },
+  {
+   "id": 19,
+   "n": "Figura 29:",
+   "cita": 75,
+   "alto": 2.39
+  },
+  {
+   "id": 20,
+   "n": "Figura 30:",
+   "cita": 77,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 21,
+   "n": "Figura 31:",
+   "cita": 80,
+   "alto": 2.6100000000000003
+  },
+  {
+   "id": 22,
+   "n": "Figura 32:",
+   "cita": 83,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 23,
+   "n": "Figura 33:",
+   "cita": 86,
+   "alto": 2.30018030200586
+  },
+  {
+   "id": 24,
+   "n": "Figura 34:",
+   "cita": 86,
+   "alto": 2.205197205318909
+  }
+ ]
+}

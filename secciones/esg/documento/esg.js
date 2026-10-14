@@ -292,12 +292,14 @@ function pie(prefijo) {
 // Cuerpo en español: texto del borrador del equipo (borrador/CFA_ESG_PLAZA_beta_3.docx → borrador/texto.json,
 // con comun/borrador_a_json.py), sin cambios, en el formato principal y con los gráficos del repo.
 // Inglés: borrador/texto_en.json (traducción fiel del mismo texto).
+const FIGS_CUERPO = ["E1_scorecard", "E2_metas", "E3_energia_residuos", "E4_social", "E5_gobierno"];
+const imagenesDe = (lang) => Object.fromEntries(FIGS_CUERPO.map((n, i) => [`image${i + 1}.png`, [path.join(FIG, `${lang}_${n}.png`), ALTO[n.split("_")[0]]]]));
+const textoDe = (lang) => JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
 function cuerpo(lang) {
   const BORRADOR = path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json");
   if (!fs.existsSync(BORRADOR)) return seccionInforme(lang);
   const { seccionBorrador } = require("../../comun/formato");
-  const figs = ["E1_scorecard", "E2_metas", "E3_energia_residuos", "E4_social", "E5_gobierno"];
-  const imagenes = Object.fromEntries(figs.map((n, i) => [`image${i + 1}.png`, [path.join(FIG, `${lang}_${n}.png`), ALTO[n.split("_")[0]]]]));
+  const imagenes = imagenesDe(lang);
   return seccionBorrador(JSON.parse(fs.readFileSync(BORRADOR, "utf8")), { imagenes, soloCuerpo: true }).cuerpo;
 }
 
@@ -314,7 +316,7 @@ function documento(lang) {
 }
 
 // Documento de la sección → ../documento · anexo → ../anexo (archivos separados, mismo formato)
-module.exports = { documento, L };
+module.exports = { documento, L, imagenesDe, textoDe };
 
 if (require.main === module) (async () => {
   for (const lang of ["es", "en"]) {

@@ -1,0 +1,726 @@
+{
+ "elementos": [
+  {
+   "i": 0,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "ABSTRACT"
+  },
+  {
+   "i": 1,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "BUSINESS DESCRIPTION"
+  },
+  {
+   "i": 2,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "FROM ONE MALL IN LA FLORIDA TO 37 URBAN CENTERS ACROSS THE ANDEAN REGION"
+  },
+  {
+   "i": 3,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza was founded in 1990 with Mallplaza Vespucio, built from the ground up in La Florida, and 35 years later it is "
+  },
+  {
+   "i": 4,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "A CONSTANTLY REINVENTED TENANT MIX AND HIGH MARGINS BY DESIGN"
+  },
+  {
+   "i": 5,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That pricing power rests on a tenant mix the company has successfully reinvented. Department stores, which occupied 26.7"
+  },
+  {
+   "i": 6,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "VALUE IS CONCENTRATED IN 10 TIER A ASSETS"
+  },
+  {
+   "i": 7,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The growth story is written in its best assets. Ten centers, seven in Chile, two in Colombia and one in Peru, are Tier A"
+  },
+  {
+   "i": 8,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "INDUSTRY OVERVIEW AND COMPETITIVE POSITIONING"
+  },
+  {
+   "i": 9,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "AN INDUSTRY THAT IS CONCENTRATED IN CHILE AND FRAGMENTED IN PERU AND COLOMBIA"
+  },
+  {
+   "i": 10,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In retail real estate, shopping center operators do not sell products; they lease square meters of gross leasable area ("
+  },
+  {
+   "i": 11,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Market structure, however, varies from country to country (Figure 2). In Chile, the trio holds 76% of the GLA of the mai"
+  },
+  {
+   "i": 12,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "NEW SUPPLY IN CHILE GROWS IN LINE WITH CONSUMPTION, WITH PRESSURE IN 2027-2028"
+  },
+  {
+   "i": 13,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Between 2026 and 2028, the trio will add 219,900 m² of organic GLA in Chile that will compete for consumer spending, equ"
+  },
+  {
+   "i": 14,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The starting point is challenging, as in 2Q26 real tenant sales of the trio in Chile fell 2.5% YoY. Mallplaza was the on"
+  },
+  {
+   "i": 15,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "AN ATTRACTIVE INDUSTRY WHOSE ONLY INTENSE FORCE IS RIVALRY"
+  },
+  {
+   "i": 16,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "To assess the industry's attractiveness, we analyze Porter's five forces in each country on a scale of 1 (weak) to 5 (in"
+  },
+  {
+   "i": 17,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Rivalry (4) is played out not on price but on experience and assets. Mallplaza devotes more than half of its GLA to non-"
+  },
+  {
+   "i": 18,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The threat of new entrants (2) is limited, because developing a shopping center is highly capital-intensive (Mallplaza's"
+  },
+  {
+   "i": 19,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "MALLPLAZA TURNS ITS SCALE INTO THE MOST PRODUCTIVE M² OF THE TRIO"
+  },
+  {
+   "i": 20,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza turns its scale into the highest EBITDA per m² of the trio, at CLP 59,451 in 2Q26 versus 58,384 at Cenco and 5"
+  },
+  {
+   "i": 21,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In terms of share, Mallplaza has ceded 1.2 pp within the trio in Chile since 2Q22, mainly because Parque Arauco added Ke"
+  },
+  {
+   "i": 22,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LONG LEASES TO DEFEND ITS POSITION"
+  },
+  {
+   "i": 23,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That position is backed by long-duration leases. The weighted average remaining lease term at Mallplaza is 7.1 years and"
+  },
+  {
+   "i": 24,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In an attractive industry, but one with high rivalry and supply that will outpace consumption in 2027-2028, the operator"
+  },
+  {
+   "i": 25,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "ENVIRONMENTAL, SOCIAL AND GOVERNANCE (ESG)"
+  },
+  {
+   "i": 26,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Plaza's ESG approach cuts across all of its organizational decisions, with the aim of developing its business model in a"
+  },
+  {
+   "i": 27,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "ENVIRONMENTAL"
+  },
+  {
+   "i": 28,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Plaza's approach is to achieve efficient, sustainable and circular operational management based on continuous improvemen"
+  },
+  {
+   "i": 29,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SOCIAL"
+  },
+  {
+   "i": 30,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The company approaches the social dimension through a model focused on long-term ethical relationships, as a principle o"
+  },
+  {
+   "i": 31,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In terms of diversity, women represent 53.2% of the total workforce and hold 42% of management positions (Figure E4), an"
+  },
+  {
+   "i": 32,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "GOVERNANCE"
+  },
+  {
+   "i": 33,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Corporate governance is guided by the G20 and OECD principles, aligned with the CMF's NCG 461; all of this seeks transpa"
+  },
+  {
+   "i": 34,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "FINANCIAL ANALYSIS"
+  },
+  {
+   "i": 35,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza's rental engine grows at roughly 3% in real terms with an 80% EBITDA margin and cash-flow leverage below 2.5x;"
+  },
+  {
+   "i": 36,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "Figure 1: Normalized ROE of 8–10% is the real return; reported ROE is appraisal-driven"
+  },
+  {
+   "i": 37,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Reported earnings track the appraiser; FFO tracks the business"
+  },
+  {
+   "i": 38,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Under IAS 40, revaluations of investment property run through the income statement. In 2025 a CLP 1,447bn fair-value gai"
+  },
+  {
+   "i": 39,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%, the highest of "
+  },
+  {
+   "i": 40,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Broken down, 2025 normalized ROE (9.7%) is a 56.5% normalized net margin times an asset turnover of only 0.097x and 1.77"
+  },
+  {
+   "i": 41,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Two-thirds of 2025 growth was bought; organic real growth is about 3%"
+  },
+  {
+   "i": 42,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Revenue rose 76% between 2022 and 2025, but 21.8pp of 2025's 32.2% came from perimeter: the Peruvian portfolio bought fr"
+  },
+  {
+   "i": 43,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Once currency and inflation are removed, 1H26 reported growth of 7.4% falls to about 3.0% real (Figure 3). Chile grew 2."
+  },
+  {
+   "i": 44,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Growth is contractual, not sales-driven. Variable rent is 5.1% of revenue and fell 1.1% in 1H26 while tenant sales rose "
+  },
+  {
+   "i": 45,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Margin gains came from mix and cost recovery; operating leverage is spent"
+  },
+  {
+   "i": 46,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "EBITDA margin rose from 76.2% in 2022 to 80.5% in 2025 for two reasons. Peru consolidates at an 83% segment margin, agai"
+  },
+  {
+   "i": 47,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "With cost of sales at 6% of revenue and total operating costs near 20%, little fixed cost is left to dilute; with D&A at"
+  },
+  {
+   "i": 48,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Operating costs have already fallen from 23.8% of revenue in 2023 to 20.1% in 2025 (Appendix 3), so there is little left"
+  },
+  {
+   "i": 49,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Cash covers the dividend 2.6x; the ceiling is policy, not liquidity"
+  },
+  {
+   "i": 50,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025, converting 98.7% of EBITDA before tax. Cash tax wa"
+  },
+  {
+   "i": 51,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The 38.6% jump in 1H26 operating cash flow is not earnings power: 59% of it was December collections unwinding through w"
+  },
+  {
+   "i": 52,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The dividend policy pays out 40% of distributable profit with a one-year lag, so retained cash is high: CLP 171.6bn in 2"
+  },
+  {
+   "i": 53,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, a"
+  },
+  {
+   "i": 54,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Cash-flow metrics earn the AAA; equity-based ratios flatter it"
+  },
+  {
+   "i": 55,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "LTV fell from 26.9% to 18.8% in 2025, but 5.0pp of the 8.0pp drop came from revaluing the denominator; with property at "
+  },
+  {
+   "i": 56,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year "
+  },
+  {
+   "i": 57,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cencosud"
+  },
+  {
+   "i": 58,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "One liability does not show up in LTV: deferred taxes, CLP 1,313.7bn at June 2026, almost 80% of gross financial debt. T"
+  },
+  {
+   "i": 59,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The forecast carries forward what history supports, including the pace of expansion"
+  },
+  {
+   "i": 60,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.4%), as real same-store growth converges to the apprai"
+  },
+  {
+   "i": 61,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "What this means for valuation"
+  },
+  {
+   "i": 62,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The analysis leaves three conclusions for the model. First, the right earnings base is cash: we use the company's EBITDA"
+  },
+  {
+   "i": 63,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Third, the return on capital at fair value is low. 2025 ROIC, with NOPAT at 27% over invested capital at appraised value"
+  },
+  {
+   "i": 64,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "VALUATION"
+  },
+  {
+   "i": 65,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We recommend SELL on Mallplaza with a target price of CLP 2,076 per share, 41.6% below the CLP 3,555 close of 30-Sep-26 "
+  },
+  {
+   "i": 66,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "A PRICE NO METHOD REACHES"
+  },
+  {
+   "i": 67,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In twelve months the stock rose from CLP 2,470 to 4,700 and now trades at CLP 3,555. None of our methods reaches that pr"
+  },
+  {
+   "i": 68,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Figure 27 sums up the thesis in one picture. APV, which values the firm unlevered and adds the tax shields separately, g"
+  },
+  {
+   "i": 69,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "THE STORY IS IN THE RATE"
+  },
+  {
+   "i": 70,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We project free cash flow to the firm in nominal CLP from 30-Jun-26, with an explicit horizon to 2031E and a terminal va"
+  },
+  {
+   "i": 71,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That rate moves with the capital structure. Mallplaza uses its debt capacity to grow, as in 2024 after buying Open Plaza"
+  },
+  {
+   "i": 72,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We build Ke in dollars because its three inputs are in that currency: the US Treasury Rf, the implied equity risk premiu"
+  },
+  {
+   "i": 73,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Here the first signal appears: at CLP 3,555, equity yields ~4.4% real, just 80 bp above the company's own real cost of d"
+  },
+  {
+   "i": 74,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "GROWTH DOES NOT RESCUE THE PRICE"
+  },
+  {
+   "i": 75,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "This is not pessimism about operations. We forecast a 79.7% EBITDA margin in 2026E (excluding revaluation, below the 80."
+  },
+  {
+   "i": 76,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Capex follows the company's plan: the pipeline and maintenance (5.5% of revenue) take base capex to a peak of CLP 240,66"
+  },
+  {
+   "i": 77,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Two assumptions deserve explanation. The cash tax rate starts at 16.8% because the company currently uses tax goodwill a"
+  },
+  {
+   "i": 78,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The problem is the return on growth. Each new m² yields 6.9% on cost, a 5.0% real RONIC after tax, below a 7.2% real WAC"
+  },
+  {
+   "i": 79,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That is why the explicit horizon includes the capex and ramp-up of projects opening through 2032 (108,301 m² of mature G"
+  },
+  {
+   "i": 80,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "PEERS CONFIRM THE DIRECTION, NOT THE SIZE"
+  },
+  {
+   "i": 81,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza trades at 16.8x EV/EBITDA, above the Chilean median (15.7x) and far above Brazilian peers (9.0x). The gap with"
+  },
+  {
+   "i": 82,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Macro explains the difference. At 30-Jun-26 Brazil had a 14.25% Selic, a 14.34% nominal 10-year bond and 5.3% expected 2"
+  },
+  {
+   "i": 83,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We chose the set on the same basis as the beta. IRSA is kept with caution, since it reports under IAS 29 and its NTM con"
+  },
+  {
+   "i": 84,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Nor does quality justify the premium. Mallplaza trades 29% above Cencosud Shopping, yet its EBITDA per m² is only 1.8% h"
+  },
+  {
+   "i": 85,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "In price terms: at the Chilean median alone the stock would be worth CLP 3,294 (−7%); at Cencosud's multiple, CLP 2,621;"
+  },
+  {
+   "i": 86,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "WHAT THE MARKET WOULD HAVE TO BELIEVE"
+  },
+  {
+   "i": 87,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a 6.0% cap rate, against 10.1% in our DCF, 6.4% for Ch"
+  },
+  {
+   "i": 88,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We pushed the thesis to its extremes. In a bear case (WACC +100 bp and the 75.8% quarterly-low margin) the target falls "
+  },
+  {
+   "i": 89,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "APV also shows what the debt is really worth. Of its CLP 1,894 per share, CLP 1,632 is the unlevered firm and CLP 261 th"
+  },
+  {
+   "i": 90,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Calendar details do not change the outcome either. With an expected dividend of ~CLP 69 per share (2.0%), the expected t"
+  },
+  {
+   "i": 91,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That brings us to CLP 2,076 (80% × 1,857 + 20% × 2,951): 10.8x EBITDA, a 9.3% cap rate and 0.94x book value. Rolling the"
+  },
+  {
+   "i": 92,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "What we will watch: the Note 11 appraisal at each reporting date (the real discount rate is the bridge between our value"
+  },
+  {
+   "i": 93,
+   "tipo": "ancho",
+   "barrera": true,
+   "inicio": "INVESTMENT RISKS"
+  },
+  {
+   "i": 94,
+   "tipo": "ancho",
+   "barrera": true,
+   "inicio": "INVESTMENT SUMMARY"
+  }
+ ],
+ "figuras": [
+  {
+   "id": 0,
+   "n": "Figure 1:",
+   "cita": 3,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 1,
+   "n": "Figure 2:",
+   "cita": 11,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 2,
+   "n": "Figure 3:",
+   "cita": 13,
+   "alto": 2.369665532879819
+  },
+  {
+   "id": 3,
+   "n": "Figure 4:",
+   "cita": 16,
+   "alto": 2.365
+  },
+  {
+   "id": 4,
+   "n": "Figure 5:",
+   "cita": 20,
+   "alto": 1.832171201814059
+  },
+  {
+   "id": 5,
+   "n": "Figure 6:",
+   "cita": 18,
+   "alto": 2.2690419501133787
+  },
+  {
+   "id": 6,
+   "n": "Figure E1:",
+   "cita": 26,
+   "alto": 2.365
+  },
+  {
+   "id": 7,
+   "n": "Figure E2:",
+   "cita": 28,
+   "alto": 2.205197205318909
+  },
+  {
+   "id": 8,
+   "n": "Figure E3:",
+   "cita": 28,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 9,
+   "n": "Figure E4:",
+   "cita": 30,
+   "alto": 2.2651915708812265
+  },
+  {
+   "id": 10,
+   "n": "Figure E5:",
+   "cita": 33,
+   "alto": 2.155191570881226
+  },
+  {
+   "id": 11,
+   "n": "Figure 2:",
+   "cita": 39,
+   "alto": 2.745
+  },
+  {
+   "id": 12,
+   "n": "Figure 3:",
+   "cita": 43,
+   "alto": 2.72
+  },
+  {
+   "id": 13,
+   "n": "Figure 4:",
+   "cita": 50,
+   "alto": 2.670197205318909
+  },
+  {
+   "id": 14,
+   "n": "Figure 5:",
+   "cita": 55,
+   "alto": 2.72
+  },
+  {
+   "id": 15,
+   "n": "Figure 6:",
+   "cita": 56,
+   "alto": 2.6100000000000003
+  },
+  {
+   "id": 16,
+   "n": "Figure 7:",
+   "cita": 53,
+   "alto": 2.745
+  },
+  {
+   "id": 17,
+   "n": "Figure 27:",
+   "cita": 67,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 18,
+   "n": "Figure 28:",
+   "cita": 73,
+   "alto": 2.4001915708812263
+  },
+  {
+   "id": 19,
+   "n": "Figure 29:",
+   "cita": 76,
+   "alto": 2.39
+  },
+  {
+   "id": 20,
+   "n": "Figure 30:",
+   "cita": 78,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 21,
+   "n": "Figure 31:",
+   "cita": 81,
+   "alto": 2.6100000000000003
+  },
+  {
+   "id": 22,
+   "n": "Figure 32:",
+   "cita": 84,
+   "alto": 2.5000000000000004
+  },
+  {
+   "id": 23,
+   "n": "Figure 33:",
+   "cita": 87,
+   "alto": 2.30018030200586
+  },
+  {
+   "id": 24,
+   "n": "Figure 34:",
+   "cita": 87,
+   "alto": 2.205197205318909
+  }
+ ]
+}
