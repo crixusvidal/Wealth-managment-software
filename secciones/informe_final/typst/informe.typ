@@ -7,7 +7,7 @@
 //                        adelantar = secciones cuyos gráficos pueden subir hasta una página antes de su cita
 // Compilar desde secciones/ (root): ver armar.py
 
-#let D = json(sys.inputs.at("datos", default: "/informe_final/typst/cuerpo_es.json"))
+#let D = json(sys.inputs.at("datos", default: "/informe_final/typst/datos/cuerpo_es.json"))
 #let ESC = json(bytes(sys.inputs.at("escalas", default: "{}")))
 #let ADEL = sys.inputs.at("adelantar", default: "").split(",")
 #let ES = D.lang == "es"

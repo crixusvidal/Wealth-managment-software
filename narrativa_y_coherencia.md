@@ -102,13 +102,25 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 ## 7. Mapa de archivos
 
 ```
+CLAUDE.md                     reglas del proyecto (idioma, versiones, orden)
+narrativa_y_coherencia.md     esta guía
+generar_todo.sh               regenera gráficos, documentos por sección y el informe consolidado
+data/                         datos de origen y diccionario (raw, processed, sources, logs)
 secciones/
-  comun/estilo.py        paleta institucional y formatos compartidos (+ logos)
-  <sección>/
-    documento/           constructor .js y el Word/PDF de la sección
-    anexo/               el anexo de la sección (archivo aparte)
-    graficos/            scripts de Python
-    graficos/figuras/    cada gráfico individual (es_/en_)
-    modelos/             Excel de entrada de la sección
-generar_todo.sh          regenera todos los gráficos y documentos
+  comun/                      estilo.py (paleta), formato.js (formato Word), borrador_a_json.py, logos/
+  <sección>/                  negocio, industria, esg, analisis_financiero, valuacion, riesgos, macro, plantilla_informe
+    documento/                constructor .js + Word/PDF de la sección (ES/EN)
+    documento/borrador/       borrador del equipo (.docx) y su texto en JSON (texto.json / texto_en.json)
+    anexo/                    anexo de la sección (ES/EN)
+    graficos/                 scripts de Python de los gráficos
+    graficos/figuras/         cada gráfico (es_/en_, y _titulado para compartir fuera del informe)
+    modelos/                  Excel de entrada de la sección
+  informe_final/              informe consolidado
+    documento/                informe_final.js + cuerpo.js → Word final (ES/EN); PDF final (lo escribe typst/armar.py)
+    documento/maquetacion/    intermedios de la maquetación del Word (plan, posiciones, escalas, saltos)
+    graficos/                 datos_resumen.py (datos clave), maquetar.py (Word), aplicar_correcciones.py
+    typst/                    informe.typ (diseño del PDF), exportar.js (textos → JSON), armar.py (PDF final)
+    typst/datos/              cuerpo_<lang>.json exportado para Typst
 ```
+
+**Entregables finales:** `secciones/informe_final/documento/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar).

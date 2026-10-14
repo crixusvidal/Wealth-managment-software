@@ -1,6 +1,6 @@
 // Exporta el cuerpo del informe consolidado a JSON para la maquetación en Typst (informe.typ).
 // Mismo contenido que el Word (informe_final.js): textos de cada sección con las figuras y anexos ya renumerados.
-// Uso (desde secciones/): node informe_final/typst/exportar.js <es|en>  → informe_final/typst/cuerpo_<lang>.json
+// Uso (desde secciones/): node informe_final/typst/exportar.js <es|en>  → informe_final/typst/datos/cuerpo_<lang>.json
 const fs = require("fs");
 const path = require("path");
 const I = require("../documento/informe_final.js");
@@ -97,6 +97,6 @@ const salida = {
     I.con("riesgos", secRiesgos),
   ],
 };
-const archivo = path.join(__dirname, `cuerpo_${lang}.json`);
+const archivo = path.join(__dirname, "datos", `cuerpo_${lang}.json`);
 fs.writeFileSync(archivo, JSON.stringify(salida, null, 1));
 console.log(archivo, salida.secciones.map((s) => `${s.clave}: ${s.bloques.length} bloques, ${s.figuras.length} figuras`).join(" · "));

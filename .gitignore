@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+# temporales de LibreOffice y de la maquetación
+.~lock*
+*.tmp
+*_medir.docx
+*_medir.pdf

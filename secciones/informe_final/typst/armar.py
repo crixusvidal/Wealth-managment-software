@@ -27,12 +27,12 @@ SOFFICE = "/root/.claude/skills/synced/508cc6bc-ad76-422f-ada9-ad0fc4279625_0b2a
 
 def exportar(lang):
     subprocess.run(["node", str(TY / "exportar.js"), lang], check=True, cwd=RAIZ, env=ENV, stdout=subprocess.DEVNULL)
-    d = json.loads((TY / f"cuerpo_{lang}.json").read_text())
+    d = json.loads((TY / "datos" / f"cuerpo_{lang}.json").read_text())
     for s in d["secciones"]:
         for f in s["figuras"]:
             f["archivo"] = "/" + os.path.relpath(f["archivo"], RAIZ)
-    (TY / f"cuerpo_{lang}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
-    return f"/informe_final/typst/cuerpo_{lang}.json"
+    (TY / "datos" / f"cuerpo_{lang}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    return f"/informe_final/typst/datos/cuerpo_{lang}.json"
 
 
 def compilar(datos, escalas, adelantar, salida=None):

@@ -58,6 +58,8 @@ const F = require("../../comun/formato");
 F.OPCIONES.filasPorCita = true;
 const C = require("./cuerpo");
 const MEDIR = process.argv.includes("--medir");
+// Archivos intermedios de la maquetación del Word (los escribe graficos/maquetar.py)
+const MAQ = path.join(__dirname, "maquetacion");
 const SOLO = (process.argv.find((a) => a.startsWith("--solo=")) || "").slice(7);
 const S = path.join(__dirname, "..", "..");
 const negocio = require(path.join(S, "negocio/documento/negocio.js"));
@@ -179,13 +181,13 @@ function informe(lang = "es") {
   const conEspacio = (s) => ({ ...s, children: [new Paragraph({ spacing: { before: 160 }, children: [] }), ...s.children] });
   // Secciones que deben partir en página nueva porque su título quedaría solo al pie (lo decide
   // informe_final/graficos/maquetar.py revisando el PDF); el resto corre seguido.
-  const archivoSaltos = path.join(__dirname, `saltos_${lang}.json`);
+  const archivoSaltos = path.join(MAQ, `saltos_${lang}.json`);
   const saltos = new Set(fs.existsSync(archivoSaltos) ? JSON.parse(fs.readFileSync(archivoSaltos, "utf8")) : []);
   const corrida = (clave, s) => (saltos.has(clave)
     ? [new Paragraph({ children: [new PageBreakOriginal()] }), ...s.children] : conEspacio(s).children);
   // Cuerpo: texto corrido con figuras flotantes en la columna derecha (ver cuerpo.js); los bloques de ancho
   // completo (títulos, leads, abstract, Riesgos, Resumen) se mantienen como están.
-  const archivoEsc = path.join(__dirname, `escalas_${lang}.json`);
+  const archivoEsc = path.join(MAQ, `escalas_${lang}.json`);
   for (const k of Object.keys(C.ESCALAS)) delete C.ESCALAS[k];
   if (fs.existsSync(archivoEsc)) Object.assign(C.ESCALAS, JSON.parse(fs.readFileSync(archivoEsc, "utf8")));
   const plan = C.nuevoPlan();
@@ -197,13 +199,13 @@ function informe(lang = "es") {
   con("valuacion", () => C.seccionModulo(plan, valuacion.L[lang], valuacion.FIG, lang, "valuacion"));
   C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...d.riesgos.sections[0].children], lang === "es" ? "RIESGOS DE INVERSIÓN" : "INVESTMENT RISKS", true);
   C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...resumen(lang)], lang === "es" ? "RESUMEN DE INVERSIÓN" : "INVESTMENT SUMMARY", true);
-  const archivoPos = path.join(__dirname, `posiciones_${lang}.json`);
+  const archivoPos = path.join(MAQ, `posiciones_${lang}.json`);
   // Al medir, las figuras también van (en su párrafo de cita): así el texto se mide con la misma estructura
   // que tendrá el documento final y las posiciones calculadas siguen valiendo.
   const posiciones = MEDIR ? Object.fromEntries(plan.figuras.map((f) => [f.id, { elemento: f.cita, offset: 0, marcador: true }]))
     : fs.existsSync(archivoPos) ? JSON.parse(fs.readFileSync(archivoPos, "utf8")) : null;
-  if (MEDIR) fs.writeFileSync(path.join(__dirname, `plan_${lang}.json`), JSON.stringify(C.resumenPlan(plan), null, 1));
-  const archivoFin = path.join(__dirname, `finales_${lang}.json`);
+  if (MEDIR) fs.writeFileSync(path.join(MAQ, `plan_${lang}.json`), JSON.stringify(C.resumenPlan(plan), null, 1));
+  const archivoFin = path.join(MAQ, `finales_${lang}.json`);
   const finales = !MEDIR && fs.existsSync(archivoFin) ? JSON.parse(fs.readFileSync(archivoFin, "utf8")) : {};
   const cuerpo = C.hijos(plan, posiciones, (fig, fn) => con(fig.clave, fn), finales);
   const anexos = [...d.negocio.sections[1].children, ...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),

@@ -17,6 +17,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 DOC = RAIZ / "informe_final" / "documento"
+MAQ = DOC / "maquetacion"                  # archivos intermedios (plan, posiciones, escalas, ...)
 SOFFICE = Path("/root/.claude/skills/synced/508cc6bc-ad76-422f-ada9-ad0fc4279625_0b2a2ef9-bf53-46a5-b8ed-72255cce463a/docx/scripts/office/soffice.py")
 TITULOS = {
     "industria": r"(ANÁLISIS DE LA INDUSTRIA|INDUSTRY OVERVIEW)", "esg": r"(AMBIENTAL, SOCIAL|ENVIRONMENTAL, SOCIAL)",
@@ -159,16 +160,16 @@ def posicionar(plan, pdf, adelantar=frozenset()):
 
 def main(langs, saltos=False):
     for lang in langs:
-        (DOC / f"posiciones_{lang}.json").unlink(missing_ok=True)
+        (MAQ / f"posiciones_{lang}.json").unlink(missing_ok=True)
         # Gráficos al costado del texto. Si alguno no cabe antes del siguiente bloque de ancho completo, se achica
         # el alto de los gráficos de ese tramo (hasta 70%) y se vuelve a medir. Lo que igual no quepa (idealmente
         # ninguno, a lo más 2) va en una fila de dos al cierre de la sección.
-        archivo_esc = DOC / f"escalas_{lang}.json"
+        archivo_esc = MAQ / f"escalas_{lang}.json"
         escalas = {}
         archivo_esc.write_text("{}")
         for vuelta in range(14):
             pdf_m = armar(lang, medir=True)
-            plan = json.loads((DOC / f"plan_{lang}.json").read_text())
+            plan = json.loads((MAQ / f"plan_{lang}.json").read_text())
             pos, finales = posicionar(plan, pdf_m)
             fuera = [i for v in finales.values() for i in v]
             print(lang, "vuelta", vuelta, "escalas:", escalas, "abajo:", len(fuera), flush=True)
@@ -199,15 +200,15 @@ def main(langs, saltos=False):
             print(lang, "adelantando", sorted(adel), "abajo:", n2)
             if n2 < len(fuera):
                 pos, finales = pos2, fin2
-        (DOC / f"finales_{lang}.json").write_text(json.dumps(finales, indent=1))
+        (MAQ / f"finales_{lang}.json").write_text(json.dumps(finales, indent=1))
         print(lang, "figuras en grilla al cierre de sección:", {k: [plan["figuras"][i]["n"] for i in v] for k, v in finales.items()})
-        (DOC / f"posiciones_{lang}.json").write_text(json.dumps(pos, indent=1))
+        (MAQ / f"posiciones_{lang}.json").write_text(json.dumps(pos, indent=1))
         for x in (pdf_m, pdf_m.with_suffix(".docx")):
             x.unlink(missing_ok=True)
         sin = [f["n"] for f in plan["figuras"] if str(f["id"]) not in {str(k) for k in pos}]
         if sin:
             print(lang, "figuras sin ubicar:", sin)
-        archivo = DOC / f"saltos_{lang}.json"
+        archivo = MAQ / f"saltos_{lang}.json"
         archivo.write_text("[]")
         for vuelta in range(6):
             pdf = armar(lang)
