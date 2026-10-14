@@ -18,7 +18,9 @@ import numpy as np
 import openpyxl
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Patch
 
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 RAIZ = Path(__file__).resolve().parent.parent
 AZUL = "#14284B"
@@ -312,8 +314,8 @@ def chile(lang, d, salida):
 
 
 if __name__ == "__main__":
-    ruta = Path(sys.argv[1]) if len(sys.argv) > 1 else RAIZ / "data" / "macro" / "macro_2022_2026.xlsx"
-    salida = Path(sys.argv[2]) if len(sys.argv) > 2 else RAIZ / "graficos" / "informe" / "macro"
+    ruta = Path(sys.argv[1]) if len(sys.argv) > 1 else RAIZ / "modelos" / "macro_2022_2026.xlsx"
+    salida = Path(sys.argv[2]) if len(sys.argv) > 2 else RAIZ / "graficos" / "figuras"
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans"})
     d = leer(ruta)

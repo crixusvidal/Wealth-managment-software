@@ -5,13 +5,16 @@ Uso:
 """
 import statistics as st
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import openpyxl
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import NEGRO, ROJO, TINTA_SECUNDARIA
 
 KD_REAL, INFLACION, TASA = 0.036, 0.03, 0.27   # auditoría DCF_Valuation (FFCF del modelo de valuación)
 MARKET_CAP, DEUDA_BRUTA = 7_785_450, 1_659_190  # Bloomberg 30-sep-2026; DFN BBG 1.311.569 + caja 347.621
@@ -120,4 +123,4 @@ def graficar(ruta, salida):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "tabla_kd_caprates.png")
+    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "figuras" / "tabla_kd_caprates.png")

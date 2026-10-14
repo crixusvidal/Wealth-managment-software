@@ -11,13 +11,16 @@ Uso:
         <Tornado_Sensibilidad.xlsx> [salida.png]
 """
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 AÑOS = "EFGHI"  # 2027E–2031E en la hoja Forecast de Exhibits
 CORTO = [0, 1]  # 2027–2028: horizonte del tornado (2026 ya está anclado al 1S26 real)
@@ -277,4 +280,4 @@ if __name__ == "__main__":
     if len(sys.argv) < 4:
         sys.exit(__doc__)
     graficar(sys.argv[1], sys.argv[2], sys.argv[3],
-             sys.argv[4] if len(sys.argv) > 4 else "tornado_operacional.png")
+             sys.argv[4] if len(sys.argv) > 4 else Path(__file__).parent / "figuras" / "tornado_operacional.png")

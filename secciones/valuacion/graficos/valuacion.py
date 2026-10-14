@@ -16,8 +16,10 @@ import numpy as np
 import openpyxl
 from matplotlib.patches import Patch, Rectangle
 
-from pagina_riesgos import num, pct, tinte
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import num, pct, tinte
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 AZUL = "#14284B"
 GRIS = "#9a9a9a"
@@ -547,7 +549,7 @@ def exportar_wacc(wb, ruta):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    salida = Path(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] != "-" else Path(__file__).parent / "informe" / "valuacion"
+    salida = Path(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] != "-" else Path(__file__).parent / "figuras"
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans", "hatch.linewidth": 0.4})
     wb = openpyxl.load_workbook(sys.argv[1], data_only=True)

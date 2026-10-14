@@ -14,14 +14,13 @@ import openpyxl
 from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import LOGOS, MORADO_CENCOSUD, NEGRO, ROJO, TINTA_SECUNDARIA, VERDE_PARQUE_ARAUCO
 
-VERDE_PARQUE_ARAUCO = "#56d371"  # color entregado por el equipo
-MORADO_CENCOSUD = "#3a0d7f"      # color entregado por el equipo
 EMPRESAS = [("Mallplaza", ROJO, "white"), ("Parque Arauco", VERDE_PARQUE_ARAUCO, NEGRO),
             ("Cencosud Shopping", MORADO_CENCOSUD, "white")]
 # Logos opcionales: si existe el PNG, reemplaza el nombre a la derecha del área.
-LOGOS = Path(__file__).parent / "logos"
 ARCHIVOS_LOGO = {"Mallplaza": "mallplaza.png", "Parque Arauco": "parque_arauco.png",
                  "Cencosud Shopping": "cencosud_shopping.png"}
 ANCHO_LOGO_PX = {"Mallplaza": 95, "Parque Arauco": 200, "Cencosud Shopping": 230}  # ancho en el PNG final
@@ -133,4 +132,4 @@ def graficar(ruta, salida):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "cuota_mercado.png")
+    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "figuras" / "cuota_mercado.png")

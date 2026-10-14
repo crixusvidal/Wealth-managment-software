@@ -11,7 +11,7 @@ const {
 const AZUL = "14284B", ROJO = "E9004B", TINTA = "1A1A1A", GRIS = "5F5F5F", FONDO = "EEF1F6";
 const FUENTE = "Arial";
 const ANCHO = 10666, MEDIA = 5225, SEP = 216;
-const FIG = path.join(__dirname, "..", "graficos", "informe", "macro");
+const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const PX = 96;
 const ALTO = { A0: 1.85, A1: 2.55, A2: 2.55, A3: 2.3, A4: 2.3, A5: 2.2 }; // = graficos/anexo_macro.py
 

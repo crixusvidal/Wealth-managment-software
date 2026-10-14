@@ -11,7 +11,7 @@ const {
 const AZUL = "14284B", ROJO = "E9004B", TINTA = "1A1A1A", GRIS = "5F5F5F", FONDO = "EEF1F6";
 const FUENTE = "Arial", ANCHO = 10666, COL_TEXTO = 6900, COL_SEP = 216, COL_FIG = 3550;
 const MEDIA = 5225;
-const FIG = path.join(__dirname, "..", "graficos", "informe", "esg");
+const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const PX = 96;
 const ALTO = { E1: 2.0, E2: 1.75, E3: 1.8, E4: 1.7, E5: 1.7, AE1: 1.0, AE2: 1.15, AE3: 1.45, AE4: 1.75 }; // = graficos/esg.py
 
@@ -292,7 +292,7 @@ function pie(prefijo) {
 function documento(lang) {
   const X = L[lang];
   const pagina = { size: { width: 11906, height: 16838 }, margin: { top: 1000, right: 620, bottom: 900, left: 620, header: 450, footer: 400 } };
-  return new Document({
+  return ({
     styles: { default: { document: { run: { font: FUENTE, size: 16 }, paragraph: { spacing: { before: 0, after: 0, line: 240, lineRule: "auto" } } } } },
     sections: [
       { properties: { page: pagina }, headers: { default: encabezado() }, footers: { default: pie(X.pag) }, children: seccionInforme(lang) },
@@ -301,10 +301,15 @@ function documento(lang) {
   });
 }
 
+// Documento de la sección → ../documento · anexo → ../anexo (archivos separados, mismo formato)
 (async () => {
   for (const lang of ["es", "en"]) {
-    const salida = path.join(__dirname, L[lang].archivo);
-    fs.writeFileSync(salida, await Packer.toBuffer(documento(lang)));
-    console.log(salida);
+    const d = documento(lang);
+    const salidas = [[0, path.join(__dirname, L[lang].archivo)],
+      [1, path.join(__dirname, "..", "anexo", L[lang].archivo.replace(".docx", "_Anexo.docx"))]];
+    for (const [k, salida] of salidas) {
+      fs.writeFileSync(salida, await Packer.toBuffer(new Document({ ...d, sections: [d.sections[k]] })));
+      console.log(salida);
+    }
   }
 })();

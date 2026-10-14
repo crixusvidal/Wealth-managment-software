@@ -15,9 +15,11 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm, to_rgb
 from matplotlib.patches import Rectangle
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
 from heatmap_sensibilidad_wacc import NEUTRO, color_texto, grilla
 from reajuste_uf import ESCENARIOS, ROJO_CLARO, VARIACION_BASE, impacto
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 from tornado_operacional import escenarios, leer_modelo, leer_rangos, proyectar
 
 ANCHO = 3550 / 1440  # pulgadas: columna derecha (A4) de informe/plantilla_informe.js
@@ -176,7 +178,7 @@ def uf(salida):
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         sys.exit(__doc__)
-    salida = Path(sys.argv[4] if len(sys.argv) > 4 else Path(__file__).parent / "informe")
+    salida = Path(sys.argv[4] if len(sys.argv) > 4 else Path(__file__).parent / "figuras")
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans"})
     matriz(salida / "fig1_matriz_riesgo.png")

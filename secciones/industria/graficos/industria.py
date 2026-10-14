@@ -19,8 +19,10 @@ from matplotlib.colors import to_rgb
 from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 from matplotlib.patches import Patch, Rectangle
 
-from cuota_mercado import MORADO_CENCOSUD, VERDE_PARQUE_ARAUCO
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import LOGOS, MORADO_CENCOSUD, VERDE_PARQUE_ARAUCO
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 COLOR = {"Mallplaza": ROJO, "Parque Arauco": VERDE_PARQUE_ARAUCO, "Cenco Malls": MORADO_CENCOSUD}
 TEXTO = {"Mallplaza": "white", "Parque Arauco": NEGRO, "Cenco Malls": "white"}
@@ -48,7 +50,6 @@ def guardar(fig, salida):
 
 
 CABECERA, PIE_BASE, PIE_LINEA = 0.82, 0.1, 0.15  # pulgadas
-LOGOS = Path(__file__).parent / "logos"
 ARCHIVOS_LOGO = {"Mallplaza": "mallplaza.png", "Parque Arauco": "parque_arauco.png",
                  "Cenco Malls": "cencosud_shopping.png"}
 ANCHO_LOGO = {"Mallplaza": 0.42, "Parque Arauco": 0.95, "Cenco Malls": 1.0}  # pulgadas
@@ -435,7 +436,7 @@ def eficiencia(wb, salida):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    salida = Path(sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "industria")
+    salida = Path(sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "figuras")
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans"})
     wb = openpyxl.load_workbook(sys.argv[1], data_only=True)

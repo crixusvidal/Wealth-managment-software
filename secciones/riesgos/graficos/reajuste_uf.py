@@ -7,10 +7,13 @@ Uso:
     python graficos/reajuste_uf.py [salida_sin_extension]
 """
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from sensibilidad_wacc import GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 ROJO_CLARO = "#f8b3c9"  # tinte al 30% del rojo Mallplaza
 

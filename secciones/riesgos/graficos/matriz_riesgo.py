@@ -15,7 +15,9 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import to_rgb
 from matplotlib.patches import Circle, Rectangle
 
-from sensibilidad_wacc import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
 
 ETIQUETAS = ["Low", "Medium", "High"]
 N = len(ETIQUETAS)
@@ -97,4 +99,4 @@ if __name__ == "__main__":
         i = args.index("--riesgos")
         ruta_csv = args[i + 1]
         del args[i:i + 2]
-    graficar(args[0] if args else Path(__file__).parent / "matriz_riesgo.png", ruta_csv)
+    graficar(args[0] if args else Path(__file__).parent / "figuras" / "matriz_riesgo.png", ruta_csv)

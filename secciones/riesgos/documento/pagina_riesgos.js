@@ -11,7 +11,7 @@ const {
 const AZUL = "14284B", ROJO = "E9004B", TINTA = "1A1A1A", GRIS = "5F5F5F", FONDO = "EEF1F6";
 const FUENTE = "Arial";
 const COL_TEXTO = 6900, COL_SEP = 216, COL_FIG = 3550;
-const FIG_DIR = path.join(__dirname, "..", "graficos", "informe", "riesgos");
+const FIG_DIR = path.join(__dirname, "..", "graficos", "figuras");
 const PULGADA_PX = 96; // docx-js mide las imágenes en píxeles a 96 dpi
 const ALTOS = { matriz: 2.05, tornado: 2.15, heatmap: 1.7, uf: 1.4 }; // = graficos/pagina_riesgos.py
 const ANCHO_FIG = COL_FIG / 1440;

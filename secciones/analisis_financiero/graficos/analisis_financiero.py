@@ -21,8 +21,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Rectangle
 
-from pagina_riesgos import num, tinte
-from sensibilidad_wacc import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import num, tinte
+from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 AZUL = "#14284B"
 GRIS = "#9a9a9a"
@@ -291,7 +293,7 @@ def controles():
 
 
 if __name__ == "__main__":
-    salida = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).parent / "informe" / "financiero")
+    salida = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).parent / "figuras")
     salida.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans"})
     controles()

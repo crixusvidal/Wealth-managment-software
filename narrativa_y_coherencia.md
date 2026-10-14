@@ -1,0 +1,98 @@
+# Narrativa y coherencia del informe: Mallplaza (Plaza S.A.)
+
+CFA Institute Research Challenge 2026 · Recomendación: **VENDER** · Precio objetivo **CLP 2.076** · Precio al 30-sep-26 **CLP 3.555** · Retorno esperado **−41,6%** (−39,7% con dividendos)
+
+Este archivo es la guía del equipo para que todas las secciones cuenten la misma historia con las mismas cifras. Cada cifra ancla indica de dónde sale; si una sección usa un número distinto, está mal la sección, no esta tabla.
+
+---
+
+## 1. La tesis en una frase
+
+Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, margen EBITDA de 80% y balance holgado), pero a CLP 3.555 el mercado lo paga como si sus flujos fueran casi libres de riesgo. **El desacuerdo con el mercado no está en los flujos, está en la tasa**: el precio exige una WACC 285 pb menor que la nuestra, y ni siquiera crecer lo salva, porque cada m² nuevo rinde menos que el costo de capital.
+
+## 2. El arco narrativo (qué aporta cada sección a la historia)
+
+| # | Sección | Rol en la historia | Mensaje clave | Carpeta |
+|---|---|---|---|---|
+| 1 | Business Description | Presentar el activo | Operador líder de centros comerciales en Chile, Perú y Colombia; el 81,4% de los ingresos son arriendos (93% renta fija). GLA: 61,9% Chile, 26,2% Perú, 11,9% Colombia. Las tiendas por departamento bajaron de 26,7% a 19,0% del GLA (2020–2T26) | `secciones/negocio` |
+| 2 | Industry | El negocio es bueno y defendible | Trío (Mallplaza, Cenco Malls, Parque Arauco) con 76% del GLA en Chile; ocupación alta; Porter favorable; Mallplaza es el más eficiente, pero por poco (EBITDA/m² trimestral 59,5k vs 58,4k Cenco y 55,7k PA, **brecha de solo 6,7%**) | `secciones/industria` |
+| 3 | Financial Analysis | Separar el motor real del ruido contable | La utilidad reportada sigue al tasador (NIC 40); el FFO sigue al negocio. Crecimiento orgánico real ~3%; dos tercios del crecimiento 2025 fueron comprados (Perú). ROE normalizado 8–10%. Caja cubre el dividendo 2,6x. El AAA lo justifican los flujos, no el LTV | `secciones/analisis_financiero` |
+| 4 | Valuation | Cuantificar la brecha | DCF CLP 1.857 (80%) y múltiplos CLP 2.951 (20%) → CLP 2.076. Ningún método alcanza el precio; el precio objetivo queda bajo el mínimo de 52 semanas (CLP 2.470). El mercado paga cap rate de 6,0%; nuestro DCF implica 10,1% | `secciones/valuacion` |
+| 5 | Investment Risks | Qué podría romper la tesis | La tasa es el riesgo dominante (FR1: alta/alta). La operación mueve poco (peor caso margen −10,0% al DCF). La UF casi no mueve el valor (+1,1% con UF +3%). Riesgos no cuantificables (RR1, RR2) → análisis cualitativo | `secciones/riesgos` |
+| 6 | ESG | Calidad del gobierno y sostenibilidad | Perfil "verde" local fuerte pero puntaje Bloomberg bajo (3,39); 1 de 9 directores independiente; interlocking con Falabella (53,05%) | `secciones/esg` |
+| A | Anexos | Respaldo | WACC por período (Valuación), supuestos y estados resumidos (FA), macro 2022–2026, ESG | `*/anexo` |
+
+**Cómo se encadenan:** Business e Industry dicen "es un gran negocio" → Financial Analysis dice "pero crece ~3% real y su utilidad está inflada por la tasación" → Valuation dice "y a este precio el mercado ya paga más de lo que esos flujos valen" → Risks dice "lo que puede cambiar la conclusión es la tasa, no la operación" → ESG agrega el matiz de gobierno (interlocking).
+
+## 3. Cifras ancla (fuente única)
+
+| Concepto | Valor | Fuente |
+|---|---|---|
+| Precio de referencia | CLP 3.555 (30-sep-26) | v2 Supuestos B8 (Bloomberg) |
+| Rango 52 semanas | CLP 2.470 (10-oct-25) – 4.700 (27-abr-26) | Figuras_Valuacion V1 (Bloomberg) |
+| Valor DCF por acción | CLP 1.857 | v2 DCF C49 |
+| Valor por múltiplos (EV/EBITDA LTM 14,4x) | CLP 2.951 | v2 Precio_Objetivo B13 |
+| Precio objetivo (80/20) | CLP 2.076 | v2 Precio_Objetivo B15 |
+| APV (chequeo) | CLP 1.894 | v2 APV C21 |
+| WACC nominal 2S26E → terminal | 10,54% → 10,41% (real 7,32% → 7,20%) | v2 WACC fila 43/44 |
+| Ke terminal / Kd después de impuestos | 11,93% / 5,11% (cupón real 3,6% + spread) | v2 WACC |
+| g terminal | 3,0% nominal (0% real) | v2 Supuestos B88 |
+| RONIC real expansión vs WACC real | 5,0% vs 7,2% | v2 Expansion C38; WACC |
+| Valor terminal / EV | 76% | v2 DCF C54 |
+| EBITDA UDM (LTM) 2T26 / margen | CLP 544.935 MM / 80,5% | v2 Supuestos B13 |
+| Margen EBITDA 2026E (año calendario) | 79,7% | v2 Forecast_Base (561.315 / 703.999) |
+| DFN 30-jun-26 / DFN/EBITDA | CLP 1.285.740 MM / 2,36x → 3,5x (2031) | v2 Supuestos B10; Deuda |
+| Distribuciones adicionales 2S26E–2031E | CLP 1,79 billones | v2 Deuda H25 |
+| Cap rate implícito: mercado / DCF / pares Chile / libro / tasadores | 6,0% / 10,1% / 6,4% / 7,5% / 5,55% real | v2 Precio_Objetivo C; DCF C56 |
+| WACC que justifica el precio | 7,56% (−285 pb) | Figuras_Valuacion V6 |
+| Escenarios (precio objetivo) | Bear 1.712 · Base 2.076 · Bull 2.595 · Tasadores 2.719 | réplica del DCF v2 |
+| Dividendo esperado | ~CLP 69 por acción (2,0%) | v2 Deuda (2027E ordinario) |
+| Mezcla de ingresos para el CRP | 71,8% Chile · 17,7% Perú · 10,5% Colombia | v2 WACC C16:C20 |
+| Deuda en UF | 79% | Release 2T26 |
+
+## 4. Reglas de coherencia (aplican a todas las secciones)
+
+1. **Moneda y unidades.** En español: "CLP MM" (millones) y "CLP mil MM" (miles de millones); "billones" solo para 10¹². En inglés: "CLP million / bn / trillion".
+2. **UDM = LTM.** Unificar una sola sigla por idioma (español: UDM; inglés: LTM).
+3. **Fechas.** Valoración al 30-jun-26; precio al 30-sep-26. Decirlo cuando se compare valor con precio.
+4. **Colores.** Solo la paleta institucional de `secciones/comun/estilo.py` (rojo, celeste, amarillo, negro, azul; verde y morado solo para Parque Arauco y Cencosud). Sin grises ni tonos pastel en series.
+5. **Figuras.** Sin título ni fuente dentro de la imagen del informe (van en el Word). Las versiones "_titulado" son solo para compartir fuera del informe.
+6. **Margen 2026E.** 79,7% es el año calendario; 79,8% es solo el semestre 2S26E. No mezclarlos.
+
+## 5. Inconsistencias conocidas y decisiones pendientes
+
+| # | Tema | Dónde | Estado |
+|---|---|---|---|
+| 1 | Numeración de figuras y anexos | Todas | Cada sección numera por su cuenta (Riesgos 23–26, Valuación 27–34, FA 1–7, ESG E1–E5, anexos [B]–[F]/[Z]/1–6). Unificar al armar el informe completo |
+| 2 | Kd: cupón (3,6%) vs tasa efectiva de la última emisión (4,33%) | Valuación vs FA | Con 4,33% la WACC sube 12 pb y el precio objetivo baja a CLP 2.042. Ideal: YTM de Bloomberg (YAS) |
+| 3 | IRSA dentro del set de pares | Valuación | Incluida (modelo v2). Si se excluye: múltiplo 14,0x, precio objetivo CLP 2.059 |
+| 4 | Fecha de valoración (30-jun) vs precio (30-sep) | Valuación | Llevar el DCF al 30-sep → ~CLP 2.118. No aplicado |
+| 5 | Dividendo 2S26 (~CLP 27/acción) y fecha ex-dividendo | Valuación | Confirmar con Bloomberg (DVD) |
+| 6 | Gran Plaza (9,4% en la Figura 33) | Valuación | Nadie del equipo pudo verificar el dato |
+| 7 | Brecha de cap rate: 490 pb (Estructura_Valuacion) vs 413 pb (V5) | Valuación | La figura usa 413 pb |
+| 8 | Tramos de inflación y moneda de la Figura 3 de FA | FA | Derivados de los totales del borrador; reemplazar si hay valores exactos |
+| 9 | Consenso de precio objetivo (ANR) | Valuación | Pendiente de Bloomberg; dato de alto impacto para el texto |
+| 10 | Fuentes políticas de RR2 (Chile, Perú, Colombia) | Riesgos | Tomadas de resúmenes de búsqueda; verificar cada URL antes de entregar |
+| 11 | Rebaja del impuesto corporativo a 23% (Ley de Reconstrucción) | Riesgos / Valuación | No incluida en el modelo (+3,9% al precio objetivo si se aplica) |
+
+## 6. Preguntas que probablemente hará el jurado
+
+- ¿Por qué su WACC (10,4%) es tan superior a la tasa de los tasadores (5,55% real) y a la del mercado (cap rate 6,0%)? → Ke en USD + CRP; con la tasa de los tasadores el DCF igual queda 25% bajo el precio.
+- ¿Por qué no suponer más crecimiento? → RONIC 5,0% < WACC real 7,2%: crecer resta valor.
+- ¿No están siendo pesimistas? → El consenso espera un EBITDA NTM solo ~3% sobre el nuestro.
+- ¿Por qué pesan 20% los múltiplos y 70% Chile? → Dos pares chilenos; la brecha con Brasil es de tasas (spreads de 385 vs 302 pb).
+- ¿Qué tendría que pasar para equivocarse? → Compresión adicional de cap rates o una prima estructural de los activos Tier A.
+
+## 7. Mapa de archivos
+
+```
+secciones/
+  comun/estilo.py        paleta institucional y formatos compartidos (+ logos)
+  <sección>/
+    documento/           constructor .js y el Word/PDF de la sección
+    anexo/               el anexo de la sección (archivo aparte)
+    graficos/            scripts de Python
+    graficos/figuras/    cada gráfico individual (es_/en_)
+    modelos/             Excel de entrada de la sección
+generar_todo.sh          regenera todos los gráficos y documentos
+```

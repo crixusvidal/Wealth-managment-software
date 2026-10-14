@@ -4,12 +4,15 @@ Uso:
     python graficos/tabla_multiplos_implicitos.py <Mallplaza_FA_Exhibits.xlsx> [salida.png]
 """
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import openpyxl
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
 
 WACC_ACTUAL, WACC_NUEVA, G = 0.1003, 0.1075, 0.03
 EV_MERCADO, PRECIO, EBITDA_NTM = 9_147_859.986, 3555, 617_130.3379  # Bloomberg, 30-sep-2026
@@ -112,4 +115,4 @@ def graficar(ruta, salida):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "tabla_multiplos_implicitos.png")
+    graficar(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "figuras" / "tabla_multiplos_implicitos.png")

@@ -10,6 +10,7 @@ Uso:
     python graficos/heatmap_sensibilidad_wacc.py <Valoracion_Consolidada.xlsx> [salida.png]
 """
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,7 +18,9 @@ import openpyxl
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 from matplotlib.patches import Rectangle
 
-from sensibilidad_wacc import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
+import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
+from estilo import AMARILLO, CELESTE, NEGRO, ROJO, TINTA_SECUNDARIA
 
 NEUTRO = "#f2f2f2"
 
@@ -161,4 +164,4 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     graficar(sys.argv[1],
-             sys.argv[2] if len(sys.argv) > 2 else "heatmap_sensibilidad_wacc.png")
+             sys.argv[2] if len(sys.argv) > 2 else Path(__file__).parent / "figuras" / "heatmap_sensibilidad_wacc.png")

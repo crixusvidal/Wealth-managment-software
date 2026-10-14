@@ -19,7 +19,7 @@ const PLACEHOLDER = "808081"; // marker color: post-processed into Word placehol
 const BOX = "F2F4F7";
 const RULE = "D5D9E0";
 const FONT = "Arial";
-const G = path.join(__dirname, "..", "graficos", "informe");
+const G = path.join(__dirname, "..", "graficos", "figuras");
 
 const PAGE = { width: 11906, height: 16838 }; // A4
 const MARGIN = { top: 1000, bottom: 900, left: 620, right: 620, header: 450, footer: 400 };
