@@ -26,7 +26,7 @@ const L = {
     archivo: "Mallplaza_Valuacion_ES.docx", pag: "Página ", pagA: "A-", titulo: "VALUACIÓN",
     lead: "Recomendamos VENDER Mallplaza con un precio objetivo de CLP 2.076 por acción (80% DCF y 20% múltiplos), 41,6% bajo el cierre de CLP 3.555 del 30-sep-26. Ningún método justifica el precio actual (Figura 27).",
     paginas: [
-      { texto: [
+      { cortes: [[0, [0]], [5, [1]], [7, [2]]], texto: [
           { h1: "SÍNTESIS Y PONDERACIÓN" },
           { p: "Asignamos 80% al DCF porque los flujos de Mallplaza son muy predecibles: el 81,4% de los ingresos UDM son arriendos y el 93% de ellos es renta fija. Los múltiplos (20%) contrastan el modelo con lo que paga hoy el mercado; limitamos su peso porque en Chile solo hay dos pares directos (Parque Arauco y Cencosud Shopping) y porque no capturan la expansión de GLA ni la trayectoria de deuda de Mallplaza, que sí están en el DCF." },
           { h1: "DCF: ESTRUCTURA Y TASA DE DESCUENTO" },
@@ -37,7 +37,7 @@ const L = {
           { h1: "DCF: PROYECCIÓN OPERATIVA" },
           { p: "El EBITDA reportado (CLP 544.935 MM UDM, margen de 80,5%) excluye la revalorización de propiedades (NIC 40); proyectamos un margen de 79,7% en 2026E y de 79,7–79,8% hasta 2031E. La tasa de impuesto operacional sube de 16,8% en 2026E a 27% en 2030E, a medida que se diluyen los beneficios vigentes. El capex base (pipeline más mantención de 5,5% de los ingresos) llega a CLP 240.660 MM en 2027 y baja a ~CLP 50.000 MM desde 2029. Desde 2029 abren además 27.075 m² al año (promedio histórico), con capex de CLP 95.000–104.000 MM anuales, una rampa de 35%/90%/100% y un yield on cost de 6,9%, al costo del pipeline identificado (USD 3.603/m²: 170.200 m² y USD 613,2 MM). El capital de trabajo (15,6% × Δ ingresos) exige CLP 7.100–9.900 MM al año y mueve el precio solo ±1,2% (Anexo [C])." },
           { h1: "DCF: VALOR TERMINAL Y CAP RATE IMPLÍCITO" },
-          { p: "Usamos g = 3,0% nominal (0% real). El RONIC real de la expansión (5,0%) es menor que la WACC real (7,2%): crecer más allá del horizonte destruye valor y un g mayor lo reduce (Figura 29). El DCF implica un cap rate de 10,1% sobre el EV y de 11,3% sobre el valor terminal, frente a 6,0% del mercado, 6,4% de los pares chilenos, 7,5% a valor libro y 5,55% de los tasadores (Nota 11) (Figura 30). Esa brecha no es una inconsistencia: es el núcleo de la tesis. Para justificar el precio actual, la WACC tendría que ser 285 pb menor (Figura 31)." },
+          { p: "Usamos g = 3,0% nominal (0% real). El RONIC real de la expansión (5,0%) es menor que la WACC real (7,2%): crecer más allá del horizonte destruye valor y un g mayor lo reduce (Figura 29). El DCF implica un cap rate de 10,1% sobre el EV y de 11,3% sobre el valor terminal, frente a 6,0% del mercado, 6,4% de los pares chilenos, 7,5% a valor libro y 5,55% de los tasadores (Nota 11) (Figura 32). Esa brecha no es una inconsistencia: es el núcleo de la tesis. Para justificar el precio actual, la WACC tendría que ser 285 pb menor (Figura 33)." },
           { p: ["Qué descuenta el precio. ", "A CLP 3.555 el EV implícito (CLP 9,12 billones) es 69% mayor que el nuestro. Justificarlo exigiría flujos 69% mayores para siempre o una WACC de ~4,4% real, apenas 80 pb sobre el Kd real de la compañía (3,6%): casi sin prima para el patrimonio. Y como el RONIC es menor que la WACC, más crecimiento agranda la brecha."] },
           { p: ["Valor libro y tasadores. ", "El patrimonio contable (CLP 2.201 por acción) ya registra las propiedades a valor razonable, tasadas a ~5,55% real (Nota 11). El mercado paga 1,61x ese valor, más que los tasadores (aun con el efecto de los impuestos diferidos); nuestro precio objetivo implica 0,94x. Incluso con la tasa de los tasadores, el DCF sería CLP 2.660, 25% bajo el precio."] },
         ],
@@ -45,14 +45,14 @@ const L = {
           ["Figura 27:", "Ningún método justifica el precio actual (CLP por acción)", "V1_football", "Rango 52 semanas pendiente (Bloomberg). Fuente: análisis del equipo; Bloomberg."],
           ["Figura 28:", "A CLP 3.555 el patrimonio rinde casi lo mismo que la deuda", "V2_tasas", "Tasas reales en UF. Fuente: BCCh (30-06-26); Mallplaza; análisis del equipo."],
           ["Figura 29:", "Crecer bajo la WACC destruye valor: g real = 0%", "V3_value_driver", "Arriba: valor DCF según g. Abajo: valor terminal relativo según el RONIC. Fuente: análisis del equipo."]] },
-      { texto: [
+      { cortes: [[0, [0, 1]], [5, [2, 3]]], texto: [
           { h1: "VALUACIÓN RELATIVA: MÚLTIPLOS (20%)" },
-          { p: "El set es el mismo de la beta: Parque Arauco y Cencosud Shopping (Chile), Allos, Multiplan e Iguatemi (Brasil) e IRSA (Argentina, con cautela por NIC 29 y un solo analista en el NTM). Excluimos Fibra Danhos, que como FIBRA distribuye el 95% de su resultado fiscal (Anexo [E]). Brasil transa a múltiplos más bajos por sus tasas y primas de riesgo (mediana de 9,0x EV/EBITDA frente a 15,7x en Chile; Figura 32). Como el 71,8% de los ingresos viene de Chile, el múltiplo pondera 70% la mediana chilena y 30% la del set (11,1x): 14,4x." },
-          { p: "Usamos EV/EBITDA porque es neutral al apalancamiento y a la revalorización (NIC 40). A 14,4x, el valor es CLP 2.951 por acción. Mallplaza transa a 16,8x LTM: 7% sobre la mediana chilena, bajo Parque Arauco (18,4x) y 17% sobre el múltiplo ponderado (Figura 33). Excluimos el P/E (CLP 8.644, distorsionado por la revalorización). Los múltiplos usan la deuda neta de Bloomberg (CLP 1.311.569 MM), igual que los pares; el DCF, la DFN de la compañía (CLP 1.285.740 MM)." },
+          { p: "El set es el mismo de la beta: Parque Arauco y Cencosud Shopping (Chile), Allos, Multiplan e Iguatemi (Brasil) e IRSA (Argentina, con cautela por NIC 29 y un solo analista en el NTM). Excluimos Fibra Danhos, que como FIBRA distribuye el 95% de su resultado fiscal (Anexo [E]). Brasil transa a múltiplos más bajos por sus tasas y primas de riesgo (mediana de 9,0x EV/EBITDA frente a 15,7x en Chile; Figura 30). Como el 71,8% de los ingresos viene de Chile, el múltiplo pondera 70% la mediana chilena y 30% la del set (11,1x): 14,4x." },
+          { p: "Usamos EV/EBITDA porque es neutral al apalancamiento y a la revalorización (NIC 40). A 14,4x, el valor es CLP 2.951 por acción. Mallplaza transa a 16,8x LTM: 7% sobre la mediana chilena, bajo Parque Arauco (18,4x) y 17% sobre el múltiplo ponderado (Figura 31). Excluimos el P/E (CLP 8.644, distorsionado por la revalorización). Los múltiplos usan la deuda neta de Bloomberg (CLP 1.311.569 MM), igual que los pares; el DCF, la DFN de la compañía (CLP 1.285.740 MM)." },
           { p: ["¿Se justifica la prima? ", "Mallplaza transa 29% sobre Cencosud Shopping (13,0x), pero su EBITDA por m² es solo 1,8% mayor (CLP 59.451 vs 58.384 en el 2T26; ver Industria). Solo al múltiplo de Parque Arauco (18,4x) la acción valdría más que su precio (CLP 3.967), y Parque Arauco opera con una DFN/EBITDA de 5,7x y un pipeline propio, que no son comparables. Al múltiplo de Cencosud valdría CLP 2.621."] },
           { p: ["El desacuerdo está en la tasa, no en los flujos. ", "El consenso de 13 analistas proyecta un EBITDA NTM de CLP 617.130 MM, ~3% sobre nuestro forecast para el mismo período (~CLP 598.850 MM). Nuestros flujos no son más pesimistas que los del mercado: la diferencia de valor viene de la tasa de descuento que el precio implica."] },
           { h1: "SENSIBILIDAD Y RIESGOS DE LA VALUACIÓN" },
-          { p: ["Sensibilidad. ", "Con la WACC ±100 pb y g entre 2,5% y 4,0%, el DCF va de CLP 1.379 a 2.329 (Figura 25; Anexo [F]), y el peor caso operacional histórico le resta 10,0% (Figura 24). Todos los múltiplos quedan bajo el precio: EV/EBITDA LTM CLP 2.951 (−17%), NTM CLP 2.914 (−18%), EV/EBIT CLP 3.098 (−13%), P/BV CLP 3.171 (−11%) y la mediana chilena sola CLP 3.294 (−7%) (Figura 27)."] },
+          { p: ["Sensibilidad. ", "Con la WACC ±100 pb y g entre 2,5% y 4,0%, el DCF va de CLP 1.379 a 2.329 (Figura 25; Anexo [F]), y el peor caso operacional histórico le resta 10,0% (Figura 24); justificar el precio exigiría una WACC 285 pb menor (Figura 33). Todos los múltiplos quedan bajo el precio: EV/EBITDA LTM CLP 2.951 (−17%), NTM CLP 2.914 (−18%), EV/EBIT CLP 3.098 (−13%), P/BV CLP 3.171 (−11%) y la mediana chilena sola CLP 3.294 (−7%) (Figura 27)."] },
           { p: ["Robustez. ", "El APV da CLP 1.894 (2% sobre el DCF); con el bono en pesos como Rf, el precio objetivo sube a ~CLP 2.439 (−31%; Anexo [Z]); y con un objetivo de DFN/EBITDA entre 2,36x y 4,0x, el DCF va de CLP 1.819 a 1.894."] },
           { p: ["Escenarios. ", "Combinamos los supuestos más favorables y más adversos. En el caso bull, un g menor sube el valor porque el RONIC está bajo la WACC. Ni el bull ni la tasa de los tasadores alcanzan el precio:"] },
           { t: { cols: ["Escenario", "Supuestos", "DCF", "Precio obj.", "vs precio"], anchos: [1050, 3450, 750, 900, 750],
@@ -61,15 +61,15 @@ const L = {
               ["Bull", "WACC −100 pb; g 2,5%; margen 81,3% (máximo); impuesto 23% en Chile", "2.506", "2.595", "−27,0%"],
               ["Tasadores", "WACC 8,72% (5,55% real, Nota 11)", "2.660", "2.719", "−23,5%"]], destacar: [1] } },
           { p: ["Precio objetivo. ", "80% × CLP 1.857 + 20% × CLP 2.951 = CLP 2.076, un retorno de −41,6% frente a CLP 3.555 (30-sep-26). Llevar el DCF del 30-jun al 30-sep-26 lo subiría a ~CLP 1.910 y el precio objetivo a ~CLP 2.118 (−40,4%): la recomendación no cambia."] },
-          { p: ["Retorno total e implícitos. ", "Con un dividendo esperado de ~CLP 69 por acción (rendimiento de 2,0%), el retorno total esperado es −39,7%. El precio objetivo implica 10,8x EV/EBITDA LTM, un cap rate de 9,3% y 0,94x el valor libro, frente a 16,7x, 6,0% y 1,61x del precio actual."] },
+          { p: ["Retorno total e implícitos. ", "Con un dividendo esperado de ~CLP 69 por acción (rendimiento de 2,0%), el retorno total esperado es −39,7%. El precio objetivo implica 10,8x EV/EBITDA LTM, un cap rate de 9,3% y 0,94x el valor libro, frente a 16,7x, 6,0% y 1,61x del precio actual (Figura 32)."] },
           { p: ["Catalizadores. ", "El UST 10Y en 5,22%, máximo desde 2002, y la Fed subiendo tasas presionan los cap rates de mercado (Riesgos de inversión, FR1). Cada actualización de la tasación con tasas más altas acerca el valor libro a nuestro DCF y quita soporte al múltiplo actual."] },
           { p: ["Riesgos al alza. ", "Una compresión sostenida de los cap rates por mayor demanda institucional por activos defensivos, o una prima estructural para los activos Tier A de Mallplaza (ver Riesgos de inversión)."] },
         ],
         figuras: [
-          ["Figura 30:", "El mercado paga 6,0%; nuestros flujos valen 10,1%", "V5_cap_rate", "Gran Plaza: hecho posterior, no entra al modelo. Fuente: Mallplaza; Bloomberg; DF; análisis del equipo."],
-          ["Figura 31:", "El precio exige una WACC 285 pb menor", "V6_dcf_inverso", "Fuente: análisis del equipo."],
-          ["Figura 32:", "Múltiplos de los pares vs tasa local", null, "Gráfico pendiente (falta la NTN-B de Brasil, Bloomberg)."],
-          ["Figura 33:", "Valor implícito por múltiplo de cada par vs DCF y precio (CLP por acción)", "V9_pares", "Precio objetivo = 80% DCF + 20% EV/EBITDA LTM. P/E excluido (incluye revalorización). Fuente: Bloomberg (30-09-26); análisis del equipo."]] },
+          ["Figura 30:", "Múltiplos de los pares vs tasa local", null, "Gráfico pendiente (falta la NTN-B de Brasil, Bloomberg)."],
+          ["Figura 31:", "Valor implícito por múltiplo de cada par vs DCF y precio (CLP por acción)", "V9_pares", "Precio objetivo = 80% DCF + 20% EV/EBITDA LTM. P/E excluido (incluye revalorización). Fuente: Bloomberg (30-09-26); análisis del equipo."],
+          ["Figura 32:", "El mercado paga 6,0%; nuestros flujos valen 10,1%", "V5_cap_rate", "Gran Plaza: hecho posterior, no entra al modelo. Fuente: Mallplaza; Bloomberg; DF; análisis del equipo."],
+          ["Figura 33:", "El precio exige una WACC 285 pb menor", "V6_dcf_inverso", "Fuente: análisis del equipo."]] },
     ],
     anexo: {
       titulo: "ANEXO [Z]: CONSTRUCCIÓN DE LA WACC",
@@ -105,7 +105,7 @@ const L = {
     archivo: "Mallplaza_Valuacion_EN.docx", pag: "Page ", pagA: "A-", titulo: "VALUATION",
     lead: "We recommend SELL on Mallplaza with a target price of CLP 2,076 per share (80% DCF and 20% multiples), 41.6% below the CLP 3,555 close of 30-Sep-26. No method justifies the current price (Figure 27).",
     paginas: [
-      { texto: [
+      { cortes: [[0, [0]], [5, [1]], [7, [2]]], texto: [
           { h1: "SUMMARY AND WEIGHTING" },
           { p: "We give the DCF an 80% weight because Mallplaza's cash flows are highly predictable: 81.4% of LTM revenue is rent and 93% of that is fixed. Multiples (20%) test the model against what the market pays today; we cap their weight because Chile has only two direct peers (Parque Arauco and Cencosud Shopping) and because multiples do not capture Mallplaza's GLA expansion or debt path, which the DCF does." },
           { h1: "DCF: STRUCTURE AND DISCOUNT RATE" },
@@ -116,7 +116,7 @@ const L = {
           { h1: "DCF: OPERATING FORECAST" },
           { p: "Reported EBITDA (CLP 544,935 million LTM, 80.5% margin) excludes property revaluation (IAS 40); we forecast a 79.7% margin in 2026E and 79.7–79.8% through 2031E. The operating tax rate rises from 16.8% in 2026E to 27% in 2030E as existing benefits fade. Base capex (pipeline plus maintenance at 5.5% of revenue) peaks at CLP 240,660 million in 2027 and falls to ~CLP 50,000 million from 2029. From 2029, 27,075 m² also open each year (historical average), with capex of CLP 95,000–104,000 million a year, a 35%/90%/100% ramp and a 6.9% yield on cost, at the cost of the identified pipeline (USD 3,603/m²: 170,200 m² and USD 613.2 million). Working capital (15.6% × Δ revenue) requires CLP 7,100–9,900 million a year and moves the price by only ±1.2% (Appendix [C])." },
           { h1: "DCF: TERMINAL VALUE AND IMPLIED CAP RATE" },
-          { p: "We use g = 3.0% nominal (0% real). The real RONIC on expansion (5.0%) is below the real WACC (7.2%): growing beyond the horizon destroys value and a higher g lowers it (Figure 29). The DCF implies a cap rate of 10.1% on EV and 11.3% on terminal value, versus 6.0% for the market, 6.4% for Chilean peers, 7.5% at book value and 5.55% for the appraisers (Note 11) (Figure 30). That gap is not an inconsistency: it is the core of the thesis. To justify the current price, the WACC would have to be 285 bp lower (Figure 31)." },
+          { p: "We use g = 3.0% nominal (0% real). The real RONIC on expansion (5.0%) is below the real WACC (7.2%): growing beyond the horizon destroys value and a higher g lowers it (Figure 29). The DCF implies a cap rate of 10.1% on EV and 11.3% on terminal value, versus 6.0% for the market, 6.4% for Chilean peers, 7.5% at book value and 5.55% for the appraisers (Note 11) (Figure 32). That gap is not an inconsistency: it is the core of the thesis. To justify the current price, the WACC would have to be 285 bp lower (Figure 33)." },
           { p: ["What the price discounts. ", "At CLP 3,555 the implied EV (CLP 9.12 trillion) is 69% above ours. Justifying it would require cash flows 69% higher forever or a WACC of ~4.4% real, just 80 bp above the company's real Kd (3.6%): almost no premium for equity. And since RONIC is below the WACC, more growth widens the gap."] },
           { p: ["Book value and appraisers. ", "Book equity (CLP 2,201 per share) already carries properties at fair value, appraised at ~5.55% real (Note 11). The market pays 1.61x that value, more than the appraisers (even allowing for deferred taxes); our target price implies 0.94x. Even at the appraisers' rate, the DCF would be CLP 2,660, 25% below the price."] },
         ],
@@ -124,14 +124,14 @@ const L = {
           ["Figure 27:", "No method justifies the current price (CLP per share)", "V1_football", "52-week range pending (Bloomberg). Source: Team analysis; Bloomberg."],
           ["Figure 28:", "At CLP 3,555 equity yields almost the same as debt", "V2_tasas", "Real rates in UF. Source: Central Bank of Chile (30-Jun-26); Mallplaza; Team analysis."],
           ["Figure 29:", "Growing below the WACC destroys value: real g = 0%", "V3_value_driver", "Top: DCF value by g. Bottom: relative terminal value by RONIC. Source: Team analysis."]] },
-      { texto: [
+      { cortes: [[0, [0, 1]], [5, [2, 3]]], texto: [
           { h1: "RELATIVE VALUATION: MULTIPLES (20%)" },
-          { p: "The set is the same as for the beta: Parque Arauco and Cencosud Shopping (Chile), Allos, Multiplan and Iguatemi (Brazil) and IRSA (Argentina, used with caution because of IAS 29 and a single NTM analyst). We exclude Fibra Danhos, which as a FIBRA distributes 95% of its taxable income (Appendix [E]). Brazil trades at lower multiples because of its rates and risk premia (median 9.0x EV/EBITDA versus 15.7x in Chile; Figure 32). Since 71.8% of revenue comes from Chile, the multiple weights the Chilean median at 70% and the full-set median (11.1x) at 30%: 14.4x." },
-          { p: "We use EV/EBITDA because it is neutral to leverage and to revaluation (IAS 40). At 14.4x, value is CLP 2,951 per share. Mallplaza trades at 16.8x LTM: 7% above the Chilean median, below Parque Arauco (18.4x) and 17% above the weighted multiple (Figure 33). We exclude P/E (CLP 8,644, distorted by revaluation). Multiples use Bloomberg net debt (CLP 1,311,569 million), as for peers; the DCF uses the company's net financial debt (CLP 1,285,740 million)." },
+          { p: "The set is the same as for the beta: Parque Arauco and Cencosud Shopping (Chile), Allos, Multiplan and Iguatemi (Brazil) and IRSA (Argentina, used with caution because of IAS 29 and a single NTM analyst). We exclude Fibra Danhos, which as a FIBRA distributes 95% of its taxable income (Appendix [E]). Brazil trades at lower multiples because of its rates and risk premia (median 9.0x EV/EBITDA versus 15.7x in Chile; Figure 30). Since 71.8% of revenue comes from Chile, the multiple weights the Chilean median at 70% and the full-set median (11.1x) at 30%: 14.4x." },
+          { p: "We use EV/EBITDA because it is neutral to leverage and to revaluation (IAS 40). At 14.4x, value is CLP 2,951 per share. Mallplaza trades at 16.8x LTM: 7% above the Chilean median, below Parque Arauco (18.4x) and 17% above the weighted multiple (Figure 31). We exclude P/E (CLP 8,644, distorted by revaluation). Multiples use Bloomberg net debt (CLP 1,311,569 million), as for peers; the DCF uses the company's net financial debt (CLP 1,285,740 million)." },
           { p: ["Is the premium justified? ", "Mallplaza trades 29% above Cencosud Shopping (13.0x), yet its EBITDA per m² is only 1.8% higher (CLP 59,451 vs 58,384 in 2Q26; see Industry). Only at Parque Arauco's multiple (18.4x) would the stock be worth more than its price (CLP 3,967), and Parque Arauco runs at 5.7x net debt/EBITDA with its own pipeline, which are not comparable. At Cencosud's multiple it would be worth CLP 2,621."] },
           { p: ["The disagreement is about the rate, not the cash flows. ", "The 13-analyst consensus forecasts NTM EBITDA of CLP 617,130 million, ~3% above our forecast for the same period (~CLP 598,850 million). Our cash flows are not more pessimistic than the market's: the value gap comes from the discount rate the price implies."] },
           { h1: "VALUATION SENSITIVITY AND RISKS" },
-          { p: ["Sensitivity. ", "With WACC ±100 bp and g between 2.5% and 4.0%, the DCF ranges from CLP 1,379 to 2,329 (Figure 25; Appendix [F]), and the historical worst operating case takes 10.0% off (Figure 24). Every multiple sits below the price: EV/EBITDA LTM CLP 2,951 (−17%), NTM CLP 2,914 (−18%), EV/EBIT CLP 3,098 (−13%), P/BV CLP 3,171 (−11%) and the Chilean median alone CLP 3,294 (−7%) (Figure 27)."] },
+          { p: ["Sensitivity. ", "With WACC ±100 bp and g between 2.5% and 4.0%, the DCF ranges from CLP 1,379 to 2,329 (Figure 25; Appendix [F]), and the historical worst operating case takes 10.0% off (Figure 24); justifying the price would require a WACC 285 bp lower (Figure 33). Every multiple sits below the price: EV/EBITDA LTM CLP 2,951 (−17%), NTM CLP 2,914 (−18%), EV/EBIT CLP 3,098 (−13%), P/BV CLP 3,171 (−11%) and the Chilean median alone CLP 3,294 (−7%) (Figure 27)."] },
           { p: ["Robustness. ", "APV gives CLP 1,894 (2% above the DCF); with the peso bond as Rf, the target price rises to ~CLP 2,439 (−31%; Appendix [Z]); and with a net debt/EBITDA target between 2.36x and 4.0x, the DCF ranges from CLP 1,819 to 1,894."] },
           { p: ["Scenarios. ", "We combine the most favourable and most adverse assumptions. In the bull case a lower g raises value because RONIC is below the WACC. Neither the bull case nor the appraisers' rate reaches the price:"] },
           { t: { cols: ["Scenario", "Assumptions", "DCF", "Target", "vs price"], anchos: [1050, 3450, 750, 900, 750],
@@ -140,15 +140,15 @@ const L = {
               ["Bull", "WACC −100 bp; g 2.5%; margin 81.3% (high); 23% tax in Chile", "2,506", "2,595", "−27.0%"],
               ["Appraisers", "WACC 8.72% (5.55% real, Note 11)", "2,660", "2,719", "−23.5%"]], destacar: [1] } },
           { p: ["Target price. ", "80% × CLP 1,857 + 20% × CLP 2,951 = CLP 2,076, a −41.6% return against CLP 3,555 (30-Sep-26). Rolling the DCF from 30-Jun to 30-Sep-26 would lift it to ~CLP 1,910 and the target to ~CLP 2,118 (−40.4%): the recommendation does not change."] },
-          { p: ["Total return and implied metrics. ", "With an expected dividend of ~CLP 69 per share (2.0% yield), the expected total return is −39.7%. The target price implies 10.8x LTM EV/EBITDA, a 9.3% cap rate and 0.94x book value, versus 16.7x, 6.0% and 1.61x at the current price."] },
+          { p: ["Total return and implied metrics. ", "With an expected dividend of ~CLP 69 per share (2.0% yield), the expected total return is −39.7%. The target price implies 10.8x LTM EV/EBITDA, a 9.3% cap rate and 0.94x book value, versus 16.7x, 6.0% and 1.61x at the current price (Figure 32)."] },
           { p: ["Catalysts. ", "The 10Y UST at 5.22%, its highest since 2002, and Fed hikes put pressure on market cap rates (Investment Risks, FR1). Each appraisal update at higher rates brings book value closer to our DCF and removes support for the current multiple."] },
           { p: ["Upside risks. ", "A sustained compression of cap rates on stronger institutional demand for defensive assets, or a structural premium for Mallplaza's Tier A assets (see Investment Risks)."] },
         ],
         figuras: [
-          ["Figure 30:", "The market pays 6.0%; our cash flows are worth 10.1%", "V5_cap_rate", "Gran Plaza: subsequent event, not in the model. Source: Mallplaza; Bloomberg; DF; Team analysis."],
-          ["Figure 31:", "The price requires a WACC 285 bp lower", "V6_dcf_inverso", "Source: Team analysis."],
-          ["Figure 32:", "Peer multiples vs local rates", null, "Chart pending (Brazil NTN-B yield missing, Bloomberg)."],
-          ["Figure 33:", "Value implied by each peer's multiple vs DCF and price (CLP per share)", "V9_pares", "Target = 80% DCF + 20% EV/EBITDA LTM. P/E excluded (includes revaluation). Source: Bloomberg (30-Sep-26); Team analysis."]] },
+          ["Figure 30:", "Peer multiples vs local rates", null, "Chart pending (Brazil NTN-B yield missing, Bloomberg)."],
+          ["Figure 31:", "Value implied by each peer's multiple vs DCF and price (CLP per share)", "V9_pares", "Target = 80% DCF + 20% EV/EBITDA LTM. P/E excluded (includes revaluation). Source: Bloomberg (30-Sep-26); Team analysis."],
+          ["Figure 32:", "The market pays 6.0%; our cash flows are worth 10.1%", "V5_cap_rate", "Gran Plaza: subsequent event, not in the model. Source: Mallplaza; Bloomberg; DF; Team analysis."],
+          ["Figure 33:", "The price requires a WACC 285 bp lower", "V6_dcf_inverso", "Source: Team analysis."]] },
     ],
     anexo: {
       titulo: "APPENDIX [Z]: WACC CONSTRUCTION",
@@ -208,26 +208,36 @@ const pendiente = (t) => new Table({ width: { size: COL_FIG, type: WidthType.DXA
     borders: Object.fromEntries(["top", "bottom", "left", "right"].map((k) => [k, { style: BorderStyle.DASHED, size: 6, color: "9AA3B5" }])),
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run(t, { size: 14, italics: true, color: GRIS })] })] })] })] });
 
+// Una fila por bloque de texto: cada figura va en la fila del texto que la cita (p.cortes = [[desde, [figuras]], ...])
 function pagina(lang, p) {
-  const izq = [];
-  p.texto.forEach((b, i) => {
-    if (b.h1) izq.push(subtitulo(b.h1, i === 0 ? 20 : 90));
-    else if (b.t) izq.push(tabla(b.t.cols, b.t.anchos, b.t.filas, { derecha: [2, 3, 4], destacar: b.t.destacar }), new Paragraph({ spacing: { after: 60 }, children: [] }));
-    else izq.push(parrafo(b.p));
-  });
-  const der = [];
-  p.figuras.forEach(([n, t, archivo, f], k) => {
-    der.push(caption(n, t, k === 0 ? 20 : 90));
-    if (archivo) {
-      der.push(imagen(`${lang}_${archivo}.png`, COL_FIG / 1440, ALTO[archivo.split("_")[0]]));
-      der.push(fuente(f));
-    } else {
-      der.push(pendiente(f));
-    }
+  const cortes = p.cortes || [[0, p.figuras.map((_, k) => k)]];
+  const rows = cortes.map(([desde, figs], c) => {
+    const hasta = c + 1 < cortes.length ? cortes[c + 1][0] : p.texto.length;
+    const out = [];
+    p.texto.slice(desde, hasta).forEach((b, k) => {
+      const i = desde + k;
+    if (b.h1) out.push(subtitulo(b.h1, i === 0 ? 20 : 90));
+    else if (b.t) out.push(tabla(b.t.cols, b.t.anchos, b.t.filas, { derecha: [2, 3, 4], destacar: b.t.destacar }), new Paragraph({ spacing: { after: 60 }, children: [] }));
+    else out.push(parrafo(b.p));
+    });
+    const izq = out;
+    const der = [];
+    figs.forEach((n_, k) => {
+      const [n, t, archivo, f] = p.figuras[n_];
+      const out = der;
+      out.push(caption(n, t, k === 0 ? 20 : 90));
+      if (archivo) {
+        out.push(imagen(`${lang}_${archivo}.png`, COL_FIG / 1440, ALTO[archivo.split("_")[0]]));
+        out.push(fuente(f));
+      } else {
+        out.push(pendiente(f));
+      }
+    });
+    if (!der.length) der.push(vacia());
+    return new TableRow({ cantSplit: true, children: [celda(COL_TEXTO, izq), celda(COL_SEP, [vacia()]), celda(COL_FIG, der)] });
   });
   return new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [COL_TEXTO, COL_SEP, COL_FIG],
-    borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
-    rows: [new TableRow({ cantSplit: true, children: [celda(COL_TEXTO, izq), celda(COL_SEP, [vacia()]), celda(COL_FIG, der)] })] });
+    borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada }, rows });
 }
 
 function tabla(cols, anchos, filas, { derecha = [], destacar = [] } = {}) {

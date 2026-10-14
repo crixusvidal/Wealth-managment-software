@@ -66,7 +66,7 @@ const L = {
       ["CLP mil MM", "Ingresos", "Margen EBITDA %", "Margen FFO %", "Utilidad neta, reportada", "Utilidad distribuible", "Margen neto, normalizado %", "Rotación de activos (x)", "Activos / patrimonio (x)", "ROE, reportado %", "ROE, normalizado %", "ROA, normalizado %"],
       "Normalizado = utilidad distribuible (2022A: proxy del equipo; el reajuste UF de 2022 refleja ~13% de inflación). Saldos promedio; la serie parte en 2022 (NIC 40 a valor razonable desde el 1-ene-22). 2026E–2031E: caso base de valoración; balance proyectado desde dic-25 (patrimonio + utilidad reportada − distribuciones ordinarias y adicionales; propiedades revalorizadas al 3% de inflación, impuesto diferido 27%; DFN hasta 3,5x EBITDA en 2031E). Fuente: EEFF Plaza S.A. (CMF), Nota 20e; release 2T26 (FFO); análisis del equipo."],
     paginas: [
-      { texto: [
+      { cortes: [[0, [0]], [3, [1]]], texto: [
           { h1: "La utilidad reportada sigue al tasador; el FFO sigue al negocio" },
           { p: "Bajo NIC 40, la revalorización de las propiedades de inversión pasa por resultados. En 2025, una ganancia por valor razonable de CLP 1.447 mil MM (27% del valor inicial de las propiedades, frente a cerca de 2% al año en Parque Arauco y Cencosud Shopping) elevó la utilidad atribuible a CLP 1.431 mil MM (2,2 veces los ingresos) y el ROE reportado a 37,5% (Figura 1). Cerca de dos tercios del alza de 29% en Chile vino de una menor tasa de descuento en la tasación, no de un mayor NOI." },
           { p: "Sin las ganancias por valor razonable netas de impuesto diferido, la utilidad distribuible auditada fue CLP 369 mil MM y el ROE 9,7%, el más alto de los tres pares locales en base comparable (Anexo 6). El FFO, que reconstruimos desde los estados financieros con 0,02% de diferencia frente a los CLP 405 mil MM reportados (Figura 2), mantuvo un margen de 59–62% en 2022–2025, mientras la utilidad neta varió más de cuatro veces. El FFO excluye el reajuste UF de la deuda (CLP 44 mil MM, 11% del FFO); la utilidad distribuible lo incluye y es nuestra ancla conservadora de utilidades." },
@@ -81,7 +81,7 @@ const L = {
         figuras: [
           ["Figura 2:", "Sin revalorizaciones ni partidas no monetarias, CLP 1.441 mil MM de utilidad se vuelven CLP 408 mil MM de FFO (CLP mil MM)", "FA2_utilidad_ffo", "Celeste suma, rojo resta, azul = totales. Tras minoritarios (CLP 2,8 mil MM), el FFO atribuible es CLP 405,2 mil MM vs 405,3 reportado. Fuente: EEFF Plaza S.A. (CMF) 2025, Notas 13.1 y 23; análisis del equipo."],
           ["Figura 3:", "Dos tercios del crecimiento 2025 fueron comprados; en 1S26 la moneda y la inflación explican más de la mitad", "FA3_crecimiento", "Segmentos separados en forma multiplicativa (real × inflación × moneda) desde el crecimiento en moneda local (Chile 6,1%, Perú 7,9%, Colombia 7,3%); consolidado ponderado por ingresos 2025. Fuente: EEFF intermedios (CMF), Nota 24; UF (SII/BCCh); Bloomberg; INEI; DANE; análisis del equipo."]] },
-      { texto: [
+      { cortes: [[0, [0]], [4, [1, 2]], [8, [3]]], texto: [
           { h1: "La caja cubre el dividendo 2,6x; el techo es la política, no la liquidez" },
           { p: "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025, convirtiendo 98,7% del EBITDA antes de impuestos. El impuesto pagado fue solo 15% del resultado operacional, protegido por goodwill tributario de reorganizaciones en Chile y pérdidas tributarias (Nota 13), y subirá hacia la tasa legal de 27%. Después de capex e intereses netos, el flujo de caja libre antes del servicio de la deuda fue CLP 280 mil MM y cubrió los dividendos 2,6x (Figura 4)." },
           { p: "El salto de 38,6% del flujo operativo en 1S26 no es capacidad de generación: el 59% corresponde a cobranzas de diciembre que se revierten vía capital de trabajo. Los días de cobro bajaron de 66 a 50, sin señales de peor recaudación." },
@@ -91,7 +91,7 @@ const L = {
           { p: "La deuda bruta de CLP 1.633 mil MM está 79% en UF, 14% en PEN y 7% en COP, en línea con las monedas de los ingresos; el 95% es de largo plazo, con una duración de 6,6 años. Los bonos en UF pagan un cupón real de 3,36% (3,48% efectivo), pero con el reajuste UF el costo nominal total fue cercano a 7% en 2025. Los vencimientos se concentran en 2029, 2031 y 2033 (Figura 6); refinanciar la serie S (1,32% efectivo) a la tasa de la última emisión (4,33%) sumaría cerca de CLP 4,9 mil MM al año. La liquidez es holgada: a junio de 2026 la razón corriente era 2,50x y la caja cubría 1,71x los pasivos corrientes." },
           { p: "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cencosud Shopping (2,1x) y Parque Arauco (5,7x), y cada vuelta adicional suma 25 pb al costo real de la deuda. La caja por sobre el payout de 40% y el plan de capex se devuelve con recompras o dividendos extraordinarios: CLP 1,8 billones acumulados en 2S26E–2031E (Anexo 5). Con 3,5x, el nuevo AAA probablemente quedaría bajo presión." },
           { h1: "El forecast proyecta lo que respalda la historia, incluido el ritmo de expansión" },
-          { p: "Los ingresos crecen 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,4%), a medida que el crecimiento real en mismas tiendas converge a los puntos medios de la tasación, maduran los 123.700 m² del pipeline con fecha y, desde 2029E, abren cerca de 27.000 m² al año al ritmo histórico; los ingresos 2026E y 2027E quedan a menos de 0,6% del consenso. El margen EBITDA se mantiene en 79,7–79,8%, bajo el máximo de 2025. El impuesto en caja se normaliza de 16,8% a 27% hacia 2030E y los costos financieros suben con el apalancamiento, por lo que el margen FFO baja de 60,9% a 52,2%. El capital de trabajo se mantiene en 15,6% de los ingresos, el nivel de diciembre de 2025 (Anexo 1). El GLA nuevo rinde 6,9% sobre el costo, un retorno real de 5,0% después de impuestos frente a una WACC real de 7,2%: la expansión suma ingresos, pero no valor." },
+          { p: "Los ingresos crecen 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,4%), a medida que el crecimiento real en mismas tiendas converge a los puntos medios de la tasación, maduran los 123.700 m² del pipeline con fecha y, desde 2029E, abren cerca de 27.000 m² al año al ritmo histórico (Figura 7); los ingresos 2026E y 2027E quedan a menos de 0,6% del consenso. El margen EBITDA se mantiene en 79,7–79,8%, bajo el máximo de 2025. El impuesto en caja se normaliza de 16,8% a 27% hacia 2030E y los costos financieros suben con el apalancamiento, por lo que el margen FFO baja de 60,9% a 52,2%. El capital de trabajo se mantiene en 15,6% de los ingresos, el nivel de diciembre de 2025 (Anexo 1). El GLA nuevo rinde 6,9% sobre el costo, un retorno real de 5,0% después de impuestos frente a una WACC real de 7,2%: la expansión suma ingresos, pero no valor." },
         ],
         figuras: [
           ["Figura 4:", "El flujo de caja libre cubre los dividendos 1,5–2,6x aun con más capex (2025, CLP mil MM)", "FA4_caja", "Estado de flujos (método directo; intereses pagados en financiamiento). FCF antes de amortizaciones. Capex = propiedades de inversión + intangibles + PP&E (15,8% de los ingresos en 2025; 24,8% en 1S26). Fuente: EEFF Plaza S.A. (CMF); análisis del equipo."],
@@ -150,7 +150,7 @@ const L = {
       ["CLP bn", "Revenue", "EBITDA margin %", "FFO margin %", "Net income, reported", "Distributable profit", "Net margin, normalized %", "Asset turnover (x)", "Assets / equity (x)", "ROE, reported %", "ROE, normalized %", "ROA, normalized %"],
       "Normalized = distributable profit (2022A team proxy; 2022 UF indexation inflated by ~13% inflation). Average balances; series starts in 2022 (IAS 40 fair value applied retroactively from 1 Jan 2022). 2026E–2031E: valuation base case; balance sheet rolled forward from Dec-25 (equity + reported profit − ordinary and additional distributions; property revalued at 3% inflation, 27% deferred tax; net debt rising to 3.5x EBITDA by 2031E). Source: Plaza S.A. financial statements (CMF), Note 20e; 2Q26 results release (FFO); Team analysis."],
     paginas: [
-      { texto: [
+      { cortes: [[0, [0]], [3, [1]]], texto: [
           { h1: "Reported earnings track the appraiser; FFO tracks the business" },
           { p: "Under IAS 40, revaluations of investment property run through the income statement. In 2025 a CLP 1,447bn fair-value gain, 27% of opening property value against about 2% a year at Parque Arauco and Cencosud Shopping, lifted attributable net income to CLP 1,431bn (2.2x revenue) and reported ROE to 37.5% (Figure 1). About two-thirds of Chile's 29% uplift came from a lower appraisal discount rate, not from higher NOI." },
           { p: "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%, the highest of the three local peers on a comparable basis (Appendix 6). FFO, which we rebuild from the statements to within 0.02% of the reported CLP 405bn (Figure 2), held a 59–62% margin over 2022–2025 while net income swung more than fourfold. FFO excludes the UF indexation of debt (CLP 44bn, 11% of FFO); distributable profit includes it and is our conservative earnings anchor." },
@@ -165,7 +165,7 @@ const L = {
         figuras: [
           ["Figure 2:", "Removing fair-value gains and non-cash items turns CLP 1,441bn of profit into CLP 408bn of FFO (CLP bn)", "FA2_utilidad_ffo", "Light blue adds back, red removes, navy = totals. After minorities (CLP 2.8bn), FFO attributable is CLP 405.2bn vs CLP 405.3bn reported. Source: Plaza S.A. financial statements (CMF) FY2025, Notes 13.1 and 23; Team analysis."],
           ["Figure 3:", "Two-thirds of 2025 growth was bought; in 1H26 currency and inflation explain more than half", "FA3_crecimiento", "Segments split multiplicatively (real × inflation × FX) from local-currency growth (Chile 6.1%, Peru 7.9%, Colombia 7.3%); consolidated weighted by FY2025 revenue. Source: Plaza S.A. interim financial statements (CMF), Note 24; UF (SII/BCCh); Bloomberg FX; INEI; DANE; Team analysis."]] },
-      { texto: [
+      { cortes: [[0, [0]], [4, [1, 2]], [8, [3]]], texto: [
           { h1: "Cash covers the dividend 2.6x; the ceiling is policy, not liquidity" },
           { p: "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025, converting 98.7% of EBITDA before tax. Cash tax was only 15% of operating profit, sheltered by tax goodwill from Chilean reorganizations and loss carry-forwards (Note 13), and will rise toward the 27% statutory rate. After capex and net interest, free cash flow before debt service was CLP 280bn, covering dividends 2.6x (Figure 4)." },
           { p: "The 38.6% jump in 1H26 operating cash flow is not earnings power: 59% of it was December collections unwinding through working capital. Receivable days fell from 66 to 50, with no sign of weaker collection." },
@@ -175,7 +175,7 @@ const L = {
           { p: "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year duration. The UF bonds carry a 3.36% real coupon (3.48% effective), but with UF indexation the all-in nominal cost was about 7% in 2025. Maturities cluster in 2029, 2031 and 2033 (Figure 6); refinancing series S (1.32% effective) at the latest issue's 4.33% would add about CLP 4.9bn a year. Liquidity is ample: at June 2026 the current ratio was 2.50x and cash covered current liabilities 1.71x." },
           { p: "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cencosud Shopping (2.1x) and Parque Arauco (5.7x), and each extra turn adds 25bp to the real cost of debt. Cash beyond the 40% payout and the capex plan is returned through buybacks or special dividends, CLP 1.8tn cumulatively over 2H26E–2031E (Appendix 5). At 3.5x the new AAA would likely come under pressure." },
           { h1: "The forecast carries forward what history supports, including the pace of expansion" },
-          { p: "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.4%), as real same-store growth converges to the appraisal midpoints, 123,700 m² of dated pipeline matures and, from 2029E, about 27,000 m² a year opens at the historical pace; 2026E and 2027E revenue sit within 0.6% of consensus. EBITDA margin stays at 79.7–79.8%, below the 2025 peak. Cash tax normalizes from 16.8% to 27% by 2030E and financial costs rise with leverage, so FFO margin slides from 60.9% to 52.2%. Working capital is held at 15.6% of revenue, the December 2025 level (Appendix 1). New GLA yields 6.9% on cost, a 5.0% real return after tax against a 7.2% real WACC: expansion adds revenue but not value." },
+          { p: "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.4%), as real same-store growth converges to the appraisal midpoints, 123,700 m² of dated pipeline matures and, from 2029E, about 27,000 m² a year opens at the historical pace (Figure 7); 2026E and 2027E revenue sit within 0.6% of consensus. EBITDA margin stays at 79.7–79.8%, below the 2025 peak. Cash tax normalizes from 16.8% to 27% by 2030E and financial costs rise with leverage, so FFO margin slides from 60.9% to 52.2%. Working capital is held at 15.6% of revenue, the December 2025 level (Appendix 1). New GLA yields 6.9% on cost, a 5.0% real return after tax against a 7.2% real WACC: expansion adds revenue but not value." },
         ],
         figuras: [
           ["Figure 4:", "Free cash flow covers dividends 1.5–2.6x even as capex rises (FY2025, CLP bn)", "FA4_caja", "Cash flow statement (direct method; interest paid in financing). FCF before debt repayment. Capex = investment property + intangibles + PP&E (15.8% of revenue in 2025; 24.8% in 1H26). Source: Plaza S.A. financial statements (CMF); Team analysis."],
@@ -261,17 +261,30 @@ function tabla(enc, anchos, filas, { izq = 1, destacar = [], sub = [], tam = 12 
       ...filas.map((f, r) => new TableRow({ cantSplit: true, children: f.map((v, i) => c(v, i, r, false)) }))] });
 }
 
+// Una fila por bloque de texto: cada figura va en la fila del texto que la cita (p.cortes = [[desde, [figuras]], ...])
 function pagina(lang, p) {
-  const izq = p.texto.map((b, i) => (b.h1 ? subtitulo(b.h1, i === 0 ? 20 : 90) : parrafo(b.p)));
-  const der = [];
-  p.figuras.forEach(([n, t, archivo, f], k) => {
-    der.push(caption(n, t, k === 0 ? 20 : 90));
-    der.push(imagen(`${lang}_${archivo}.png`, COL_FIG / 1440, ALTO[archivo.split("_")[0]]));
-    der.push(fuente(f));
+  const cortes = p.cortes || [[0, p.figuras.map((_, k) => k)]];
+  const rows = cortes.map(([desde, figs], c) => {
+    const hasta = c + 1 < cortes.length ? cortes[c + 1][0] : p.texto.length;
+    const out = [];
+    p.texto.slice(desde, hasta).forEach((b, k) => {
+      const i = desde + k;
+    out.push(b.h1 ? subtitulo(b.h1, i === 0 ? 20 : 90) : parrafo(b.p));
+    });
+    const izq = out;
+    const der = [];
+    figs.forEach((n_, k) => {
+      const [n, t, archivo, f] = p.figuras[n_];
+      const out = der;
+      out.push(caption(n, t, k === 0 ? 20 : 90));
+      out.push(imagen(`${lang}_${archivo}.png`, COL_FIG / 1440, ALTO[archivo.split("_")[0]]));
+      out.push(fuente(f));
+    });
+    if (!der.length) der.push(vacia());
+    return new TableRow({ cantSplit: true, children: [celda(COL_TEXTO, izq), celda(COL_SEP, [vacia()]), celda(COL_FIG, der)] });
   });
   return new Table({ width: { size: ANCHO, type: WidthType.DXA }, columnWidths: [COL_TEXTO, COL_SEP, COL_FIG],
-    borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
-    rows: [new TableRow({ cantSplit: true, children: [celda(COL_TEXTO, izq), celda(COL_SEP, [vacia()]), celda(COL_FIG, der)] })] });
+    borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada }, rows });
 }
 
 function figura1(lang) {
