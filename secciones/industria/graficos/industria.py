@@ -42,8 +42,8 @@ FS, FS_M, FS_G = 12, 13, 14.5  # letra mínima / media / destacada (×0,5 al ins
 # Alto real de cada figura (pulgadas, con ANCHO de ancho)
 ALTO_FIG = {"ind1_ocupacion": 3.3, "ind2_pipeline_gla": 3.3, "ind3_oferta_vs_consumo": 3.1,
             "ind4_vencimiento_contratos": 2.9, "ind5_market_share_paises": 3.0,
-            "ind5b_market_share_paises_vertical": 6.6, "ind6_porter": 3.7,
-            "ind7_market_share_chile": 3.7, "ind8_ebitda_m2": 2.3}
+            "ind5b_market_share_paises_vertical": 6.0, "ind6_porter": 3.7,
+            "ind7_market_share_chile": 3.8, "ind8_ebitda_m2": 2.3}
 # Alto al insertar con 2,47 in de ancho (= alto/ancho real × 2,47); se vuelca a altos.json
 ALTOS = {k: round(v / ANCHO * ANCHO_WORD, 2) for k, v in ALTO_FIG.items()}
 
@@ -263,8 +263,8 @@ def contratos(wb, lang):
             t = ax.text(izq + p * 50, y, num(p * 100, lang, 1), ha="center", va="center",
                         fontsize=FS, color="white" if rampa[i] in texto_blanco else NEGRO)
             ancho_seg = ax.transData.transform((p * 100, 0))[0] - ax.transData.transform((0, 0))[0]
-            if t.get_window_extent(render).width > ancho_seg - 2:
-                t.remove()  # no cabe dentro del tramo
+            if t.get_window_extent(render).width > ancho_seg - 2:  # no cabe: va bajo la barra
+                t.set(y=y - 0.27, va="top", color=NEGRO)
             izq += p * 100
         ax.text(0, y + 0.3, emp, ha="left", va="bottom", fontsize=FS, fontweight="bold", color=NEGRO)
         prom = "plazo prom." if lang == "es" else "avg. term"
@@ -314,12 +314,12 @@ def market_share_paises(wb, lang, vertical=False):
     nombres_pais = {"Chile": "Chile", "Perú": "Perú" if es else "Peru", "Colombia": "Colombia"}
     for k, (pais, filas) in enumerate(paises.items()):
         if vertical:  # donas apiladas, una por fila; participación del trío a la derecha
-            ax = fig.add_axes([0.0, 0.6 - k * 0.295, 0.98, 0.29])
+            ax = fig.add_axes([0.0, 0.59 - k * 0.293, 1.0, 0.29])
         else:
             ax = fig.add_axes([0.005 + k * 0.333, 0.0, 0.323, 0.74])
         valores = [f[2] for f in filas]
         colores = [COLOR.get(f[0], roles.get(f[1], otros)) for f in filas]
-        ancho_anillo = 0.45 if vertical else 0.58
+        ancho_anillo = 0.6 if vertical else 0.62
         cuñas, _ = ax.pie(valores, colors=colores, startangle=90, counterclock=False,
                           wedgeprops={"width": ancho_anillo, "edgecolor": "white", "linewidth": 1.5})
         angulos = [(c.theta1 + c.theta2) / 2 for c in cuñas]
@@ -344,13 +344,13 @@ def market_share_paises(wb, lang, vertical=False):
                     color=NEGRO if f or claro else "white")
         trio = sum(f[2] for f in filas if f[0] in COLOR)
         if vertical:
-            ax.text(0, 0, nombres_pais[pais], ha="center", va="center", fontsize=FS_M,
+            ax.text(1.6, 0.62, nombres_pais[pais], ha="left", va="center", fontsize=FS_G,
                     fontweight="bold", color=NEGRO)
-            ax.text(1.62, 0.2, "Participación\ndel trío" if es else "Trio\nshare", ha="left",
-                    va="center", fontsize=FS, color=TINTA_SECUNDARIA, linespacing=1.1)
-            ax.text(1.62, -0.38, f"{trio * 100:.0f}%", ha="left", va="center", fontsize=20,
+            ax.text(1.6, 0.05, "Participación del trío" if es else "Trio share", ha="left",
+                    va="center", fontsize=FS, color=TINTA_SECUNDARIA)
+            ax.text(1.6, -0.55, f"{trio * 100:.0f}%", ha="left", va="center", fontsize=20,
                     fontweight="bold", color=NEGRO)
-            ax.set_xlim(-1.4, 3.2)
+            ax.set_xlim(-2.75, 5.0)
             ax.set_ylim(-1.38, 1.38)
         else:
             ax.text(0, 1.78, nombres_pais[pais], ha="center", va="center", fontsize=FS_M,
@@ -439,9 +439,9 @@ def porter(wb, lang):
     for a, v in zip(ang, valores):
         ax.text(a, v + 0.6, f"{v}", ha="center", va="center", fontsize=FS_G, fontweight="bold",
                 color=AZUL, zorder=5)
-    for nivel in range(1, 6):
-        ax.text(np.pi, nivel, str(nivel), fontsize=FS, color=TINTA_SECUNDARIA,
-                ha="center", va="center", bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.5})
+    for nivel in range(2, 6):  # el 1 se omite: chocaría con las notas 1
+        ax.text(np.radians(36), nivel, str(nivel), fontsize=FS, color=TINTA_SECUNDARIA, zorder=6,
+                ha="center", va="center", bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.3})
     for a, (_, es_l, en_l) in zip(ang, orden):  # etiquetas alineadas hacia afuera
         s, c = math.sin(a), math.cos(a)
         ha = "left" if s > 0.2 else "right" if s < -0.2 else "center"
@@ -491,14 +491,16 @@ def market_share_chile(wb, lang):
     es = lang == "es"
 
     fig = nueva("ind7_market_share_chile")
-    ax = fig.add_axes([0.03, 0.24, 0.75, 0.68])
+    ax = fig.add_axes([0.03, 0.27, 0.7, 0.65])
     ax.stackplot(x, gla, colors=[COLOR[e] for e in empresas], edgecolor="white", linewidth=1.5)
-    cx = [x[i] + (0.34 if i == 0 else -0.34 if i == len(x) - 1 else 0) for i in range(len(x))]
+    # Columnas de etiquetas: extremos hacia adentro (no se salen del área) y vecinas algo abiertas
+    cx = [x[i] + (0.36 if i == 0 else -0.36 if i == len(x) - 1 else 0.1 if i == 1
+                  else -0.1 if i == len(x) - 2 else 0) for i in range(len(x))]
     base = np.zeros(len(x))
     for emp, capa, c in zip(empresas, gla, cuota):
         for i in range(len(x)):
             ax.text(cx[i], base[i] + capa[i] / 2, num(c[i] * 100, lang, 1) + "%", ha="center",
-                    va="center", fontsize=FS, fontweight="bold", color=TEXTO[emp])
+                    va="center", fontsize=FS, color=TEXTO[emp])
         centro = (len(x) - 1, base[-1] + capa[-1] / 2)
         logo = LOGOS / ARCHIVOS_LOGO[emp]
         if logo.exists():
@@ -513,7 +515,7 @@ def market_share_chile(wb, lang):
         base = base + capa
     for i, t in enumerate(total):  # total sobre cada columna
         ax.text(cx[i], t + total.max() * 0.03, num(t, lang), ha="center", va="bottom",
-                fontsize=FS_M, fontweight="bold", color=NEGRO)
+                fontsize=FS, fontweight="bold", color=NEGRO)
     ax.set_xlim(x[0], x[-1])
     ax.set_ylim(0, total.max() * 1.16)
     ax.set_xticks(cx, periodos, fontsize=FS, color=NEGRO)
@@ -525,10 +527,10 @@ def market_share_chile(wb, lang):
                                                           for i in range(1, len(x))]),
                    (f"Índice\n({periodos[0]} = 100)" if es else f"Index\n({periodos[0]} = 100)",
                     [num(v, lang, 1) for v in indice])]
-    alto_ax = 0.68 * ALTO_FIG["ind7_market_share_chile"]
-    der = 1.03  # rótulos de fila a la derecha, bajo los logos
+    alto_ax = 0.65 * ALTO_FIG["ind7_market_share_chile"]
+    der = 1.025  # rótulos de fila a la derecha, bajo los logos
     for f, (rotulo, vals) in enumerate(filas_tabla):
-        y = -(0.47 + f * 0.3) / alto_ax
+        y = -(0.45 + f * 0.31) / alto_ax
         ax.text(der, y, rotulo, transform=ax.transAxes, ha="left", va="center",
                 fontsize=FS, color=TINTA_SECUNDARIA, linespacing=1.05, clip_on=False)
         for xi, v in zip(cx, vals):

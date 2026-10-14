@@ -2,7 +2,7 @@
 // figuras (1…N) y los anexos (1…M), actualizando cada cita del texto. El texto de cada sección no cambia:
 // solo se reemplazan las etiquetas de figura/anexo según el mapa de renumeración de esa sección.
 //
-// Cuerpo: Negocio → Industria → ESG → Análisis Financiero → Valuación → Riesgos → Resumen de inversión
+// Cuerpo: Negocio → Industria (seguida) → ESG → Análisis Financiero → Valuación → Riesgos → Resumen de inversión
 // Anexos: Negocio → Industria → ESG → Análisis Financiero → Valuación → Macro
 //
 // Uso (desde secciones/): node informe_final/documento/informe_final.js
@@ -106,7 +106,7 @@ function informe(lang = "es") {
     sections: [
       seccion(d.negocio.sections[0], NUEVA, { start: 1 }, P),
       seccion(d.industria.sections[0], CONT, null, P),
-      seccion(d.esg.sections[0], CONT, null, P),
+      seccion(d.esg.sections[0], NUEVA, null, P),
       seccion(d.fa.sections[0], NUEVA, null, P),
       seccion(d.valuacion.sections[0], NUEVA, null, P),
       seccion(d.riesgos.sections[0], NUEVA, null, P),

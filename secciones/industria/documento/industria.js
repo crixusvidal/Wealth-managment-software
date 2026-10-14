@@ -15,12 +15,9 @@ const IMAGENES = { "image1.png": "ind5b_market_share_paises_vertical", "image2.p
   "image7.png": "ind7_market_share_chile", "image8.png": "ind1_ocupacion" };
 const ALTOS = fs.existsSync(path.join(FIG, "altos.json")) ? JSON.parse(fs.readFileSync(path.join(FIG, "altos.json"), "utf8")) : {};
 
-// Mientras no existan las versiones de informe es_/en_, usa el gráfico titulado anterior
-const archivo = (lang, n) => [`${lang}_${n}.png`, `${n}.png`].map((x) => path.join(FIG, x)).find(fs.existsSync);
-
 function documento(lang = "es") {
   const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", "texto.json"), "utf8"));
-  const imagenes = Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [archivo(lang, n), ALTOS[n]]]));
+  const imagenes = Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [path.join(FIG, `${lang}_${n}.png`), ALTOS[n]]]));
   const { cuerpo, anexo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG });
   return {
     styles: F.ESTILOS,

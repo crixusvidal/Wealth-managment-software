@@ -69,7 +69,7 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | Página de Riesgos | `riesgos/documento/Mallplaza_Investment_Risks_*.docx` | `plantilla_informe/documento/Investment_Risks_template.docx` |
 | Figuras de Riesgos (matriz, tornado, mapa de calor, UF) | `riesgos/.../es_/en_fig23–26` | `plantilla_informe/.../fig1–fig4` |
 | Football field | `valuacion/.../es_/en_V1_football.png` | `valuacion/.../football_field.png` |
-| Cuota de mercado por país | `industria/.../ind5b_market_share_paises_vertical.png` | `industria/.../ind5_market_share_paises.png` |
+| Cuota de mercado por país | `industria/.../es_/en_ind5b_market_share_paises_vertical.png` | `industria/.../es_/en_ind5_market_share_paises.png` |
 
 Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado_operacional`, `heatmap_sensibilidad_wacc`, `reajuste_uf`) y la grilla `sensibilidad_wacc` de Valuación (modelo VF), con `matriz_riesgo.py` y `sensibilidad_wacc.py`. `tornado_operacional.py`, `heatmap_sensibilidad_wacc.py` y `reajuste_uf.py` quedan solo como bibliotecas de cálculo de `pagina_riesgos.py`.
 
@@ -77,7 +77,7 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 
 | # | Tema | Dónde | Estado |
 |---|---|---|---|
-| 1 | Numeración de figuras y anexos | Todas | Cada sección numera por su cuenta (Riesgos 23–26, Valuación 27–34, FA 1–7, ESG E1–E5, anexos [B]–[F]/[Z]/1–6). Unificar al armar el informe completo |
+| 1 | Numeración de figuras y anexos | Todas | Resuelto en el informe consolidado (`informe_final/`): figuras 1–30 y anexos 1–20 de corrido; cada sección conserva su numeración propia y `informe_final.js` la traduce con un mapa por sección |
 | 2 | Kd: cupón (3,6%) vs tasa efectiva de la última emisión (4,33%) | Valuación vs FA | Con 4,33% la WACC sube 12 pb y el precio objetivo baja a CLP 2.042. Ideal: YTM de Bloomberg (YAS) |
 | 3 | IRSA dentro del set de pares | Valuación | Incluida (modelo v2). Si se excluye: múltiplo 14,0x, precio objetivo CLP 2.059 |
 | 4 | Fecha de valoración (30-jun) vs precio (30-sep) | Valuación | Llevar el DCF al 30-sep → ~CLP 2.118. No aplicado |
@@ -87,6 +87,8 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 | 8 | Tramos de inflación y moneda de la Figura 3 de FA | FA | Derivados de los totales del borrador; reemplazar si hay valores exactos |
 | 9 | Consenso de precio objetivo (ANR) | Valuación | Pendiente de Bloomberg; dato de alto impacto para el texto |
 | 10 | Fuentes políticas de RR2 (Chile, Perú, Colombia) | Riesgos | Tomadas de resúmenes de búsqueda; verificar cada URL antes de entregar |
+| 12 | Bull de Valuación: cuerpo CLP 2.595 vs réplica del DCF 2.627 (Anexo 18) | Valuación | Decidir definición del escenario o corregir el cuerpo |
+| 13 | Pipeline USD 613 MM / 170.200 m² (texto) vs 123.700 m² / USD 445 MM con fecha (modelo) | Industria / Valuación / Riesgos | Sin resolver |
 | 11 | Rebaja del impuesto corporativo a 23% (Ley de Reconstrucción) | Riesgos / Valuación | No incluida en el modelo (+3,9% al precio objetivo si se aplica) |
 
 ## 6. Preguntas que probablemente hará el jurado
