@@ -171,11 +171,12 @@
       text(7pt, fill: AZUL)[*#T.n* #T.titulo]
       v(-2pt)
       let n = T.encabezado.len()
-      table(columns: (2.9fr,) + (1fr,) * (n - 1), stroke: (x, y) => (bottom: if y > 0 { 0.5pt + LINEA } else { none }),
+      // la tabla ocupa todo el ancho de la hoja (hasta el margen derecho de la columna de figuras)
+      pad(right: -(SEP + FIG), table(columns: (2.9fr,) + (1fr,) * (n - 1), stroke: (x, y) => (bottom: if y > 0 { 0.5pt + LINEA } else { none }),
         inset: (x: 3pt, y: 1.6pt), align: (x, y) => if x == 0 { left } else { right },
         fill: (x, y) => if y == 0 { AZUL } else if (y - 1) in T.destacar { rgb("#FDF1CC") } else if calc.odd(y) { rgb("#F7F8FB") } else { white },
         ..T.encabezado.map(c => text(6pt, weight: "bold", fill: white, c)),
-        ..T.filas.enumerate().map(((r, fila)) => fila.map(c => text(6pt, weight: if r in T.destacar { "bold" } else { "regular" }, c))).flatten())
+        ..T.filas.enumerate().map(((r, fila)) => fila.map(c => text(6pt, weight: if r in T.destacar { "bold" } else { "regular" }, c))).flatten()))
       v(-3pt)
       text(5.5pt, fill: GRIS, T.nota)
       v(4pt)
