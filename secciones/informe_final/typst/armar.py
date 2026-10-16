@@ -57,6 +57,9 @@ def ajustar(datos):
         pags = [p for k, (p, _) in r["asig"].items() if claves[int(k)] in tramo]
         pag0 = min(pags) if pags else 0
         tramo |= {claves[int(k)] for k, (p, _) in r["asig"].items() if p >= pag0}
+        # el tramo incluye desde la página 0 si ya no queda nada más por achicar (el mapa de la Figura 1 no se achica)
+        if all(escalas.get(c, 1.0) <= FONDO + 1e-6 for c in tramo):
+            tramo |= set(claves)
         nuevas = {c: round(max(FONDO, escalas.get(c, 1.0) * 0.93), 3) for c in tramo}
         if all(nuevas[c] >= escalas.get(c, 1.0) for c in tramo):
             if tramo <= adelantar:

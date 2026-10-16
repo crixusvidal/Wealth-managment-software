@@ -1,4 +1,4 @@
-"""BOCETO de la Figura 1 (Business Description): mapa de Sudamérica con los datos de cada país.
+"""Figura 1 (Business Description): mapa de Sudamérica con los datos de cada país.
 
 Chile, Perú y Colombia en rojo institucional; el resto del continente solo con contorno celeste. Cada país lleva
 su ficha con: participación en el GLA, m² de GLA, participación en los ingresos y posición de mercado.
@@ -11,9 +11,10 @@ Datos (todos de los modelos del informe, nada escrito a mano):
   - m² por país = % del GLA × GLA total (derivado)
 Los límites de los países salen del dataset naturalearth_lowres que trae geopandas (<1.0).
 
+Es la Figura 1 oficial del informe (reemplaza a las dos donas de negocio.py, que quedan como penúltima versión).
 Uso (desde secciones/):
     python negocio/graficos/mapa_sudamerica.py [carpeta_salida]
-Salida: <carpeta>/{es,en}_N1_mapa_boceto.png
+Salida: <carpeta>/{es,en}_N1_mapa.png
 """
 import sys
 from pathlib import Path
@@ -153,4 +154,4 @@ if __name__ == "__main__":
               SECCIONES / "valuacion/modelos/Mallplaza_Valoracion_Consolidada_v2.xlsx")
     print({k: d[k] for k in ("gla", "gla_m2", "total", "ing", "cuota")})
     for lang in ("es", "en"):
-        print(figura(lang, d, salida / f"{lang}_N1_mapa_boceto.png"))
+        print(figura(lang, d, salida / f"{lang}_N1_mapa.png"))

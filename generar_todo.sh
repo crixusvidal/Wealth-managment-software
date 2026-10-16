@@ -11,6 +11,7 @@ TOR=$R/Mallplaza_Tornado_Sensibilidad_Operacional_2026_2028.xlsx
 
 echo "== Gráficos"
 python3 negocio/graficos/negocio.py negocio/modelos/Excel_bussines_para_armar_graficos.xlsx
+python3 negocio/graficos/mapa_sudamerica.py   # Figura 1 (mapa de Sudamérica; requiere geopandas<1.0)
 python3 industria/graficos/industria.py industria/modelos/Excel_DATA_INDUSTRY.xlsx
 python3 industria/graficos/cuota_mercado.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
 python3 valuacion/graficos/valuacion.py $V/Mallplaza_Figuras_Valuacion_recalc.xlsx - $V2

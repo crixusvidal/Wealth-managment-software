@@ -54,7 +54,8 @@
 // Figura (título + gráfico + fuente) --------------------------------------------------------------
 #let FIGS = D.secciones.enumerate().map(((si, s)) => s.figuras.map(f => (..f, clave: s.clave, sec: si))).flatten()
 #let figura(f, ancho: FIG) = context {
-  let maxh = ALTO-MAX * ESC.at(f.clave, default: 1.0)
+  // el mapa de Sudamérica (Figura 1) es la figura principal de Negocio: se muestra más alto para que se lean sus fichas
+  let maxh = if "N1_mapa" in f.archivo { 3.2in } else { ALTO-MAX * ESC.at(f.clave, default: 1.0) }
   let im = image(f.archivo, width: ancho)
   let h = measure(im).height
   block(width: ancho, breakable: false, {
