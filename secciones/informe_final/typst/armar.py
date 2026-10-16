@@ -43,6 +43,9 @@ def compilar(datos, escalas, adelantar, salida=None):
     return r
 
 
+FONDO = 0.55   # escala mínima de los gráficos (legibilidad)
+
+
 def ajustar(datos):
     escalas, adelantar = {}, set()
     r = compilar(datos, escalas, adelantar)
@@ -54,7 +57,7 @@ def ajustar(datos):
         pags = [p for k, (p, _) in r["asig"].items() if claves[int(k)] in tramo]
         pag0 = min(pags) if pags else 0
         tramo |= {claves[int(k)] for k, (p, _) in r["asig"].items() if p >= pag0}
-        nuevas = {c: round(max(0.65, escalas.get(c, 1.0) * 0.93), 3) for c in tramo}
+        nuevas = {c: round(max(FONDO, escalas.get(c, 1.0) * 0.93), 3) for c in tramo}
         if all(nuevas[c] >= escalas.get(c, 1.0) for c in tramo):
             if tramo <= adelantar:
                 break
