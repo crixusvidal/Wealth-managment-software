@@ -161,6 +161,8 @@
 #for (si, s) in D.secciones.enumerate() {
   [#metadata(si) <sec-ini>]
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
+  // Análisis Financiero empieza arriba de una página nueva (pedido del equipo)
+  if s.clave == "fa" { pagebreak(weak: true) }
   ancho({
     titulo(s.titulo)
     if "lead" in s { lead(s.lead, destacado: s.at("leadDestacado", default: false)) }
