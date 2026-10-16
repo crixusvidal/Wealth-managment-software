@@ -1,0 +1,483 @@
+{
+ "generado": "2026-10-16 02:22",
+ "modelos": {
+  "valoracion": {
+   "archivo": "Mallplaza_Valoracion_Consolidada_v2.xlsx",
+   "sha256": "f507630c19"
+  },
+  "fa_exhibits": {
+   "archivo": "Mallplaza_FA_Exhibits_v6.xlsx",
+   "sha256": "b8249c6c29"
+  },
+  "figuras_valuacion": {
+   "archivo": "Mallplaza_Figuras_Valuacion_recalc.xlsx",
+   "sha256": "967ea96bb8"
+  },
+  "industria": {
+   "archivo": "Excel_DATA_INDUSTRY.xlsx",
+   "sha256": "58b552bbeb"
+  },
+  "negocio": {
+   "archivo": "Excel_bussines_para_armar_graficos.xlsx",
+   "sha256": "52619e3892"
+  },
+  "tornado": {
+   "archivo": "Mallplaza_Tornado_Sensibilidad_Operacional_2026_2028.xlsx",
+   "sha256": "f3e77a707e"
+  },
+  "esg": {
+   "archivo": "ESG_sanciones_y_datos.xlsx",
+   "sha256": "cd8e75fa39"
+  }
+ },
+ "cifras": [
+  {
+   "grupo": "Precio y valor",
+   "clave": "precio",
+   "etiqueta": "Precio de referencia (30-sep-26), CLP",
+   "valor": 3555,
+   "formato": "clp",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B8"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "acciones_mm",
+   "etiqueta": "Acciones en circulación (millones)",
+   "valor": 2190,
+   "formato": "n0",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B9"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "dcf",
+   "etiqueta": "Valor DCF por acción, CLP",
+   "valor": 1856.8119971801468,
+   "formato": "clp",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B12"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "multiplos",
+   "etiqueta": "Valor por múltiplos (EV/EBITDA LTM ponderado) por acción, CLP",
+   "valor": 2951.385470831009,
+   "formato": "clp",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B13"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "peso_dcf",
+   "etiqueta": "Peso del DCF en el precio objetivo",
+   "valor": 0.8,
+   "formato": "pct0",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B14"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "precio_objetivo",
+   "etiqueta": "PRECIO OBJETIVO (80% DCF / 20% múltiplos), CLP",
+   "valor": 2075.726691910319,
+   "formato": "clp",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B15"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "potencial",
+   "etiqueta": "Potencial vs precio",
+   "valor": -0.4161106351869708,
+   "formato": "pct1",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B17"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "multiplo_ev_ebitda",
+   "etiqueta": "Múltiplo EV/EBITDA LTM ponderado (70% Chile / 30% set común)",
+   "valor": 14.361243390716158,
+   "formato": "x1",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B5"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "vt_ev",
+   "etiqueta": "Valor terminal / EV (DCF)",
+   "valor": 0.7635944819943865,
+   "formato": "pct1",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!DCF!C54"
+  },
+  {
+   "grupo": "Precio y valor",
+   "clave": "cap_rate_dcf",
+   "etiqueta": "Cap rate implícito del DCF (EBITDA LTM / EV)",
+   "valor": 0.10085787030177906,
+   "formato": "pct1",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!DCF!C56"
+  },
+  {
+   "grupo": "Balance y operación",
+   "clave": "dfn_mm",
+   "etiqueta": "Deuda financiera neta 30-jun-26 (CLP MM)",
+   "valor": 1285740,
+   "formato": "n0",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B10"
+  },
+  {
+   "grupo": "Balance y operación",
+   "clave": "ebitda_ltm_mm",
+   "etiqueta": "EBITDA LTM 2T26 (CLP MM)",
+   "valor": 544935,
+   "formato": "n0",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B13"
+  },
+  {
+   "grupo": "Balance y operación",
+   "clave": "dfn_ebitda",
+   "etiqueta": "DFN / EBITDA LTM",
+   "valor": 2.359437364089295,
+   "formato": "x2",
+   "fuente": "calculado: Supuestos!B10 / B13"
+  },
+  {
+   "grupo": "Balance y operación",
+   "clave": "impuesto_lp",
+   "etiqueta": "Tasa de impuesto operacional de largo plazo",
+   "valor": 0.27,
+   "formato": "pct0",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B59"
+  },
+  {
+   "grupo": "Balance y operación",
+   "clave": "g",
+   "etiqueta": "Crecimiento terminal nominal (g)",
+   "valor": 0.03,
+   "formato": "pct1",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B88"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "wacc_inicial",
+   "etiqueta": "WACC nominal CLP 2S26E",
+   "valor": 0.10536861207682024,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C43"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "wacc_terminal",
+   "etiqueta": "WACC nominal CLP terminal",
+   "valor": 0.10413886741610846,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I43"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "wacc_real_terminal",
+   "etiqueta": "WACC real terminal",
+   "valor": 0.07197948292826073,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I44"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "ke_terminal",
+   "etiqueta": "Ke nominal CLP terminal",
+   "valor": 0.1192629011700308,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I39"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "kd_dt_terminal",
+   "etiqueta": "Kd nominal después de impuestos terminal",
+   "valor": 0.0511123726148531,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I42"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "beta_terminal",
+   "etiqueta": "Beta re-apalancada terminal",
+   "valor": 1.1390983532491177,
+   "formato": "n2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I37"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "crp",
+   "etiqueta": "CRP ponderado por ingresos",
+   "valor": 0.014101277016433952,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C21"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "rf",
+   "etiqueta": "Tasa libre de riesgo usada (UST 10 años)",
+   "valor": 0.049778,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C22"
+  },
+  {
+   "grupo": "Costo de capital",
+   "clave": "wacc_real_tasacion",
+   "etiqueta": "WACC real implícita en la tasación (Nota 11, Chile)",
+   "valor": 0.0555,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C47"
+  },
+  {
+   "grupo": "Expansión",
+   "clave": "yield_on_cost",
+   "etiqueta": "Yield on cost de la expansión",
+   "valor": 0.06901897074742641,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Expansion!C37"
+  },
+  {
+   "grupo": "Expansión",
+   "clave": "ronic",
+   "etiqueta": "RONIC real después de impuestos (yield × (1 − t))",
+   "valor": 0.05038384864562128,
+   "formato": "pct2",
+   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx!Expansion!C38"
+  },
+  {
+   "grupo": "Retornos",
+   "clave": "roic_2025",
+   "etiqueta": "ROIC 2025 (NOPAT / capital promedio a valor razonable)",
+   "valor": 0.0734367763909679,
+   "formato": "pct2",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C21"
+  },
+  {
+   "grupo": "Retornos",
+   "clave": "roic_menos_wacc_real",
+   "etiqueta": "ROIC 2025 − WACC real (pp)",
+   "valor": 0.145729346270718,
+   "formato": "n2",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C33"
+  },
+  {
+   "grupo": "Retornos",
+   "clave": "ronic_menos_wacc_real",
+   "etiqueta": "RONIC − WACC real (pp)",
+   "valor": -2.15956342826395,
+   "formato": "n2",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C41"
+  },
+  {
+   "grupo": "Retornos",
+   "clave": "roe_normalizado_2025",
+   "etiqueta": "ROE normalizado 2025",
+   "valor": 0.096668816537814,
+   "formato": "pct1",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!E1_DuPont!H28"
+  },
+  {
+   "grupo": "Retornos",
+   "clave": "roe_reportado_2025",
+   "etiqueta": "ROE reportado 2025",
+   "valor": 0.374572817810984,
+   "formato": "pct1",
+   "fuente": "Mallplaza_FA_Exhibits_v6.xlsx!E1_DuPont!H27"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_bear",
+   "etiqueta": "Precio objetivo escenario Bear, CLP",
+   "valor": 1712.699699393011,
+   "formato": "clp",
+   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_bear_vs",
+   "etiqueta": "Bear: variación vs precio",
+   "valor": -0.5182279326601937,
+   "formato": "pct1",
+   "fuente": "datos_anexos.json"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_base",
+   "etiqueta": "Precio objetivo escenario Base, CLP",
+   "valor": 2075.72669191032,
+   "formato": "clp",
+   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_base_vs",
+   "etiqueta": "Base: variación vs precio",
+   "valor": -0.41611063518697045,
+   "formato": "pct1",
+   "fuente": "datos_anexos.json"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_bull",
+   "etiqueta": "Precio objetivo escenario Bull, CLP",
+   "valor": 2627.0720233180014,
+   "formato": "clp",
+   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_bull_vs",
+   "etiqueta": "Bull: variación vs precio",
+   "valor": -0.2610205278992964,
+   "formato": "pct1",
+   "fuente": "datos_anexos.json"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_tas",
+   "etiqueta": "Precio objetivo escenario Tasadores, CLP",
+   "valor": 2718.478993948066,
+   "formato": "clp",
+   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_tas_vs",
+   "etiqueta": "Tasadores: variación vs precio",
+   "valor": -0.23530829987396173,
+   "formato": "pct1",
+   "fuente": "datos_anexos.json"
+  },
+  {
+   "grupo": "Mercado",
+   "clave": "rango_52s_min",
+   "etiqueta": "Mínimo de 52 semanas, CLP",
+   "valor": 2470,
+   "formato": "clp",
+   "fuente": "datos_resumen.json (Bloomberg)"
+  },
+  {
+   "grupo": "Mercado",
+   "clave": "rango_52s_max",
+   "etiqueta": "Máximo de 52 semanas, CLP",
+   "valor": 4700,
+   "formato": "clp",
+   "fuente": "datos_resumen.json (Bloomberg)"
+  },
+  {
+   "grupo": "Mercado",
+   "clave": "dividendo_2027",
+   "etiqueta": "Dividendo esperado 2027E, CLP por acción",
+   "valor": 69.4134824442579,
+   "formato": "n1",
+   "fuente": "datos_resumen.json (v2 Deuda)"
+  },
+  {
+   "grupo": "Mercado",
+   "clave": "capitalizacion_mm",
+   "etiqueta": "Capitalización bursátil (CLP MM)",
+   "valor": 7785450,
+   "formato": "n0",
+   "fuente": "datos_resumen.json"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "gla_mallplaza",
+   "etiqueta": "GLA Mallplaza (m²)",
+   "valor": 2360135,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C6"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "ebitda_m2_mallplaza",
+   "etiqueta": "EBITDA por m² trimestral 2T26 Mallplaza (CLP)",
+   "valor": 59450.83649875961,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D6"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "gla_cenco_malls",
+   "etiqueta": "GLA Cenco Malls (m²)",
+   "valor": 1538391,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C7"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "ebitda_m2_cenco_malls",
+   "etiqueta": "EBITDA por m² trimestral 2T26 Cenco Malls (CLP)",
+   "valor": 58384.37692368195,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D7"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "gla_parque_arauco",
+   "etiqueta": "GLA Parque Arauco (m²)",
+   "valor": 1340500,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C8"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "ebitda_m2_parque_arauco",
+   "etiqueta": "EBITDA por m² trimestral 2T26 Parque Arauco (CLP)",
+   "valor": 55738.15740395375,
+   "formato": "n0",
+   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D8"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "gla_chile",
+   "etiqueta": "A: GLA por país — Chile (%)",
+   "valor": 61.9,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "gla_perú",
+   "etiqueta": "A: GLA por país — Perú (%)",
+   "valor": 26.2,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "gla_colombia",
+   "etiqueta": "A: GLA por país — Colombia (%)",
+   "valor": 11.9,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "ingreso_arriendo",
+   "etiqueta": "B: Ingresos por fuente — Arriendo (%)",
+   "valor": 81.4,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "ingreso_parking",
+   "etiqueta": "B: Ingresos por fuente — Parking (%)",
+   "valor": 10.8,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "ingreso_servicios_comerciales_y_otros",
+   "etiqueta": "B: Ingresos por fuente — Servicios comerciales y otros (%)",
+   "valor": 5.9,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  },
+  {
+   "grupo": "Negocio",
+   "clave": "ingreso_publicidad",
+   "etiqueta": "B: Ingresos por fuente — Publicidad (%)",
+   "valor": 1.9,
+   "formato": "n1",
+   "fuente": "Excel_bussines_para_armar_graficos.xlsx!Grafico 1, 2 tortas!B:D"
+  }
+ ]
+}

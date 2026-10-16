@@ -2,7 +2,8 @@
 # Regenera todos los gráficos y documentos del informe a partir de los modelos de cada sección.
 # Uso: bash generar_todo.sh        (requiere python3 con matplotlib/openpyxl y node con docx)
 set -euo pipefail
-cd "$(dirname "$0")/secciones"
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$ROOT/secciones"
 export NODE_PATH="${NODE_PATH:+$NODE_PATH:}/opt/node22/lib/node_modules:/opt/node-tools/node_modules"
 V=valuacion/modelos; F=analisis_financiero/modelos; R=riesgos/modelos
 V2=$V/Mallplaza_Valoracion_Consolidada_v2.xlsx
@@ -40,3 +41,5 @@ node macro/anexo/anexo_macro.js
 node plantilla_informe/documento/plantilla_informe.js
 python3 informe_final/graficos/maquetar.py   # Word del informe consolidado (ES y EN)
 python3 informe_final/typst/armar.py         # PDF final: cuerpo en Typst (gráficos al costado) + anexos
+(cd "$ROOT" && python3 informe_consolidado/actualizar.py)     # copia los últimos PDF/Word a informe_consolidado/ (vigente + anterior)
+(cd "$ROOT" && python3 contexto_llm/generar.py)             # cifras clave vigentes para el LLM (reemplaza lo anterior)

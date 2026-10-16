@@ -105,6 +105,9 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 CLAUDE.md                     reglas del proyecto (idioma, versiones, orden)
 narrativa_y_coherencia.md     esta guía
 generar_todo.sh               regenera gráficos, documentos por sección y el informe consolidado
+informe_consolidado/          ENTREGABLES FINALES: vigente/ (ES/EN, PDF y Word actuales) y anterior/ (penúltima); actualizar.py
+contexto_llm/                 contexto del LLM: cifras_clave.md/.json y archivos_vigentes.md, regenerados de los modelos vigentes (generar.py)
+.claude/agents/contexto-llm.md  agente que sincroniza contexto_llm/ e informe_consolidado/ con los últimos archivos
 data/                         datos de origen y diccionario (raw, processed, sources, logs)
 secciones/
   comun/                      estilo.py (paleta), formato.js (formato Word), borrador_a_json.py, logos/
@@ -123,6 +126,6 @@ secciones/
     typst/datos/              cuerpo_<lang>.json exportado para Typst
 ```
 
-**Entregables finales:** `secciones/informe_final/documento/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar).
+**Entregables finales:** `informe_consolidado/vigente/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar). `secciones/informe_final/` es la carpeta de trabajo que los arma.
 
 **Boceto pendiente de decisión (escenarios):** `valuacion/graficos/escenarios.py` (con `mascotas.py`) genera `es_/en_V10_escenarios.png`: bear 1.713 con un oso amarillo y bull 2.627 con un toro negro, ambos embistiendo hacia el precio de cierre (3.555), más el caso base 2.076. Cifras de `datos_anexos.json` (Anexo 18). No está en el informe todavía.
