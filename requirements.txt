@@ -1,5 +1,6 @@
 geopandas<1.0
 matplotlib>=3.11
 openpyxl>=3.1
+scipy
 svgpath2mpl
 typst
