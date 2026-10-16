@@ -17,6 +17,7 @@ python3 industria/graficos/cuota_mercado.py $V/Comparables_Mallplaza_CFA_BBG_val
 python3 valuacion/graficos/valuacion.py $V/Mallplaza_Figuras_Valuacion_recalc.xlsx - $V2
 python3 valuacion/graficos/anexos_valuacion.py $V2 $V/Mallplaza_Figuras_Valuacion_recalc.xlsx $FA $TOR
 python3 valuacion/graficos/football_field.py $V2
+python3 valuacion/graficos/escenarios.py      # boceto: escenarios bear/base/bull con oso y toro
 python3 valuacion/graficos/tabla_kd_caprates.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
 python3 valuacion/graficos/tabla_multiplos_implicitos.py $FA
 python3 analisis_financiero/graficos/analisis_financiero.py

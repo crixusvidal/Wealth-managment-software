@@ -124,3 +124,5 @@ secciones/
 ```
 
 **Entregables finales:** `secciones/informe_final/documento/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar).
+
+**Boceto pendiente de decisión (escenarios):** `valuacion/graficos/escenarios.py` (con `mascotas.py`) genera `es_/en_V10_escenarios.png`: bear 1.713 con un oso amarillo y bull 2.627 con un toro negro, ambos embistiendo hacia el precio de cierre (3.555), más el caso base 2.076. Cifras de `datos_anexos.json` (Anexo 18). No está en el informe todavía.
