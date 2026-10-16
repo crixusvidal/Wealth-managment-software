@@ -52,7 +52,7 @@
 #let ancho(body) = [#metadata("ini") <obs-ini>#body#metadata("fin") <obs-fin>]
 
 // Figura (título + gráfico + fuente) --------------------------------------------------------------
-#let FIGS = D.secciones.map(s => s.figuras.map(f => (..f, clave: s.clave))).flatten()
+#let FIGS = D.secciones.enumerate().map(((si, s)) => s.figuras.map(f => (..f, clave: s.clave, sec: si))).flatten()
 #let figura(f, ancho: FIG) = context {
   let maxh = ALTO-MAX * ESC.at(f.clave, default: 1.0)
   let im = image(f.archivo, width: ancho)
@@ -74,6 +74,7 @@
 #let antes(a, b) = a.at(0) < b.at(0) or (a.at(0) == b.at(0) and a.at(1) <= b.at(1))
 #let asignar() = {
   let anclas = query(<ancla>)
+  let inicios = query(<sec-ini>).map(l => l.location().position())
   let ini = query(<obs-ini>).map(l => l.location().position())
   let fin = query(<obs-fin>).map(l => l.location().position())
   let obst = (:)
@@ -93,7 +94,9 @@
     let id = a.value
     let f = FIGS.at(id)
     let h = measure(figura(f)).height
-    let q = a.location().position()
+    // Cada gráfico parte desde el inicio de su sección (no desde su cita): así los gráficos se apilan desde
+    // arriba y ocupan el primer espacio libre de la columna derecha, en el orden en que se citan.
+    let q = inicios.at(f.sec, default: a.location().position())
     let (p, y) = (q.page, q.y)
     if f.clave in ADEL and p > 1 { p = p - 1 }
     let ok = false
@@ -156,6 +159,7 @@
 // Secciones -----------------------------------------------------------------------------------------
 #let k0 = 0
 #for (si, s) in D.secciones.enumerate() {
+  [#metadata(si) <sec-ini>]
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
   ancho({
     titulo(s.titulo)
