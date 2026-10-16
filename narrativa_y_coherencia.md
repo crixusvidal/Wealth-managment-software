@@ -128,4 +128,4 @@ secciones/
 
 **Entregables finales:** `informe_consolidado/vigente/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar). `secciones/informe_final/` es la carpeta de trabajo que los arma.
 
-**Boceto pendiente de decisión (escenarios):** `valuacion/graficos/escenarios.py` (con `mascotas.py`) genera `es_/en_V10_escenarios.png`: bear 1.713 con un oso amarillo y bull 2.627 con un toro negro, ambos embistiendo hacia el precio de cierre (3.555), más el caso base 2.076. Cifras de `datos_anexos.json` (Anexo 18). No está en el informe todavía.
+**Boceto pendiente de decisión (escenarios):** `valuacion/graficos/escenarios.py` genera `es_/en_V10_escenarios.png` y `.svg` (editable): bear 1.713 con un oso amarillo y bull 2.627 con un toro negro embistiendo hacia el precio de cierre (3.555), más el caso base 2.076. Los dibujos son íconos vectoriales de Game-icons.net (CC BY 3.0) guardados en `valuacion/graficos/iconos/` (SVG editables; ver `LICENCIA.md`); si se usa en el informe, citar «Íconos: Game-icons.net (CC BY 3.0)». Cifras de `datos_anexos.json` (Anexo 18). No está en el informe todavía.

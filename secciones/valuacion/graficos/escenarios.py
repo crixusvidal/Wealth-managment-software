@@ -1,4 +1,4 @@
-"""BOCETO: escenarios bear / base / bull del precio objetivo, con el oso (amarillo) y el toro (negro) atacando.
+"""Escenarios bear / base / bull del precio objetivo, con un oso amarillo y un toro negro atacando (íconos vectoriales).
 
 Eje horizontal = precio objetivo por acción (CLP). El oso embiste desde el caso bear, el toro desde el bull; ambos
 van hacia el precio de cierre (línea roja), que ninguno de los dos alcanza. Cifras de datos_anexos.json (réplica del
@@ -6,7 +6,7 @@ DCF v2, Anexo 18), que genera valuacion/graficos/anexos_valuacion.py.
 
 Uso (desde secciones/):
     python valuacion/graficos/escenarios.py [carpeta_salida]
-Salida: <carpeta>/{es,en}_V10_escenarios.png (sin título ni fuente: van en el documento).
+Salida: <carpeta>/{es,en}_V10_escenarios.png y .svg (editable; sin título ni fuente: van en el documento).
 """
 import json
 import sys
@@ -60,13 +60,15 @@ def figura(lang, esc, precio, salida):
     ax.plot([xp, xp], [0.22, ALTO - 0.26], color=ROJO, linewidth=1.3, linestyle=(0, (4, 2)), zorder=2)
     ax.text(xp, ALTO - 0.04, t["precio"].format(p=num(precio, lang)), ha="center", va="top", fontsize=6.8, fontweight="bold", color=ROJO)
     # el animal queda hacia atrás del extremo: su frente (manos / cuernos) apunta al precio
-    oso = lambda a, x, y: dibujar_oso(a, x - 0.72, y, 0.78)
-    toro = lambda a, x, y: dibujar_toro(a, x - 0.98, y, 0.62)
+    oso = lambda a, x, y: dibujar_oso(a, x, y + 0.03, 0.78)      # el borde derecho del dibujo queda en el extremo de la barra
+    toro = lambda a, x, y: dibujar_toro(a, x, y + 0.03, 0.62)
     carril(ax, lang, "bear", 1.80, AMARILLO, esc["bear"]["po"], esc["bear"]["vs"], oso, borde=AZUL)
     carril(ax, lang, "base", 1.10, AZUL, esc["base"]["po"], esc["base"]["vs"])
     carril(ax, lang, "bull", 0.30, NEGRO, esc["bull"]["po"], esc["bull"]["vs"], toro)
     ax.text(ANCHO / 2, 0.02, t["eje"], ha="center", va="bottom", fontsize=5.6, color=TINTA_SECUNDARIA)
     fig.savefig(salida, dpi=DPI, facecolor="white")
+    plt.rcParams["svg.fonttype"] = "none"                 # texto editable en la versión SVG
+    fig.savefig(salida.with_suffix(".svg"), facecolor="white")
     plt.close(fig)
     return salida
 
