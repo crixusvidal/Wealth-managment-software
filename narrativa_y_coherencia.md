@@ -124,3 +124,5 @@ secciones/
 ```
 
 **Entregables finales:** `secciones/informe_final/documento/Mallplaza_Informe_CFA_{ES,EN}.pdf` (para entregar; cuerpo en Typst + anexos) y `.docx` (para editar).
+
+**Boceto pendiente de decisión:** `negocio/graficos/mapa_sudamerica.py` genera `es_/en_N1_mapa_boceto.png`, un mapa de Sudamérica (Chile, Perú y Colombia en rojo) con GLA, m², ingresos y posición por país, como alternativa a las dos donas de la Figura 1. Todavía no está en el informe; si se aprueba, reemplaza a `N1_gla_ingresos` (que pasaría a ser la penúltima versión).
