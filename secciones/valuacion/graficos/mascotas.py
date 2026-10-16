@@ -5,6 +5,10 @@ Usa los íconos de Game-icons.net (CC BY 3.0) guardados en valuacion/graficos/ic
 recolorea o se retoca en Inkscape / Illustrator / Figma y esta figura lo toma tal cual. Colores institucionales: oso
 amarillo, toro negro. Los dibujos se cargan con svgpath2mpl y se agregan como parches de matplotlib (siguen siendo vectores).
 
+Si existen `iconos/oso.png` / `iconos/toro.png` (p. ej. ilustraciones hechas en ChatGPT, PNG con fondo transparente), se usan EN
+LUGAR de los íconos SVG: se recortan al contorno visible y se escalan al alto pedido. Deben mirar hacia la DERECHA (si miran a la
+izquierda, agregar el sufijo `_izq`: `oso_izq.png`, `toro_izq.png`, y se voltean solos).
+
 Uso como módulo:
     from mascotas import dibujar_oso, dibujar_toro
     ancho = dibujar_oso(ax, x_derecha, y_base, alto)   # el borde derecho del dibujo queda en x_derecha; devuelve su ancho
@@ -39,7 +43,41 @@ def cargar(nombre):
     return MPath(v, p.codes), (x1 - x0) / (y1 - y0), color
 
 
+def png_de(nombre):
+    """(ruta, voltear) del PNG de reemplazo, si existe."""
+    for sufijo, voltear in (("", False), ("_izq", True)):
+        r = ICONOS / f"{nombre}{sufijo}.png"
+        if r.exists():
+            return r, voltear
+    return None, False
+
+
+def dibujar_png(ax, ruta, voltear, x_der, y, alto, zorder=4):
+    from PIL import Image
+    im = Image.open(ruta).convert("RGBA")
+    a = np.asarray(im).copy()
+    if a[..., 3].min() == 255:                       # sin transparencia (fondo blanco): el blanco del borde pasa a transparente
+        from scipy import ndimage
+        blanco = (a[..., :3] >= 244).all(axis=-1)
+        etiquetas, _ = ndimage.label(blanco)
+        borde = np.unique(np.concatenate([etiquetas[0], etiquetas[-1], etiquetas[:, 0], etiquetas[:, -1]]))
+        fondo = np.isin(etiquetas, borde[borde > 0])     # solo el blanco conectado con el borde; el blanco interno (ojos, cuernos) queda
+        a[fondo, 3] = 0
+        im = Image.fromarray(a)
+    caja = im.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox()   # contorno visible
+    if caja:
+        im = im.crop(caja)
+    if voltear:
+        im = im.transpose(Image.FLIP_LEFT_RIGHT)
+    ancho = im.width / im.height * alto
+    ax.imshow(np.asarray(im), extent=(x_der - ancho, x_der, y, y + alto), zorder=zorder, interpolation="lanczos", aspect="auto")
+    return ancho
+
+
 def dibujar(ax, nombre, x_der, y, alto, zorder=4):
+    ruta, voltear = png_de(nombre)
+    if ruta:
+        return dibujar_png(ax, ruta, voltear, x_der, y, alto, zorder)
     p, razon, color = cargar(nombre)
     ancho = razon * alto
     v = p.vertices * alto + [x_der - ancho, y]
