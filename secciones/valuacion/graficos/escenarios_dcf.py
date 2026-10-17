@@ -25,10 +25,11 @@ import openpyxl
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "riesgos" / "graficos"))
 from tornado_operacional import escenarios as palancas_tornado  # noqa: E402
 from tornado_operacional import leer_modelo, leer_rangos, proyectar  # noqa: E402
+from matriz_datos import pesos_escenarios  # noqa: E402
 
 IMPUESTO_BULL = 0.23           # Ley de Reconstrucción (9-oct-26): 27% → 23%; no está en el modelo
 DW = 0.01                      # ±100 pb de WACC en todos los períodos
-PESO_PROB = {"bear": 0.25, "base": 0.50, "bull": 0.25}      # supuesto del equipo, por validar
+PESO_PROB = pesos_escenarios()         # 30 / 60 / 10: se derivan de la matriz de riesgo (FR1 alta, OR1 media; regla en matriz_datos.py)
 
 
 def combinar(lista):

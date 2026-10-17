@@ -1,6 +1,6 @@
 # Cifras clave del informe (contexto para el LLM)
 
-Generado 2026-10-17 23:02 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
+Generado 2026-10-17 23:19 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
 Si una cifra de un texto contradice esta tabla, está mal el texto. Cada fila indica su fuente (archivo!hoja!celda).
 
 Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendación: VENDER.
@@ -88,7 +88,7 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio objetivo ponderado 25/50/25, CLP | CLP 2.153 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Precio objetivo ponderado 25/50/25, CLP | CLP 2.001 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
 
 ## Pipeline
 

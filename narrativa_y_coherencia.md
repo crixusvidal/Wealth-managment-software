@@ -54,7 +54,8 @@ Las cifras vigentes con su celda de origen están en `contexto_llm/cifras_clave.
 | TIR del accionista a CLP 3.555: nominal / real | −1,8% / −4,7% (vs Ke 11,93% / 8,67%: −1.374 / −1.334 pb) | v4 TIR_Accionista |
 | TIR del accionista al precio objetivo CLP 2.077 (control): nominal / real | 10,6% / 7,4% (−131 / −128 pb vs Ke) | v4 TIR_Accionista |
 | TIR del proyecto nuevo (1 m² de expansión): nominal / real | 7,98% / 4,84% (−243 / −236 pb vs WACC) | v4 TIR_Proyecto |
-| Escenarios (precio objetivo; bear = todo sale mal, base = central, bull = todo sale bien) | Bear 1.542 · Base 2.077 · Bull 2.915 · Tasadores 2.734; ponderado 25/50/25: 2.153 | réplica del DCF v4 (`escenarios_dcf.py`; Anexo 18) |
+| Escenarios (precio objetivo; bear = todo sale mal, base = central, bull = todo sale bien) | Bear 1.542 · Base 2.077 · Bull 2.915 · Tasadores 2.734; ponderado 30/60/10 (pesos de la matriz de riesgo): 2.001 (−43,7%) | réplica del DCF v4 (`escenarios_dcf.py`; Anexo 18) |
+| Pesos de los escenarios | Bear 30% · Base 60% · Bull 10%: FR1 (tasas) probabilidad alta y OR1 (deterioro operacional) media en la matriz de riesgo; baja 10%, media 30%, alta 50% a 12 meses (supuesto del equipo); bear = FR1 y OR1 juntas (el menos probable de los dos: 30%), bull = sus contrarios (10%), base = el resto | `riesgos/graficos/matriz_datos.py` |
 | Definición de escenarios | Bear: WACC +100 pb y cada palanca del tornado en su mínimo histórico; Bull: WACC −100 pb, cada palanca en su máximo e impuesto 23%; g 3,0% en todos | `escenarios_dcf.py` |
 | Sensibilidades del valor DCF por acción (CLP) | WACC −100 / +100 pb: +430 / −326 · arriendo mismas tiendas +1 pp: +45 · margen +1 pp: +39 · ocupación +1 pp: +25 · ventas de locatarios +1 pp: +2,6 (renta variable 5,7% del ingreso) | réplica del DCF v4 |
 | Consenso Bloomberg (12 meses) | CLP 4.111 (3.377–4.600; 14 fuentes: 1 comprar, 10 mantener, 2 vender) | Bloomberg |

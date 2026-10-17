@@ -1309,7 +1309,7 @@
     {
      "p": [
       [
-       "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura 29), en vez de mover solo la tasa. Bear es todo lo que sale mal a la vez: WACC nominal +100 pb y cada palanca operacional en su mínimo histórico. Bull es todo lo que sale bien: WACC nominal −100 pb, cada palanca en su máximo histórico e impuesto de 23% (Ley de Reconstrucción). Base es la estimación central del modelo. El arriendo en mismas tiendas (precio) y las ventas de los locatarios se mueven juntos; g nominal se mantiene en 3,0% en los tres. Ponderados 25/50/25% (supuesto del equipo, por validar), el precio objetivo sería CLP 2.153.",
+       "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura 29), en vez de mover solo la tasa. Bear es todo lo que sale mal a la vez: WACC nominal +100 pb y cada palanca operacional en su mínimo histórico. Bull es todo lo que sale bien: WACC nominal −100 pb, cada palanca en su máximo histórico e impuesto de 23% (Ley de Reconstrucción). Base es la estimación central del modelo. El arriendo en mismas tiendas (precio) y las ventas de los locatarios se mueven juntos; g nominal se mantiene en 3,0% en los tres. Los pesos salen de la matriz de riesgo de la página de Riesgos: el bear reúne a FR1 (tasas, probabilidad alta) y OR1 (deterioro operacional, media) y, como ocurren juntos, pesa lo del menos probable (media, 30%); el bull reúne sus contrarios (baja y media) y pesa 10%; el base es el resto, 60%. Con probabilidad baja = 10%, media = 30% y alta = 50% a 12 meses (supuesto del equipo), el precio objetivo ponderado es CLP 2.001 (−43,7%).",
        false,
        false
       ]
@@ -1392,10 +1392,10 @@
         "8,51% / −90 pb"
        ],
        [
-        "Probabilidad (supuesto del equipo)",
-        "25%",
-        "50%",
-        "25%"
+        "Probabilidad (de la matriz de riesgo)",
+        "30%",
+        "60%",
+        "10%"
        ]
       ],
       "anchos": [
@@ -1413,7 +1413,7 @@
        8,
        9
       ],
-      "nota": "Las palancas operacionales son los extremos históricos del tornado de Riesgos; WACC y g nominales; arriendo (precio) y ventas se mueven juntos. g nominal terminal 3,0% en los tres. Ponderado 25/50/25%: DCF CLP 1.953, precio objetivo CLP 2.153 (−39,4%). Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
+      "nota": "Las palancas operacionales son los extremos históricos del tornado de Riesgos; WACC y g nominales; arriendo (precio) y ventas se mueven juntos. g nominal terminal 3,0% en los tres. Ponderado 30/60/10%: DCF CLP 1.763, precio objetivo CLP 2.001 (−43,7%). Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
      }
     },
     {
@@ -1570,7 +1570,7 @@
     {
      "p": [
       [
-       "La Figura 28 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 29 a 26). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa.",
+       "La Figura 28 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 29 a 26). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa. Esta matriz fija los pesos de los escenarios de Valuación: el bear reúne a FR1 (probabilidad alta) y OR1 (media), y el bull a sus contrarios.",
        false,
        false
       ]
@@ -2015,7 +2015,7 @@
     {
      "p": [
       [
-       "La acción subió ~90% entre el mínimo de CLP 2.470 (10-oct-25) y el máximo de CLP 4.700 (27-abr-26) sin que el negocio cambiara (EBITDA +5% a +10% anual): el impulso vino de la bolsa chilena (+56% en 2025), de la revalorización conjunta de los malls, de las compras pasivas por la inclusión en el MSCI EM Mid Cap (~USD 110 MM, ~15 veces el volumen diario, según Morgan Stanley) y de analistas que extrapolaron crecimiento (JPMorgan proyecta un FFO de ~11% anual). La caída posterior a CLP 3.555 es una corrección parcial: la acción cotiza 91% sobre el DCF y a 1,61x su valor libro a valor razonable (Figura 32).",
+       "La acción subió ~90% entre el mínimo de CLP 2.470 (10-oct-25) y el máximo de CLP 4.700 (27-abr-26) sin que el negocio cambiara (EBITDA +5% a +10% anual): el impulso vino de la bolsa chilena (+56% en 2025), de la revalorización conjunta de los malls, de las compras pasivas por la inclusión en el MSCI EM Mid Cap (~USD 110 MM, ~15 veces el volumen diario, según Morgan Stanley) y de analistas que extrapolaron crecimiento. La caída posterior a CLP 3.555 es una corrección parcial: la acción cotiza 91% sobre el DCF y a 1,61x su valor libro a valor razonable (Figura 32).",
        false,
        false
       ]
@@ -2027,7 +2027,7 @@
     {
      "p": [
       [
-       "Definimos tres escenarios con las mismas palancas del tornado de Riesgos. Bear es todo lo que sale mal a la vez (WACC nominal +100 pb y cada palanca operacional en su mínimo histórico): CLP 1.542 (−56,6%). Base es la estimación central del modelo: CLP 2.077 (−41,6%). Bull es todo lo que sale bien (WACC nominal −100 pb, cada palanca en su máximo histórico, impuesto de 23%): CLP 2.915 (−18,0%). Ponderados 25/50/25% (supuesto por validar), CLP 2.153. Ningún escenario alcanza el precio (Figura 33; Anexo 18).",
+       "Definimos tres escenarios con las mismas palancas del tornado de Riesgos. Bear es todo lo que sale mal a la vez (WACC nominal +100 pb y cada palanca operacional en su mínimo histórico): CLP 1.542 (−56,6%). Base es la estimación central del modelo: CLP 2.077 (−41,6%). Bull es todo lo que sale bien (WACC nominal −100 pb, cada palanca en su máximo histórico, impuesto de 23%): CLP 2.915 (−18,0%). Pesos de la matriz de riesgo (bear 30%: FR1 alta y OR1 media, juntas; bull 10%: sus contrarios; base 60%; baja 10%, media 30%, alta 50%, supuestos del equipo): CLP 2.001. Ningún escenario alcanza el precio (Figura 33; Anexo 18).",
        false,
        false
       ]
@@ -2074,10 +2074,10 @@
         "−18,0%"
        ],
        [
-        "Probabilidad (supuesto del equipo)",
-        "25%",
-        "50%",
-        "25%"
+        "Probabilidad (de la matriz de riesgo)",
+        "30%",
+        "60%",
+        "10%"
        ]
       ],
       "anchos": [
@@ -2104,7 +2104,7 @@
     {
      "p": [
       [
-       "Ninguna palanca por sí sola explica el precio: la mayor, bajar la WACC nominal 100 pb, agrega CLP 430 (23%) y la brecha con el precio es CLP 1.696. El precio (arriendo) pesa 18 veces más que las ventas de los locatarios, que llegan al ingreso solo por la renta variable (5,7%).",
+       "Ninguna palanca por sí sola explica el precio: la mayor, bajar la WACC nominal 100 pb, agrega CLP 430 (23%) y la brecha con el precio es CLP 1.696.",
        false,
        false
       ]
@@ -2178,12 +2178,24 @@
      ]
     },
     {
+     "h1": "SUPUESTOS DEL CASO BASE"
+    },
+    {
+     "p": [
+      [
+       "Valoración al 30-jun-26 y precio al 30-sep-26. FCFF en CLP nominales, convención de mitad de período; inflación 3,0% (UF). WACC nominal 10,54% en 2S26E y 10,41% terminal (7,20% real): Rf 4,98% (UST 10Y), prima de mercado 4,14%, riesgo país ponderado 1,41%, beta re-apalancada 1,14, Ke 11,93%, Kd después de impuestos 5,11% (cupón real 3,6% + spread) y DFN/EBITDA de 2,36x a 3,5x en 2031. g terminal 3,0% nominal (0% real). Margen EBITDA 79,7% en 2026E; impuesto en caja de 16,8% que converge a 27% en 2030; capex de mantención + TI 5,5% de los ingresos; capital de trabajo 15,6% de los ingresos. Pipeline con fecha de 170.200 m² (USD 613 MM) y expansión continua de 27.075 m² al año desde 2029, con rampa de ingresos de 35%, 90% y 100%.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
      "h1": "CATALIZADORES Y RIESGOS"
     },
     {
      "p": [
       [
-       "Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nuestro valor y la normalización del impuesto en caja de 16,8% a 27%. Riesgos para la tesis: una nueva compresión de las tasas largas; una prima estructural por los activos Tier A; la rebaja del impuesto corporativo a 23% (+5,2% al precio objetivo, aún no incluida); y el gobierno corporativo (Falabella controla 53,1% y solo 1 de 9 directores es independiente; la expansión rinde menos que su costo de capital, con incentivos por verificar). Los ahorros operativos de la gestión ESG suman ~CLP 2 por acción: no cambian la conclusión.",
+       "Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nuestro valor y la normalización del impuesto en caja de 16,8% a 27%. Riesgos para la tesis: una nueva compresión de las tasas largas; una prima estructural por los activos Tier A; la rebaja del impuesto corporativo a 23% (+5,2% al precio objetivo, aún no incluida); y el gobierno corporativo (Falabella controla 53,1% y solo 1 de 9 directores es independiente; la expansión rinde menos que su costo de capital, con incentivos por verificar). Los ahorros ESG (~CLP 2 por acción) no cambian la conclusión.",
        false,
        false
       ]

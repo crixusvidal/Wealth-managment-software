@@ -440,246 +440,282 @@
   },
   {
    "i": 73,
-   "tipo": "texto",
+   "tipo": "ancho",
    "barrera": false,
-   "inicio": "CRECER NO RESCATA EL PRECIO"
+   "inicio": "TIR del activo (firma) y del proyecto nuevo frente a la WACC: nominal CLP y real (UF)"
   },
   {
    "i": 74,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "No es que seamos pesimistas con la operación. Proyectamos un margen EBITDA de 79,7% en 2026E (sin revalorizaciones, bajo"
+   "inicio": "CRECER NO RESCATA EL PRECIO"
   },
   {
    "i": 75,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El capex sigue el plan de la compañía y se separa en mantención y TI (5,5% de los ingresos, CLP 42–53 mil MM al año) y c"
+   "inicio": "No es que seamos pesimistas con la operación. Proyectamos un margen EBITDA de 79,7% en 2026E (sin revalorizaciones, bajo"
   },
   {
    "i": 76,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Dos supuestos merecen una explicación. La tasa de impuesto en caja parte en 16,8% porque hoy la compañía usa goodwill tr"
+   "inicio": "El capex sigue el plan de la compañía y se separa en mantención y TI (5,5% de los ingresos, CLP 42–53 mil MM al año) y c"
   },
   {
    "i": 77,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Precio y ventas. En un operador de arriendos el precio es el arriendo por m², y las ventas de los locatarios llegan al i"
+   "inicio": "Dos supuestos merecen una explicación. La tasa de impuesto en caja parte en 16,8% porque hoy la compañía usa goodwill tr"
   },
   {
    "i": 78,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 7,3% real antes de impuestos sobre su costo (mix de la expansió"
+   "inicio": "Precio y ventas. En un operador de arriendos el precio es el arriendo por m², y las ventas de los locatarios llegan al i"
   },
   {
    "i": 79,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "¿POR QUÉ EXPANDIRSE SI NO CREA VALOR?"
+   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 7,3% real antes de impuestos sobre su costo (mix de la expansió"
   },
   {
    "i": 80,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Si crecer rinde menos que el costo de capital, ¿qué empuja a la administración a seguir? Planteamos cuatro hipótesis, po"
+   "inicio": "¿POR QUÉ EXPANDIRSE SI NO CREA VALOR?"
   },
   {
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "LOS PARES CONFIRMAN LA DIRECCIÓN, NO LA MAGNITUD"
+   "inicio": "Si crecer rinde menos que el costo de capital, ¿qué empuja a la administración a seguir? Planteamos cuatro hipótesis, po"
   },
   {
    "i": 82,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La"
+   "inicio": "LOS PARES CONFIRMAN LA DIRECCIÓN, NO LA MAGNITUD"
   },
   {
    "i": 83,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Elegimos el set con el criterio de la beta: IRSA con cautela (reporta bajo NIC 29; un solo analista en el NTM) y sin Fib"
+   "inicio": "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La"
   },
   {
    "i": 84,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cencosud Shopping, pero su EBITDA por m² es solo 1,9% "
+   "inicio": "Elegimos el set con el criterio de la beta: IRSA con cautela (reporta bajo NIC 29; un solo analista en el NTM) y sin Fib"
   },
   {
    "i": 85,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "LO QUE EL MERCADO TENDRÍA QUE CREER"
+   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cencosud Shopping, pero su EBITDA por m² es solo 1,9% "
   },
   {
    "i": 86,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0% (EBITDA UDM / EV, compara"
+   "inicio": "LO QUE EL MERCADO TENDRÍA QUE CREER"
   },
   {
    "i": 87,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "POR QUÉ EL MERCADO PAGA CLP 3.555"
+   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0% (EBITDA UDM / EV, compara"
   },
   {
    "i": 88,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "En doce meses la acción pasó de un mínimo de CLP 2.470 (10-oct-25) a un máximo de CLP 4.700 (27-abr-26), un alza de ~90%"
+   "inicio": "POR QUÉ EL MERCADO PAGA CLP 3.555"
   },
   {
    "i": 89,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "NUESTRO VALOR FRENTE AL CONSENSO"
+   "inicio": "En doce meses la acción pasó de un mínimo de CLP 2.470 (10-oct-25) a un máximo de CLP 4.700 (27-abr-26), un alza de ~90%"
   },
   {
    "i": 90,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (1 comprar, 10 mantener, 2 vender) y un precio objet"
+   "inicio": "NUESTRO VALOR FRENTE AL CONSENSO"
   },
   {
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "ESCENARIOS: LO QUE TENDRÍA QUE PASAR"
+   "inicio": "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (1 comprar, 10 mantener, 2 vender) y un precio objet"
   },
   {
    "i": 92,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura T)"
+   "inicio": "ESCENARIOS: LO QUE TENDRÍA QUE PASAR"
   },
   {
    "i": 93,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al"
+   "inicio": "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura T)"
   },
   {
    "i": 94,
-   "tipo": "texto",
+   "tipo": "ancho",
    "barrera": false,
-   "inicio": "El APV también dice cuánto vale de verdad la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin"
+   "inicio": "Escenarios: bear (todo sale mal), base (central) y bull (todo sale bien)"
   },
   {
    "i": 95,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Así llegamos a CLP 2.077 (80% × 1.859 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 6,1% y 0,94x el valor libro. Lle"
+   "inicio": "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al"
   },
   {
    "i": 96,
-   "tipo": "ancho",
-   "barrera": true,
-   "inicio": "RIESGOS DE INVERSIÓN"
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El APV también dice cuánto vale de verdad la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin"
   },
   {
    "i": 97,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "RESUMEN DE INVERSIÓN"
+   "inicio": "Así llegamos a CLP 2.077 (80% × 1.859 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 6,1% y 0,94x el valor libro. Lle"
   },
   {
    "i": 98,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "VENDER · precio objetivo CLP 2.077 por acción, 41,6% bajo el cierre de CLP 3.555 (30-sep-26): un excelente negocio de ar"
+   "tipo": "ancho",
+   "barrera": true,
+   "inicio": "RIESGOS DE INVERSIÓN"
   },
   {
    "i": 99,
-   "tipo": "ancho",
+   "tipo": "texto",
    "barrera": false,
-   "inicio": "DATOS CLAVE"
+   "inicio": "RESUMEN DE INVERSIÓN"
   },
   {
    "i": 100,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "RECOMENDACIÓN Y PRECIO OBJETIVO"
+   "inicio": "VENDER · precio objetivo CLP 2.077 por acción, 41,6% bajo el cierre de CLP 3.555 (30-sep-26): un excelente negocio de ar"
   },
   {
    "i": 101,
-   "tipo": "texto",
+   "tipo": "ancho",
    "barrera": false,
-   "inicio": "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-"
+   "inicio": "DATOS CLAVE"
   },
   {
    "i": 102,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "TESIS DE INVERSIÓN"
+   "inicio": "RECOMENDACIÓN Y PRECIO OBJETIVO"
   },
   {
    "i": 103,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Mallplaza es un negocio excelente: arriendos casi tan estables como un bono (81,4% de los ingresos; 93% fijo), margen EB"
+   "inicio": "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-"
   },
   {
    "i": 104,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "POR QUÉ ESTÁ CARA"
+   "inicio": "TESIS DE INVERSIÓN"
   },
   {
    "i": 105,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La acción subió ~90% entre el mínimo de CLP 2.470 (10-oct-25) y el máximo de CLP 4.700 (27-abr-26) sin que el negocio ca"
+   "inicio": "Mallplaza es un negocio excelente: arriendos casi tan estables como un bono (81,4% de los ingresos; 93% fijo), margen EB"
   },
   {
    "i": 106,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "ESCENARIOS"
+   "inicio": "POR QUÉ ESTÁ CARA"
   },
   {
    "i": 107,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Definimos tres escenarios con las mismas palancas del tornado de Riesgos. Bear es todo lo que sale mal a la vez (WACC no"
+   "inicio": "La acción subió ~90% entre el mínimo de CLP 2.470 (10-oct-25) y el máximo de CLP 4.700 (27-abr-26) sin que el negocio ca"
   },
   {
    "i": 108,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "SENSIBILIDADES"
+   "inicio": "ESCENARIOS"
   },
   {
    "i": 109,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Ninguna palanca por sí sola explica el precio: la mayor, bajar la WACC nominal 100 pb, agrega CLP 430 (23%) y la brecha "
+   "inicio": "Definimos tres escenarios con las mismas palancas del tornado de Riesgos. Bear es todo lo que sale mal a la vez (WACC no"
   },
   {
    "i": 110,
-   "tipo": "texto",
+   "tipo": "ancho",
    "barrera": false,
-   "inicio": "FRENTE AL CONSENSO"
+   "inicio": "Escenarios: bear (todo sale mal), base (central) y bull (todo sale bien)"
   },
   {
    "i": 111,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El consenso de Bloomberg (14 fuentes; 1 comprar, 10 mantener, 2 vender) fija un objetivo a 12 meses de CLP 4.111, 49,5% "
+   "inicio": "SENSIBILIDADES"
   },
   {
    "i": 112,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "CATALIZADORES Y RIESGOS"
+   "inicio": "Ninguna palanca por sí sola explica el precio: la mayor, bajar la WACC nominal 100 pb, agrega CLP 430 (23%) y la brecha "
   },
   {
    "i": 113,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "Sensibilidad del valor DCF por acción (base CLP 1.859)"
+  },
+  {
+   "i": 114,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "FRENTE AL CONSENSO"
+  },
+  {
+   "i": 115,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El consenso de Bloomberg (14 fuentes; 1 comprar, 10 mantener, 2 vender) fija un objetivo a 12 meses de CLP 4.111, 49,5% "
+  },
+  {
+   "i": 116,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SUPUESTOS DEL CASO BASE"
+  },
+  {
+   "i": 117,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Valoración al 30-jun-26 y precio al 30-sep-26. FCFF en CLP nominales, convención de mitad de período; inflación 3,0% (UF"
+  },
+  {
+   "i": 118,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "CATALIZADORES Y RIESGOS"
+  },
+  {
+   "i": 119,
    "tipo": "texto",
    "barrera": false,
    "inicio": "Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nu"
@@ -829,63 +865,63 @@
   {
    "id": 20,
    "n": "Figura 29:",
-   "cita": 75,
+   "cita": 76,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
    "id": 21,
    "n": "Figura 30:",
-   "cita": 78,
+   "cita": 79,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 22,
    "n": "Figura 31:",
-   "cita": 82,
+   "cita": 83,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
    "id": 23,
    "n": "Figura 32:",
-   "cita": 84,
+   "cita": 85,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 24,
    "n": "Figura 33:",
-   "cita": 86,
+   "cita": 87,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
    "id": 25,
    "n": "Figura 34:",
-   "cita": 86,
+   "cita": 87,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 26,
    "n": "Figura R1:",
-   "cita": 105,
+   "cita": 107,
    "clave": "resumen",
    "alto": 2.0900000000000003
   },
   {
    "id": 27,
    "n": "Figura R2:",
-   "cita": 107,
+   "cita": 109,
    "clave": "resumen",
    "alto": 1.9800000000000004
   },
   {
    "id": 28,
    "n": "Figura R3:",
-   "cita": 111,
+   "cita": 115,
    "clave": "resumen",
    "alto": 1.87
   }

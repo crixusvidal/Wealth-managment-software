@@ -1294,7 +1294,7 @@
     {
      "p": [
       [
-       "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure 29), instead of moving only the discount rate. Bear is everything going wrong at once: nominal WACC +100 bp and every operating lever at its historical minimum. Bull is everything going right: nominal WACC −100 bp, every lever at its historical maximum and a 23% tax rate (Reconstruction Law). Base is the model's central estimate. Same-store rent (price) and tenants' sales move together; nominal g stays at 3.0% in all three. Weighted 25/50/25% (team assumption, to be validated), the target price would be CLP 2,153.",
+       "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure 29), instead of moving only the discount rate. Bear is everything going wrong at once: nominal WACC +100 bp and every operating lever at its historical minimum. Bull is everything going right: nominal WACC −100 bp, every lever at its historical maximum and a 23% tax rate (Reconstruction Law). Base is the model's central estimate. Same-store rent (price) and tenants' sales move together; nominal g stays at 3.0% in all three. The weights come from the risk matrix on the Risks page: the bear combines FR1 (rates, high likelihood) and OR1 (operating deterioration, medium) and, because they happen together, carries the weight of the less likely one (medium, 30%); the bull combines their opposites (low and medium) and carries 10%; the base is the remainder, 60%. With low = 10%, medium = 30% and high = 50% over 12 months (team assumption), the weighted target price is CLP 2,001 (−43.7%).",
        false,
        false
       ]
@@ -1377,10 +1377,10 @@
         "8.51% / −90 bp"
        ],
        [
-        "Probability (team assumption)",
-        "25%",
-        "50%",
-        "25%"
+        "Probability (from the risk matrix)",
+        "30%",
+        "60%",
+        "10%"
        ]
       ],
       "anchos": [
@@ -1398,7 +1398,7 @@
        8,
        9
       ],
-      "nota": "Operating levers are the historical extremes of the Risks tornado; nominal WACC and g; rent (price) and sales move together. Terminal nominal g 3.0% in all three. Weighted 25/50/25%: DCF CLP 1,953, target price CLP 2,153 (−39.4%). Source: DCF v4 replica (Appendix 18); Team analysis."
+      "nota": "Operating levers are the historical extremes of the Risks tornado; nominal WACC and g; rent (price) and sales move together. Terminal nominal g 3.0% in all three. Weighted 30/60/10%: DCF CLP 1,763, target price CLP 2,001 (−43.7%). Source: DCF v4 replica (Appendix 18); Team analysis."
      }
     },
     {
@@ -1555,7 +1555,7 @@
     {
      "p": [
       [
-       "Figure 28 classifies each risk by likelihood and by its impact on value per share (Figures 29 to 26). Risks that could not be quantified are classified according to the team's qualitative analysis of the company.",
+       "Figure 28 classifies each risk by likelihood and by its impact on value per share (Figures 29 to 26). Risks that could not be quantified are classified according to the team's qualitative analysis of the company. This matrix sets the scenario weights in Valuation: the bear combines FR1 (high likelihood) and OR1 (medium), and the bull their opposites.",
        false,
        false
       ]
@@ -2012,7 +2012,7 @@
     {
      "p": [
       [
-       "We define three scenarios with the same levers as the Risks tornado. Bear is everything going wrong at once (nominal WACC +100 bp and every operating lever at its historical minimum): CLP 1,542 (−56.6%). Base is the model's central estimate: CLP 2,077 (−41.6%). Bull is everything going right (nominal WACC −100 bp, every lever at its historical maximum, 23% tax): CLP 2,915 (−18.0%). Weighted 25/50/25% (assumption to be validated), CLP 2,153. No scenario reaches the price (Figure 33; Appendix 18).",
+       "We define three scenarios with the same levers as the Risks tornado. Bear is everything going wrong at once (nominal WACC +100 bp and every operating lever at its historical minimum): CLP 1,542 (−56.6%). Base is the model's central estimate: CLP 2,077 (−41.6%). Bull is everything going right (nominal WACC −100 bp, every lever at its historical maximum, 23% tax): CLP 2,915 (−18.0%). Weights from the risk matrix (bear 30%: FR1 high and OR1 medium, together; bull 10%: their opposites; base 60%; low 10%, medium 30%, high 50%, team assumptions): CLP 2,001. No scenario reaches the price (Figure 33; Appendix 18).",
        false,
        false
       ]
@@ -2059,10 +2059,10 @@
         "−18.0%"
        ],
        [
-        "Probability (team assumption)",
-        "25%",
-        "50%",
-        "25%"
+        "Probability (from the risk matrix)",
+        "30%",
+        "60%",
+        "10%"
        ]
       ],
       "anchos": [
@@ -2089,7 +2089,7 @@
     {
      "p": [
       [
-       "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the price is CLP 1,696. Price (rent) weighs 18 times more than tenant sales, which reach revenue only through variable rent (5.7%).",
+       "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the price is CLP 1,696.",
        false,
        false
       ]
@@ -2163,12 +2163,24 @@
      ]
     },
     {
+     "h1": "BASE-CASE ASSUMPTIONS"
+    },
+    {
+     "p": [
+      [
+       "Valuation at 30-Jun-26 and price at 30-Sep-26. FCFF in nominal CLP, mid-period convention; inflation 3.0% (UF). Nominal WACC 10.54% in 2H26E and 10.41% terminal (7.20% real): Rf 4.98% (10Y UST), market risk premium 4.14%, weighted country risk 1.41%, re-levered beta 1.14, Ke 11.93%, after-tax Kd 5.11% (real coupon 3.6% + spread) and net debt/EBITDA from 2.36x to 3.5x in 2031. Terminal g 3.0% nominal (0% real). EBITDA margin 79.7% in 2026E; cash tax rate of 16.8% converging to 27% by 2030; maintenance + IT capex 5.5% of revenue; working capital 15.6% of revenue. Dated pipeline of 170,200 m² (USD 613 MM) and continuous expansion of 27,075 m² a year from 2029, with a revenue ramp of 35%, 90% and 100%.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
      "h1": "CATALYSTS AND RISKS"
     },
     {
      "p": [
       [
-       "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward our value, and the normalization of cash tax from 16.8% to 27%. Risks to the thesis: a further compression of long-term rates; a structural premium for Tier A assets; the cut in corporate tax to 23% (+5.2% to the target price, not yet included); and corporate governance (Falabella controls 53.1% and only 1 of 9 directors is independent; expansion earns less than its cost of capital, with incentives still to be verified). Operating savings from ESG management add ~CLP 2 per share: they do not change the conclusion.",
+       "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward our value, and the normalization of cash tax from 16.8% to 27%. Risks to the thesis: a further compression of long-term rates; a structural premium for Tier A assets; the cut in corporate tax to 23% (+5.2% to the target price, not yet included); and corporate governance (Falabella controls 53.1% and only 1 of 9 directors is independent; expansion earns less than its cost of capital, with incentives still to be verified). ESG savings (~CLP 2 per share) do not change the conclusion.",
        false,
        false
       ]

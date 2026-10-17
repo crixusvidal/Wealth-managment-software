@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-17 23:02",
+ "generado": "2026-10-17 23:19",
  "modelos": {
   "valoracion": {
    "archivo": "Mallplaza_Valoracion_Consolidada_v4.xlsx",
@@ -379,7 +379,7 @@
    "grupo": "Escenarios",
    "clave": "esc_ponderado_po",
    "etiqueta": "Precio objetivo ponderado 25/50/25, CLP",
-   "valor": 2152.971297533278,
+   "valor": 2000.5165560316636,
    "formato": "clp",
    "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
   },

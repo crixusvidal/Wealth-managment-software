@@ -107,6 +107,12 @@ function seccionModulo(plan, X, carpeta, lang, clave, extra = {}) {
   for (const p of X.paginas) {
     for (const b of p.texto) {
       if (b.h1) texto(plan, h1Col(b.h1), b.h1);
+      else if (b.t && typeof b.t === "object") {          // tabla a ancho completo (escenarios, TIR, sensibilidades)
+        const t = b.t, k = F.ANCHO / t.anchos.reduce((x, y) => x + y, 0);
+        ancho(plan, [new Paragraph({ keepNext: true, spacing: { before: 60, after: 30 }, children: [F.run(t.titulo, { bold: true, color: F.AZUL, size: 15 })] }),
+          F.tabla(t.cols, t.anchos.map((x) => Math.floor(x * k)), t.filas, { derecha: t.derecha || [], destacar: t.destacar || [] }),
+          new Paragraph({ spacing: { before: 20, after: 60 }, children: [F.run(t.nota || "", { size: 12, color: F.GRIS })] })], t.titulo);
+      }
       else if (b.p) {
         const runs = Array.isArray(b.p) ? [[b.p[0], true, false], [b.p[1], false, false]] : [[b.p, false, false]];
         const i = texto(plan, pCol(runs), textoRuns(runs)); plan.elementos[i].inicioCompleto = textoRuns(runs);
