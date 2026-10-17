@@ -121,6 +121,7 @@ def nuevo(c):
 
 
 def excel(I, esc, sem, salida):
+    bcu10 = sem[-1][3]
     wb = openpyxl.Workbook()
     S = wb.active
     S.title = "Supuestos"
@@ -225,6 +226,15 @@ def excel(I, esc, sem, salida):
         R.cell(r0 + q, 1, f"Δi = {di:+d} pb, θ = {th}")
         for j, m in enumerate(MIX):
             R.cell(r0 + q, 2 + j, f"=Calculo!{L(cD)}{fila_de[(round((1 - m) * di, 6), round(m * di, 6), th)]}")
+    R["A40"] = "E. Precio objetivo (80% DCF + 20% múltiplos, múltiplos fijos): filas = inflación esperada, columnas = tasa real a 10 años (BCU10, base 30-09-26)"
+    R["A41"] = "Tasa real / inflación"
+    for j, dr in enumerate((-100, -50, 0, 50, 100)):
+        R.cell(41, 2 + j, f"={bcu10}/100+{dr}/10000")
+    for i, dp in enumerate((100, 50, 0, -50, -100)):
+        R.cell(42 + i, 1, f"=Supuestos!$B$4+{dp}/10000")
+        for j, dr in enumerate((-100, -50, 0, 50, 100)):
+            R.cell(42 + i, 2 + j, f"=Supuestos!$B$12*Calculo!{L(cV)}{fila_de[(float(dr), float(dp), None)]}+(1-Supuestos!$B$12)*Supuestos!$B$11")
+    nuevo(R["A40"]), nuevo(R["D44"])
     R["A29"] = "D. Control empírico (regresión semanal; ver hoja Empirico)"
     R["A30"], R["B30"], R["C30"] = "Variable", "Coef. por +1 pp", "Estadístico t"
     R["A31"], R["A32"], R["A33"], R["A34"], R["A35"] = "Δ tasa real 10 años (BCU10)", "Δ inflación implícita (BCP10 − BCU10)", "Δ ln IPSA (control)", "R²", "N.º de semanas"
@@ -264,10 +274,10 @@ def leer_excel(ruta, fila_de, esc):
 
 # --- Figuras -----------------------------------------------------------------------------------------------
 T = {
-    "es": {"x": "Δ tasa real a 10 años (pb)", "y": "Δ inflación (pb)", "base": "Base: CLP {v}",
+    "es": {"x": "Tasa real a 10 años (BCU)", "y": "Inflación esperada", "base": "Base: CLP {v}",
            "mx": "% de la alza de la tasa larga que viene de inflación", "my": "Δ valor DCF",
            "real": "Todo tasa real", "inf": "Todo inflación", "th": "θ = {t}", "sube": "Tasa larga +100 pb", "baja": "Tasa larga −100 pb"},
-    "en": {"x": "Δ 10-year real rate (bp)", "y": "Δ inflation (bp)", "base": "Base: CLP {v}",
+    "en": {"x": "10-year real rate (BCU)", "y": "Expected inflation", "base": "Base: CLP {v}",
            "mx": "% of the long-rate rise that comes from inflation", "my": "Δ DCF value",
            "real": "All real rate", "inf": "All inflation", "th": "θ = {t}", "sube": "Long rate +100 bp", "baja": "Long rate −100 bp"},
 }
@@ -279,28 +289,39 @@ def pc(x, lang, d=1):
     return num(x * 100, lang, d).replace("-", "−") + "%"
 
 
-def fig_grilla(I, lang, salida):
+def fig_grilla(I, lang, salida, bcu10):
+    """Mismo estilo que la Figura 25 de Riesgos (WACC vs g): precio objetivo 80/20 por celda, centro = caso base."""
+    from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
     t = T[lang]
-    base = valor(I)
-    fig, ax = plt.subplots(figsize=(3550 / 1440, 2.2), dpi=400)
-    ax.set_xlim(0, len(DR)), ax.set_ylim(0, len(DPI))
-    for i, dp in enumerate(DPI):
-        for j, dr in enumerate(DR):
-            v = valor(I, dr / 1e4, dp / 1e4) / base - 1
-            col = ROJO if v <= -0.10 else AMARILLO if v < -0.03 else CELESTE if v <= 0.03 else AZUL
-            ax.add_patch(Rectangle((j, len(DPI) - 1 - i), 1, 1, facecolor=col, edgecolor="white", linewidth=1.2))
-            ax.text(j + 0.5, len(DPI) - 1 - i + 0.5, pc(v, lang, 0), ha="center", va="center", fontsize=5.8, fontweight="bold",
-                    color="white" if col in (ROJO, AZUL) else NEGRO)
-    ax.set_xticks([j + 0.5 for j in range(len(DR))], [f"{d:+d}" if d else "0" for d in DR], fontsize=5.6)
-    ax.set_yticks([len(DPI) - 1 - i + 0.5 for i in range(len(DPI))], [f"{d:+d}" if d else "0" for d in DPI], fontsize=5.6)
-    ax.set_xlabel(t["x"], fontsize=5.8, color=TINTA_SECUNDARIA), ax.set_ylabel(t["y"], fontsize=5.8, color=TINTA_SECUNDARIA)
-    ax.tick_params(length=0)
-    for s in ax.spines.values():
-        s.set_visible(False)
-    ax.text(len(DR), len(DPI) + 0.08, t["base"].format(v=num(base, lang)), ha="right", va="bottom", fontsize=5.2, color=TINTA_SECUNDARIA)
-    fig.subplots_adjust(left=0.15, right=0.99, top=0.93, bottom=0.17)
+    drs, dps = (-100, -50, 0, 50, 100), (100, 50, 0, -50, -100)           # inflación mayor arriba
+    z = np.array([[I["peso"] * valor(I, dr / 1e4, dp / 1e4) + (1 - I["peso"]) * I["mult"] for dr in drs] for dp in dps])
+    ib, jb = dps.index(0), drs.index(0)
+    cmap = LinearSegmentedColormap.from_list("mallplaza", [ROJO, "#f2f2f2", CELESTE])
+    norm = TwoSlopeNorm(vmin=z.min(), vcenter=z[ib, jb], vmax=z.max())
+    fig = plt.figure(figsize=(3550 / 1440, 1.7), dpi=400)
+    fig.patch.set_facecolor("white")
+    ax = fig.add_axes([0.2, 0.2, 0.78, 0.78])
+    ax.imshow(z, cmap=cmap, norm=norm, aspect="auto")
+    for i in range(z.shape[0]):
+        for j in range(z.shape[1]):
+            r, g, b = cmap(norm(z[i, j]))[:3]
+            ax.text(j, i, num(z[i, j], lang), ha="center", va="center", fontsize=5.2, fontweight="bold" if (i, j) == (ib, jb) else "normal",
+                    color="white" if 0.299 * r + 0.587 * g + 0.114 * b < 0.55 else NEGRO)
+    for k in range(z.shape[0] + 1):
+        ax.axhline(k - 0.5, color="white", linewidth=1.1)
+    for k in range(z.shape[1] + 1):
+        ax.axvline(k - 0.5, color="white", linewidth=1.1)
+    ax.add_patch(Rectangle((jb - 0.45, ib - 0.41), 0.9, 0.82, fill=False, edgecolor=AMARILLO, linewidth=1.1, zorder=3))
+    ax.set_xticks(range(len(drs)), [num(bcu10 + d / 100, lang, 2) + "%" for d in drs])
+    ax.set_yticks(range(len(dps)), [num((I["pi"] + d / 1e4) * 100, lang, 1) + "%" for d in dps])
+    ax.tick_params(length=0, colors=NEGRO, labelsize=4.8, pad=2)
+    ax.set_xlabel(t["x"], fontsize=5, color=TINTA_SECUNDARIA, labelpad=2)
+    ax.set_ylabel(t["y"], fontsize=5, color=TINTA_SECUNDARIA, labelpad=2)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
     fig.savefig(salida, facecolor="white")
     plt.close(fig)
+    return z
 
 
 def fig_mix(I, lang, salida):
@@ -349,6 +370,6 @@ if __name__ == "__main__":
                "precio_objetivo_real_100": I["peso"] * valor(I, 0.01) + (1 - I["peso"]) * I["mult"]}
     (figs / "datos_sens_tasas.json").write_text(json.dumps(resumen, indent=1, ensure_ascii=False))
     for lang in ("es", "en"):
-        fig_grilla(I, lang, figs / f"{lang}_V11_sens_tasas_inflacion.png")
+        fig_grilla(I, lang, figs / f"{lang}_V11_sens_tasas_inflacion.png", sem[-1][3])
         fig_mix(I, lang, figs / f"{lang}_V12_mix_tasas_inflacion.png")
     print(json.dumps({k: v for k, v in resumen.items() if k != "empirico"}, indent=1), emp)
