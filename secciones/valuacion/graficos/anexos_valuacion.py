@@ -2,11 +2,11 @@
 
 Vuelca figuras/datos_anexos.json para documento/valuacion.js. Todas las cifras salen de los modelos
 (openpyxl, data_only=True); los escenarios bear/bull/tasadores, que no están en el modelo, se calculan
-con la réplica del DCF v2 de riesgos/graficos/tornado_operacional.py (reproduce CLP 1.856,8 exacto).
+con la réplica del DCF (escenarios_dcf.py, sobre riesgos/graficos/tornado_operacional.py; reproduce el valor del modelo exacto).
 
 Uso:
-    python graficos/anexos_valuacion.py <Valoracion_Consolidada_v2.xlsx> <Figuras_Valuacion_recalc.xlsx>
-                                        <FA_Exhibits_v6.xlsx> <Tornado_Sensibilidad_Operacional.xlsx>
+    python graficos/anexos_valuacion.py <Valoracion_Consolidada_v4.xlsx> <Figuras_Valuacion_recalc.xlsx>
+                                        <FA_Exhibits_v7.xlsx> <Tornado_Sensibilidad_Operacional.xlsx>
 """
 import copy
 import json
@@ -17,10 +17,10 @@ import numpy as np
 import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "riesgos" / "graficos"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tornado_operacional import leer_modelo, leer_rangos, proyectar  # noqa: E402
 
 COLS = "CDEFGHI"           # 2S26E … 2031E, terminal (hojas DCF, Forecast_Base, Expansion)
-IMPUESTO_BULL = 0.23       # Ley de Reconstrucción (9-oct-26): 27% → 23%; no está en el modelo v2
 
 
 def fila(ws, r, cols=COLS):
@@ -87,45 +87,29 @@ def anexo_e(wb, wf):
             "peso_cl": s["B93"].value, "peso_dcf": s["B92"].value}
 
 
-def anexo_f(wb, wf, ruta_fa, ruta_v2, ruta_tor):
-    m, control = leer_modelo(ruta_fa, ruta_v2)
-    base = proyectar(m)[2]
-    assert abs(base - control["valor"]) < 1e-6, "la réplica no reproduce el DCF v2"
-    po = wb["Precio_Objetivo"]
-    mult, peso, precio = po["B13"].value, po["B14"].value, po["B16"].value
-    objetivo = lambda x: peso * x + (1 - peso) * mult
-    fb = wb["Forecast_Base"]
-    margen26 = fb["C7"].value / fb["C5"].value          # margen EBITDA 2026E (año calendario) del forecast
-    _, lo, hi = leer_rangos(ruta_tor)["Margen EBITDA"]  # mínimo y máximo histórico (Riesgos)
-    s = wb["Sensibilidad"]
-    dw_bear, dw_bull, g_bull = s["A10"].value, s["A6"].value, s["B5"].value
-    bull = copy.deepcopy(m)
-    bull["tax"] = np.minimum(m["tax"], IMPUESTO_BULL)
-    bull["tax_lp"] = IMPUESTO_BULL
-    wacc_tas = wf["V2_WACC_Tasas"]["B12"].value          # (1 + 5,55% real)(1 + 3,0%) − 1
-    esc = {
-        "bear": proyectar(m, d_wacc=dw_bear, d_margen=lo - margen26)[2],
-        "base": base,
-        "bull": proyectar(bull, d_wacc=dw_bull, g=g_bull, d_margen=hi - margen26)[2],
-        "tas": proyectar(m, d_wacc=wacc_tas - m["wacc_t"])[2],
-    }
+def anexo_f(wb, wf, ruta_fa, ruta_modelo, ruta_tor):
+    import escenarios_dcf
+    r = escenarios_dcf.calcular(ruta_fa, ruta_modelo, ruta_tor)
+    p = r["param"]
     a, w = wb["APV"], wf["WACC_Construccion"]
     t2 = wb["Sensibilidad"]
     return {
-        "esc": {k: {"dcf": x, "po": objetivo(x), "vs": objetivo(x) / precio - 1} for k, x in esc.items()},
-        "param": {"dw_bear": dw_bear, "dw_bull": dw_bull, "g_bull": g_bull, "m_lo": lo, "m_hi": hi,
-                  "margen26": margen26, "tax_bull": IMPUESTO_BULL, "wacc_tas": wacc_tas,
-                  "wacc_tas_real": wb["WACC"]["C47"].value, "wacc_t": m["wacc_t"]},
+        "esc": r["esc"], "ponderado": r["ponderado"], "prob": r["prob"], "efectos": r["efectos"],
+        "param": {"dw_bear": p["dw"], "dw_bull": -p["dw"], "g_bull": p["g"], "m_lo": p["m_lo"], "m_hi": p["m_hi"],
+                  "margen26": p["margen26"], "tax_bull": p["tax_bull"], "wacc_tas": p["wacc_tas"],
+                  "wacc_tas_real": p["wacc_tas_real"], "wacc_t": p["wacc_t"], "g": p["g"], "share_var": p["share_var"],
+                  "rangos": p["rangos"], "bajo": p["bajo"], "alto": p["alto"]},
         "apv": {"ku": a["C5"].value, "sin_deuda": a["C22"].value, "escudos": a["C23"].value, "valor": a["C21"].value,
                 "dif": wb["DCF"]["C64"].value},
         "rf": {"bono": w["B74"].value, "dcf": w["B77"].value, "po": w["B78"].value, "efecto": w["B76"].value},
         "deuda": {"spread": [t2[f"{c}15"].value for c in "BCD"],   # fila 16 = estructura actual (Supuestos B41)
-                  "filas": [[wb["Supuestos"]["B41"].value if r == 16 else
-                             float(t2[f"A{r}"].value.rstrip("x").replace(",", "."))]
-                            + [t2[f"{c}{r}"].value for c in "BCD"] for r in range(16, 20)]},
+                  "filas": [[wb["Supuestos"]["B41"].value if r_ == 16 else
+                             float(t2[f"A{r_}"].value.rstrip("x").replace(",", "."))]
+                            + [t2[f"{c}{r_}"].value for c in "BCD"] for r_ in range(16, 20)]},
         "vf": {"dcf": wb["DCF"]["C61"].value, "wacc": wb["Supuestos"]["B109"].value},
-        "implicita": {"wacc": wf["V6_DCFInverso"]["B17"].value, "brecha": wf["V6_DCFInverso"]["B18"].value},
-        "precio": precio, "mult": mult, "peso": peso,
+        "implicita": {"wacc": wf["V6_DCFInverso"]["B17"].value, "brecha": wf["V6_DCFInverso"]["B18"].value,
+                      "wacc_po": wf["V6_DCFInverso"]["B19"].value},
+        "precio": r["precio"], "mult": r["mult"], "peso": r["peso"],
     }
 
 

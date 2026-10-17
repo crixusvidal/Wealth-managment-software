@@ -33,7 +33,8 @@ def leer_modelo(ruta_fa, ruta_vf):
     """Motor operativo (Forecast de Exhibits v6) + DCF del modelo consolidado."""
     wb = openpyxl.load_workbook(ruta_fa, data_only=True)
     f, i = wb["Forecast"], wb["Inputs"]
-    assert f["D84"].value == 0 and f["D43"].value == 0, "escenarios fuera del caso base"
+    assert f["D84"].value == 0, "Gran Plaza activada: fuera del caso base"
+    # D43 = 1 desde Exhibits v7: el caso base incluye los «Otros proyectos Chile» (pipeline completo, 170.200 m²)
     m = {"ipc": {"cl": fila(f, 6), "pe": fila(f, 7), "co": fila(f, 8)},
          "fx": {"cl": np.ones(5), "pe": fila(f, 15), "co": fila(f, 16)},
          "fx_pe26": f["D15"].value, "parking_real": fila(f, 53), "paises": {}}

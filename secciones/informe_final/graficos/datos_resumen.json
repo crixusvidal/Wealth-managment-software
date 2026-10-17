@@ -1,9 +1,9 @@
 {
- "precio_objetivo": 2075.726691910319,
+ "precio_objetivo": 2077.19981194966,
  "precio": 3555,
- "potencial": -0.4161106351869708,
- "dcf": 1856.8119971801468,
- "multiplos": 2951.385470831009,
+ "potencial": -0.41569625542907,
+ "dcf": 1858.65339722932,
+ "multiplos": 2951.38547083101,
  "peso_dcf": 0.8,
  "acciones_mm": 2190,
  "capitalizacion_mm": 7785450,
@@ -11,8 +11,8 @@
   2470,
   4700
  ],
- "dividendo": 69.4134824442579,
- "dividend_yield": 0.0195255928113243,
+ "dividendo": 69.413482444258,
+ "dividend_yield": 0.019525592811324332,
  "dfn_mm": 1285740,
  "ebitda_udm_mm": 544935,
  "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx (Supuestos B8–B13, Precio_Objetivo B12–B17, Deuda D16); Mallplaza_Figuras_Valuacion_recalc.xlsx (V1_Football, rango 52 semanas)"

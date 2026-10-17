@@ -1,8 +1,8 @@
-"""Escenarios bear / base / bull del precio objetivo, con un oso amarillo y un toro negro atacando (íconos vectoriales).
+"""Escenarios bear / base / bull del precio objetivo, con el oso amarillo y el toro negro (ilustraciones del equipo en iconos/oso.png y toro.png; sin ellas, íconos vectoriales).
 
 Eje horizontal = precio objetivo por acción (CLP). El oso embiste desde el caso bear, el toro desde el bull; ambos
 van hacia el precio de cierre (línea roja), que ninguno de los dos alcanza. Cifras de datos_anexos.json (réplica del
-DCF v2, Anexo 18), que genera valuacion/graficos/anexos_valuacion.py.
+DCF v4, Anexo 18), que genera valuacion/graficos/anexos_valuacion.py.
 
 Uso (desde secciones/):
     python valuacion/graficos/escenarios.py [carpeta_salida]
@@ -35,7 +35,7 @@ def x_de(p):
     return X0 + (p - P0) / (P1 - P0) * (X1 - X0)
 
 
-def carril(ax, lang, caso, y0, color, po, vs, animal=None, borde=None):
+def carril(ax, lang, caso, y0, color, po, vs, animal=None, borde=None, rotulo_izq=False):
     """Barra desde 0 hasta el precio objetivo; el animal se para sobre el extremo, mirando al precio de cierre."""
     t = T[lang]
     x = x_de(po)
@@ -43,9 +43,11 @@ def carril(ax, lang, caso, y0, color, po, vs, animal=None, borde=None):
     ax.scatter([x], [y0 + GROSOR / 2], s=24, color=color, edgecolor="white", linewidth=0.8, zorder=5)
     if animal:
         animal(ax, x, y0 + GROSOR - 0.005)
-    ax.text(x + 0.1, y0 + 0.40, t[caso], ha="left", va="bottom", fontsize=6.6, fontweight="bold", color=AZUL if caso != "bull" else NEGRO)
-    ax.text(x + 0.1, y0 + 0.215, num(po, lang), ha="left", va="bottom", fontsize=9.0, fontweight="bold", color=NEGRO)
-    ax.text(x + 0.1, y0 + 0.075, num(vs * 100, lang, 1) + "%", ha="left", va="bottom", fontsize=6.0, color=TINTA_SECUNDARIA)
+    xr = X0 + 0.02 if rotulo_izq else x + 0.1               # el rótulo del bull va a la izquierda: a la derecha pisaría la línea del precio
+    yr = y0 + 0.17 if rotulo_izq else y0
+    ax.text(xr, yr + 0.40, t[caso], ha="left", va="bottom", fontsize=6.6, fontweight="bold", color=AZUL if caso != "bull" else NEGRO)
+    ax.text(xr, yr + 0.215, num(po, lang), ha="left", va="bottom", fontsize=9.0, fontweight="bold", color=NEGRO)
+    ax.text(xr, yr + 0.075, num(vs * 100, lang, 1) + "%", ha="left", va="bottom", fontsize=6.0, color=TINTA_SECUNDARIA)
 
 
 def figura(lang, esc, precio, salida):
@@ -64,7 +66,7 @@ def figura(lang, esc, precio, salida):
     toro = lambda a, x, y: dibujar_toro(a, x, y + 0.03, 0.62)
     carril(ax, lang, "bear", 1.80, AMARILLO, esc["bear"]["po"], esc["bear"]["vs"], oso, borde=AZUL)
     carril(ax, lang, "base", 1.10, AZUL, esc["base"]["po"], esc["base"]["vs"])
-    carril(ax, lang, "bull", 0.30, NEGRO, esc["bull"]["po"], esc["bull"]["vs"], toro)
+    carril(ax, lang, "bull", 0.30, NEGRO, esc["bull"]["po"], esc["bull"]["vs"], toro, rotulo_izq=True)
     ax.text(ANCHO / 2, 0.02, t["eje"], ha="center", va="bottom", fontsize=5.6, color=TINTA_SECUNDARIA)
     fig.savefig(salida, dpi=DPI, facecolor="white")
     plt.rcParams["svg.fonttype"] = "none"                 # texto editable en la versión SVG
