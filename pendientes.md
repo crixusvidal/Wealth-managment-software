@@ -18,7 +18,7 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] Llevar el DCF al 30-sep-26 (~CLP 2.118) o dejar explícito que no se aplica (inconsistencia 4).
 - [ ] Rebaja del impuesto corporativo a 23%: no está en el modelo (+5,1% al precio objetivo) (inconsistencia 11).
 - [ ] Pipeline: texto con USD 613 MM y 170.200 m² frente al modelo con 123.700 m² y USD 445 MM (inconsistencia 13); agregar el pipeline completo después, por decisión del equipo.
-- [ ] Modelo de sensibilidad a tasas largas e inflación: hecho en `Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx`; falta decidir dónde entra en el informe y validar los supuestos de traspaso (ver su hoja Supuestos).
+- [ ] Modelo de sensibilidad a tasas largas e inflación: hecho en `Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx`; el mix real/inflación (V12) ya está en Riesgos como Figura 26 (reemplaza a la de la UF); falta validar los supuestos de traspaso (θ y λ, ver su hoja Supuestos) y decidir si la grilla V11 también entra al informe.
 
 - [ ] Escudo tributario (goodwill tributario y pérdidas): el modelo lo agota en 2029 (impuesto en caja 16,8% → 27%), un ahorro total de CLP 134.173 MM (CLP 61 por acción sin descontar). Verificar contra la Nota 13 de los EEFF (saldo del impuesto diferido activo por pérdidas tributarias y goodwill tributario por amortizar) que ese saldo respalde esa cifra; hoy es un supuesto [S] del Forecast («verificar Nota 13»). Los EEFF no están en el repo y esta sesión no pudo abrirlos.
 - [ ] Pasar al Excel (hoja TIR_Implicita o TIR_Accionista) las TIR del activo al precio objetivo y al valor DCF, hoy calculadas solo con `tir_valuacion.py`.

@@ -13,7 +13,10 @@ const FUENTE = "Arial";
 const COL_TEXTO = 6900, COL_SEP = 216, COL_FIG = 3550;
 const FIG_DIR = path.join(__dirname, "..", "graficos", "figuras");
 const PULGADA_PX = 96; // docx-js mide las imágenes en píxeles a 96 dpi
-const ALTOS = { matriz: 2.05, tornado: 2.15, heatmap: 1.7, uf: 1.4 }; // = graficos/pagina_riesgos.py
+const ALTOS = { matriz: 2.05, tornado: 2.15, heatmap: 1.7, uf: 1.4, tasas: 1.66 }; // = graficos/pagina_riesgos.py (tasas: valuacion/graficos/sensibilidad_tasas.py)
+const SENS = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "..", "valuacion", "graficos", "figuras", "datos_sens_tasas.json"), "utf8")).pt;
+const pc1 = (x, c) => (Math.abs(x) * 100).toFixed(1).replace(".", c);   // porcentaje sin signo
+
 const ANCHO_FIG = COL_FIG / 1440;
 
 const LANG = {
@@ -34,7 +37,7 @@ const LANG = {
         { cod: "FR1", nombre: "Tasas de interés y costo de capital.", texto: "Un alza de tasas largas elevaría la WACC y el costo de refinanciar la deuda y el pipeline. La probabilidad es alta: el UST 10Y pasó de 4,98% (Rf del modelo) a 5,22% al 8-oct-26, máximo en 24 años (desde 2002); la Fed subió su tasa en septiembre y las tasas largas locales también suben. Con WACC +50 pb y +100 pb, el precio objetivo cae 6,5% y 12,3% (Figura 25).", tag: "Sistemático · Prob. alta · Impacto alto",
           mit: "79% de la deuda en UF a tasa fija, duración de ~6,7 años, DFN/EBITDA de 2,36x y rating AA+/BBB acotan el traspaso al costo de la deuda; los arriendos en UF compensan alzas inflacionarias. El alza de la tasa de descuento del patrimonio no es cubrible." }] },
       { titulo: "RIESGOS DE MERCADO Y MACROECONÓMICOS", riesgos: [
-        { cod: "MR1", nombre: "Inflación y ciclo macro.", texto: "El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es levemente positivo: las rentas indexadas suman CLP 40,8 por acción y la mayor deuda en UF resta 17,7, con un neto de +23,1 (+1,1%) (Figura 26). El riesgo está en que un menor consumo impida traspasar la UF a las rentas: sin ese traspaso, la UF +3% resta 0,9% al precio objetivo. Un menor consumo también frena las nuevas líneas de negocio (Anexo [X]).", tag: "Sistemático · Prob. alta · Impacto bajo",
+        { cod: "MR1", nombre: "Inflación y ciclo macro.", texto: `El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es pequeño, porque las rentas indexadas suben con la inflación: una alza de 100 pb de la tasa larga nominal que venga toda de inflación esperada resta solo ${pc1(SENS.infl_100.pct, ",")}%; si viniera toda de tasa real, ${pc1(SENS.real_100.pct, ",")}% (Figura 26). El riesgo está en que un menor consumo impida traspasar la inflación a las rentas: si solo se reajustara el 70% del flujo, el efecto de la inflación subiría a ${pc1(SENS.infl_100_theta70.pct, ",")}%. Un menor consumo también frena las nuevas líneas de negocio (Anexo [X]).`, tag: "Sistemático · Prob. alta · Impacto bajo",
           mit: "rentas indexadas a la UF, modelo basado en arriendo más que en ventas, deuda baja aunque creciente y capacidad activa de rotar el portafolio." },
         { cod: "MR2", nombre: "Comercio electrónico.", texto: "Si el consumo migra masivamente al canal online, el mall pierde tráfico y atractivo. El e-commerce en Chile superó US$ 10.000 MM en 2025 (12,6% de las ventas del comercio). El peor caso de tráfico solo resta 1,3% al valor (Figura 24).", tag: "Sistemático · Prob. baja · Impacto medio",
           mit: "el canal online está madurando sin efecto visible en el modelo (visitas +16% en 2025). Los malls ofrecen entretención y gastronomía, difíciles de replicar online." },
@@ -50,11 +53,11 @@ const LANG = {
       { n: "Figura 23:", t: "Matriz de riesgos", img: "es_fig23_matriz.png", alto: ALTOS.matriz,
         fuente: "Color de fondo = severidad (probabilidad × impacto). Fuente: análisis del equipo." },
       { n: "Figura 24:", t: "Tornado de riesgo operacional (CLP por acción)", img: "es_fig24_tornado.png", alto: ALTOS.tornado,
-        fuente: "Límites = mínimo y máximo histórico de cada variable: releases de resultados de Mallplaza 4T23–2T26 (margen EBITDA, ocupación, rentas y ventas en mismas tiendas, visitas) y EEFF (capex de mantención 2024 y UDM 2T26; rango de crecimiento de la tasación, Nota 11). WACC terminal 10,41% y g 3,0% constantes. Fuente: Mallplaza; análisis del equipo." },
+        fuente: "Límites = mínimo y máximo histórico de cada variable (releases de Mallplaza 4T23–2T26; EEFF para capex de mantención y tasación, Nota 11). WACC 10,41% y g 3,0% constantes. Fuente: Mallplaza; equipo." },
       { n: "Figura 25:", t: "Sensibilidad del precio objetivo: WACC vs g (CLP)", img: "es_fig25_heatmap.png", alto: ALTOS.heatmap,
         fuente: "Precio objetivo = 80% DCF + 20% múltiplos EV/EBITDA (CLP 2.951). La columna g = 2,0% usa la fórmula de la hoja Sensibilidad. Fuente: equipo." },
-      { n: "Figura 26:", t: "Sensibilidad del precio objetivo a un alza de la UF (CLP por acción)", img: "es_fig26_uf.png", alto: ALTOS.uf,
-        fuente: "Alza de nivel de la UF desde 2027E; WACC y g constantes. Deuda: exposición neta en UF de la Nota 26. Utilidad: +3% reportado, resto extrapolado. Fuente: EEFF jun-26, Nota 26; equipo." },
+      { n: "Figura 26:", t: "Precio objetivo según la tasa larga y la parte de su alza que viene de inflación (CLP)", img: "../../../valuacion/graficos/figuras/es_V12_mix_tasas_inflacion.png", alto: ALTOS.tasas,
+        fuente: "BCP a 10 años (base 6,25%); alza repartida entre tasa real e inflación; 85% del flujo indexado (supuesto del equipo). Fuente: BCCh; equipo." },
     ],
   },
   en: {
@@ -74,7 +77,7 @@ const LANG = {
         { cod: "FR1", nombre: "Interest rates and cost of capital.", texto: "Higher long-term rates would raise the WACC and the cost of refinancing debt and the pipeline. Likelihood is high: the 10Y UST moved from 4.98% (model Rf) to 5.22% on 8-Oct-26, a 24-year high (since 2002); the Fed hiked in September and the Central Bank of Chile reports rising local long-term rates. With WACC +50 bp and +100 bp, the target price falls 6.5% and 12.3% (Figure 25).", tag: "Systematic · High likelihood · High impact",
           mit: "79% of debt is fixed-rate in UF, with ~6.7 years of duration, 2.36x net debt/EBITDA and AA+/BBB ratings, which limit the pass-through to the cost of debt; UF-linked rents offset inflation. A higher cost of equity cannot be hedged." }] },
       { titulo: "MARKET & MACROECONOMIC RISKS", riesgos: [
-        { cod: "MR1", nombre: "Inflation and macro cycle.", texto: "79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is slightly positive: indexed rents add CLP 40.8 per share and the higher UF debt subtracts 17.7, a net +23.1 (+1.1%) (Figure 26). The risk is that weaker consumption prevents passing the UF through to rents: without that pass-through, UF +3% takes 0.9% off the target price. Weaker consumption also slows the new business lines (Appendix [X]).", tag: "Systematic · High likelihood · Low impact",
+        { cod: "MR1", nombre: "Inflation and macro cycle.", texto: `79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is small, because indexed rents rise with inflation: a 100 bp rise in the long nominal rate coming entirely from expected inflation takes off only ${pc1(SENS.infl_100.pct, ".")}%; if it came entirely from the real rate, ${pc1(SENS.real_100.pct, ".")}% (Figure 26). The risk is that weaker consumption prevents passing inflation through to rents: if only 70% of the cash flow were indexed, the effect of inflation would rise to ${pc1(SENS.infl_100_theta70.pct, ".")}%. Weaker consumption also slows the new business lines (Appendix [X]).`, tag: "Systematic · High likelihood · Low impact",
           mit: "UF-indexed rents, a model based on rent rather than sales, low (if rising) leverage and an active ability to rotate the portfolio." },
         { cod: "MR2", nombre: "E‑commerce.", texto: "If consumption migrates massively online, malls lose footfall and appeal. E‑commerce in Chile exceeded US$10 billion in 2025, around 12.6% of retail sales. The worst traffic case only takes 1.3% off value (Figure 24).", tag: "Systematic · Low likelihood · Medium impact",
           mit: "the online channel is maturing with no visible effect on the model (visits +16% in 2025). Malls offer entertainment and dining, hard to replicate online." },
@@ -90,11 +93,11 @@ const LANG = {
       { n: "Figure 23:", t: "Risk matrix", img: "en_fig23_matriz.png", alto: ALTOS.matriz,
         fuente: "Background colour = severity (likelihood × impact). Source: Team analysis." },
       { n: "Figure 24:", t: "Operational risk tornado (CLP per share)", img: "en_fig24_tornado.png", alto: ALTOS.tornado,
-        fuente: "Limits = historical low and high of each driver: Mallplaza earnings releases 4Q23–2Q26 (EBITDA margin, occupancy, same-store rent and sales, visitors) and financial statements (maintenance capex 2024 and LTM 2Q26; appraisal growth range, Note 11). Terminal WACC 10.41% and g 3.0% held constant. Source: Mallplaza; Team analysis." },
+        fuente: "Limits = historical minimum and maximum of each variable (Mallplaza releases 4Q23–2Q26; financial statements for maintenance capex and appraisal, Note 11). WACC 10.41% and g 3.0% constant. Source: Mallplaza; Team analysis." },
       { n: "Figure 25:", t: "Target price sensitivity: WACC vs g (CLP)", img: "en_fig25_heatmap.png", alto: ALTOS.heatmap,
         fuente: "Target price = 80% DCF + 20% EV/EBITDA multiples (CLP 2,951). The g = 2.0% column uses the same formula as the Sensibilidad sheet. Source: Team analysis." },
-      { n: "Figure 26:", t: "Target price sensitivity to a rise in the UF (CLP per share)", img: "en_fig26_uf.png", alto: ALTOS.uf,
-        fuente: "UF level shock from 2027E; WACC and g constant. Debt: net UF exposure from Note 26. Earnings: +3% reported; +1% and +2% extrapolated. Source: financial statements Jun-26, Note 26; Team analysis." },
+      { n: "Figure 26:", t: "Target price by long nominal rate and the share of its rise that comes from inflation (CLP)", img: "../../../valuacion/graficos/figuras/en_V12_mix_tasas_inflacion.png", alto: ALTOS.tasas,
+        fuente: "10-year BCP (base 6.25%, 30-Sep-26); the rise is split between real rate and inflation; 85% of cash flow is indexed to inflation (team assumption). Source: Central Bank of Chile; Team analysis." },
     ],
   },
 };

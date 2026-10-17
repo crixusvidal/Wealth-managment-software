@@ -1563,7 +1563,7 @@
        "tinta"
       ],
       [
-       "El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es levemente positivo: las rentas indexadas suman CLP 40,8 por acción y la mayor deuda en UF resta 17,7, con un neto de +23,1 (+1,1%) (Figura 31). El riesgo está en que un menor consumo impida traspasar la UF a las rentas: sin ese traspaso, la UF +3% resta 0,9% al precio objetivo. Un menor consumo también frena las nuevas líneas de negocio (Anexo 20). ",
+       "El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es pequeño, porque las rentas indexadas suben con la inflación: una alza de 100 pb de la tasa larga nominal que venga toda de inflación esperada resta solo 0,3%; si viniera toda de tasa real, 12,0% (Figura 31). El riesgo está en que un menor consumo impida traspasar la inflación a las rentas: si solo se reajustara el 70% del flujo, el efecto de la inflación subiría a 1,0%. Un menor consumo también frena las nuevas líneas de negocio (Anexo 20). ",
        false,
        false
       ],
@@ -1782,7 +1782,7 @@
      "archivo": "/riesgos/graficos/figuras/es_fig24_tornado.png",
      "fuente": [
       [
-       "Límites = mínimo y máximo histórico de cada variable: releases de resultados de Mallplaza 4T23–2T26 (margen EBITDA, ocupación, rentas y ventas en mismas tiendas, visitas) y EEFF (capex de mantención 2024 y UDM 2T26; rango de crecimiento de la tasación, Nota 11). WACC terminal 10,41% y g 3,0% constantes. Fuente: Mallplaza; análisis del equipo.",
+       "Límites = mínimo y máximo histórico de cada variable (releases de Mallplaza 4T23–2T26; EEFF para capex de mantención y tasación, Nota 11). WACC 10,41% y g 3,0% constantes. Fuente: Mallplaza; equipo.",
        false,
        false
       ]
@@ -1804,11 +1804,11 @@
     },
     {
      "n": "Figura 31:",
-     "titulo": "Sensibilidad del precio objetivo a un alza de la UF (CLP por acción)",
-     "archivo": "/riesgos/graficos/figuras/es_fig26_uf.png",
+     "titulo": "Precio objetivo según la tasa larga y la parte de su alza que viene de inflación (CLP)",
+     "archivo": "/valuacion/graficos/figuras/es_V12_mix_tasas_inflacion.png",
      "fuente": [
       [
-       "Alza de nivel de la UF desde 2027E; WACC y g constantes. Deuda: exposición neta en UF de la Nota 26. Utilidad: +3% reportado, resto extrapolado. Fuente: EEFF jun-26, Nota 26; equipo.",
+       "BCP a 10 años (base 6,25%); alza repartida entre tasa real e inflación; 85% del flujo indexado (supuesto del equipo). Fuente: BCCh; equipo.",
        false,
        false
       ]

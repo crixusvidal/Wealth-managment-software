@@ -399,10 +399,13 @@ if __name__ == "__main__":
     print("Excel escrito (recalcular con LibreOffice):", xlsx)
     emp = regresion(sem)
     py = [valor(I, dr / 1e4, dp / 1e4, th if th is not None else THETA) for dr, dp, th, _ in esc]
+    resumen_pt = I["peso"] * py[0] + (1 - I["peso"]) * I["mult"]
     resumen = {"base": py[0], "theta": THETA, "lambda": LAMBDA, "real_100": valor(I, 0.01) / py[0] - 1, "infl_100": valor(I, 0, 0.01) / py[0] - 1,
                "nominal_100_real": valor(I, 0.01, 0) / py[0] - 1, "nominal_100_infl": valor(I, 0, 0.01) / py[0] - 1, "empirico": emp,
                "precio_objetivo_base": I["peso"] * py[0] + (1 - I["peso"]) * I["mult"],
-               "precio_objetivo_real_100": I["peso"] * valor(I, 0.01) + (1 - I["peso"]) * I["mult"]}
+               "precio_objetivo_real_100": I["peso"] * valor(I, 0.01) + (1 - I["peso"]) * I["mult"],
+               "pt": {k: {"clp": I["peso"] * (valor(I, *args, theta=th) - py[0]), "pct": (I["peso"] * valor(I, *args, theta=th) + (1 - I["peso"]) * I["mult"]) / resumen_pt - 1}
+                      for k, args, th in (("infl_100", (0, 0.01), THETA), ("real_100", (0.01, 0), THETA), ("infl_100_theta70", (0, 0.01), 0.70))}}
     (figs / "datos_sens_tasas.json").write_text(json.dumps(resumen, indent=1, ensure_ascii=False))
     for lang in ("es", "en"):
         fig_grilla(I, lang, figs / f"{lang}_V11_sens_tasas_inflacion.png", sem[-1][3])

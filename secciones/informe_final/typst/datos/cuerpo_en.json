@@ -1562,7 +1562,7 @@
        "tinta"
       ],
       [
-       "79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is slightly positive: indexed rents add CLP 40.8 per share and the higher UF debt subtracts 17.7, a net +23.1 (+1.1%) (Figure 31). The risk is that weaker consumption prevents passing the UF through to rents: without that pass-through, UF +3% takes 0.9% off the target price. Weaker consumption also slows the new business lines (Appendix 20). ",
+       "79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is small, because indexed rents rise with inflation: a 100 bp rise in the long nominal rate coming entirely from expected inflation takes off only 0.3%; if it came entirely from the real rate, 12.0% (Figure 31). The risk is that weaker consumption prevents passing inflation through to rents: if only 70% of the cash flow were indexed, the effect of inflation would rise to 1.0%. Weaker consumption also slows the new business lines (Appendix 20). ",
        false,
        false
       ],
@@ -1781,7 +1781,7 @@
      "archivo": "/riesgos/graficos/figuras/en_fig24_tornado.png",
      "fuente": [
       [
-       "Limits = historical low and high of each driver: Mallplaza earnings releases 4Q23–2Q26 (EBITDA margin, occupancy, same-store rent and sales, visitors) and financial statements (maintenance capex 2024 and LTM 2Q26; appraisal growth range, Note 11). Terminal WACC 10.41% and g 3.0% held constant. Source: Mallplaza; Team analysis.",
+       "Limits = historical minimum and maximum of each variable (Mallplaza releases 4Q23–2Q26; financial statements for maintenance capex and appraisal, Note 11). WACC 10.41% and g 3.0% constant. Source: Mallplaza; Team analysis.",
        false,
        false
       ]
@@ -1803,11 +1803,11 @@
     },
     {
      "n": "Figure 31:",
-     "titulo": "Target price sensitivity to a rise in the UF (CLP per share)",
-     "archivo": "/riesgos/graficos/figuras/en_fig26_uf.png",
+     "titulo": "Target price by long nominal rate and the share of its rise that comes from inflation (CLP)",
+     "archivo": "/valuacion/graficos/figuras/en_V12_mix_tasas_inflacion.png",
      "fuente": [
       [
-       "UF level shock from 2027E; WACC and g constant. Debt: net UF exposure from Note 26. Earnings: +3% reported; +1% and +2% extrapolated. Source: financial statements Jun-26, Note 26; Team analysis.",
+       "10-year BCP (base 6.25%, 30-Sep-26); the rise is split between real rate and inflation; 85% of cash flow is indexed to inflation (team assumption). Source: Central Bank of Chile; Team analysis.",
        false,
        false
       ]
