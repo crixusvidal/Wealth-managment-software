@@ -77,7 +77,7 @@ const rango = (claves, desde) => Object.fromEntries(claves.map((k, i) => [k, des
 const sub = (claves, anexo) => Object.fromEntries(claves.map((k, i) => [k, `${anexo}.${i + 1}`]));
 const MAPAS = {
   negocio: { nombre: "Negocio", fig: { 1: 1 }, anx: { A: 1, B: 2 } },
-  industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: rango(["A", "B", "C", "D", "E"], 3) },
+  industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: { 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 } },
   esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5", "E6"], 7), ...sub(["S1", "S2", "S3", "S4", "S5"], 8) }, anx: { "[Y]": 8 } },
   fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: rango(["1", "2", "3", "4", "5", "6"], 9) },
   valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19) },

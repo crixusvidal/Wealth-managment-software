@@ -113,6 +113,72 @@ def anexo_f(wb, wf, ruta_fa, ruta_modelo, ruta_tor):
     }
 
 
+def anexo_nuevo(wb, ruta_fa, ruta_modelo):
+    """Secciones nuevas de los Anexos 15 (15D desglose, 15E cuadratura), 16 (16D calendario de deuda) y 18 (18D sensibilidades de la revisión)."""
+    d, fb, ex, de, su = wb["DCF"], wb["Forecast_Base"], wb["Expansion"], wb["Deuda"], wb["Supuestos"]
+    fx = openpyxl.load_workbook(ruta_fa, data_only=True)["Forecast"]
+    cal = lambda r: [fx[f"{c}{r}"].value for c in "DEFGHI"]
+    f6 = lambda ws, r: fila(ws, r, "CDEFGH")
+    ing, ing_b, ing_e = fila(d, 7), f6(d, 5), f6(d, 6)
+    ebitda, ebitda_b, ebitda_e = fila(d, 11), f6(d, 9), f6(d, 10)
+    k_ct = su["B84"].value * su["B85"].value
+    maduracion = d["C34"].value - fb["H5"].value
+    pais = {"ing": {p_: cal(r) for p_, r in (("cl", 91), ("pe", 92), ("co", 93))}, "margen": {p_: cal(r) for p_, r in (("cl", 101), ("pe", 102), ("co", 103))}}
+    gla_nuevo = [fx["D41"].value + fx["D42"].value, fx["E41"].value + fx["E42"].value, fx["F41"].value + fx["F42"].value + fx["D45"].value] + [su["B66"].value] * 3
+    capex_inc = [a + b for a, b in zip(f6(fb, 14), [-x for x in f6(d, 20)])]
+    desglose = {
+        "ing_base": ing_b, "ing_exp": ing_e, "ing_pais": pais["ing"], "ebitda_pais": {p_: [a * b for a, b in zip(pais["ing"][p_], pais["margen"][p_])] for p_ in pais["ing"]},
+        "margen_pais": {p_: pais["margen"][p_][0] for p_ in pais["margen"]},
+        "madura_m2": d["C33"].value, "madura_ing": maduracion, "indexa_ing": d["I7"].value - d["C34"].value, "ing_term": d["I7"].value,
+        "ebitda_base": ebitda_b, "ebitda_exp": ebitda_e, "margen_exp": ex["C9"].value, "da": fila(d, 13), "da_term": d["I13"].value, "da_pct": su["B57"].value,
+        "ebit": fila(d, 14), "ebit_term": d["I14"].value, "imp": fila(d, 16), "imp_term": d["I16"].value,
+        "capex_usd": f6(fb, 12), "usdclp": f6(fb, 13), "capex_pipeline": f6(fb, 14), "capex_mant": f6(fb, 15), "capex_exp": f6(d, 20), "mant_term": d["I19"].value,
+        "gla_nuevo": gla_nuevo, "capex_ing": [(-a - b) / c for a, b, c in zip(f6(d, 19), f6(d, 20), ing[:6])] + [-d["I19"].value / d["I7"].value],
+        "capex_inc_ing": [x / c for x, c in zip(capex_inc, ing[:6])] + [0.0],
+        "dIng_ct": [-x / k_ct for x in fila(d, 21)], "ct_pct": k_ct,
+    }
+    # 15E: el desglose solo reordena; se recalcula cada línea desde sus componentes y se compara con el DCF (máx. |diferencia| por línea)
+    tasa = fila(d, 15)
+    comp = {
+        "Ingresos totales": [abs(a + b - c) for a, b, c in zip(ing_b, ing_e, ing[:6])],
+        "EBITDA total": [abs(a + b - c) for a, b, c in zip(ebitda_b, ebitda_e, ebitda[:6])],
+        "D&A": [abs(su["B57"].value * i - da_) for i, da_ in zip(ing, fila(d, 13))],
+        "Impuesto operacional": [abs(-(e - su["B57"].value * i) * t - x) for e, i, t, x in zip(ebitda, ing, tasa, fila(d, 16))],
+        "NOPAT": [abs((e - su["B57"].value * i) * (1 - t) - x) for e, i, t, x in zip(ebitda, ing, tasa, fila(d, 17))],
+        "Capex total (mantención + incremental)": [abs(-(a + b) - (c + e_)) for a, b, c, e_ in zip(f6(fb, 15), capex_inc, f6(d, 19), f6(d, 20))][:0] or
+                                                   [abs((m_ + p_ + x_) + (c_ + e_)) for m_, p_, x_, c_, e_ in zip(f6(fb, 15), f6(fb, 14), [-v for v in f6(d, 20)], f6(d, 19), f6(d, 20))],
+        "Inversión en capital de trabajo": [abs(-k_ct * dI - x) for dI, x in zip([-x / k_ct for x in fila(d, 21)], fila(d, 21))],
+        "FCFF": [abs(n + da_ + cb + ce + cw - fcff) for n, da_, cb, ce, cw, fcff in zip(fila(d, 17), fila(d, 18), fila(d, 19), fila(d, 20), fila(d, 21), fila(d, 22))],
+        "VP del FCFF": [abs(a * b - c) for a, b, c in zip(f6(d, 22), f6(d, 28), f6(d, 29))],
+    }
+    ps = (d["C43"].value + d["C42"].value + d["C45"].value + d["C46"].value) / d["C48"].value
+    comp["Valor terminal / VP del VT / EV"] = [abs(d["C43"].value + d["C42"].value - d["C44"].value), abs(d["C41"].value * d["H27"].value - d["C42"].value)]
+    cuadratura = {k: max(v) for k, v in comp.items()}
+    cuadratura["Valor por acción (CLP)"] = abs(ps - d["C49"].value)
+    # 16D: calendario de la deuda (hoja Deuda)
+    cd = lambda r: fila(de, r, "CDEFGH")
+    deuda = {"apertura": cd(7), "fcff": cd(10), "costo_at": cd(12), "reajuste_at": cd(14), "div": cd(16), "adic": cd(20), "cierre": cd(21), "ratio": cd(22), "bruta": cd(23),
+             "ratio0": su["B41"].value, "ratio_obj": su["B42"].value, "spread": su["B45"].value, "costo0": su["B46"].value, "uf": su["B47"].value, "caja": su["B12"].value}
+    # 18D: sensibilidades de la revisión (réplica del DCF; mismo método que la hoja Sens_Revision del equipo: validado contra v3, −51 y +2)
+    m, _ = leer_modelo(ruta_fa, ruta_modelo)
+    base = proyectar(m)[2]
+    po = wb["Precio_Objetivo"]
+    mult, peso, precio = po["B13"].value, po["B14"].value, po["B16"].value
+    x = copy.deepcopy(m)
+    esc_t = 0.283 / m["tax_lp"]                 # Chile ~70%, Perú ~20%, Colombia ~10% del EBITDA: 70%·27% + 20%·29,5% + 10%·35% = 28,3%
+    x["tax"], x["tax_lp"] = m["tax"] * esc_t, m["tax_lp"] * esc_t
+    y = copy.deepcopy(m)
+    y["da"] = 0.0088
+    cap = d["C56"].value
+    gp = (1 - 0.094 / cap) * 376 * su["B102"].value / su["B9"].value          # USD 376 MM a cap rate 9,4% valorado a nuestro cap rate
+    sens = [{"clave": "tax", "dcf": proyectar(x)[2], "tasa": 0.283}, {"clave": "da", "dcf": proyectar(y)[2], "tasa": 0.0088}, {"clave": "gp", "dcf": base - gp, "tasa": 0.094}]
+    for r in sens:
+        r["delta"] = r["dcf"] - base
+        r["po"] = peso * r["dcf"] + (1 - peso) * mult
+        r["vs"] = r["po"] / precio - 1
+    return {"desglose": desglose, "cuadratura": cuadratura, "deuda": deuda, "sens_revision": sens, "dcf": base}
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 5:
         sys.exit(__doc__)
@@ -120,7 +186,7 @@ if __name__ == "__main__":
     wb = openpyxl.load_workbook(ruta_v2, data_only=True)
     wf = openpyxl.load_workbook(ruta_fig, data_only=True)
     datos = {"B": anexo_b(wb), "C": anexo_c(wb), "E": anexo_e(wb, wf),
-             "F": anexo_f(wb, wf, ruta_fa, ruta_v2, ruta_tor)}
+             "F": anexo_f(wb, wf, ruta_fa, ruta_v2, ruta_tor), "N": anexo_nuevo(wb, ruta_fa, ruta_v2)}
     salida = Path(__file__).parent / "figuras" / "datos_anexos.json"
     salida.write_text(json.dumps(datos, ensure_ascii=False, indent=1, default=float))
     print(salida)

@@ -153,8 +153,25 @@ def tablas(es, t3, t6a, t6b, lang):
     return a3, a6a, a6b
 
 
+def ajustar_gla_industria(es):
+    """El GLA de la industria en Chile (no el del trío) es la base de la oferta nueva: ≈ GLA del trío sin oficinas ÷ 76% (v8 del texto)."""
+    es["a3_intro"] = es["a3_intro"].replace("equivalentes al 6,7% de su GLA en ese país", "equivalentes al 5,1% del GLA de la industria en Chile y al 6,7% del GLA del propio trío")
+    es["a3_notaB"] += " En Chile, la oferta orgánica del trío (219.900 m²) equivale al 5,1% del GLA estimado de la industria (≈4,3 millones de m²: 3,29 millones del trío sin oficinas ÷ 76%, su participación en los principales operadores)."
+    es["a7_textos"] = [t + (" GLA de la industria en Chile ≈ GLA del trío sin oficinas ÷ 76% (participación del trío en los principales operadores, slide 7); la oferta del trío es una cota inferior de la oferta de la industria."
+                            if es["a7_temas"][i] == "Oferta vs demanda" else "") for i, t in enumerate(es["a7_textos"])]
+    es["a6_evidencia"] = [t.replace("oferta sobre consumo en 2027-28", "oferta que alcanza al consumo en 2027") for t in es["a6_evidencia"]]
+    EN["a3_intro"] = EN["a3_intro"].replace("equivalent to 6.7% of their GLA in that country", "equivalent to 5.1% of the industry's GLA in Chile and 6.7% of the trio's own GLA")
+    EN["a3_notaB"] += " In Chile, the trio's organic supply (219,900 m²) equals 5.1% of the estimated industry GLA (≈4.3 million m²: 3.29 million of the trio excluding offices ÷ 76%, its share of the main operators)."
+    EN["a6_evidencia"] = [t.replace("supply above consumption in 2027-28", "supply catching up with consumption in 2027") for t in EN["a6_evidencia"]]
+    if "a7_textos" in EN:
+        EN["a7_textos"] = [t + (" Industry GLA in Chile ≈ trio GLA excluding offices ÷ 76% (the trio's share of the main operators, slide 7); the trio's supply is a lower bound of the industry's supply."
+                                if i == 2 else "") for i, t in enumerate(EN["a7_textos"])]
+    return es
+
+
 def main(spec=SPEC):
     es, t3, t6a, t6b, wb = leer(spec)
+    es = ajustar_gla_industria(es)
     verificar_graficos(wb)
     # el total del trío debe cuadrar con la suma de las tres empresas
     assert sum(f[6] for f in t3[:3]) == t3[3][6] and sum(f[4] for f in t3[:3]) == t3[3][4]

@@ -1,6 +1,6 @@
 # Cifras clave del informe (contexto para el LLM)
 
-Generado 2026-10-16 02:22 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
+Generado 2026-10-17 22:12 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
 Si una cifra de un texto contradice esta tabla, está mal el texto. Cada fila indica su fuente (archivo!hoja!celda).
 
 Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendación: VENDER.
@@ -10,70 +10,70 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio de referencia (30-sep-26), CLP | CLP 3.555 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B8` |
-| Acciones en circulación (millones) | 2.190 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B9` |
-| Valor DCF por acción, CLP | CLP 1.857 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B12` |
-| Valor por múltiplos (EV/EBITDA LTM ponderado) por acción, CLP | CLP 2.951 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B13` |
-| Peso del DCF en el precio objetivo | 80% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B14` |
-| PRECIO OBJETIVO (80% DCF / 20% múltiplos), CLP | CLP 2.076 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B15` |
-| Potencial vs precio | −41,6% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B17` |
-| Múltiplo EV/EBITDA LTM ponderado (70% Chile / 30% set común) | 14,4x | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Precio_Objetivo!B5` |
-| Valor terminal / EV (DCF) | 76,4% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!DCF!C54` |
-| Cap rate implícito del DCF (EBITDA LTM / EV) | 10,1% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!DCF!C56` |
+| Precio de referencia (30-sep-26), CLP | CLP 3.555 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B8` |
+| Acciones en circulación (millones) | 2.190 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B9` |
+| Valor DCF por acción, CLP | CLP 1.859 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B12` |
+| Valor por múltiplos (EV/EBITDA LTM ponderado) por acción, CLP | CLP 2.951 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B13` |
+| Peso del DCF en el precio objetivo | 80% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B14` |
+| PRECIO OBJETIVO (80% DCF / 20% múltiplos), CLP | CLP 2.077 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B15` |
+| Potencial vs precio | −41,6% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B17` |
+| Múltiplo EV/EBITDA LTM ponderado (70% Chile / 30% set común) | 14,4x | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Precio_Objetivo!B5` |
+| Valor terminal / EV (DCF) | 78,0% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!DCF!C54` |
+| Cap rate implícito del DCF (EBITDA LTM / EV) | 10,1% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!DCF!C56` |
 
 ## Balance y operación
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Deuda financiera neta 30-jun-26 (CLP MM) | 1.285.740 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B10` |
-| EBITDA LTM 2T26 (CLP MM) | 544.935 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B13` |
+| Deuda financiera neta 30-jun-26 (CLP MM) | 1.285.740 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B10` |
+| EBITDA LTM 2T26 (CLP MM) | 544.935 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B13` |
 | DFN / EBITDA LTM | 2,36x | `calculado: Supuestos!B10 / B13` |
-| Tasa de impuesto operacional de largo plazo | 27% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B59` |
-| Crecimiento terminal nominal (g) | 3,0% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Supuestos!B88` |
+| Tasa de impuesto operacional de largo plazo | 27% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B59` |
+| Crecimiento terminal nominal (g) | 3,0% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Supuestos!B88` |
 
 ## Costo de capital
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| WACC nominal CLP 2S26E | 10,54% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C43` |
-| WACC nominal CLP terminal | 10,41% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I43` |
-| WACC real terminal | 7,20% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I44` |
-| Ke nominal CLP terminal | 11,93% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I39` |
-| Kd nominal después de impuestos terminal | 5,11% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I42` |
-| Beta re-apalancada terminal | 1,14 | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!I37` |
-| CRP ponderado por ingresos | 1,41% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C21` |
-| Tasa libre de riesgo usada (UST 10 años) | 4,98% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C22` |
-| WACC real implícita en la tasación (Nota 11, Chile) | 5,55% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!WACC!C47` |
+| WACC nominal CLP 2S26E | 10,54% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!C43` |
+| WACC nominal CLP terminal | 10,41% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!I43` |
+| WACC real terminal | 7,20% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!I44` |
+| Ke nominal CLP terminal | 11,93% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!I39` |
+| Kd nominal después de impuestos terminal | 5,11% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!I42` |
+| Beta re-apalancada terminal | 1,14 | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!I37` |
+| CRP ponderado por ingresos | 1,41% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!C21` |
+| Tasa libre de riesgo usada (UST 10 años) | 4,98% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!C22` |
+| WACC real implícita en la tasación (Nota 11, Chile) | 5,55% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!WACC!C47` |
 
 ## Expansión
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Yield on cost de la expansión | 6,90% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Expansion!C37` |
-| RONIC real después de impuestos (yield × (1 − t)) | 5,04% | `Mallplaza_Valoracion_Consolidada_v2.xlsx!Expansion!C38` |
+| Yield on cost de la expansión | 7,27% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Expansion!C37` |
+| RONIC real después de impuestos (yield × (1 − t)) | 5,30% | `Mallplaza_Valoracion_Consolidada_v4.xlsx!Expansion!C38` |
 
 ## Retornos
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| ROIC 2025 (NOPAT / capital promedio a valor razonable) | 7,34% | `Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C21` |
-| ROIC 2025 − WACC real (pp) | 0,15 | `Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C33` |
-| RONIC − WACC real (pp) | −2,16 | `Mallplaza_FA_Exhibits_v6.xlsx!E8_ROIC_RONIC!C41` |
-| ROE normalizado 2025 | 9,7% | `Mallplaza_FA_Exhibits_v6.xlsx!E1_DuPont!H28` |
-| ROE reportado 2025 | 37,5% | `Mallplaza_FA_Exhibits_v6.xlsx!E1_DuPont!H27` |
+| ROIC 2025 (NOPAT / capital promedio a valor razonable) | 7,34% | `Mallplaza_FA_Exhibits_v7.xlsx!E8_ROIC_RONIC!C21` |
+| ROIC 2025 − WACC real (pp) | 0,15 | `Mallplaza_FA_Exhibits_v7.xlsx!E8_ROIC_RONIC!C33` |
+| RONIC − WACC real (pp) | −2,16 | `Mallplaza_FA_Exhibits_v7.xlsx!E8_ROIC_RONIC!C41` |
+| ROE normalizado 2025 | 9,7% | `Mallplaza_FA_Exhibits_v7.xlsx!E1_DuPont!H28` |
+| ROE reportado 2025 | 37,5% | `Mallplaza_FA_Exhibits_v7.xlsx!E1_DuPont!H27` |
 
 ## Escenarios
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio objetivo escenario Bear, CLP | CLP 1.713 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
-| Bear: variación vs precio | −51,8% | `datos_anexos.json` |
-| Precio objetivo escenario Base, CLP | CLP 2.076 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Precio objetivo escenario Bear, CLP | CLP 1.542 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Bear: variación vs precio | −56,6% | `datos_anexos.json` |
+| Precio objetivo escenario Base, CLP | CLP 2.077 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
 | Base: variación vs precio | −41,6% | `datos_anexos.json` |
-| Precio objetivo escenario Bull, CLP | CLP 2.627 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
-| Bull: variación vs precio | −26,1% | `datos_anexos.json` |
-| Precio objetivo escenario Tasadores, CLP | CLP 2.718 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
-| Tasadores: variación vs precio | −23,5% | `datos_anexos.json` |
+| Precio objetivo escenario Bull, CLP | CLP 2.915 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Bull: variación vs precio | −18,0% | `datos_anexos.json` |
+| Precio objetivo escenario Tasadores, CLP | CLP 2.734 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Tasadores: variación vs precio | −23,1% | `datos_anexos.json` |
 
 ## Mercado
 

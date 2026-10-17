@@ -197,9 +197,22 @@ def pipeline(wb, lang):
 
 
 # 3. Oferta de GLA vs consumo privado -----------------------------------------------------------
+def part_trio_chile(wb):
+    """Participación del trío en el GLA de los principales operadores de Chile (slide 7 del Release 2T26): 33% + 29% + 14% = 76%."""
+    ws = wb["MS_estatico_2Q26"]
+    return sum(r[4] for r in ws.iter_rows(min_row=2, values_only=True)
+               if r[0] == "Chile" and r[1] in ("Mallplaza", "Cenco Malls", "Parque Arauco"))
+
+
 def oferta_demanda(wb, lang):
+    """Oferta nueva del trío en Chile como % del GLA de la INDUSTRIA en Chile (no del GLA del propio trío).
+
+    El Excel entrega el crecimiento sobre el GLA del trío (sin oficinas). El GLA de la industria se estima como el GLA del trío dividido
+    por su participación en los principales operadores (76%), de modo que el crecimiento sobre la industria es el del trío × 76%.
+    Solo mide la oferta del trío (los demás operadores no publican su pipeline): es una cota inferior de la oferta de la industria."""
     ws = wb["OFERTA VS DEMANDA ESPERADA"]
-    filas = [(ws.cell(r, 1).value, ws.cell(r, 2).value, ws.cell(r, 3).value) for r in range(2, 6)]
+    k = part_trio_chile(wb)
+    filas = [(ws.cell(r, 1).value, ws.cell(r, 2).value * k, ws.cell(r, 3).value) for r in range(2, 6)]
     assert all(isinstance(f[1], float) for f in filas), "abrir y guardar el Excel en Excel (vínculo externo)"
     fig = nueva("ind3_oferta_vs_consumo")
     ax = fig.add_axes([0.02, 0.19, 0.96, 0.6])
@@ -219,22 +232,24 @@ def oferta_demanda(wb, lang):
     limpiar(ax, grilla=None)
     ax.tick_params(axis="x", colors=NEGRO)
     ax.axhline(0, color=GRILLA, linewidth=1)
-    of_l, co_l = (("Nueva oferta de GLA (trío, Chile)", "Consumo privado real (IPoM)") if lang == "es"
-                  else ("New GLA supply (trio, Chile)", "Real private consumption (IPoM)"))
+    of_l, co_l = (("Nueva oferta de GLA del trío / GLA de la industria", "Consumo privado real (IPoM)") if lang == "es"
+                  else ("New trio GLA supply / industry GLA", "Real private consumption (IPoM)"))
     fig.legend(handles=[Patch(color=CELESTE, label=of_l), Patch(color=AMARILLO, label=co_l)],
                loc="upper left", bbox_to_anchor=(0.01, 0.995), ncol=1, frameon=False, fontsize=FS,
                handlelength=1.4)
     textos = {
         "es": ("Nueva oferta de GLA vs consumo privado, Chile 2026–2028",
-               "Crecimiento anual del GLA orgánico del trío en Chile vs crecimiento esperado del "
-               "consumo privado real",
-               ["Solo GLA orgánico (oferta que depende del consumo).",
+               "GLA orgánico del trío en Chile como % del GLA de la industria vs crecimiento esperado "
+               "del consumo privado real",
+               ["Solo GLA orgánico (oferta que depende del consumo). GLA de la industria en Chile ≈ GLA del trío ÷ 76% (participación "
+                "en los principales operadores); no incluye la oferta nueva de otros operadores.",
                 "Fuente: reportes 2T26 de Plaza S.A., Parque Arauco y Cenco Malls; Banco Central de "
                 "Chile, IPoM sep-2026 (Tabla II.1); análisis del equipo."]),
         "en": ("New GLA supply vs private consumption, Chile 2026–2028",
-               "Annual growth of the trio's organic GLA in Chile vs expected real private "
+               "Trio organic GLA in Chile as % of industry GLA vs expected real private "
                "consumption growth",
-               ["Organic GLA only (consumption-dependent supply).",
+               ["Organic GLA only (consumption-dependent supply). Industry GLA in Chile ≈ trio GLA ÷ 76% (share of the main "
+                "operators); excludes new supply from other operators.",
                 "Source: 2Q26 reports of Plaza S.A., Parque Arauco and Cenco Malls; Central Bank "
                 "of Chile, IPoM Sep-2026 (Table II.1); Team analysis."]),
     }

@@ -10,7 +10,7 @@ const F = require("../../comun/formato");
 const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const ARCHIVO = "Mallplaza_Industria_ES.docx";
 // Figura 2–6 del cuerpo y anexos A–C del borrador → gráficos de graficos/industria.py
-const IMAGENES = { "image1.png": "ind5b_market_share_paises_vertical", "image2.png": "ind3_oferta_vs_consumo", "image3.png": "ind6_porter",
+const IMAGENES = { "image1.png": "ind5_market_share_paises", "image2.png": "ind3_oferta_vs_consumo", "image3.png": "ind6_porter",
   "image4.png": "ind8_ebitda_m2", "image5.png": "ind4_vencimiento_contratos", "image6.png": "ind2_pipeline_gla",
   "image7.png": "ind7_market_share_chile", "image8.png": "ind1_ocupacion" };
 const ALTOS = fs.existsSync(path.join(FIG, "altos.json")) ? JSON.parse(fs.readFileSync(path.join(FIG, "altos.json"), "utf8")) : {};

@@ -14,6 +14,7 @@ modelo de valoración v2). Sin título ni fuente en la imagen: van en el Word
 Uso:
     python graficos/analisis_financiero.py [carpeta_salida]
 """
+import json
 import sys
 from pathlib import Path
 
@@ -42,9 +43,9 @@ T = {
         "fa4_nota": ["Cobertura de dividendos: 1,5x · 2,6x · 1,7x", "Flujo op. / EBITDA: 79% · 84% · 95%", "(2024 · 2025 · 1S26)"],
         "fa5": ["LTV\ndic-24", "Deuda y\nadiciones", "Revalori-\nzación 2025", "LTV\ndic-25", "1S26", "LTV\njun-26"],
         "fa5_nota": ["DFN/EBITDA: 3,78x → 2,49x → 2,36x", "EBITDA/costo fin.: 6,8x → 7,7x → 8,4x"],
-        "fa6_eje": "Valor libro dic-25 (CLP bn)", "fa6_s": "Serie S",
-        "fa7": ["Real", "Pipeline anunciado", "Mantención + TI", "Expansión post-2028"],
-        "fa7_eje": "Capex (CLP bn)", "fa7_dfn": "DFN / EBITDA (x)",
+        "fa6_eje": "Valor libro dic-25 (CLP mil MM)", "fa6_s": "Serie S",
+        "fa7": ["Real (años cerrados y 1S26)", "Incremental: pipeline", "Mantención + TI", "Incremental: expansión continua"],
+        "fa7_eje": "Capex (CLP mil MM)", "fa7_dfn": "DFN / EBITDA (x)",
     },
     "en": {
         "fa2": ["Net inc.\n(consol.)", "Fair-value\ngains", "Other op.\nexpenses", "D&A", "UF index.\nof debt", "Deferred\ntax", "FFO\n(consol.)"],
@@ -56,7 +57,7 @@ T = {
         "fa5": ["LTV\nDec-24", "Debt &\nadditions", "2025\nrevaluation", "LTV\nDec-25", "1H26", "LTV\nJun-26"],
         "fa5_nota": ["Net debt/EBITDA: 3.78x → 2.49x → 2.36x", "EBITDA/fin. costs: 6.8x → 7.7x → 8.4x"],
         "fa6_eje": "Book value Dec-25 (CLP bn)", "fa6_s": "Series S",
-        "fa7": ["Actual", "Announced pipeline", "Maintenance + IT", "Post-2028 expansion"],
+        "fa7": ["Actual (closed years and 1H26)", "Incremental: pipeline", "Maintenance + IT", "Incremental: continuous expansion"],
         "fa7_eje": "Capex (CLP bn)", "fa7_dfn": "Net debt / EBITDA (x)",
     },
 }
@@ -72,16 +73,30 @@ FA6 = [(2027, 40, 3.32), (2028, 59, 4.21), (2029, 161, 1.32), (2030, 6, 4.72), (
        (2032, 89, 4.76), (2033, 155, 4.06), (2034, 119, 3.92), (2035, 121, 3.76), (2043, 129, 3.66),
        (2045, 80, 2.09), (2047, 120, 3.44)]
 FA7_AÑOS = ["2023A", "2024A", "2025A", "2026E", "2027E", "2028E", "2029E", "2030E", "2031E"]
-FA7 = {  # real, pipeline, mantención + TI, expansión post-2028
-    "real": [119.1, 76.3, 103.6, 84.2, 0, 0, 0, 0, 0],
-    "pipe": [0, 0, 0, 105.6, 198.5, 106.4, 0, 0, 0],
-    "mant": [0, 0, 0, 19.4, 42.2, 45.1, 47.7, 49.7, 51.7],
-    "exp": [0, 0, 0, 0, 46.3, 95.3, 98.2, 101.1, 104.2]}
-FA7_DFN = [3.30, 3.78, 2.49, 2.46, 2.67, 2.88, 3.09, 3.29, 3.50]
+CIFRAS = Path(__file__).resolve().parents[2] / "informe_final" / "graficos" / "cifras.json"   # python informe_final/graficos/cifras_informe.py
 
 
-def figura(clave):
-    fig = plt.figure(figsize=(ANCHO, ALTOS[clave]))
+def datos_fa7():
+    """Capex por tipo (CLP mil MM) y DFN/EBITDA 2026E–2031E del modelo v4: mantención + TI (5,5% de los ingresos), incremental del
+    pipeline en curso (170.200 m²) e incremental de la expansión continua (aperturas desde 2029); 2023A–2025A y 1S26 son reales."""
+    s = json.loads(CIFRAS.read_text())["s"]
+    mm = lambda v: round(v / 1000, 1)
+    fa7 = {"real": [119.1, 76.3, 103.6, 84.2, 0, 0, 0, 0, 0],
+           "pipe": [0, 0, 0] + [mm(x) for x in s["capex_proy"][:3]] + [0, 0, 0],
+           "mant": [0, 0, 0] + [mm(x) for x in s["mant"]],
+           "exp": [0, 0, 0, 0] + [mm(abs(x)) for x in s["capex_exp"][1:6]]}
+    return fa7, [3.30, 3.78, 2.49] + [round(x, 2) for x in s["dfn_ebitda"]]
+
+
+FA7, FA7_DFN = datos_fa7()
+
+
+ANCHO_COMPLETO = 11506 / 1440      # ancho de la hoja del informe (las figuras «anchas» ocupan toda la hoja en el PDF)
+ALTOS_ANCHA = {"FA6": 1.75, "FA7": 2.15}
+
+
+def figura(clave, ancho=ANCHO, alto=None):
+    fig = plt.figure(figsize=(ancho, alto or ALTOS[clave]))
     fig.patch.set_facecolor("white")
     return fig
 
@@ -222,32 +237,32 @@ def fa5(lang, salida):
 
 
 # FA6 -------------------------------------------------------------------------------------------
-def fa6(lang, salida):
+def fa6(lang, salida, ancho=ANCHO, alto=None, k=1.0):
     t = T[lang]
-    fig = figura("FA6")
+    fig = figura("FA6", ancho, alto)
     ax = fig.add_axes([0.02, 0.15, 0.96, 0.8])
     for x, (año, v, tasa) in enumerate(FA6):
         serie_s = año == 2029
         ax.bar(x, v, width=0.66, color=ROJO if serie_s else AZUL, zorder=3)
-        ax.text(x, v + 4, num(v, lang), ha="center", va="bottom", fontsize=4.2, fontweight="bold",
+        ax.text(x, v + 4, num(v, lang), ha="center", va="bottom", fontsize=4.2 * k, fontweight="bold",
                 color=NEGRO)
-        ax.text(x, v + 19, num(tasa, lang, 2) + "%", ha="center", va="bottom", fontsize=3.4,
+        ax.text(x, v + 19, num(tasa, lang, 2) + "%", ha="center", va="bottom", fontsize=3.4 * k,
                 color=ROJO if serie_s else TINTA_SECUNDARIA)
     s = [i for i, f in enumerate(FA6) if f[0] == 2029][0]
-    ax.text(s, FA6[s][1] + 36, t["fa6_s"], ha="center", va="bottom", fontsize=3.8,
+    ax.text(s, FA6[s][1] + 36, t["fa6_s"], ha="center", va="bottom", fontsize=3.8 * k,
             fontweight="bold", color=ROJO)
     ax.set_xticks(range(len(FA6)), [str(f[0]) for f in FA6])
     ax.set_ylim(0, 240)
     limpiar(ax)
-    ax.tick_params(axis="x", labelsize=3.9)
+    ax.tick_params(axis="x", labelsize=3.9 * k)
     guardar(fig, salida)
 
 
 # FA7 -------------------------------------------------------------------------------------------
-def fa7(lang, salida):
+def fa7(lang, salida, ancho=ANCHO, alto=None, k=1.0, ancha=False):
     t = T[lang]
-    fig = figura("FA7")
-    ax = fig.add_axes([0.02, 0.42, 0.96, 0.44])
+    fig = figura("FA7", ancho, alto)
+    ax = fig.add_axes([0.02, 0.42, 0.96, 0.44] if not ancha else [0.02, 0.40, 0.96, 0.46])
     x = np.arange(len(FA7_AÑOS))
     base = np.zeros(len(x))
     for clave, color in (("real", AZUL), ("pipe", ROJO), ("mant", CELESTE), ("exp", AMARILLO)):
@@ -255,29 +270,29 @@ def fa7(lang, salida):
         ax.bar(x, v, bottom=base, width=0.66, color=color, zorder=3)
         base += v
     for xi, total in zip(x, base):
-        ax.text(xi, total + 4, num(total, lang), ha="center", va="bottom", fontsize=4.3,
+        ax.text(xi, total + 4, num(total, lang), ha="center", va="bottom", fontsize=4.3 * k,
                 fontweight="bold", color=NEGRO)
-    ax.set_ylim(0, 330)
+    ax.set_ylim(0, 400)
     ax.set_xticks([])
     limpiar(ax)
-    ax.text(-0.45, 320, t["fa7_eje"], fontsize=4.2, color=TINTA_SECUNDARIA, va="top")
+    ax.text(-0.45, 392, t["fa7_eje"], fontsize=4.2 * k, color=TINTA_SECUNDARIA, va="top")
     # DFN / EBITDA
-    ax2 = fig.add_axes([0.02, 0.1, 0.96, 0.26])
+    ax2 = fig.add_axes([0.02, 0.1, 0.96, 0.26] if not ancha else [0.02, 0.1, 0.96, 0.24])
     ax2.plot(x, FA7_DFN, color=AZUL, linewidth=1, marker="o", markersize=2.2, zorder=3)
     for i, (xi, v) in enumerate(zip(x, FA7_DFN)):
         abajo = i > 0 and v < FA7_DFN[i - 1]  # bajando hacia el punto: etiqueta abajo
         ax2.text(xi, v - 0.22 if abajo else v + 0.18, num(v, lang, 2) + "x", ha="center",
-                 va="top" if abajo else "bottom", fontsize=3.9, color=NEGRO)
+                 va="top" if abajo else "bottom", fontsize=3.9 * k, color=NEGRO)
     ax2.set_ylim(1.7, 4.9)
     ax2.set_xlim(ax.get_xlim())
     ax2.set_xticks(x, FA7_AÑOS)
     limpiar(ax2)
-    ax2.tick_params(axis="x", labelsize=4)
-    ax2.text(-0.45, 4.88, t["fa7_dfn"], fontsize=4.2, color=TINTA_SECUNDARIA, va="top")
+    ax2.tick_params(axis="x", labelsize=4 * k)
+    ax2.text(-0.45, 4.88, t["fa7_dfn"], fontsize=4.2 * k, color=TINTA_SECUNDARIA, va="top")
     for i, (color, texto) in enumerate(zip((AZUL, ROJO, CELESTE, AMARILLO), t["fa7"])):
-        xx, yy = 0.03 + (i % 2) * 0.5, 0.965 - (i // 2) * 0.04
-        fig.add_artist(Rectangle((xx, yy - 0.013), 0.022, 0.026, color=color, transform=fig.transFigure))
-        fig.text(xx + 0.03, yy, texto, fontsize=4.1, color=NEGRO, va="center")
+        xx, yy = (0.03 + (i % 2) * 0.5, 0.965 - (i // 2) * 0.04) if not ancha else (0.03 + i * 0.245, 0.95)
+        fig.add_artist(Rectangle((xx, yy - 0.013), 0.022 if not ancha else 0.012, 0.026 if not ancha else 0.04, color=color, transform=fig.transFigure))
+        fig.text(xx + (0.03 if not ancha else 0.016), yy, texto, fontsize=4.1 * k, color=NEGRO, va="center")
     guardar(fig, salida)
 
 
@@ -289,7 +304,7 @@ def controles():
     assert abs(26.9 - 3.1 - 5.0 - 18.8) < 0.05 and abs(18.8 - 1.2 - 17.6) < 0.05
     assert abs(sum(f[1] for f in FA6) - 1277.7) < 1
     totales = [sum(FA7[k][i] for k in FA7) for i in range(len(FA7_AÑOS))]
-    assert [round(v) for v in totales] == [119, 76, 104, 209, 287, 247, 146, 151, 156], totales
+    assert [round(v) for v in totales[:3]] == [119, 76, 104], totales      # reales; 2026E en adelante salen del modelo v4
 
 
 if __name__ == "__main__":
@@ -304,4 +319,7 @@ if __name__ == "__main__":
         fa5(lang, salida / f"{lang}_FA5_ltv.png")
         fa6(lang, salida / f"{lang}_FA6_vencimientos.png")
         fa7(lang, salida / f"{lang}_FA7_capex.png")
+        # versiones a todo el ancho de la hoja (PDF): el vencimiento de deuda y el capex incremental se leen mejor sin el límite de la columna
+        fa6(lang, salida / f"{lang}_FA6_vencimientos_ancha.png", ANCHO_COMPLETO, ALTOS_ANCHA["FA6"], 1.3)
+        fa7(lang, salida / f"{lang}_FA7_capex_ancha.png", ANCHO_COMPLETO, ALTOS_ANCHA["FA7"], 1.3, ancha=True)
     print(f"Figuras guardadas en {salida}")
