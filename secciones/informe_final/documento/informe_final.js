@@ -69,6 +69,8 @@ const fa = require(path.join(S, "analisis_financiero/documento/analisis_financie
 const valuacion = require(path.join(S, "valuacion/documento/valuacion.js"));
 const riesgos = require(path.join(S, "riesgos/documento/pagina_riesgos.js"));
 const macro = require(path.join(S, "macro/anexo/anexo_macro.js"));
+// Márgenes casi nulos (200 twips): el cuerpo usa todo el ancho de la hoja; los módulos de anexos ya tomaron sus medidas
+F.ANCHO = 11506; F.COL_TEXTO = 7740; F.MEDIA = (F.ANCHO - F.COL_SEP) / 2;
 
 // Mapas: etiqueta original de cada sección → número final ---------------------------------------
 const rango = (claves, desde) => Object.fromEntries(claves.map((k, i) => [k, desde + i]));
@@ -173,7 +175,7 @@ function informe(lang = "es") {
     riesgos: con("riesgos", () => riesgos.documento(Object.values(riesgos.LANG).find((x) => x.archivo.endsWith(`_${lang.toUpperCase()}.docx`)))),
     macro: con("macro", () => macro.documento(lang)),
   };
-  const pagina = (pageNumbers) => ({ ...F.PAGINA, margin: { ...F.PAGINA.margin, top: 560, bottom: 760, header: 200, footer: 300 }, ...(pageNumbers ? { pageNumbers } : {}) });
+  const pagina = (pageNumbers) => ({ ...F.PAGINA, margin: { ...F.PAGINA.margin, top: 200, bottom: 420, left: 200, right: 200, header: 0, footer: 120 }, ...(pageNumbers ? { pageNumbers } : {}) });
   const seccion = (s, tipo, pageNumbers, pie) => ({ ...s, properties: { ...s.properties, type: tipo, page: pagina(pageNumbers) },
     footers: { default: F.pie(pie) } });
   const CONT = SectionType.CONTINUOUS, NUEVA = SectionType.NEXT_PAGE, P = lang === "es" ? "Página " : "Page ", A = "A-";

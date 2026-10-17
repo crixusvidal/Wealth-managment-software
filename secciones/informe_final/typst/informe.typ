@@ -21,13 +21,13 @@
 #let FONDO = rgb("#EEF1F6")
 #let LINEA = rgb("#D5D9E0")
 #let tw(n) = n / 1440 * 1in
-#let ML = tw(620)
-#let TXT = tw(6900)
+#let ML = tw(200)
+#let TXT = tw(7740)
 #let SEP = tw(216)
 #let FIG = tw(3550)
 #let TOTAL = TXT + SEP + FIG
-#let MT = tw(560)
-#let MB = tw(760)
+#let MT = tw(200)
+#let MB = tw(420)
 #let ALTO-MAX = 1.8in
 #let HUECO = 4pt
 
@@ -56,7 +56,7 @@
 #let FIGS = D.secciones.enumerate().map(((si, s)) => s.figuras.map(f => (..f, clave: s.clave, sec: si))).flatten()
 #let figura(f, ancho: FIG) = context {
   // el mapa de Sudamérica (Figura 1) es la figura principal de Negocio: se muestra más alto para que se lean sus fichas
-  let maxh = if "N1_mapa" in f.archivo { 3.2in } else { ALTO-MAX * ESC.at(f.clave, default: 1.0) }
+  let maxh = if "N1_mapa" in f.archivo { 2.8in } else { ALTO-MAX * ESC.at(f.clave, default: 1.0) }
   let im = image(f.archivo, width: ancho)
   let h = measure(im).height
   block(width: ancho, breakable: false, {
@@ -130,6 +130,7 @@
 
 #let gris-pie(t) = text(7pt, fill: GRIS, t)
 #set page(paper: "a4", margin: (top: MT, bottom: MB, left: ML, right: ML + SEP + FIG),
+  footer-descent: 30%,
   footer: block(width: TOTAL, align(center, gris-pie[#if ES [Página] else [Page] #context counter(page).display()])),
   foreground: colocar())
 
@@ -163,16 +164,6 @@
           blanco(if ES [Sector: Centros comerciales (Chile, Perú, Colombia)] else [Sector: Shopping centers (Chile, Peru, Colombia)], 8.5pt, style: "italic"),
           align(right, blanco(A.rotulos.at(2) + ": CLP " + fmt(R.precio), 8.5pt, style: "italic")))
       }))
-    block(width: 100%, fill: AZUL, inset: (x: 9pt, y: 3.5pt), {
-      let datos = if ES {
-        (("DCF", fmt(R.dcf)), ("Múltiplos", fmt(R.multiplos)), ("Ponderación", fmt(R.peso_dcf * 100) + "% / " + fmt((1 - R.peso_dcf) * 100) + "%"),
-         ("Capitalización", "CLP " + fmt(R.capitalizacion_mm / 1000) + " MM"), ("Rango 52 sem.", fmt(R.rango_52s.at(0)) + " – " + fmt(R.rango_52s.at(1))))
-      } else {
-        (("DCF", fmt(R.dcf)), ("Multiples", fmt(R.multiplos)), ("Weighting", fmt(R.peso_dcf * 100) + "% / " + fmt((1 - R.peso_dcf) * 100) + "%"),
-         ("Market cap", "CLP " + fmt(R.capitalizacion_mm / 1000) + " bn"), ("52-wk range", fmt(R.rango_52s.at(0)) + " – " + fmt(R.rango_52s.at(1))))
-      }
-      grid(columns: (1fr,) * 5, column-gutter: 4pt, ..datos.map(((a, b)) => align(center, text(5.8pt, fill: AMARILLO, weight: "bold", a) + linebreak() + text(7.6pt, fill: white, weight: "bold", b))))
-    })
   })
   v(4pt)
 }
