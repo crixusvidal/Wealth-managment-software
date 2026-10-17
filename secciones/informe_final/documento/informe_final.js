@@ -16,14 +16,16 @@ const docx = require("docx");
 // Renumeración: se intercepta cada TextRun creado mientras se construye una sección -----------------
 let MAPA = null;
 const AVISOS = new Set();
-const TOKEN = /\[[A-Z]\]|[A-Z]?\d+(?:\.\d+)?|[A-Z](?![\wÁÉÍÓÚáéíóúñ])/g;
+const TOKEN = /\[[A-Z]\]|[A-Z]?\d+[A-Z]?(?:\.\d+)?|[A-Z](?![\wÁÉÍÓÚáéíóúñ])/g;
 const CITA = new RegExp(String.raw`\b(Figuras?|Figures?|Fig\.|figuras?|Anexos?|ANEXOS?|Appendix|Appendices|APPENDIX)(\s+)`
-  + String.raw`((?:\[[A-Z]\]|[A-Z]?\d+|[A-Z](?![\wÁÉÍÓÚáéíóúñ]))(?:\s*(?:–|-|,|y|and)\s*(?:\[[A-Z]\]|[A-Z]?\d+|[A-Z](?![\wÁÉÍÓÚáéíóúñ])))*)`, "g");
+  + String.raw`((?:\[[A-Z]\]|[A-Z]?\d+[A-Z]?|[A-Z](?![\wÁÉÍÓÚáéíóúñ]))(?:\s*(?:–|-|,|y|and)\s*(?:\[[A-Z]\]|[A-Z]?\d+[A-Z]?|[A-Z](?![\wÁÉÍÓÚáéíóúñ])))*)`, "g");
 function renumerar(texto) {
   return texto.replace(CITA, (todo, palabra, esp, lista) => {
     const tipo = /^f/i.test(palabra) ? "fig" : "anx";
     return palabra + esp + lista.replace(TOKEN, (tok) => {
-      const nuevo = MAPA[tipo][tok];
+      let nuevo = MAPA[tipo][tok];
+      const suf = /^([A-Z]?\d+)([A-Z])$/.exec(tok);                                  // subsección: 2D → 10D
+      if (nuevo === undefined && suf && MAPA[tipo][suf[1]] !== undefined) nuevo = MAPA[tipo][suf[1]] + suf[2];
       if (nuevo === undefined) { AVISOS.add(`${MAPA.nombre}: "${palabra} ${tok}" sin mapa (se deja igual)`); return tok; }
       return String(nuevo);
     });
@@ -79,9 +81,10 @@ const MAPAS = {
   negocio: { nombre: "Negocio", fig: { 1: 1 }, anx: { A: 1, B: 2 } },
   industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: { 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 } },
   esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5", "E6"], 7), ...sub(["S1", "S2", "S3", "S4", "S5"], 8) }, anx: { "[Y]": 8 } },
-  fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: rango(["1", "2", "3", "4", "5", "6"], 9) },
-  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19) },
-    anx: { "[B]": 15, "[C]": 16, "[E]": 17, "[F]": 18, "[Z]": 19 } },
+  fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: { ...rango(["1", "2", "3", "4", "5", "6"], 9), ...rango(["9", "10", "11", "12", "13", "14"], 9), 18: 18, "[B]": 15, "[C]": 16 } },
+  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19), T: 29, F7: 19, "6": 18, R1: 32, R2: 33, R3: 34 },
+    anx: { ...rango(["9", "10", "11", "12", "13", "14"], 9), "[B]": 15, "[C]": 16, "[E]": 17, "[F]": 18, "[Z]": 19, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19 } },
+  resumen: { nombre: "Resumen", fig: { R1: 32, R2: 33, R3: 34 }, anx: { 18: 18 } },
   riesgos: { nombre: "Riesgos", fig: rango(["23", "24", "25", "26"], 28), anx: { "[X]": 20 } },
   macro: { nombre: "Macro", fig: { ...sub(["A1", "A2", "A3", "A4", "A5", "A6"], 20), ...rango(["24", "25", "26"], 29) }, anx: { "[X]": 20 } },
 };
@@ -102,6 +105,12 @@ const RES = {
     t2: "Section to be written by the team; the key data on the right already come from the models.",
     fuente: "Source: valuation model v2; Bloomberg (52-week range); Team analysis." },
 };
+function datosClave(lang) {
+  const X = TR.calcular(lang).resumen.datos;
+  const mitad = Math.ceil(X.filas.length / 2);
+  const filas = Array.from({ length: mitad }, (_, i) => [X.filas[i], X.valores[i], X.filas[i + mitad] || "", X.valores[i + mitad] || ""]);
+  return [F.subtitulo(X.titulo, 20), F.tabla(["", "", "", ""], [2900, 2000, 3600, 3000], filas, { derecha: [1, 3], negritaCol0: true }), F.vacia()];
+}
 function resumen(lang) {
   const X = RES[lang];
   const R = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "graficos", "datos_resumen.json"), "utf8"));
@@ -135,6 +144,8 @@ const ABS = {
     texto: "Mallplaza (Plaza S.A.) is the largest shopping center operator in the Andean region: 37 centers and 2.36 million m² of GLA in Chile, Peru and Colombia, with revenue almost as predictable as a bond (81.4% rents, 93% fixed and UF-indexed in Chile) and an 80.5% EBITDA margin. It is a great business, but at CLP 3,555 the market prices it as if its cash flows were nearly risk-free. Weighting our DCF at 80% and peer multiples at 20%, we reach a target price of CLP 2,076 and recommend SELL. Our disagreement with the market is not about cash flows but about the discount rate: the price requires a 7.56% WACC, 285 bp below our 10.41%, and a 6.0% cap rate against the 10.1% implied by our cash flows. Growth does not rescue the price, because each new m² earns a 5.0% real return against a 7.2% real WACC, and neither the bull case (CLP 2,627) nor the appraisers' rate (CLP 2,719) reaches the share price. The main risk to the thesis is a further compression of long-term rates.",
     rotulos: ["Recommendation", "Target price", "Price (30-Sep-26)", "Upside / downside"], rec: "SELL" },
 };
+const TR = require("./texto_resumen");
+for (const l of ["es", "en"]) ABS[l].texto = TR.calcular(l).abstract;     // texto con las cifras del modelo v4 (comun/cifras.js)
 function abstract(lang) {
   const X = ABS[lang];
   const R = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "graficos", "datos_resumen.json"), "utf8"));
@@ -200,7 +211,9 @@ function informe(lang = "es") {
   con("fa", () => C.seccionModulo(plan, fa.L[lang], fa.FIG, lang, "fa", { leadDestacado: true, antes: fa.figura1(lang), inicioAntes: fa.L[lang].fa1[0] + " " + fa.L[lang].fa1[1] }));
   con("valuacion", () => C.seccionModulo(plan, valuacion.L[lang], valuacion.FIG, lang, "valuacion"));
   C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...d.riesgos.sections[0].children], lang === "es" ? "RIESGOS DE INVERSIÓN" : "INVESTMENT RISKS", true);
-  C.ancho(plan, [new Paragraph({ spacing: { before: 160 }, children: [] }), ...resumen(lang)], lang === "es" ? "RESUMEN DE INVERSIÓN" : "INVESTMENT SUMMARY", true);
+  const XR = TR.calcular(lang).resumen;
+  XR.paginas = [{ texto: XR.bloques, figuras: XR.figs }];
+  con("resumen", () => C.seccionModulo(plan, XR, valuacion.FIG, lang, "resumen", { antes: datosClave(lang), inicioAntes: XR.datos.titulo }));
   const archivoPos = path.join(MAQ, `posiciones_${lang}.json`);
   // Al medir, las figuras también van (en su párrafo de cita): así el texto se mide con la misma estructura
   // que tendrá el documento final y las posiciones calculadas siguen valiendo.

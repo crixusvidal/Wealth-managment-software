@@ -5,7 +5,7 @@ V7 (múltiplos vs tasa local) queda fuera: falta la NTN-B de Brasil (pendiente d
 V8 es el gráfico del equipo. Sin título ni fuente en la imagen: van en el Word (informe/valuacion.js).
 
 Uso:
-    python graficos/valuacion.py <Mallplaza_Figuras_Valuacion.xlsx> [carpeta_salida | -] [Valoracion_Consolidada_v2.xlsx]
+    python graficos/valuacion.py <Mallplaza_Figuras_Valuacion.xlsx> [carpeta_salida | -] [Valoracion_Consolidada_v4.xlsx]
     (con el modelo v2 también genera V9: valor implícito por múltiplo de cada par)
 """
 import sys

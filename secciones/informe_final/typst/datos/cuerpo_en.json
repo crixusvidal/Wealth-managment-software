@@ -3,7 +3,7 @@
  "abstract": {
   "titulo": "ABSTRACT",
   "loc": "en-US",
-  "texto": "Mallplaza (Plaza S.A.) is the largest shopping center operator in the Andean region: 37 centers and 2.36 million m² of GLA in Chile, Peru and Colombia, with revenue almost as predictable as a bond (81.4% rents, 93% fixed and UF-indexed in Chile) and an 80.5% EBITDA margin. It is a great business, but at CLP 3,555 the market prices it as if its cash flows were nearly risk-free. Weighting our DCF at 80% and peer multiples at 20%, we reach a target price of CLP 2,076 and recommend SELL. Our disagreement with the market is not about cash flows but about the discount rate: the price requires a 7.56% WACC, 285 bp below our 10.41%, and a 6.0% cap rate against the 10.1% implied by our cash flows. Growth does not rescue the price, because each new m² earns a 5.0% real return against a 7.2% real WACC, and neither the bull case (CLP 2,627) nor the appraisers' rate (CLP 2,719) reaches the share price. The main risk to the thesis is a further compression of long-term rates.",
+  "texto": "Mallplaza (Plaza S.A.) is the largest shopping-center operator in the Andean region: 37 centers and 2.36 million m² of GLA in Chile, Peru and Colombia. 81.4% of its revenue is rent and 93% of that is fixed and UF-indexed in Chile; the last-twelve-months (LTM) EBITDA margin is 80.5%. It is a great business, but at CLP 3,555 (30-Sep-26) the market prices it as if its cash flows were nearly risk-free. Weighting a DCF (CLP 1,859) at 80% and peer multiples (CLP 2,951) at 20%, the target price is CLP 2,077 (−41.6% versus the price) and we recommend SELL. Our disagreement with the market is not about cash flows but about the discount rate: the price requires a nominal WACC of 7.60% (4.5% real), 281 bp below our nominal WACC of 10.41% (7.2% real), and a real cap rate (LTM EBITDA over enterprise value) of 6.0% against the 10.1% implied by our cash flows. Growth does not rescue the price: the real after-tax return on the cost of a new m² (RONIC) is 5.3%, below the real WACC of 7.2%. Neither the bull case, in which everything goes right (CLP 2,915), nor the appraisers' rate (CLP 2,734) reaches the share price. The main risk to the thesis is a further compression of long-term rates.",
   "rotulos": [
    "Recommendation",
    "Target price",
@@ -12,35 +12,12 @@
   ],
   "rec": "SELL"
  },
- "resumen": {
-  "titulo": "INVESTMENT SUMMARY",
-  "pend": "TO BE WRITTEN",
-  "datos": "KEY DATA",
-  "loc": "en-US",
-  "filas": [
-   "Recommendation",
-   "Target price (CLP)",
-   "Price 30-Sep-26 (CLP)",
-   "Upside / downside",
-   "DCF / multiples value (CLP)",
-   "DCF / multiples weight",
-   "Ticker",
-   "Market cap (CLP bn)",
-   "52-week range (CLP)",
-   "Expected dividend 2027E (CLP)",
-   "Net debt / LTM EBITDA 2Q26"
-  ],
-  "rec": "SELL",
-  "t1": "Recommendation and target price · Investment thesis · Valuation summary · Catalysts · Key risks.",
-  "t2": "Section to be written by the team; the key data on the right already come from the models.",
-  "fuente": "Source: valuation model v2; Bloomberg (52-week range); Team analysis."
- },
  "datos": {
-  "precio_objetivo": 2075.726691910319,
+  "precio_objetivo": 2077.19981194966,
   "precio": 3555,
-  "potencial": -0.4161106351869708,
-  "dcf": 1856.8119971801468,
-  "multiplos": 2951.385470831009,
+  "potencial": -0.41569625542907,
+  "dcf": 1858.65339722932,
+  "multiplos": 2951.38547083101,
   "peso_dcf": 0.8,
   "acciones_mm": 2190,
   "capitalizacion_mm": 7785450,
@@ -48,8 +25,8 @@
    2470,
    4700
   ],
-  "dividendo": 69.4134824442579,
-  "dividend_yield": 0.0195255928113243,
+  "dividendo": 69.413482444258,
+  "dividend_yield": 0.019525592811324332,
   "dfn_mm": 1285740,
   "ebitda_udm_mm": 544935,
   "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx (Supuestos B8–B13, Precio_Objetivo B12–B17, Deuda D16); Mallplaza_Figuras_Valuacion_recalc.xlsx (V1_Football, rango 52 semanas)"
@@ -136,19 +113,19 @@
     {
      "p": [
       [
-       "Market structure, however, varies from country to country (Figure 2). In Chile, the trio holds 76% of the GLA of the main operators (CR3) and the partial HHI reaches at least 2,126 points, typical of a highly concentrated market, with Mallplaza as leader (33%) followed by Cenco (29%) and Parque Arauco (14%). In Peru and Colombia, by contrast, the trio accounts for only 37% and 13% of GLA, respectively, leadership is held by an outside operator with 29% and 9%, respectively, and Mallplaza ranks second in both markets. Fragmentation is greatest in Colombia, where most shopping centers are strata-titled (multi-owner), which forces professional operators to grow by acquiring single-owner assets, as Mallplaza did with Gran Plaza.",
+       "Market structure, however, varies from country to country (Figure 2). In Chile, the trio holds 76% of the GLA of the main operators (CR3) and the partial HHI index reaches at least 2,126 points, typical of a highly concentrated market, with Mallplaza as leader (33%) followed by Cenco (29%) and Parque Arauco (14%). In Peru and Colombia, by contrast, the trio accounts for only 37% and 13% of GLA, respectively, leadership is held by an outside operator with 29% and 9%, respectively, and Mallplaza ranks second in both markets. In Peru that leader is Real Plaza (InRetail), with 888,000 m² and 95.5% occupancy, versus Mallplaza's 618,093 m² and 93.8%; even so, Mallplaza generates more EBITDA per m² (S/ 159 versus S/ 148 in 2Q26). Fragmentation is greatest in Colombia, where most shopping centers are strata-titled (multi-owner), which forces professional operators to grow by acquiring single-owner assets, as Mallplaza will do with Gran Plaza (179,667 m², announced acquisition).",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "NEW SUPPLY IN CHILE GROWS IN LINE WITH CONSUMPTION, WITH PRESSURE IN 2027-2028"
+     "h1": "NEW SUPPLY IN CHILE GROWS BELOW CONSUMPTION, WITH PRESSURE CONCENTRATED IN 2027"
     },
     {
      "p": [
       [
-       "Between 2026 and 2028, the trio will add 219,900 m² of organic GLA in Chile that will compete for consumer spending, equivalent to 6.7% of its current GLA; this figure excludes offices and multifamily, which do not depend on consumption, as well as acquisitions, which merely change ownership. Over the same period, the Central Bank of Chile projects cumulative private consumption growth of 6.4% (Figure 3), so new supply is advancing practically in line with expected demand. The timing, however, is uneven: 2026 adds almost no space (+0.2%), and pressure is concentrated in 2027 and 2028, when supply (+2.9% and +3.5%) outpaces consumption (+2.1% and +2.7%).",
+       "Between 2026 and 2028, the trio will add 219,900 m² of organic GLA in Chile that will compete for consumer spending, equivalent to 5.1% of the industry's GLA in Chile. We estimate that GLA (≈4.3 million m²) by dividing the trio's GLA excluding offices (3.29 million m²) by its 76% share of the main operators' GLA; measuring supply against the trio's own GLA (6.7%) would overstate the pressure, because it leaves out the other operators. The figure excludes offices and multifamily, which do not depend on consumption, as well as acquisitions, which merely change ownership. Over the same period, the Central Bank of Chile projects cumulative private consumption growth of 6.4% (Figure 3), so new supply is advancing below expected demand. The timing, however, is uneven: 2026 adds almost no space (+0.2%), and pressure is concentrated in 2027, when supply (+2.2%) barely exceeds consumption (+2.1%); in 2028 it falls below it again (+2.6% versus +2.7%). We only measure the trio's supply, whose pipeline is public: if other operators open additional m², the pressure would be greater.",
        false,
        false
       ]
@@ -178,12 +155,7 @@
     {
      "p": [
       [
-       "Rivalry (4)",
-       true,
-       false
-      ],
-      [
-       " is played out not on price but on experience and assets. Mallplaza devotes more than half of its GLA to non-traditional, experience and entertainment formats, Cenco opened QINTO with 30,000 m² of food and dining at Costanera, and Parque Arauco is adding dining floors at Kennedy, while competition to acquire assets is intensifying, with Minka and Plaza Central changing hands in the past year and Parque Arauco announcing the purchase of Quilín and Chicureo. We do not assign the maximum score because the trio's shares in Chile have remained stable since 2Q22 (Appendix 5) and margins show no erosion.",
+       "Rivalry (4) is played out not on price but on experience and assets. There are no signs of a price war: in 2Q26 all three operators raised same-store rents in Chile (Mallplaza +5.4%, Parque Arauco +3.8% and Cenco +0.8%, the latter hit by lower sales-linked variable rent), with 96-99% occupancy that leaves no vacant space to fill with discounts (Appendix 6, table 6.2). Mallplaza devotes more than half of its GLA to non-traditional, experience and entertainment formats, Cenco opened QINTO with 30,000 m² of food and dining at Costanera, and Parque Arauco is adding dining floors at Kennedy, while competition to acquire assets is intensifying, with Minka and Plaza Central changing hands in the past year and Parque Arauco announcing the purchase of Quilín and Chicureo. We do not assign the maximum score because the trio's shares in Chile have remained stable since 2Q22 (Appendix 5) and margins show no erosion.",
        false,
        false
       ]
@@ -244,7 +216,7 @@
     {
      "p": [
       [
-       "Mallplaza turns its scale into the highest EBITDA per m² of the trio, at CLP 59,451 in 2Q26 versus 58,384 at Cenco and 55,738 at Parque Arauco (Figure 5). That advantage stems from high-traffic urban locations, which in Chile received 52.7 million visits in the quarter versus 32.5 million at Cenco, and from monthly sales per m² of CLP 289,788 in Chile, 5.8% higher than a year earlier. The gap with Cenco is narrow and is partly explained by Cenco having added Plaza Central in June, with just one month of EBITDA in the quarter.",
+       "Mallplaza turns its scale into the highest EBITDA per m² of the trio, at CLP 59,451 in 2Q26 versus 58,384 at Cenco and 55,363 at Parque Arauco (Figure 5). That advantage stems from high-traffic urban locations, which in Chile received 52.7 million visits in the quarter versus 32.5 million at Cenco, and from monthly sales per m² of CLP 289,788 in Chile, 5.8% higher than a year earlier. The gap with Cenco is narrow and is partly explained by Cenco having added Plaza Central in June, with just one month of EBITDA in the quarter.",
        false,
        false
       ]
@@ -274,7 +246,7 @@
     {
      "p": [
       [
-       "In an attractive industry, but one with high rivalry and supply that will outpace consumption in 2027-2028, the operators with the most productive assets and the most stable leases will gain share and profitability. Mallplaza leads in scale in Chile and in productivity per m², and is the only one of the trio with growing real sales, which leaves it well positioned to defend its profitability. Its main risk is its exposure to Chile, which accounts for 62% of its GLA and where consumption currently looks weaker.",
+       "In an attractive industry, but one with high rivalry and supply that will catch up with consumption in 2027, the operators with the most productive assets and the most stable leases will gain share and profitability. Mallplaza leads in scale in Chile and in productivity per m², and is the only one of the trio with growing real sales, which leaves it well positioned to defend its profitability. Its main risk is its exposure to Chile, which accounts for 62% of its GLA and where consumption currently looks weaker.",
        false,
        false
       ]
@@ -297,7 +269,7 @@
        true
       ]
      ],
-     "archivo": "/industria/graficos/figuras/en_ind5b_market_share_paises_vertical.png",
+     "archivo": "/industria/graficos/figuras/en_ind5_market_share_paises.png",
      "ancla": 2
     },
     {
@@ -391,7 +363,7 @@
        false
       ],
       [
-       " As for the benefits of its own operations, the implementation of an energy management system (EnMS) certified under ISO 50001 translates into better energy performance and therefore lower operating costs. The opportunities to access local external benefits are tied to the company's ESG image: in Chile, under the R&D Law (CORFO), PLAZA can obtain up to a 55% reduction in first-category tax; Peru recognizes the company with 2 out of 4 stars in “Huella de Carbono Perú”, which strengthens its image and makes it easier to obtain permits and licenses in the country; and Colombia has Law 2099 of 2021, which allows income-tax deductions for investments in environmental control, conservation and improvement. In addition, the company holds certifications and recognitions that support its ESG image and has joined indices such as DJSI MILA (Figure 7). Figure 12 estimates (as a scenario, not as data) that operating ESG savings add about CLP 2 per share and that a 25 bp cut in the cost of debt and equity would add CLP 71, against the CLP 1,406 that separate the target price from the share price.",
+       " As for the benefits of its own operations, the implementation of an energy management system (EnMS) certified under ISO 50001 translates into better energy performance and therefore lower operating costs. The opportunities to access local external benefits are tied to the company's ESG image: in Chile, under the R&D Law (CORFO), PLAZA can obtain up to a 55% reduction in first-category tax; Peru recognizes the company with 2 out of 4 stars in “Huella de Carbono Perú”, which strengthens its image and makes it easier to obtain permits and licenses in the country; and Colombia has Law 2099 of 2021, which allows income-tax deductions for investments in environmental control, conservation and improvement. In addition, the company holds certifications and recognitions that support its ESG image and has joined indices such as DJSI MILA (Figure 7). Figure 12 estimates (as a scenario, not as data) that operating ESG savings add about CLP 2 per share and that a 25 bp cut in the cost of debt and equity would add CLP 72, against the CLP 1,478 that separate the target price from the share price.",
        false,
        false
       ]
@@ -625,7 +597,7 @@
     {
      "p": [
       [
-       "Under IAS 40, revaluations of investment property run through the income statement. In 2025 a CLP 1,447bn fair-value gain, 27% of opening property value against about 2% a year at Parque Arauco and Cencosud Shopping, lifted attributable net income to CLP 1,431bn (2.2x revenue) and reported ROE to 37.5% (Figure 13). About two-thirds of Chile's 29% uplift came from a lower appraisal discount rate, not from higher NOI.",
+       "Under IAS 40, revaluations of investment property run through the income statement. In 2025 a CLP 1,447bn fair-value gain, 27% of opening property value against about 2% a year at Parque Arauco and Cencosud Shopping, lifted attributable net income to CLP 1,431bn (2.2x revenue) and reported ROE to 37.5% (Figure 13). About two-thirds of Chile's 29% uplift came from a lower appraisal discount rate (6.62% to 5.64% real, Note 11), not from higher NOI (Appendix 11C).",
        false,
        false
       ]
@@ -634,7 +606,7 @@
     {
      "p": [
       [
-       "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%, the highest of the three local peers on a comparable basis (Appendix 14). FFO, which we rebuild from the statements to within 0.02% of the reported CLP 405bn (Figure 14), held a 59–62% margin over 2022–2025 while net income swung more than fourfold. FFO excludes the UF indexation of debt (CLP 44bn, 11% of FFO); distributable profit includes it and is our conservative earnings anchor.",
+       "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%; with the same adjustment we apply to peers it would be 10.0%, the highest of the three (Appendix 14). FFO, which we rebuild from the statements to within 0.02% of the reported CLP 405bn (Figure 14), held a 59–62% margin over 2022–2025 while net income swung more than fourfold. FFO excludes the UF indexation of debt (CLP 44bn, 11% of FFO); distributable profit includes it and is our conservative earnings anchor.",
        false,
        false
       ]
@@ -643,7 +615,7 @@
     {
      "p": [
       [
-       "Broken down, 2025 normalized ROE (9.7%) is a 56.5% normalized net margin times an asset turnover of only 0.097x and 1.77x accounting leverage. Turnover is low because the balance sheet is at fair value: each revaluation inflates assets and equity without bringing in more cash. We therefore forecast normalized ROE stable at around 8%, rising only with leverage, not with operations.",
+       "Broken down, 2025 normalized ROE (9.7%) is a 56.5% normalized net margin times an asset turnover of 0.097x and 1.77x accounting leverage. It is not the shareholder's return: the denominator is equity at appraised value, and each revaluation raises its book value without generating cash flow, because it is a non-cash fair-value change that does not enter FFO or dividends. We therefore forecast normalized ROE of 8–9%, rising only with leverage.",
        false,
        false
       ]
@@ -655,7 +627,7 @@
     {
      "p": [
       [
-       "Revenue rose 76% between 2022 and 2025, but 21.8pp of 2025's 32.2% came from perimeter: the Peruvian portfolio bought from Falabella, consolidated from 4 December 2024. Ex-Peru, revenue grew 10.7% in 2025 and 7.1% in 1H26.",
+       "Revenue rose 76% between 2022 and 2025, but 21.8pp of 2025's 32.2% came from perimeter: the Peruvian portfolio bought from Falabella, consolidated from 4 December 2024 (Appendix 11C). Ex-Peru, revenue grew 10.7% in 2025 and 7.1% in 1H26.",
        false,
        false
       ]
@@ -664,7 +636,7 @@
     {
      "p": [
       [
-       "Once currency and inflation are removed, 1H26 reported growth of 7.4% falls to about 3.0% real (Figure 15). Chile grew 2.8% after 3.1% UF indexation (5.1% in 2025); Peru 4.5% despite occupancy slipping to 93.8%; Colombia only about 1% once a 7.5% COP appreciation and 6.1% inflation are stripped out. In other words, roughly 60% of 1H26 reported growth came from prices and currency, not from more activity.",
+       "Once currency and inflation are removed, the 7.4% growth of 1H26 falls to ~3.0% real (Figure 15): Chile 2.8% (UF +3.1%), Peru 4.5% (occupancy 93.8%) and Colombia ~1% net of the 7.5% COP appreciation and 6.1% inflation.",
        false,
        false
       ]
@@ -673,28 +645,19 @@
     {
      "p": [
       [
-       "Growth is contractual, not sales-driven. Variable rent is 5.1% of revenue and fell 1.1% in 1H26 while tenant sales rose 6.7%, because minimum rents (same-store rent +5.5%) are outpacing tenant sales (same-store sales +3.7%). Revenue is therefore bond-like, but its real growth is converging on the 0.4–0.9% the company assumes for Chile in its own appraisal.",
+       "In our reading, growth depends more on contracts than on sales: variable rent is 5.1% of 1H26 revenue and fell 1.1% while tenant sales rose 6.7%, because minimum rents (+5.5%) are outpacing sales (+3.7%). It is not a bond: 15.1% of GLA expires within two years and tenant solvency matters, and real growth converges on the 0.4–0.9% of the appraisal.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "Margin gains came from mix and cost recovery; operating leverage is spent"
+     "h1": "Margin gains came from mix and cost recovery; further room looks limited"
     },
     {
      "p": [
       [
-       "EBITDA margin rose from 76.2% in 2022 to 80.5% in 2025 for two reasons. Peru consolidates at an 83% segment margin, against 80% in Chile and 73% in Colombia. Chile's margin gained 2.4pp on a higher recovery of common charges, which are presented net of cost (Note 2.20): real, but dependent on occupancy and tenant negotiations, so not structural.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "With cost of sales at 6% of revenue and total operating costs near 20%, little fixed cost is left to dilute; with D&A at 0.7% of revenue, EBIT (CLP 523bn in 2025) tracks EBITDA. In 1H26 EBITDA grew 7.4%, in line with revenue, and margin held at 79.7%. Administrative expense rose 18.1% on payroll (+18.9%: CEO transition and a full year of Peru), a bad-debt charge rebounding from a 2025 base flattered by recoveries (0.64% of revenue, below 1.22% in 2024), and a one-off Colombian wealth tax of CLP 1.7bn. Excluding the last two, 1H26 margin would be 80.4%, up 0.7pp.",
+       "EBITDA margin rose from 76.2% in 2022 to 80.5% in 2025 for two reasons. Peru consolidates at an 83% segment margin, against 80% in Chile and 73% in Colombia. And Chile's margin gained 2.4pp on a higher recovery of common charges, presented net of cost (Note 2.20): real, but dependent on occupancy and tenant negotiations, so we do not extrapolate it.",
        false,
        false
       ]
@@ -703,28 +666,19 @@
     {
      "p": [
       [
-       "Operating costs have already fallen from 23.8% of revenue in 2023 to 20.1% in 2025 (Appendix 11), so there is little left for the margin to gain: from here, EBITDA grows with rents, not with efficiency.",
+       "Operating costs (cost of sales plus administration) were 20.1% of revenue in 2025 and include D&A (0.55%): 20.1% − 0.55% = 19.5% = 1 − EBITDA margin (Appendix 11). If they were fixed, a 1% fall in revenue would cut EBITDA by 1.24% (1.1% if half were variable). In 1H26 EBITDA grew 7.4%, in line with revenue, and margin held at 79.7%. Administrative expense rose 18.1% on payroll (+18.9%: CEO transition and a full year of Peru), bad debts normalizing from a 2025 base flattered by recoveries, and a one-off Colombian wealth tax of CLP 1.7bn. Excluding the last two, 1H26 margin would be 80.4%.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "Cash covers the dividend 2.6x; the ceiling is policy, not liquidity"
+     "h1": "Cash covers the dividend 2.6x before debt and 1.8x after repaying it"
     },
     {
      "p": [
       [
-       "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025, converting 98.7% of EBITDA before tax. Cash tax was only 15% of operating profit, sheltered by tax goodwill from Chilean reorganizations and loss carry-forwards (Note 13), and will rise toward the 27% statutory rate. After capex and net interest, free cash flow before debt service was CLP 280bn, covering dividends 2.6x (Figure 16).",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "The 38.6% jump in 1H26 operating cash flow is not earnings power: 59% of it was December collections unwinding through working capital. Receivable days fell from 66 to 50, with no sign of weaker collection.",
+       "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025. Cash tax was only 15% of operating profit, sheltered by tax goodwill and loss carry-forwards (Note 13), and will rise toward the 27% statutory rate. After capex and net interest, free cash flow before debt was CLP 280bn, covering dividends 2.6x (Figure 16); 1.8x after repaying net debt (Appendix 10D).",
        false,
        false
       ]
@@ -733,7 +687,7 @@
     {
      "p": [
       [
-       "The dividend policy pays out 40% of distributable profit with a one-year lag, so retained cash is high: CLP 171.6bn in 2025. In the base case, FFO rises from CLP 428.5bn in 2026E to CLP 501.6bn in 2031E and ordinary dividends from CLP 147.7bn to 172.6bn; the remaining cash, together with new debt, funds capex and the additional distributions (Appendix 13).",
+       "The CLP 71.9bn (+38.6%) rise in 1H26 operating cash flow comes 78% from higher collections (partly December balances: receivable days from 66 to 50) and 15% from lower taxes paid; we do not extrapolate it.",
        false,
        false
       ]
@@ -742,11 +696,34 @@
     {
      "p": [
       [
-       "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, and 1H26 property capex was CLP 81bn (+176%). The base case funds USD 445m of remaining pipeline over 2026–2028 and then keeps adding about 27,000 m² of GLA a year, the 2022–2025 organic pace, so capex settles near 16% of revenue rather than the 5.5% maintenance floor (Figure 19).",
+       "The dividend policy pays out 40% of distributable profit with a one-year lag and the covenant (net debt/equity ≤ 2.0x; 0.26x at June) does not constrain it: retained cash was CLP 171.6bn in 2025. In the base case, FFO rises from CLP 428.5bn in 2026E to 512.6bn in 2031E and ordinary dividends from CLP 147.7bn to 176.5bn; the remaining cash, together with new debt, funds capex and the additional distributions (Appendix 13).",
        false,
        false
       ]
      ]
+    },
+    {
+     "p": [
+      [
+       "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, and 1H26 property capex was CLP 81bn (+176%). The base case funds the USD 579m of remaining dated pipeline over 2026–2028 (including USD 134m of other projects in Chile) and then keeps adding about 27,000 m² a year, the 2022–2025 organic pace: total capex settles near 16% of revenue, 5.5% maintenance and ~11% incremental (Figure 19).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "figancha": {
+      "n": "Figure 19:",
+      "titulo": "After the pipeline, incremental capex for continuous expansion keeps total capex near CLP 150bn a year; net debt/EBITDA rises to 3.5x",
+      "archivo": "/analisis_financiero/graficos/figuras/en_FA7_capex_ancha.png",
+      "fuente": [
+       [
+        "2026E includes CLP 84.2bn of 1H26 (no breakdown by type). Maintenance + IT = 5.5% of revenue; incremental = pipeline under way + continuous expansion. 2024A: one month of Peru EBITDA. Source: Plaza S.A. financial statements (CMF); 2Q26 results release; model v4 (Appendix 15).",
+        false,
+        false
+       ]
+      ]
+     }
     },
     {
      "h1": "Cash-flow metrics earn the AAA; equity-based ratios flatter it"
@@ -754,7 +731,7 @@
     {
      "p": [
       [
-       "LTV fell from 26.9% to 18.8% in 2025, but 5.0pp of the 8.0pp drop came from revaluing the denominator; with property at 2024 value plus additions, LTV would have been 23.8% (Figure 17). Cash-flow metrics are the honest lens and support Feller Rate's upgrade to AAA (25 September 2026): net debt/EBITDA fell from 3.78x to 2.36x on June 2026 LTM EBITDA (the 2024 figure includes only one month of Peru), and EBITDA covers financial costs 8.4x.",
+       "LTV fell from 26.9% to 18.8% in 2025, but 5.0pp of the 8.0pp drop came from revaluing the denominator; with property at 2024 value plus additions, LTV would have been 23.8% (Figure 17). Cash-flow metrics support Feller Rate's upgrade to AAA (25 September 2026), but of the fall in net debt/EBITDA from 3.78x to 2.36x, 0.75x is perimeter (Peru consolidated one month in 2024; pro forma ≥ 3.0x), 0.39x EBITDA growth and only 0.28x lower debt (Appendix 11B). EBITDA covers financial costs 8.4x.",
        false,
        false
       ]
@@ -763,20 +740,25 @@
     {
      "p": [
       [
-       "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year duration. The UF bonds carry a 3.36% real coupon (3.48% effective), but with UF indexation the all-in nominal cost was about 7% in 2025. Maturities cluster in 2029, 2031 and 2033 (Figure 18); refinancing series S (1.32% effective) at the latest issue's 4.33% would add about CLP 4.9bn a year. Liquidity is ample: at June 2026 the current ratio was 2.50x and cash covered current liabilities 1.71x.",
+       "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year duration. The UF bonds carry a 3.36% real coupon (3.48% effective); with UF indexation the all-in nominal cost was about 7% in 2025. Maturities cluster in 2029, 2031 and 2033 (Figure 18); refinancing series S (1.32% effective) at the latest issue's 4.33% would add about CLP 4.9bn a year. At June 2026 the current ratio was 2.50x and cash covered current liabilities 1.71x.",
        false,
        false
       ]
      ]
     },
     {
-     "p": [
-      [
-       "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cencosud Shopping (2.1x) and Parque Arauco (5.7x), and each extra turn adds 25bp to the real cost of debt. Cash beyond the 40% payout and the capex plan is returned through buybacks or special dividends, CLP 1.8tn cumulatively over 2H26E–2031E (Appendix 13). At 3.5x the new AAA would likely come under pressure.",
-       false,
-       false
+     "figancha": {
+      "n": "Figure 18:",
+      "titulo": "Refinancing risk sits in 2029, 2031 and 2033, not in the near term",
+      "archivo": "/analisis_financiero/graficos/figuras/en_FA6_vencimientos_ancha.png",
+      "fuente": [
+       [
+        "UF bonds, book value Dec-25 (total CLP 1,277.7bn); label = effective real rate (two-series years: book-value-weighted). Excludes CLP 301.6bn of PEN/COP bank debt. Source: Plaza S.A. financial statements Dec-25, Note 14; Team analysis.",
+        false,
+        false
+       ]
       ]
-     ]
+     }
     },
     {
      "p": [
@@ -788,12 +770,21 @@
      ]
     },
     {
+     "p": [
+      [
+       "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cencosud Shopping (2.1x) and Parque Arauco (5.7x), and each extra turn adds 25bp to the real cost of debt. Cash beyond the 40% payout and the capex plan is returned through buybacks or special dividends, CLP 1.7tn cumulatively over 2H26E–2031E (Appendix 13). At 3.5x the new AAA would likely come under pressure.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
      "h1": "The forecast carries forward what history supports, including the pace of expansion"
     },
     {
      "p": [
       [
-       "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.4%), as real same-store growth converges to the appraisal midpoints, 123,700 m² of dated pipeline matures and, from 2029E, about 27,000 m² a year opens at the historical pace (Figure 19); 2026E and 2027E revenue sit within 0.6% of consensus. EBITDA margin stays at 79.7–79.8%, below the 2025 peak. Cash tax normalizes from 16.8% to 27% by 2030E and financial costs rise with leverage, so FFO margin slides from 60.9% to 52.2%. Working capital is held at 15.6% of revenue, the December 2025 level (Appendix 9). New GLA yields 6.9% on cost, a 5.0% real return after tax against a 7.2% real WACC: expansion adds revenue but not value.",
+       "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.9%), as real same-store growth converges to the appraisal midpoints, 170,200 m² of dated pipeline matures (including 46,500 m² of other projects in Chile opening in 2028) and, from 2029E, about 27,000 m² a year opens at the historical pace (Figure 19); 2026E revenue sits 0.3% above the BEst consensus of 13 analysts (Appendix 11C). EBITDA margin stays at 79.7–79.8%, below the 2025 peak. Cash tax (Chile's rate) normalizes from 16.8% to 27% by 2030E and financial costs rise with leverage, so FFO margin slides from 60.9% to 52.2%. Working capital is held at 15.6% of revenue, the December 2025 level (Appendix 9). New GLA yields 7.3% on cost, a 5.3% real return after tax against a 7.2% real WACC: expansion adds revenue but not value.",
        false,
        false
       ]
@@ -805,7 +796,7 @@
     {
      "p": [
       [
-       "The analysis leaves three conclusions for the model. First, the right earnings base is cash: we use the company's EBITDA, which removes revaluation once (Appendix 12), and distributable profit as the anchor, not the CLP 1,431bn accounting profit. Second, business quality is not in doubt: Mallplaza earns the highest normalized ROE of its local peers (9.7% against 7.8% at Parque Arauco and 8.0% at Cencosud Shopping) with an LTV of only 18.8% (Appendix 14).",
+       "The analysis leaves three conclusions for the model. First, the right earnings base is cash: we use the company's EBITDA, which removes revaluation once (Appendix 12), and distributable profit as the anchor, not the CLP 1,431bn accounting profit. Second, business quality is not in doubt: with the same adjustment for all three, Mallplaza earns the highest normalized ROE of its local peers (10.0% against 7.8% at Parque Arauco and 8.0% at Cencosud Shopping) with an LTV of 18.8% (Appendix 14).",
        false,
        false
       ]
@@ -814,7 +805,7 @@
     {
      "p": [
       [
-       "Third, the return on capital at fair value is low. 2025 ROIC, with NOPAT at 27% over invested capital at appraised value, was 7.3% (Appendix 11), below a 10.4% nominal WACC: the properties are worth more on the books than their cash flows justify at our rate. At the current price, 2026E FFO of CLP 428.5bn yields 5.5% on market value (18x FFO) and distributable profit 4.9%: the market is paying for these cash flows as if they were almost risk-free. That is the gap the Valuation section quantifies. In short: a high-quality business, with predictable cash and a comfortable balance sheet, whose price already discounts more than those cash flows can deliver.",
+       "Third, existing capital barely earns its cost. 2025 ROIC, with NOPAT at 27% over capital at appraised value, was 7.3%, in line with our 7.2% real WACC; the comparison is with the real rate because that ROIC excludes revaluation (Appendix 11). New capital, by contrast, earns less than its cost (RONIC of 5.3%). At the current price, 2026E FFO of CLP 428.5bn yields 5.5% on market value (18x FFO) and distributable profit 4.9%: the market is paying for these cash flows as if they were almost risk-free. That is the gap the Valuation section quantifies. In short: a high-quality business, with predictable cash and a comfortable balance sheet, whose price already discounts more than those cash flows can deliver.",
        false,
        false
       ]
@@ -833,6 +824,7 @@
        false
       ]
      ],
+     "ancha": false,
      "ancla": 2
     },
     {
@@ -846,6 +838,7 @@
        false
       ]
      ],
+     "ancha": false,
      "ancla": 6
     },
     {
@@ -859,7 +852,8 @@
        false
       ]
      ],
-     "ancla": 13
+     "ancha": false,
+     "ancla": 12
     },
     {
      "n": "Figure 17:",
@@ -872,39 +866,14 @@
        false
       ]
      ],
+     "ancha": false,
      "ancla": 18
-    },
-    {
-     "n": "Figure 18:",
-     "titulo": "Refinancing risk sits in 2029, 2031 and 2033, not in the near term",
-     "archivo": "/analisis_financiero/graficos/figuras/en_FA6_vencimientos.png",
-     "fuente": [
-      [
-       "UF bonds, book value Dec-25 (total CLP 1,277.7bn); label = effective real rate (two-series years: book-value-weighted). Excludes CLP 301.6bn of PEN/COP bank debt. Source: Plaza S.A. financial statements Dec-25, Note 14; Team analysis.",
-       false,
-       false
-      ]
-     ],
-     "ancla": 19
-    },
-    {
-     "n": "Figure 19:",
-     "titulo": "After the pipeline, expansion keeps capex near CLP 150bn a year while leverage rebuilds to 3.5x",
-     "archivo": "/analisis_financiero/graficos/figuras/en_FA7_capex.png",
-     "fuente": [
-      [
-       "2026E includes CLP 84.2bn spent in 1H26; 2024A leverage includes one month of Peru EBITDA. Source: Plaza S.A. financial statements (CMF); 2Q26 results release (pipeline); valuation base case (Appendices 9 and 13).",
-       false,
-       false
-      ]
-     ],
-     "ancla": 16
     }
    ],
    "leadDestacado": true,
    "tabla": {
     "n": "Figure 13:",
-    "titulo": "Normalized ROE of 8–10% is the real return; reported ROE is appraisal-driven",
+    "titulo": "ROE on distributable profit of 8–10% (not the shareholder's return); reported ROE follows the appraisal",
     "encabezado": [
      "CLP bn",
      "’22 A",
@@ -927,10 +896,10 @@
       "654",
       "704",
       "767",
-      "821",
-      "870",
-      "916",
-      "961"
+      "827",
+      "887",
+      "936",
+      "982"
      ],
      [
       "EBITDA margin %",
@@ -954,7 +923,7 @@
       "60.9",
       "60.0",
       "57.7",
-      "55.3",
+      "55.4",
       "52.7",
       "52.2"
      ],
@@ -965,11 +934,11 @@
       "336",
       "1,431",
       "639",
-      "592",
-      "610",
-      "624",
-      "627",
-      "649"
+      "591",
+      "614",
+      "634",
+      "637",
+      "660"
      ],
      [
       "Distributable profit",
@@ -979,10 +948,10 @@
       "369",
       "380",
       "428",
-      "434",
-      "437",
-      "432",
-      "445"
+      "438",
+      "446",
+      "441",
+      "454"
      ],
      [
       "Net margin, normalized %",
@@ -992,10 +961,10 @@
       "56.5",
       "54.0",
       "55.7",
-      "52.9",
-      "50.2",
-      "47.1",
-      "46.2"
+      "53.0",
+      "50.3",
+      "47.2",
+      "46.3"
      ],
      [
       "Asset turnover (x)",
@@ -1004,11 +973,11 @@
       ".092",
       ".097",
       ".089",
+      ".090",
       ".091",
-      ".092",
       ".093",
-      ".093",
-      ".094"
+      ".094",
+      ".095"
      ],
      [
       "Assets / equity (x)",
@@ -1017,9 +986,9 @@
       "1.86",
       "1.77",
       "1.69",
-      "1.71",
-      "1.74",
-      "1.79",
+      "1.70",
+      "1.73",
+      "1.78",
       "1.84",
       "1.89"
      ],
@@ -1030,8 +999,8 @@
       "11.7",
       "37.5",
       "13.7",
-      "12.0",
-      "11.9",
+      "11.8",
+      "11.7",
       "11.8",
       "11.8",
       "12.0"
@@ -1043,11 +1012,11 @@
       "8.3",
       "9.7",
       "8.1",
-      "8.6",
+      "8.5",
       "8.4",
       "8.3",
       "8.1",
-      "8.2"
+      "8.3"
      ],
      [
       "ROA, normalized %",
@@ -1056,11 +1025,11 @@
       "4.5",
       "5.5",
       "4.8",
-      "5.1",
+      "5.0",
       "4.8",
-      "4.6",
+      "4.7",
       "4.4",
-      "4.3"
+      "4.4"
      ]
     ],
     "destacar": [
@@ -1072,7 +1041,7 @@
   {
    "clave": "valuacion",
    "titulo": "VALUATION",
-   "lead": "We recommend SELL on Mallplaza with a target price of CLP 2,076 per share, 41.6% below the CLP 3,555 close of 30-Sep-26 (−39.7% total return including dividends). Our target sits even below the stock's 52-week low (CLP 2,470).",
+   "lead": "We recommend SELL on Mallplaza with a target price of CLP 2,077 per share, 41.6% below the CLP 3,555 close of 30-Sep-26 (−39.6% total return including dividends). Our target sits even below the stock's 52-week low (CLP 2,470).",
    "bloques": [
     {
      "h1": "A PRICE NO METHOD REACHES"
@@ -1080,7 +1049,7 @@
     {
      "p": [
       [
-       "In twelve months the stock rose from CLP 2,470 to 4,700 and now trades at CLP 3,555. None of our methods reaches that price: the DCF ranges from CLP 1,379 to 2,329 even with WACC ±100 bp and g between 2.5% and 4.0% (nominal), and the most favourable multiples fall short too (Figure 20). We give the DCF an 80% weight because Mallplaza is, at heart, a rent collector: 81.4% of revenue is rent and 93% of that is fixed. The 20% on multiples tests the model against what the market pays today, but with caution: Chile has only two direct peers, and neither captures the company's expansion plan or debt path.",
+       "In twelve months the stock rose from CLP 2,470 to 4,700 and now trades at CLP 3,555. None of our methods reaches that price: the DCF ranges from CLP 1,391 to 2,329 even with nominal WACC ±100 bp and nominal g between 2.5% and 4.0%, and the most favourable multiples fall short too (Figure 20). We give the DCF an 80% weight because Mallplaza is, at heart, a rent collector: 81.4% of revenue is rent and 93% of that is fixed. The 20% on multiples tests the model against what the market pays today, but with caution: Chile has only two direct peers, and neither captures the company's expansion plan or debt path.",
        false,
        false
       ]
@@ -1089,28 +1058,19 @@
     {
      "p": [
       [
-       "Figure 20 sums up the thesis in one picture. APV, which values the firm unlevered and adds the tax shields separately, gives CLP 1,894, just 2% above the DCF: the result does not depend on how we model financing. Multiples range from CLP 2,152 (common-set median) to 3,294 (Chilean median), and EV/EBITDA NTM and EV/EBIT sit between CLP 2,914 and 3,098. Everything falls to the left of the price; the only thing that reaches it is the stock's own trading range over the past year. Even the Chilean median multiple, the most favourable case for the stock, sits 7% below the price.",
+       "Figure 20 sums up the thesis in one image. The APV, which values the firm without debt and adds the tax shields separately, gives CLP 1,895, only 2% above the DCF: the result does not depend on how we model financing. Multiples range from CLP 2,152 (common-set median) to 3,294 (Chilean median), and NTM EV/EBITDA and EV/EBIT fall between CLP 2,914 and 3,098. Everything lands to the left of the price; only the stock's own one-year trading range reaches it. Even the Chilean median multiple, the most favourable case for the stock, sits 7% below the price.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "THE STORY IS IN THE RATE"
+     "h1": "THE STORY IS IN THE DISCOUNT RATE"
     },
     {
      "p": [
       [
-       "We project free cash flow to the firm in nominal CLP from 30-Jun-26, with an explicit horizon to 2031E and a terminal value that accounts for 76% of EV (Appendix 15). The CLP 1,857 per share is CLP 583 of explicit cash flows and CLP 1,884 of terminal value, less CLP 610 of debt and minorities: the result depends, above all, on the discount rate.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "That rate moves with the capital structure. Mallplaza uses its debt capacity to grow, as in 2024 after buying Open Plaza Peru (3.78x): we assume net debt/EBITDA rises from 2.36x to 3.5x by 2031, with 25 bp more real cost per turn, and that new debt (CLP 1.40 trillion) funds all capex while operating cash is distributed to shareholders. The nominal WACC thus moves from 10.54% in 2H26E to 10.41% in the terminal period (7.20% real): an 11.93% nominal Ke (8.67% real; Rf 4.98%, relevered beta of 1.14 from a six-peer median of 0.94, ERP 4.14% and a 1.41% revenue-weighted CRP) and a 5.11% nominal after-tax Kd based on the 3.6% real (UF) coupon of the latest bond (Appendix 19).",
+       "We project the firm's free cash flow (FCFF) in nominal CLP from 30-Jun-26, with an explicit horizon to 2031E and a terminal value that explains 78% of EV (Appendix 15). The CLP 1,859 per share is CLP 543 of explicit cash flows and CLP 1,926 of terminal value, less CLP 610 of net debt and minorities: the result depends, above all, on the discount rate.",
        false,
        false
       ]
@@ -1119,7 +1079,7 @@
     {
      "p": [
       [
-       "We build Ke in dollars because its three inputs are in that currency and are nominal: the US Treasury Rf, the implied equity risk premium published by Damodaran and country risk, which we weight by revenue. We then convert it to pesos with the gap between expected inflation in Chile (3.0%, the central bank's target) and in the US (2.24%, 10-year breakeven). The beta is unlevered with Hamada (six regional peers) and relevered each period (1.09 in 2H26E, 1.14 in the terminal period).",
+       "That rate moves with the capital structure. Mallplaza uses its debt capacity to grow, as in 2024 after buying Open Plaza Peru (3.78x): we assume net debt/EBITDA rises from 2.36x to 3.5x by 2031, with 25 bp more real cost per turn, and that the new debt (CLP 1.46 trillion) funds all capex while operating cash is distributed to shareholders. Nominal WACC thus moves from 10.54% in 2H26E to 10.41% at the terminal (7.32% and 7.20% real): a nominal Ke of 11.93% (8.67% real; USD Rf of 4.98%, re-levered beta of 1.14 from a six-peer median of 0.00, ERP 4.14% and a revenue-weighted CRP of 1.41%) and a nominal after-tax Kd of 5.11%, based on the 3.6% real (UF) coupon of the latest issue (Appendix 19).",
        false,
        false
       ]
@@ -1128,11 +1088,79 @@
     {
      "p": [
       [
-       "The first signal is the asset IRR, what the business earns for whoever buys it at CLP 3,555 if our cash flows come true: 7.57% nominal (4.44% real in UF), 284 bp below its WACC and just ~80 bp real above its real cost of debt (Figure 21).",
+       "We build Ke in dollars because its three inputs are in that currency and nominal: the US Treasury Rf, the implied market risk premium published by Damodaran and country risk, which we weight by revenue. We then convert it to pesos with the differential between expected inflation in Chile (3.0%, the central bank target) and in the US (2.24%, 10-year breakeven). Beta is unlevered with Hamada (six regional peers) and re-levered each period (NaN in 2H26E, 1.14 at the terminal).",
        false,
        false
       ]
      ]
+    },
+    {
+     "p": [
+      [
+       "The first signal is the asset (firm) IRR: the single rate that equates FCFF and terminal value to the enterprise value the market pays at CLP 3,555 (EV of CLP 9.12 trillion). It is 7.61% nominal (4.48% real in UF), 280 bp below the nominal WACC (272 bp in real terms) and only ~88 real bp above the real cost of its debt (Figure 21).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "tabla": {
+      "titulo": "Asset (firm) and new-project IRR vs WACC: nominal CLP and real (UF)",
+      "cols": [
+       "Buying at the price of",
+       "Nominal",
+       "Real",
+       "WACC nom./real",
+       "Gap nom./real"
+      ],
+      "filas": [
+       [
+        "Market: CLP 3,555",
+        "7.61%",
+        "4.48%",
+        "10.41% / 7.20%",
+        "−280 / −272 bp"
+       ],
+       [
+        "Our target: CLP 2,077",
+        "9.88%",
+        "6.68%",
+        "10.41% / 7.20%",
+        "−53 / −51 bp"
+       ],
+       [
+        "Our DCF: CLP 1,859",
+        "10.43%",
+        "7.21%",
+        "10.41% / 7.20%",
+        "+2 / +2 bp"
+       ],
+       [
+        "New project: 1 m² (cohort)",
+        "7.98%",
+        "4.84%",
+        "10.41% / 7.20%",
+        "−243 / −236 bp"
+       ]
+      ],
+      "anchos": [
+       2300,
+       740,
+       640,
+       1800,
+       1420
+      ],
+      "derecha": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "destacar": [
+       3
+      ],
+      "nota": "Asset IRR: the single rate that equates FCFF and terminal value to the enterprise value paid; at the DCF value it equals the WACC. New project: cash flow of 1 m² with the expansion cost, ramp and margin, maintenance and working capital. Real = (1 + nom.) / (1 + 3.0%) − 1. The implied WACC in Figure 27 (7.60%) shifts the whole WACC curve and the single-rate IRR is 7.61%: two readings of the same idea. Source: model v4, TIR_Implicita and TIR_Proyecto sheets."
+     }
     },
     {
      "h1": "GROWTH DOES NOT RESCUE THE PRICE"
@@ -1140,7 +1168,7 @@
     {
      "p": [
       [
-       "This is not pessimism about operations. We forecast a 79.7% EBITDA margin in 2026E (excluding revaluation, below the 80.5% LTM), a tax rate converging from 16.8% to 27%, the announced pipeline (USD 613 million and 170,200 m²) and, from 2029, 27,075 m² of new GLA a year at the historical pace. The 13-analyst consensus expects NTM EBITDA only ~3% above ours: the disagreement with the market is not about cash flows.",
+       "We are not pessimistic about operations. We project a 79.7% EBITDA margin in 2026E (excluding revaluations, below the 80.5% LTM), a cash tax rate converging from 16.8% to 27% by 2030, the company's full dated pipeline (170,200 m² and USD 613 MM, including 46,500 m² of “other projects” in Chile opening in 2028) and, from 2029, 27,075 new m² per year, the historical organic pace. The consensus of 13 analysts expects 12-month EBITDA only ~3% above ours: the disagreement with the market is not in the cash flows.",
        false,
        false
       ]
@@ -1149,7 +1177,7 @@
     {
      "p": [
       [
-       "Capex follows the company's plan: the pipeline and maintenance (5.5% of revenue) take base capex to a peak of CLP 240,660 million in 2027, and continuous expansion adds CLP 95,000–104,000 million a year from 2028, at the cost of the identified pipeline (USD 3,603 per m²) with a 35%, 90% and 100% revenue ramp. Working capital, at 15.6% of revenue, requires only CLP 7,100–9,900 million a year and moves the price by ±1.2% (Figure 22; Appendix 16).",
+       "Capex follows the company's plan and is split into maintenance and IT (5.5% of revenue, CLP 42–53 bn per year) and incremental capex: the pipeline under way (CLP 534 bn in 2H26E–2028E) and continuous expansion (CLP 95–104 bn per year from 2028, at USD 3,603 per m² and a revenue ramp of 35%, 90% and 100%). Total capex peaks at CLP 336 bn in 2027E and settles near 16% of revenue from 2029E (Figure 19). Working capital (15.6% of revenue) requires CLP 7.3–9.9 bn per year and, if it were zero, the target would rise only 1.3% (Figure 22; Appendix 16).",
        false,
        false
       ]
@@ -1158,7 +1186,7 @@
     {
      "p": [
       [
-       "Two assumptions deserve explanation. The cash tax rate starts at 16.8% because the company currently uses tax goodwill and loss carry-forwards; we assume those shields run off and the rate reaches 27% by 2030. It is a real cash saving (it lowers current tax), not accounting: CLP 61 per share undiscounted; without it the target falls 2.1% (Figure 22). And working capital grows with revenue, not with new m².",
+       "Two assumptions deserve an explanation. The cash tax rate starts at 16.8% because the company currently uses tax goodwill and accumulated losses; we assume those shields run out and the rate reaches 27% in 2030. It is real cash savings (lower current tax), not accounting: CLP 62 per share undiscounted; without it the target falls 2.1% (Figure 22). And working capital grows with revenue, not with new m².",
        false,
        false
       ]
@@ -1167,7 +1195,7 @@
     {
      "p": [
       [
-       "The problem is the return on growth. Each new m² yields 6.9% real pre-tax on cost, a 5.0% real RONIC after tax, below a 7.2% real WACC. The IRR of a new m², with capex, ramp, maintenance and working capital, is 4.62% real (7.76% nominal): 257 bp below the real WACC and 265 bp below the nominal one. Expansion adds revenue but not value, so terminal value grows only with inflation (g of 3.0% nominal, 0% real) and a higher g lowers value (Figure 23). Assuming more growth would not close the gap with the price; it would widen it.",
+       "Price and sales. For a rental operator the price is rent per m², and tenants' sales reach revenue only through variable rent (5.7% of revenue). So 1 pp more nominal same-store rent growth in 2027–28 adds CLP 45 to the DCF value per share, 18 times what 1 pp more tenant-sales growth adds (CLP 2.6); 1 pp more real rent growth in 2029–31 adds CLP 57. Better prices can translate into higher sales and variable rent when occupancy and traffic sustain them, so in the bull case we move both levers at once (rent +9.4%, sales +9.9%): even so, the target stays 18% below the price.",
        false,
        false
       ]
@@ -1176,46 +1204,31 @@
     {
      "p": [
       [
-       "That is why the explicit horizon includes the capex and ramp-up of projects opening through 2032 (108,301 m² of mature GLA in the terminal year), but from then on the model adds no new malls: terminal capex covers maintenance only (5.5% of revenue).",
+       "The problem is the return on growth. Each new m² yields 7.3% real before tax on its cost (expansion mix: 67% Chile, 33% Peru), a real after-tax RONIC of 5.3%, below a real WACC of 7.2%. The IRR of a new m², with capex, ramp, maintenance and working capital, is 4.84% real (7.98% nominal): 236 bp below the real WACC and 243 bp below the nominal one; to match it, revenue per m² would have to be 1.54 times the model's. Expansion adds revenue but not value: that is why terminal value grows only with inflation (nominal g of 3.0%, 0% real) and a higher g reduces value (Figure 23). Assuming more growth would not close the gap with the price; it would widen it. The explicit horizon therefore includes the capex and maturation of projects opening through 2032 (108,301 m² mature in the terminal year), but from there terminal incremental capex is zero and only maintenance remains.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "PEERS CONFIRM THE DIRECTION, NOT THE SIZE"
+     "h1": "WHY EXPAND IF IT DOES NOT CREATE VALUE?"
     },
     {
      "p": [
       [
-       "Mallplaza trades at 16.8x EV/EBITDA, above the Chilean median (15.7x) and far above Brazilian peers (9.0x). The gap with Brazil is about rates, not quality: with local real bonds at 2.5% in Chile and 8.1% in Brazil (NTN-B), the cap-rate spread (EBITDA/EV yield; with UF-indexed rents it is compared with real rates) over the local rate is similar in both countries, 385 bp in Chile and 302 bp in Brazil (Figure 24). We therefore weight the Chilean median at 70% and the common-set median at 30% (which includes IRSA; we exclude Fibra Danhos for its FIBRA regime): 14.4x, giving CLP 2,951 per share. The weighting matters little: between 0% and 100% Chile, the target price only moves from CLP 1,916 to 2,144 (Appendix 17).",
+       "If growth earns less than the cost of capital, what pushes management to keep going? We put forward four hypotheses, to be verified against the annual report and financial statements. First, accounting versus economics: debt is 100% UF-denominated at ~3.6% real, below what a new asset yields, so every debt-financed project improves FFO, EBITDA and profit even if it does not cover the return required on total capital. Second, revaluation: under IAS 40 appraisals use real rates of 5.5–6.4%, below the WACC, and each new asset is appraised above its cost and generates accounting profit. Third, the controlling shareholder: if the group (Falabella, to be confirmed) has anchor stores or other businesses in those malls, a new m² serves the group even if it earns little for Plaza, an agency conflict with minority shareholders (to be verified in the related-party notes). Fourth, compensation: if bonuses depend on GLA or EBITDA rather than ROIC, expanding is rational for management (to be verified). There are defensible strategic reasons (scarce land, network advantages); it is a capital-allocation risk, not a contradiction with a good business. The break-even for expansion is a real WACC of 5.3% (8.5% nominal); the WACC implied by the price (7.60% nominal, 4.5% real) is below that level: if the market were right, expanding would create value.",
        false,
        false
       ]
      ]
     },
     {
-     "p": [
-      [
-       "Macro explains the difference. At 30-Jun-26 Brazil had a 14.25% nominal Selic, a 14.34% nominal 10-year bond and 5.3% expected 2026 inflation, against a 4.5% nominal policy rate, a 5.43% nominal bond and 4.1% inflation in Chile, with similar real GDP growth (2.0% and 1.6%). An investor in Brazil demands more from every asset, not just shopping malls; applying that discount to Mallplaza, which earns 71.8% of revenue in Chile, would penalise it for a risk it does not carry. Mallplaza's own spread (346 bp) is in fact tighter than the Chilean median (385 bp): investors already pay it a premium within Chile.",
-       false,
-       false
-      ]
-     ]
+     "h1": "PEERS CONFIRM THE DIRECTION, NOT THE MAGNITUDE"
     },
     {
      "p": [
       [
-       "We chose the set on the same basis as the beta. IRSA is kept with caution, since it reports under IAS 29 and its NTM consensus has a single analyst; Fibra Danhos is excluded because, as a FIBRA, it must distribute 95% of its taxable income and has no beta in the WACC. We use EV/EBITDA because it is neutral to leverage and to revaluation (IAS 40), and we measure everyone with Bloomberg net debt (CLP 1,311,569 million for Mallplaza, close to the CLP 1,285,740 million of net financial debt used in the DCF).",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "Nor does quality justify the premium. Mallplaza trades 29% above Cencosud Shopping, yet its EBITDA per m² is only 1.8% higher (see Industry); only at Parque Arauco's multiple (18.4x), with 5.7x leverage, would it be worth more than its price. Every multiple, from EV/EBITDA NTM (CLP 2,914) to P/BV (CLP 3,171), sits below the price (Figure 25): multiples confirm the stock is expensive, and the DCF sets the size of the gap. We exclude P/E (CLP 8,644), distorted by property revaluation.",
+       "Mallplaza trades at 16.8x EV/EBITDA, above the Chilean median (15.7x) and far above Brazilian peers (9.0x). The gap with Brazil is not about quality but about rates: with local real bonds of 2.5% in Chile and 8.1% in Brazil (NTN-B), the cap-rate spread (EBITDA/EV yield; with UF-indexed rents it is compared with real rates) over the local rate is similar in both countries, 385 bp in Chile and 302 bp in Brazil (Figure 24). That is why we weight the Chilean median 70% and the common-set median 30% (which includes IRSA; we exclude Fibra Danhos because of its FIBRA regime): 14.4x, which leads to CLP 2,951 per share. The weighting matters little: from 0% to 100% Chile, the target price only moves from CLP 1,916 to 2,144 (Appendix 17).",
        false,
        false
       ]
@@ -1224,7 +1237,16 @@
     {
      "p": [
       [
-       "In price terms: at the Chilean median alone the stock would be worth CLP 3,294 (−7%); at Cencosud's multiple, CLP 2,621; and only at Parque Arauco's, CLP 3,967. Defending CLP 3,555 with multiples requires assuming Mallplaza deserves the valuation of the most leveraged peer in the group. The forward view tells the same story: Mallplaza trades at 14.8x consensus NTM EBITDA against a 12.5x weighted peer multiple. We keep Brazil at 30% rather than zero because the Chilean median rests on only two companies.",
+       "We chose the set with the beta criterion: IRSA with caution (IAS 29 reporter; one analyst on NTM) and without Fibra Danhos (FIBRA: distributes 95% of taxable income; no beta in the WACC). We use EV/EBITDA, neutral to leverage and revaluation (IAS 40), with Bloomberg net debt (CLP 1,311,569 MM for Mallplaza; the gap to the CLP 1,285,740 MM in the DCF is CLP 25,828 MM of IFRS 16 leases).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "p": [
+      [
+       "Quality does not justify the premium either. Mallplaza trades 29% above Cencosud Shopping, yet its EBITDA per m² is only 1.9% higher (see Industry); only at Parque Arauco's multiple (18.4x), which runs 5.7x leverage, would it be worth more than its price. Every multiple, from NTM EV/EBITDA (CLP 2,914) to P/BV (CLP 3,171), sits below the price (Figure 25): they confirm the stock is expensive, and the DCF gives the magnitude. We exclude P/E (CLP 8,644), distorted by property revaluation. In prices: Chilean median CLP 3,294 (−7%), Cencosud CLP 2,621 and only Parque Arauco CLP 3,967. Defending CLP 3,555 with multiples requires assuming Mallplaza deserves the valuation of the most leveraged peer in the group.",
        false,
        false
       ]
@@ -1236,7 +1258,153 @@
     {
      "p": [
       [
-       "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a real 6.0% cap rate, against 10.1% in our DCF, 6.4% for Chilean peers and 7.5% at book value (Figure 26). The market pays 1.61x an equity base already at fair value, appraised at a real discount rate of ~5.55% (Note 11); the real IRR the price leaves, 4.4%, is below that rate: it pays more than the appraisers themselves. To justify CLP 3,555, the nominal WACC would have to be 285 bp lower (7.56%; Figure 27); even at the appraisers' rate (5.55% real, 8.72% nominal), the DCF would be CLP 2,660.",
+       "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a real cap rate of 6.0% (LTM EBITDA / EV, comparable with real rates because rents are UF-indexed), against 10.1% in our DCF, 6.4% for Chilean peers and 7.5% at book value (Figure 26). The market pays 1.61 times an equity that is already at fair value, appraised with a real discount rate of ~5.55% (Note 11); the real IRR the price leaves, 4.5%, is below that rate: it pays more than the appraisers themselves. To justify CLP 3,555, nominal WACC would have to be 281 bp lower (7.60%, 4.5% real; Figure 27); even with the appraisers' rate (5.55% real, 8.72% nominal), the DCF would be CLP 2,679. (The implied WACC shifts the whole WACC curve; the single-rate IRR, 7.61%, is the same idea and also gives CLP 3,555.)",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "WHY THE MARKET PAYS CLP 3,555"
+    },
+    {
+     "p": [
+      [
+       "In twelve months the stock went from a low of CLP 2,470 (10-Oct-25) to a high of CLP 4,700 (27-Apr-26), a ~90% rise the business does not explain: EBITDA grew 5–10% a year. The push came from outside. The Chilean market rose 56% in 2025, with a change of government and expectations of lower taxes, and malls returned ~48% (LarrainVial) and re-rated together. MSCI EM Mid Cap inclusion (25-Nov-25) forced passive funds to buy ~USD 110 MM, some 15 times daily volume (Morgan Stanley). And analysts extrapolated growth: JPMorgan projects FFO growing ~11% a year to 2028, double our ~6% (2026E–2028E). The fall to CLP 3,555 (−24% from the high) coincides with weaker-than-expected results (EBITDA +5.2% in 1Q26), JPMorgan's target cut and the 10-year UST rising to 5.22%. It is a partial correction: at that price the stock trades 91% above the DCF, 33% above the value at the appraisers' rate (CLP 2,679) and at 1.61x book value. Figures attributed to analysts come from their own notes and intermediate prices are approximate (Figure 32).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "OUR VALUE VERSUS THE CONSENSUS"
+    },
+    {
+     "p": [
+      [
+       "Bloomberg shows 14 sources with an average recommendation of 2.85 (1 buy, 10 hold, 2 sell) and a 12-month target price of CLP 4,111, 49.5% above ours; the lowest is Goldman Sachs (sell, CLP 3,377) and the range runs from 3,377 to 4,600. Four reasons explain the gap (Figure 34). The discount rate is the main one: the price requires a nominal WACC of 7.60%, 281 bp below our 10.41%, and since terminal value is 78% of EV, each point of rate weighs heavily. Multiples do not get there either: the 20% on multiples gives CLP 2,951, 17% below the price, so it is not all WACC. The horizon also counts: targets are 12-month and ours is as of 30-Jun-26; at our nominal Ke of 11.93%, CLP 4,111 is worth ~CLP 3,673 today, so the gap narrows but does not close. And growth: if growth earns less than the WACC, our model penalises it, while the market probably values it at a return close to the cap rate. Targets followed the price (the stock rose 39% in 12 months) and we do not know their assumptions, only their targets.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "SCENARIOS: WHAT WOULD HAVE TO HAPPEN"
+    },
+    {
+     "p": [
+      [
+       "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure 29), instead of moving only the discount rate. Bear is everything going wrong at once: nominal WACC +100 bp and every operating lever at its historical minimum. Bull is everything going right: nominal WACC −100 bp, every lever at its historical maximum and a 23% tax rate (Reconstruction Law). Base is the model's central estimate. Same-store rent (price) and tenants' sales move together; nominal g stays at 3.0% in all three. Weighted 25/50/25% (team assumption, to be validated), the target price would be CLP 2,153.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "tabla": {
+      "titulo": "Scenarios: bear (everything goes wrong), base (central) and bull (everything goes right)",
+      "cols": [
+       "Assumption (all at once)",
+       "Bear",
+       "Base",
+       "Bull"
+      ],
+      "filas": [
+       [
+        "Terminal nominal WACC (all periods)",
+        "+100 bp (11.41%; 8.17% real)",
+        "10.41% (7.20% real)",
+        "−100 bp (9.41%; 6.23% real)"
+       ],
+       [
+        "EBITDA margin (historical quarterly min / max)",
+        "75.8%",
+        "79.7% (2026E)",
+        "81.3%"
+       ],
+       [
+        "Consolidated occupancy",
+        "95.1%",
+        "95.6%",
+        "96.6%"
+       ],
+       [
+        "Same-store rent 2027–28 (price, nominal)",
+        "3.7%",
+        "5.4%",
+        "9.4%"
+       ],
+       [
+        "Tenant sales 2027–28 (variable rent, 5.7% of revenue)",
+        "3.7%",
+        "3.7%",
+        "9.9%"
+       ],
+       [
+        "Real rent growth 2029–31",
+        "Note 11 floor",
+        "model",
+        "Note 11 ceiling"
+       ],
+       [
+        "Maintenance + IT capex (% of revenue)",
+        "6.6%",
+        "5.5%",
+        "4.8%"
+       ],
+       [
+        "Long-run tax rate",
+        "27%",
+        "16.8% → 27%",
+        "23%"
+       ],
+       [
+        "DCF value / 80/20 target price (CLP)",
+        "1,190 / 1,542",
+        "1,859 / 2,077",
+        "2,906 / 2,915"
+       ],
+       [
+        "Target price vs CLP 3,555",
+        "−56.6%",
+        "−41.6%",
+        "−18.0%"
+       ],
+       [
+        "Firm IRR at the price (nom.) / gap vs WACC",
+        "6.95% / −446 bp",
+        "7.61% / −280 bp",
+        "8.51% / −90 bp"
+       ],
+       [
+        "Probability (team assumption)",
+        "25%",
+        "50%",
+        "25%"
+       ]
+      ],
+      "anchos": [
+       2700,
+       1750,
+       1650,
+       1750
+      ],
+      "derecha": [
+       1,
+       2,
+       3
+      ],
+      "destacar": [
+       8,
+       9
+      ],
+      "nota": "Operating levers are the historical extremes of the Risks tornado; nominal WACC and g; rent (price) and sales move together. Terminal nominal g 3.0% in all three. Weighted 25/50/25%: DCF CLP 1,953, target price CLP 2,153 (−39.4%). Source: DCF v4 replica (Appendix 18); Team analysis."
+     }
+    },
+    {
+     "p": [
+      [
+       "The result is robust: even with everything in its favour the target price (CLP 2,915) does not reach the quote. The firm's IRR at the market price barely changes across scenarios (table) and always sits below each one's WACC (446, 280 and 90 nominal bp): not even the bull leaves a margin of safety. The APV (CLP 1,895), an Rf based on the peso bond (~CLP 2,449) and other debt targets (DCF of CLP 1,820 to 1,897) lead to the same conclusion (Appendix 18).",
        false,
        false
       ]
@@ -1245,7 +1413,7 @@
     {
      "p": [
       [
-       "We pushed the thesis to its extremes. In a bear case (nominal WACC +100 bp and the 75.8% quarterly-low margin) the target falls to CLP 1,713; in a bull case combining nominal WACC −100 bp, nominal g of 2.5%, the 81.3% quarterly-peak margin and the cut in corporate tax to 23%, it rises to CLP 2,627, still 26% below the price. APV (CLP 1,894), a peso-bond Rf (~CLP 2,439) and other debt targets (DCF of CLP 1,819 to 1,894) lead to the same conclusion (Appendix 18). The firm's IRR at the market price barely moves across scenarios (7.3%, 7.6% and 7.9% nominal in bear, base and bull; 4.2%, 4.4% and 4.7% real) and always stays below each one's WACC (409, 284 and 152 bp nominal): even the bull case leaves no margin of safety.",
+       "The APV also says how much the debt is really worth. Of its CLP 1,895 per share, CLP 1,630 is the unlevered firm and CLP 265 the tax shields of the projected debt: levering up to 3.5x adds value, but even adding it does not approach the price. Our risk-free choice is the conservative one: using the nominal peso bond (5.43%) and also adding country risk would count Chile risk twice, and even so the target price would only rise to ~CLP 2,449, 31% below the price. With an expected dividend of ~CLP 69 per share (2.0%), the expected total return is −39.6%.",
        false,
        false
       ]
@@ -1254,34 +1422,7 @@
     {
      "p": [
       [
-       "APV also shows what the debt is really worth. Of its CLP 1,894 per share, CLP 1,632 is the unlevered firm and CLP 261 the tax shields of projected debt: levering up to 3.5x adds value, but even with it the price is far away. And our risk-free choice is the conservative one: using the nominal peso bond (5.43%) and then adding country risk would count Chile risk twice, and even so the target price would only rise to ~CLP 2,439, 31% below the price. In other words, no reasonable choice of inputs rescues the current valuation; the gap is too wide to be a modelling artefact.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "Calendar details do not change the outcome either. With an expected dividend of ~CLP 69 per share (2.0%), the expected total return is −39.7%. And since the DCF is dated 30-Jun-26 and the price 30-Sep-26, the comparison slightly favours the market: if the balance of the 2026 dividend (~CLP 27 per share) was already paid before that date, our value would be somewhat overstated, not understated.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "That brings us to CLP 2,076 (80% × 1,857 + 20% × 2,951): 10.8x EBITDA, a real 9.3% cap rate and 0.94x book value. Rolling the DCF to 30-Sep-26 would lift it to ~CLP 2,118 without changing the call. The catalyst is the same force behind the thesis: with the nominal 10Y UST at 5.22%, its highest since 2002, rates pressure cap rates, and each new appraisal moves them toward our value. We would be wrong if cap rates compress further on institutional demand for defensive assets, or if the market sustains a structural premium for Tier A assets (see Investment Risks).",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "p": [
-      [
-       "What we will watch: the Note 11 appraisal at each reporting date (the real discount rate is the bridge between our value and book), the spread of the company's UF bonds over their 3.6% real coupon (at the latest issue's 4.33% real effective rate, the nominal WACC would rise 12 bp and the target would fall to CLP 2,042), the cut in corporate tax to 23% (+5.1% on the target, not yet included) and the AAA rating, which would likely come under pressure at 3.5x net debt/EBITDA. In short, the operating story is sound; it is the price of that story that no longer adds up.",
+       "That is how we get to CLP 2,077 (80% × 1,859 + 20% × 2,951): 10.8x EBITDA, a real cap rate of 6.1% and 0.94x book value. Rolling the DCF forward to 30-Sep-26 would lift it to ~CLP 2,119, without changing the recommendation. The catalyst is the one that holds the thesis together: with the nominal 10Y UST at 5.22%, the highest since 2002, rates pressure cap rates, and each new appraisal moves them toward our value. We would be wrong if cap rates compress further on institutional demand for defensive assets, or if the market sustains a structural premium for Tier A assets (see Investment Risks). We will watch the Note 11 appraisal at each close, the spread on the company's UF bond versus its 3.6% real coupon (at the 4.33% real effective rate of the latest issue, nominal WACC would rise 12 bp and the target price would fall to CLP 2,042), the cut in corporate tax to 23% (+5.2% to the target price, not yet included) and the AAA rating, which would probably come under pressure at 3.5x net debt/EBITDA.",
        false,
        false
       ]
@@ -1295,38 +1436,41 @@
      "archivo": "/valuacion/graficos/figuras/en_V1_football.png",
      "fuente": [
       [
-       "52-week intraday range (1-Oct-25 to 30-Sep-26; low 10-Oct-25, high 27-Apr-26). Source: Team analysis; Bloomberg.",
+       "Intraday 52-week range (01-10-25 to 30-09-26; low 10-10-25, high 27-04-26). Source: Team analysis; Bloomberg.",
        false,
        false
       ]
      ],
+     "ancha": false,
      "ancla": 1
     },
     {
      "n": "Figure 21:",
-     "titulo": "At CLP 3,555 the firm yields almost the same as its debt",
+     "titulo": "At CLP 3,555 the firm earns almost the same as its debt (real rates, UF)",
      "archivo": "/valuacion/graficos/figuras/en_V2_tasas.png",
      "fuente": [
       [
-       "Real rates in UF. Source: Central Bank of Chile (30-Jun-26); Mallplaza; Team analysis.",
+       "Real rates in UF. Source: Central Bank of Chile (30-06-26); Mallplaza; Team analysis.",
        false,
        false
       ]
      ],
+     "ancha": false,
      "ancla": 7
     },
     {
      "n": "Figure 22:",
-     "titulo": "With every strong assumption in its favor the target reaches CLP 2,928, still 18% below the price",
+     "titulo": "With every strong assumption in our favor the target reaches CLP 2,977, still 16% below the price",
      "archivo": "/valuacion/graficos/figuras/en_V13_supuestos_cascada.png",
      "fuente": [
       [
-       "Cumulative waterfall in the order shown; the table gives each assumption on its own. Target price = 80% DCF + 20% multiples. Source: v3 DCF replica; Team analysis.",
+       "Cumulative waterfall in the order shown; the table gives each assumption's effect alone. Target price = 80% DCF + 20% multiples. Source: DCF v4 replica; Team analysis.",
        false,
        false
       ]
      ],
-     "ancla": 10
+     "ancha": false,
+     "ancla": 11
     },
     {
      "n": "Figure 23:",
@@ -1334,12 +1478,13 @@
      "archivo": "/valuacion/graficos/figuras/en_V3_value_driver.png",
      "fuente": [
       [
-       "Top: DCF value by g. Bottom: relative terminal value by RONIC. Source: Team analysis.",
+       "Top: DCF value by nominal g. Bottom: relative terminal value by RONIC. Source: Team analysis.",
        false,
        false
       ]
      ],
-     "ancla": 12
+     "ancha": false,
+     "ancla": 14
     },
     {
      "n": "Figure 24:",
@@ -1347,51 +1492,55 @@
      "archivo": "/valuacion/graficos/figuras/en_V7_multiplos.png",
      "fuente": [
       [
-       "Real bond: 10Y UF (Central Bank of Chile) and NTN-B 2035 (8.08%) at 30-Jun-26. Spread = cap rate (1 / EV/EBITDA) − real bond. IRSA omitted (IAS 29). Source: Bloomberg; Central Bank of Chile; Team analysis.",
+       "Real bond: 10-year UF (BCCh) and NTN-B 2035 (8.08%) at 30-06-26. Spread = cap rate (1 / EV/EBITDA) − real bond. IRSA omitted (IAS 29). Source: Bloomberg; BCCh; Team analysis.",
        false,
        false
       ]
      ],
-     "ancla": 15
-    },
-    {
-     "n": "Figure 25:",
-     "titulo": "Value implied by each peer's multiple vs DCF and price (CLP per share)",
-     "archivo": "/valuacion/graficos/figuras/en_V9_pares.png",
-     "fuente": [
-      [
-       "Target = 80% DCF + 20% EV/EBITDA LTM. P/E excluded (includes revaluation). Source: Bloomberg (30-Sep-26); Team analysis.",
-       false,
-       false
-      ]
-     ],
+     "ancha": false,
      "ancla": 18
     },
     {
+     "n": "Figure 25:",
+     "titulo": "Implied value per peer multiple vs DCF and price (CLP per share)",
+     "archivo": "/valuacion/graficos/figuras/en_V9_pares.png",
+     "fuente": [
+      [
+       "Target price = 80% DCF + 20% LTM EV/EBITDA. P/E excluded (includes revaluation). Source: Bloomberg (30-09-26); Team analysis.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 20
+    },
+    {
      "n": "Figure 26:",
-     "titulo": "The market pays 6.0%; our cash flows are worth 10.1%",
+     "titulo": "The market pays 6.0%; our cash flows are worth 10.1% (real cap rate)",
      "archivo": "/valuacion/graficos/figuras/en_V5_cap_rate.png",
      "fuente": [
       [
-       "Gran Plaza: subsequent event, not in the model. Source: Mallplaza; Bloomberg; DF; Team analysis.",
+       "Cap rate = LTM EBITDA / EV, comparable with real rates (UF rents). Gran Plaza: subsequent event, not in the model. Source: Mallplaza; Bloomberg; DF; Team analysis.",
        false,
        false
       ]
      ],
-     "ancla": 21
+     "ancha": false,
+     "ancla": 22
     },
     {
      "n": "Figure 27:",
-     "titulo": "The price requires a nominal WACC 285 bp lower",
+     "titulo": "The price requires a nominal WACC 281 bp lower",
      "archivo": "/valuacion/graficos/figuras/en_V6_dcf_inverso.png",
      "fuente": [
       [
-       "Source: Team analysis.",
+       "Terminal nominal WACC; all periods shift in parallel. Source: Team analysis.",
        false,
        false
       ]
      ],
-     "ancla": 21
+     "ancha": false,
+     "ancla": 22
     }
    ]
   },
@@ -1430,7 +1579,7 @@
        "tinta"
       ],
       [
-       "EBITDA margin, rents, footfall or occupancy falling to their historical lows. The worst case, a 75.8% margin, cuts DCF value to CLP 1,671 (−10.0%), and the historical floor of same-store rent growth takes it to CLP 1,782 (−4.0%) (Figure 29). ",
+       "EBITDA margin, rents, footfall or occupancy falling to their historical lows. The worst case, a 75.8% margin, cuts DCF value to CLP 1,669 (−10.2%), and the historical floor of same-store rent growth takes it to CLP 1,783 (−4.1%) (Figure 29). All levers together, with WACC +100 bp, define the bear scenario (target price CLP 1,542, −56.6% against the share price). ",
        false,
        false
       ],
@@ -1472,7 +1621,7 @@
        "tinta"
       ],
       [
-       "Anchors, mostly from the Falabella group, drive footfall. Shrinking or losing them would lower visits and rents from smaller stores. The impact ranges from −1.3% to −4.0% (Figure 29). ",
+       "Anchors, mostly from the Falabella group, drive footfall. Shrinking or losing them would lower visits and rents from smaller stores. The impact ranges from −1.3% to −4.1% (Figure 29). ",
        false,
        false
       ],
@@ -1517,7 +1666,7 @@
        "tinta"
       ],
       [
-       "Higher long-term rates would raise the WACC and the cost of refinancing debt and the pipeline. Likelihood is high: the 10Y UST moved from 4.98% (model Rf) to 5.22% on 8-Oct-26, a 24-year high (since 2002); the Fed hiked in September and the Central Bank of Chile reports rising local long-term rates. With WACC +50 bp and +100 bp, the target price falls 6.5% and 12.3% (Figure 30). ",
+       "Higher long-term rates would raise the WACC and the cost of refinancing debt and the pipeline. Likelihood is high: the 10Y UST moved from 4.98% (model Rf) to 5.22% on 8-Oct-26, a 24-year high (since 2002); the Fed hiked in September and the Central Bank of Chile reports rising local long-term rates. With nominal WACC +50 bp and +100 bp, the target price falls 6.7% and 12.5% (Figure 30). ",
        false,
        false
       ],
@@ -1562,7 +1711,7 @@
        "tinta"
       ],
       [
-       "79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is small, because indexed rents rise with inflation: a 100 bp rise in the long nominal rate coming entirely from expected inflation takes off only 0.3%; if it came entirely from the real rate, 12.0% (Figure 31). The risk is that weaker consumption prevents passing inflation through to rents: if only 70% of the cash flow were indexed, the effect of inflation would rise to 1.0%. Weaker consumption also slows the new business lines (Appendix 20). ",
+       "79% of debt is in UF: a 3% higher UF takes CLP 38,691 million off accounting earnings (Note 26). On the target price, however, the effect is small, because indexed rents rise with inflation: a 100 bp rise in the long nominal rate coming entirely from expected inflation takes off only 0.3%; if it came entirely from the real rate, 12.2% (Figure 31). The risk is that weaker consumption prevents passing inflation through to rents: if only 70% of the cash flow were indexed, the effect of inflation would rise to 1.0%. Weaker consumption also slows the new business lines (Appendix 20). ",
        false,
        false
       ],
@@ -1691,7 +1840,7 @@
        "tinta"
       ],
       [
-       "Falabella controls 53.05% and leases space through Falabella, Sodimac and Tottus, which creates receivables with related parties. Fernando de Peña, Mallplaza's CEO for decades, has chaired Falabella since March 2026. Off-market contracts would directly affect rents and value. ",
+       "Falabella controls 53.05% and leases space through Falabella, Sodimac and Tottus, which creates receivables with related parties. Fernando de Peña, Mallplaza's CEO for decades, has chaired Falabella since March 2026. Off-market contracts would directly affect rents and value. There is also a capital-allocation risk: expansion earns less than its cost (real RONIC of 5.3% against a real WACC of 7.2%), so continued growth benefits accounting profit and a controller with other businesses in those malls more than the minority shareholder (to be verified; see Valuation). ",
        false,
        false
       ],
@@ -1754,7 +1903,7 @@
        false
       ],
       [
-       "pro-investment agendas. In Chile, Kast signed the Reconstruction Law (9-Oct-26), which gradually cuts corporate tax from 27% to 23% from 2027 (Emol, 9-Oct-26), S&P affirmed its A stable rating and Law 21,770 (Sep-25) shortens permitting. In Peru, the minimum-wage rise to S/ 1,300 and the doubling of Pensión 65 support consumption (Infobae, 28-Jul-26). Colombia contributes only ~11% of revenue. The model keeps 27%: the Chilean cut would add ~3.9% to the target price.",
+       "pro-investment agendas. In Chile, Kast signed the Reconstruction Law (9-Oct-26), which gradually cuts corporate tax from 27% to 23% from 2027 (Emol, 9-Oct-26), S&P affirmed its A stable rating and Law 21,770 (Sep-25) shortens permitting. In Peru, the minimum-wage rise to S/ 1,300 and the doubling of Pensión 65 support consumption (Infobae, 28-Jul-26). Colombia contributes only ~11% of revenue. The model keeps 27%: the Chilean cut would add ~5.2% to the target price.",
        false,
        false
       ]
@@ -1815,6 +1964,314 @@
      "ancla": 11
     }
    ]
+  },
+  {
+   "clave": "resumen",
+   "titulo": "INVESTMENT SUMMARY",
+   "lead": "SELL · target price CLP 2,077 per share, 41.6% below the CLP 3,555 close (30-Sep-26): an excellent rental business that the market prices as if its cash flows were nearly risk-free.",
+   "bloques": [
+    {
+     "h1": "RECOMMENDATION AND TARGET PRICE"
+    },
+    {
+     "p": [
+      [
+       "We recommend SELL on Mallplaza (MALLPLAZ CI) with a target price of CLP 2,077 per share, 41.6% below the 30-Sep-26 close (−39.6% total return with an expected dividend of CLP 69, 2.0%). The target price weights the DCF value 80% (CLP 1,859, at 30-Jun-26) and the peer LTM EV/EBITDA multiple value 20% (CLP 2,951; 14.4x). It sits even below the 52-week low (CLP 2,470).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "INVESTMENT THESIS"
+    },
+    {
+     "p": [
+      [
+       "Mallplaza is an excellent business: rents almost as stable as a bond (81.4% of revenue; 93% fixed), an 80% EBITDA margin, 95.6% occupancy, 2.36x net debt/EBITDA and a local AAA rating. But the price pays more than those cash flows can deliver, for three reasons. First, the discount rate: the price requires a nominal WACC of 7.60% (4.5% real), 281 bp below ours; the asset IRR at the price is 7.61% nominal (4.48% real), 280 bp below the nominal WACC. Second, growth does not create value: each new m² yields 7.3% real before tax on its cost, a 5.3% real RONIC, and its IRR is 4.84% real (7.98% nominal), 236 bp below the real WACC; even the full pipeline (170,200 m², USD 613 MM) adds revenue, not value. Third, cash flows are not the problem: we project a 79.7% EBITDA margin and the consensus expects 12-month EBITDA only ~3% above ours.",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "WHY IT IS EXPENSIVE"
+    },
+    {
+     "p": [
+      [
+       "The stock rose ~90% from the low of CLP 2,470 (10-Oct-25) to the high of CLP 4,700 (27-Apr-26) without the business changing (EBITDA +5% to +10% a year): the push came from the Chilean market (+56% in 2025), the joint re-rating of malls, passive buying from the MSCI EM Mid Cap inclusion (~USD 110 MM, ~15 times daily volume, per Morgan Stanley) and analysts extrapolating growth (JPMorgan projects ~11% annual FFO growth). The subsequent fall to CLP 3,555 is a partial correction: the stock trades 91% above the DCF and at 1.61x its fair-value book value (Figure 32).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "SCENARIOS"
+    },
+    {
+     "p": [
+      [
+       "We define three scenarios with the same levers as the Risks tornado. Bear is everything going wrong at once (nominal WACC +100 bp and every operating lever at its historical minimum): CLP 1,542 (−56.6%). Base is the model's central estimate: CLP 2,077 (−41.6%). Bull is everything going right (nominal WACC −100 bp, every lever at its historical maximum, 23% tax): CLP 2,915 (−18.0%). Weighted 25/50/25% (assumption to be validated), CLP 2,153. No scenario reaches the price (Figure 33; Appendix 18).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "tabla": {
+      "titulo": "Scenarios: bear (everything goes wrong), base (central) and bull (everything goes right)",
+      "cols": [
+       "Assumption (all at once)",
+       "Bear",
+       "Base",
+       "Bull"
+      ],
+      "filas": [
+       [
+        "Terminal nominal WACC (all periods)",
+        "+100 bp (11.41%; 8.17% real)",
+        "10.41% (7.20% real)",
+        "−100 bp (9.41%; 6.23% real)"
+       ],
+       [
+        "EBITDA margin (historical quarterly min / max)",
+        "75.8%",
+        "79.7% (2026E)",
+        "81.3%"
+       ],
+       [
+        "Consolidated occupancy",
+        "95.1%",
+        "95.6%",
+        "96.6%"
+       ],
+       [
+        "DCF value / 80/20 target price (CLP)",
+        "1,190 / 1,542",
+        "1,859 / 2,077",
+        "2,906 / 2,915"
+       ],
+       [
+        "Target price vs CLP 3,555",
+        "−56.6%",
+        "−41.6%",
+        "−18.0%"
+       ],
+       [
+        "Probability (team assumption)",
+        "25%",
+        "50%",
+        "25%"
+       ]
+      ],
+      "anchos": [
+       2700,
+       1750,
+       1650,
+       1750
+      ],
+      "derecha": [
+       1,
+       2,
+       3
+      ],
+      "destacar": [
+       3,
+       4
+      ],
+      "nota": "Full assumptions in Appendix 18 and in the Valuation table. Source: DCF v4 replica; Team analysis."
+     }
+    },
+    {
+     "h1": "SENSITIVITIES"
+    },
+    {
+     "p": [
+      [
+       "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the price is CLP 1,696. Price (rent) weighs 18 times more than tenant sales, which reach revenue only through variable rent (5.7%).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "tabla": {
+      "titulo": "Sensitivity of DCF value per share (base CLP 1,859)",
+      "cols": [
+       "Lever (change)",
+       "Δ value (CLP)",
+       "Δ value (% of DCF)"
+      ],
+      "filas": [
+       [
+        "Nominal WACC −100 bp / +100 bp",
+        "+430 / −326",
+        "23% / −18%"
+       ],
+       [
+        "Same-store rent 2027–28 (nominal) +1 pp",
+        "+45",
+        "2.4%"
+       ],
+       [
+        "Real rent growth 2029–31 +1 pp",
+        "+57",
+        "3.1%"
+       ],
+       [
+        "EBITDA margin +1 pp",
+        "+39",
+        "2.1%"
+       ],
+       [
+        "Occupancy +1 pp",
+        "+25",
+        "1.3%"
+       ],
+       [
+        "Tenant sales 2027–28 +1 pp (variable rent)",
+        "+2.6",
+        "0.14%"
+       ]
+      ],
+      "anchos": [
+       4300,
+       2100,
+       2750
+      ],
+      "derecha": [
+       1,
+       2
+      ],
+      "destacar": [
+       0
+      ],
+      "nota": "Each row moves one lever with the others at base. The gap between the price and the DCF is CLP 1,696: no single lever closes it. Source: DCF v4 replica; Team analysis."
+     }
+    },
+    {
+     "h1": "VERSUS THE CONSENSUS"
+    },
+    {
+     "p": [
+      [
+       "The Bloomberg consensus (14 sources; 1 buy, 10 hold, 2 sell) sets a 12-month target of CLP 4,111, 49.5% above ours. It is the discount rate: at the appraisers' WACC (8.72% nominal) the DCF rises to CLP 2,679, and at the implied WACC (7.60%) it equals the price. The rest is horizon (CLP 4,111 is worth ~CLP 3,673 today at our Ke) and growth that the market values at the cap rate (Figure 34).",
+       false,
+       false
+      ]
+     ]
+    },
+    {
+     "h1": "CATALYSTS AND RISKS"
+    },
+    {
+     "p": [
+      [
+       "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward our value, and the normalization of cash tax from 16.8% to 27%. Risks to the thesis: a further compression of long-term rates; a structural premium for Tier A assets; the cut in corporate tax to 23% (+5.2% to the target price, not yet included); and corporate governance (Falabella controls 53.1% and only 1 of 9 directors is independent; expansion earns less than its cost of capital, with incentives still to be verified). Operating savings from ESG management add ~CLP 2 per share: they do not change the conclusion.",
+       false,
+       false
+      ]
+     ]
+    }
+   ],
+   "figuras": [
+    {
+     "n": "Figure 32:",
+     "titulo": "The stock rose ~90% in six months with no change in the business, then gave back 24%",
+     "archivo": "/valuacion/graficos/figuras/en_V14_trayectoria.png",
+     "fuente": [
+      [
+       "Bloomberg low, high and close; prices marked “~” are implied in notes by LarrainVial (9-Oct-25), Morgan Stanley (6-Nov-25) and Diario Financiero (25-May-26). The line only joins milestones: it is not the daily series. Source: Bloomberg; DF; Team analysis.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 5
+    },
+    {
+     "n": "Figure 33:",
+     "titulo": "Scenarios: even with everything in our favor the target price stays 18% below the price (CLP per share)",
+     "archivo": "/valuacion/graficos/figuras/en_V10_escenarios.png",
+     "fuente": [
+      [
+       "Bear: everything goes wrong; base: central estimate; bull: everything goes right (definitions in Appendix 18). Team illustrations. Source: DCF v4 replica; Team analysis.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 7
+    },
+    {
+     "n": "Figure 34:",
+     "titulo": "From our DCF to the price and the consensus: the gap is the discount rate (CLP per share)",
+     "archivo": "/valuacion/graficos/figuras/en_V15_escalera.png",
+     "fuente": [
+      [
+       "Consensus: Bloomberg 12-month target (14 sources). “Today at our Ke” = target / (1 + terminal nominal Ke). Source: Bloomberg; Team analysis.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 13
+    }
+   ],
+   "datos": {
+    "titulo": "KEY DATA",
+    "filas": [
+     [
+      "Recommendation",
+      "SELL"
+     ],
+     [
+      "Target price (CLP)",
+      "2,077"
+     ],
+     [
+      "Price 30-Sep-26 (CLP)",
+      "3,555"
+     ],
+     [
+      "Upside / downside",
+      "−41.6%"
+     ],
+     [
+      "DCF / multiples value (CLP)",
+      "1,859 / 2,951"
+     ],
+     [
+      "DCF / multiples weight",
+      "80% / 20%"
+     ],
+     [
+      "Bear / base / bull (CLP)",
+      "1,542 / 2,077 / 2,915"
+     ],
+     [
+      "Market cap (CLP bn)",
+      "7,785"
+     ],
+     [
+      "52-week range (CLP)",
+      "2,470 – 4,700"
+     ],
+     [
+      "Expected dividend 2027E (CLP)",
+      "69 (2.0%)"
+     ],
+     [
+      "Nominal / real WACC",
+      "10.41% / 7.20%"
+     ],
+     [
+      "Net debt / LTM EBITDA 2Q26",
+      "2.36x"
+     ]
+    ]
+   }
   }
  ]
 }

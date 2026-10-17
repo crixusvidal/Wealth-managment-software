@@ -14,6 +14,7 @@ const COL_TEXTO = 6900, COL_SEP = 216, COL_FIG = 3550;
 const FIG_DIR = path.join(__dirname, "..", "graficos", "figuras");
 const PULGADA_PX = 96; // docx-js mide las imágenes en píxeles a 96 dpi
 const ALTOS = { matriz: 2.05, tornado: 2.15, heatmap: 1.7, uf: 1.4, tasas: 1.66 }; // = graficos/pagina_riesgos.py (tasas: valuacion/graficos/sensibilidad_tasas.py)
+const DAX = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "..", "valuacion", "graficos", "figuras", "datos_anexos.json"), "utf8"));
 const SENS = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "..", "valuacion", "graficos", "figuras", "datos_sens_tasas.json"), "utf8")).pt;
 const pc1 = (x, c) => (Math.abs(x) * 100).toFixed(1).replace(".", c);   // porcentaje sin signo
 
@@ -101,6 +102,35 @@ const LANG = {
     ],
   },
 };
+
+// Cifras del modelo v4 en los textos de riesgos: los números salen de comun/cifras.js (tornado, sensibilidad WACC × g, escenarios) ------
+for (const lang of ["es", "en"]) {
+  const { K, f } = require("../../comun/cifras")(lang);
+  const es = lang === "es";
+  const ef = Object.fromEntries(K.efectos.map((e) => [e.palanca, e]));
+  const dcf = K.dcf, pct = (x) => f.pc(x / dcf, 1);
+  const SENS_G3 = DAX.B.sens.v.map((r) => r[1]);                       // valor DCF con g = 3,0%: ΔWACC −100, −50, 0, +50, +100 pb
+  const po = (v) => K.peso_dcf * v + (1 - K.peso_dcf) * K.mult_valor;
+  const caida = (v) => f.pc(Math.abs(po(v) / K.po - 1), 1);
+  const L = LANG[lang];
+  const buscar = (cod) => L.secciones.flatMap((s) => s.riesgos || []).find((r) => r.cod === cod);
+  const mg = ef["EBITDA margin"].bajo, ssr = ef["Same-store rent growth 2027–28"].bajo, vis = ef["Visitor traffic 2027–28 (parking)"].bajo;
+  buscar("OR1").texto = es
+    ? `Caídas de margen EBITDA, rentas, tráfico u ocupación hacia sus mínimos históricos. El peor caso, un margen de ${f.pc(K.esc_param.m_lo, 1)}, reduce el valor DCF a CLP ${f.n(dcf + mg)} (${pct(mg)}), y el piso histórico del crecimiento de rentas en mismas tiendas lo lleva a CLP ${f.n(dcf + ssr)} (${pct(ssr)}) (Figura 24). Todas las palancas a la vez, con la WACC +100 pb, definen el escenario bear (precio objetivo CLP ${f.n(K.esc.bear.po)}, ${f.pc(K.esc.bear.vs, 1)} frente al precio).`
+    : `EBITDA margin, rents, footfall or occupancy falling to their historical lows. The worst case, a ${f.pc(K.esc_param.m_lo, 1)} margin, cuts DCF value to CLP ${f.n(dcf + mg)} (${pct(mg)}), and the historical floor of same-store rent growth takes it to CLP ${f.n(dcf + ssr)} (${pct(ssr)}) (Figure 24). All levers together, with WACC +100 bp, define the bear scenario (target price CLP ${f.n(K.esc.bear.po)}, ${f.pc(K.esc.bear.vs, 1)} against the share price).`;
+  buscar("OR2").texto = es
+    ? `Las anclas, en su mayoría del grupo Falabella, atraen el flujo de visitas. Su reducción o salida bajaría las visitas y las rentas de las tiendas menores. El impacto va de ${pct(vis)} a ${pct(ssr)} (Figura 24).`
+    : `Anchors, mostly from the Falabella group, drive footfall. Shrinking or losing them would lower visits and rents from smaller stores. The impact ranges from ${pct(vis)} to ${pct(ssr)} (Figure 24).`;
+  buscar("FR1").texto = es
+    ? `Un alza de tasas largas elevaría la WACC y el costo de refinanciar la deuda y el pipeline. La probabilidad es alta: el UST 10Y pasó de 4,98% (Rf del modelo) a 5,22% al 8-oct-26, máximo en 24 años (desde 2002); la Fed subió su tasa en septiembre y las tasas largas locales también suben. Con WACC nominal +50 pb y +100 pb, el precio objetivo cae ${caida(SENS_G3[3])} y ${caida(SENS_G3[4])} (Figura 25).`
+    : `Higher long-term rates would raise the WACC and the cost of refinancing debt and the pipeline. Likelihood is high: the 10Y UST moved from 4.98% (model Rf) to 5.22% on 8-Oct-26, a 24-year high (since 2002); the Fed hiked in September and the Central Bank of Chile reports rising local long-term rates. With nominal WACC +50 bp and +100 bp, the target price falls ${caida(SENS_G3[3])} and ${caida(SENS_G3[4])} (Figure 25).`;
+  const rr1 = buscar("RR1"), rr2 = buscar("RR2");
+  rr1.texto += es
+    ? ` Hay también un riesgo de asignación de capital: la expansión rinde menos que su costo (RONIC real de ${f.pc(K.ronic, 1)} frente a una WACC real de ${f.pc(K.wacc_t_real, 1)}), de modo que seguir creciendo beneficia a la utilidad contable y a un controlador con otros negocios en esos malls más que al minoritario (por verificar; ver Valuación).`
+    : ` There is also a capital-allocation risk: expansion earns less than its cost (real RONIC of ${f.pc(K.ronic, 1)} against a real WACC of ${f.pc(K.wacc_t_real, 1)}), so continued growth benefits accounting profit and a controller with other businesses in those malls more than the minority shareholder (to be verified; see Valuation).`;
+  const tax = f.pc(K.supuestos_indiv[0][1] / K.supuestos_base, 1);
+  rr2.mit = rr2.mit.replace(/~3,9%|~3\.9%/, "~" + tax);
+}
 
 const run = (text, o = {}) => new TextRun({ text, font: FUENTE, size: o.size || 16, bold: o.bold,
   italics: o.italics, color: o.color || TINTA });

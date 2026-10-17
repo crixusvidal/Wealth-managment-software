@@ -77,7 +77,7 @@ const L = {
     },
     vigilar: { titulo: "6. QUÉ VIGILAR", cols: ["Indicador", "Último dato", "Señal de alerta", "Qué implica para Mallplaza"],
       filas: [
-        ["UST 10Y", "5,22% (8-oct-26)", "Sobre 5,5% de forma sostenida", "≈ WACC +50 pb: precio objetivo de CLP 2.076 a ~1.940 (Fig. 25)"],
+        ["UST 10Y", "5,22% (8-oct-26)", "Sobre 5,5% de forma sostenida", "≈ WACC +50 pb: precio objetivo de CLP 2.077 a ~1.940 (Fig. 25)"],
         ["Brent", "USD 114 (sep-26)", "Sobre USD 120 o cierre prolongado de Ormuz", "Más inflación y UF: mayor reajuste de la deuda (MR1)"],
         ["IPC Chile", "3,9% (IPoM jun-26)", "Sobre 4% por dos trimestres", "TPM sin recortes; consumo y ventas de locatarios débiles"],
         ["PIB Chile", "0,25–0,75% 2026 (IPoM)", "Contracción en dos trimestres", "Menor tráfico y ventas; presión sobre la ocupación (Fig. 24)"],
@@ -134,7 +134,7 @@ const L = {
     },
     vigilar: { titulo: "6. WHAT TO WATCH", cols: ["Indicator", "Latest", "Warning sign", "What it means for Mallplaza"],
       filas: [
-        ["10Y UST", "5.22% (8-Oct-26)", "Sustained above 5.5%", "≈ WACC +50 bp: target price from CLP 2,076 to ~1,940 (Fig. 25)"],
+        ["10Y UST", "5.22% (8-Oct-26)", "Sustained above 5.5%", "≈ WACC +50 bp: target price from CLP 2,077 to ~1,940 (Fig. 25)"],
         ["Brent", "USD 114 (Sep-26)", "Above USD 120 or a prolonged Hormuz closure", "Higher inflation and UF: larger debt indexation (MR1)"],
         ["Chile CPI", "3.9% (Jun-26 MPR)", "Above 4% for two quarters", "No rate cuts; weak consumption and tenant sales"],
         ["Chile GDP", "0.25–0.75% 2026 (MPR)", "Two quarters of contraction", "Lower footfall and sales; pressure on occupancy (Fig. 24)"],

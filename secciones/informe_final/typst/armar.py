@@ -31,6 +31,9 @@ def exportar(lang):
     for s in d["secciones"]:
         for f in s["figuras"]:
             f["archivo"] = "/" + os.path.relpath(f["archivo"], RAIZ)
+        for b in s["bloques"]:
+            if isinstance(b, dict) and "figancha" in b:
+                b["figancha"]["archivo"] = "/" + os.path.relpath(b["figancha"]["archivo"], RAIZ)
     (TY / "datos" / f"cuerpo_{lang}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
     return f"/informe_final/typst/datos/cuerpo_{lang}.json"
 

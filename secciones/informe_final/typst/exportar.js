@@ -48,17 +48,29 @@ function modulo(clave, X, carpeta) {
   for (const p of X.paginas) {
     for (const b of p.texto) {
       if (b.h1) sec.bloques.push({ h1: R(clave, b.h1) });
+      else if (b.t) {
+        const t = b.t;
+        sec.bloques.push({ tabla: { titulo: R(clave, t.titulo), cols: t.cols, filas: t.filas.map((r) => r.map((c) => R(clave, String(c)))), anchos: t.anchos,
+          derecha: t.derecha || [], destacar: t.destacar || [], nota: R(clave, t.nota || "") } });
+      }
       else if (b.p) sec.bloques.push({ p: Array.isArray(b.p) ? [[R(clave, b.p[0]), true, false], [R(clave, b.p[1]), false, false]] : [[R(clave, b.p), false, false]] });
     }
-    for (const [n, t, archivo, f] of p.figuras) {
-      if (archivo) sec.figuras.push({ n: R(clave, n), titulo: R(clave, t), archivo: path.join(carpeta, `${lang}_${archivo}.png`), fuente: [[R(clave, f), false, false]] });
+    for (const [n, t, archivo, f, ancha] of p.figuras) {
+      if (archivo) sec.figuras.push({ n: R(clave, n), titulo: R(clave, t), archivo: path.join(carpeta, `${lang}_${archivo}${ancha ? "_ancha" : ""}.png`), fuente: [[R(clave, f), false, false]], ancha: !!ancha });
     }
   }
   sec.figuras = anclar(sec.bloques, sec.figuras);
+  // figuras «anchas»: ocupan todo el ancho de la hoja, en el flujo del texto justo después del párrafo que las cita
+  const anchas = sec.figuras.filter((g) => g.ancha);
+  sec.figuras = sec.figuras.filter((g) => !g.ancha);
+  anchas.sort((a, b) => b.ancla - a.ancla).forEach((g) => sec.bloques.splice(g.ancla + 1, 0, { figancha: { n: g.n, titulo: g.titulo, archivo: g.archivo, fuente: g.fuente } }));
+  // los anclas de las figuras laterales se desplazan por los bloques insertados antes de ellas
+  sec.figuras = sec.figuras.map((g) => ({ ...g, ancla: g.ancla + anchas.filter((a) => a.ancla < g.ancla).length }));
   return sec;
 }
 
 const datos = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "graficos", "datos_resumen.json"), "utf8"));
+const TR = require("../documento/texto_resumen");
 const fa = I.fa, X = fa.L[lang], f = fa.loc(lang);
 const [n1, t1, filas1, nota1] = X.fa1;
 const secFA = modulo("fa", X, fa.FIG);
@@ -85,9 +97,15 @@ function secRiesgos() {
   return sec;
 }
 
+// Resumen de inversión: texto, tres figuras laterales y datos clave
+const XR = TR.calcular(lang).resumen;
+XR.paginas = [{ texto: XR.bloques, figuras: XR.figs }];
+const secRes = I.con("resumen", () => modulo("resumen", XR, I.valuacion.FIG));
+secRes.datos = { titulo: XR.datos.titulo, filas: XR.datos.filas.map((a, i) => [a, XR.datos.valores[i]]) };
+
 const salida = {
   lang,
-  abstract: I.ABS[lang], resumen: I.RES[lang], datos,
+  abstract: I.ABS[lang], datos,
   secciones: [
     I.con("negocio", () => borrador("negocio", I.negocio.textoDe(lang), I.negocio.imagenesDe(lang))),
     I.con("industria", () => borrador("industria", I.industria.textoDe(lang), I.industria.imagenesDe(lang))),
@@ -95,6 +113,7 @@ const salida = {
     secFA,
     modulo("valuacion", I.valuacion.L[lang], I.valuacion.FIG),
     I.con("riesgos", secRiesgos),
+    secRes,
   ],
 };
 const archivo = path.join(__dirname, "datos", `cuerpo_${lang}.json`);

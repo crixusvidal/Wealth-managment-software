@@ -1,7 +1,7 @@
 """Datos clave del Resumen de inversión, leídos de los modelos (sin cifras escritas a mano).
 
 Uso (desde secciones/):
-    python informe_final/graficos/datos_resumen.py <Valoracion_Consolidada_v2.xlsx> <Figuras_Valuacion_recalc.xlsx>
+    python informe_final/graficos/datos_resumen.py <Valoracion_Consolidada_v4.xlsx> <Figuras_Valuacion_recalc.xlsx>
 Salida: informe_final/graficos/datos_resumen.json
 """
 import json
@@ -23,7 +23,7 @@ datos = {
     "acciones_mm": acciones, "capitalizacion_mm": precio * acciones,
     "rango_52s": [semanas[1], semanas[2]], "dividendo": dividendo, "dividend_yield": dividendo / precio,
     "dfn_mm": s["B10"].value, "ebitda_udm_mm": s["B13"].value,
-    "fuente": "Mallplaza_Valoracion_Consolidada_v2.xlsx (Supuestos B8–B13, Precio_Objetivo B12–B17, Deuda D16); "
+    "fuente": "Mallplaza_Valoracion_Consolidada_v4.xlsx (Supuestos B8–B13, Precio_Objetivo B12–B17, Deuda D16); "
               "Mallplaza_Figuras_Valuacion_recalc.xlsx (V1_Football, rango 52 semanas)",
 }
 salida = Path(__file__).parent / "datos_resumen.json"

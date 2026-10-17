@@ -32,8 +32,8 @@
 #let HUECO = 4pt
 
 #set document(title: if ES [Mallplaza — Informe CFA] else [Mallplaza — CFA Report])
-#set text(font: ("Liberation Sans", "Arial"), size: 8pt, fill: TINTA, lang: D.lang, hyphenate: true)
-#set par(justify: true, leading: 0.42em, spacing: 0.5em)
+#set text(font: ("Liberation Sans", "Arial"), size: 8.4pt, fill: TINTA, lang: D.lang, hyphenate: true)
+#set par(justify: true, leading: 0.46em, spacing: 0.5em)
 
 // Piezas de texto -----------------------------------------------------------------------------------
 #let color-de(c) = if c == "rojo" { ROJO } else if c == "gris" { GRIS } else if c == "tinta" { TINTA } else { none }
@@ -69,6 +69,31 @@
     text(5.5pt, fill: GRIS, corridas(f.fuente.map(r => (r.at(0), false, r.at(2), "gris"))))
   })
 }
+
+// Tabla en la columna de texto (TIR, escenarios) y figura de ancho completo -----------------------------
+#let tabla-texto(T) = {
+  let tot = T.anchos.sum()
+  block(width: 100%, above: 5pt, below: 4pt, breakable: false, {
+    text(7pt, fill: AZUL)[*#T.titulo*]
+    v(-2pt)
+    table(columns: T.anchos.map(a => a * 1fr), stroke: (x, y) => (bottom: if y > 0 { 0.5pt + LINEA } else { none }),
+      inset: (x: 2.5pt, y: 1.5pt), align: (x, y) => if x in T.derecha { right } else { left },
+      fill: (x, y) => if y == 0 { AZUL } else if (y - 1) in T.destacar { rgb("#FDF1CC") } else if calc.odd(y) { rgb("#F7F8FB") } else { white },
+      ..T.cols.map(c => text(5.8pt, weight: "bold", fill: white, c)),
+      ..T.filas.enumerate().map(((r, fila)) => fila.map(c => text(5.8pt, weight: if r in T.destacar { "bold" } else { "regular" }, c))).flatten())
+    v(-2pt)
+    if T.nota != "" { text(5.3pt, fill: GRIS, T.nota) }
+  })
+}
+#let figura-ancha(f) = block(width: TOTAL, above: 5pt, below: 5pt, breakable: false, {
+  set par(justify: false, leading: 0.3em)
+  text(7pt, fill: AZUL)[*#f.n* #f.titulo]
+  v(2pt)
+  align(center, image(f.archivo, width: TOTAL))
+  v(1pt)
+  set par(justify: true)
+  text(5.5pt, fill: GRIS, corridas(f.fuente.map(r => (r.at(0), false, r.at(2), "gris"))))
+})
 
 // Asignación de posiciones (se recalcula en cada página: es determinista) ---------------------------
 #let ARRIBA = MT
@@ -183,12 +208,28 @@
 #let k0 = 0
 #for (si, s) in D.secciones.enumerate() {
   // Análisis Financiero y Riesgos empiezan arriba de una página nueva
-  if s.clave in ("fa", "riesgos") { pagebreak(weak: true) }
+  if s.clave in ("fa", "riesgos", "resumen") { pagebreak(weak: true) }
   [#metadata(si) <sec-ini>]
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
   ancho({
     titulo(s.titulo)
     if "lead" in s { lead(s.lead, destacado: s.at("leadDestacado", default: false)) }
+    if "datos" in s {
+      let dd = s.datos
+      let h = calc.ceil(dd.filas.len() / 2)
+      let celdas = ()
+      for i in range(h) {
+        for j in (i, i + h) {
+          if j < dd.filas.len() { celdas += (text(6.3pt, weight: "bold", fill: AZUL, dd.filas.at(j).at(0)), align(right, text(6.3pt, dd.filas.at(j).at(1)))) }
+          else { celdas += ([], []) }
+        }
+      }
+      text(7pt, fill: AZUL)[*#dd.titulo*]
+      v(-2pt)
+      table(columns: (1.15fr, 0.9fr, 1.15fr, 0.9fr), stroke: (bottom: 0.5pt + LINEA), inset: (x: 3pt, y: 1.6pt),
+        fill: (x, y) => if calc.even(y) { rgb("#F7F8FB") } else { white }, ..celdas)
+      v(3pt)
+    }
     if "tabla" in s {
       let T = s.tabla
       text(7pt, fill: AZUL)[*#T.n* #T.titulo]
@@ -210,6 +251,8 @@
   for (bi, b) in s.bloques.enumerate() {
     let anclas = s.figuras.enumerate().filter(((j, f)) => f.ancla == bi).map(((j, f)) => [#metadata(base + j) <ancla>])
     if "h1" in b { anclas.join(); subtitulo(b.h1) }
+    else if "tabla" in b { tabla-texto(b.tabla) }
+    else if "figancha" in b { ancho(figura-ancha(b.figancha)) }
     else { par[#anclas.join()#corridas(b.p)] }
   }
 }
@@ -223,23 +266,3 @@
   }
 }
 #[#metadata("barrera") <barrera>]
-#let X = D.resumen
-#ancho(block(breakable: false, width: TOTAL, {
-  titulo(X.titulo)
-  let valores = (X.rec, fmt(R.precio_objetivo), fmt(R.precio), fmt(R.potencial * 100, d: 1) + "%",
-    fmt(R.dcf) + " / " + fmt(R.multiplos), fmt(R.peso_dcf * 100) + "% / " + fmt((1 - R.peso_dcf) * 100) + "%", "MALLPLAZ CI",
-    fmt(R.capitalizacion_mm / 1000), fmt(R.rango_52s.at(0)) + " – " + fmt(R.rango_52s.at(1)),
-    fmt(R.dividendo) + " (" + fmt(R.dividend_yield * 100, d: 1) + "%)", fmt(R.dfn_mm / R.ebitda_udm_mm, d: 2) + "x")
-  grid(columns: (TXT, FIG), column-gutter: SEP,
-    {
-      subtitulo(X.pend)
-      text(style: "italic", fill: GRIS, X.t1); parbreak(); text(style: "italic", fill: GRIS, X.t2)
-    },
-    {
-      subtitulo(X.datos)
-      table(columns: (1.15fr, 1fr), stroke: (bottom: 0.5pt + LINEA), inset: (x: 3pt, y: 1.8pt), align: (x, y) => if x == 0 { left } else { right },
-        fill: (x, y) => if calc.even(y) { rgb("#F7F8FB") } else { white },
-        ..X.filas.zip(valores).map(((a, b)) => (text(6.5pt, weight: "bold", fill: AZUL, a), text(6.5pt, b))).flatten())
-      text(5.5pt, fill: GRIS, X.fuente)
-    })
-}))

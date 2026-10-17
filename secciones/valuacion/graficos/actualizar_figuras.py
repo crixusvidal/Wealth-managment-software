@@ -87,6 +87,11 @@ def main(ruta_modelo, ruta_fa):
                  f"(~{real * 100:.1f}% real), {abs(dw_dcf) * 1e4:.0f} pb bajo nuestra WACC terminal.").replace(",", ".")
     v2["A20"] = (f"Lectura: a CLP {precio:,.0f} la WACC real implícita (~{real * 100:.1f}%) supera el bono UF a 10 años del BCCh "
                  "(2,5% real) y queda bajo la WACC de la tasación (5,55% real).").replace(",", ".")
+
+    # V7: sensibilidad a la ponderación Chile/pares del múltiplo (el DCF va pegado en la fórmula del precio objetivo)
+    v7 = wb["V7_Multiplos"]
+    for r in range(26, 31):
+        v7[f"D{r}"] = f"={peso}*{base}+{1 - peso}*C{r}"
     wb.save(LIBRO)
     shutil.copy(LIBRO, LIBRO_RECALC)
     subprocess.run([sys.executable, RECALC, str(LIBRO_RECALC)], check=True, stdout=subprocess.DEVNULL)

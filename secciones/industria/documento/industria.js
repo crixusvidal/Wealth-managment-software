@@ -9,10 +9,10 @@ const F = require("../../comun/formato");
 
 const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const ARCHIVO = "Mallplaza_Industria_ES.docx";
-// Figura 2–6 del cuerpo y anexos A–C del borrador → gráficos de graficos/industria.py
-const IMAGENES = { "image1.png": "ind5_market_share_paises", "image2.png": "ind3_oferta_vs_consumo", "image3.png": "ind6_porter",
-  "image4.png": "ind8_ebitda_m2", "image5.png": "ind4_vencimiento_contratos", "image6.png": "ind2_pipeline_gla",
-  "image7.png": "ind7_market_share_chile", "image8.png": "ind1_ocupacion" };
+// Figuras 2–6 del cuerpo (v7 del equipo: imágenes por hash, en orden de aparición) → gráficos de graficos/industria.py; Figura 2 horizontal
+const IMAGENES = { "d4ee08ce77b5cc3991640738d834bbe3fc6371b8.png": "ind5_market_share_paises", "a93611e1ec7574ec65b28901d53df9b7a3535f8a.png": "ind3_oferta_vs_consumo",
+  "7f889edb60fc782532a785f7bb94794a018fec06.png": "ind6_porter", "56496873a90dbd498810fb52dc08c5849872c32b.png": "ind8_ebitda_m2",
+  "8f009b3072b7514dcb037f099e31b05180904e68.png": "ind4_vencimiento_contratos" };
 const ALTOS = fs.existsSync(path.join(FIG, "altos.json")) ? JSON.parse(fs.readFileSync(path.join(FIG, "altos.json"), "utf8")) : {};
 
 const imagenesDe = (lang) => Object.fromEntries(Object.entries(IMAGENES).map(([k, n]) => [k, [path.join(FIG, `${lang}_${n}.png`), ALTOS[n]]]));
@@ -68,7 +68,7 @@ function anexoNuevo(lang) {
 function documento(lang = "es") {
   const json = JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
   const imagenes = imagenesDe(lang);
-  const { cuerpo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG });
+  const { cuerpo } = F.seccionBorrador(json, { imagenes, anchoAnexo: F.COL_FIG, soloCuerpo: true });
   const anexo = anexoNuevo(lang);
   return {
     styles: F.ESTILOS,
