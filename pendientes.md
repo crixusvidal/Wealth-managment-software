@@ -23,6 +23,8 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] Escudo tributario (goodwill tributario y pérdidas): el modelo lo agota en 2029 (impuesto en caja 16,8% → 27%), un ahorro total de CLP 134.173 MM (CLP 61 por acción sin descontar). Verificar contra la Nota 13 de los EEFF (saldo del impuesto diferido activo por pérdidas tributarias y goodwill tributario por amortizar) que ese saldo respalde esa cifra; hoy es un supuesto [S] del Forecast («verificar Nota 13»). Los EEFF no están en el repo y esta sesión no pudo abrirlos.
 - [ ] Pasar al Excel (hoja TIR_Implicita o TIR_Accionista) las TIR del activo al precio objetivo y al valor DCF, hoy calculadas solo con `tir_valuacion.py`.
 
+- [ ] TIR del proyecto nuevo (4,62% real, 7,76% nominal): validar los supuestos del flujo de un m² (impuesto de largo plazo de 27%, mantención de 5,5% y capital de trabajo de 15,6% sobre los ingresos del proyecto); para igualar la WACC real los ingresos por m² tendrían que ser 1,61x los del modelo (yield on cost de 6,9% a 11,1%).
+
 ## Texto del informe
 - [ ] Reescribir Riesgos de inversión (hoy con +3,9% por impuesto y 9 notas pendientes) y conectar la narrativa entre secciones.
 - [ ] Resumen de inversión: redactar el texto (hoy solo está la tabla de datos clave).
