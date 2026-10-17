@@ -15,6 +15,7 @@
 // Paleta y medidas (twips → in, igual que el Word) --------------------------------------------------
 #let AZUL = rgb("#14284B")
 #let ROJO = rgb("#E9004B")
+#let AMARILLO = rgb("#ECB100")
 #let TINTA = rgb("#1A1A1A")
 #let GRIS = rgb("#5F5F5F")
 #let FONDO = rgb("#EEF1F6")
@@ -148,7 +149,38 @@
 }
 #let R = D.datos
 #let A = D.abstract
+// Portada con los colores de Mallplaza: logo sobre blanco, banda roja con la recomendación y franja azul con los datos
+#let portada() = {
+  let blanco(t, tam, ..a) = text(tam, fill: white, ..a, t)
+  block(width: TOTAL, clip: true, radius: 2pt, below: 0pt, {
+    grid(columns: (1.0in, 1fr), rows: (0.86in,),
+      block(fill: white, width: 100%, height: 0.86in, inset: 4pt, stroke: (left: 1pt + ROJO, top: 1pt + ROJO, bottom: 1pt + ROJO),
+        align(center + horizon, image("/comun/logos/mallplaza.png", height: 0.76in))),
+      block(fill: ROJO, width: 100%, height: 0.86in, inset: (x: 9pt, y: 6pt), {
+        set par(justify: false, leading: 0.3em)
+        blanco("Mallplaza (Plaza S.A.)  ·  MALLPLAZ CI", 17pt, weight: "bold")
+        v(4pt)
+        grid(columns: (1fr, 1fr), row-gutter: 6pt,
+          blanco(A.rotulos.at(0) + ": " + A.rec, 12pt, weight: "bold"),
+          align(right, blanco(A.rotulos.at(1) + ": CLP " + fmt(R.precio_objetivo) + " (" + fmt(R.potencial * 100, d: 1) + "%)", 12pt, weight: "bold")),
+          blanco(if ES [Sector: Centros comerciales (Chile, Perú, Colombia)] else [Sector: Shopping centers (Chile, Peru, Colombia)], 8.5pt, style: "italic"),
+          align(right, blanco(A.rotulos.at(2) + ": CLP " + fmt(R.precio), 8.5pt, style: "italic")))
+      }))
+    block(width: 100%, fill: AZUL, inset: (x: 9pt, y: 3.5pt), {
+      let datos = if ES {
+        (("DCF", fmt(R.dcf)), ("Múltiplos", fmt(R.multiplos)), ("Ponderación", fmt(R.peso_dcf * 100) + "% / " + fmt((1 - R.peso_dcf) * 100) + "%"),
+         ("Capitalización", "CLP " + fmt(R.capitalizacion_mm / 1000) + " MM"), ("Rango 52 sem.", fmt(R.rango_52s.at(0)) + " – " + fmt(R.rango_52s.at(1))))
+      } else {
+        (("DCF", fmt(R.dcf)), ("Multiples", fmt(R.multiplos)), ("Weighting", fmt(R.peso_dcf * 100) + "% / " + fmt((1 - R.peso_dcf) * 100) + "%"),
+         ("Market cap", "CLP " + fmt(R.capitalizacion_mm / 1000) + " bn"), ("52-wk range", fmt(R.rango_52s.at(0)) + " – " + fmt(R.rango_52s.at(1))))
+      }
+      grid(columns: (1fr,) * 5, column-gutter: 4pt, ..datos.map(((a, b)) => align(center, text(5.8pt, fill: AMARILLO, weight: "bold", a) + linebreak() + text(7.6pt, fill: white, weight: "bold", b))))
+    })
+  })
+  v(4pt)
+}
 #ancho({
+  portada()
   titulo(A.titulo)
   block(width: TOTAL, fill: FONDO, inset: 4pt, below: 4pt, par(justify: true, text(8.5pt, A.texto)))
   let valores = (A.rec, "CLP " + fmt(R.precio_objetivo), "CLP " + fmt(R.precio), fmt(R.potencial * 100, d: 1) + "%")
