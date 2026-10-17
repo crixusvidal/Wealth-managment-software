@@ -27,7 +27,7 @@ CLARO = "#eef1f6"
 ANCHO = 3550 / 1440          # columna de figuras del informe (pulgadas)
 COMPLETO = 10666 / 1440      # ancho completo (anexo)
 DPI = 400
-ALTOS = {"V7": 2.25, "V9": 1.95, "V1": 1.85, "V2": 1.7, "V3": 2.05, "V4": 1.8, "V5": 1.6, "V6": 1.75, "W1": 1.9}
+ALTOS = {"V7": 2.25, "V9": 1.95, "V1": 1.85, "V2": 1.7, "V3": 1.6, "V4": 1.8, "V5": 1.6, "V6": 1.75, "W1": 1.9}
 
 T = {
     "es": {"cpa": "CLP por acción", "objetivo": "Precio objetivo", "precio": "Precio actual",

@@ -98,9 +98,9 @@ def calcular(v3, ruta_fa, ruta_tor):
 
 def figura(lang, r, salida):
     t = T[lang]
-    fig = plt.figure(figsize=(3550 / 1440, 1.8), dpi=400)
+    fig = plt.figure(figsize=(3550 / 1440, 2.3), dpi=400)
     fig.patch.set_facecolor("white")
-    ax = fig.add_axes([0.13, 0.5, 0.85, 0.48])
+    ax = fig.add_axes([0.13, 0.48, 0.85, 0.5])
     acum = r["acum"]
     n = len(acum)
     ax.bar(0, acum[0], width=0.62, color=AZUL, linewidth=0)
@@ -115,7 +115,7 @@ def figura(lang, r, salida):
     ax.axhline(r["precio"], color=ROJO, linewidth=0.8, linestyle=(0, (4, 2)))
     ax.text(-0.45, r["precio"] + 40, t["precio"].format(p=num(r["precio"], lang)), ha="left", va="bottom", fontsize=4.6, fontweight="bold", color=ROJO)
     ax.text(n + 0.4, r["precio"] + 40, t["brecha"].format(b=num(r["precio"] - acum[-1], lang)), ha="right", va="bottom", fontsize=4.4, color=ROJO)
-    ax.set_xticks(range(n + 1), t["pasos"], fontsize=3.9, linespacing=1.05)
+    ax.set_xticks(range(n + 1), t["pasos"], fontsize=4.2, linespacing=1.05)
     ax.set_ylim(1500, 3900)
     ax.set_xlim(-0.55, n + 0.55)
     ax.yaxis.set_major_formatter(lambda y, _: num(y, lang))
@@ -125,12 +125,12 @@ def figura(lang, r, salida):
         ax.spines[s].set_visible(False)
     ax.set_ylabel(t["mm"], fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
     # tabla de efectos individuales
-    axt = fig.add_axes([0.03, 0.0, 0.94, 0.4])
+    axt = fig.add_axes([0.03, 0.0, 0.94, 0.36])
     axt.axis("off")
     xs, alin = [0.0, 0.87, 0.99], ["left", "right", "right"]
     axt.add_patch(Rectangle((0, 0.87), 1, 0.13, color=AZUL, transform=axt.transAxes))
     for x, c, a in zip(xs, t["cols"], alin):
-        axt.text(x + (0.01 if a == "left" else 0), 0.935, c, ha=a, va="center", fontsize=4.3, fontweight="bold", color="white", transform=axt.transAxes)
+        axt.text(x + (0.01 if a == "left" else 0), 0.935, c, ha=a, va="center", fontsize=4.6, fontweight="bold", color="white", transform=axt.transAxes)
     for k, (clave, d) in enumerate(r["indiv"]):
         y = 0.79 - k * 0.1175
         if clave in ("kd", "goodwill"):
@@ -138,7 +138,7 @@ def figura(lang, r, salida):
         vals = [t["filas"][k], ("+" if d > 0 else "−") + num(abs(d), lang),
                 ("+" if d > 0 else "−") + num(abs(d) / r["base"] * 100, lang, 1) + "%"]
         for x, v, a in zip(xs, vals, alin):
-            axt.text(x + (0.01 if a == "left" else 0), y, v, ha=a, va="center", fontsize=4.3, color=NEGRO, transform=axt.transAxes)
+            axt.text(x + (0.01 if a == "left" else 0), y, v, ha=a, va="center", fontsize=4.6, color=NEGRO, transform=axt.transAxes)
     axt.set_xlim(0, 1)
     fig.savefig(salida, facecolor="white")
     plt.close(fig)
