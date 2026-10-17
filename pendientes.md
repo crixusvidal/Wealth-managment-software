@@ -20,6 +20,9 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] Pipeline: texto con USD 613 MM y 170.200 m² frente al modelo con 123.700 m² y USD 445 MM (inconsistencia 13); agregar el pipeline completo después, por decisión del equipo.
 - [ ] Modelo de sensibilidad a tasas largas e inflación: hecho en `Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx`; falta decidir dónde entra en el informe y validar los supuestos de traspaso (ver su hoja Supuestos).
 
+- [ ] Escudo tributario (goodwill tributario y pérdidas): el modelo lo agota en 2029 (impuesto en caja 16,8% → 27%), un ahorro total de CLP 134.173 MM (CLP 61 por acción sin descontar). Verificar contra la Nota 13 de los EEFF (saldo del impuesto diferido activo por pérdidas tributarias y goodwill tributario por amortizar) que ese saldo respalde esa cifra; hoy es un supuesto [S] del Forecast («verificar Nota 13»). Los EEFF no están en el repo y esta sesión no pudo abrirlos.
+- [ ] Pasar al Excel (hoja TIR_Implicita o TIR_Accionista) las TIR del activo al precio objetivo y al valor DCF, hoy calculadas solo con `tir_valuacion.py`.
+
 ## Texto del informe
 - [ ] Reescribir Riesgos de inversión (hoy con +3,9% por impuesto y 9 notas pendientes) y conectar la narrativa entre secciones.
 - [ ] Resumen de inversión: redactar el texto (hoy solo está la tabla de datos clave).

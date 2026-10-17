@@ -35,7 +35,8 @@ def verificar(wb):
     dist = np.array([de[c + "16"].value + de[c + "20"].value for c in cols])
     salida = d["C41"].value - de["H21"].value - su["B11"].value
     tir_acc = lambda p: brentq(lambda r: (dist / (1 + r) ** medio).sum() + salida / (1 + r) ** cierre[-1] - p * acc, -0.5, 0.5)
-    return {"firma": r_firma, "acc_mercado": tir_acc(precio), "acc_objetivo": tir_acc(wb["Precio_Objetivo"]["B15"].value),
+    tir_firma = lambda p: brentq(lambda r: (fcff / (1 + r) ** medio).sum() + ft / (r - g) / (1 + r) ** cierre[-1] - (p * acc + su["B10"].value + su["B11"].value), g + 1e-3, 0.3)
+    return {"firma_objetivo": tir_firma(wb["Precio_Objetivo"]["B15"].value), "firma_dcf": tir_firma(d["C49"].value), "firma": r_firma, "acc_mercado": tir_acc(precio), "acc_objetivo": tir_acc(wb["Precio_Objetivo"]["B15"].value),
             "acc_dcf": tir_acc(d["C49"].value)}
 
 
@@ -52,6 +53,11 @@ def main(ruta):
                       "wacc_real": ws[f"F{r}"].value, "brecha_nom": ws[f"G{r}"].value, "brecha_real": ws[f"H{r}"].value}
                   for k, r in ESCENARIOS.items()}
     chk = verificar(v)
+    for k in ("firma_objetivo", "firma_dcf"):      # TIR del activo al precio objetivo y al valor DCF (no están en el Excel; mismo método que TIR_Implicita)
+        nom = chk.pop(k)
+        real = (1 + nom) / (1 + out["pi"]) - 1
+        out[k] = {"nom": nom, "real": real, "costo_nom": out["wacc"], "costo_real": out["wacc_real"],
+                  "brecha_nom": (nom - out["wacc"]) * 1e4, "brecha_real": (real - out["wacc_real"]) * 1e4}
     for k, x in chk.items():
         assert abs(x - out[k]["nom"]) < 1e-6, f"TIR {k}: hoja {out[k]['nom']} vs scipy {x}"
     # WACC implícita de la Figura 34 (V6): desplaza en paralelo toda la curva de WACC; la TIR de arriba es una tasa única
