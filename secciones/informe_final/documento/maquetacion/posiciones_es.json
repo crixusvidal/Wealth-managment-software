@@ -31,104 +31,110 @@
  },
  "4": {
   "elemento": 26,
-  "offset": 1180,
+  "offset": 996,
   "pagina": 2,
   "y": 526.3
  },
  "6": {
   "elemento": 29,
-  "offset": -464,
+  "offset": -989,
   "pagina": 3,
   "y": 10.0
- },
- "7": {
-  "elemento": 30,
-  "offset": 2771,
-  "pagina": 3,
-  "y": 184.9
- },
- "8": {
-  "elemento": 33,
-  "offset": 1625,
-  "pagina": 3,
-  "y": 342.2
- },
- "9": {
-  "elemento": 41,
-  "offset": -464,
-  "pagina": 4,
-  "y": 10.0
- },
- "10": {
-  "elemento": 46,
-  "offset": 326,
-  "pagina": 4,
-  "y": 175.2
  },
  "11": {
-  "elemento": 50,
-  "offset": 365,
+  "elemento": 30,
+  "offset": 2428,
+  "pagina": 3,
+  "y": 194.0
+ },
+ "7": {
+  "elemento": 33,
+  "offset": 1416,
+  "pagina": 3,
+  "y": 401.8
+ },
+ "8": {
+  "elemento": 39,
+  "offset": -403,
   "pagina": 4,
-  "y": 342.2
+  "y": 10.0
+ },
+ "9": {
+  "elemento": 43,
+  "offset": 326,
+  "pagina": 4,
+  "y": 194.0
+ },
+ "10": {
+  "elemento": 47,
+  "offset": 1242,
+  "pagina": 4,
+  "y": 361.1
  },
  "12": {
-  "elemento": 54,
-  "offset": 890,
+  "elemento": 52,
+  "offset": 735,
   "pagina": 4,
-  "y": 498.5
+  "y": 530.0
  },
  "13": {
-  "elemento": 58,
-  "offset": 202,
-  "pagina": 4,
-  "y": 662.7
- },
- "16": {
-  "elemento": 62,
-  "offset": 6,
+  "elemento": 60,
+  "offset": -639,
   "pagina": 5,
   "y": 10.0
  },
  "14": {
-  "elemento": 66,
-  "offset": 369,
+  "elemento": 63,
+  "offset": 572,
   "pagina": 5,
-  "y": 166.3
+  "y": 174.2
+ },
+ "17": {
+  "elemento": 67,
+  "offset": 491,
+  "pagina": 5,
+  "y": 328.7
  },
  "15": {
   "elemento": 70,
-  "offset": 158,
+  "offset": 1425,
   "pagina": 5,
-  "y": 320.8
+  "y": 485.0
  },
- "17": {
-  "elemento": 74,
-  "offset": 122,
+ "16": {
+  "elemento": 75,
+  "offset": 455,
   "pagina": 5,
-  "y": 475.2
+  "y": 639.4
  },
  "18": {
-  "elemento": 77,
-  "offset": 267,
-  "pagina": 5,
-  "y": 613.9
- },
- "19": {
-  "elemento": 83,
-  "offset": -578,
+  "elemento": 79,
+  "offset": -5,
   "pagina": 6,
   "y": 10.0
  },
+ "19": {
+  "elemento": 56,
+  "offset": 559,
+  "pagina": 4,
+  "y": 686.3
+ },
  "20": {
-  "elemento": 85,
-  "offset": 282,
+  "elemento": 82,
+  "offset": 287,
   "pagina": 6,
-  "y": 140.7
+  "y": 148.6
  },
  "21": {
-  "elemento": 88,
-  "offset": 740,
+  "elemento": 86,
+  "offset": 83,
   "pagina": 6,
-  "y": 279.4
+  "y": 295.2
+ },
+ "22": {
+  "elemento": 88,
+  "offset": 288,
+  "pagina": 6,
+  "y": 433.8
  }
 }

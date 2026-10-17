@@ -75,6 +75,9 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | Figuras de Riesgos (matriz, tornado, mapa de calor, UF) | `riesgos/.../es_/en_fig23–26` | `plantilla_informe/.../fig1–fig4` |
 | Football field | `valuacion/.../es_/en_V1_football.png` | `valuacion/.../football_field.png` |
 | Supuestos fuertes de la valoración (Figura 29, cascada + tabla) | `valuacion/.../es_/en_V13_supuestos_cascada.png` | `valuacion/.../es_/en_V4_capital_trabajo.png` |
+| ESG: scorecard (E1) y energía/residuos (E3) con pares de Bloomberg y desglose de lo valorizado (CFA beta 4.1) | `esg/graficos/figuras/es_/en_E1_scorecard.png`, `..._E3_energia_residuos.png` | `esg/graficos/figuras/anterior/` |
+| ESG: ahorros ESG y menor costo de capital hasta el precio (E6, escenario) y matriz de riesgo ESG (S5) | `esg/graficos/figuras/es_/en_E6_ahorro_esg.png`, `..._AE5_matriz_esg.png`; modelo `valuacion/modelos/Mallplaza_Valoracion_Consolidada_v3_ESG.xlsx` | (primera versión) |
+| Borrador ESG del equipo | `esg/documento/borrador/CFA_ESG_PLAZA_beta_4_1.docx` (+ texto.json / texto_en.json) | `CFA_ESG_PLAZA_beta_3.docx` |
 | Sensibilidad a tasas largas e inflación | `valuacion/.../es_/en_V11_sens_tasas_inflacion.png` (grilla) y `..._V12_mix_tasas_inflacion.png` (mix, heat map); modelo `valuacion/modelos/Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx` | `..._V12_mix_lineas_tasas_inflacion.png` (mix en líneas, versión anterior; aún no está en el informe) |
 | Página de Valuación (Word y PDF) | `valuacion/documento/Mallplaza_Valuacion_*` (con la TIR y lo nuevo marcado) | `valuacion/documento/anterior/Mallplaza_Valuacion_*` |
 | Cuota de mercado por país | `industria/.../es_/en_ind5b_market_share_paises_vertical.png` | `industria/.../es_/en_ind5_market_share_paises.png` |

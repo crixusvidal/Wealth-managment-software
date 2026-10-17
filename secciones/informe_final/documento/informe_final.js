@@ -78,12 +78,12 @@ const sub = (claves, anexo) => Object.fromEntries(claves.map((k, i) => [k, `${an
 const MAPAS = {
   negocio: { nombre: "Negocio", fig: { 1: 1 }, anx: { A: 1, B: 2 } },
   industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: rango(["A", "B", "C", "D", "E"], 3) },
-  esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5"], 7), ...sub(["S1", "S2", "S3", "S4"], 8) }, anx: { "[Y]": 8 } },
-  fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 12), anx: rango(["1", "2", "3", "4", "5", "6"], 9) },
-  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 19), ...sub(["Z1"], 19) },
+  esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5", "E6"], 7), ...sub(["S1", "S2", "S3", "S4", "S5"], 8) }, anx: { "[Y]": 8 } },
+  fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: rango(["1", "2", "3", "4", "5", "6"], 9) },
+  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19) },
     anx: { "[B]": 15, "[C]": 16, "[E]": 17, "[F]": 18, "[Z]": 19 } },
-  riesgos: { nombre: "Riesgos", fig: rango(["23", "24", "25", "26"], 27), anx: { "[X]": 20 } },
-  macro: { nombre: "Macro", fig: { ...sub(["A1", "A2", "A3", "A4", "A5", "A6"], 20), ...rango(["24", "25", "26"], 28) }, anx: { "[X]": 20 } },
+  riesgos: { nombre: "Riesgos", fig: rango(["23", "24", "25", "26"], 28), anx: { "[X]": 20 } },
+  macro: { nombre: "Macro", fig: { ...sub(["A1", "A2", "A3", "A4", "A5", "A6"], 20), ...rango(["24", "25", "26"], 29) }, anx: { "[X]": 20 } },
 };
 const con = (clave, fn) => { MAPA = MAPAS[clave]; try { return fn(); } finally { MAPA = null; } };
 

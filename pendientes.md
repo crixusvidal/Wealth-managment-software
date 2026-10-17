@@ -25,6 +25,11 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 
 - [ ] TIR del proyecto nuevo (4,62% real, 7,76% nominal): validar los supuestos del flujo de un m² (impuesto de largo plazo de 27%, mantención de 5,5% y capital de trabajo de 15,6% sobre los ingresos del proyecto); para igualar la WACC real los ingresos por m² tendrían que ser 1,61x los del modelo (yield on cost de 6,9% a 11,1%).
 
+- [ ] ESG, ahorros (Figura E6): los precios unitarios (energía CLP 110/kWh, agua CLP 1.500/m³, residuos CLP 10.000/t) y el 25% del ahorro que retiene Mallplaza son supuestos ilustrativos cargados en la hoja ESG_Ahorros; reemplazarlos con los datos reales (precio de la energía, tarifa de agua, costo por tonelada y % no traspasado al gasto común, Nota 2.20). Faltan además el monto elegible de la Ley I+D y el spread de un crédito sostenible.
+- [ ] ESG, Falabella: la matriz de riesgo del borrador decía 53,05% y la tabla y el texto 53,10%; se usó 53,10% en todo. Confirmar con la Memoria.
+- [ ] ESG, track record: se usó la versión neutral de la beta 4.1; el Punteo del equipo trae «referencias» más elogiosas (p. ej. «arquitecto» de Mallplaza, «libre de multas y brechas») que chocan con las sanciones de 2025; decidir si se incorporan.
+- [ ] ESG, idioma: la beta 4.1 trae los títulos y subtítulos del texto en español en inglés (ENVIRONMENTAL, SOCIAL, GOVERNANCE) y etiquetas en inglés dentro del párrafo; se dejó tal cual.
+
 ## Texto del informe
 - [ ] Reescribir Riesgos de inversión (hoy con +3,9% por impuesto y 9 notas pendientes) y conectar la narrativa entre secciones.
 - [ ] Resumen de inversión: redactar el texto (hoy solo está la tabla de datos clave).

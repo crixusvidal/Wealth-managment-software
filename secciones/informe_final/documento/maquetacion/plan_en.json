@@ -160,7 +160,7 @@
    "i": 26,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Plaza's ESG approach cuts across all of its organizational decisions, with the aim of developing its business model in a"
+   "inicio": "PLAZA's ESG approach cuts across all of its organizational decisions, with the aim of developing its business model in a"
   },
   {
    "i": 27,
@@ -172,7 +172,7 @@
    "i": 28,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Plaza's approach is to achieve efficient, sustainable and circular operational management based on continuous improvemen"
+   "inicio": "PLAZA's approach is to achieve efficient, sustainable and circular operational management based on continuous improvemen"
   },
   {
    "i": 29,
@@ -184,13 +184,13 @@
    "i": 30,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The company approaches the social dimension through a model focused on long-term ethical relationships, as a principle o"
+   "inicio": "The company approaches the social dimension through a model focused on long-term ethical relationships (Appendix [Y], Fi"
   },
   {
    "i": 31,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "In terms of diversity, women represent 53.2% of the total workforce and hold 42% of management positions (Figure E4), an"
+   "inicio": "In terms of diversity, women represent 53.2% of the total workforce and hold 42% of management positions (Figure E4), a "
   },
   {
    "i": 32,
@@ -436,13 +436,13 @@
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We build Ke in dollars because its three inputs are in that currency: the US Treasury Rf, the implied equity risk premiu"
+   "inicio": "We build Ke in dollars because its three inputs are in that currency and are nominal: the US Treasury Rf, the implied eq"
   },
   {
    "i": 73,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Here the first signal appears: at CLP 3,555, equity yields ~4.4% real, just 80 bp above the company's own real cost of d"
+   "inicio": "The first signal is the asset IRR, what the business earns for whoever buys it at CLP 3,555 if our cash flows come true:"
   },
   {
    "i": 74,
@@ -472,7 +472,7 @@
    "i": 78,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The problem is the return on growth. Each new m² yields 6.9% on cost, a 5.0% real RONIC after tax, below a 7.2% real WAC"
+   "inicio": "The problem is the return on growth. Each new m² yields 6.9% real pre-tax on cost, a 5.0% real RONIC after tax, below a "
   },
   {
    "i": 79,
@@ -496,7 +496,7 @@
    "i": 82,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Macro explains the difference. At 30-Jun-26 Brazil had a 14.25% Selic, a 14.34% nominal 10-year bond and 5.3% expected 2"
+   "inicio": "Macro explains the difference. At 30-Jun-26 Brazil had a 14.25% nominal Selic, a 14.34% nominal 10-year bond and 5.3% ex"
   },
   {
    "i": 83,
@@ -526,13 +526,13 @@
    "i": 87,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a 6.0% cap rate, against 10.1% in our DCF, 6.4% for Ch"
+   "inicio": "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a real 6.0% cap rate, against 10.1% in our DCF, 6.4% f"
   },
   {
    "i": 88,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We pushed the thesis to its extremes. In a bear case (WACC +100 bp and the 75.8% quarterly-low margin) the target falls "
+   "inicio": "We pushed the thesis to its extremes. In a bear case (nominal WACC +100 bp and the 75.8% quarterly-low margin) the targe"
   },
   {
    "i": 89,
@@ -550,7 +550,7 @@
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "That brings us to CLP 2,076 (80% × 1,857 + 20% × 2,951): 10.8x EBITDA, a 9.3% cap rate and 0.94x book value. Rolling the"
+   "inicio": "That brings us to CLP 2,076 (80% × 1,857 + 20% × 2,951): 10.8x EBITDA, a real 9.3% cap rate and 0.94x book value. Rollin"
   },
   {
    "i": 92,
@@ -619,133 +619,140 @@
    "n": "Figure E1:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.1220000000000003
+   "alto": 2.365
   },
   {
    "id": 7,
    "n": "Figure E2:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.012
+   "alto": 2.205197205318909
   },
   {
    "id": 8,
    "n": "Figure E3:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.257
+   "alto": 2.5000000000000004
   },
   {
    "id": 9,
    "n": "Figure E4:",
    "cita": 30,
    "clave": "esg",
-   "alto": 2.1220000000000003
+   "alto": 2.2651915708812265
   },
   {
    "id": 10,
    "n": "Figure E5:",
    "cita": 33,
    "clave": "esg",
-   "alto": 2.012
+   "alto": 2.155191570881226
   },
   {
    "id": 11,
+   "n": "Figure E6:",
+   "cita": 26,
+   "clave": "esg",
+   "alto": 2.72
+  },
+  {
+   "id": 12,
    "n": "Figure 2:",
    "cita": 39,
    "clave": "fa",
    "alto": 2.115
   },
   {
-   "id": 12,
+   "id": 13,
    "n": "Figure 3:",
    "cita": 43,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 13,
+   "id": 14,
    "n": "Figure 4:",
    "cita": 50,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 14,
+   "id": 15,
    "n": "Figure 5:",
    "cita": 55,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 15,
+   "id": 16,
    "n": "Figure 6:",
    "cita": 56,
    "clave": "fa",
    "alto": 1.9800000000000004
   },
   {
-   "id": 16,
+   "id": 17,
    "n": "Figure 7:",
    "cita": 53,
    "clave": "fa",
    "alto": 2.115
   },
   {
-   "id": 17,
+   "id": 18,
    "n": "Figure 27:",
    "cita": 67,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 18,
+   "id": 19,
    "n": "Figure 28:",
    "cita": 73,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 19,
+   "id": 20,
    "n": "Figure 29:",
    "cita": 76,
    "clave": "valuacion",
-   "alto": 1.7600000000000002
+   "alto": 2.115
   },
   {
-   "id": 20,
+   "id": 21,
    "n": "Figure 30:",
    "cita": 78,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 21,
+   "id": 22,
    "n": "Figure 31:",
    "cita": 81,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
-   "id": 22,
+   "id": 23,
    "n": "Figure 32:",
    "cita": 84,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 23,
+   "id": 24,
    "n": "Figure 33:",
    "cita": 87,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 24,
+   "id": 25,
    "n": "Figure 34:",
    "cita": 87,
    "clave": "valuacion",
-   "alto": 1.6250000000000004
+   "alto": 1.7600000000000002
   }
  ]
 }

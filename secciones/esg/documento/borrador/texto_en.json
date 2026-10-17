@@ -1,5 +1,5 @@
 {
- "origen": "CFA_ESG_PLAZA_beta_3.docx",
+ "origen": "CFA_ESG_PLAZA_beta_4_1.docx (traducción)",
  "bloques": [
   {
    "tipo": "titulo",
@@ -14,7 +14,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Plaza's ESG approach cuts across all of its organizational decisions, with the aim of developing its business model in accordance with ESG parameters and thereby contributing to sustainable development, which gives it the opportunity to access financial benefits both from external sources and from its own operations. Regarding compliance with these parameters, Bloomberg rates the company at 3.39 points, below the global industry average (5–6 points) and below its direct competitors in Chile (Figure E1); however, this is offset by the company's “green” profile at the local level, as it ranks among the leading real estate companies in the region. ",
+         "PLAZA's ESG approach cuts across all of its organizational decisions, with the aim of developing its business model in accordance with ESG parameters and thereby contributing to sustainable development, which gives it the opportunity to access financial benefits both from external sources and from its own operations. Regarding compliance with these parameters, Bloomberg rates the company at 3.39 points, below the global industry average (5–6 points) and below its direct competition in Chile (Figure E1), but this is offset by the company's “green” profile at the local level, since it ranks among the leading REM (real estate) companies in the region. ",
          false,
          false
         ],
@@ -24,7 +24,7 @@
          false
         ],
         [
-         " As for operational benefits, the implementation of an ISO 50001-certified energy management system (EnMS) translates into better energy performance and, consequently, lower operating costs. The opportunities to access local external benefits are tied to the company's ESG image: in Chile, under the R&D Law (CORFO), Plaza can obtain up to a 55% reduction in first-category corporate income tax; Peru recognizes the company with 2 out of 4 stars under “Huella de Carbono Perú”, which strengthens the company's image and makes it easier to obtain permits and licenses in the country; and Colombia has Law 2099 of 2021, which allows income tax deductions for investments in environmental control, conservation and improvement.",
+         " As for the benefits of its own operations, the implementation of an energy management system (EnMS) certified under ISO 50001 translates into better energy performance and therefore lower operating costs. The opportunities to access local external benefits are tied to the company's ESG image: in Chile, under the R&D Law (CORFO), PLAZA can obtain up to a 55% reduction in first-category tax; Peru recognizes the company with 2 out of 4 stars in “Huella de Carbono Perú”, which strengthens its image and makes it easier to obtain permits and licenses in the country; and Colombia has Law 2099 of 2021, which allows income-tax deductions for investments in environmental control, conservation and improvement. In addition, the company holds certifications and recognitions that support its ESG image and has joined indices such as DJSI MILA (Figure E1) that give it exposure to ETFs. According to Morgan Stanley estimates, PLAZA's inclusion in the MSCI index could generate passive flows of around US$110 million, equivalent to about 15 times its average daily traded volume, which would strengthen the stock's liquidity. In value terms, Figure E6 estimates (as a scenario, not as data) that operating ESG savings add about CLP 2 per share and that a 25 bp cut in the cost of debt and equity would add CLP 71, against the CLP 1,406 that separate the target price from the share price.",
          false,
          false
         ]
@@ -38,17 +38,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Plaza's approach is to achieve efficient, sustainable and circular operational management based on continuous improvement in environmental performance. To this end, it has set three strategic focus areas on ESG parameters: energy and water efficiency, carbon footprint, and waste management. Plaza's main objective is to achieve carbon neutrality, targeting Net Zero in direct and indirect emissions by 2035 (65.6% progress in 2025). ",
-         false,
-         false
-        ],
-        [
-         "Sustainability indices:",
-         true,
-         false
-        ],
-        [
-         " The company is included in the DJSI Chile and DJSI MILA, and is the only real estate company in South America to be part of MSCI ESG, with a “BBB” rating, which gives it exposure to ETFs. In addition, it has received the following recognitions: S&P Global Sustainability Yearbook; Morningstar Sustainalytics assigns it a risk rating of 14.4; and Huella de Carbono Perú (2/4 stars), which supports its ESG image. ",
+         "PLAZA's approach is to achieve efficient, sustainable and circular operational management based on continuous improvement in environmental performance, which translates into cost savings in its operations. To this end, it has set three strategic focus areas on ESG parameters: energy and water efficiency, carbon footprint, and waste management. PLAZA's main objective is to achieve carbon neutrality, targeting Net Zero in direct and indirect emissions by 2035 (65.6% success rate in 2025). ",
          false,
          false
         ],
@@ -58,7 +48,7 @@
          false
         ],
         [
-         " Plaza aims to reduce the energy intensity of common-area expenses by 22% by 2035 (35.5% progress in 2025; Figure E2). The electricity efficiency target is for 100% to come from renewable energy by 2026 (89.3% progress). In 2025, the annual ratio was 0.16 MWh/m² (Energy/GLA), of which 0.14 was renewable and 0.014 non-renewable (Figure E3).",
+         " PLAZA aims to reduce the energy intensity of common-area expenses by 22% by 2035 (35.5% success rate in 2025; Figure E2). The electricity efficiency target is for 100% to come from renewable energy by 2026 (89.3% success rate). In 2025, the annual ratio was 0.16 MWh/m² (Energy/GLA), of which 0.14 was renewable and 0.014 non-renewable (Figure E3). ",
          false,
          false
         ],
@@ -68,7 +58,7 @@
          false
         ],
         [
-         " It set the goal of reducing direct water consumption by 30% by 2025, which was 100.9% achieved, influenced by its LEED and EDGE certifications. In 2025, the annual ratio was 0.77 m³/m² (Water/GLA) and 0.66 m³/m² monthly in December. ",
+         " It set the goal of reducing direct water consumption by 30% by 2025, which was 100.9% achieved, influenced by its LEED and EDGE certifications. In 2025, the annual ratio (average) was 0.77 m³/m² (Water/GLA) and 0.66 m³/m² monthly in December. ",
          false,
          false
         ],
@@ -78,7 +68,7 @@
          false
         ],
         [
-         " It set the goal of eliminating 100% of HCFC use by 2030 (14.9% progress in 2025), which is vital for GHG emissions management, an area in which Bloomberg recognizes Plaza as a global industry Leader. ",
+         " It set the goal of eliminating 100% of HCFC use by 2030 (14.9% success rate in 2025), which is vital for GHG emissions management, an area in which Bloomberg recognizes PLAZA as a global industry leader. ",
          false,
          false
         ],
@@ -88,7 +78,7 @@
          false
         ],
         [
-         " Plaza set a target of 60% recovery of waste generated in 2025 (94.8% progress; Figure E3 and Appendix [Y], Figure S4), and also seeks to divert 75% of solid waste from landfills by 2027. It reports having eliminated 97% of single-use plastics from its operations. ",
+         " PLAZA set a target of 60% recovery of the waste generated in 2025 (94.8% success rate; Figure E3 and Appendix [Y], Figure S4), and also seeks to divert 75% of solid waste from landfills by 2027. It reports having eliminated 97% of single-use plastics from its operations. ",
          false,
          false
         ],
@@ -98,7 +88,7 @@
          false
         ],
         [
-         " Plaza adopts the TCFD recommendations to integrate physical and transition risks, together with environmental due diligence on asset acquisitions, under an environmental compliance program aligned with ISO 14001 and monitored by the sustainability committee.",
+         " PLAZA adopts the TCFD recommendations to integrate physical and transition risks, together with an environmental due diligence on asset acquisitions, under an environmental compliance program aligned with ISO 14001 and monitored by the sustainability committee.",
          false,
          false
         ]
@@ -112,7 +102,7 @@
        "tipo": "p",
        "runs": [
         [
-         "The company approaches the social dimension through a model focused on long-term ethical relationships, as a principle of shared value creation that places the people in its stakeholder groups at the center of its strategy, aligned with ISO 45001 and ILO guidelines; in 2025 it incorporated the risk detection and response program of its human rights policy. In this way, Plaza manages its stakeholders by ensuring transparent engagement, using mechanisms such as community dialogues and materiality assessments (Appendix [Y], Figure S3), and remains alert to any social incident through its integrity hotline. It is also ranked 31st out of 385 by CADEM in “Marcas Ciudadanas” (“Citizen Brands”), winning the “Shopping Centers” category (2026). Regarding employees, they receive training and even have access to specific programs for those nearing retirement (Appendix [Y], section 5); in addition, the company evaluates its suppliers using sustainability criteria (55.3% of regional suppliers and 38.4% of foreign suppliers). Plaza manages its relationship with its customers (tenants) through a relationship model focused on value proposition and experience, measuring their satisfaction through NPS, which rose to 13% in 2025 (Figure E4). To manage emergencies, each center has emergency manuals adapted to local geographic contexts and conducts drills to prevent incidents and educate the community (52 drills were conducted in 2025); regarding privacy, Plaza implemented ISO/IEC 27001, ensuring the confidentiality, integrity and availability of information against cyber risks.",
+         "The company approaches the social dimension through a model focused on long-term ethical relationships (Appendix [Y], Figure S3), as a principle of shared value creation that places the people in its stakeholder groups at the center of its strategy, aligned with ISO 45001 and ILO guidelines; in 2025 it incorporated the risk detection and response program of its human rights policy. In this way, PLAZA manages its stakeholders by ensuring transparent engagement, using mechanisms such as community dialogues, materiality assessments and organizational culture surveys (Appendix [Y], section 5), and remains alert to any social incident through its integrity hotline. It is also recognized by CADEM at 31st out of 385 in “Marcas Ciudadanas” (“Citizen Brands”), winning the “Shopping Centers” category (2026). Regarding employees, they receive training and even have access to specific programs for those nearing retirement; in addition, the company evaluates its suppliers using sustainability criteria (55.3% of regional suppliers and 38.4% of foreign suppliers). PLAZA manages its relationship with its customers (tenants) through a relationship model focused on value proposition and experience, measuring their satisfaction through NPS, which rose to 13% in 2025 (Figure E4). To manage emergencies, each center has emergency manuals adapted to local geographic contexts and conducts drills to prevent incidents and educate the community (52 drills were conducted in 2025); regarding privacy, PLAZA implemented ISO/IEC 27001, ensuring the confidentiality, integrity and availability of information against cyber risks.",
          false,
          false
         ]
@@ -122,7 +112,7 @@
        "tipo": "p",
        "runs": [
         [
-         "In terms of diversity, women represent 53.2% of the total workforce and hold 42% of management positions (Figure E4), and there is an average gender pay gap of 28% at the regional level. The target for 2028 is for 60% of the properties to be certified as inclusive spaces; in addition, Plaza obtained the “Sello Mayor” (“Senior Seal”), a distinction that certifies physical and operational adaptation for older adults.",
+         "In terms of diversity, women represent 53.2% of the total workforce and hold 42% of management positions (Figure E4), a point in the company's favor in terms of workforce balance, but there is a gender pay gap averaging 28% at the regional level, which undermines that balance; in addition, there is only one woman on the Board, out of 9 directors. The target for 2028 is for 60% of the properties to be certified as inclusive spaces, and PLAZA obtained the “Sello Mayor” (“Senior Seal”) at one of its urban centers, the first in Chile to obtain it, a distinction that certifies physical and operational adaptation for older adults. These certifications matter to the community, and as PLAZA expands it is important that it builds to the parameters the certification requires, avoiding additional costs of retrofitting those facilities in the future, and begins the transition of its existing centers to these conditions.",
          false,
          false
         ]
@@ -228,12 +218,22 @@
          false
         ],
         [
-         "Board and committees:",
+         "Structure of the board of directors and committees:",
          true,
          false
         ],
         [
-         " In 2025, the Board, composed of 9 members (only one of whom is classified as independent; Figure E5 and Appendix [Y], Figure S2), is responsible for defining Plaza's objectives, strategies and policies, while the directors' committee (composed of 3 members) reviews the balance sheets and financial statements, thereby mitigating agency risks. Together, both bodies oversee the risk management led by the executive team committee and the CEO. In the second half of 2025, CEO Fernando de Peña Iver submitted his resignation, effective at year-end, and Pablo Pulido Sierra took over the position in 2026. ",
+         " The Board is composed of 9 members, only one of whom is classified as independent, below 50%, which creates agency risks (Figure E5 and Appendix [Y], Figure S2) and is the only unfavorable factor in the ESG risk matrix (Appendix [Y], Figure S5). This body is responsible for defining PLAZA's objectives, strategies and policies, while the directors' committee (composed of 3 members) reviews the balance sheets and financial statements, seeking to mitigate agency risks. Together, both bodies oversee the risk management led by the executive team committee and the CEO. In the second half of 2025, CEO Fernando de Peña Iver submitted his resignation, effective at year-end, and Pablo Pulido Sierra took over the position in 2026. ",
+         false,
+         false
+        ],
+        [
+         "Executive compensation:",
+         true,
+         false
+        ],
+        [
+         " 33.3% of executives' variable pay depends on ESG KPIs, and in total 61% is tied to non-financial metrics (Figure E5), which aligns management's incentives with PLAZA's ESG goals. ",
          false,
          false
         ],
@@ -243,17 +243,17 @@
          false
         ],
         [
-         " Plaza has a concentrated control model, as it is controlled by Falabella S.A. through its subsidiary Desarrollos Inmobiliarios SpA (53.05% of the shares; Appendix [Y], Figure S1). Minority shareholders holding 1% are entitled to propose director candidates, and the shareholders are the highest body, responsible for appointing the Board and external auditors and approving dividend policies. ",
+         " PLAZA has a concentrated control model, as it is controlled by Falabella S.A. through its subsidiary Desarrollos Inmobiliarios SpA (53.10% of the shares; Appendix [Y], Figure S1); minority shareholders holding 1% are entitled to propose director candidates, and the shareholders are the highest body, responsible for appointing the Board and external auditors and approving dividend policies. ",
          false,
          false
         ],
         [
-         "Ethics, audit and control:",
+         "Ethics, audits and controls:",
          true,
          false
         ],
         [
-         " The ethical framework is supported by the integrity code and the crime prevention model, which together provide a guide for the organization's conduct. In addition, Plaza operates the Autocompliance platform to record meetings with public officials and manage gifts and invitations, along with a confidential integrity hotline for reporting irregularities without risk to the whistleblower. Under the supervision of the directors' committee, a control model is in place, with an internal audit reported monthly to the committee that monitors corrective actions; in parallel, the committee must appoint external auditors and credit rating agencies to analyze the company, as well as have the financial statements audited by independent auditors. Regarding sanctions at the regional level in 2025, Plaza has no antitrust or corruption sanctions, but it has 27 sanctions related to customer/consumer rights, 2 related to workers' rights, 1 from the Superintendency of the Environment and 8 for workplace/sexual harassment (Appendix [Y], section 3).",
+         " The ethical framework is supported by the integrity code and the crime prevention model, which together provide a guide for the organization's conduct. In addition, PLAZA operates the Autocompliance platform to record meetings with public officials and manage gifts and invitations, along with a confidential integrity hotline for reporting irregularities without risk to the whistleblower; in 2025 the company reported regional non-compliance cases and complaints related to workers and customers, but none concerning corruption or conduct that undermines market development (Appendix [Y], section 3). Under the supervision of the directors' committee a control model is in place, with an internal audit reported monthly to the committee that monitors corrective actions; in parallel, the committee must appoint external auditors and credit rating agencies to analyze the company, as well as have the financial statements audited by independent auditors.",
          false,
          false
         ]
@@ -279,10 +279,435 @@
          false
         ]
        ]
+      },
+      {
+       "tipo": "caption",
+       "n": "Figure E6:",
+       "texto": "ESG savings and lower cost of capital versus the share price (scenario)."
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image6.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Scenario: unit prices (energy CLP 110/kWh, water CLP 1,500/m³, waste CLP 10,000/t), the 25% of savings retained by Mallplaza and the 25 bp cut in Kd and Ke are team assumptions, not data from the sources. Volumes: Mallplaza 2025 Annual Report. Source: model v3, ESG_Ahorros sheet; Team analysis.",
+         false,
+         false
+        ]
+       ]
       }
      ]
     }
    ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "ANEXO [Y]: GOBIERNO CORPORATIVO Y SOSTENIBILIDAD"
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "Información de respaldo de la sección ESG: estructura de propiedad, Directorio, cumplimiento, modelo de relacionamiento con grupos de interés, cultura organizacional y residuos. Fuente principal: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "1. ESTRUCTURA DE PROPIEDAD (31-12-2025)"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S1:",
+   "texto": "Participación por tipo de accionista"
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025 (NCG 461 2.3.3). No hay ADRs ni certificados emitidos en el extranjero.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Diez mayores accionistas",
+     "Acciones",
+     "% de acciones"
+    ],
+    [
+     "Desarrollos Inmobiliarios SpA (Falabella)",
+     "1.161.849.244",
+     "53,10%"
+    ],
+    [
+     "Inversiones Avenida Borgoño Limitada",
+     "197.439.955",
+     "9,02%"
+    ],
+    [
+     "Banchile Corredores de Bolsa S.A.",
+     "59.447.149",
+     "2,71%"
+    ],
+    [
+     "BCI Corredor de Bolsa S.A.",
+     "53.553.765",
+     "2,45%"
+    ],
+    [
+     "AFP Habitat S.A. para Fondo de Pensión C",
+     "50.733.976",
+     "2,32%"
+    ],
+    [
+     "Bolsa de Comercio de Santiago, Bolsa de Valores",
+     "41.532.310",
+     "1,90%"
+    ],
+    [
+     "AFP Provida S.A. para Fondo de Pensión C",
+     "37.746.440",
+     "1,72%"
+    ],
+    [
+     "Banco Santander por cuenta de inversión extranjera",
+     "35.594.345",
+     "1,63%"
+    ],
+    [
+     "AFP Capital S.A. Fondo de Pensión tipo C",
+     "34.539.038",
+     "1,58%"
+    ],
+    [
+     "AFP Habitat S.A. Fondo de Pensión tipo B",
+     "30.039.097",
+     "1,37%"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ],
+    [
+     false,
+     false,
+     false
+    ]
+   ],
+   "anchos": [
+    6266,
+    2200,
+    2200
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "2. DIRECTORIO (ELEGIDO EL 22-04-2025)"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S2:",
+   "texto": "Miembros del Directorio (rojo: director independiente; azul: presidente)"
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "9 miembros titulares, sin suplentes; un director independiente. Cada director tiene como máximo cuatro cargos en otras sociedades que cotizan en bolsa. Tomás Müller, Manuela Sánchez y Juan Pablo Montero fueron directores hasta el 22-04-2025. Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "3. ÉTICA Y CUMPLIMIENTO, 2025"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "Materia",
+     "Casos"
+    ],
+    [
+     "Corrupción",
+     "0"
+    ],
+    [
+     "Incumplimientos de derechos de los clientes (Ley 19.496 de Protección de los Derechos del Consumidor)",
+     "27"
+    ],
+    [
+     "Incumplimientos de derechos de los trabajadores",
+     "2"
+    ],
+    [
+     "Procedimientos de la Superintendencia del Medio Ambiente",
+     "1"
+    ],
+    [
+     "Denuncias de acoso laboral, sexual y de violencia en el trabajo",
+     "8"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     true
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ],
+    [
+     false,
+     false
+    ]
+   ],
+   "anchos": [
+    8666,
+    2000
+   ]
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "4. MODELO DE RELACIONAMIENTO CON GRUPOS DE INTERÉS"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S3:",
+   "texto": "Proceso de implementación del modelo de relacionamiento"
+  },
+  {
+   "tipo": "fuente",
+   "runs": [
+    [
+     "Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "5. CULTURA ORGANIZACIONAL: ENCUESTA DE CULTURA 2025"
+  },
+  {
+   "tipo": "tabla",
+   "filas": [
+    [
+     "75%\nEngagement\n−2 pp vs 2024 · meta 2025: 80%",
+     "",
+     "37\neNPS\n−10 vs 2024",
+     "",
+     "88%\nLiderazgo\n+2 pp vs 2024",
+     "",
+     "93%\nParticipación\n+3 pp vs 2024"
+    ]
+   ],
+   "negrita": [
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ]
+   ],
+   "anchos": [
+    2576,
+    120,
+    2576,
+    120,
+    2576,
+    120,
+    2578
+   ]
+  },
+  {
+   "tipo": "parrafo",
+   "runs": [
+    [
+     "El liderazgo (88%) se consolida como el principal activo para apalancar la estrategia. Fuente: Memoria Mallplaza 2025.",
+     false,
+     false
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "6. RESIDUOS, 2025"
+  },
+  {
+   "tipo": "figuras",
+   "filas": [
+    [
+     [
+      {
+       "tipo": "caption",
+       "n": "Figura S4:",
+       "texto": "Generación de residuos por país"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image9.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Fuente: Memoria Mallplaza 2025.",
+         false,
+         false
+        ]
+       ]
+      }
+     ],
+     [
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "32.424,86 toneladas",
+         true,
+         false
+        ],
+        [
+         " de residuos a nivel regional: 76% en Chile, 16% en Colombia y 7% en Perú.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "46,2% valorizado:",
+         true,
+         false
+        ],
+        [
+         " 14.987,57 t de residuos no peligrosos se destinaron a valorización energética con biogás (40,4%), reciclaje (36,1%) y compostaje (23,5%); el resto se destinó a eliminación, principalmente rellenos sanitarios.",
+         false,
+         false
+        ]
+       ]
+      },
+      {
+       "tipo": "p",
+       "runs": [
+        [
+         "Residuos peligrosos:",
+         true,
+         false
+        ],
+        [
+         " 9,03 t, una cifra marginal por la naturaleza de la operación.",
+         false,
+         false
+        ]
+       ]
+      }
+     ]
+    ]
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "7. MATRIZ DE RIESGO ESG"
+  },
+  {
+   "tipo": "caption",
+   "n": "Figura S5:",
+   "texto": "Matriz de factores ESG y su efecto en el caso de inversión"
+  },
+  {
+   "tipo": "titulo",
+   "texto": "8. TRACK RECORD DEL EQUIPO EJECUTIVO"
   }
  ]
 }

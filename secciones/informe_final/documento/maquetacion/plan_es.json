@@ -154,25 +154,25 @@
    "i": 25,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "AMBIENTAL, SOCIAL Y GOBIERNO CORPORATIVO (ESG)"
+   "inicio": "ENVIRONMENTAL, SOCIAL AND GOVERNANCE (ESG)"
   },
   {
    "i": 26,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El enfoque ESG de Plaza es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su model"
+   "inicio": "El enfoque ESG de PLAZA es transversal en todas sus decisiones organizacionales, con el objetivo de desarrollar su model"
   },
   {
    "i": 27,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "AMBIENTAL"
+   "inicio": "ENVIRONMENTAL"
   },
   {
    "i": 28,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El enfoque de Plaza es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del d"
+   "inicio": "El enfoque de PLAZA es lograr una gestión operativa eficiente, sustentable y circular en base a la mejora continua del d"
   },
   {
    "i": 29,
@@ -184,19 +184,19 @@
    "i": 30,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo, como un principio d"
+   "inicio": "La compañía plantea el ámbito social mediante un modelo enfocado a la relación ética de largo plazo (Anexo [Y], figura S"
   },
   {
    "i": 31,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "En materia de diversidad, las mujeres representan el 53,2% de la fuerza laboral total, donde ocupan el 42% de los puesto"
+   "inicio": "En materia de diversidad, las mujeres representan el 53.2% de la fuerza laboral total, donde ocupan el 42% de los puesto"
   },
   {
    "i": 32,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "GOBIERNO CORPORATIVO"
+   "inicio": "GOVERNANCE"
   },
   {
    "i": 33,
@@ -430,13 +430,13 @@
    "i": 71,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Construimos el Ke en dólares porque sus tres insumos están en esa moneda: la Rf del Tesoro de EE.UU., la prima por riesg"
+   "inicio": "Construimos el Ke en dólares porque sus tres insumos están en esa moneda y son nominales: la Rf del Tesoro de EE.UU., la"
   },
   {
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Aquí aparece la primera señal: a CLP 3.555 el patrimonio rinde ~4,4% real, apenas 80 pb sobre el costo real de la deuda "
+   "inicio": "La primera señal es la TIR del activo, lo que rinde la empresa a quien la compra a CLP 3.555 si se cumplen nuestros fluj"
   },
   {
    "i": 73,
@@ -466,7 +466,7 @@
    "i": 77,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 6,9% sobre su costo, un RONIC real de 5,0% después de impuestos"
+   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 6,9% real antes de impuestos sobre su costo, un RONIC real de 5"
   },
   {
    "i": 78,
@@ -490,7 +490,7 @@
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El contexto macro explica la diferencia. Al 30-jun-26 Brasil tenía una Selic de 14,25%, un bono nominal a 10 años de 14,"
+   "inicio": "El contexto macro explica la diferencia. Al 30-jun-26 Brasil tenía una Selic nominal de 14,25%, un bono nominal a 10 año"
   },
   {
    "i": 82,
@@ -520,13 +520,13 @@
    "i": 86,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate de 6,0%, frente a 10,1% en nuestro DCF"
+   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0%, frente a 10,1% en nuestr"
   },
   {
    "i": 87,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Llevamos la tesis a sus extremos. En un caso bear (WACC +100 pb y el margen trimestral mínimo de 75,8%) el precio objeti"
+   "inicio": "Llevamos la tesis a sus extremos. En un caso bear (WACC nominal +100 pb y el margen trimestral mínimo de 75,8%) el preci"
   },
   {
    "i": 88,
@@ -544,7 +544,7 @@
    "i": 90,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Así llegamos a CLP 2.076 (80% × 1.857 + 20% × 2.951): 10,8x EBITDA, un cap rate de 9,3% y 0,94x el valor libro. Llevar e"
+   "inicio": "Así llegamos a CLP 2.076 (80% × 1.857 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 9,3% y 0,94x el valor libro. Lle"
   },
   {
    "i": 91,
@@ -613,133 +613,140 @@
    "n": "Figura E1:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.257
+   "alto": 2.5000000000000004
   },
   {
    "id": 7,
    "n": "Figura E2:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.012
+   "alto": 2.205197205318909
   },
   {
    "id": 8,
    "n": "Figura E3:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.257
+   "alto": 2.5000000000000004
   },
   {
    "id": 9,
    "n": "Figura E4:",
    "cita": 30,
    "clave": "esg",
-   "alto": 2.1220000000000003
+   "alto": 2.2651915708812265
   },
   {
    "id": 10,
    "n": "Figura E5:",
    "cita": 33,
    "clave": "esg",
-   "alto": 2.1470000000000002
+   "alto": 2.290191570881226
   },
   {
    "id": 11,
+   "n": "Figura E6:",
+   "cita": 26,
+   "clave": "esg",
+   "alto": 2.83
+  },
+  {
+   "id": 12,
    "n": "Figura 2:",
    "cita": 39,
    "clave": "fa",
    "alto": 2.115
   },
   {
-   "id": 12,
+   "id": 13,
    "n": "Figura 3:",
    "cita": 43,
    "clave": "fa",
    "alto": 2.2250000000000005
   },
   {
-   "id": 13,
+   "id": 14,
    "n": "Figura 4:",
    "cita": 49,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 14,
+   "id": 15,
    "n": "Figura 5:",
    "cita": 54,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 15,
+   "id": 16,
    "n": "Figura 6:",
    "cita": 55,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
-   "id": 16,
+   "id": 17,
    "n": "Figura 7:",
    "cita": 52,
    "clave": "fa",
    "alto": 2.115
   },
   {
-   "id": 17,
+   "id": 18,
    "n": "Figura 27:",
    "cita": 66,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 18,
+   "id": 19,
    "n": "Figura 28:",
    "cita": 72,
    "clave": "valuacion",
    "alto": 1.7600000000000002
   },
   {
-   "id": 19,
+   "id": 20,
    "n": "Figura 29:",
    "cita": 75,
    "clave": "valuacion",
-   "alto": 1.7600000000000002
+   "alto": 1.9800000000000004
   },
   {
-   "id": 20,
+   "id": 21,
    "n": "Figura 30:",
    "cita": 77,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 21,
+   "id": 22,
    "n": "Figura 31:",
    "cita": 80,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
-   "id": 22,
+   "id": 23,
    "n": "Figura 32:",
    "cita": 83,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 23,
+   "id": 24,
    "n": "Figura 33:",
    "cita": 86,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
-   "id": 24,
+   "id": 25,
    "n": "Figura 34:",
    "cita": 86,
    "clave": "valuacion",
-   "alto": 1.6250000000000004
+   "alto": 1.7600000000000002
   }
  ]
 }

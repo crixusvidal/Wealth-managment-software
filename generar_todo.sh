@@ -30,6 +30,8 @@ python3 valuacion/graficos/tabla_multiplos_implicitos.py $FA
 python3 analisis_financiero/graficos/analisis_financiero.py
 python3 riesgos/graficos/pagina_riesgos.py $FA $V2 $TOR
 python3 esg/graficos/esg.py
+python3 esg/graficos/matriz_esg.py                                                 # matriz de riesgo ESG (Figura S5 del Anexo [Y])
+python3 esg/graficos/esg_ahorro.py $V/Mallplaza_Valoracion_Consolidada_v3_ESG.xlsx          # cascada de ahorros ESG hasta el precio (Figura E6); carga supuestos y recalcula la hoja ESG_Ahorros
 python3 macro/graficos/anexo_macro.py
 python3 plantilla_informe/graficos/figuras_informe.py $FA $V2 $TOR
 python3 informe_final/graficos/datos_resumen.py $V2 $V/Mallplaza_Figuras_Valuacion_recalc.xlsx

@@ -13,7 +13,7 @@ const FUENTE = "Arial", ANCHO = 10666, COL_TEXTO = 6900, COL_SEP = 216, COL_FIG 
 const MEDIA = 5225;
 const FIG = path.join(__dirname, "..", "graficos", "figuras");
 const PX = 96;
-const ALTO = { E1: 2.0, E2: 1.75, E3: 1.8, E4: 1.7, E5: 1.7, AE1: 1.0, AE2: 1.15, AE3: 1.45, AE4: 1.75 }; // = graficos/esg.py
+const ALTO = { E1: 2.3, E2: 1.75, E3: 1.8, E4: 1.7, E5: 1.7, E6: 2.5, AE1: 1.0, AE2: 1.15, AE3: 1.45, AE4: 1.75, AE5: 5.05 }; // = graficos/esg.py
 
 const run = (text, o = {}) => new TextRun({ text, font: FUENTE, size: o.size || 16, bold: o.bold,
   italics: o.italics, color: o.color || TINTA });
@@ -49,7 +49,7 @@ const L = {
         "**Diversidad:** las mujeres representan el 53% de la fuerza laboral (403 personas) y el 42% de los cargos directivos (44), con una brecha salarial media de 28% a nivel regional. La meta al 2028 es que el 60% de los centros esté certificado como espacio inclusivo, y Plaza obtuvo el “Sello Mayor”, que certifica su adaptación física y operacional para personas mayores."] },
       { titulo: "GOBIERNO CORPORATIVO", parrafos: [
         "El gobierno corporativo se rige por los principios del G20 y de la OCDE, alineado con la NCG 461 de la CMF, para asegurar una gestión transparente, con control de riesgos y una estructura sólida que dé seguimiento a la estrategia y a los compromisos ESG.",
-        "**Directorio y comités:** el Directorio, de 9 miembros, define los objetivos, estrategias y políticas de Plaza, pero solo uno es independiente (Figura E5). El comité de directores, de tres miembros y presidido por el director independiente, revisa las operaciones con partes relacionadas (Ley 18.046). Falabella controla el 53,05% de la propiedad y los fondos de pensiones suman 23,8% (Anexo [Y]). La baja independencia del Directorio es el principal punto débil de gobierno (RR1, Investment Risks).",
+        "**Directorio y comités:** el Directorio, de 9 miembros, define los objetivos, estrategias y políticas de Plaza, pero solo uno es independiente (Figura E5). El comité de directores, de tres miembros y presidido por el director independiente, revisa las operaciones con partes relacionadas (Ley 18.046). Falabella controla el 53,10% de la propiedad y los fondos de pensiones suman 23,8% (Anexo [Y]). La baja independencia del Directorio es el principal punto débil de gobierno (RR1, Investment Risks).",
         "**Incentivos ESG:** los KPIs ESG se miden anualmente y forman parte de la remuneración variable del Gerente General, gerentes y subgerentes. Los indicadores no financieros pesan 61% (33,3% vinculado directamente a materias ESG y 27,7% a otros temas) y los financieros 39% (Figura E5).",
         "**Ética y cumplimiento:** en 2025 no registró incumplimientos de la legislación ni casos de corrupción. Registró 27 incumplimientos de derechos del consumidor (Ley 19.496), 2 de derechos laborales, 1 procedimiento de la Superintendencia del Medio Ambiente y 8 denuncias de acoso o violencia en el trabajo (Anexo [Y])."] },
     ],
@@ -66,7 +66,7 @@ const L = {
       s1: "1. ESTRUCTURA DE PROPIEDAD (31-12-2025)",
       f1: ["Figura S1:", "Participación por tipo de accionista", "Fuente: Memoria Mallplaza 2025 (NCG 461 2.3.3). No hay ADRs ni certificados emitidos en el extranjero."],
       t1: { cols: ["Diez mayores accionistas", "Acciones", "% de acciones"], anchos: [6266, 2200, 2200], filas: [
-        ["Desarrollos Inmobiliarios SpA (Falabella)", "1.161.849.244", "53,05%"], ["Inversiones Avenida Borgoño Limitada", "197.439.955", "9,02%"],
+        ["Desarrollos Inmobiliarios SpA (Falabella)", "1.161.849.244", "53,10%"], ["Inversiones Avenida Borgoño Limitada", "197.439.955", "9,02%"],
         ["Banchile Corredores de Bolsa S.A.", "59.447.149", "2,71%"], ["BCI Corredor de Bolsa S.A.", "53.553.765", "2,45%"],
         ["AFP Habitat S.A. para Fondo de Pensión C", "50.733.976", "2,32%"], ["Bolsa de Comercio de Santiago, Bolsa de Valores", "41.532.310", "1,90%"],
         ["AFP Provida S.A. para Fondo de Pensión C", "37.746.440", "1,72%"], ["Banco Santander por cuenta de inversión extranjera", "35.594.345", "1,63%"],
@@ -82,7 +82,7 @@ const L = {
       n2: "9 miembros titulares, sin suplentes; un director independiente. Cada director tiene como máximo cuatro cargos en otras sociedades que cotizan en bolsa. Tomás Müller, Manuela Sánchez y Juan Pablo Montero fueron directores hasta el 22-04-2025. Fuente: Memoria Mallplaza 2025.",
       s3: "3. ÉTICA Y CUMPLIMIENTO, 2025",
       t3: { cols: ["Materia", "Casos"], anchos: [8666, 2000], filas: [
-        ["Incumplimientos de la legislación y normativas", "0"], ["Corrupción", "0"],
+        ["Corrupción", "0"],
         ["Incumplimientos de derechos de los clientes (Ley 19.496 de Protección de los Derechos del Consumidor)", "27"],
         ["Incumplimientos de derechos de los trabajadores", "2"], ["Procedimientos de la Superintendencia del Medio Ambiente", "1"],
         ["Denuncias de acoso laboral, sexual y de violencia en el trabajo", "8"]] },
@@ -99,6 +99,18 @@ const L = {
         "**46,2% valorizado:** 14.987,57 t de residuos no peligrosos se destinaron a valorización energética con biogás (40,4%), reciclaje (36,1%) y compostaje (23,5%); el resto se destinó a eliminación, principalmente rellenos sanitarios.",
         "**Residuos peligrosos:** 9,03 t, una cifra marginal por la naturaleza de la operación.",
       ],
+      s7: "7. MATRIZ DE RIESGO ESG",
+      f7: ["Figura S5:", "Matriz de factores ESG y su efecto en el caso de inversión", "Materialidad, horizonte, capacidad de absorber pérdidas y efecto neto son juicios del equipo. Marco adaptado del enfoque de S&P Global Ratings para factores ESG de crédito. Fuente: Memoria Mallplaza 2025, Bloomberg, MSCI, Sustainalytics, S&P Global; análisis del equipo."],
+      s8: "8. TRACK RECORD DEL EQUIPO EJECUTIVO",
+      t8: { cols: ["Nombre", "Cargo en PLAZA", "Antigüedad", "Experiencia previa", "Perfil y responsabilidades"], anchos: [1900, 2300, 1000, 2000, 3466], filas: [
+        ["Pablo Pulido Sierra", "Gerente General (desde 2026)", "10 años", "Grupo Casino, Grupo Éxito", "Perfil comercial; experiencia en integraciones regionales."],
+        ["Fernando de Peña Iver", "Gerente General (hasta 2025)", "35 años", "Trayectoria en Mallplaza", "Conduce la compañía hasta 2025; amplia trayectoria en el retail latinoamericano."],
+        ["Derek Schweitzer Tang", "Gerente de Administración y Finanzas (CFO)", "Desde 2023", "BRMalls", "Experiencia internacional; su área lidera la estructura financiera y el ingreso a índices globales (MSCI)."],
+        ["Carlos Honorato C.", "CTO, Gerente de Tecnología", "2 años", "Ripley.com, Neoris, Alto Movup, ProChile", "Responsable de la modernización de las ventas omnicanal y de la ciberseguridad corporativa."],
+        ["María Sol de Cabo", "Gerente de Personas y Cultura", "Desde 2025", "Betterfly", "Más de 20 años de trayectoria internacional en gestión de talento."],
+        ["Oscar Munizaga Delfín", "Gerente de Desarrollo y Negocios", "34 años", "Trayectoria en Mallplaza", "Responsable del crecimiento mediante M&A y desarrollos greenfield."],
+        ["Luis Hernán Silva", "Gerente Legal, Riesgos y Cumplimiento", "27 años", "Trayectoria en Mallplaza", "Responsable legal corporativo y de la gestión de riesgos y cumplimiento."]] },
+      n8: "Fuente: información pública de la compañía; Punteo del equipo (track record).",
     },
   },
   en: {
@@ -124,7 +136,7 @@ const L = {
         "**Diversity:** women make up 53% of the workforce (403 people) and 42% of management positions (44), with an average gender pay gap of 28% across the region. The 2028 target is for 60% of centres to be certified as inclusive spaces, and Plaza earned the “Sello Mayor” seal, which certifies its physical and operational adaptation for older people."] },
       { titulo: "GOVERNANCE", parrafos: [
         "Corporate governance follows the G20/OECD principles and the CMF's General Rule 461, to ensure transparent management, risk control and a solid structure to monitor the strategy and ESG commitments.",
-        "**Board and committees:** the 9-member Board sets Plaza's objectives, strategies and policies, but only one director is independent (Figure E5). The three-member directors' committee, chaired by the independent director, reviews related-party transactions (Law 18,046). Falabella controls 53.05% of the shares and pension funds hold 23.8% (Appendix [Y]). Low board independence is the main governance weakness (RR1, Investment Risks).",
+        "**Board and committees:** the 9-member Board sets Plaza's objectives, strategies and policies, but only one director is independent (Figure E5). The three-member directors' committee, chaired by the independent director, reviews related-party transactions (Law 18,046). Falabella controls 53.10% of the shares and pension funds hold 23.8% (Appendix [Y]). Low board independence is the main governance weakness (RR1, Investment Risks).",
         "**ESG incentives:** ESG KPIs are measured annually and are part of the variable pay of the CEO, managers and deputy managers. Non-financial indicators weigh 61% (33.3% linked directly to ESG matters and 27.7% to other topics) and financial indicators 39% (Figure E5).",
         "**Ethics and compliance:** in 2025 there were no breaches of laws and regulations and no corruption cases. There were 27 breaches of consumer rights (Law 19,496), 2 of labour rights, 1 proceeding by the Environment Superintendency and 8 complaints of workplace harassment or violence (Appendix [Y])."] },
     ],
@@ -141,7 +153,7 @@ const L = {
       s1: "1. OWNERSHIP STRUCTURE (31-DEC-2025)",
       f1: ["Figure S1:", "Shareholding by type of shareholder", "Source: Mallplaza Annual Report 2025 (NCG 461 2.3.3). No ADRs or certificates issued abroad."],
       t1: { cols: ["Ten largest shareholders", "Shares", "% of shares"], anchos: [6266, 2200, 2200], filas: [
-        ["Desarrollos Inmobiliarios SpA (Falabella)", "1,161,849,244", "53.05%"], ["Inversiones Avenida Borgoño Limitada", "197,439,955", "9.02%"],
+        ["Desarrollos Inmobiliarios SpA (Falabella)", "1,161,849,244", "53.10%"], ["Inversiones Avenida Borgoño Limitada", "197,439,955", "9.02%"],
         ["Banchile Corredores de Bolsa S.A.", "59,447,149", "2.71%"], ["BCI Corredor de Bolsa S.A.", "53,553,765", "2.45%"],
         ["AFP Habitat S.A. Pension Fund C", "50,733,976", "2.32%"], ["Santiago Stock Exchange", "41,532,310", "1.90%"],
         ["AFP Provida S.A. Pension Fund C", "37,746,440", "1.72%"], ["Banco Santander on behalf of foreign investors", "35,594,345", "1.63%"],
@@ -157,7 +169,7 @@ const L = {
       n2: "9 full members, no alternates; one independent director. Each director holds at most four positions in other listed companies. Tomás Müller, Manuela Sánchez and Juan Pablo Montero were directors until 22-Apr-2025. Source: Mallplaza Annual Report 2025.",
       s3: "3. ETHICS AND COMPLIANCE, 2025",
       t3: { cols: ["Matter", "Cases"], anchos: [8666, 2000], filas: [
-        ["Breaches of laws and regulations", "0"], ["Corruption", "0"],
+        ["Corruption", "0"],
         ["Breaches of customer rights (Consumer Protection Law 19,496)", "27"],
         ["Breaches of employee rights", "2"], ["Proceedings by the Environment Superintendency", "1"],
         ["Complaints of workplace, sexual harassment and violence at work", "8"]] },
@@ -174,6 +186,18 @@ const L = {
         "**46.2% recovered:** 14,987.57 t of non-hazardous waste went to energy recovery through biogas (40.4%), recycling (36.1%) and composting (23.5%); the rest went to disposal, mainly sanitary landfills.",
         "**Hazardous waste:** 9.03 t, a marginal amount given the nature of the business.",
       ],
+      s7: "7. ESG RISK MATRIX",
+      f7: ["Figure S5:", "ESG factor matrix and its effect on the investment case", "Materiality, time horizon, ability to absorb losses and net effect are team assessments. Framework adapted from S&P Global Ratings' approach to ESG credit factors. Source: Mallplaza Annual Report 2025, Bloomberg, MSCI, Sustainalytics, S&P Global; Team analysis."],
+      s8: "8. EXECUTIVE TEAM TRACK RECORD",
+      t8: { cols: ["Name", "Role at PLAZA", "Tenure", "Previous experience", "Profile and responsibilities"], anchos: [1900, 2300, 1000, 2000, 3466], filas: [
+        ["Pablo Pulido Sierra", "CEO (since 2026)", "10 years", "Grupo Casino, Grupo Éxito", "Commercial profile; experience in regional integrations."],
+        ["Fernando de Peña Iver", "CEO (until 2025)", "35 years", "Career at Mallplaza", "Led the company until 2025; extensive career in Latin American retail."],
+        ["Derek Schweitzer Tang", "Chief Administration and Finance Officer (CFO)", "Since 2023", "BRMalls", "International experience; his area leads the financial structure and the entry into global indices (MSCI)."],
+        ["Carlos Honorato C.", "CTO, Chief Technology Officer", "2 years", "Ripley.com, Neoris, Alto Movup, ProChile", "Responsible for modernizing omnichannel sales and corporate cybersecurity."],
+        ["María Sol de Cabo", "Chief People and Culture Officer", "Since 2025", "Betterfly", "Over 20 years of international experience in talent management."],
+        ["Oscar Munizaga Delfín", "Chief Development and Business Officer", "34 years", "Career at Mallplaza", "Responsible for growth through M&A and greenfield developments."],
+        ["Luis Hernán Silva", "Chief Legal, Risk and Compliance Officer", "27 years", "Career at Mallplaza", "Responsible for corporate legal affairs and risk and compliance management."]] },
+      n8: "Source: company public information; Team notes (track record).",
     },
   },
 };
@@ -276,6 +300,8 @@ function anexo(lang) {
         celda(COL_SEP, [vacia()]),
         celda(MEDIA, [new Paragraph({ spacing: { before: 200 }, children: [] }), ...A.r6.map((t) => parrafo(t, 80))]),
       ] })] }),
+    subtitulo(A.s7, 160), caption(A.f7[0], A.f7[1], 20), imagen(`${lang}_AE5_matriz_esg.png`, ANCHO / 1440, ALTO.AE5), fuente(A.f7[2]),
+    subtitulo(A.s8, 160), tabla(A.t8), fuente(A.n8),
   ];
 }
 
@@ -289,10 +315,10 @@ function pie(prefijo) {
     run(prefijo, { size: 14, color: GRIS }), new TextRun({ children: [PageNumber.CURRENT], font: FUENTE, size: 14, color: GRIS })] })] });
 }
 
-// Cuerpo en español: texto del borrador del equipo (borrador/CFA_ESG_PLAZA_beta_3.docx → borrador/texto.json,
+// Cuerpo en español: texto del borrador del equipo (borrador/CFA_ESG_PLAZA_beta_4_1.docx → borrador/texto.json,
 // con comun/borrador_a_json.py), sin cambios, en el formato principal y con los gráficos del repo.
 // Inglés: borrador/texto_en.json (traducción fiel del mismo texto).
-const FIGS_CUERPO = ["E1_scorecard", "E2_metas", "E3_energia_residuos", "E4_social", "E5_gobierno"];
+const FIGS_CUERPO = ["E1_scorecard", "E2_metas", "E3_energia_residuos", "E4_social", "E5_gobierno", "E6_ahorro_esg"];
 const imagenesDe = (lang) => Object.fromEntries(FIGS_CUERPO.map((n, i) => [`image${i + 1}.png`, [path.join(FIG, `${lang}_${n}.png`), ALTO[n.split("_")[0]]]]));
 const textoDe = (lang) => JSON.parse(fs.readFileSync(path.join(__dirname, "borrador", lang === "es" ? "texto.json" : "texto_en.json"), "utf8"));
 function cuerpo(lang) {

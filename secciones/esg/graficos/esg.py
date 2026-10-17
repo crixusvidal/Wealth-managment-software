@@ -36,10 +36,12 @@ NPS = [(2022, -8), (2023, 8), (2024, 11), (2025, 13)]
 REMUNERACION = [("esg", 33.3), ("otros_nf", 27.7), ("fin", 39.0)]
 ACCIONISTAS = [("ctrl", 53.10), ("afp", 23.80), ("may", 11.40), ("fondos", 8.25), ("otros", 3.45)]
 RESIDUOS_PAIS = [("Chile", 76), ("Colombia", 16), ("Perú", 7)]
+PARES_ESG = [("Cencomalls", [3.74, 3.26, 7.17, 3.41]), ("Parque Arauco", [4.04, 3.86, 5.62, 3.80])]   # general, E, S, G (Bloomberg, beta 4.1)
+COLOR_PARES = [AZUL, CELESTE, AMARILLO, NEGRO]
 
 T = {
     "es": {"pilar": {"ESG": "Puntaje ESG", "amb": "Ambiental", "soc": "Social", "gob": "Gobernanza"},
-           "escala": "Puntaje Bloomberg (0–10)",
+           "escala": "Puntaje Bloomberg (0–10)", "pares": ["General", "E", "S", "G"],
            "ratings": [("MSCI ESG", "BBB"), ("Sustainalytics", "14,4 · riesgo bajo"),
                        ("Dow Jones", "Best-in-Class Chile y MILA"), ("S&P Global", "Sustainability Yearbook"),
                        ("Huella Perú", "2 de 4 estrellas")],
@@ -50,7 +52,7 @@ T = {
                      "elec": ("Electricidad renovable", "100% al 2026")},
            "avance": "Avance de la meta (2025)",
            "energia": "Energía 2025", "renov": "Renovable", "norenov": "No renovable",
-           "residuos": "Residuos no peligrosos", "valoriz": "Valorizados", "elim": "Eliminación",
+           "residuos": "Valorización de residuos", "valoriz": "Valorizados", "elim": "Eliminación", "reut": "Reutilización", "de_no_pel": "{p}% de los no peligrosos",
            "valor": {"biogas": "Biogás", "recic": "Reciclaje", "compost": "Compostaje"},
            "nps": "NPS de arrendatarios",
            "tiles": [("53%", "mujeres en la fuerza\nlaboral (403)"), ("42%", "mujeres en cargos\ndirectivos (44)"),
@@ -58,7 +60,7 @@ T = {
            "rem": "Remuneración variable\nde ejecutivos",
            "remk": {"esg": "KPIs ESG", "otros_nf": "Otros no financieros", "fin": "Financieros"},
            "dir": "Directorio: 9 miembros", "indep": "independiente", "no_indep": "no independientes",
-           "ctrl": "53,05% Falabella\n(controlador)",
+           "ctrl": "53,10% Falabella\n(controlador)",
            "acc": {"ctrl": "Controlador", "afp": "Fondos de pensiones", "may": "Accionistas mayoritarios",
                    "fondos": "Otros fondos", "otros": "Otros (corredoras)"},
            "pasos": ["Identificar los grupos\nde interés relevantes", "Definir el área\nresponsable",
@@ -66,7 +68,7 @@ T = {
                      "Evaluar la percepción\nde la gestión sostenible"],
            "total_res": "32.425 t\nen 2025"},
     "en": {"pilar": {"ESG": "ESG score", "amb": "Environmental", "soc": "Social", "gob": "Governance"},
-           "escala": "Bloomberg score (0–10)",
+           "escala": "Bloomberg score (0–10)", "pares": ["General", "E", "S", "G"],
            "ratings": [("MSCI ESG", "BBB"), ("Sustainalytics", "14.4 · low risk"),
                        ("Dow Jones", "Best-in-Class Chile & MILA"), ("S&P Global", "Sustainability Yearbook"),
                        ("Huella Perú", "2 of 4 stars")],
@@ -77,7 +79,7 @@ T = {
                      "elec": ("Renewable electricity", "100% by 2026")},
            "avance": "Progress towards target (2025)",
            "energia": "Energy 2025", "renov": "Renewable", "norenov": "Non-renewable",
-           "residuos": "Non-hazardous waste", "valoriz": "Recovered", "elim": "Disposal",
+           "residuos": "Waste recovery", "valoriz": "Recovered", "elim": "Disposal", "reut": "Reuse", "de_no_pel": "{p}% of non-hazardous",
            "valor": {"biogas": "Biogas", "recic": "Recycling", "compost": "Composting"},
            "nps": "Tenant NPS",
            "tiles": [("53%", "women in the\nworkforce (403)"), ("42%", "women in\nmanagement (44)"),
@@ -85,7 +87,7 @@ T = {
            "rem": "Executive variable\npay",
            "remk": {"esg": "ESG KPIs", "otros_nf": "Other non-financial", "fin": "Financial"},
            "dir": "Board: 9 members", "indep": "independent", "no_indep": "non-independent",
-           "ctrl": "53.05% Falabella\n(controller)",
+           "ctrl": "53.10% Falabella\n(controller)",
            "acc": {"ctrl": "Controller", "afp": "Pension funds", "may": "Major shareholders",
                    "fondos": "Other funds", "otros": "Others (brokers)"},
            "pasos": ["Identify relevant\nstakeholders", "Assign the\nresponsible area",
@@ -127,8 +129,8 @@ def tarjeta(fig, x, y, w, h, fondo=CLARO, borde=None):
 # E1 · Puntaje Bloomberg y ratings ----------------------------------------------------------------
 def scorecard(lang, salida):
     t = T[lang]
-    fig = figura(COLUMNA, 2.0)
-    ax = fig.add_axes([0.3, 0.6, 0.66, 0.38])
+    fig = figura(COLUMNA, 2.3)
+    ax = fig.add_axes([0.3, 0.7, 0.66, 0.28])
     for y, (k, v) in enumerate(reversed(BLOOMBERG)):
         total = k == "ESG"
         ax.barh(y, 10, height=0.56, color=CLARO)
@@ -140,13 +142,30 @@ def scorecard(lang, salida):
     ax.set_xlim(0, 10)
     ax.set_ylim(-0.5, len(BLOOMBERG) - 0.5)
     limpio(ax)
-    ax.text(0, -0.85, t["escala"], fontsize=4.4, color=TINTA_SECUNDARIA, va="center")
+    # Pares: puntaje general y por pilar (cuatro barras chicas por empresa)
+    axp = fig.add_axes([0.3, 0.5, 0.66, 0.15])
+    axp.set_xlim(0, 4)
+    axp.set_ylim(-0.5, len(PARES_ESG) - 0.5)
+    for fila, (nombre, vals) in enumerate(PARES_ESG):
+        y = len(PARES_ESG) - 1 - fila
+        fig.text(0.27, 0.5 + 0.15 * (y + 0.5) / len(PARES_ESG), nombre, ha="right", va="center", fontsize=4.8, color=NEGRO)
+        for j, (v, c) in enumerate(zip(vals, COLOR_PARES)):
+            axp.add_patch(Rectangle((j + 0.03, y - 0.28), 0.94, 0.56, facecolor=CLARO, linewidth=0))
+            axp.add_patch(Rectangle((j + 0.03, y - 0.28), 0.62 * v / 10, 0.56, facecolor=c, linewidth=0))
+            axp.text(j + 0.03 + 0.62 * v / 10 + 0.03, y, num(v, lang, 2), va="center", fontsize=3.9, fontweight="bold", color=NEGRO)
+    limpio(axp)
+    # leyenda de los pares
+    for j, (lab, c) in enumerate(zip(t["pares"], COLOR_PARES)):
+        x = 0.3 + 0.66 * j / 4
+        fig.add_artist(Rectangle((x, 0.455), 0.012, 0.018, transform=fig.transFigure, color=c))
+        fig.text(x + 0.02, 0.464, lab, fontsize=4.0, va="center", color=TINTA_SECUNDARIA)
+    fig.text(0.3, 0.425, t["escala"], fontsize=4.4, color=TINTA_SECUNDARIA, va="center")
     # Ratings: 2 columnas
-    w, h, gx, gy = 0.455, 0.12, 0.03, 0.025
+    w, h, gx, gy = 0.455, 0.1, 0.03, 0.02
     for i, (agencia, nota) in enumerate(t["ratings"]):
         col, fila = i % 2, i // 2
         x = 0.03 + col * (w + gx)
-        y = 0.36 - fila * (h + gy)
+        y = 0.28 - fila * (h + gy)
         if i == 4:
             x, w2 = 0.03, w * 2 + gx
         else:
@@ -209,23 +228,28 @@ def energia_residuos(lang, salida):
     ax1.text(0, -0.25, t["renov"].lower(), ha="center", va="center", fontsize=4.6, color=NEGRO)
     fig.text(0.24, 0.93, t["energia"], ha="center", fontsize=5.4, fontweight="bold", color=AZUL)
     fig.text(0.24, 0.255, f"{num(ren + nor, lang, 0)} MWh", ha="center", fontsize=4.4, color=TINTA_SECUNDARIA)
-    # Residuos
-    ax2 = fig.add_axes([0.53, 0.3, 0.42, 0.56])
-    partes = [RESIDUOS_VALORIZADOS * p / 100 for _, p in VALORIZACION]
-    dona(ax2, partes + [100 - RESIDUOS_VALORIZADOS], [ROJO, NEGRO, CELESTE, "#d9d9d9"])
-    ax2.text(0, 0.1, f"{num(RESIDUOS_VALORIZADOS, lang)}%", ha="center", va="center", fontsize=7.5,
-             fontweight="bold", color=NEGRO)
-    ax2.text(0, -0.25, t["valoriz"].lower(), ha="center", va="center", fontsize=4.6, color=NEGRO)
-    fig.text(0.74, 0.93, t["residuos"], ha="center", fontsize=5.4, fontweight="bold", color=AZUL)
-    # Leyendas
+    # Residuos: desglose de lo valorizado (suma 100% de lo valorizado)
+    ax2 = fig.add_axes([0.5, 0.1, 0.5, 0.72])
+    colores = [ROJO, NEGRO, CELESTE]
+    inicio = 90
+    total = sum(p for _, p in VALORIZACION)
+    for (k, p), c in zip(VALORIZACION, colores):
+        ang = 360 * p / total
+        ax2.add_patch(Wedge((0, 0), 1, inicio - ang, inicio, width=0.72, facecolor=c, edgecolor="white", linewidth=0.8))
+        mid = np.deg2rad(inicio - ang / 2)
+        ax2.text(1.12 * np.cos(mid), 1.12 * np.sin(mid), f"{num(p, lang)}%\n{t['valor'][k]}", ha="right" if np.cos(mid) < 0 else "left",
+                 va="center", fontsize=4.4, fontweight="bold", color=NEGRO, linespacing=1.1)
+        inicio -= ang
+    ax2.text(0, -1.52, f"0% {t['reut']}", ha="center", va="center", fontsize=4.0, color=TINTA_SECUNDARIA)
+    ax2.set_xlim(-1.85, 1.85)
+    ax2.set_ylim(-1.65, 1.25)
+    ax2.set_aspect("equal")
+    ax2.axis("off")
+    fig.text(0.75, 0.93, t["residuos"], ha="center", fontsize=5.4, fontweight="bold", color=AZUL)
+    fig.text(0.75, 0.87, t["de_no_pel"].format(p=num(RESIDUOS_VALORIZADOS, lang)), ha="center", fontsize=4.4, color=TINTA_SECUNDARIA)
     fig.legend(handles=[Patch(color=ROJO, label=t["renov"]), Patch(color=CELESTE, label=t["norenov"])],
                loc="lower center", bbox_to_anchor=(0.24, 0.02), ncol=1, frameon=False, fontsize=4.4,
                handlelength=1, handleheight=0.8, labelspacing=0.25)
-    fig.legend(handles=[Patch(color=c, label=f"{t['valor'][k]} {num(p, lang)}%")
-                        for (k, p), c in zip(VALORIZACION, [ROJO, NEGRO, CELESTE])]
-               + [Patch(color="#d9d9d9", label=t["elim"])],
-               loc="lower center", bbox_to_anchor=(0.74, 0.0), ncol=2, frameon=False, fontsize=4.2,
-               handlelength=1, handleheight=0.8, labelspacing=0.25, columnspacing=0.6)
     guardar(fig, salida)
 
 
