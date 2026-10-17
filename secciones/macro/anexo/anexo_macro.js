@@ -31,7 +31,7 @@ const L = {
   es: {
     archivo: "Mallplaza_Anexo_Macro_ES.docx", pie: "A-",
     titulo: "ANEXO [X]: ENTORNO MACROECONÓMICO Y GEOPOLÍTICO",
-    lead: "Entre 2022 y 2026 la economía mundial absorbió dos shocks de oferta de origen geopolítico y un alza estructural de las tasas largas. El resultado es un entorno de presiones estanflacionarias y mayor costo de capital que llega a Chile por tres canales —inflación, tasas y consumo— y que está detrás de los dos riesgos más severos del informe (FR1 y MR1). En los gráficos, la línea punteada azul marca la fecha de valoración (30-06-2026); los datos posteriores se muestran como contexto.",
+    lead: "Entre 2022 y 2026 la economía mundial absorbió dos shocks de oferta de origen geopolítico y un alza estructural de las tasas largas. El resultado es un entorno de presiones estanflacionarias y mayor costo de capital que llega a Chile por tres canales —inflación, tasas y consumo— y que está detrás de los dos riesgos más severos del informe (FR1 y MR1). En los gráficos, la línea punteada azul marca la fecha de valoración (30-06-2026); los datos posteriores se muestran como contexto. Las figuras cubren la transmisión del shock (Figura A1), el petróleo (Figura A2), las tasas soberanas (Figura A3), los spreads (Figura A4), el crecimiento e inflación mundial (Figura A5) y Chile (Figura A6).",
     kpis: [
       ["USD 114", "Brent, promedio sep-26", "+61% vs feb-26, antes del conflicto"],
       ["5,22%", "UST 10Y, 8-oct-26", "máximo en 24 años (desde 2002)"],
@@ -88,7 +88,7 @@ const L = {
   en: {
     archivo: "Mallplaza_Anexo_Macro_EN.docx", pie: "A-",
     titulo: "APPENDIX [X]: MACROECONOMIC AND GEOPOLITICAL BACKDROP",
-    lead: "Between 2022 and 2026 the world economy absorbed two geopolitical supply shocks and a structural rise in long-term rates. The result is a backdrop of stagflationary pressure and a higher cost of capital that reaches Chile through three channels — inflation, rates and consumption — and that sits behind the two most severe risks in the report (FR1 and MR1). In the charts, the dotted blue line marks the valuation date (30-Jun-2026); later data are shown for context.",
+    lead: "Between 2022 and 2026 the world economy absorbed two geopolitical supply shocks and a structural rise in long-term rates. The result is a backdrop of stagflationary pressure and a higher cost of capital that reaches Chile through three channels — inflation, rates and consumption — and that sits behind the two most severe risks in the report (FR1 and MR1). In the charts, the dotted blue line marks the valuation date (30-Jun-2026); later data are shown for context. The figures cover the shock transmission (Figure A1), oil (Figure A2), sovereign yields (Figure A3), spreads (Figure A4), world growth and inflation (Figure A5) and Chile (Figure A6).",
     kpis: [
       ["USD 114", "Brent, Sep-26 average", "+61% vs Feb-26, before the conflict"],
       ["5.22%", "10Y UST, 8-Oct-26", "24-year high (since 2002)"],

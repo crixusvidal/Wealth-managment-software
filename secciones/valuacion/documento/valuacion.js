@@ -112,6 +112,7 @@ for (const lang of ["es", "en"]) {
     : `It is the more conservative choice: with the peso bond the target price rises to ~CLP ${f.n(K.rf_pesos_po)}, still ${f.pc(Math.abs(K.rf_pesos_po / K.precio - 1), 0)} below the CLP ${f.n(K.precio)} share price. The recommendation does not change.`;
   Z.notasF[2] = Z.notasF[2].replace("réplica del DCF v2", "réplica del DCF v4").replace("DCF v2 replica", "DCF v4 replica");
   Z.fW[2] = Z.fW[2].replace("modelo v2", "modelo v4").replace("model v2", "model v4");
+  Z.sD = `${Z.sD} (${lang === "es" ? "Figura" : "Figure"} Z1)`;   // la figura del anexo se cita en su propio anexo
   L[lang].paginas = [{ texto: T.p1.map(tabla), figuras: T.figs1 }, { texto: T.p2.map(tabla), figuras: T.figs2 }];
 }
 
