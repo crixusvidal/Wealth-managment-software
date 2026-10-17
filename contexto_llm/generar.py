@@ -125,20 +125,33 @@ def main():
     c.add("Retornos", "roe_normalizado_2025", "ROE normalizado 2025", d1["H28"].value, "pct1", ref("fa_exhibits", "E1_DuPont", "H28"))
     c.add("Retornos", "roe_reportado_2025", "ROE reportado 2025", d1["H27"].value, "pct1", ref("fa_exhibits", "E1_DuPont", "H27"))
 
-    # Escenarios (réplica del DCF v2 → anexos_valuacion.py) y datos del resumen
+    # Escenarios (réplica del DCF v4 → escenarios_dcf.py / anexos_valuacion.py) y datos del resumen
     da = SEC / "valuacion/graficos/figuras/datos_anexos.json"
     if da.exists():
         esc = json.loads(da.read_text())["F"]["esc"]
         for k, nombre in (("bear", "Bear"), ("base", "Base"), ("bull", "Bull"), ("tas", "Tasadores")):
-            c.add("Escenarios", f"esc_{k}", f"Precio objetivo escenario {nombre}, CLP", esc[k]["po"], "clp", "datos_anexos.json (réplica del DCF v2, Anexo 18)")
+            c.add("Escenarios", f"esc_{k}", f"Precio objetivo escenario {nombre}, CLP", esc[k]["po"], "clp", "datos_anexos.json (réplica del DCF v4, Anexo 18)")
             c.add("Escenarios", f"esc_{k}_vs", f"{nombre}: variación vs precio", esc[k]["vs"], "pct1", "datos_anexos.json")
     dr = RAIZ / "secciones/informe_final/graficos/datos_resumen.json"
     if dr.exists():
         r = json.loads(dr.read_text())
         c.add("Mercado", "rango_52s_min", "Mínimo de 52 semanas, CLP", r["rango_52s"][0], "clp", "datos_resumen.json (Bloomberg)")
         c.add("Mercado", "rango_52s_max", "Máximo de 52 semanas, CLP", r["rango_52s"][1], "clp", "datos_resumen.json (Bloomberg)")
-        c.add("Mercado", "dividendo_2027", "Dividendo esperado 2027E, CLP por acción", r["dividendo"], "n1", "datos_resumen.json (v2 Deuda)")
+        c.add("Mercado", "dividendo_2027", "Dividendo esperado 2027E, CLP por acción", r["dividendo"], "n1", "datos_resumen.json (modelo vigente, hoja Deuda)")
         c.add("Mercado", "capitalizacion_mm", "Capitalización bursátil (CLP MM)", r["capitalizacion_mm"], "n0", "datos_resumen.json")
+
+    ci = SEC / "informe_final/graficos/cifras.json"
+    if ci.exists():                       # cifras que el informe calcula con la réplica del DCF y los datos del equipo (cifras_informe.py)
+        k = json.loads(ci.read_text())
+        fuente = "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+        c.add("Escenarios", "esc_ponderado_po", "Precio objetivo ponderado 25/50/25, CLP", k["ponderado"]["po"], "clp", fuente)
+        c.add("Pipeline", "pipeline_m2", "Pipeline con fecha 2026–2028 (m²)", k["pipeline_m2"], "n0", fuente)
+        c.add("Pipeline", "pipeline_usd_mm", "Pipeline con fecha, inversión (USD MM)", k["pipeline_usd_mm"], "n0", fuente)
+        c.add("Mercado", "consenso_po_12m", "Precio objetivo de consenso a 12 meses (Bloomberg, 14 fuentes), CLP", k["consenso"]["po_12m"], "clp", fuente)
+        c.add("Sensibilidades", "wacc_menos_100pb", "Δ valor DCF por acción con WACC −100 pb (CLP)", k["sens"]["wacc_m100pb"], "n0", fuente)
+        c.add("Sensibilidades", "wacc_mas_100pb", "Δ valor DCF por acción con WACC +100 pb (CLP)", k["sens"]["wacc_100pb"], "n0", fuente)
+        c.add("Sensibilidades", "ssr_1pp", "Δ valor DCF por acción con +1 pp de arriendo mismas tiendas 2027–28 (CLP)", k["sens"]["ssr_1pp"], "n1", fuente)
+        c.add("Sensibilidades", "sss_1pp", "Δ valor DCF por acción con +1 pp de ventas de locatarios 2027–28 (CLP)", k["sens"]["sss_1pp"], "n1", fuente)
 
     ind = abrir(arch["industria"])
     ef = ind["EF. OPERATIVA (CLPM2)"]

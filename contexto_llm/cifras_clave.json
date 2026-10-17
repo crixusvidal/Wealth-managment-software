@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-17 22:12",
+ "generado": "2026-10-17 22:56",
  "modelos": {
   "valoracion": {
    "archivo": "Mallplaza_Valoracion_Consolidada_v4.xlsx",
@@ -11,7 +11,7 @@
   },
   "figuras_valuacion": {
    "archivo": "Mallplaza_Figuras_Valuacion_recalc.xlsx",
-   "sha256": "da87248b82"
+   "sha256": "918ed32eb0"
   },
   "industria": {
    "archivo": "Excel_DATA_INDUSTRY.xlsx",
@@ -285,7 +285,7 @@
    "etiqueta": "Precio objetivo escenario Bear, CLP",
    "valor": 1542.2405611924287,
    "formato": "clp",
-   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+   "fuente": "datos_anexos.json (réplica del DCF v4, Anexo 18)"
   },
   {
    "grupo": "Escenarios",
@@ -301,7 +301,7 @@
    "etiqueta": "Precio objetivo escenario Base, CLP",
    "valor": 2077.1998119496666,
    "formato": "clp",
-   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+   "fuente": "datos_anexos.json (réplica del DCF v4, Anexo 18)"
   },
   {
    "grupo": "Escenarios",
@@ -317,7 +317,7 @@
    "etiqueta": "Precio objetivo escenario Bull, CLP",
    "valor": 2915.2450050413504,
    "formato": "clp",
-   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+   "fuente": "datos_anexos.json (réplica del DCF v4, Anexo 18)"
   },
   {
    "grupo": "Escenarios",
@@ -333,7 +333,7 @@
    "etiqueta": "Precio objetivo escenario Tasadores, CLP",
    "valor": 2733.5422439429717,
    "formato": "clp",
-   "fuente": "datos_anexos.json (réplica del DCF v2, Anexo 18)"
+   "fuente": "datos_anexos.json (réplica del DCF v4, Anexo 18)"
   },
   {
    "grupo": "Escenarios",
@@ -365,7 +365,7 @@
    "etiqueta": "Dividendo esperado 2027E, CLP por acción",
    "valor": 69.413482444258,
    "formato": "n1",
-   "fuente": "datos_resumen.json (v2 Deuda)"
+   "fuente": "datos_resumen.json (modelo vigente, hoja Deuda)"
   },
   {
    "grupo": "Mercado",
@@ -374,6 +374,70 @@
    "valor": 7785450,
    "formato": "n0",
    "fuente": "datos_resumen.json"
+  },
+  {
+   "grupo": "Escenarios",
+   "clave": "esc_ponderado_po",
+   "etiqueta": "Precio objetivo ponderado 25/50/25, CLP",
+   "valor": 2152.971297533278,
+   "formato": "clp",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Pipeline",
+   "clave": "pipeline_m2",
+   "etiqueta": "Pipeline con fecha 2026–2028 (m²)",
+   "valor": 170200,
+   "formato": "n0",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Pipeline",
+   "clave": "pipeline_usd_mm",
+   "etiqueta": "Pipeline con fecha, inversión (USD MM)",
+   "valor": 613.2,
+   "formato": "n0",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Mercado",
+   "clave": "consenso_po_12m",
+   "etiqueta": "Precio objetivo de consenso a 12 meses (Bloomberg, 14 fuentes), CLP",
+   "valor": 4111,
+   "formato": "clp",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Sensibilidades",
+   "clave": "wacc_menos_100pb",
+   "etiqueta": "Δ valor DCF por acción con WACC −100 pb (CLP)",
+   "valor": 429.8341822256566,
+   "formato": "n0",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Sensibilidades",
+   "clave": "wacc_mas_100pb",
+   "etiqueta": "Δ valor DCF por acción con WACC +100 pb (CLP)",
+   "valor": -325.6928801484994,
+   "formato": "n0",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Sensibilidades",
+   "clave": "ssr_1pp",
+   "etiqueta": "Δ valor DCF por acción con +1 pp de arriendo mismas tiendas 2027–28 (CLP)",
+   "valor": 45.15046049210969,
+   "formato": "n1",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Sensibilidades",
+   "clave": "sss_1pp",
+   "etiqueta": "Δ valor DCF por acción con +1 pp de ventas de locatarios 2027–28 (CLP)",
+   "valor": 2.5713245898793957,
+   "formato": "n1",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
   },
   {
    "grupo": "Industria",

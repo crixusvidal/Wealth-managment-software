@@ -1,6 +1,6 @@
 # Cifras clave del informe (contexto para el LLM)
 
-Generado 2026-10-17 22:12 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
+Generado 2026-10-17 22:56 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
 Si una cifra de un texto contradice esta tabla, está mal el texto. Cada fila indica su fuente (archivo!hoja!celda).
 
 Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendación: VENDER.
@@ -66,13 +66,13 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio objetivo escenario Bear, CLP | CLP 1.542 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Precio objetivo escenario Bear, CLP | CLP 1.542 | `datos_anexos.json (réplica del DCF v4, Anexo 18)` |
 | Bear: variación vs precio | −56,6% | `datos_anexos.json` |
-| Precio objetivo escenario Base, CLP | CLP 2.077 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Precio objetivo escenario Base, CLP | CLP 2.077 | `datos_anexos.json (réplica del DCF v4, Anexo 18)` |
 | Base: variación vs precio | −41,6% | `datos_anexos.json` |
-| Precio objetivo escenario Bull, CLP | CLP 2.915 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Precio objetivo escenario Bull, CLP | CLP 2.915 | `datos_anexos.json (réplica del DCF v4, Anexo 18)` |
 | Bull: variación vs precio | −18,0% | `datos_anexos.json` |
-| Precio objetivo escenario Tasadores, CLP | CLP 2.734 | `datos_anexos.json (réplica del DCF v2, Anexo 18)` |
+| Precio objetivo escenario Tasadores, CLP | CLP 2.734 | `datos_anexos.json (réplica del DCF v4, Anexo 18)` |
 | Tasadores: variación vs precio | −23,1% | `datos_anexos.json` |
 
 ## Mercado
@@ -81,8 +81,36 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 |---|---|---|
 | Mínimo de 52 semanas, CLP | CLP 2.470 | `datos_resumen.json (Bloomberg)` |
 | Máximo de 52 semanas, CLP | CLP 4.700 | `datos_resumen.json (Bloomberg)` |
-| Dividendo esperado 2027E, CLP por acción | 69,4 | `datos_resumen.json (v2 Deuda)` |
+| Dividendo esperado 2027E, CLP por acción | 69,4 | `datos_resumen.json (modelo vigente, hoja Deuda)` |
 | Capitalización bursátil (CLP MM) | 7.785.450 | `datos_resumen.json` |
+
+## Escenarios
+
+| Cifra | Valor | Fuente |
+|---|---|---|
+| Precio objetivo ponderado 25/50/25, CLP | CLP 2.153 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+
+## Pipeline
+
+| Cifra | Valor | Fuente |
+|---|---|---|
+| Pipeline con fecha 2026–2028 (m²) | 170.200 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Pipeline con fecha, inversión (USD MM) | 613 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+
+## Mercado
+
+| Cifra | Valor | Fuente |
+|---|---|---|
+| Precio objetivo de consenso a 12 meses (Bloomberg, 14 fuentes), CLP | CLP 4.111 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+
+## Sensibilidades
+
+| Cifra | Valor | Fuente |
+|---|---|---|
+| Δ valor DCF por acción con WACC −100 pb (CLP) | 430 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Δ valor DCF por acción con WACC +100 pb (CLP) | -326 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Δ valor DCF por acción con +1 pp de arriendo mismas tiendas 2027–28 (CLP) | 45,2 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Δ valor DCF por acción con +1 pp de ventas de locatarios 2027–28 (CLP) | 2,6 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
 
 ## Industria
 
