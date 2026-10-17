@@ -35,6 +35,9 @@ from estilo import AMARILLO, AZUL, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARI
 COLOR = {"Mallplaza": ROJO, "Parque Arauco": VERDE_PARQUE_ARAUCO, "Cenco Malls": MORADO_CENCOSUD}
 TEXTO = {"Mallplaza": "white", "Parque Arauco": NEGRO, "Cenco Malls": "white"}
 
+MODELOS = Path(__file__).resolve().parents[1] / "modelos"
+PORTER_XLSX = MODELOS / "Porter_Nuevo.xlsx"                                  # notas por país y finales (equipo, 2Q26)
+EFICIENCIA_XLSX = MODELOS / "Eficiencia_EBITDA_GLA_2T26V2.xlsx"             # EBITDA/GLA 2T26 con ajuste multifamily de Parque Arauco
 ANCHO = 4.9                  # ancho real de la figura (pulgadas)
 ANCHO_WORD = 3550 / 1440     # columna de figuras del Word (≈ 2,47 in)
 DPI = 400
@@ -384,32 +387,25 @@ def market_share_paises(wb, lang, vertical=False):
 
 
 # 6. Cinco fuerzas de Porter --------------------------------------------------------------------
-# Notas finales del borrador final de Industria, Anexo D. El Excel (hoja PORTER) trae notas de una
-# versión anterior (p. ej. Chile 1,5 en nuevos entrantes y locatarios, 2,5 en sustitutos), así que
-# se fijan aquí. Por país (Chile / Perú / Colombia), ponderadas por el GLA de Mallplaza
-# (61,9% / 26,2% / 11,9%) y redondeadas al entero; en nuevos entrantes el ponderado da ~1,5 y el
-# equipo lo fija en 2.
-PESOS_GLA = (0.619, 0.262, 0.119)
-NOTAS_PAIS = {"Rivalidad entre competidores": (4, 4, 4),
-              "Amenaza de nuevos entrantes": (1, 2, 3),
-              "Poder de negociación de los locatarios": (1, 2, 2),
-              "Poder de negociación de los proveedores": (1, 1, 1),
-              "Amenaza de sustitutos (e-commerce)": (2, 2, 2)}
-NOTAS_FINALES = {"Rivalidad entre competidores": 4,
-                 "Amenaza de nuevos entrantes": 2,  # ponderado ≈ 1,5; fijado en 2 por el equipo
-                 "Poder de negociación de los locatarios": 1,
-                 "Poder de negociación de los proveedores": 1,
-                 "Amenaza de sustitutos (e-commerce)": 2}
+# Notas por país (juicio del equipo), pesos de GLA de Mallplaza y notas finales: Porter_Nuevo.xlsx (2Q26).
+# Nota final = promedio ponderado redondeado al entero; en nuevos entrantes el ponderado queda en 1,5 y el
+# equipo lo fija en 2 (columna «Nota final (gráfico)» del Excel).
+def leer_porter():
+    ws = openpyxl.load_workbook(PORTER_XLSX, data_only=True)["Sheet1"]
+    pesos = tuple(ws.cell(r, 4).value for r in (7, 8, 9))
+    notas = {ws.cell(r, 2).value: tuple(ws.cell(r, c).value for c in (3, 4, 5)) for r in range(16, 21)}
+    finales = {ws.cell(r, 2).value: ws.cell(r, 8).value for r in range(16, 21)}
+    ponderados = {ws.cell(r, 2).value: ws.cell(r, 6).value for r in range(16, 21)}
+    for k, n in notas.items():
+        assert abs(sum(x * w for x, w in zip(n, pesos)) - ponderados[k]) < 1e-6, k
+    return pesos, notas, finales, ponderados
 
 
 def porter(wb, lang):
-    ws = wb["PORTER"]
-    excel = {ws.cell(r, 1).value: ws.cell(r, 2).value for r in range(2, ws.max_row + 1)}
-    for k, notas in NOTAS_PAIS.items():
-        pond = sum(n * w for n, w in zip(notas, PESOS_GLA))
+    pesos, notas, finales, ponderados = leer_porter()
+    for k in notas:
         if lang == "es":
-            print(f"  Porter · {k}: ponderado {pond:.2f} → {NOTAS_FINALES[k]}"
-                  f" (Excel: {excel.get(k)})")
+            print(f"  Porter · {k}: ponderado {ponderados[k]:.2f} → {finales[k]}")
     orden = [("Poder de negociación de los locatarios", "Poder de\nnegociación de\nlos locatarios",
               "Bargaining\npower of\ntenants"),
              ("Poder de negociación de los proveedores", "Poder de\nnegociación de\nlos proveedores",
@@ -419,7 +415,7 @@ def porter(wb, lang):
              ("Amenaza de nuevos entrantes", "Amenaza de\nnuevos\nentrantes", "Threat of\nnew\nentrants"),
              ("Rivalidad entre competidores", "Rivalidad entre\ncompetidores",
               "Rivalry among\ncompetitors")]
-    valores = [NOTAS_FINALES[k] for k, _, _ in orden]
+    valores = [finales[k] for k, _, _ in orden]
     n = len(orden)
     ang = np.linspace(0, 2 * np.pi, n, endpoint=False)
     fig = nueva("ind6_porter")
@@ -462,15 +458,15 @@ def porter(wb, lang):
                "atractiva), 5 = fuerza fuerte",
                ["Nota = promedio de Chile, Perú y Colombia ponderado por el GLA de Mallplaza "
                 "(61,9% / 26,2% / 11,9%), redondeado al entero; en nuevos entrantes el ponderado "
-                "(~1,5) se fija en 2.",
-                "Fuente: análisis del equipo (borrador final de Industria, Anexo D)."]),
+                "(1,5) se fija en 2.",
+                "Fuente: análisis del equipo (Anexo 6)."]),
         "en": ("Porter's five forces, 2Q26",
                "Shopping centers in Chile, Peru and Colombia · 1 = weak force (attractive "
                "industry), 5 = strong force",
                ["Score = average of Chile, Peru and Colombia weighted by Mallplaza's GLA "
                 "(61.9% / 26.2% / 11.9%), rounded to the nearest integer; threat of new entrants "
-                "(~1.5) set at 2.",
-                "Source: Team analysis (final Industry draft, Appendix D)."]),
+                "(1.5) set at 2.",
+                "Source: Team analysis (Appendix 6)."]),
     }
     return fig, textos[lang]
 
@@ -562,12 +558,12 @@ def market_share_chile(wb, lang):
 
 # 8. Eficiencia operativa: EBITDA por m² -------------------------------------------------------
 def eficiencia(wb, lang):
-    ws = wb["EF. OPERATIVA (CLPM2)"]
-    filas = [(ws.cell(r, 1).value, ws.cell(r, 2).value * 1e6 / ws.cell(r, 3).value)  # trimestral
+    ws = openpyxl.load_workbook(EFICIENCIA_XLSX, data_only=True)["Eficiencia_EBITDA_GLA_2T26"]
+    filas = [(ws.cell(r, 1).value, ws.cell(r, 4).value * 1e6 / ws.cell(r, 5).value)  # trimestral, EBITDA usado / GLA
              for r in range(6, 9)]
     promedio = sum(f[1] for f in filas) / len(filas)
     brecha = max(f[1] for f in filas) / min(f[1] for f in filas) - 1
-    assert abs(promedio - ws["D9"].value) < 1e-6 and abs(brecha - ws["D10"].value) < 1e-9
+    assert abs(promedio - ws["F9"].value) < 1e-6 and abs(brecha - ws["F10"].value) < 1e-9
     filas.sort(key=lambda f: f[1])
     es = lang == "es"
     mil = " mil" if es else "k"
@@ -589,12 +585,12 @@ def eficiencia(wb, lang):
     textos = {
         "es": ("Eficiencia operativa: EBITDA por m² de GLA, 2T26",
                "EBITDA trimestral 2T26 / GLA al 30-jun-2026 · CLP",
-               [f"Promedio simple: CLP {num(promedio, lang)}. Brecha máx.–mín.: {pc(brecha, lang)}.",
+               [f"Promedio simple: CLP {num(promedio, lang)}. Brecha máx.–mín.: {pc(brecha, lang)}. Parque Arauco sin el NOI multifamily (CLP 503 MM).",
                 "Fuente: reportes de resultados 2T26 de Mallplaza, Cenco Malls y Parque Arauco; "
                 "análisis del equipo."]),
         "en": ("Operating efficiency: EBITDA per m² of GLA, 2Q26",
                "2Q26 quarterly EBITDA / GLA at 30-Jun-2026 · CLP",
-               [f"Simple average: CLP {num(promedio, lang)}. Max–min gap: {pc(brecha, lang)}.",
+               [f"Simple average: CLP {num(promedio, lang)}. Max–min gap: {pc(brecha, lang)}. Parque Arauco excludes multifamily NOI (CLP 503 million).",
                 "Source: Mallplaza, Cenco Malls and Parque Arauco 2Q26 earnings reports; "
                 "Team analysis."]),
     }

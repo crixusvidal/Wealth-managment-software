@@ -40,6 +40,7 @@ echo "== Documentos (Word)"
 # Negocio, Industria y ESG (español) leen el texto de */documento/borrador/texto.json, extraído de los
 # borradores del equipo con comun/borrador_a_json.py y luego corregido solo en datos; no se regenera aquí.
 node negocio/documento/negocio.js
+python3 industria/graficos/anexos_industria.py   # textos y tablas de los Anexos 3-7 (especificación del equipo) → figuras/datos_anexos.json
 node industria/documento/industria.js
 node valuacion/documento/valuacion.js      # MARCAR_NUEVO = true resalta lo nuevo (TIR y rotulado nominal/real); false lo quita
 (cd valuacion/documento && for l in ES EN; do python3 /root/.claude/skills/synced/508cc6bc-ad76-422f-ada9-ad0fc4279625_0b2a2ef9-bf53-46a5-b8ed-72255cce463a/docx/scripts/office/soffice.py --headless --convert-to pdf --outdir . Mallplaza_Valuacion_$l.docx >/dev/null 2>&1; done; rm -f .~lock*)   # PDF de Valuación

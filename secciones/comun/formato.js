@@ -39,16 +39,17 @@ function altoPng(archivo, anchoIn) {
 const imagen = (archivo, anchoIn, altoIn) => new Paragraph({ spacing: { before: 0, after: 20, line: 240, lineRule: LineRuleType.AUTO }, children: [
   new ImageRun({ type: "png", data: fs.readFileSync(archivo), transformation: { width: Math.round(anchoIn * 96), height: Math.round((altoIn || altoPng(archivo, anchoIn)) * 96) } })] });
 
-function tabla(cols, anchos, filas, { derecha = [], destacar = [], negritaCol0 = false } = {}) {
+function tabla(cols, anchos, filas, { derecha = [], destacar = [], negritaCol0 = false, alDerecha = [], negritaFilas = [] } = {}) {
+  const alin = (i) => alDerecha.includes(i) ? AlignmentType.RIGHT : derecha.includes(i) ? AlignmentType.CENTER : AlignmentType.LEFT;
   const borde = { style: BorderStyle.SINGLE, size: 4, color: "D5D9E0" };
   const enc = new TableRow({ tableHeader: true, children: cols.map((c, i) => new TableCell({ width: { size: anchos[i], type: WidthType.DXA },
     shading: { type: ShadingType.CLEAR, color: "auto", fill: AZUL }, borders: sinBordes, margins: { top: 35, bottom: 35, left: 80, right: 80 },
-    children: [new Paragraph({ alignment: derecha.includes(i) ? AlignmentType.CENTER : AlignmentType.LEFT, children: [run(c, { bold: true, size: 13, color: "FFFFFF" })] })] })) });
+    children: [new Paragraph({ alignment: alin(i), children: [run(c, { bold: true, size: 13, color: "FFFFFF" })] })] })) });
   const cuerpo = filas.map((f, r) => new TableRow({ cantSplit: true, children: f.map((v, i) => new TableCell({ width: { size: anchos[i], type: WidthType.DXA },
     shading: { type: ShadingType.CLEAR, color: "auto", fill: destacar.includes(r) ? "FDF1CC" : r % 2 ? "FFFFFF" : "F7F8FB" },
     borders: { ...sinBordes, bottom: borde }, margins: { top: 25, bottom: 25, left: 80, right: 80 }, verticalAlign: VerticalAlign.CENTER,
-    children: [new Paragraph({ spacing: linea(216), alignment: derecha.includes(i) ? AlignmentType.CENTER : AlignmentType.LEFT,
-      children: [run(String(v), { size: 13, bold: destacar.includes(r) || (negritaCol0 && i === 0), color: negritaCol0 && i === 0 ? AZUL : TINTA })] })] })) }));
+    children: [new Paragraph({ spacing: linea(216), alignment: alin(i),
+      children: [run(String(v), { size: 13, bold: destacar.includes(r) || negritaFilas.includes(r) || (negritaCol0 && i === 0), color: negritaCol0 && i === 0 ? AZUL : TINTA })] })] })) }));
   return new Table({ width: { size: anchos.reduce((a, b) => a + b, 0), type: WidthType.DXA }, columnWidths: anchos,
     borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada }, rows: [enc, ...cuerpo] });
 }

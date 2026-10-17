@@ -30,6 +30,9 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] ESG, track record: se usó la versión neutral de la beta 4.1; el Punteo del equipo trae «referencias» más elogiosas (p. ej. «arquitecto» de Mallplaza, «libre de multas y brechas») que chocan con las sanciones de 2025; decidir si se incorporan.
 - [ ] ESG, idioma: la beta 4.1 trae los títulos y subtítulos del texto en español en inglés (ENVIRONMENTAL, SOCIAL, GOVERNANCE) y etiquetas en inglés dentro del párrafo; se dejó tal cual.
 
+- [ ] Industria: el anexo nuevo (Anexos 3 a 7) ya viene numerado; al regenerar el informe consolidado hay que ajustar el mapa de numeración de Industria en `informe_final.js` (hoy espera anexos A–E) y revisar las citas del cuerpo («Anexo 4, 5, 6 y 7»).
+- [ ] Industria: el cuerpo usa las figuras 4 (Porter) y 5 (EBITDA/m²) ya actualizadas; el texto del cuerpo todavía cita 55.738 CLP/m² para Parque Arauco (la versión nueva da 55.363, sin el NOI multifamily) y una brecha de 6,7% (ahora 7,4%); actualizar el párrafo.
+
 ## Texto del informe
 - [ ] Reescribir Riesgos de inversión (hoy con +3,9% por impuesto y 9 notas pendientes) y conectar la narrativa entre secciones.
 - [ ] Resumen de inversión: redactar el texto (hoy solo está la tabla de datos clave).
