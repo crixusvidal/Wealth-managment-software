@@ -76,7 +76,8 @@
 #let antes(a, b) = a.at(0) < b.at(0) or (a.at(0) == b.at(0) and a.at(1) <= b.at(1))
 #let asignar() = {
   let anclas = query(<ancla>)
-  let inicios = query(<sec-ini>).map(l => l.location().position())
+  let inicios = query(<fig-ini>).map(l => l.location().position())
+  let secs = query(<sec-ini>).map(l => l.location().position())
   let ini = query(<obs-ini>).map(l => l.location().position())
   let fin = query(<obs-fin>).map(l => l.location().position())
   let obst = (:)
@@ -100,7 +101,8 @@
     // arriba y ocupan el primer espacio libre de la columna derecha, en el orden en que se citan.
     let q = inicios.at(f.sec, default: a.location().position())
     let (p, y) = (q.page, q.y)
-    if f.clave in ADEL and p > 1 { p = p - 1 }
+    // tope: los gráficos de una sección quedan antes de que empiece la siguiente (la última, en la página donde parte)
+    let tope = if f.sec + 1 < secs.len() { (secs.at(f.sec + 1).page, secs.at(f.sec + 1).y) } else { (secs.at(f.sec).page, ABAJO) }
     let ok = false
     for _ in range(300) {
       y = calc.max(y, ARRIBA)
@@ -108,7 +110,7 @@
         r.at(0) < y + h + HUECO and y < r.at(1) + HUECO)
       if choques.len() > 0 { y = calc.max(..choques.map(r => r.at(1))) + HUECO; continue }
       if y + h > ABAJO { p += 1; y = ARRIBA; continue }
-      if not antes((p, y + h), barrera) { break }
+      if not antes((p, y + h), barrera) or not antes((p, y + h), tope) { break }
       ok = true
       break
     }
@@ -180,10 +182,10 @@
 // Secciones -----------------------------------------------------------------------------------------
 #let k0 = 0
 #for (si, s) in D.secciones.enumerate() {
+  // Análisis Financiero y Riesgos empiezan arriba de una página nueva
+  if s.clave in ("fa", "riesgos") { pagebreak(weak: true) }
   [#metadata(si) <sec-ini>]
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
-  // Análisis Financiero empieza arriba de una página nueva (pedido del equipo)
-  if s.clave == "fa" { pagebreak(weak: true) }
   ancho({
     titulo(s.titulo)
     if "lead" in s { lead(s.lead, destacado: s.at("leadDestacado", default: false)) }
@@ -203,6 +205,8 @@
       v(4pt)
     }
   })
+  // los gráficos de la sección parten después del título (y de la tabla, si la hay)
+  [#metadata(si) <fig-ini>]
   for (bi, b) in s.bloques.enumerate() {
     let anclas = s.figuras.enumerate().filter(((j, f)) => f.ancla == bi).map(((j, f)) => [#metadata(base + j) <ancla>])
     if "h1" in b { anclas.join(); subtitulo(b.h1) }

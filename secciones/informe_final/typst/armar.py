@@ -62,9 +62,7 @@ def ajustar(datos):
             tramo |= set(claves)
         nuevas = {c: round(max(FONDO, escalas.get(c, 1.0) * 0.93), 3) for c in tramo}
         if all(nuevas[c] >= escalas.get(c, 1.0) for c in tramo):
-            if tramo <= adelantar:
-                break
-            adelantar |= tramo
+            break                      # ya no hay cómo achicar: lo que no cupo va al final
         else:
             escalas.update(nuevas)
         r = compilar(datos, escalas, adelantar)
