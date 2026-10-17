@@ -7,6 +7,7 @@ cd "$ROOT/secciones"
 export NODE_PATH="${NODE_PATH:+$NODE_PATH:}/opt/node22/lib/node_modules:/opt/node-tools/node_modules"
 V=valuacion/modelos; F=analisis_financiero/modelos; R=riesgos/modelos
 V2=$V/Mallplaza_Valoracion_Consolidada_v2.xlsx
+V3=$V/Mallplaza_Valoracion_Consolidada_v3.xlsx   # = v2 + hojas TIR_Implicita y TIR_Accionista (TIR nominal/real); las demás hojas son idénticas a v2
 FA=$F/Mallplaza_FA_Exhibits_v6.xlsx
 TOR=$R/Mallplaza_Tornado_Sensibilidad_Operacional_2026_2028.xlsx
 
@@ -17,6 +18,7 @@ python3 industria/graficos/industria.py industria/modelos/Excel_DATA_INDUSTRY.xl
 python3 industria/graficos/cuota_mercado.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
 python3 valuacion/graficos/valuacion.py $V/Mallplaza_Figuras_Valuacion_recalc.xlsx - $V2
 python3 valuacion/graficos/anexos_valuacion.py $V2 $V/Mallplaza_Figuras_Valuacion_recalc.xlsx $FA $TOR
+python3 valuacion/graficos/tir_valuacion.py $V3   # TIR firma/accionista (nominal y real) → figuras/datos_tir.json (lo lee valuacion.js)
 python3 valuacion/graficos/football_field.py $V2
 python3 valuacion/graficos/escenarios.py      # boceto: escenarios bear/base/bull con oso y toro
 python3 valuacion/graficos/tabla_kd_caprates.py $V/Comparables_Mallplaza_CFA_BBG_valoracion.xlsx
@@ -33,7 +35,8 @@ echo "== Documentos (Word)"
 # borradores del equipo con comun/borrador_a_json.py y luego corregido solo en datos; no se regenera aquí.
 node negocio/documento/negocio.js
 node industria/documento/industria.js
-node valuacion/documento/valuacion.js
+node valuacion/documento/valuacion.js      # MARCAR_NUEVO = true resalta lo nuevo (TIR y rotulado nominal/real); false lo quita
+(cd valuacion/documento && for l in ES EN; do python3 /root/.claude/skills/synced/508cc6bc-ad76-422f-ada9-ad0fc4279625_0b2a2ef9-bf53-46a5-b8ed-72255cce463a/docx/scripts/office/soffice.py --headless --convert-to pdf --outdir . Mallplaza_Valuacion_$l.docx >/dev/null 2>&1; done; rm -f .~lock*)   # PDF de Valuación
 node analisis_financiero/documento/analisis_financiero.js
 node riesgos/documento/pagina_riesgos.js
 node esg/documento/esg.js

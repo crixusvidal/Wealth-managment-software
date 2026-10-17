@@ -46,7 +46,11 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | DFN 30-jun-26 / DFN/EBITDA | CLP 1.285.740 MM / 2,36x → 3,5x (2031) | v2 Supuestos B10; Deuda |
 | Distribuciones adicionales 2S26E–2031E | CLP 1,79 billones | v2 Deuda H25 |
 | Cap rate implícito: mercado / DCF / pares Chile / libro / tasadores | 6,0% / 10,1% / 6,4% / 7,5% / 5,55% real | v2 Precio_Objetivo C; DCF C56 |
-| WACC que justifica el precio | 7,56% (−285 pb) | Figuras_Valuacion V6 |
+| WACC que justifica el precio (nominal; desplaza toda la curva de WACC) | 7,56% (−285 pb) | Figuras_Valuacion V6 |
+| TIR de la firma al precio (tasa única, FCFF): nominal CLP / real UF | 7,57% / 4,44% (−284 / −276 pb vs WACC terminal 10,41% / 7,20%) | v3 TIR_Accionista C72:C73; TIR_Implicita C4 |
+| TIR del accionista a CLP 3.555 (distribuciones + salida a nuestro valor 2031): nominal / real | −2,0% / −4,9% (vs Ke 11,93% / 8,67%: −1.395 / −1.354 pb) | v3 TIR_Accionista F105:F106 |
+| TIR del accionista al precio objetivo CLP 2.076 (control): nominal / real | 10,6% / 7,4% (−135 / −131 pb vs Ke) | v3 TIR_Accionista G105:G106 |
+| TIR de la firma por escenario bear / base / bull (nominal) | 7,3% / 7,6% / 7,9% (brecha vs su WACC −409 / −284 / −152 pb) | v3 TIR_Accionista C114:H116 |
 | Escenarios (precio objetivo) | Bear 1.713 · Base 2.076 · Bull 2.627 · Tasadores 2.719 | réplica del DCF v2 |
 | Dividendo esperado | ~CLP 69 por acción (2,0%) | v2 Deuda (2027E ordinario) |
 | Mezcla de ingresos para el CRP | 71,8% Chile · 17,7% Perú · 10,5% Colombia | v2 WACC C16:C20 |
@@ -60,6 +64,7 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 4. **Colores.** Solo la paleta institucional de `secciones/comun/estilo.py` (rojo, celeste, amarillo, negro, azul; verde y morado solo para Parque Arauco y Cencosud). Sin grises ni tonos pastel en series.
 5. **Figuras.** Sin título ni fuente dentro de la imagen del informe (van en el Word). Las versiones "_titulado" son solo para compartir fuera del informe.
 6. **Margen 2026E.** 79,7% es el año calendario; 79,8% es solo el semestre 2S26E. No mezclarlos.
+8. **Nominal y real, siempre.** Toda tasa (WACC, Ke, Kd, g, cap rate, TIR) dice si es nominal CLP o real (UF); unidas por Fisher (1 + nominal) = (1 + real)(1 + π), con π = 3,0% (Supuestos B34). La TIR de la firma (FCFF) se compara con la WACC; la del accionista (distribuciones + salida), con el Ke. El 7,56% (V6, desplaza toda la curva de WACC) y el 7,57% (TIR de tasa única) son dos lecturas distintas de la misma idea y ambas dan CLP 3.555: decir cuál se usa.
 7. **Solo dos versiones.** De cada documento y cada gráfico se conservan solo la versión actual y la penúltima; las anteriores se eliminan junto con el código Python que solo servía para generarlas (siguen en el historial de git). Las variantes de una misma versión (ES/EN, docx/pdf, normal/"_titulado") no cuentan como versiones. Los modelos Excel quedan fuera de esta regla.
 
 ### Versiones vigentes (actual → penúltima)
@@ -69,6 +74,7 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | Página de Riesgos | `riesgos/documento/Mallplaza_Investment_Risks_*.docx` | `plantilla_informe/documento/Investment_Risks_template.docx` |
 | Figuras de Riesgos (matriz, tornado, mapa de calor, UF) | `riesgos/.../es_/en_fig23–26` | `plantilla_informe/.../fig1–fig4` |
 | Football field | `valuacion/.../es_/en_V1_football.png` | `valuacion/.../football_field.png` |
+| Página de Valuación (Word y PDF) | `valuacion/documento/Mallplaza_Valuacion_*` (con la TIR y lo nuevo marcado) | `valuacion/documento/anterior/Mallplaza_Valuacion_*` |
 | Cuota de mercado por país | `industria/.../es_/en_ind5b_market_share_paises_vertical.png` | `industria/.../es_/en_ind5_market_share_paises.png` |
 
 Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado_operacional`, `heatmap_sensibilidad_wacc`, `reajuste_uf`) y la grilla `sensibilidad_wacc` de Valuación (modelo VF), con `matriz_riesgo.py` y `sensibilidad_wacc.py`. `tornado_operacional.py`, `heatmap_sensibilidad_wacc.py` y `reajuste_uf.py` quedan solo como bibliotecas de cálculo de `pagina_riesgos.py`.
@@ -89,6 +95,9 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 | 10 | Fuentes políticas de RR2 (Chile, Perú, Colombia) | Riesgos | Tomadas de resúmenes de búsqueda; verificar cada URL antes de entregar |
 | 12 | Bull de Valuación: cuerpo CLP 2.595 vs réplica del DCF 2.627 (Anexo 18) | Valuación | Resuelto: el cuerpo usa la réplica del DCF v2 (bear 1.713, bull 2.627; márgenes trimestrales del tornado) |
 | 13 | Pipeline USD 613 MM / 170.200 m² (texto) vs 123.700 m² / USD 445 MM con fecha (modelo) | Industria / Valuación / Riesgos | Sin resolver |
+| 14 | WACC implícita 7,56% (V6, informe y Figuras 28/33/34) vs TIR de tasa única 7,57% (v3) | Valuación | Resuelto en el texto con una nota bajo la tabla de la TIR; las figuras V6 siguen en 7,56% (−285 pb). Brecha de tasa única: −284 pb |
+| 15 | Control del modelo: comprar al valor DCF (CLP 1.857) da una TIR de accionista de 13,5% nominal, 160 pb sobre el Ke terminal (11,93%); valorar el patrimonio con Ke da ~CLP 1.980 vs 1.857 del DCF (WACC) | Valuación | Sin resolver. Probables causas: costo de la deuda del flujo (cupón + reajuste, ~5,4% antes de impuestos) menor que el Kd de la WACC (6,7%); minoritarios a libro; dividendos con rezago |
+| 16 | Anexos [B], [C], [E], [F] de Valuación y Figuras V1–V6: tasas sin rótulo nominal/real en algunas filas (p. ej. «WACC +100 pb», «g 2,5%», «WACC implícita») | Valuación | Auditado solo el cuerpo (marcado en el documento); los anexos y las imágenes quedan sin cambiar |
 | 11 | Rebaja del impuesto corporativo a 23% (Ley de Reconstrucción) | Riesgos / Valuación | No incluida en el modelo (+5,1% al precio objetivo si se aplica) |
 
 ## 6. Preguntas que probablemente hará el jurado
@@ -113,11 +122,12 @@ secciones/
   comun/                      estilo.py (paleta), formato.js (formato Word), borrador_a_json.py, logos/
   <sección>/                  negocio, industria, esg, analisis_financiero, valuacion, riesgos, macro, plantilla_informe
     documento/                constructor .js + Word/PDF de la sección (ES/EN)
+    documento/anterior/       (valuacion) penúltima versión del Word/PDF, sin la TIR
     documento/borrador/       borrador del equipo (.docx) y su texto en JSON (texto.json / texto_en.json)
     anexo/                    anexo de la sección (ES/EN)
     graficos/                 scripts de Python de los gráficos
-    graficos/figuras/         cada gráfico (es_/en_, y _titulado para compartir fuera del informe)
-    modelos/                  Excel de entrada de la sección
+    graficos/figuras/         cada gráfico (es_/en_, y _titulado para compartir fuera del informe); datos_*.json (valuacion: datos_wacc, datos_anexos, datos_tir)
+    modelos/                  Excel de entrada de la sección (valuacion: v2 y v3 = v2 + hojas TIR_Implicita y TIR_Accionista)
   informe_final/              informe consolidado
     documento/                informe_final.js + cuerpo.js → Word final (ES/EN); PDF final (lo escribe typst/armar.py)
     documento/maquetacion/    intermedios de la maquetación del Word (plan, posiciones, escalas, saltos)
