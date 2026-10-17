@@ -208,7 +208,7 @@
 #let k0 = 0
 #for (si, s) in D.secciones.enumerate() {
   // Análisis Financiero y Riesgos empiezan arriba de una página nueva
-  if s.clave in ("fa", "riesgos", "resumen") { pagebreak(weak: true) }
+  if s.clave in ("fa", "valuacion", "riesgos", "resumen") { pagebreak(weak: true) }
   [#metadata(si) <sec-ini>]
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
   ancho({

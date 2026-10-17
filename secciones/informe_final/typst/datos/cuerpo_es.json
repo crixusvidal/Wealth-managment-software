@@ -811,7 +811,7 @@
     {
      "p": [
       [
-       "El análisis deja tres conclusiones para el modelo. Primero, la base de utilidades correcta es la caja: usamos el EBITDA de la compañía, que elimina una sola vez la revalorización (Anexo 12), y la utilidad distribuible como ancla, no la utilidad contable de CLP 1.431 mil MM. Segundo, la calidad del negocio no está en duda: con el mismo ajuste para los tres, Mallplaza tiene el ROE normalizado más alto de sus pares locales (10,0% frente a 7,8% de Parque Arauco y 8,0% de Cencosud Shopping) con un LTV de 18,8% (Anexo 14).",
+       "Tres conclusiones para el modelo. Primero, la base correcta es la caja: usamos el EBITDA que elimina una sola vez la revalorización (Anexo 12) y la utilidad distribuible como ancla, no la utilidad contable de CLP 1.431 mil MM. Segundo, la calidad no está en duda: con el mismo ajuste para los tres, Mallplaza tiene el ROE normalizado más alto de sus pares locales (10,0% frente a 7,8% de Parque Arauco y 8,0% de Cencosud Shopping) con un LTV de 18,8% (Anexo 14).",
        false,
        false
       ]
@@ -820,7 +820,7 @@
     {
      "p": [
       [
-       "Tercero, el capital existente apenas rinde su costo. El ROIC de 2025, con NOPAT al 27% sobre el capital a valor de tasación, fue 7,3%, en línea con nuestra WACC real de 7,2%; la comparación es con la real porque ese ROIC excluye la revalorización (Anexo 11). El capital nuevo, en cambio, rinde menos que su costo (RONIC de 5,3%). Al precio actual, el FFO 2026E de CLP 428,5 mil MM rinde 5,5% sobre el valor de mercado (18x FFO) y la utilidad distribuible 4,9%: el mercado paga por estos flujos como si fueran casi libres de riesgo. Esa es la brecha que cuantifica la sección de Valuación. En suma: un negocio de alta calidad, con caja predecible y un balance holgado, cuyo precio ya descuenta más de lo que esos flujos pueden entregar.",
+       "Tercero, el capital existente apenas rinde su costo. El ROIC de 2025 (NOPAT al 27% sobre el capital a valor de tasación, sin revalorización; Anexo 11) fue 7,3%, en línea con la WACC real de 7,2%. El capital nuevo rinde menos que su costo (RONIC de 5,3%). Al precio actual, el FFO 2026E de CLP 428,5 mil MM rinde 5,5% sobre el valor de mercado (18x FFO) y la utilidad distribuible 4,9%: el mercado paga por estos flujos como si fueran casi libres de riesgo. Es la brecha que cuantifica Valuación.",
        false,
        false
       ]
