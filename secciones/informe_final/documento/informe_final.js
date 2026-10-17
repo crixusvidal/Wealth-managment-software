@@ -173,9 +173,9 @@ function informe(lang = "es") {
     riesgos: con("riesgos", () => riesgos.documento(Object.values(riesgos.LANG).find((x) => x.archivo.endsWith(`_${lang.toUpperCase()}.docx`)))),
     macro: con("macro", () => macro.documento(lang)),
   };
-  const pagina = (pageNumbers) => ({ ...F.PAGINA, ...(pageNumbers ? { pageNumbers } : {}) });
+  const pagina = (pageNumbers) => ({ ...F.PAGINA, margin: { ...F.PAGINA.margin, top: 560, bottom: 760, header: 200, footer: 300 }, ...(pageNumbers ? { pageNumbers } : {}) });
   const seccion = (s, tipo, pageNumbers, pie) => ({ ...s, properties: { ...s.properties, type: tipo, page: pagina(pageNumbers) },
-    headers: { default: F.encabezado() }, footers: { default: F.pie(pie) } });
+    footers: { default: F.pie(pie) } });
   const CONT = SectionType.CONTINUOUS, NUEVA = SectionType.NEXT_PAGE, P = lang === "es" ? "Página " : "Page ", A = "A-";
   // Separador fino entre secciones corridas (la sección siguiente parte con su título)
   const conEspacio = (s) => ({ ...s, children: [new Paragraph({ spacing: { before: 160 }, children: [] }), ...s.children] });

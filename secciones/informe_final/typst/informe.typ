@@ -26,8 +26,8 @@
 #let SEP = tw(216)
 #let FIG = tw(3550)
 #let TOTAL = TXT + SEP + FIG
-#let MT = tw(1000)
-#let MB = tw(900)
+#let MT = tw(560)
+#let MB = tw(760)
 #let ALTO-MAX = 1.8in
 #let HUECO = 4pt
 
@@ -130,9 +130,6 @@
 
 #let gris-pie(t) = text(7pt, fill: GRIS, t)
 #set page(paper: "a4", margin: (top: MT, bottom: MB, left: ML, right: ML + SEP + FIG),
-  header: block(width: TOTAL, stroke: (bottom: 0.5pt + LINEA), inset: (bottom: 2pt),
-    align(right, gris-pie[Mallplaza (Plaza S.A.)  |  CFA Institute Research Challenge])),
-  header-ascent: 35%,
   footer: block(width: TOTAL, align(center, gris-pie[#if ES [Página] else [Page] #context counter(page).display()])),
   foreground: colocar())
 

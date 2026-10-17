@@ -55,7 +55,7 @@ def huerfanos(pdf):
 
 
 # Posiciones de las figuras flotantes ------------------------------------------------------------
-ALTO_PAG, ARRIBA, ABAJO = 841.89, 50.0, 841.89 - 45.0     # A4 en puntos; márgenes 1000 / 900 twips
+ALTO_PAG, ARRIBA, ABAJO = 841.89, 28.0, 841.89 - 38.0     # A4 en puntos; márgenes 560 / 760 twips (sin encabezado)
 SEP = 4.0                                                 # separación vertical entre figuras (pt)
 
 
