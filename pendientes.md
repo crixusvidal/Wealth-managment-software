@@ -29,10 +29,11 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] Ahorros ESG (Figura E6): los precios unitarios (energía CLP 110/kWh, agua CLP 1.500/m³, residuos CLP 10.000/t) y el 25% del ahorro que retiene Mallplaza son supuestos ilustrativos de la hoja ESG_Ahorros; reemplazarlos con datos reales.
 - [ ] Falabella: la matriz de riesgo del borrador decía 53,05% y la tabla y el texto 53,10%; se usó 53,10%. Confirmar con la Memoria.
 - [ ] Track record: se usó la versión neutral de la beta 4.1; decidir si se incorporan las «referencias» más elogiosas del equipo (chocan con las sanciones de 2025).
+- [ ] ESG: diferencias de texto frente a la versión anterior (Cadem 31/385, Ley I+D 55%, mujeres 53,2%).
 - [ ] Idioma: la beta 4.1 trae títulos y etiquetas en inglés dentro del texto en español; se dejó tal cual.
 
 ## Gráficos y diseño
-- [ ] Word consolidado: sin la portada de Mallplaza ni el ajuste de gráficos del PDF de Typst, y sin las tablas del Resumen; el PDF es el entregable.
+- [ ] Word consolidado: sin la portada de Mallplaza ni el ajuste de gráficos del PDF de Typst, sin las tablas del Resumen y con la Figura 34 sin ubicar (19 páginas); el PDF (20 páginas) es el entregable.
 - [ ] Los números de figura citados en los textos con letra («figura 12») están en minúscula en ESG; unificar el estilo de citas.
 
 ## Mantenimiento

@@ -76,7 +76,7 @@
    "i": 12,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "NEW SUPPLY IN CHILE GROWS IN LINE WITH CONSUMPTION, WITH PRESSURE IN 2027-2028"
+   "inicio": "NEW SUPPLY IN CHILE GROWS BELOW CONSUMPTION, WITH PRESSURE CONCENTRATED IN 2027"
   },
   {
    "i": 13,
@@ -106,7 +106,7 @@
    "i": 17,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Rivalry (4) is played out not on price but on experience and assets. Mallplaza devotes more than half of its GLA to non-"
+   "inicio": "Rivalry (4) is played out not on price but on experience and assets. There are no signs of a price war: in 2Q26 all thre"
   },
   {
    "i": 18,
@@ -148,7 +148,7 @@
    "i": 24,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "In an attractive industry, but one with high rivalry and supply that will outpace consumption in 2027-2028, the operator"
+   "inicio": "In an attractive industry, but one with high rivalry and supply that will catch up with consumption in 2027, the operato"
   },
   {
    "i": 25,
@@ -220,7 +220,7 @@
    "i": 36,
    "tipo": "ancho",
    "barrera": false,
-   "inicio": "Figure 1: Normalized ROE of 8–10% is the real return; reported ROE is appraisal-driven"
+   "inicio": "Figure 1: ROE on distributable profit of 8–10% (not the shareholder's return); reported ROE follows the appraisal"
   },
   {
    "i": 37,
@@ -238,13 +238,13 @@
    "i": 39,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%, the highest of "
+   "inicio": "Excluding fair-value gains net of deferred tax, audited distributable profit was CLP 369bn and ROE 9.7%; with the same a"
   },
   {
    "i": 40,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Broken down, 2025 normalized ROE (9.7%) is a 56.5% normalized net margin times an asset turnover of only 0.097x and 1.77"
+   "inicio": "Broken down, 2025 normalized ROE (9.7%) is a 56.5% normalized net margin times an asset turnover of 0.097x and 1.77x acc"
   },
   {
    "i": 41,
@@ -262,19 +262,19 @@
    "i": 43,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Once currency and inflation are removed, 1H26 reported growth of 7.4% falls to about 3.0% real (Figure 3). Chile grew 2."
+   "inicio": "Once currency and inflation are removed, the 7.4% growth of 1H26 falls to ~3.0% real (Figure 3): Chile 2.8% (UF +3.1%), "
   },
   {
    "i": 44,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Growth is contractual, not sales-driven. Variable rent is 5.1% of revenue and fell 1.1% in 1H26 while tenant sales rose "
+   "inicio": "In our reading, growth depends more on contracts than on sales: variable rent is 5.1% of 1H26 revenue and fell 1.1% whil"
   },
   {
    "i": 45,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Margin gains came from mix and cost recovery; operating leverage is spent"
+   "inicio": "Margin gains came from mix and cost recovery; further room looks limited"
   },
   {
    "i": 46,
@@ -286,61 +286,61 @@
    "i": 47,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "With cost of sales at 6% of revenue and total operating costs near 20%, little fixed cost is left to dilute; with D&A at"
+   "inicio": "Operating costs (cost of sales plus administration) were 20.1% of revenue in 2025 and include D&A (0.55%): 20.1% − 0.55%"
   },
   {
    "i": 48,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Operating costs have already fallen from 23.8% of revenue in 2023 to 20.1% in 2025 (Appendix 3), so there is little left"
+   "inicio": "Cash covers the dividend 2.6x before debt and 1.8x after repaying it"
   },
   {
    "i": 49,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Cash covers the dividend 2.6x; the ceiling is policy, not liquidity"
+   "inicio": "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025. Cash tax was only 15% of operating profit, shelter"
   },
   {
    "i": 50,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Operating cash flow rose from CLP 301bn in 2024 to CLP 441bn in 2025, converting 98.7% of EBITDA before tax. Cash tax wa"
+   "inicio": "The CLP 71.9bn (+38.6%) rise in 1H26 operating cash flow comes 78% from higher collections (partly December balances: re"
   },
   {
    "i": 51,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The 38.6% jump in 1H26 operating cash flow is not earnings power: 59% of it was December collections unwinding through w"
+   "inicio": "The dividend policy pays out 40% of distributable profit with a one-year lag and the covenant (net debt/equity ≤ 2.0x; 0"
   },
   {
    "i": 52,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The dividend policy pays out 40% of distributable profit with a one-year lag, so retained cash is high: CLP 171.6bn in 2"
+   "inicio": "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, a"
   },
   {
    "i": 53,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, a"
+   "inicio": "Cash-flow metrics earn the AAA; equity-based ratios flatter it"
   },
   {
    "i": 54,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Cash-flow metrics earn the AAA; equity-based ratios flatter it"
+   "inicio": "LTV fell from 26.9% to 18.8% in 2025, but 5.0pp of the 8.0pp drop came from revaluing the denominator; with property at "
   },
   {
    "i": 55,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "LTV fell from 26.9% to 18.8% in 2025, but 5.0pp of the 8.0pp drop came from revaluing the denominator; with property at "
+   "inicio": "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year "
   },
   {
    "i": 56,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year "
+   "inicio": "One liability does not show up in LTV: deferred taxes, CLP 1,313.7bn at June 2026, almost 80% of gross financial debt. T"
   },
   {
    "i": 57,
@@ -352,223 +352,337 @@
    "i": 58,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "One liability does not show up in LTV: deferred taxes, CLP 1,313.7bn at June 2026, almost 80% of gross financial debt. T"
+   "inicio": "The forecast carries forward what history supports, including the pace of expansion"
   },
   {
    "i": 59,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The forecast carries forward what history supports, including the pace of expansion"
+   "inicio": "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.9%), as real same-store growth converges to the apprai"
   },
   {
    "i": 60,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Revenue grows 7.7% in 2026E and 5.0% in 2031E (2026E–2031E CAGR 6.4%), as real same-store growth converges to the apprai"
+   "inicio": "What this means for valuation"
   },
   {
    "i": 61,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "What this means for valuation"
+   "inicio": "The analysis leaves three conclusions for the model. First, the right earnings base is cash: we use the company's EBITDA"
   },
   {
    "i": 62,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The analysis leaves three conclusions for the model. First, the right earnings base is cash: we use the company's EBITDA"
+   "inicio": "Third, existing capital barely earns its cost. 2025 ROIC, with NOPAT at 27% over capital at appraised value, was 7.3%, i"
   },
   {
    "i": 63,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Third, the return on capital at fair value is low. 2025 ROIC, with NOPAT at 27% over invested capital at appraised value"
+   "inicio": "VALUATION"
   },
   {
    "i": 64,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "VALUATION"
+   "inicio": "We recommend SELL on Mallplaza with a target price of CLP 2,077 per share, 41.6% below the CLP 3,555 close of 30-Sep-26 "
   },
   {
    "i": 65,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We recommend SELL on Mallplaza with a target price of CLP 2,076 per share, 41.6% below the CLP 3,555 close of 30-Sep-26 "
+   "inicio": "A PRICE NO METHOD REACHES"
   },
   {
    "i": 66,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "A PRICE NO METHOD REACHES"
+   "inicio": "In twelve months the stock rose from CLP 2,470 to 4,700 and now trades at CLP 3,555. None of our methods reaches that pr"
   },
   {
    "i": 67,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "In twelve months the stock rose from CLP 2,470 to 4,700 and now trades at CLP 3,555. None of our methods reaches that pr"
+   "inicio": "Figure 27 sums up the thesis in one image. The APV, which values the firm without debt and adds the tax shields separate"
   },
   {
    "i": 68,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Figure 27 sums up the thesis in one picture. APV, which values the firm unlevered and adds the tax shields separately, g"
+   "inicio": "THE STORY IS IN THE DISCOUNT RATE"
   },
   {
    "i": 69,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "THE STORY IS IN THE RATE"
+   "inicio": "We project the firm's free cash flow (FCFF) in nominal CLP from 30-Jun-26, with an explicit horizon to 2031E and a termi"
   },
   {
    "i": 70,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We project free cash flow to the firm in nominal CLP from 30-Jun-26, with an explicit horizon to 2031E and a terminal va"
+   "inicio": "That rate moves with the capital structure. Mallplaza uses its debt capacity to grow, as in 2024 after buying Open Plaza"
   },
   {
    "i": 71,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "That rate moves with the capital structure. Mallplaza uses its debt capacity to grow, as in 2024 after buying Open Plaza"
+   "inicio": "We build Ke in dollars because its three inputs are in that currency and nominal: the US Treasury Rf, the implied market"
   },
   {
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We build Ke in dollars because its three inputs are in that currency and are nominal: the US Treasury Rf, the implied eq"
+   "inicio": "The first signal is the asset (firm) IRR: the single rate that equates FCFF and terminal value to the enterprise value t"
   },
   {
    "i": 73,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The first signal is the asset IRR, what the business earns for whoever buys it at CLP 3,555 if our cash flows come true:"
+   "inicio": "GROWTH DOES NOT RESCUE THE PRICE"
   },
   {
    "i": 74,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "GROWTH DOES NOT RESCUE THE PRICE"
+   "inicio": "We are not pessimistic about operations. We project a 79.7% EBITDA margin in 2026E (excluding revaluations, below the 80"
   },
   {
    "i": 75,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "This is not pessimism about operations. We forecast a 79.7% EBITDA margin in 2026E (excluding revaluation, below the 80."
+   "inicio": "Capex follows the company's plan and is split into maintenance and IT (5.5% of revenue, CLP 42–53 bn per year) and incre"
   },
   {
    "i": 76,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Capex follows the company's plan: the pipeline and maintenance (5.5% of revenue) take base capex to a peak of CLP 240,66"
+   "inicio": "Two assumptions deserve an explanation. The cash tax rate starts at 16.8% because the company currently uses tax goodwil"
   },
   {
    "i": 77,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Two assumptions deserve explanation. The cash tax rate starts at 16.8% because the company currently uses tax goodwill a"
+   "inicio": "Price and sales. For a rental operator the price is rent per m², and tenants' sales reach revenue only through variable "
   },
   {
    "i": 78,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The problem is the return on growth. Each new m² yields 6.9% real pre-tax on cost, a 5.0% real RONIC after tax, below a "
+   "inicio": "The problem is the return on growth. Each new m² yields 7.3% real before tax on its cost (expansion mix: 67% Chile, 33% "
   },
   {
    "i": 79,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "That is why the explicit horizon includes the capex and ramp-up of projects opening through 2032 (108,301 m² of mature G"
+   "inicio": "WHY EXPAND IF IT DOES NOT CREATE VALUE?"
   },
   {
    "i": 80,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "PEERS CONFIRM THE DIRECTION, NOT THE SIZE"
+   "inicio": "If growth earns less than the cost of capital, what pushes management to keep going? We put forward four hypotheses, to "
   },
   {
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Mallplaza trades at 16.8x EV/EBITDA, above the Chilean median (15.7x) and far above Brazilian peers (9.0x). The gap with"
+   "inicio": "PEERS CONFIRM THE DIRECTION, NOT THE MAGNITUDE"
   },
   {
    "i": 82,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Macro explains the difference. At 30-Jun-26 Brazil had a 14.25% nominal Selic, a 14.34% nominal 10-year bond and 5.3% ex"
+   "inicio": "Mallplaza trades at 16.8x EV/EBITDA, above the Chilean median (15.7x) and far above Brazilian peers (9.0x). The gap with"
   },
   {
    "i": 83,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We chose the set on the same basis as the beta. IRSA is kept with caution, since it reports under IAS 29 and its NTM con"
+   "inicio": "We chose the set with the beta criterion: IRSA with caution (IAS 29 reporter; one analyst on NTM) and without Fibra Danh"
   },
   {
    "i": 84,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Nor does quality justify the premium. Mallplaza trades 29% above Cencosud Shopping, yet its EBITDA per m² is only 1.8% h"
+   "inicio": "Quality does not justify the premium either. Mallplaza trades 29% above Cencosud Shopping, yet its EBITDA per m² is only"
   },
   {
    "i": 85,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "In price terms: at the Chilean median alone the stock would be worth CLP 3,294 (−7%); at Cencosud's multiple, CLP 2,621;"
+   "inicio": "WHAT THE MARKET WOULD HAVE TO BELIEVE"
   },
   {
    "i": 86,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "WHAT THE MARKET WOULD HAVE TO BELIEVE"
+   "inicio": "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a real cap rate of 6.0% (LTM EBITDA / EV, comparable w"
   },
   {
    "i": 87,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The price implies an EV of CLP 9.12 trillion, 69% above ours, and a real 6.0% cap rate, against 10.1% in our DCF, 6.4% f"
+   "inicio": "WHY THE MARKET PAYS CLP 3,555"
   },
   {
    "i": 88,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We pushed the thesis to its extremes. In a bear case (nominal WACC +100 bp and the 75.8% quarterly-low margin) the targe"
+   "inicio": "In twelve months the stock went from a low of CLP 2,470 (10-Oct-25) to a high of CLP 4,700 (27-Apr-26), a ~90% rise the "
   },
   {
    "i": 89,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "APV also shows what the debt is really worth. Of its CLP 1,894 per share, CLP 1,632 is the unlevered firm and CLP 261 th"
+   "inicio": "OUR VALUE VERSUS THE CONSENSUS"
   },
   {
    "i": 90,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Calendar details do not change the outcome either. With an expected dividend of ~CLP 69 per share (2.0%), the expected t"
+   "inicio": "Bloomberg shows 14 sources with an average recommendation of 2.85 (1 buy, 10 hold, 2 sell) and a 12-month target price o"
   },
   {
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "That brings us to CLP 2,076 (80% × 1,857 + 20% × 2,951): 10.8x EBITDA, a real 9.3% cap rate and 0.94x book value. Rollin"
+   "inicio": "SCENARIOS: WHAT WOULD HAVE TO HAPPEN"
   },
   {
    "i": 92,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "What we will watch: the Note 11 appraisal at each reporting date (the real discount rate is the bridge between our value"
+   "inicio": "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure T), in"
   },
   {
    "i": 93,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The result is robust: even with everything in its favour the target price (CLP 2,915) does not reach the quote. The firm"
+  },
+  {
+   "i": 94,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The APV also says how much the debt is really worth. Of its CLP 1,895 per share, CLP 1,630 is the unlevered firm and CLP"
+  },
+  {
+   "i": 95,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "That is how we get to CLP 2,077 (80% × 1,859 + 20% × 2,951): 10.8x EBITDA, a real cap rate of 6.1% and 0.94x book value."
+  },
+  {
+   "i": 96,
    "tipo": "ancho",
    "barrera": true,
    "inicio": "INVESTMENT RISKS"
   },
   {
-   "i": 94,
-   "tipo": "ancho",
-   "barrera": true,
+   "i": 97,
+   "tipo": "texto",
+   "barrera": false,
    "inicio": "INVESTMENT SUMMARY"
+  },
+  {
+   "i": 98,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SELL · target price CLP 2,077 per share, 41.6% below the CLP 3,555 close (30-Sep-26): an excellent rental business that "
+  },
+  {
+   "i": 99,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "KEY DATA"
+  },
+  {
+   "i": 100,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "RECOMMENDATION AND TARGET PRICE"
+  },
+  {
+   "i": 101,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We recommend SELL on Mallplaza (MALLPLAZ CI) with a target price of CLP 2,077 per share, 41.6% below the 30-Sep-26 close"
+  },
+  {
+   "i": 102,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "INVESTMENT THESIS"
+  },
+  {
+   "i": 103,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza is an excellent business: rents almost as stable as a bond (81.4% of revenue; 93% fixed), an 80% EBITDA margin"
+  },
+  {
+   "i": 104,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "WHY IT IS EXPENSIVE"
+  },
+  {
+   "i": 105,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The stock rose ~90% from the low of CLP 2,470 (10-Oct-25) to the high of CLP 4,700 (27-Apr-26) without the business chan"
+  },
+  {
+   "i": 106,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SCENARIOS"
+  },
+  {
+   "i": 107,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "We define three scenarios with the same levers as the Risks tornado. Bear is everything going wrong at once (nominal WAC"
+  },
+  {
+   "i": 108,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SENSITIVITIES"
+  },
+  {
+   "i": 109,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the pr"
+  },
+  {
+   "i": 110,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "VERSUS THE CONSENSUS"
+  },
+  {
+   "i": 111,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "The Bloomberg consensus (14 sources; 1 buy, 10 hold, 2 sell) sets a 12-month target of CLP 4,111, 49.5% above ours. It i"
+  },
+  {
+   "i": 112,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "CATALYSTS AND RISKS"
+  },
+  {
+   "i": 113,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward "
   }
  ],
  "figuras": [
@@ -584,7 +698,7 @@
    "n": "Figure 2:",
    "cita": 11,
    "clave": "industria",
-   "alto": 2.5000000000000004
+   "alto": 2.209353741496599
   },
   {
    "id": 2,
@@ -619,42 +733,42 @@
    "n": "Figure E1:",
    "cita": 26,
    "clave": "esg",
-   "alto": 1.7350000000000003
+   "alto": 2.2390000000000003
   },
   {
    "id": 7,
    "n": "Figure E2:",
    "cita": 28,
    "clave": "esg",
-   "alto": 1.6250000000000004
+   "alto": 2.1290000000000004
   },
   {
    "id": 8,
    "n": "Figure E3:",
    "cita": 28,
    "clave": "esg",
-   "alto": 1.87
+   "alto": 2.3740000000000006
   },
   {
    "id": 9,
    "n": "Figure E4:",
    "cita": 30,
    "clave": "esg",
-   "alto": 1.7350000000000003
+   "alto": 2.2390000000000003
   },
   {
    "id": 10,
    "n": "Figure E5:",
    "cita": 33,
    "clave": "esg",
-   "alto": 1.6250000000000004
+   "alto": 2.1290000000000004
   },
   {
    "id": 11,
    "n": "Figure E6:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.0900000000000003
+   "alto": 2.5940000000000003
   },
   {
    "id": 12,
@@ -673,49 +787,49 @@
   {
    "id": 14,
    "n": "Figure 4:",
-   "cita": 50,
+   "cita": 49,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
    "id": 15,
    "n": "Figure 5:",
-   "cita": 55,
+   "cita": 54,
    "clave": "fa",
    "alto": 2.0900000000000003
   },
   {
    "id": 16,
    "n": "Figure 6:",
-   "cita": 56,
+   "cita": 55,
    "clave": "fa",
    "alto": 1.9800000000000004
   },
   {
    "id": 17,
    "n": "Figure 7:",
-   "cita": 53,
+   "cita": 52,
    "clave": "fa",
-   "alto": 2.115
+   "alto": 2.2250000000000005
   },
   {
    "id": 18,
    "n": "Figure 27:",
-   "cita": 67,
+   "cita": 66,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 19,
    "n": "Figure 28:",
-   "cita": 73,
+   "cita": 72,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 20,
    "n": "Figure 29:",
-   "cita": 76,
+   "cita": 75,
    "clave": "valuacion",
    "alto": 2.115
   },
@@ -729,7 +843,7 @@
   {
    "id": 22,
    "n": "Figure 31:",
-   "cita": 81,
+   "cita": 82,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
@@ -743,16 +857,37 @@
   {
    "id": 24,
    "n": "Figure 33:",
-   "cita": 87,
+   "cita": 86,
    "clave": "valuacion",
-   "alto": 1.87
+   "alto": 1.9800000000000004
   },
   {
    "id": 25,
    "n": "Figure 34:",
-   "cita": 87,
+   "cita": 86,
    "clave": "valuacion",
    "alto": 1.7600000000000002
+  },
+  {
+   "id": 26,
+   "n": "Figure R1:",
+   "cita": 105,
+   "clave": "resumen",
+   "alto": 2.0900000000000003
+  },
+  {
+   "id": 27,
+   "n": "Figure R2:",
+   "cita": 107,
+   "clave": "resumen",
+   "alto": 2.115
+  },
+  {
+   "id": 28,
+   "n": "Figure R3:",
+   "cita": 111,
+   "clave": "resumen",
+   "alto": 1.87
   }
  ]
 }

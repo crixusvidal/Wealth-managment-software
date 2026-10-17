@@ -76,7 +76,7 @@
    "i": 12,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "LA OFERTA NUEVA EN CHILE CRECE AL RITMO DEL CONSUMO, CON PRESIÓN EN 2027-2028"
+   "inicio": "LA OFERTA NUEVA EN CHILE CRECE POR DEBAJO DEL CONSUMO, CON PRESIÓN CONCENTRADA EN 2027"
   },
   {
    "i": 13,
@@ -106,7 +106,7 @@
    "i": 17,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La rivalidad (4) no se juega en precio, sino en experiencia y en activos. Mallplaza destina más de la mitad de su GLA a "
+   "inicio": "La rivalidad (4) no se juega en precio, sino en experiencia y en activos. No hay señales de guerra de precios, ya que en"
   },
   {
    "i": 18,
@@ -148,7 +148,7 @@
    "i": 24,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "En una industria atractiva, pero con rivalidad alta y una oferta que se adelantará al consumo en 2027-2028, ganarán part"
+   "inicio": "En una industria atractiva, pero con rivalidad alta y una oferta que alcanzará al consumo en 2027, ganarán participación"
   },
   {
    "i": 25,
@@ -220,7 +220,7 @@
    "i": 36,
    "tipo": "ancho",
    "barrera": false,
-   "inicio": "Figura 1: El ROE normalizado de 8–10% es el retorno real; el ROE reportado depende de la tasación"
+   "inicio": "Figura 1: ROE sobre utilidad distribuible de 8–10% (no es el retorno del accionista); el reportado sigue a la tasación"
   },
   {
    "i": 37,
@@ -244,7 +244,7 @@
    "i": 40,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Descompuesto, el ROE normalizado de 2025 (9,7%) es un margen neto normalizado de 56,5% por una rotación de activos de ap"
+   "inicio": "Descompuesto, el ROE normalizado de 2025 (9,7%) es un margen neto normalizado de 56,5% por una rotación de activos de 0,"
   },
   {
    "i": 41,
@@ -262,19 +262,19 @@
    "i": 43,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Sin moneda ni inflación, el crecimiento reportado de 7,4% en 1S26 baja a cerca de 3,0% real (Figura 3). Chile creció 2,8"
+   "inicio": "Sin moneda ni inflación, el crecimiento de 7,4% en 1S26 baja a ~3,0% real (Figura 3): Chile 2,8% (UF +3,1%), Perú 4,5% ("
   },
   {
    "i": 44,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El crecimiento es contractual, no de ventas. La renta variable es 5,1% de los ingresos y cayó 1,1% en 1S26 mientras las "
+   "inicio": "En nuestra lectura, el crecimiento depende más de los contratos que de las ventas: la renta variable es 5,1% de los ingr"
   },
   {
    "i": 45,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El margen subió por mix y recuperación de gastos; el apalancamiento operativo se agotó"
+   "inicio": "El margen subió por mix y recuperación de gastos; el espacio adicional parece acotado"
   },
   {
    "i": 46,
@@ -286,31 +286,31 @@
    "i": 47,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Con el costo de ventas en 6% de los ingresos y costos operativos totales cercanos a 20%, queda poco costo fijo que dilui"
+   "inicio": "Los costos operativos (costo de ventas más administración) fueron 20,1% de los ingresos en 2025 e incluyen la D&A (0,55%"
   },
   {
    "i": 48,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La caja cubre el dividendo 2,6x; el techo es la política, no la liquidez"
+   "inicio": "La caja cubre el dividendo 2,6x antes de deuda y 1,8x después de amortizarla"
   },
   {
    "i": 49,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025, convirtiendo 98,7% del EBITDA antes de impu"
+   "inicio": "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025. El impuesto pagado fue solo 15% del resulta"
   },
   {
    "i": 50,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El salto de 38,6% del flujo operativo en 1S26 no es capacidad de generación: el 59% corresponde a cobranzas de diciembre"
+   "inicio": "El alza de CLP 71,9 mil MM (+38,6%) del flujo operativo de 1S26 viene en 78% de mayores cobros (en parte saldos de dicie"
   },
   {
    "i": 51,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La política de dividendos reparte 40% de la utilidad distribuible con un año de rezago, por lo que la caja retenida es a"
+   "inicio": "La política de dividendos reparte 40% de la utilidad distribuible con un año de rezago y el covenant (DFN/patrimonio ≤ 2"
   },
   {
    "i": 52,
@@ -358,7 +358,7 @@
    "i": 59,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Los ingresos crecen 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,4%), a medida que el crecimiento real en mismas"
+   "inicio": "Los ingresos crecen 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,9%), a medida que el crecimiento real en mismas"
   },
   {
    "i": 60,
@@ -376,7 +376,7 @@
    "i": 62,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Tercero, el retorno sobre el capital a valor razonable es bajo. El ROIC de 2025, con NOPAT al 27% sobre el capital inver"
+   "inicio": "Tercero, el capital existente apenas rinde su costo. El ROIC de 2025, con NOPAT al 27% sobre el capital a valor de tasac"
   },
   {
    "i": 63,
@@ -388,7 +388,7 @@
    "i": 64,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Recomendamos VENDER Mallplaza con un precio objetivo de CLP 2.076 por acción, 41,6% bajo el cierre de CLP 3.555 del 30-s"
+   "inicio": "Recomendamos VENDER Mallplaza con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre de CLP 3.555 del 30-s"
   },
   {
    "i": 65,
@@ -418,7 +418,7 @@
    "i": 69,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Proyectamos el flujo de caja libre de la firma en CLP nominales desde el 30-jun-26, con horizonte explícito hasta 2031E "
+   "inicio": "Proyectamos el flujo de caja libre de la firma (FCFF) en CLP nominales desde el 30-jun-26, con horizonte explícito hasta"
   },
   {
    "i": 70,
@@ -436,7 +436,7 @@
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La primera señal es la TIR del activo, lo que rinde la empresa a quien la compra a CLP 3.555 si se cumplen nuestros fluj"
+   "inicio": "La primera señal es la TIR del activo (la firma): la tasa única que iguala el FCFF y el valor terminal al valor de empre"
   },
   {
    "i": 73,
@@ -454,7 +454,7 @@
    "i": 75,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El capex sigue el plan de la compañía: el pipeline y la mantención (5,5% de los ingresos) llevan el capex base a un máxi"
+   "inicio": "El capex sigue el plan de la compañía y se separa en mantención y TI (5,5% de los ingresos, CLP 42–53 mil MM al año) y c"
   },
   {
    "i": 76,
@@ -466,49 +466,49 @@
    "i": 77,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 6,9% real antes de impuestos sobre su costo, un RONIC real de 5"
+   "inicio": "Precio y ventas. En un operador de arriendos el precio es el arriendo por m², y las ventas de los locatarios llegan al i"
   },
   {
    "i": 78,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Por eso el horizonte explícito incluye el capex y la maduración de los proyectos que abren hasta 2032 (108.301 m² de GLA"
+   "inicio": "El problema es el retorno de crecer. Cada m² nuevo rinde 7,3% real antes de impuestos sobre su costo (mix de la expansió"
   },
   {
    "i": 79,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "LOS PARES CONFIRMAN LA DIRECCIÓN, NO LA MAGNITUD"
+   "inicio": "¿POR QUÉ EXPANDIRSE SI NO CREA VALOR?"
   },
   {
    "i": 80,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La"
+   "inicio": "Si crecer rinde menos que el costo de capital, ¿qué empuja a la administración a seguir? Planteamos cuatro hipótesis, po"
   },
   {
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El contexto macro explica la diferencia. Al 30-jun-26 Brasil tenía una Selic nominal de 14,25%, un bono nominal a 10 año"
+   "inicio": "LOS PARES CONFIRMAN LA DIRECCIÓN, NO LA MAGNITUD"
   },
   {
    "i": 82,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Elegimos el set con el mismo criterio que la beta. IRSA se mantiene con cautela, porque reporta bajo NIC 29 y su consens"
+   "inicio": "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La"
   },
   {
    "i": 83,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cencosud Shopping, pero su EBITDA por m² es solo 1,8% "
+   "inicio": "Elegimos el set con el criterio de la beta: IRSA con cautela (reporta bajo NIC 29; un solo analista en el NTM) y sin Fib"
   },
   {
    "i": 84,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Puesto en precios: a la mediana chilena por sí sola la acción valdría CLP 3.294 (−7%); al múltiplo de Cencosud, CLP 2.62"
+   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cencosud Shopping, pero su EBITDA por m² es solo 1,9% "
   },
   {
    "i": 85,
@@ -520,49 +520,169 @@
    "i": 86,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0%, frente a 10,1% en nuestr"
+   "inicio": "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0% (EBITDA UDM / EV, compara"
   },
   {
    "i": 87,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Llevamos la tesis a sus extremos. En un caso bear (WACC nominal +100 pb y el margen trimestral mínimo de 75,8%) el preci"
+   "inicio": "POR QUÉ EL MERCADO PAGA CLP 3.555"
   },
   {
    "i": 88,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "El APV también dice cuánto vale de verdad la deuda. De sus CLP 1.894 por acción, CLP 1.632 corresponden a la empresa sin"
+   "inicio": "En doce meses la acción pasó de un mínimo de CLP 2.470 (10-oct-25) a un máximo de CLP 4.700 (27-abr-26), un alza de ~90%"
   },
   {
    "i": 89,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Tampoco cambian el resultado los detalles de calendario. Con un dividendo esperado de ~CLP 69 por acción (2,0%), el reto"
+   "inicio": "NUESTRO VALOR FRENTE AL CONSENSO"
   },
   {
    "i": 90,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Así llegamos a CLP 2.076 (80% × 1.857 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 9,3% y 0,94x el valor libro. Lle"
+   "inicio": "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (1 comprar, 10 mantener, 2 vender) y un precio objet"
   },
   {
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Lo que vigilaremos: la tasación de la Nota 11 en cada cierre (la tasa real de descuento es el puente entre nuestro valor"
+   "inicio": "ESCENARIOS: LO QUE TENDRÍA QUE PASAR"
   },
   {
    "i": 92,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura T)"
+  },
+  {
+   "i": 93,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al"
+  },
+  {
+   "i": 94,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El APV también dice cuánto vale de verdad la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin"
+  },
+  {
+   "i": 95,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Así llegamos a CLP 2.077 (80% × 1.859 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 6,1% y 0,94x el valor libro. Lle"
+  },
+  {
+   "i": 96,
    "tipo": "ancho",
    "barrera": true,
    "inicio": "RIESGOS DE INVERSIÓN"
   },
   {
-   "i": 93,
-   "tipo": "ancho",
-   "barrera": true,
+   "i": 97,
+   "tipo": "texto",
+   "barrera": false,
    "inicio": "RESUMEN DE INVERSIÓN"
+  },
+  {
+   "i": 98,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "VENDER · precio objetivo CLP 2.077 por acción, 41,6% bajo el cierre de CLP 3.555 (30-sep-26): un excelente negocio de ar"
+  },
+  {
+   "i": 99,
+   "tipo": "ancho",
+   "barrera": false,
+   "inicio": "DATOS CLAVE"
+  },
+  {
+   "i": 100,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "RECOMENDACIÓN Y PRECIO OBJETIVO"
+  },
+  {
+   "i": 101,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-"
+  },
+  {
+   "i": 102,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "TESIS DE INVERSIÓN"
+  },
+  {
+   "i": 103,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Mallplaza es un negocio excelente: arriendos casi tan estables como un bono (81,4% de los ingresos; 93% fijo), margen EB"
+  },
+  {
+   "i": 104,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "POR QUÉ ESTÁ CARA"
+  },
+  {
+   "i": 105,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "La acción subió ~90% entre el mínimo de CLP 2.470 (10-oct-25) y el máximo de CLP 4.700 (27-abr-26) sin que el negocio ca"
+  },
+  {
+   "i": 106,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "ESCENARIOS"
+  },
+  {
+   "i": 107,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Definimos tres escenarios con las mismas palancas del tornado de Riesgos. Bear es todo lo que sale mal a la vez (WACC no"
+  },
+  {
+   "i": 108,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "SENSIBILIDADES"
+  },
+  {
+   "i": 109,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Ninguna palanca por sí sola explica el precio: la mayor, bajar la WACC nominal 100 pb, agrega CLP 430 (23%) y la brecha "
+  },
+  {
+   "i": 110,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "FRENTE AL CONSENSO"
+  },
+  {
+   "i": 111,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "El consenso de Bloomberg (14 fuentes; 1 comprar, 10 mantener, 2 vender) fija un objetivo a 12 meses de CLP 4.111, 49,5% "
+  },
+  {
+   "i": 112,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "CATALIZADORES Y RIESGOS"
+  },
+  {
+   "i": 113,
+   "tipo": "texto",
+   "barrera": false,
+   "inicio": "Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nu"
   }
  ],
  "figuras": [
@@ -578,7 +698,7 @@
    "n": "Figura 2:",
    "cita": 11,
    "clave": "industria",
-   "alto": 2.5000000000000004
+   "alto": 2.209353741496599
   },
   {
    "id": 2,
@@ -690,7 +810,7 @@
    "n": "Figura 7:",
    "cita": 52,
    "clave": "fa",
-   "alto": 2.115
+   "alto": 2.2250000000000005
   },
   {
    "id": 18,
@@ -716,21 +836,21 @@
   {
    "id": 21,
    "n": "Figura 30:",
-   "cita": 77,
+   "cita": 78,
    "clave": "valuacion",
    "alto": 1.87
   },
   {
    "id": 22,
    "n": "Figura 31:",
-   "cita": 80,
+   "cita": 82,
    "clave": "valuacion",
    "alto": 1.9800000000000004
   },
   {
    "id": 23,
    "n": "Figura 32:",
-   "cita": 83,
+   "cita": 84,
    "clave": "valuacion",
    "alto": 1.87
   },
@@ -739,14 +859,35 @@
    "n": "Figura 33:",
    "cita": 86,
    "clave": "valuacion",
-   "alto": 1.87
+   "alto": 1.9800000000000004
   },
   {
    "id": 25,
    "n": "Figura 34:",
    "cita": 86,
    "clave": "valuacion",
-   "alto": 1.7600000000000002
+   "alto": 1.87
+  },
+  {
+   "id": 26,
+   "n": "Figura R1:",
+   "cita": 105,
+   "clave": "resumen",
+   "alto": 2.0900000000000003
+  },
+  {
+   "id": 27,
+   "n": "Figura R2:",
+   "cita": 107,
+   "clave": "resumen",
+   "alto": 1.9800000000000004
+  },
+  {
+   "id": 28,
+   "n": "Figura R3:",
+   "cita": 111,
+   "clave": "resumen",
+   "alto": 1.87
   }
  ]
 }
