@@ -74,7 +74,7 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | Página de Riesgos | `riesgos/documento/Mallplaza_Investment_Risks_*.docx` | `plantilla_informe/documento/Investment_Risks_template.docx` |
 | Figuras de Riesgos (matriz, tornado, mapa de calor, UF) | `riesgos/.../es_/en_fig23–26` | `plantilla_informe/.../fig1–fig4` |
 | Football field | `valuacion/.../es_/en_V1_football.png` | `valuacion/.../football_field.png` |
-| Sensibilidad a tasas largas e inflación | `valuacion/.../es_/en_V11_sens_tasas_inflacion.png` (grilla) y `..._V12_mix_tasas_inflacion.png` (mix real/inflación); modelo `valuacion/modelos/Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx` | (primera versión; aún no está en el informe) |
+| Sensibilidad a tasas largas e inflación | `valuacion/.../es_/en_V11_sens_tasas_inflacion.png` (grilla) y `..._V12_mix_tasas_inflacion.png` (mix, heat map); modelo `valuacion/modelos/Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx` | `..._V12_mix_lineas_tasas_inflacion.png` (mix en líneas, versión anterior; aún no está en el informe) |
 | Página de Valuación (Word y PDF) | `valuacion/documento/Mallplaza_Valuacion_*` (con la TIR y lo nuevo marcado) | `valuacion/documento/anterior/Mallplaza_Valuacion_*` |
 | Cuota de mercado por país | `industria/.../es_/en_ind5b_market_share_paises_vertical.png` | `industria/.../es_/en_ind5_market_share_paises.png` |
 

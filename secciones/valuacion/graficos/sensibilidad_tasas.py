@@ -276,10 +276,10 @@ def leer_excel(ruta, fila_de, esc):
 T = {
     "es": {"x": "Tasa real a 10 años (BCU)", "y": "Inflación esperada", "base": "Base: CLP {v}",
            "mx": "% de la alza de la tasa larga que viene de inflación", "my": "Δ valor DCF",
-           "real": "Todo tasa real", "inf": "Todo inflación", "th": "θ = {t}", "sube": "Tasa larga +100 pb", "baja": "Tasa larga −100 pb"},
+           "real": "Todo tasa real", "inf": "Todo inflación", "th": "θ = {t}", "sube": "Tasa larga +100 pb", "xn": "Tasa nominal a 10 años (BCP)", "yn": "% de la alza por inflación", "fila": ("100%", "75%", "50%", "25%", "0%"), "baja": "Tasa larga −100 pb"},
     "en": {"x": "10-year real rate (BCU)", "y": "Expected inflation", "base": "Base: CLP {v}",
            "mx": "% of the long-rate rise that comes from inflation", "my": "Δ DCF value",
-           "real": "All real rate", "inf": "All inflation", "th": "θ = {t}", "sube": "Long rate +100 bp", "baja": "Long rate −100 bp"},
+           "real": "All real rate", "inf": "All inflation", "th": "θ = {t}", "sube": "Long rate +100 bp", "xn": "10-year nominal rate (BCP)", "yn": "% of the rise from inflation", "fila": ("100%", "75%", "50%", "25%", "0%"), "baja": "Long rate −100 bp"},
 }
 
 
@@ -353,6 +353,41 @@ def fig_mix(I, lang, salida):
     plt.close(fig)
 
 
+def fig_mix_heat(I, lang, salida, bcp10):
+    """Mix en estilo heat map: tasa larga nominal (columnas) por parte de la variación que viene de inflación (filas)."""
+    from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
+    t = T[lang]
+    dis, ms = (-100, -50, 0, 50, 100), (1.0, 0.75, 0.5, 0.25, 0.0)       # inflación arriba, tasa real abajo
+    z = np.array([[I["peso"] * valor(I, (1 - m) * di / 1e4, m * di / 1e4) + (1 - I["peso"]) * I["mult"] for di in dis] for m in ms])
+    ib, jb = 2, dis.index(0)
+    cmap = LinearSegmentedColormap.from_list("mallplaza", [ROJO, "#f2f2f2", CELESTE])
+    norm = TwoSlopeNorm(vmin=z.min(), vcenter=z[ib, jb], vmax=z.max())
+    fig = plt.figure(figsize=(3550 / 1440, 1.7), dpi=400)
+    fig.patch.set_facecolor("white")
+    ax = fig.add_axes([0.2, 0.2, 0.78, 0.78])
+    ax.imshow(z, cmap=cmap, norm=norm, aspect="auto")
+    for i in range(z.shape[0]):
+        for j in range(z.shape[1]):
+            r, g, b = cmap(norm(z[i, j]))[:3]
+            ax.text(j, i, num(z[i, j], lang), ha="center", va="center", fontsize=5.2, fontweight="bold" if (i, j) == (ib, jb) else "normal",
+                    color="white" if 0.299 * r + 0.587 * g + 0.114 * b < 0.55 else NEGRO)
+    for k in range(z.shape[0] + 1):
+        ax.axhline(k - 0.5, color="white", linewidth=1.1)
+    for k in range(z.shape[1] + 1):
+        ax.axvline(k - 0.5, color="white", linewidth=1.1)
+    ax.add_patch(Rectangle((jb - 0.45, ib - 0.41), 0.9, 0.82, fill=False, edgecolor=AMARILLO, linewidth=1.1, zorder=3))
+    ax.set_xticks(range(len(dis)), [num(bcp10 + d / 100, lang, 2) + "%" for d in dis])
+    ax.set_yticks(range(len(ms)), [t["fila"][k] for k in range(len(ms))])
+    ax.tick_params(length=0, colors=NEGRO, labelsize=4.8, pad=2)
+    ax.set_xlabel(t["xn"], fontsize=5, color=TINTA_SECUNDARIA, labelpad=2)
+    ax.set_ylabel(t["yn"], fontsize=5, color=TINTA_SECUNDARIA, labelpad=2)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    fig.savefig(salida, facecolor="white")
+    plt.close(fig)
+    return z
+
+
 if __name__ == "__main__":
     v3, hist = Path(sys.argv[1]), Path(sys.argv[2])
     figs = Path(sys.argv[3]) if len(sys.argv) > 3 else Path(__file__).parent / "figuras"
@@ -371,5 +406,6 @@ if __name__ == "__main__":
     (figs / "datos_sens_tasas.json").write_text(json.dumps(resumen, indent=1, ensure_ascii=False))
     for lang in ("es", "en"):
         fig_grilla(I, lang, figs / f"{lang}_V11_sens_tasas_inflacion.png", sem[-1][3])
-        fig_mix(I, lang, figs / f"{lang}_V12_mix_tasas_inflacion.png")
+        fig_mix(I, lang, figs / f"{lang}_V12_mix_lineas_tasas_inflacion.png")          # versión anterior (líneas)
+        fig_mix_heat(I, lang, figs / f"{lang}_V12_mix_tasas_inflacion.png", sem[-1][2])
     print(json.dumps({k: v for k, v in resumen.items() if k != "empirico"}, indent=1), emp)
