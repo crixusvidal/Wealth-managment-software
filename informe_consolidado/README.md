@@ -4,9 +4,9 @@ Entregables finales en español e inglés. **Entregar los PDF** (cuerpo maquetad
 
 | Archivo | Fecha | Páginas | Hash | Estado |
 |---|---|---|---|---|
-| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-18 01:38 | 20 | `8a1a87bc6e10` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-18 01:43 | 20 | `4ebfe73ce2cd` | actualizado ahora |
 | `vigente/Mallplaza_Informe_CFA_ES.docx` | 2026-10-18 01:28 | — | `453ec912fb25` | sin cambios |
-| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-18 01:38 | 20 | `11335c6b62aa` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-18 01:43 | 20 | `e515c098de2b` | actualizado ahora |
 | `vigente/Mallplaza_Informe_CFA_EN.docx` | 2026-10-18 01:29 | — | `010b377c0893` | sin cambios |
 
 - `vigente/`: la versión actual. `anterior/`: la penúltima (regla del proyecto: solo dos versiones).

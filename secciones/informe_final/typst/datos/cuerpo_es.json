@@ -730,25 +730,11 @@
     {
      "p": [
       [
-       "El capex está subiendo. Los compromisos contractuales de inversión aumentaron a CLP 78 mil MM en junio de 2026 desde CLP 18 mil MM en diciembre de 2025, y el capex en propiedades de 1S26 fue CLP 81 mil MM (+176%). El caso base financia los USD 579 MM restantes del pipeline con fecha en 2026–2028 (incluye USD 134 MM de otros proyectos en Chile) y luego agrega cerca de 27.000 m² al año, el ritmo orgánico de 2022–2025: el capex total se estabiliza cerca de 16% de los ingresos, 5,5% de mantención y ~11% incremental (Figura 19).",
+       "El capex está subiendo. Los compromisos contractuales de inversión aumentaron a CLP 78 mil MM en junio de 2026 desde CLP 18 mil MM en diciembre de 2025, y el capex en propiedades de 1S26 fue CLP 81 mil MM (+176%). El caso base financia los USD 579 MM restantes del pipeline con fecha en 2026–2028 (incluye USD 134 MM de otros proyectos en Chile) y luego agrega cerca de 27.000 m² al año, el ritmo orgánico de 2022–2025: el capex total se estabiliza cerca de 16% de los ingresos, 5,5% de mantención y ~11% incremental.",
        false,
        false
       ]
      ]
-    },
-    {
-     "figancha": {
-      "n": "Figura 19:",
-      "titulo": "Tras el pipeline, el capex incremental de la expansión continua mantiene el capex total cerca de CLP 150 mil MM al año; la DFN/EBITDA sube a 3,5x",
-      "archivo": "/analisis_financiero/graficos/figuras/es_FA7_capex_ancha.png",
-      "fuente": [
-       [
-        "2026E incluye CLP 84,2 mil MM de 1S26 (sin apertura por tipo). Mantención + TI = 5,5% de los ingresos; incremental = pipeline en curso + expansión continua. 2024A: un mes de EBITDA de Perú. Fuente: EEFF (CMF); release 2T26; modelo v4 (Anexo 15).",
-        false,
-        false
-       ]
-      ]
-     }
     },
     {
      "h1": "Los indicadores de flujo justifican el AAA; los ratios contables lo exageran"
@@ -770,20 +756,6 @@
        false
       ]
      ]
-    },
-    {
-     "figancha": {
-      "n": "Figura 18:",
-      "titulo": "El riesgo de refinanciamiento está en 2029, 2031 y 2033, no en el corto plazo",
-      "archivo": "/analisis_financiero/graficos/figuras/es_FA6_vencimientos_ancha.png",
-      "fuente": [
-       [
-        "Bonos en UF, valor libro dic-25 (total CLP 1.277,7 mil MM); etiqueta = tasa real efectiva (años con dos series: promedio ponderado). Excluye CLP 301,6 mil MM de deuda bancaria en PEN/COP. Fuente: EEFF dic-25, Nota 14; análisis del equipo.",
-        false,
-        false
-       ]
-      ]
-     }
     },
     {
      "p": [
@@ -892,7 +864,35 @@
       ]
      ],
      "ancha": false,
+     "ancla": 17
+    },
+    {
+     "n": "Figura 18:",
+     "titulo": "El riesgo de refinanciamiento está en 2029, 2031 y 2033, no en el corto plazo",
+     "archivo": "/analisis_financiero/graficos/figuras/es_FA6_vencimientos.png",
+     "fuente": [
+      [
+       "Bonos en UF, valor libro dic-25 (total CLP 1.277,7 mil MM); etiqueta = tasa real efectiva (años con dos series: promedio ponderado). Excluye CLP 301,6 mil MM de deuda bancaria en PEN/COP. Fuente: EEFF dic-25, Nota 14; análisis del equipo.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
      "ancla": 18
+    },
+    {
+     "n": "Figura 19:",
+     "titulo": "Tras el pipeline, el capex incremental de la expansión continua mantiene el capex total cerca de CLP 150 mil MM al año; la DFN/EBITDA sube a 3,5x",
+     "archivo": "/analisis_financiero/graficos/figuras/es_FA7_capex.png",
+     "fuente": [
+      [
+       "2026E incluye CLP 84,2 mil MM de 1S26 (sin apertura por tipo). Mantención + TI = 5,5% de los ingresos; incremental = pipeline en curso + expansión continua. 2024A: un mes de EBITDA de Perú. Fuente: EEFF (CMF); release 2T26; modelo v4 (Anexo 15).",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 22
     }
    ],
    "leadDestacado": true,

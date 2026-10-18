@@ -720,25 +720,11 @@
     {
      "p": [
       [
-       "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, and 1H26 property capex was CLP 81bn (+176%). The base case funds the USD 579m of remaining dated pipeline over 2026–2028 (including USD 134m of other projects in Chile) and then keeps adding about 27,000 m² a year, the 2022–2025 organic pace: total capex settles near 16% of revenue, 5.5% maintenance and ~11% incremental (Figure 19).",
+       "Capex is stepping up. Contractual investment commitments rose to CLP 78bn at June 2026 from CLP 18bn in December 2025, and 1H26 property capex was CLP 81bn (+176%). The base case funds the USD 579m of remaining dated pipeline over 2026–2028 (including USD 134m of other projects in Chile) and then keeps adding about 27,000 m² a year, the 2022–2025 organic pace: total capex settles near 16% of revenue, 5.5% maintenance and ~11% incremental.",
        false,
        false
       ]
      ]
-    },
-    {
-     "figancha": {
-      "n": "Figure 19:",
-      "titulo": "After the pipeline, incremental capex for continuous expansion keeps total capex near CLP 150bn a year; net debt/EBITDA rises to 3.5x",
-      "archivo": "/analisis_financiero/graficos/figuras/en_FA7_capex_ancha.png",
-      "fuente": [
-       [
-        "2026E includes CLP 84.2bn of 1H26 (no breakdown by type). Maintenance + IT = 5.5% of revenue; incremental = pipeline under way + continuous expansion. 2024A: one month of Peru EBITDA. Source: Plaza S.A. financial statements (CMF); 2Q26 results release; model v4 (Appendix 15).",
-        false,
-        false
-       ]
-      ]
-     }
     },
     {
      "h1": "Cash-flow metrics earn the AAA; equity-based ratios flatter it"
@@ -760,20 +746,6 @@
        false
       ]
      ]
-    },
-    {
-     "figancha": {
-      "n": "Figure 18:",
-      "titulo": "Refinancing risk sits in 2029, 2031 and 2033, not in the near term",
-      "archivo": "/analisis_financiero/graficos/figuras/en_FA6_vencimientos_ancha.png",
-      "fuente": [
-       [
-        "UF bonds, book value Dec-25 (total CLP 1,277.7bn); label = effective real rate (two-series years: book-value-weighted). Excludes CLP 301.6bn of PEN/COP bank debt. Source: Plaza S.A. financial statements Dec-25, Note 14; Team analysis.",
-        false,
-        false
-       ]
-      ]
-     }
     },
     {
      "p": [
@@ -882,7 +854,35 @@
       ]
      ],
      "ancha": false,
+     "ancla": 17
+    },
+    {
+     "n": "Figure 18:",
+     "titulo": "Refinancing risk sits in 2029, 2031 and 2033, not in the near term",
+     "archivo": "/analisis_financiero/graficos/figuras/en_FA6_vencimientos.png",
+     "fuente": [
+      [
+       "UF bonds, book value Dec-25 (total CLP 1,277.7bn); label = effective real rate (two-series years: book-value-weighted). Excludes CLP 301.6bn of PEN/COP bank debt. Source: Plaza S.A. financial statements Dec-25, Note 14; Team analysis.",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
      "ancla": 18
+    },
+    {
+     "n": "Figure 19:",
+     "titulo": "After the pipeline, incremental capex for continuous expansion keeps total capex near CLP 150bn a year; net debt/EBITDA rises to 3.5x",
+     "archivo": "/analisis_financiero/graficos/figuras/en_FA7_capex.png",
+     "fuente": [
+      [
+       "2026E includes CLP 84.2bn of 1H26 (no breakdown by type). Maintenance + IT = 5.5% of revenue; incremental = pipeline under way + continuous expansion. 2024A: one month of Peru EBITDA. Source: Plaza S.A. financial statements (CMF); 2Q26 results release; model v4 (Appendix 15).",
+       false,
+       false
+      ]
+     ],
+     "ancha": false,
+     "ancla": 22
     }
    ],
    "leadDestacado": true,
