@@ -15,6 +15,8 @@ const docx = require("docx");
 
 // Renumeración: se intercepta cada TextRun creado mientras se construye una sección -----------------
 let MAPA = null;
+// Orden de salida: {número por sección → número definitivo}; lo calcula typst/armar.py según la posición real de cada figura en el PDF
+const ORDEN_FIG = process.env.FIG_ORDEN ? JSON.parse(require("fs").readFileSync(process.env.FIG_ORDEN, "utf8")) : {};
 const AVISOS = new Set();
 const TOKEN = /\[[A-Z]\]|[A-Z]?\d+[A-Z]?(?:\.\d+)?|[A-Z](?![\wÁÉÍÓÚáéíóúñ])/g;
 const CITA = new RegExp(String.raw`\b(Figuras?|Figures?|Fig\.|figuras?|Anexos?|ANEXOS?|Appendix|Appendices|APPENDIX)(\s+)`
@@ -26,6 +28,7 @@ function renumerar(texto) {
       let nuevo = MAPA[tipo][tok];
       const suf = /^([A-Z]?\d+)([A-Z])$/.exec(tok);                                  // subsección: 2D → 10D
       if (nuevo === undefined && suf && MAPA[tipo][suf[1]] !== undefined) nuevo = MAPA[tipo][suf[1]] + suf[2];
+      if (tipo === "fig" && nuevo !== undefined && ORDEN_FIG[String(nuevo)] !== undefined) nuevo = ORDEN_FIG[String(nuevo)];
       if (nuevo === undefined) { AVISOS.add(`${MAPA.nombre}: "${palabra} ${tok}" sin mapa (se deja igual)`); return tok; }
       return String(nuevo);
     });

@@ -220,7 +220,7 @@
        false
       ],
       [
-       " is weak, given that occupancy in Chile reaches 96-99%, leases are long (Figure 8) and tenants are highly fragmented, to the point that the top five account for only 18% of Mallplaza's revenue. Evidence of this is that Mallplaza has raised its rents in Chile above inflation for more than three years (6.9% versus 4.8% on average between 1Q23 and 2Q26) without its tenants' occupancy cost spiking. The exception is department stores, which as anchors negotiate better terms, although their weight has already fallen to 19.0% of GLA. ",
+       " is weak, given that occupancy in Chile reaches 96-99%, leases are long (Figure 7) and tenants are highly fragmented, to the point that the top five account for only 18% of Mallplaza's revenue. Evidence of this is that Mallplaza has raised its rents in Chile above inflation for more than three years (6.9% versus 4.8% on average between 1Q23 and 2Q26) without its tenants' occupancy cost spiking. The exception is department stores, which as anchors negotiate better terms, although their weight has already fallen to 19.0% of GLA. ",
        false,
        false
       ],
@@ -252,7 +252,7 @@
     {
      "p": [
       [
-       "Mallplaza has the highest EBITDA per m² of the trio: CLP 59,451 in 2Q26 (quarterly, not annualized), versus 58,384 at Cenco and 55,363 at Parque Arauco, adjusted for its multifamily NOI (55,738 unadjusted; Figure 7). The advantage is 1.8% over Cenco and 7.4% over Parque Arauco. It stems from high-traffic urban locations, which in Chile received 52.7 million visits in the quarter versus 32.5 million at Cenco, and from monthly sales per m² 5.8% higher than a year earlier. The gap with Cenco is narrow and is partly explained by Cenco having added Plaza Central in June, with just one month of EBITDA in the quarter.",
+       "Mallplaza has the highest EBITDA per m² of the trio: CLP 59,451 in 2Q26 (quarterly, not annualized), versus 58,384 at Cenco and 55,363 at Parque Arauco, adjusted for its multifamily NOI (55,738 unadjusted; Figure 8). The advantage is 1.8% over Cenco and 7.4% over Parque Arauco. It stems from high-traffic urban locations, which in Chile received 52.7 million visits in the quarter versus 32.5 million at Cenco, and from monthly sales per m² 5.8% higher than a year earlier. The gap with Cenco is narrow and is partly explained by Cenco having added Plaza Central in June, with just one month of EBITDA in the quarter.",
        false,
        false
       ]
@@ -273,7 +273,7 @@
     {
      "p": [
       [
-       "That position is backed by long-duration leases. The weighted average remaining lease term at Mallplaza is 7.1 years and 57% of its GLA expires in more than five years (Figure 8), placing it between Cenco (8.7 years) and Parque Arauco (5.0 years) with a useful balance: it secures enough revenue to weather the supply pressure of 2027-2028 while leaving 15.1% of GLA expiring within two years to reset rents if demand allows.",
+       "That position is backed by long-duration leases. The weighted average remaining lease term at Mallplaza is 7.1 years and 57% of its GLA expires in more than five years (Figure 7), placing it between Cenco (8.7 years) and Parque Arauco (5.0 years) with a useful balance: it secures enough revenue to weather the supply pressure of 2027-2028 while leaving 15.1% of GLA expiring within two years to reset rents if demand allows.",
        false,
        false
       ]
@@ -345,7 +345,7 @@
      "ancla": 7
     },
     {
-     "n": "Figure 7:",
+     "n": "Figure 8:",
      "titulo": "EBITDA per m² of GLA, 2Q26 quarterly (CLP)",
      "fuente": [
       [
@@ -363,7 +363,7 @@
      "ancla": 11
     },
     {
-     "n": "Figure 8:",
+     "n": "Figure 7:",
      "titulo": "Lease expiry profile (% of GLA) and weighted average remaining term, 2Q26",
      "fuente": [
       [
@@ -404,7 +404,7 @@
        false
       ],
       [
-       " Figure 14 estimates, as a scenario and not as data, that operating ESG savings add about CLP 2 per share and that a 25 bp cut in the cost of debt and equity would add CLP 72 per share, against the CLP 1,478 gap between the target price and the share price. The ESG effect on value is therefore marginal; what matters for the thesis is corporate governance (see below).",
+       " Figure 10 estimates, as a scenario and not as data, that operating ESG savings add about CLP 2 per share and that a 25 bp cut in the cost of debt and equity would add CLP 72 per share, against the CLP 1,478 gap between the target price and the share price. The ESG effect on value is therefore marginal; what matters for the thesis is corporate governance (see below).",
        false,
        false
       ]
@@ -426,7 +426,7 @@
        false
       ],
       [
-       " reduce the energy intensity of common-area expenses by 22% by 2035 (35.5% progress in 2025; Figure 10) and reach 100% renewable electricity in 2026 (89.3% progress). In 2025, annual consumption was 0.16 MWh/m² of GLA, of which 0.14 renewable and 0.014 non-renewable (Figure 11). ",
+       " reduce the energy intensity of common-area expenses by 22% by 2035 (35.5% progress in 2025; Figure 11) and reach 100% renewable electricity in 2026 (89.3% progress). In 2025, annual consumption was 0.16 MWh/m² of GLA, of which 0.14 renewable and 0.014 non-renewable (Figure 12). ",
        false,
        false
       ],
@@ -456,7 +456,7 @@
        false
       ],
       [
-       " recover 60% of the waste generated in 2025 (46.2% recovered; the Annual Report reports 94.8% progress; Figure 11 and Appendix 6, Figure 6.4) and divert 75% of solid waste from landfills by 2027; it reports having eliminated 97% of single-use plastics. ",
+       " recover 60% of the waste generated in 2025 (46.2% recovered; the Annual Report reports 94.8% progress; Figure 12 and Appendix 6, Figure 6.4) and divert 75% of solid waste from landfills by 2027; it reports having eliminated 97% of single-use plastics. ",
        false,
        false
       ],
@@ -478,7 +478,7 @@
     {
      "p": [
       [
-       "The social dimension is built on a model of long-term ethical relationships (Appendix 6, Figure 6.3) and shared value creation that places stakeholders at the center, aligned with ISO 45001 and ILO guidelines; in 2025 the risk detection and response program of the human rights policy was added. PLAZA engages its stakeholders through community dialogues, materiality assessments and organizational culture surveys (Appendix 6, section 5), and has an integrity hotline for social incidents; CADEM ranked it 31st of 385 “Marcas Ciudadanas” (“Citizen Brands”) and first in the “Shopping Centers” category (2026). Employees receive training and programs for those nearing retirement, and suppliers are evaluated with sustainability criteria (55.3% of regional and 38.4% of foreign suppliers). With tenants it maintains a relationship model centered on value proposition and experience; their satisfaction, measured by NPS, rose to 13 points in 2025 (Figure 12). Each center has emergency manuals and runs drills (52 in 2025), and PLAZA implemented ISO/IEC 27001 for information security.",
+       "The social dimension is built on a model of long-term ethical relationships (Appendix 6, Figure 6.3) and shared value creation that places stakeholders at the center, aligned with ISO 45001 and ILO guidelines; in 2025 the risk detection and response program of the human rights policy was added. PLAZA engages its stakeholders through community dialogues, materiality assessments and organizational culture surveys (Appendix 6, section 5), and has an integrity hotline for social incidents; CADEM ranked it 31st of 385 “Marcas Ciudadanas” (“Citizen Brands”) and first in the “Shopping Centers” category (2026). Employees receive training and programs for those nearing retirement, and suppliers are evaluated with sustainability criteria (55.3% of regional and 38.4% of foreign suppliers). With tenants it maintains a relationship model centered on value proposition and experience; their satisfaction, measured by NPS, rose to 13 points in 2025 (Figure 13). Each center has emergency manuals and runs drills (52 in 2025), and PLAZA implemented ISO/IEC 27001 for information security.",
        false,
        false
       ]
@@ -487,7 +487,7 @@
     {
      "p": [
       [
-       "On diversity, women are 53.2% of the workforce and hold 42% of management positions (Figure 12), but a gender pay gap of 28% on average regionally persists and the Board has only one woman among 9 directors. The target for 2028 is for 60% of the properties to be certified as inclusive spaces, and PLAZA obtained the “Sello Mayor” (“Senior Seal”) at one of its centers, the first in Chile, which certifies physical and operational adaptation for older adults. As it expands, building to those parameters avoids future retrofitting costs and allows the transition of existing centers to begin.",
+       "On diversity, women are 53.2% of the workforce and hold 42% of management positions (Figure 13), but a gender pay gap of 28% on average regionally persists and the Board has only one woman among 9 directors. The target for 2028 is for 60% of the properties to be certified as inclusive spaces, and PLAZA obtained the “Sello Mayor” (“Senior Seal”) at one of its centers, the first in Chile, which certifies physical and operational adaptation for older adults. As it expands, building to those parameters avoids future retrofitting costs and allows the transition of existing centers to begin.",
        false,
        false
       ]
@@ -509,7 +509,7 @@
        false
       ],
       [
-       " the Board has 9 members and only one is independent (below 50%), which creates agency risk (Figure 13 and Appendix 6, Figure 6.2) and is the only unfavorable factor in the ESG risk matrix (Appendix 6, Figure 6.5). It defines objectives, strategy and policies; the directors' committee (3 members) reviews the financial statements and mitigates agency risks, and both oversee the risk management led by the executive committee and the CEO. In the second half of 2025, CEO Fernando de Peña Iver resigned effective at year-end, and Pablo Pulido Sierra took over in 2026. ",
+       " the Board has 9 members and only one is independent (below 50%), which creates agency risk (Figure 14 and Appendix 6, Figure 6.2) and is the only unfavorable factor in the ESG risk matrix (Appendix 6, Figure 6.5). It defines objectives, strategy and policies; the directors' committee (3 members) reviews the financial statements and mitigates agency risks, and both oversee the risk management led by the executive committee and the CEO. In the second half of 2025, CEO Fernando de Peña Iver resigned effective at year-end, and Pablo Pulido Sierra took over in 2026. ",
        false,
        false
       ],
@@ -519,7 +519,7 @@
        false
       ],
       [
-       "33.3% of executives' variable pay depends on ESG KPIs and 61% on non-financial metrics (Figure 13), which aligns incentives with ESG goals. ",
+       "33.3% of executives' variable pay depends on ESG KPIs and 61% on non-financial metrics (Figure 14), which aligns incentives with ESG goals. ",
        false,
        false
       ],
@@ -571,7 +571,7 @@
      "ancla": 0
     },
     {
-     "n": "Figure 10:",
+     "n": "Figure 11:",
      "titulo": "Environmental targets: progress to 2025.",
      "fuente": [
       [
@@ -584,7 +584,7 @@
      "ancla": 2
     },
     {
-     "n": "Figure 11:",
+     "n": "Figure 12:",
      "titulo": "Renewable energy and waste recovery, 2025.",
      "fuente": [
       [
@@ -597,7 +597,7 @@
      "ancla": 2
     },
     {
-     "n": "Figure 12:",
+     "n": "Figure 13:",
      "titulo": "Social indicators.",
      "fuente": [
       [
@@ -610,7 +610,7 @@
      "ancla": 4
     },
     {
-     "n": "Figure 13:",
+     "n": "Figure 14:",
      "titulo": "ESG incentives and Board composition.",
      "fuente": [
       [
@@ -623,7 +623,7 @@
      "ancla": 7
     },
     {
-     "n": "Figure 14:",
+     "n": "Figure 10:",
      "titulo": "ESG savings and lower cost of capital versus the share price (scenario).",
      "fuente": [
       [

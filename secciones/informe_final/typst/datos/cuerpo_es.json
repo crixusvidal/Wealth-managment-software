@@ -230,7 +230,7 @@
        false
       ],
       [
-       " es débil, dado que la ocupación en Chile llega a 96-99%, los contratos son largos (Figura 8) y los arrendatarios están atomizados, al punto que los cinco mayores explican solo el 18% de los ingresos de Mallplaza. Prueba de ello es que Mallplaza ha subido sus arriendos en Chile por sobre la inflación durante más de tres años (6,9% frente a 4,8% en promedio entre 1T23 y 2T26) sin que el costo de ocupación de sus locatarios se dispare. La excepción son las tiendas por departamento, que como anclas negocian mejores condiciones, aunque su peso ya bajó a 19,0% del GLA. Los ",
+       " es débil, dado que la ocupación en Chile llega a 96-99%, los contratos son largos (Figura 7) y los arrendatarios están atomizados, al punto que los cinco mayores explican solo el 18% de los ingresos de Mallplaza. Prueba de ello es que Mallplaza ha subido sus arriendos en Chile por sobre la inflación durante más de tres años (6,9% frente a 4,8% en promedio entre 1T23 y 2T26) sin que el costo de ocupación de sus locatarios se dispare. La excepción son las tiendas por departamento, que como anclas negocian mejores condiciones, aunque su peso ya bajó a 19,0% del GLA. Los ",
        false,
        false
       ],
@@ -262,7 +262,7 @@
     {
      "p": [
       [
-       "Mallplaza tiene el mayor EBITDA por m² del trío: CLP 59.451 en el 2T26 (trimestral, sin anualizar), frente a 58.384 de Cenco y 55.363 de Parque Arauco, ajustado por su NOI multifamily (55.738 sin ajuste; Figura 7). La ventaja es de 1,8% sobre Cenco y 7,4% sobre Parque Arauco. Nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de ventas mensuales por m² 5,8% mayores que un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
+       "Mallplaza tiene el mayor EBITDA por m² del trío: CLP 59.451 en el 2T26 (trimestral, sin anualizar), frente a 58.384 de Cenco y 55.363 de Parque Arauco, ajustado por su NOI multifamily (55.738 sin ajuste; Figura 8). La ventaja es de 1,8% sobre Cenco y 7,4% sobre Parque Arauco. Nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de ventas mensuales por m² 5,8% mayores que un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
        false,
        false
       ]
@@ -283,7 +283,7 @@
     {
      "p": [
       [
-       "Esa posición está respaldada por contratos de larga duración. El plazo promedio remanente de los contratos de Mallplaza es de 7,1 años y el 57% de su GLA vence en más de cinco años (Figura 8), lo que la ubica entre Cenco (8,7 años) y Parque Arauco (5,0 años) con un equilibrio útil, porque asegura ingresos suficientes para atravesar la presión de oferta de 2027-2028 y, al mismo tiempo, deja un 15,1% del GLA con vencimiento antes de dos años para reajustar arriendos si la demanda acompaña.",
+       "Esa posición está respaldada por contratos de larga duración. El plazo promedio remanente de los contratos de Mallplaza es de 7,1 años y el 57% de su GLA vence en más de cinco años (Figura 7), lo que la ubica entre Cenco (8,7 años) y Parque Arauco (5,0 años) con un equilibrio útil, porque asegura ingresos suficientes para atravesar la presión de oferta de 2027-2028 y, al mismo tiempo, deja un 15,1% del GLA con vencimiento antes de dos años para reajustar arriendos si la demanda acompaña.",
        false,
        false
       ]
@@ -355,7 +355,7 @@
      "ancla": 7
     },
     {
-     "n": "Figura 7:",
+     "n": "Figura 8:",
      "titulo": "EBITDA por m² de GLA, 2T26 trimestral (CLP)",
      "fuente": [
       [
@@ -373,7 +373,7 @@
      "ancla": 11
     },
     {
-     "n": "Figura 8:",
+     "n": "Figura 7:",
      "titulo": "Perfil de vencimiento de contratos (% del GLA) y duración promedio remanente, 2T26",
      "fuente": [
       [
@@ -399,7 +399,7 @@
     {
      "p": [
       [
-       "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura 9); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales REM de la región. ",
+       "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura 10); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales REM de la región. ",
        false,
        false
       ],
@@ -409,12 +409,12 @@
        false
       ],
       [
-       " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: en Chile, la ley de I+D (CORFO) permite hasta 55% de rebaja del impuesto de primera categoría; Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura 9).",
+       " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: en Chile, la ley de I+D (CORFO) permite hasta 55% de rebaja del impuesto de primera categoría; Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura 10).",
        false,
        false
       ],
       [
-       " La figura 14 estima, como escenario y no como dato, que los ahorros operativos ESG suman unos CLP 2 por acción y que una rebaja de 25 pb en el costo de la deuda y del capital propio aportaría CLP 72 por acción, frente a los CLP 1.478 que separan el precio objetivo del precio. El efecto ESG sobre el valor es, por lo tanto, marginal; lo relevante para la tesis es el gobierno corporativo (ver más abajo).",
+       " La figura 11 estima, como escenario y no como dato, que los ahorros operativos ESG suman unos CLP 2 por acción y que una rebaja de 25 pb en el costo de la deuda y del capital propio aportaría CLP 72 por acción, frente a los CLP 1.478 que separan el precio objetivo del precio. El efecto ESG sobre el valor es, por lo tanto, marginal; lo relevante para la tesis es el gobierno corporativo (ver más abajo).",
        false,
        false
       ]
@@ -436,7 +436,7 @@
        false
       ],
       [
-       " reducir 22% la intensidad energética del gasto común al 2035 (35,5% de avance a 2025; figura 10) y alcanzar 100% de electricidad renovable en 2026 (89,3% de avance). En 2025 el consumo anual fue 0,16 MWh/m² de GLA, de los cuales 0,14 renovable y 0,014 no renovable (figura 11). ",
+       " reducir 22% la intensidad energética del gasto común al 2035 (35,5% de avance a 2025; figura 9) y alcanzar 100% de electricidad renovable en 2026 (89,3% de avance). En 2025 el consumo anual fue 0,16 MWh/m² de GLA, de los cuales 0,14 renovable y 0,014 no renovable (figura 12). ",
        false,
        false
       ],
@@ -466,7 +466,7 @@
        false
       ],
       [
-       " valorizar 60% de los residuos generados en 2025 (46,2% valorizado; la Memoria informa 94,8% de avance; figura 11 y Anexo 6, figura 6.4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
+       " valorizar 60% de los residuos generados en 2025 (46,2% valorizado; la Memoria informa 94,8% de avance; figura 12 y Anexo 6, figura 6.4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
        false,
        false
       ],
@@ -488,7 +488,7 @@
     {
      "p": [
       [
-       "El ámbito social se articula en un modelo de relación ética de largo plazo (Anexo 6, figura 6.3) y de creación de valor compartido, que pone en el centro a los grupos de interés, alineado con la ISO 45001 y las directrices de la OIT; en 2025 se incorporó el programa de detección y respuesta ante riesgos de la política de derechos humanos. PLAZA gestiona a sus grupos de interés con diálogos comunitarios, evaluaciones de materialidad y encuestas de cultura organizacional (Anexo 6, sección 5), y cuenta con un canal de integridad para incidencias sociales; CADEM la ubicó en el puesto 31 de 385 «Marcas Ciudadanas» y primera en la categoría «Centros Comerciales» (2026). Los empleados reciben capacitación y programas para quienes se acercan a la jubilación, y se evalúa a los proveedores con criterios de sostenibilidad (55,3% de los regionales y 38,4% de los extranjeros). Con los arrendatarios mantiene un modelo de relacionamiento centrado en la propuesta de valor y la experiencia; su satisfacción, medida con el NPS, subió a 13 puntos en 2025 (figura 12). Cada centro tiene manuales de emergencia y realiza simulacros (52 en 2025), y PLAZA implementó la ISO/IEC 27001 en seguridad de la información.",
+       "El ámbito social se articula en un modelo de relación ética de largo plazo (Anexo 6, figura 6.3) y de creación de valor compartido, que pone en el centro a los grupos de interés, alineado con la ISO 45001 y las directrices de la OIT; en 2025 se incorporó el programa de detección y respuesta ante riesgos de la política de derechos humanos. PLAZA gestiona a sus grupos de interés con diálogos comunitarios, evaluaciones de materialidad y encuestas de cultura organizacional (Anexo 6, sección 5), y cuenta con un canal de integridad para incidencias sociales; CADEM la ubicó en el puesto 31 de 385 «Marcas Ciudadanas» y primera en la categoría «Centros Comerciales» (2026). Los empleados reciben capacitación y programas para quienes se acercan a la jubilación, y se evalúa a los proveedores con criterios de sostenibilidad (55,3% de los regionales y 38,4% de los extranjeros). Con los arrendatarios mantiene un modelo de relacionamiento centrado en la propuesta de valor y la experiencia; su satisfacción, medida con el NPS, subió a 13 puntos en 2025 (figura 13). Cada centro tiene manuales de emergencia y realiza simulacros (52 en 2025), y PLAZA implementó la ISO/IEC 27001 en seguridad de la información.",
        false,
        false
       ]
@@ -497,7 +497,7 @@
     {
      "p": [
       [
-       "En diversidad, las mujeres son 53,2% de la fuerza laboral y ocupan 42% de los cargos directivos (figura 12), pero persiste una brecha salarial de género de 28% en promedio regional y el Directorio tiene una sola mujer entre 9 directores. La meta al 2028 es que 60% de los establecimientos estén certificados como espacios inclusivos, y PLAZA obtuvo el «Sello Mayor» en uno de sus centros, el primero de Chile, que certifica la adaptación física y operacional para personas mayores. Al expandirse, construir bajo esos parámetros evita costos futuros de adaptación y permite iniciar la transición de los centros existentes.",
+       "En diversidad, las mujeres son 53,2% de la fuerza laboral y ocupan 42% de los cargos directivos (figura 13), pero persiste una brecha salarial de género de 28% en promedio regional y el Directorio tiene una sola mujer entre 9 directores. La meta al 2028 es que 60% de los establecimientos estén certificados como espacios inclusivos, y PLAZA obtuvo el «Sello Mayor» en uno de sus centros, el primero de Chile, que certifica la adaptación física y operacional para personas mayores. Al expandirse, construir bajo esos parámetros evita costos futuros de adaptación y permite iniciar la transición de los centros existentes.",
        false,
        false
       ]
@@ -519,7 +519,7 @@
        false
       ],
       [
-       " el Directorio tiene 9 miembros y solo uno es independiente (menos de 50%), lo que genera riesgo de agencia (figura 13 y Anexo 6, figura 6.2) y es el único factor desfavorable de la matriz de riesgo ESG (Anexo 6, figura 6.5). Define objetivos, estrategia y políticas; el comité de directores (3 integrantes) revisa los estados financieros y mitiga los riesgos de agencia, y ambos supervisan la gestión de riesgos que dirigen el comité ejecutivo y el gerente general. En el segundo semestre de 2025 el gerente general Fernando de Peña Iver renunció con efecto al cierre del año, y en 2026 asumió Pablo Pulido Sierra. ",
+       " el Directorio tiene 9 miembros y solo uno es independiente (menos de 50%), lo que genera riesgo de agencia (figura 14 y Anexo 6, figura 6.2) y es el único factor desfavorable de la matriz de riesgo ESG (Anexo 6, figura 6.5). Define objetivos, estrategia y políticas; el comité de directores (3 integrantes) revisa los estados financieros y mitiga los riesgos de agencia, y ambos supervisan la gestión de riesgos que dirigen el comité ejecutivo y el gerente general. En el segundo semestre de 2025 el gerente general Fernando de Peña Iver renunció con efecto al cierre del año, y en 2026 asumió Pablo Pulido Sierra. ",
        false,
        false
       ],
@@ -529,7 +529,7 @@
        false
       ],
       [
-       "33,3% de la remuneración variable de los ejecutivos depende de KPIs ESG y 61% de métricas no financieras (figura 13), lo que alinea los incentivos con las metas ESG. ",
+       "33,3% de la remuneración variable de los ejecutivos depende de KPIs ESG y 61% de métricas no financieras (figura 14), lo que alinea los incentivos con las metas ESG. ",
        false,
        false
       ],
@@ -568,7 +568,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 9:",
+     "n": "Figura 10:",
      "titulo": "Puntaje ESG de Bloomberg y ratings externos.",
      "fuente": [
       [
@@ -581,7 +581,7 @@
      "ancla": 0
     },
     {
-     "n": "Figura 10:",
+     "n": "Figura 9:",
      "titulo": "Metas ambientales: avance a 2025.",
      "fuente": [
       [
@@ -594,7 +594,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 11:",
+     "n": "Figura 12:",
      "titulo": "Energía renovable y valorización de residuos, 2025.",
      "fuente": [
       [
@@ -607,7 +607,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 12:",
+     "n": "Figura 13:",
      "titulo": "Indicadores sociales.",
      "fuente": [
       [
@@ -620,7 +620,7 @@
      "ancla": 4
     },
     {
-     "n": "Figura 13:",
+     "n": "Figura 14:",
      "titulo": "Incentivos ESG y composición del Directorio.",
      "fuente": [
       [
@@ -633,7 +633,7 @@
      "ancla": 7
     },
     {
-     "n": "Figura 14:",
+     "n": "Figura 11:",
      "titulo": "Ahorros ESG y menor costo de capital frente al precio de la acción (escenario).",
      "fuente": [
       [
