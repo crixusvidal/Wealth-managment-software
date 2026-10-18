@@ -102,7 +102,7 @@ Eliminadas por esta regla: figuras sueltas de Riesgos (`matriz_riesgo`, `tornado
 
 | # | Tema | Dónde | Estado |
 |---|---|---|---|
-| 1 | Numeración de figuras y anexos | Todas | Resuelto en el informe consolidado (`informe_final/`): figuras 1–36 y anexos 1–18 de corrido; cada sección conserva su numeración propia y `informe_final.js` la traduce con un mapa por sección |
+| 1 | Numeración de figuras y anexos | Todas | Resuelto en el informe consolidado (`informe_final/`): figuras 1–34 y anexos 1–20 de corrido; cada sección conserva su numeración propia y `informe_final.js` la traduce con un mapa por sección |
 | 2 | Kd: cupón (3,6%) vs tasa efectiva de la última emisión (4,33%) | Valuación vs FA | Con 4,33% la WACC sube 12 pb y el precio objetivo baja a ~CLP 2.042 (el texto usa el valor recalculado en cifras.json). Ideal: YTM de Bloomberg (YAS) |
 | 3 | IRSA dentro del set de pares | Valuación | Incluida (modelo v4). Si se excluye: múltiplo 14,0x, precio objetivo ~CLP 2.059 (por recalcular) |
 | 4 | Fecha de valoración (30-jun) vs precio (30-sep) | Valuación | Llevar el DCF al 30-sep → ~CLP 2.119. No aplicado |

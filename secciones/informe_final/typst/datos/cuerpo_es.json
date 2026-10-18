@@ -54,7 +54,7 @@
     {
      "p": [
       [
-       "Ese poder de precio descansa en un mix de locatarios renovado. Las tiendas por departamento, que en 2020 ocupaban 26,7% del GLA, bajaron a 19,0% en 2T26, luego de que Mallplaza reconvirtiera desde 2019 cerca de 146.000 m² de grandes tiendas hacia marcas como IKEA, H&M y Decathlon (Figura 2). Hoy el 32,2% del GLA se destina a comercio esencial y servicios de tráfico diario (supermercados, mejoramiento del hogar, servicios públicos, salud), que generan visitas frecuentes, y otro 21,5% a retail de especialidad. Ningún cliente domina los ingresos, ya que los cinco mayores locatarios suman 18% y las empresas relacionadas, 15,7%. A esto se suma una estructura de costos reducida: costo de ventas de 6,2% de los ingresos y gastos de administración de 13,9%, que dejan un margen EBITDA de 80,5% UDM.",
+       "Ese poder de precio descansa en un mix de locatarios renovado. Las tiendas por departamento, que en 2020 ocupaban 26,7% del GLA, bajaron a 19,0% en 2T26, luego de que Mallplaza reconvirtiera desde 2019 cerca de 146.000 m² de grandes tiendas hacia marcas como IKEA, H&M y Decathlon (Anexo 2). Hoy el 32,2% del GLA se destina a comercio esencial y servicios de tráfico diario (supermercados, mejoramiento del hogar, servicios públicos, salud), que generan visitas frecuentes, y otro 21,5% a retail de especialidad. Ningún cliente domina los ingresos, ya que los cinco mayores locatarios suman 18% y las empresas relacionadas, 15,7%. A esto se suma una estructura de costos reducida: costo de ventas de 6,2% de los ingresos y gastos de administración de 13,9%, que dejan un margen EBITDA de 80,5% UDM.",
        false,
        false
       ]
@@ -66,7 +66,7 @@
     {
      "p": [
       [
-       "El crecimiento se concentra en sus mejores activos. Diez centros, siete en Chile, dos en Colombia y uno en Perú, son Tier A, y con 46,4% del GLA generan más del 60% del EBITDA (Figura 3). Hacia ellos apunta la inversión, pues las ampliaciones en construcción de Trébol, Oeste, Norte, Trujillo y La Serena buscan llevar los activos Tier A a más del 70% del GLA. Es un activo excelente; la pregunta siguiente es cuán defendible es su posición frente a la competencia.",
+       "El crecimiento se concentra en sus mejores activos. Diez centros, siete en Chile, dos en Colombia y uno en Perú, son Tier A, y con 46,4% del GLA generan más del 60% del EBITDA (Anexo 1). Hacia ellos apunta la inversión, pues las ampliaciones en construcción de Trébol, Oeste, Norte, Trujillo y La Serena buscan llevar los activos Tier A a más del 70% del GLA. Es un activo excelente; la pregunta siguiente es cuán defendible es su posición frente a la competencia.",
        false,
        false
       ]
@@ -91,42 +91,6 @@
      ],
      "archivo": "/negocio/graficos/figuras/es_N1_mapa.png",
      "ancla": 1
-    },
-    {
-     "n": "Figura 2:",
-     "titulo": "Tiendas por departamento, % del GLA total",
-     "fuente": [
-      [
-       "Fuente: ",
-       false,
-       false
-      ],
-      [
-       "Plaza S.A., Presentación Institucional 2Q26 (p.17).",
-       false,
-       true
-      ]
-     ],
-     "archivo": "/negocio/graficos/figuras/es_NB_tiendas_departamento.png",
-     "ancla": 3
-    },
-    {
-     "n": "Figura 3:",
-     "titulo": "Activos Tier A por GLA, 2T26 (miles de m²)",
-     "fuente": [
-      [
-       "Fuente: ",
-       false,
-       false
-      ],
-      [
-       "Plaza S.A., Presentación Institucional 2Q26 (p.12). Tier A = 46,4% del GLA total.",
-       false,
-       true
-      ]
-     ],
-     "archivo": "/negocio/graficos/figuras/es_NA_activos_tier_a.png",
-     "ancla": 5
     }
    ]
   },
@@ -149,7 +113,7 @@
     {
      "p": [
       [
-       "La estructura del mercado, sin embargo, cambia de un país a otro (Figura 4). En Chile el trío concentra el 76% del GLA de los principales operadores (CR3) y el índice de concentración HHI parcial alcanza al menos 2.126 puntos, propio de un mercado altamente concentrado, con Mallplaza como líder (33%) seguido de Cenco (29%) y Parque Arauco (14%). En Perú y Colombia, en cambio, el trío reúne apenas el 37% y el 13% del GLA, el liderazgo lo ejerce un operador externo con 29% y 9%, respectivamente, y Mallplaza ocupa el segundo lugar en ambos mercados. En Perú ese líder es Real Plaza (InRetail), con 888.000 m² frente a 618.093 m² de Mallplaza, que aun así genera más EBITDA por m² (S/ 159 frente a S/ 148 en el 2T26). La fragmentación es mayor en Colombia, donde la mayoría de los centros comerciales es de propiedad horizontal, lo que obliga a los operadores profesionales a crecer comprando activos de dueño único, como hará Mallplaza con Gran Plaza (179.667 m², adquisición anunciada).",
+       "La estructura del mercado, sin embargo, cambia de un país a otro (Figura 2). En Chile el trío concentra el 76% del GLA de los principales operadores (CR3) y el índice de concentración HHI parcial alcanza al menos 2.126 puntos, propio de un mercado altamente concentrado, con Mallplaza como líder (33%) seguido de Cenco (29%) y Parque Arauco (14%). En Perú y Colombia, en cambio, el trío reúne apenas el 37% y el 13% del GLA, el liderazgo lo ejerce un operador externo con 29% y 9%, respectivamente, y Mallplaza ocupa el segundo lugar en ambos mercados. En Perú ese líder es Real Plaza (InRetail), con 888.000 m² frente a 618.093 m² de Mallplaza, que aun así genera más EBITDA por m² (S/ 159 frente a S/ 148 en el 2T26). La fragmentación es mayor en Colombia, donde la mayoría de los centros comerciales es de propiedad horizontal, lo que obliga a los operadores profesionales a crecer comprando activos de dueño único, como hará Mallplaza con Gran Plaza (179.667 m², adquisición anunciada).",
        false,
        false
       ]
@@ -161,7 +125,7 @@
     {
      "p": [
       [
-       "Entre 2026 y 2028 el trío agregará en Chile 219.900 m² orgánicos que competirán por el gasto de los consumidores, equivalentes al 5,1% del GLA de los principales operadores en Chile. Ese GLA (≈4,3 millones de m²) resulta de dividir el GLA del trío sin oficinas (3,29 millones) por su participación de 76% (supuestos en el Anexo 5); medir la oferta sobre el GLA del propio trío (6,7%) sobrestimaría la presión, porque excluye a los demás operadores. La cifra excluye las oficinas y el multifamily, que no dependen del consumo, y las adquisiciones, que solo cambian de dueño (detalle en el Anexo 1). En el mismo período el Banco Central proyecta un crecimiento real acumulado de 6,4% del consumo privado (Figura 5), de modo que la oferta nueva avanza por debajo de la demanda esperada. El calendario no es parejo: 2026 casi no suma metros (+0,2%) y la presión se concentra en 2027, cuando la oferta (+2,2%) apenas supera al consumo (+2,1%); en 2028 vuelve a quedar bajo él (+2,6% frente a +2,7%). Solo medimos la oferta del trío, cuyo pipeline es público: si los demás operadores abren m² adicionales, la presión sería mayor.",
+       "Entre 2026 y 2028 el trío agregará en Chile 219.900 m² orgánicos que competirán por el gasto de los consumidores, equivalentes al 5,1% del GLA de los principales operadores en Chile. Ese GLA (≈4,3 millones de m²) resulta de dividir el GLA del trío sin oficinas (3,29 millones) por su participación de 76% (supuestos en el Anexo 7); medir la oferta sobre el GLA del propio trío (6,7%) sobrestimaría la presión, porque excluye a los demás operadores. La cifra excluye las oficinas y el multifamily, que no dependen del consumo, y las adquisiciones, que solo cambian de dueño (detalle en el Anexo 3). En el mismo período el Banco Central proyecta un crecimiento real acumulado de 6,4% del consumo privado (Figura 3), de modo que la oferta nueva avanza por debajo de la demanda esperada. El calendario no es parejo: 2026 casi no suma metros (+0,2%) y la presión se concentra en 2027, cuando la oferta (+2,2%) apenas supera al consumo (+2,1%); en 2028 vuelve a quedar bajo él (+2,6% frente a +2,7%). Solo medimos la oferta del trío, cuyo pipeline es público: si los demás operadores abren m² adicionales, la presión sería mayor.",
        false,
        false
       ]
@@ -170,7 +134,7 @@
     {
      "p": [
       [
-       "El punto de partida es débil: en el 2T26 las ventas reales de los locatarios del trío en Chile cayeron 2,5% a/a. Mallplaza fue la única que creció en términos reales (+1,0%), frente a las caídas de Parque Arauco (−1,7%) y Cenco (−5,9%). Aun así, los locatarios siguen demandando espacio, y la ocupación consolidada de las tres empresas se ha movido entre 93% y 99% desde el 2T22, incluso durante el ciclo de inflación y tasas altas (Anexo 2). Fuera de Chile el balance es más holgado, ya que la oferta nueva con fecha se limita a ampliaciones de Mallplaza en Perú (55.800 m²), es prácticamente nula en Colombia y convive con ventas en mismas tiendas (SSS) de Mallplaza que crecieron 7,0% en Perú y 9,0% en Colombia (nominales, en moneda local).",
+       "El punto de partida es débil: en el 2T26 las ventas reales de los locatarios del trío en Chile cayeron 2,5% a/a. Mallplaza fue la única que creció en términos reales (+1,0%), frente a las caídas de Parque Arauco (−1,7%) y Cenco (−5,9%). Aun así, los locatarios siguen demandando espacio, y la ocupación consolidada de las tres empresas se ha movido entre 93% y 99% desde el 2T22, incluso durante el ciclo de inflación y tasas altas (Anexo 4). Fuera de Chile el balance es más holgado, ya que la oferta nueva con fecha se limita a ampliaciones de Mallplaza en Perú (55.800 m²), es prácticamente nula en Colombia y convive con ventas en mismas tiendas (SSS) de Mallplaza que crecieron 7,0% en Perú y 9,0% en Colombia (nominales, en moneda local).",
        false,
        false
       ]
@@ -182,7 +146,7 @@
     {
      "p": [
       [
-       "Para evaluar el atractivo de la industria analizamos las cinco fuerzas de Porter en cada país, en una escala de 1 (débil) a 5 (intensa), y las ponderamos por el GLA de Mallplaza en Chile (62%), Perú (26%) y Colombia (12%) (Figura 6; evidencia en Anexo 4). El resultado describe una industria atractiva, coherente con márgenes EBITDA de 71% a 90% en los tres operadores.",
+       "Para evaluar el atractivo de la industria analizamos las cinco fuerzas de Porter en cada país, en una escala de 1 (débil) a 5 (intensa), y las ponderamos por el GLA de Mallplaza en Chile (62%), Perú (26%) y Colombia (12%) (Figura 4; evidencia en Anexo 6). El resultado describe una industria atractiva, coherente con márgenes EBITDA de 71% a 90% en los tres operadores.",
        false,
        false
       ]
@@ -201,7 +165,7 @@
        false
       ],
       [
-       " no se juega en precio, sino en experiencia y en activos. No hay señales de guerra de precios, ya que en el 2T26 los tres operadores subieron sus arriendos nominales en mismas tiendas en Chile (Mallplaza +5,4%, Parque Arauco +3,8% y Cenco +0,8%, este último afectado por un menor arriendo variable ligado a las ventas), con una ocupación de 96-99% que no deja espacio vacío que llenar con descuentos (Anexo 4, tabla B). Mallplaza destina más de la mitad de su GLA a formatos no tradicionales, experiencia y entretención, Cenco abrió QINTO (30.000 m² de gastronomía) y Parque Arauco suma pisos gastronómicos en Kennedy, y la competencia por comprar activos se intensifica (Minka y Plaza Central cambiaron de dueño; Parque Arauco anunció Quilín y Chicureo). No le asignamos la nota máxima porque las participaciones del trío en Chile se mantienen estables desde el 2T22 (Anexo 3) y los márgenes no muestran erosión.",
+       " no se juega en precio, sino en experiencia y en activos. No hay señales de guerra de precios, ya que en el 2T26 los tres operadores subieron sus arriendos nominales en mismas tiendas en Chile (Mallplaza +5,4%, Parque Arauco +3,8% y Cenco +0,8%, este último afectado por un menor arriendo variable ligado a las ventas), con una ocupación de 96-99% que no deja espacio vacío que llenar con descuentos (Anexo 6, tabla B). Mallplaza destina más de la mitad de su GLA a formatos no tradicionales, experiencia y entretención, Cenco abrió QINTO (30.000 m² de gastronomía) y Parque Arauco suma pisos gastronómicos en Kennedy, y la competencia por comprar activos se intensifica (Minka y Plaza Central cambiaron de dueño; Parque Arauco anunció Quilín y Chicureo). No le asignamos la nota máxima porque las participaciones del trío en Chile se mantienen estables desde el 2T22 (Anexo 5) y los márgenes no muestran erosión.",
        false,
        false
       ]
@@ -230,7 +194,7 @@
        false
       ],
       [
-       " es débil, dado que la ocupación en Chile llega a 96-99%, los contratos son largos (Figura 7) y los arrendatarios están atomizados, al punto que los cinco mayores explican solo el 18% de los ingresos de Mallplaza. Prueba de ello es que Mallplaza ha subido sus arriendos en Chile por sobre la inflación durante más de tres años (6,9% frente a 4,8% en promedio entre 1T23 y 2T26) sin que el costo de ocupación de sus locatarios se dispare. La excepción son las tiendas por departamento, que como anclas negocian mejores condiciones, aunque su peso ya bajó a 19,0% del GLA. Los ",
+       " es débil, dado que la ocupación en Chile llega a 96-99%, los contratos son largos (Figura 5) y los arrendatarios están atomizados, al punto que los cinco mayores explican solo el 18% de los ingresos de Mallplaza. Prueba de ello es que Mallplaza ha subido sus arriendos en Chile por sobre la inflación durante más de tres años (6,9% frente a 4,8% en promedio entre 1T23 y 2T26) sin que el costo de ocupación de sus locatarios se dispare. La excepción son las tiendas por departamento, que como anclas negocian mejores condiciones, aunque su peso ya bajó a 19,0% del GLA. Los ",
        false,
        false
       ],
@@ -262,7 +226,7 @@
     {
      "p": [
       [
-       "Mallplaza tiene el mayor EBITDA por m² del trío: CLP 59.451 en el 2T26 (trimestral, sin anualizar), frente a 58.384 de Cenco y 55.363 de Parque Arauco, ajustado por su NOI multifamily (55.738 sin ajuste; Figura 8). La ventaja es de 1,8% sobre Cenco y 7,4% sobre Parque Arauco. Nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de ventas mensuales por m² 5,8% mayores que un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
+       "Mallplaza tiene el mayor EBITDA por m² del trío: CLP 59.451 en el 2T26 (trimestral, sin anualizar), frente a 58.384 de Cenco y 55.363 de Parque Arauco, ajustado por su NOI multifamily (55.738 sin ajuste; Figura 6). La ventaja es de 1,8% sobre Cenco y 7,4% sobre Parque Arauco. Nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de ventas mensuales por m² 5,8% mayores que un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
        false,
        false
       ]
@@ -283,7 +247,7 @@
     {
      "p": [
       [
-       "Esa posición está respaldada por contratos de larga duración. El plazo promedio remanente de los contratos de Mallplaza es de 7,1 años y el 57% de su GLA vence en más de cinco años (Figura 7), lo que la ubica entre Cenco (8,7 años) y Parque Arauco (5,0 años) con un equilibrio útil, porque asegura ingresos suficientes para atravesar la presión de oferta de 2027-2028 y, al mismo tiempo, deja un 15,1% del GLA con vencimiento antes de dos años para reajustar arriendos si la demanda acompaña.",
+       "Esa posición está respaldada por contratos de larga duración. El plazo promedio remanente de los contratos de Mallplaza es de 7,1 años y el 57% de su GLA vence en más de cinco años (Figura 5), lo que la ubica entre Cenco (8,7 años) y Parque Arauco (5,0 años) con un equilibrio útil, porque asegura ingresos suficientes para atravesar la presión de oferta de 2027-2028 y, al mismo tiempo, deja un 15,1% del GLA con vencimiento antes de dos años para reajustar arriendos si la demanda acompaña.",
        false,
        false
       ]
@@ -301,7 +265,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 4:",
+     "n": "Figura 2:",
      "titulo": "Participación de mercado por GLA y concentración, 2T26",
      "fuente": [
       [
@@ -319,7 +283,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 5:",
+     "n": "Figura 3:",
      "titulo": "Oferta nueva de GLA en Chile vs consumo privado esperado, 2026-2028",
      "fuente": [
       [
@@ -337,7 +301,7 @@
      "ancla": 4
     },
     {
-     "n": "Figura 6:",
+     "n": "Figura 4:",
      "titulo": "Cinco fuerzas de Porter, escala 1-5",
      "fuente": [
       [
@@ -346,7 +310,7 @@
        false
       ],
       [
-       "análisis del equipo con datos de reportes del 2T26 (Anexo 4). 1 = fuerza débil; 5 = fuerza intensa.",
+       "análisis del equipo con datos de reportes del 2T26 (Anexo 6). 1 = fuerza débil; 5 = fuerza intensa.",
        false,
        true
       ]
@@ -355,7 +319,7 @@
      "ancla": 7
     },
     {
-     "n": "Figura 8:",
+     "n": "Figura 6:",
      "titulo": "EBITDA por m² de GLA, 2T26 trimestral (CLP)",
      "fuente": [
       [
@@ -373,7 +337,7 @@
      "ancla": 11
     },
     {
-     "n": "Figura 7:",
+     "n": "Figura 5:",
      "titulo": "Perfil de vencimiento de contratos (% del GLA) y duración promedio remanente, 2T26",
      "fuente": [
       [
@@ -399,7 +363,7 @@
     {
      "p": [
       [
-       "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura 10); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales REM de la región. ",
+       "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura 8); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales REM de la región. ",
        false,
        false
       ],
@@ -409,12 +373,12 @@
        false
       ],
       [
-       " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: en Chile, la ley de I+D (CORFO) permite hasta 55% de rebaja del impuesto de primera categoría; Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura 10).",
+       " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: en Chile, la ley de I+D (CORFO) permite hasta 55% de rebaja del impuesto de primera categoría; Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura 8).",
        false,
        false
       ],
       [
-       " La figura 11 estima, como escenario y no como dato, que los ahorros operativos ESG suman unos CLP 2 por acción y que una rebaja de 25 pb en el costo de la deuda y del capital propio aportaría CLP 72 por acción, frente a los CLP 1.478 que separan el precio objetivo del precio. El efecto ESG sobre el valor es, por lo tanto, marginal; lo relevante para la tesis es el gobierno corporativo (ver más abajo).",
+       " La figura 9 estima, como escenario y no como dato, que los ahorros operativos ESG suman unos CLP 2 por acción y que una rebaja de 25 pb en el costo de la deuda y del capital propio aportaría CLP 72 por acción, frente a los CLP 1.478 que separan el precio objetivo del precio. El efecto ESG sobre el valor es, por lo tanto, marginal; lo relevante para la tesis es el gobierno corporativo (ver más abajo).",
        false,
        false
       ]
@@ -436,7 +400,7 @@
        false
       ],
       [
-       " reducir 22% la intensidad energética del gasto común al 2035 (35,5% de avance a 2025; figura 9) y alcanzar 100% de electricidad renovable en 2026 (89,3% de avance). En 2025 el consumo anual fue 0,16 MWh/m² de GLA, de los cuales 0,14 renovable y 0,014 no renovable (figura 12). ",
+       " reducir 22% la intensidad energética del gasto común al 2035 (35,5% de avance a 2025; figura 7) y alcanzar 100% de electricidad renovable en 2026 (89,3% de avance). En 2025 el consumo anual fue 0,16 MWh/m² de GLA, de los cuales 0,14 renovable y 0,014 no renovable (figura 10). ",
        false,
        false
       ],
@@ -466,7 +430,7 @@
        false
       ],
       [
-       " valorizar 60% de los residuos generados en 2025 (46,2% valorizado; la Memoria informa 94,8% de avance; figura 12 y Anexo 6, figura 6.4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
+       " valorizar 60% de los residuos generados en 2025 (46,2% valorizado; la Memoria informa 94,8% de avance; figura 10 y Anexo 8, figura 8.4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
        false,
        false
       ],
@@ -488,7 +452,7 @@
     {
      "p": [
       [
-       "El ámbito social se articula en un modelo de relación ética de largo plazo (Anexo 6, figura 6.3) y de creación de valor compartido, que pone en el centro a los grupos de interés, alineado con la ISO 45001 y las directrices de la OIT; en 2025 se incorporó el programa de detección y respuesta ante riesgos de la política de derechos humanos. PLAZA gestiona a sus grupos de interés con diálogos comunitarios, evaluaciones de materialidad y encuestas de cultura organizacional (Anexo 6, sección 5), y cuenta con un canal de integridad para incidencias sociales; CADEM la ubicó en el puesto 31 de 385 «Marcas Ciudadanas» y primera en la categoría «Centros Comerciales» (2026). Los empleados reciben capacitación y programas para quienes se acercan a la jubilación, y se evalúa a los proveedores con criterios de sostenibilidad (55,3% de los regionales y 38,4% de los extranjeros). Con los arrendatarios mantiene un modelo de relacionamiento centrado en la propuesta de valor y la experiencia; su satisfacción, medida con el NPS, subió a 13 puntos en 2025 (figura 13). Cada centro tiene manuales de emergencia y realiza simulacros (52 en 2025), y PLAZA implementó la ISO/IEC 27001 en seguridad de la información.",
+       "El ámbito social se articula en un modelo de relación ética de largo plazo (Anexo 8, figura 8.3) y de creación de valor compartido, que pone en el centro a los grupos de interés, alineado con la ISO 45001 y las directrices de la OIT; en 2025 se incorporó el programa de detección y respuesta ante riesgos de la política de derechos humanos. PLAZA gestiona a sus grupos de interés con diálogos comunitarios, evaluaciones de materialidad y encuestas de cultura organizacional (Anexo 8, sección 5), y cuenta con un canal de integridad para incidencias sociales; CADEM la ubicó en el puesto 31 de 385 «Marcas Ciudadanas» y primera en la categoría «Centros Comerciales» (2026). Los empleados reciben capacitación y programas para quienes se acercan a la jubilación, y se evalúa a los proveedores con criterios de sostenibilidad (55,3% de los regionales y 38,4% de los extranjeros). Con los arrendatarios mantiene un modelo de relacionamiento centrado en la propuesta de valor y la experiencia; su satisfacción, medida con el NPS, subió a 13 puntos en 2025 (figura 11). Cada centro tiene manuales de emergencia y realiza simulacros (52 en 2025), y PLAZA implementó la ISO/IEC 27001 en seguridad de la información.",
        false,
        false
       ]
@@ -497,7 +461,7 @@
     {
      "p": [
       [
-       "En diversidad, las mujeres son 53,2% de la fuerza laboral y ocupan 42% de los cargos directivos (figura 13), pero persiste una brecha salarial de género de 28% en promedio regional y el Directorio tiene una sola mujer entre 9 directores. La meta al 2028 es que 60% de los establecimientos estén certificados como espacios inclusivos, y PLAZA obtuvo el «Sello Mayor» en uno de sus centros, el primero de Chile, que certifica la adaptación física y operacional para personas mayores. Al expandirse, construir bajo esos parámetros evita costos futuros de adaptación y permite iniciar la transición de los centros existentes.",
+       "En diversidad, las mujeres son 53,2% de la fuerza laboral y ocupan 42% de los cargos directivos (figura 11), pero persiste una brecha salarial de género de 28% en promedio regional y el Directorio tiene una sola mujer entre 9 directores. La meta al 2028 es que 60% de los establecimientos estén certificados como espacios inclusivos, y PLAZA obtuvo el «Sello Mayor» en uno de sus centros, el primero de Chile, que certifica la adaptación física y operacional para personas mayores. Al expandirse, construir bajo esos parámetros evita costos futuros de adaptación y permite iniciar la transición de los centros existentes.",
        false,
        false
       ]
@@ -519,7 +483,7 @@
        false
       ],
       [
-       " el Directorio tiene 9 miembros y solo uno es independiente (menos de 50%), lo que genera riesgo de agencia (figura 14 y Anexo 6, figura 6.2) y es el único factor desfavorable de la matriz de riesgo ESG (Anexo 6, figura 6.5). Define objetivos, estrategia y políticas; el comité de directores (3 integrantes) revisa los estados financieros y mitiga los riesgos de agencia, y ambos supervisan la gestión de riesgos que dirigen el comité ejecutivo y el gerente general. En el segundo semestre de 2025 el gerente general Fernando de Peña Iver renunció con efecto al cierre del año, y en 2026 asumió Pablo Pulido Sierra. ",
+       " el Directorio tiene 9 miembros y solo uno es independiente (menos de 50%), lo que genera riesgo de agencia (figura 12 y Anexo 8, figura 8.2) y es el único factor desfavorable de la matriz de riesgo ESG (Anexo 8, figura 8.5). Define objetivos, estrategia y políticas; el comité de directores (3 integrantes) revisa los estados financieros y mitiga los riesgos de agencia, y ambos supervisan la gestión de riesgos que dirigen el comité ejecutivo y el gerente general. En el segundo semestre de 2025 el gerente general Fernando de Peña Iver renunció con efecto al cierre del año, y en 2026 asumió Pablo Pulido Sierra. ",
        false,
        false
       ],
@@ -529,7 +493,7 @@
        false
       ],
       [
-       "33,3% de la remuneración variable de los ejecutivos depende de KPIs ESG y 61% de métricas no financieras (figura 14), lo que alinea los incentivos con las metas ESG. ",
+       "33,3% de la remuneración variable de los ejecutivos depende de KPIs ESG y 61% de métricas no financieras (figura 12), lo que alinea los incentivos con las metas ESG. ",
        false,
        false
       ],
@@ -539,7 +503,7 @@
        false
       ],
       [
-       "el control es concentrado: Falabella S.A., por medio de Desarrollos Inmobiliarios SpA, posee 53,1% de las acciones (Anexo 6, figura 6.1); los minoritarios con 1% pueden proponer candidatos a director, y la junta de accionistas elige al directorio y a los auditores externos y aprueba la política de dividendos. ",
+       "el control es concentrado: Falabella S.A., por medio de Desarrollos Inmobiliarios SpA, posee 53,1% de las acciones (Anexo 8, figura 8.1); los minoritarios con 1% pueden proponer candidatos a director, y la junta de accionistas elige al directorio y a los auditores externos y aprueba la política de dividendos. ",
        false,
        false
       ],
@@ -549,7 +513,7 @@
        false
       ],
       [
-       " el código de integridad y el modelo de prevención del delito guían la conducta; PLAZA opera la plataforma Autocompliance (reuniones con funcionarios públicos, regalos e invitaciones) y un canal de integridad confidencial. En 2025 reportó casos de incumplimiento y denuncias a nivel regional, relacionados con trabajadores y clientes, pero ninguno de corrupción ni contra el desarrollo del mercado (Anexo 6, sección 3). El comité de directores supervisa una auditoría interna que le reporta cada mes y designa a los auditores externos y a las clasificadoras de riesgo. ",
+       " el código de integridad y el modelo de prevención del delito guían la conducta; PLAZA opera la plataforma Autocompliance (reuniones con funcionarios públicos, regalos e invitaciones) y un canal de integridad confidencial. En 2025 reportó casos de incumplimiento y denuncias a nivel regional, relacionados con trabajadores y clientes, pero ninguno de corrupción ni contra el desarrollo del mercado (Anexo 8, sección 3). El comité de directores supervisa una auditoría interna que le reporta cada mes y designa a los auditores externos y a las clasificadoras de riesgo. ",
        false,
        false
       ],
@@ -568,7 +532,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 10:",
+     "n": "Figura 8:",
      "titulo": "Puntaje ESG de Bloomberg y ratings externos.",
      "fuente": [
       [
@@ -581,7 +545,7 @@
      "ancla": 0
     },
     {
-     "n": "Figura 9:",
+     "n": "Figura 7:",
      "titulo": "Metas ambientales: avance a 2025.",
      "fuente": [
       [
@@ -594,7 +558,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 12:",
+     "n": "Figura 10:",
      "titulo": "Energía renovable y valorización de residuos, 2025.",
      "fuente": [
       [
@@ -607,7 +571,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 13:",
+     "n": "Figura 11:",
      "titulo": "Indicadores sociales.",
      "fuente": [
       [
@@ -620,7 +584,7 @@
      "ancla": 4
     },
     {
-     "n": "Figura 14:",
+     "n": "Figura 12:",
      "titulo": "Incentivos ESG y composición del Directorio.",
      "fuente": [
       [
@@ -633,7 +597,7 @@
      "ancla": 7
     },
     {
-     "n": "Figura 11:",
+     "n": "Figura 9:",
      "titulo": "Ahorros ESG y menor costo de capital frente al precio de la acción (escenario).",
      "fuente": [
       [
@@ -658,7 +622,7 @@
     {
      "p": [
       [
-       "Bajo NIC 40, la revalorización de las propiedades de inversión pasa por resultados. En 2025, una ganancia por valor razonable de CLP 1.447 mil MM (27% del valor inicial de las propiedades, frente a cerca de 2% al año en Parque Arauco y Cencosud Shopping, hoy Cenco Malls) elevó la utilidad atribuible a CLP 1.431 mil MM (2,2 veces los ingresos) y el ROE reportado a 37,5% (Figura 15). Cerca de dos tercios del alza de 29% del valor de las propiedades en Chile vino de una menor tasa de descuento real de la tasación (de 6,62% a 5,64%, Nota 11), no de un mayor NOI (Anexo 9C).",
+       "Bajo NIC 40, la revalorización de las propiedades de inversión pasa por resultados. En 2025, una ganancia por valor razonable de CLP 1.447 mil MM (27% del valor inicial de las propiedades, frente a cerca de 2% al año en Parque Arauco y Cencosud Shopping, hoy Cenco Malls) elevó la utilidad atribuible a CLP 1.431 mil MM (2,2 veces los ingresos) y el ROE reportado a 37,5% (Figura 13). Cerca de dos tercios del alza de 29% del valor de las propiedades en Chile vino de una menor tasa de descuento real de la tasación (de 6,62% a 5,64%, Nota 11), no de un mayor NOI (Anexo 11C).",
        false,
        false
       ]
@@ -667,7 +631,7 @@
     {
      "p": [
       [
-       "Sin las ganancias por valor razonable netas de impuesto diferido, la utilidad distribuible auditada fue CLP 369 mil MM y el ROE 9,7%; con el mismo ajuste que aplicamos a los pares sería 10,0%, el más alto de los tres (Anexo 12). El FFO, que reconstruimos desde los estados financieros con 0,02% de diferencia frente a los CLP 405 mil MM reportados (Figura 16), mantuvo un margen de 59–62% en 2022–2025, mientras la utilidad neta varió más de cuatro veces. El FFO excluye el reajuste UF de la deuda (CLP 44 mil MM, 11% del FFO); la utilidad distribuible lo incluye y es nuestra ancla conservadora de utilidades.",
+       "Sin las ganancias por valor razonable netas de impuesto diferido, la utilidad distribuible auditada fue CLP 369 mil MM y el ROE 9,7%; con el mismo ajuste que aplicamos a los pares sería 10,0%, el más alto de los tres (Anexo 14). El FFO, que reconstruimos desde los estados financieros con 0,02% de diferencia frente a los CLP 405 mil MM reportados (Figura 14), mantuvo un margen de 59–62% en 2022–2025, mientras la utilidad neta varió más de cuatro veces. El FFO excluye el reajuste UF de la deuda (CLP 44 mil MM, 11% del FFO); la utilidad distribuible lo incluye y es nuestra ancla conservadora de utilidades.",
        false,
        false
       ]
@@ -688,7 +652,7 @@
     {
      "p": [
       [
-       "Los ingresos subieron 76% entre 2022 y 2025, pero 21,8 pp del 32,2% de 2025 vinieron del perímetro: el portafolio peruano comprado a Falabella, consolidado desde el 4 de diciembre de 2024 (Anexo 9C). Sin Perú, los ingresos crecieron 10,7% en 2025 y 7,1% en 1S26.",
+       "Los ingresos subieron 76% entre 2022 y 2025, pero 21,8 pp del 32,2% de 2025 vinieron del perímetro: el portafolio peruano comprado a Falabella, consolidado desde el 4 de diciembre de 2024 (Anexo 11C). Sin Perú, los ingresos crecieron 10,7% en 2025 y 7,1% en 1S26.",
        false,
        false
       ]
@@ -697,7 +661,7 @@
     {
      "p": [
       [
-       "Sin moneda ni inflación, el crecimiento nominal de 7,4% en 1S26 baja a ~3,0% real (Figura 17): Chile 2,8% (UF +3,1%), Perú 4,5% (ocupación 93,8%) y Colombia ~1% sin la apreciación del COP (7,5%) ni la inflación (6,1%).",
+       "Sin moneda ni inflación, el crecimiento nominal de 7,4% en 1S26 baja a ~3,0% real (Figura 15): Chile 2,8% (UF +3,1%), Perú 4,5% (ocupación 93,8%) y Colombia ~1% sin la apreciación del COP (7,5%) ni la inflación (6,1%).",
        false,
        false
       ]
@@ -727,7 +691,7 @@
     {
      "p": [
       [
-       "Los costos operativos (costo de ventas más administración) fueron 20,1% de los ingresos en 2025 e incluyen la D&A (0,55%): 20,1% − 0,55% = 19,5% = 1 − margen EBITDA (Anexo 9). Si fueran fijos, una caída de 1% de los ingresos restaría 1,24% al EBITDA (1,1% si la mitad fuera variable). En 1S26 el EBITDA creció 7,4%, en línea con los ingresos, y el margen se mantuvo en 79,7%. Los gastos de administración subieron 18,1% por remuneraciones (+18,9%: transición del gerente general y un año completo de Perú), incobrables que se normalizan desde una base 2025 favorecida por recuperaciones y un impuesto al patrimonio único en Colombia de CLP 1,7 mil MM. Sin estos dos últimos, el margen de 1S26 sería 80,4%.",
+       "Los costos operativos (costo de ventas más administración) fueron 20,1% de los ingresos en 2025 e incluyen la D&A (0,55%): 20,1% − 0,55% = 19,5% = 1 − margen EBITDA (Anexo 11). Si fueran fijos, una caída de 1% de los ingresos restaría 1,24% al EBITDA (1,1% si la mitad fuera variable). En 1S26 el EBITDA creció 7,4%, en línea con los ingresos, y el margen se mantuvo en 79,7%. Los gastos de administración subieron 18,1% por remuneraciones (+18,9%: transición del gerente general y un año completo de Perú), incobrables que se normalizan desde una base 2025 favorecida por recuperaciones y un impuesto al patrimonio único en Colombia de CLP 1,7 mil MM. Sin estos dos últimos, el margen de 1S26 sería 80,4%.",
        false,
        false
       ]
@@ -739,7 +703,7 @@
     {
      "p": [
       [
-       "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025. El impuesto pagado fue solo 15% del resultado operacional, protegido por goodwill tributario y pérdidas tributarias (Nota 13), y subirá hacia la tasa legal de 27%. Después de capex e intereses netos, el FCF antes de deuda fue CLP 280 mil MM y cubrió los dividendos 2,6x (Figura 18); 1,8x tras amortizar deuda neta (Anexo 8D).",
+       "El flujo operativo subió de CLP 301 mil MM en 2024 a CLP 441 mil MM en 2025. El impuesto pagado fue solo 15% del resultado operacional, protegido por goodwill tributario y pérdidas tributarias (Nota 13), y subirá hacia la tasa legal de 27%. Después de capex e intereses netos, el FCF antes de deuda fue CLP 280 mil MM y cubrió los dividendos 2,6x (Figura 16); 1,8x tras amortizar deuda neta (Anexo 10D).",
        false,
        false
       ]
@@ -757,7 +721,7 @@
     {
      "p": [
       [
-       "La política de dividendos reparte 40% de la utilidad distribuible con un año de rezago y el covenant (DFN/patrimonio ≤ 2,0x; 0,26x a junio) no la restringe: la caja retenida fue CLP 171,6 mil MM en 2025. En el caso base, el FFO sube de CLP 428,5 mil MM en 2026E a 512,6 mil MM en 2031E y los dividendos ordinarios de CLP 147,7 a 176,5 mil MM; la caja restante, junto con la deuda nueva, financia el capex y las distribuciones adicionales (Anexo 11).",
+       "La política de dividendos reparte 40% de la utilidad distribuible con un año de rezago y el covenant (DFN/patrimonio ≤ 2,0x; 0,26x a junio) no la restringe: la caja retenida fue CLP 171,6 mil MM en 2025. En el caso base, el FFO sube de CLP 428,5 mil MM en 2026E a 512,6 mil MM en 2031E y los dividendos ordinarios de CLP 147,7 a 176,5 mil MM; la caja restante, junto con la deuda nueva, financia el capex y las distribuciones adicionales (Anexo 13).",
        false,
        false
       ]
@@ -778,7 +742,7 @@
     {
      "p": [
       [
-       "El LTV bajó de 26,9% a 18,8% en 2025, pero 5,0 pp de la caída de 8,0 pp vinieron de revalorizar el denominador; con las propiedades al valor de 2024 más las adiciones, el LTV habría sido 23,8% (Figura 19). Los indicadores de flujo respaldan el alza de la calificación local de Feller Rate a AAA (25 de septiembre de 2026), pero de la baja de la DFN/EBITDA de 3,78x a 2,36x, 0,75x es perímetro (Perú consolidó un mes en 2024; pro forma ≥ 3,0x), 0,39x crecimiento del EBITDA y solo 0,28x menor deuda (Anexo 9B). El EBITDA cubre 8,4x los costos financieros.",
+       "El LTV bajó de 26,9% a 18,8% en 2025, pero 5,0 pp de la caída de 8,0 pp vinieron de revalorizar el denominador; con las propiedades al valor de 2024 más las adiciones, el LTV habría sido 23,8% (Figura 17). Los indicadores de flujo respaldan el alza de la calificación local de Feller Rate a AAA (25 de septiembre de 2026), pero de la baja de la DFN/EBITDA de 3,78x a 2,36x, 0,75x es perímetro (Perú consolidó un mes en 2024; pro forma ≥ 3,0x), 0,39x crecimiento del EBITDA y solo 0,28x menor deuda (Anexo 11B). El EBITDA cubre 8,4x los costos financieros.",
        false,
        false
       ]
@@ -787,7 +751,7 @@
     {
      "p": [
       [
-       "La deuda bruta de CLP 1.633 mil MM está 79% en UF, 14% en PEN y 7% en COP, en línea con las monedas de los ingresos; el 95% es de largo plazo, con una duración de 6,6 años. Los bonos en UF vigentes pagan un cupón real de 3,36% (3,48% efectivo); con el reajuste UF el costo nominal en CLP fue cercano a 7% en 2025. Los vencimientos se concentran en 2029, 2031 y 2033 (Figura 20); refinanciar la serie S (1,32% efectivo) a la tasa real efectiva de la última emisión (4,33%) sumaría cerca de CLP 4,9 mil MM al año.",
+       "La deuda bruta de CLP 1.633 mil MM está 79% en UF, 14% en PEN y 7% en COP, en línea con las monedas de los ingresos; el 95% es de largo plazo, con una duración de 6,6 años. Los bonos en UF vigentes pagan un cupón real de 3,36% (3,48% efectivo); con el reajuste UF el costo nominal en CLP fue cercano a 7% en 2025. Los vencimientos se concentran en 2029, 2031 y 2033 (Figura 18); refinanciar la serie S (1,32% efectivo) a la tasa real efectiva de la última emisión (4,33%) sumaría cerca de CLP 4,9 mil MM al año.",
        false,
        false
       ]
@@ -796,7 +760,7 @@
     {
      "p": [
       [
-       "Hay un pasivo que no aparece en el LTV: los impuestos diferidos, CLP 1.313,7 mil MM a junio de 2026, casi 80% de la deuda financiera bruta. Nacen casi por completo de la revalorización de las propiedades; no son deuda que se pague, pero muestran cuánto del patrimonio contable de CLP 4.820,9 mil MM es tasación y no caja (Anexo 8). Frente a sus pares el balance es conservador: LTV de 18,8% contra 42,9% de Parque Arauco y 16,3% de Cencosud Shopping, y DFN/EBITDA de 2,49x contra 5,68x y 2,11x (Anexo 12).",
+       "Hay un pasivo que no aparece en el LTV: los impuestos diferidos, CLP 1.313,7 mil MM a junio de 2026, casi 80% de la deuda financiera bruta. Nacen casi por completo de la revalorización de las propiedades; no son deuda que se pague, pero muestran cuánto del patrimonio contable de CLP 4.820,9 mil MM es tasación y no caja (Anexo 10). Frente a sus pares el balance es conservador: LTV de 18,8% contra 42,9% de Parque Arauco y 16,3% de Cencosud Shopping, y DFN/EBITDA de 2,49x contra 5,68x y 2,11x (Anexo 14).",
        false,
        false
       ]
@@ -805,7 +769,7 @@
     {
      "p": [
       [
-       "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cencosud Shopping (2,1x) y Parque Arauco (5,7x), y cada vuelta adicional suma 25 pb al costo real de la deuda. La caja por sobre el payout de 40% y el plan de capex se devuelve con recompras o dividendos extraordinarios: CLP 1,7 billones acumulados en 2S26E–2031E (Anexo 11). Con 3,5x, la nueva calificación AAA probablemente quedaría bajo presión.",
+       "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cencosud Shopping (2,1x) y Parque Arauco (5,7x), y cada vuelta adicional suma 25 pb al costo real de la deuda. La caja por sobre el payout de 40% y el plan de capex se devuelve con recompras o dividendos extraordinarios: CLP 1,7 billones acumulados en 2S26E–2031E (Anexo 13). Con 3,5x, la nueva calificación AAA probablemente quedaría bajo presión.",
        false,
        false
       ]
@@ -817,7 +781,7 @@
     {
      "p": [
       [
-       "Los ingresos crecen en CLP nominales 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,9%), a medida que el crecimiento real en mismas tiendas converge a los puntos medios de la tasación, maduran los 170.200 m² del pipeline con fecha (incluidos 46.500 m² de otros proyectos en Chile que abren en 2028) y, desde 2029E, abren cerca de 27.000 m² al año al ritmo histórico (Figura 21); los ingresos 2026E quedan 0,3% sobre el consenso BEst de 13 analistas (Anexo 9C). El margen EBITDA se mantiene en 79,7–79,8%, bajo el máximo de 2025. El impuesto en caja (tasa de Chile) se normaliza de 16,8% a 27% hacia 2030E y los costos financieros suben con el apalancamiento, por lo que el margen FFO baja de 60,9% a 52,2%. El capital de trabajo se mantiene en 15,6% de los ingresos, el nivel de diciembre de 2025 (Anexo 7). El GLA nuevo rinde 7,3% real antes de impuestos sobre su costo y 5,3% real después de impuestos (RONIC), frente a una WACC real de 7,2%: la expansión suma ingresos, pero no valor.",
+       "Los ingresos crecen en CLP nominales 7,7% en 2026E y 5,0% en 2031E (CAGR 2026E–2031E de 6,9%), a medida que el crecimiento real en mismas tiendas converge a los puntos medios de la tasación, maduran los 170.200 m² del pipeline con fecha (incluidos 46.500 m² de otros proyectos en Chile que abren en 2028) y, desde 2029E, abren cerca de 27.000 m² al año al ritmo histórico (Figura 19); los ingresos 2026E quedan 0,3% sobre el consenso BEst de 13 analistas (Anexo 11C). El margen EBITDA se mantiene en 79,7–79,8%, bajo el máximo de 2025. El impuesto en caja (tasa de Chile) se normaliza de 16,8% a 27% hacia 2030E y los costos financieros suben con el apalancamiento, por lo que el margen FFO baja de 60,9% a 52,2%. El capital de trabajo se mantiene en 15,6% de los ingresos, el nivel de diciembre de 2025 (Anexo 9). El GLA nuevo rinde 7,3% real antes de impuestos sobre su costo y 5,3% real después de impuestos (RONIC), frente a una WACC real de 7,2%: la expansión suma ingresos, pero no valor.",
        false,
        false
       ]
@@ -829,7 +793,7 @@
     {
      "p": [
       [
-       "Tres conclusiones para el modelo. Primero, la base correcta es la caja: usamos el EBITDA que elimina una sola vez la revalorización (Anexo 10) y la utilidad distribuible como ancla, no la utilidad contable de CLP 1.431 mil MM. Segundo, la calidad no está en duda: con el mismo ajuste para los tres, Mallplaza tiene el ROE normalizado más alto de sus pares locales (10,0% frente a 7,8% de Parque Arauco y 8,0% de Cencosud Shopping) con un LTV de 18,8% (Anexo 12).",
+       "Tres conclusiones para el modelo. Primero, la base correcta es la caja: usamos el EBITDA que elimina una sola vez la revalorización (Anexo 12) y la utilidad distribuible como ancla, no la utilidad contable de CLP 1.431 mil MM. Segundo, la calidad no está en duda: con el mismo ajuste para los tres, Mallplaza tiene el ROE normalizado más alto de sus pares locales (10,0% frente a 7,8% de Parque Arauco y 8,0% de Cencosud Shopping) con un LTV de 18,8% (Anexo 14).",
        false,
        false
       ]
@@ -838,7 +802,7 @@
     {
      "p": [
       [
-       "Tercero, el capital existente apenas rinde su costo. El ROIC de 2025 (NOPAT al 27% sobre el capital a valor de tasación, sin revalorización; Anexo 9) fue 7,3%, comparable con la WACC real de 7,2% (no con la nominal) porque excluye la revalorización. El capital nuevo rinde menos que su costo (RONIC real de 5,3%). Al precio actual, el FFO 2026E de CLP 428,5 mil MM rinde 5,5% nominal sobre el valor de mercado (18x FFO) y la utilidad distribuible 4,9%: el mercado paga por estos flujos como si fueran casi libres de riesgo. Esa brecha de tasa es la que cuantifica Valuación.",
+       "Tercero, el capital existente apenas rinde su costo. El ROIC de 2025 (NOPAT al 27% sobre el capital a valor de tasación, sin revalorización; Anexo 11) fue 7,3%, comparable con la WACC real de 7,2% (no con la nominal) porque excluye la revalorización. El capital nuevo rinde menos que su costo (RONIC real de 5,3%). Al precio actual, el FFO 2026E de CLP 428,5 mil MM rinde 5,5% nominal sobre el valor de mercado (18x FFO) y la utilidad distribuible 4,9%: el mercado paga por estos flujos como si fueran casi libres de riesgo. Esa brecha de tasa es la que cuantifica Valuación.",
        false,
        false
       ]
@@ -847,7 +811,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 16:",
+     "n": "Figura 14:",
      "titulo": "Sin revalorizaciones ni partidas no monetarias, CLP 1.441 mil MM de utilidad se vuelven CLP 408 mil MM de FFO (CLP mil MM)",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA2_utilidad_ffo.png",
      "fuente": [
@@ -861,7 +825,7 @@
      "ancla": 2
     },
     {
-     "n": "Figura 17:",
+     "n": "Figura 15:",
      "titulo": "Dos tercios del crecimiento 2025 fueron comprados; en 1S26 la moneda y la inflación explican más de la mitad",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA3_crecimiento.png",
      "fuente": [
@@ -875,7 +839,7 @@
      "ancla": 6
     },
     {
-     "n": "Figura 18:",
+     "n": "Figura 16:",
      "titulo": "El flujo de caja libre cubre los dividendos 1,5–2,6x aun con más capex (2025, CLP mil MM)",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA4_caja.png",
      "fuente": [
@@ -889,7 +853,7 @@
      "ancla": 12
     },
     {
-     "n": "Figura 19:",
+     "n": "Figura 17:",
      "titulo": "Dos tercios de la caída del LTV en 2025 son revalorización, no desapalancamiento",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA5_ltv.png",
      "fuente": [
@@ -903,7 +867,7 @@
      "ancla": 17
     },
     {
-     "n": "Figura 20:",
+     "n": "Figura 18:",
      "titulo": "El riesgo de refinanciamiento está en 2029, 2031 y 2033, no en el corto plazo",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA6_vencimientos.png",
      "fuente": [
@@ -917,12 +881,12 @@
      "ancla": 18
     },
     {
-     "n": "Figura 21:",
+     "n": "Figura 19:",
      "titulo": "Tras el pipeline, el capex incremental de la expansión continua mantiene el capex total cerca de CLP 150 mil MM al año; la DFN/EBITDA sube a 3,5x",
      "archivo": "/analisis_financiero/graficos/figuras/es_FA7_capex.png",
      "fuente": [
       [
-       "2026E incluye CLP 84,2 mil MM de 1S26 (sin apertura por tipo). Mantención + TI = 5,5% de los ingresos; incremental = pipeline en curso + expansión continua. 2024A: un mes de EBITDA de Perú. Fuente: EEFF (CMF); release 2T26; modelo v4 (Anexo 13).",
+       "2026E incluye CLP 84,2 mil MM de 1S26 (sin apertura por tipo). Mantención + TI = 5,5% de los ingresos; incremental = pipeline en curso + expansión continua. 2024A: un mes de EBITDA de Perú. Fuente: EEFF (CMF); release 2T26; modelo v4 (Anexo 15).",
        false,
        false
       ]
@@ -933,7 +897,7 @@
    ],
    "leadDestacado": true,
    "tabla": {
-    "n": "Figura 15:",
+    "n": "Figura 13:",
     "titulo": "ROE sobre utilidad distribuible de 8–10% (no es el retorno del accionista); el reportado sigue a la tasación",
     "encabezado": [
      "CLP mil MM",
@@ -1110,7 +1074,7 @@
     {
      "p": [
       [
-       "En doce meses la acción subió de CLP 2.470 a 4.700 y hoy cotiza en CLP 3.555. Ninguno de nuestros métodos llega a ese precio: el DCF va de CLP 1.391 a 2.329 aun moviendo la WACC nominal ±100 pb y el g nominal entre 2,5% y 4,0%, y las medianas de múltiplos tampoco lo alcanzan (Figura 22). Damos 80% del peso al DCF porque el valor de Mallplaza proviene de flujos contractuales: el 81,4% de sus ingresos son arriendos y el 93% de ellos es renta fija. El 20% en múltiplos contrasta el modelo con lo que el mercado paga hoy, pero con cautela: en Chile hay solo dos pares directos y ninguno captura el plan de expansión ni la trayectoria de deuda de la compañía.",
+       "En doce meses la acción subió de CLP 2.470 a 4.700 y hoy cotiza en CLP 3.555. Ninguno de nuestros métodos llega a ese precio: el DCF va de CLP 1.391 a 2.329 aun moviendo la WACC nominal ±100 pb y el g nominal entre 2,5% y 4,0%, y las medianas de múltiplos tampoco lo alcanzan (Figura 20). Damos 80% del peso al DCF porque el valor de Mallplaza proviene de flujos contractuales: el 81,4% de sus ingresos son arriendos y el 93% de ellos es renta fija. El 20% en múltiplos contrasta el modelo con lo que el mercado paga hoy, pero con cautela: en Chile hay solo dos pares directos y ninguno captura el plan de expansión ni la trayectoria de deuda de la compañía.",
        false,
        false
       ]
@@ -1131,7 +1095,7 @@
     {
      "p": [
       [
-       "Proyectamos el flujo de caja libre de la firma (FCFF) en CLP nominales desde el 30-jun-26, con horizonte explícito hasta 2031E y un valor terminal que explica el 78% del EV (Anexo 13). Los CLP 1.859 por acción son CLP 543 de flujos explícitos y CLP 1.926 de valor terminal, menos CLP 610 de deuda neta y minoritarios: el resultado depende, sobre todo, de la tasa de descuento.",
+       "Proyectamos el flujo de caja libre de la firma (FCFF) en CLP nominales desde el 30-jun-26, con horizonte explícito hasta 2031E y un valor terminal que explica el 78% del EV (Anexo 15). Los CLP 1.859 por acción son CLP 543 de flujos explícitos y CLP 1.926 de valor terminal, menos CLP 610 de deuda neta y minoritarios: el resultado depende, sobre todo, de la tasa de descuento.",
        false,
        false
       ]
@@ -1140,7 +1104,7 @@
     {
      "p": [
       [
-       "Esa tasa se mueve con la estructura de capital. Mallplaza usa su capacidad de deuda para crecer, como en 2024 tras comprar Open Plaza Perú (3,78x): suponemos que la DFN/EBITDA sube de 2,36x a 3,5x en 2031, con 25 pb más de costo real por cada vuelta, y que la deuda nueva (CLP 1,46 billones) financia todo el capex mientras la caja operativa se distribuye a los accionistas. Así, la WACC nominal pasa de 10,54% en 2S26E a 10,41% en el terminal (7,32% y 7,20% reales): un Ke nominal de 11,93% (8,67% real; Rf de 4,98% en USD, beta re-apalancada de 1,14 desde una mediana desapalancada de seis pares de 0,94, ERP 4,14% y CRP de 1,41% ponderado por ingresos) y un Kd nominal de 5,11% después de impuestos, basado en el cupón real de 3,6% (UF) de la última emisión (Anexo 17).",
+       "Esa tasa se mueve con la estructura de capital. Mallplaza usa su capacidad de deuda para crecer, como en 2024 tras comprar Open Plaza Perú (3,78x): suponemos que la DFN/EBITDA sube de 2,36x a 3,5x en 2031, con 25 pb más de costo real por cada vuelta, y que la deuda nueva (CLP 1,46 billones) financia todo el capex mientras la caja operativa se distribuye a los accionistas. Así, la WACC nominal pasa de 10,54% en 2S26E a 10,41% en el terminal (7,32% y 7,20% reales): un Ke nominal de 11,93% (8,67% real; Rf de 4,98% en USD, beta re-apalancada de 1,14 desde una mediana desapalancada de seis pares de 0,94, ERP 4,14% y CRP de 1,41% ponderado por ingresos) y un Kd nominal de 5,11% después de impuestos, basado en el cupón real de 3,6% (UF) de la última emisión (Anexo 19).",
        false,
        false
       ]
@@ -1158,7 +1122,7 @@
     {
      "p": [
       [
-       "La primera señal es la TIR del activo (la firma): la tasa única que iguala el FCFF y el valor terminal al valor de empresa que paga el mercado a CLP 3.555 (EV de CLP 9,12 billones). Es 7,61% nominal (4,48% real en UF), 280 pb bajo la WACC nominal (272 pb en términos reales) y apenas ~88 pb reales sobre el costo real de su deuda (Figura 23).",
+       "La primera señal es la TIR del activo (la firma): la tasa única que iguala el FCFF y el valor terminal al valor de empresa que paga el mercado a CLP 3.555 (EV de CLP 9,12 billones). Es 7,61% nominal (4,48% real en UF), 280 pb bajo la WACC nominal (272 pb en términos reales) y apenas ~88 pb reales sobre el costo real de su deuda (Figura 21).",
        false,
        false
       ]
@@ -1220,7 +1184,7 @@
       "destacar": [
        3
       ],
-      "nota": "TIR del activo: tasa única que iguala el FCFF y el valor terminal al valor de empresa pagado; al valor DCF coincide con la WACC. Proyecto nuevo: flujo de 1 m² con el costo, la rampa y el margen de la expansión, mantención y capital de trabajo. Real = (1 + nom.) / (1 + 3,0%) − 1. La WACC implícita de la Figura 29 (7,60%) desplaza toda la curva de WACC y la TIR de tasa única es 7,61%: dos lecturas de la misma idea. Fuente: modelo v4, hojas TIR_Implicita y TIR_Proyecto."
+      "nota": "TIR del activo: tasa única que iguala el FCFF y el valor terminal al valor de empresa pagado; al valor DCF coincide con la WACC. Proyecto nuevo: flujo de 1 m² con el costo, la rampa y el margen de la expansión, mantención y capital de trabajo. Real = (1 + nom.) / (1 + 3,0%) − 1. La WACC implícita de la Figura 27 (7,60%) desplaza toda la curva de WACC y la TIR de tasa única es 7,61%: dos lecturas de la misma idea. Fuente: modelo v4, hojas TIR_Implicita y TIR_Proyecto."
      }
     },
     {
@@ -1238,7 +1202,7 @@
     {
      "p": [
       [
-       "El capex sigue el plan de la compañía y se separa en mantención y TI (5,5% de los ingresos, CLP 42–53 mil MM al año) y capex incremental: el pipeline en curso (CLP 534 mil MM en 2S26E–2028E) y la expansión continua (CLP 95–104 mil MM al año desde 2028, a USD 3.603 por m² y con una rampa de ingresos de 35%, 90% y 100%). El capex total llega a un máximo de CLP 336 mil MM en 2027E y se estabiliza cerca de 16% de los ingresos desde 2029E (Figura 21). El capital de trabajo (15,6% de los ingresos) exige CLP 7,3–9,9 mil MM al año y, si fuera cero, el objetivo subiría solo 1,3% (Figura 24: cascada de supuestos fuertes, distinta del escenario bull; Anexo 14).",
+       "El capex sigue el plan de la compañía y se separa en mantención y TI (5,5% de los ingresos, CLP 42–53 mil MM al año) y capex incremental: el pipeline en curso (CLP 534 mil MM en 2S26E–2028E) y la expansión continua (CLP 95–104 mil MM al año desde 2028, a USD 3.603 por m² y con una rampa de ingresos de 35%, 90% y 100%). El capex total llega a un máximo de CLP 336 mil MM en 2027E y se estabiliza cerca de 16% de los ingresos desde 2029E (Figura 19). El capital de trabajo (15,6% de los ingresos) exige CLP 7,3–9,9 mil MM al año y, si fuera cero, el objetivo subiría solo 1,3% (Figura 22: cascada de supuestos fuertes, distinta del escenario bull; Anexo 16).",
        false,
        false
       ]
@@ -1247,7 +1211,7 @@
     {
      "p": [
       [
-       "Dos supuestos merecen una explicación. La tasa de impuesto en caja parte en 16,8% porque hoy la compañía usa goodwill tributario y pérdidas acumuladas; suponemos que esos escudos se agotan y que la tasa llega a 27% en 2030. Es ahorro de caja real (baja el impuesto corriente), no contable: CLP 62 por acción sin descontar; sin él el objetivo baja 2,1% (Figura 24). Y el capital de trabajo crece con los ingresos, no con los m² nuevos.",
+       "Dos supuestos merecen una explicación. La tasa de impuesto en caja parte en 16,8% porque hoy la compañía usa goodwill tributario y pérdidas acumuladas; suponemos que esos escudos se agotan y que la tasa llega a 27% en 2030. Es ahorro de caja real (baja el impuesto corriente), no contable: CLP 62 por acción sin descontar; sin él el objetivo baja 2,1% (Figura 22). Y el capital de trabajo crece con los ingresos, no con los m² nuevos.",
        false,
        false
       ]
@@ -1265,7 +1229,7 @@
     {
      "p": [
       [
-       "El problema es el retorno de crecer. Cada m² nuevo rinde 7,3% real antes de impuestos sobre su costo (mix de la expansión: 67% Chile, 33% Perú), un RONIC real de 5,3% después de impuestos, bajo una WACC real de 7,2%. La TIR de un m² nuevo, con capex, rampa, mantención y capital de trabajo, es 4,84% real (7,98% nominal): 236 pb bajo la WACC real y 243 pb bajo la nominal; para igualarla, el ingreso por m² tendría que ser 1,54 veces el del modelo. La expansión suma ingresos, pero no valor: por eso el valor terminal crece solo con la inflación (g de 3,0% nominal, 0% real) y un g mayor reduce el valor (Figura 25). Suponer más crecimiento no cerraría la brecha con el precio; la agrandaría. Por eso el horizonte explícito incluye el capex y la maduración de los proyectos que abren hasta 2032 (108.301 m² maduran en el año terminal), pero desde ahí el capex incremental terminal es cero y solo queda la mantención.",
+       "El problema es el retorno de crecer. Cada m² nuevo rinde 7,3% real antes de impuestos sobre su costo (mix de la expansión: 67% Chile, 33% Perú), un RONIC real de 5,3% después de impuestos, bajo una WACC real de 7,2%. La TIR de un m² nuevo, con capex, rampa, mantención y capital de trabajo, es 4,84% real (7,98% nominal): 236 pb bajo la WACC real y 243 pb bajo la nominal; para igualarla, el ingreso por m² tendría que ser 1,54 veces el del modelo. La expansión suma ingresos, pero no valor: por eso el valor terminal crece solo con la inflación (g de 3,0% nominal, 0% real) y un g mayor reduce el valor (Figura 23). Suponer más crecimiento no cerraría la brecha con el precio; la agrandaría. Por eso el horizonte explícito incluye el capex y la maduración de los proyectos que abren hasta 2032 (108.301 m² maduran en el año terminal), pero desde ahí el capex incremental terminal es cero y solo queda la mantención.",
        false,
        false
       ]
@@ -1289,7 +1253,7 @@
     {
      "p": [
       [
-       "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La brecha con Brasil no es de calidad, sino de tasas: con bonos reales locales de 2,5% en Chile y 8,1% en Brasil (NTN-B), el spread del cap rate (rendimiento EBITDA/EV; con rentas reajustadas por UF se compara con tasas reales) sobre la tasa local es parecido en ambos países, 385 pb en Chile y 302 pb en Brasil (Figura 26). Por eso ponderamos 70% la mediana chilena y 30% la del set común (que incluye IRSA; excluimos Fibra Danhos por su régimen FIBRA): 14,4x, que lleva a CLP 2.951 por acción. La ponderación pesa poco: entre 0% y 100% Chile, el precio objetivo solo va de CLP 1.916 a 2.144 (Anexo 15).",
+       "Mallplaza transa a 16,8x EV/EBITDA, sobre la mediana chilena (15,7x) y muy por encima de los pares brasileños (9,0x). La brecha con Brasil no es de calidad, sino de tasas: con bonos reales locales de 2,5% en Chile y 8,1% en Brasil (NTN-B), el spread del cap rate (rendimiento EBITDA/EV; con rentas reajustadas por UF se compara con tasas reales) sobre la tasa local es parecido en ambos países, 385 pb en Chile y 302 pb en Brasil (Figura 24). Por eso ponderamos 70% la mediana chilena y 30% la del set común (que incluye IRSA; excluimos Fibra Danhos por su régimen FIBRA): 14,4x, que lleva a CLP 2.951 por acción. La ponderación pesa poco: entre 0% y 100% Chile, el precio objetivo solo va de CLP 1.916 a 2.144 (Anexo 17).",
        false,
        false
       ]
@@ -1307,7 +1271,7 @@
     {
      "p": [
       [
-       "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cenco Malls (Cencosud Shopping en los modelos), pero su EBITDA por m² es solo 1,8% mayor (ver Industria); solo al múltiplo de Parque Arauco (18,4x), que opera con 5,7x de deuda, valdría más que su precio. Todos los múltiplos, del EV/EBITDA NTM (CLP 2.914) al P/BV (CLP 3.171), quedan bajo el precio (Figura 27): confirman que la acción está cara, y la magnitud la da el DCF. Excluimos el P/E (CLP 8.644), distorsionado por la revalorización de propiedades. En precios: mediana chilena CLP 3.294 (−7%), Cenco Malls CLP 2.621 y solo Parque Arauco CLP 3.967. Defender CLP 3.555 con múltiplos exige suponer que Mallplaza merece la valoración del par más apalancado del grupo.",
+       "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cenco Malls (Cencosud Shopping en los modelos), pero su EBITDA por m² es solo 1,8% mayor (ver Industria); solo al múltiplo de Parque Arauco (18,4x), que opera con 5,7x de deuda, valdría más que su precio. Todos los múltiplos, del EV/EBITDA NTM (CLP 2.914) al P/BV (CLP 3.171), quedan bajo el precio (Figura 25): confirman que la acción está cara, y la magnitud la da el DCF. Excluimos el P/E (CLP 8.644), distorsionado por la revalorización de propiedades. En precios: mediana chilena CLP 3.294 (−7%), Cenco Malls CLP 2.621 y solo Parque Arauco CLP 3.967. Defender CLP 3.555 con múltiplos exige suponer que Mallplaza merece la valoración del par más apalancado del grupo.",
        false,
        false
       ]
@@ -1319,7 +1283,7 @@
     {
      "p": [
       [
-       "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0% (EBITDA UDM / EV, comparable con tasas reales porque las rentas se reajustan por UF), frente a 10,1% en nuestro DCF, 6,4% en los pares chilenos y 7,5% a valor libro (Figura 28). El mercado paga 1,61 veces un patrimonio que ya está a valor razonable, tasado con una tasa de descuento real de ~5,55% (Nota 11); la TIR real que deja el precio, 4,5%, queda bajo esa tasa: paga más que los propios tasadores. Para justificar CLP 3.555 la WACC nominal tendría que ser 281 pb menor (7,60%, 4,5% real; Figura 29); incluso con la tasa de los tasadores (5,55% real, 8,72% nominal), el DCF sería CLP 2.679. (La WACC implícita desplaza toda la curva de WACC; la TIR de tasa única, 7,61%, es la misma idea y también da CLP 3.555.)",
+       "El precio implica un EV de CLP 9,12 billones, 69% sobre el nuestro, y un cap rate real de 6,0% (EBITDA UDM / EV, comparable con tasas reales porque las rentas se reajustan por UF), frente a 10,1% en nuestro DCF, 6,4% en los pares chilenos y 7,5% a valor libro (Figura 26). El mercado paga 1,61 veces un patrimonio que ya está a valor razonable, tasado con una tasa de descuento real de ~5,55% (Nota 11); la TIR real que deja el precio, 4,5%, queda bajo esa tasa: paga más que los propios tasadores. Para justificar CLP 3.555 la WACC nominal tendría que ser 281 pb menor (7,60%, 4,5% real; Figura 27); incluso con la tasa de los tasadores (5,55% real, 8,72% nominal), el DCF sería CLP 2.679. (La WACC implícita desplaza toda la curva de WACC; la TIR de tasa única, 7,61%, es la misma idea y también da CLP 3.555.)",
        false,
        false
       ]
@@ -1331,7 +1295,7 @@
     {
      "p": [
       [
-       "En los últimos doce meses la acción pasó de un mínimo de CLP 2.470 (10-oct-25) a un máximo de CLP 4.700 (27-abr-26), un alza de ~90% en seis meses y medio que el negocio no explica: el EBITDA creció 5–10% anual. El impulso fue externo. La bolsa chilena subió 56% en 2025, con un cambio de gobierno y expectativas de menores impuestos, y las acciones de malls rindieron ~48% (LarrainVial) y se revalorizaron en conjunto. La inclusión en el MSCI EM Mid Cap (25-nov-25) obligó a fondos pasivos a comprar ~USD 110 MM, unas 15 veces el volumen diario (Morgan Stanley). Y los analistas extrapolaron crecimiento: JPMorgan proyecta un FFO que crece ~11% anual hasta 2028, el doble de nuestro ~6% (2026E–2028E). La caída a CLP 3.555 (−24% desde el máximo) coincide con resultados bajo lo esperado (EBITDA +5,2% en 1T26), el recorte del objetivo de JPMorgan y el alza del UST a 10 años (5,22% al 8-oct-26). Es una corrección parcial: a ese precio la acción cotiza 91% sobre el DCF, 33% sobre el valor con la tasa de los tasadores (CLP 2.679) y a 1,61x su valor libro. Las cifras atribuidas a analistas y los precios de los hitos provienen de los documentos del equipo (Figura 34).",
+       "En los últimos doce meses la acción pasó de un mínimo de CLP 2.470 (10-oct-25) a un máximo de CLP 4.700 (27-abr-26), un alza de ~90% en seis meses y medio que el negocio no explica: el EBITDA creció 5–10% anual. El impulso fue externo. La bolsa chilena subió 56% en 2025, con un cambio de gobierno y expectativas de menores impuestos, y las acciones de malls rindieron ~48% (LarrainVial) y se revalorizaron en conjunto. La inclusión en el MSCI EM Mid Cap (25-nov-25) obligó a fondos pasivos a comprar ~USD 110 MM, unas 15 veces el volumen diario (Morgan Stanley). Y los analistas extrapolaron crecimiento: JPMorgan proyecta un FFO que crece ~11% anual hasta 2028, el doble de nuestro ~6% (2026E–2028E). La caída a CLP 3.555 (−24% desde el máximo) coincide con resultados bajo lo esperado (EBITDA +5,2% en 1T26), el recorte del objetivo de JPMorgan y el alza del UST a 10 años (5,22% al 8-oct-26). Es una corrección parcial: a ese precio la acción cotiza 91% sobre el DCF, 33% sobre el valor con la tasa de los tasadores (CLP 2.679) y a 1,61x su valor libro. Las cifras atribuidas a analistas y los precios de los hitos provienen de los documentos del equipo (Figura 32).",
        false,
        false
       ]
@@ -1343,7 +1307,7 @@
     {
      "p": [
       [
-       "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (escala de 1 a 5; 1 comprar, 10 mantener, 2 vender) y un precio objetivo a 12 meses de CLP 4.111, 49,5% sobre el nuestro; el más bajo es el de Goldman Sachs (vender, CLP 3.377) y el rango va de 3.377 a 4.600. Cuatro razones explican la brecha (Figura 36). La tasa es la principal: el precio exige una WACC nominal de 7,60%, 281 pb bajo nuestro 10,41%, y como el valor terminal es 78% del EV, cada punto de tasa pesa mucho. Los múltiplos tampoco llegan: el 20% en múltiplos da CLP 2.951, 17% bajo el precio, así que no todo es WACC. El horizonte también cuenta: los objetivos son a 12 meses y el nuestro es al 30-jun-26; a nuestro Ke nominal de 11,93%, CLP 4.111 equivalen a ~CLP 3.673 hoy, de modo que la brecha se reduce, pero no se cierra. Y el crecimiento: si crecer rinde menos que la WACC, nuestro modelo lo castiga, mientras el mercado probablemente lo valora con un retorno cercano al cap rate. Los objetivos siguieron al precio (la acción subió 39% en los 12 meses a septiembre de 2026) y no conocemos sus supuestos, solo sus objetivos.",
+       "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (escala de 1 a 5; 1 comprar, 10 mantener, 2 vender) y un precio objetivo a 12 meses de CLP 4.111, 49,5% sobre el nuestro; el más bajo es el de Goldman Sachs (vender, CLP 3.377) y el rango va de 3.377 a 4.600. Cuatro razones explican la brecha (Figura 34). La tasa es la principal: el precio exige una WACC nominal de 7,60%, 281 pb bajo nuestro 10,41%, y como el valor terminal es 78% del EV, cada punto de tasa pesa mucho. Los múltiplos tampoco llegan: el 20% en múltiplos da CLP 2.951, 17% bajo el precio, así que no todo es WACC. El horizonte también cuenta: los objetivos son a 12 meses y el nuestro es al 30-jun-26; a nuestro Ke nominal de 11,93%, CLP 4.111 equivalen a ~CLP 3.673 hoy, de modo que la brecha se reduce, pero no se cierra. Y el crecimiento: si crecer rinde menos que la WACC, nuestro modelo lo castiga, mientras el mercado probablemente lo valora con un retorno cercano al cap rate. Los objetivos siguieron al precio (la acción subió 39% en los 12 meses a septiembre de 2026) y no conocemos sus supuestos, solo sus objetivos.",
        false,
        false
       ]
@@ -1355,7 +1319,7 @@
     {
      "p": [
       [
-       "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura 31), en vez de mover solo la tasa; bear y bull se definen desde el valor de la acción, no desde la recomendación. Bear es todo lo que sale mal a la vez: WACC nominal +100 pb y cada palanca operacional en su mínimo histórico. Bull es todo lo que sale bien: WACC nominal −100 pb, cada palanca en su máximo histórico e impuesto de 23% (Ley de Reconstrucción). Base es la estimación central del modelo. El arriendo en mismas tiendas (precio) y las ventas de los locatarios se mueven juntos; g nominal se mantiene en 3,0% en los tres. Las probabilidades salen de la matriz de riesgo de la página de Riesgos. Cada variable del bear o del bull es un extremo histórico, y llegar a un extremo es remoto: ocurrió una sola vez en las ~11 observaciones trimestrales (≈9%). Por eso cada variable por separado tiene entre 2% y 10% de llegar a su extremo en 12 meses (baja 2%, media 5%, alta 10%, supuestos del equipo): +100 pb de WACC pertenece a FR1 (alta, 10%), las palancas operacionales a OR1 (media, 5%) y sus contrarios invierten la categoría (−100 pb: 2%). Las palancas de un mismo riesgo se mueven juntas y los riesgos distintos son independientes, así que el bear tiene 0,5% de probabilidad conjunta, el bull 0,1% y el base concentra el resto (99,4%). Ponderado, el precio objetivo es CLP 2.075 (−41,6%): los extremos casi no lo mueven.",
+       "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura 29), en vez de mover solo la tasa; bear y bull se definen desde el valor de la acción, no desde la recomendación. Bear es todo lo que sale mal a la vez: WACC nominal +100 pb y cada palanca operacional en su mínimo histórico. Bull es todo lo que sale bien: WACC nominal −100 pb, cada palanca en su máximo histórico e impuesto de 23% (Ley de Reconstrucción). Base es la estimación central del modelo. El arriendo en mismas tiendas (precio) y las ventas de los locatarios se mueven juntos; g nominal se mantiene en 3,0% en los tres. Las probabilidades salen de la matriz de riesgo de la página de Riesgos. Cada variable del bear o del bull es un extremo histórico, y llegar a un extremo es remoto: ocurrió una sola vez en las ~11 observaciones trimestrales (≈9%). Por eso cada variable por separado tiene entre 2% y 10% de llegar a su extremo en 12 meses (baja 2%, media 5%, alta 10%, supuestos del equipo): +100 pb de WACC pertenece a FR1 (alta, 10%), las palancas operacionales a OR1 (media, 5%) y sus contrarios invierten la categoría (−100 pb: 2%). Las palancas de un mismo riesgo se mueven juntas y los riesgos distintos son independientes, así que el bear tiene 0,5% de probabilidad conjunta, el bull 0,1% y el base concentra el resto (99,4%). Ponderado, el precio objetivo es CLP 2.075 (−41,6%): los extremos casi no lo mueven.",
        false,
        false
       ]
@@ -1459,13 +1423,13 @@
        8,
        9
       ],
-      "nota": "Las palancas operacionales son los extremos históricos del tornado de Riesgos; WACC y g nominales; arriendo (precio) y ventas se mueven juntos. g nominal terminal 3,0% en los tres. Ponderado 0,5/99,4/0,1%: DCF CLP 1.856, precio objetivo CLP 2.075 (−41,6%). Fuente: réplica del DCF v4 (Anexo 16); análisis del equipo."
+      "nota": "Las palancas operacionales son los extremos históricos del tornado de Riesgos; WACC y g nominales; arriendo (precio) y ventas se mueven juntos. g nominal terminal 3,0% en los tres. Ponderado 0,5/99,4/0,1%: DCF CLP 1.856, precio objetivo CLP 2.075 (−41,6%). Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
      }
     },
     {
      "p": [
       [
-       "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al precio de mercado casi no cambia entre escenarios (tabla) y queda siempre bajo la WACC de cada uno (446, 280 y 90 pb nominales): ni el bull deja margen de seguridad. El APV (CLP 1.895), una Rf basada en el bono en pesos (~CLP 2.449) y otros objetivos de deuda (DCF de CLP 1.820 a 1.897) llevan a la misma conclusión (Anexo 16).",
+       "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al precio de mercado casi no cambia entre escenarios (tabla) y queda siempre bajo la WACC de cada uno (446, 280 y 90 pb nominales): ni el bull deja margen de seguridad. El APV (CLP 1.895), una Rf basada en el bono en pesos (~CLP 2.449) y otros objetivos de deuda (DCF de CLP 1.820 a 1.897) llevan a la misma conclusión (Anexo 18).",
        false,
        false
       ]
@@ -1492,7 +1456,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 22:",
+     "n": "Figura 20:",
      "titulo": "Ninguno de nuestros métodos justifica el precio actual (CLP por acción)",
      "archivo": "/valuacion/graficos/figuras/es_V1_football.png",
      "fuente": [
@@ -1506,7 +1470,7 @@
      "ancla": 1
     },
     {
-     "n": "Figura 23:",
+     "n": "Figura 21:",
      "titulo": "A CLP 3.555 la firma rinde casi lo mismo que su deuda (tasas reales, UF)",
      "archivo": "/valuacion/graficos/figuras/es_V2_tasas.png",
      "fuente": [
@@ -1520,7 +1484,7 @@
      "ancla": 7
     },
     {
-     "n": "Figura 24:",
+     "n": "Figura 22:",
      "titulo": "Con todos los supuestos fuertes a favor el objetivo llega a CLP 2.977, aún 16% bajo el precio",
      "archivo": "/valuacion/graficos/figuras/es_V13_supuestos_cascada.png",
      "fuente": [
@@ -1534,7 +1498,7 @@
      "ancla": 11
     },
     {
-     "n": "Figura 25:",
+     "n": "Figura 23:",
      "titulo": "Crecer bajo la WACC destruye valor: g real = 0%",
      "archivo": "/valuacion/graficos/figuras/es_V3_value_driver.png",
      "fuente": [
@@ -1548,7 +1512,7 @@
      "ancla": 14
     },
     {
-     "n": "Figura 26:",
+     "n": "Figura 24:",
      "titulo": "Chile y Brasil cobran la misma prima: los múltiplos difieren por las tasas",
      "archivo": "/valuacion/graficos/figuras/es_V7_multiplos.png",
      "fuente": [
@@ -1562,7 +1526,7 @@
      "ancla": 18
     },
     {
-     "n": "Figura 27:",
+     "n": "Figura 25:",
      "titulo": "Valor implícito por múltiplo de cada par vs DCF y precio (CLP por acción)",
      "archivo": "/valuacion/graficos/figuras/es_V9_pares.png",
      "fuente": [
@@ -1576,7 +1540,7 @@
      "ancla": 20
     },
     {
-     "n": "Figura 28:",
+     "n": "Figura 26:",
      "titulo": "El mercado paga 6,0%; nuestros flujos valen 10,1% (cap rate real)",
      "archivo": "/valuacion/graficos/figuras/es_V5_cap_rate.png",
      "fuente": [
@@ -1590,7 +1554,7 @@
      "ancla": 22
     },
     {
-     "n": "Figura 29:",
+     "n": "Figura 27:",
      "titulo": "El precio exige una WACC nominal 281 pb menor",
      "archivo": "/valuacion/graficos/figuras/es_V6_dcf_inverso.png",
      "fuente": [
@@ -1616,7 +1580,7 @@
     {
      "p": [
       [
-       "La Figura 30 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 31, 32 y 33). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa. Esta matriz fija las probabilidades de los escenarios de Valuación: llegar a un extremo histórico es remoto (2% a 10% por variable) y el bear y el bull reúnen esos extremos a la vez.",
+       "La Figura 28 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 29, 30 y 31). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa. Esta matriz fija las probabilidades de los escenarios de Valuación: llegar a un extremo histórico es remoto (2% a 10% por variable) y el bear y el bull reúnen esos extremos a la vez.",
        false,
        false
       ]
@@ -1640,7 +1604,7 @@
        "tinta"
       ],
       [
-       "Caídas de margen EBITDA, rentas, tráfico u ocupación hacia sus mínimos históricos. El peor caso, un margen trimestral de 75,8%, reduce el valor DCF a CLP 1.669 (−10,2%), y el piso histórico del crecimiento de rentas en mismas tiendas lo lleva a CLP 1.783 (−4,1%) (Figura 31). Todas las palancas a la vez, con la WACC +100 pb, definen el escenario bear (precio objetivo CLP 1.542, −56,6% frente al precio). ",
+       "Caídas de margen EBITDA, rentas, tráfico u ocupación hacia sus mínimos históricos. El peor caso, un margen trimestral de 75,8%, reduce el valor DCF a CLP 1.669 (−10,2%), y el piso histórico del crecimiento de rentas en mismas tiendas lo lleva a CLP 1.783 (−4,1%) (Figura 29). Todas las palancas a la vez, con la WACC +100 pb, definen el escenario bear (precio objetivo CLP 1.542, −56,6% frente al precio). ",
        false,
        false
       ],
@@ -1682,7 +1646,7 @@
        "tinta"
       ],
       [
-       "Las anclas, en su mayoría del grupo Falabella, atraen el flujo de visitas. Su reducción o salida bajaría las visitas y las rentas de las tiendas menores. El impacto va de −1,3% a −4,1% (Figura 31). ",
+       "Las anclas, en su mayoría del grupo Falabella, atraen el flujo de visitas. Su reducción o salida bajaría las visitas y las rentas de las tiendas menores. El impacto va de −1,3% a −4,1% (Figura 29). ",
        false,
        false
       ],
@@ -1727,7 +1691,7 @@
        "tinta"
       ],
       [
-       "Las tasas largas dominan el valor, en ambos sentidos. Un alza eleva la WACC y el costo de refinanciar la deuda y el pipeline, y es lo más probable: el UST 10Y pasó de 4,98% (Rf del modelo) a 5,22% al 8-oct-26, máximo desde 2002 (por verificar); la Fed subió su tasa en septiembre y las tasas largas locales también suben. Con WACC nominal +50 pb y +100 pb, el precio objetivo cae 6,7% y 12,5% (Figura 32), lo que refuerza la recomendación. Lo que rompería la tesis es lo contrario: con WACC −100 pb sube 16,6%, a CLP 2.421, y aun así queda 32% bajo el precio. ",
+       "Las tasas largas dominan el valor, en ambos sentidos. Un alza eleva la WACC y el costo de refinanciar la deuda y el pipeline, y es lo más probable: el UST 10Y pasó de 4,98% (Rf del modelo) a 5,22% al 8-oct-26, máximo desde 2002 (por verificar); la Fed subió su tasa en septiembre y las tasas largas locales también suben. Con WACC nominal +50 pb y +100 pb, el precio objetivo cae 6,7% y 12,5% (Figura 30), lo que refuerza la recomendación. Lo que rompería la tesis es lo contrario: con WACC −100 pb sube 16,6%, a CLP 2.421, y aun así queda 32% bajo el precio. ",
        false,
        false
       ],
@@ -1772,7 +1736,7 @@
        "tinta"
       ],
       [
-       "El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es pequeño, porque las rentas indexadas suben con la inflación: una alza de 100 pb de la tasa larga nominal que venga toda de inflación esperada resta solo 0,3%; si viniera toda de tasa real, 12,2% (Figura 33). El riesgo está en que un menor consumo impida traspasar la inflación a las rentas: si solo se reajustara el 70% del flujo, el efecto de la inflación subiría a 1,0%. Un menor consumo también frena las nuevas líneas de negocio (Anexo 18). ",
+       "El 79% de la deuda está en UF: una UF 3% más alta resta CLP 38.691 MM a la utilidad contable (Nota 26). Sobre el precio objetivo, en cambio, el efecto es pequeño, porque las rentas indexadas suben con la inflación: una alza de 100 pb de la tasa larga nominal que venga toda de inflación esperada resta solo 0,3%; si viniera toda de tasa real, 12,2% (Figura 31). El riesgo está en que un menor consumo impida traspasar la inflación a las rentas: si solo se reajustara el 70% del flujo, el efecto de la inflación subiría a 1,0%. Un menor consumo también frena las nuevas líneas de negocio (Anexo 20). ",
        false,
        false
       ],
@@ -1814,7 +1778,7 @@
        "tinta"
       ],
       [
-       "Si el consumo migra masivamente al canal online, el mall pierde tráfico y atractivo. El e-commerce en Chile superó US$ 10.000 MM en 2025 (12,6% de las ventas del comercio). El peor caso de tráfico solo resta 1,3% al valor (Figura 31). ",
+       "Si el consumo migra masivamente al canal online, el mall pierde tráfico y atractivo. El e-commerce en Chile superó US$ 10.000 MM en 2025 (12,6% de las ventas del comercio). El peor caso de tráfico solo resta 1,3% al valor (Figura 29). ",
        false,
        false
       ],
@@ -1973,7 +1937,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 30:",
+     "n": "Figura 28:",
      "titulo": "Matriz de riesgos",
      "archivo": "/riesgos/graficos/figuras/es_fig23_matriz.png",
      "fuente": [
@@ -1986,7 +1950,7 @@
      "ancla": 1
     },
     {
-     "n": "Figura 31:",
+     "n": "Figura 29:",
      "titulo": "Tornado de riesgo operacional (CLP por acción)",
      "archivo": "/riesgos/graficos/figuras/es_fig24_tornado.png",
      "fuente": [
@@ -1999,7 +1963,7 @@
      "ancla": 1
     },
     {
-     "n": "Figura 32:",
+     "n": "Figura 30:",
      "titulo": "Sensibilidad del precio objetivo: WACC vs g (CLP)",
      "archivo": "/riesgos/graficos/figuras/es_fig25_heatmap.png",
      "fuente": [
@@ -2012,7 +1976,7 @@
      "ancla": 8
     },
     {
-     "n": "Figura 33:",
+     "n": "Figura 31:",
      "titulo": "Precio objetivo según la tasa larga y la parte de su alza que viene de inflación (CLP)",
      "archivo": "/valuacion/graficos/figuras/es_V12_mix_tasas_inflacion.png",
      "fuente": [
@@ -2037,7 +2001,7 @@
     {
      "p": [
       [
-       "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-sep-26 (−39,6% de retorno total con un dividendo esperado de CLP 69, 2,0%). El precio objetivo pondera 80% el valor DCF (CLP 1.859, al 30-jun-26) y 20% el valor por múltiplos EV/EBITDA UDM de pares (CLP 2.951; 14,4x), y queda bajo el mínimo de 52 semanas (CLP 2.470). Mallplaza es un negocio excelente (arriendos reajustados por UF, margen EBITDA de 80%, ocupación de 95,6%, DFN/EBITDA de 2,36x y calificación AAA local); el desacuerdo es de precio: la acción subió ~90% sin que cambiara el negocio (Figura 34) y paga una WACC nominal de 7,60% (4,5% real), 281 pb bajo la nuestra de 10,41%.",
+       "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-sep-26 (−39,6% de retorno total con un dividendo esperado de CLP 69, 2,0%). El precio objetivo pondera 80% el valor DCF (CLP 1.859, al 30-jun-26) y 20% el valor por múltiplos EV/EBITDA UDM de pares (CLP 2.951; 14,4x), y queda bajo el mínimo de 52 semanas (CLP 2.470). Mallplaza es un negocio excelente (arriendos reajustados por UF, margen EBITDA de 80%, ocupación de 95,6%, DFN/EBITDA de 2,36x y calificación AAA local); el desacuerdo es de precio: la acción subió ~90% sin que cambiara el negocio (Figura 32) y paga una WACC nominal de 7,60% (4,5% real), 281 pb bajo la nuestra de 10,41%.",
        false,
        false
       ]
@@ -2049,7 +2013,7 @@
     {
      "p": [
       [
-       "La WACC nominal sube 100 pb y, a la vez, margen, ocupación, arriendo, ventas, visitas y crecimiento real caen a su mínimo histórico, con el capex de mantención en su máximo. El valor DCF baja a CLP 1.190 y el precio objetivo a CLP 1.542 (−56,6%; retorno total −54,7%). Cada variable por separado es una posibilidad remota (+100 pb de WACC, 10%, por FR1; cada palanca operacional, 5%, por OR1), y como las operacionales se mueven juntas y las tasas son independientes, la probabilidad conjunta es 0,5% (Figura 35).",
+       "La WACC nominal sube 100 pb y, a la vez, margen, ocupación, arriendo, ventas, visitas y crecimiento real caen a su mínimo histórico, con el capex de mantención en su máximo. El valor DCF baja a CLP 1.190 y el precio objetivo a CLP 1.542 (−56,6%; retorno total −54,7%). Cada variable por separado es una posibilidad remota (+100 pb de WACC, 10%, por FR1; cada palanca operacional, 5%, por OR1), y como las operacionales se mueven juntas y las tasas son independientes, la probabilidad conjunta es 0,5% (Figura 33).",
        false,
        false
       ]
@@ -2178,7 +2142,7 @@
        10,
        11
       ],
-      "nota": "Cada variable en su extremo histórico es una posibilidad remota: probabilidad individual a 12 meses entre paréntesis (alta 10%, media 5%, baja 2%; matriz de riesgo; supuestos del equipo). g nominal 3,0% en los tres casos. Fuente: réplica del DCF v4 (Anexo 16); análisis del equipo."
+      "nota": "Cada variable en su extremo histórico es una posibilidad remota: probabilidad individual a 12 meses entre paréntesis (alta 10%, media 5%, baja 2%; matriz de riesgo; supuestos del equipo). g nominal 3,0% en los tres casos. Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
      }
     },
     {
@@ -2199,7 +2163,7 @@
     {
      "p": [
       [
-       "El consenso de Bloomberg (14 fuentes) fija CLP 4.111 a 12 meses; la diferencia es de tasa (Figura 36): con la WACC de los tasadores (8,72% nominal) el DCF sube a CLP 2.679. Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nuestro valor y la normalización del impuesto en caja de 16,8% a 27%. Riesgos para la tesis: compresión de cap rates o una prima estructural por los activos Tier A, la rebaja del impuesto a 23% (+5,2% al precio objetivo) y el gobierno corporativo (Falabella controla 53,1%).",
+       "El consenso de Bloomberg (14 fuentes) fija CLP 4.111 a 12 meses; la diferencia es de tasa (Figura 34): con la WACC de los tasadores (8,72% nominal) el DCF sube a CLP 2.679. Catalizadores: tasas largas altas (UST 10Y nominal en 5,22%), cada nueva tasación (Nota 11) que acerque el cap rate a nuestro valor y la normalización del impuesto en caja de 16,8% a 27%. Riesgos para la tesis: compresión de cap rates o una prima estructural por los activos Tier A, la rebaja del impuesto a 23% (+5,2% al precio objetivo) y el gobierno corporativo (Falabella controla 53,1%).",
        false,
        false
       ]
@@ -2208,7 +2172,7 @@
    ],
    "figuras": [
     {
-     "n": "Figura 34:",
+     "n": "Figura 32:",
      "titulo": "La acción subió ~90% en seis meses sin que cambiara el negocio y luego devolvió 24%",
      "archivo": "/valuacion/graficos/figuras/es_V14_trayectoria.png",
      "fuente": [
@@ -2222,12 +2186,12 @@
      "ancla": 1
     },
     {
-     "n": "Figura 35:",
+     "n": "Figura 33:",
      "titulo": "Bear, base y bull: aun con todo a favor el precio objetivo queda 18% bajo el precio (CLP por acción)",
      "archivo": "/valuacion/graficos/figuras/es_V10_escenarios.png",
      "fuente": [
       [
-       "Bear: todo lo que podría salir mal, sale mal; base: todo como lo proyectamos; bull: todo a favor (Anexo 16). Ilustraciones del equipo. Fuente: réplica del DCF v4; análisis del equipo.",
+       "Bear: todo lo que podría salir mal, sale mal; base: todo como lo proyectamos; bull: todo a favor (Anexo 18). Ilustraciones del equipo. Fuente: réplica del DCF v4; análisis del equipo.",
        false,
        false
       ]
@@ -2236,7 +2200,7 @@
      "ancla": 3
     },
     {
-     "n": "Figura 36:",
+     "n": "Figura 34:",
      "titulo": "De nuestro DCF al precio y al consenso: la brecha es de tasa (CLP por acción)",
      "archivo": "/valuacion/graficos/figuras/es_V15_escalera.png",
      "fuente": [

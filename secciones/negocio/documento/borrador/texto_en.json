@@ -32,7 +32,7 @@
        "tipo": "p",
        "runs": [
         [
-         "That pricing power rests on a renewed tenant mix. Department stores, which occupied 26.7% of GLA in 2020, fell to 19.0% in 2Q26 after Mallplaza converted roughly 146,000 m² of large-format stores since 2019 to brands such as IKEA, H&M and Decathlon (Figure 2). Today, 32.2% of GLA is devoted to essential retail and daily-traffic services (supermarkets, home improvement, public services, healthcare), which drive frequent visits, and another 21.5% to specialty retail. No single tenant dominates revenue: the top five tenants account for 18% and related parties for 15.7%. A lean cost structure adds to this: cost of sales is 6.2% of revenue and administrative expenses 13.9%, leaving an LTM EBITDA margin of 80.5%.",
+         "That pricing power rests on a renewed tenant mix. Department stores, which occupied 26.7% of GLA in 2020, fell to 19.0% in 2Q26 after Mallplaza converted roughly 146,000 m² of large-format stores since 2019 to brands such as IKEA, H&M and Decathlon (Appendix B). Today, 32.2% of GLA is devoted to essential retail and daily-traffic services (supermarkets, home improvement, public services, healthcare), which drive frequent visits, and another 21.5% to specialty retail. No single tenant dominates revenue: the top five tenants account for 18% and related parties for 15.7%. A lean cost structure adds to this: cost of sales is 6.2% of revenue and administrative expenses 13.9%, leaving an LTM EBITDA margin of 80.5%.",
          false,
          false
         ]
@@ -46,7 +46,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Growth is concentrated in its best assets. Ten centers, seven in Chile, two in Colombia and one in Peru, are Tier A, and with 46.4% of GLA they generate more than 60% of EBITDA (Figure 3). Investment is directed toward them, as the expansions under construction at Trébol, Oeste, Norte, Trujillo and La Serena aim to lift Tier A assets to more than 70% of GLA. It is an excellent asset; the next question is how defensible its position is against competitors.",
+         "Growth is concentrated in its best assets. Ten centers, seven in Chile, two in Colombia and one in Peru, are Tier A, and with 46.4% of GLA they generate more than 60% of EBITDA (Appendix A). Investment is directed toward them, as the expansions under construction at Trébol, Oeste, Norte, Trujillo and La Serena aim to lift Tier A assets to more than 70% of GLA. It is an excellent asset; the next question is how defensible its position is against competitors.",
          false,
          false
         ]
@@ -77,34 +77,23 @@
          true
         ]
        ]
-      },
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "titulo",
+   "texto": "APPENDICES: BUSINESS DESCRIPTION"
+  },
+  {
+   "tipo": "figuras",
+   "filas": [
+    [
+     [
       {
        "tipo": "caption",
-       "n": "Figure 2:",
-       "texto": "Department stores, % of total GLA"
-      },
-      {
-       "tipo": "imagen",
-       "archivo": "image3.png"
-      },
-      {
-       "tipo": "fuente",
-       "runs": [
-        [
-         "Source: ",
-         false,
-         false
-        ],
-        [
-         "Plaza S.A., Institutional Presentation 2Q26 (p.17).",
-         false,
-         true
-        ]
-       ]
-      },
-      {
-       "tipo": "caption",
-       "n": "Figure 3:",
+       "n": "Appendix A:",
        "texto": "Tier A assets by GLA, 2Q26 (thousand m²)"
       },
       {
@@ -126,8 +115,34 @@
         ]
        ]
       }
+     ],
+     [
+      {
+       "tipo": "caption",
+       "n": "Appendix B:",
+       "texto": "Department stores, % of total GLA"
+      },
+      {
+       "tipo": "imagen",
+       "archivo": "image3.png"
+      },
+      {
+       "tipo": "fuente",
+       "runs": [
+        [
+         "Source: ",
+         false,
+         false
+        ],
+        [
+         "Plaza S.A., Institutional Presentation 2Q26 (p.17).",
+         false,
+         true
+        ]
+       ]
+      }
      ]
-    }
+    ]
    ]
   }
  ]
