@@ -42,7 +42,7 @@ T = {
                           "Geopolítica\nfragmentación y aranceles"],
                     "c": ["Inflación y UF", "Tasas largas locales", "Consumo y PIB", "Tipo de cambio y flujos"],
                     "m": ["Deuda UF: UF +3% = −CLP 38.691 MM; rentas UF compensan",
-                          "WACC +100 pb = precio objetivo −12,3%", "Ventas de locatarios y tráfico",
+                          "WACC +100 pb = precio objetivo −12,5%", "Ventas de locatarios y tráfico",
                           "Financiamiento y riesgo país (CRP 1,41% en el Ke)"],
                     "r": ["MR1", "FR1", "MR1 · MR2", "FR1 · MR3"]}},
     "en": {"meses": "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(),
@@ -56,7 +56,7 @@ T = {
                           "Geopolitics\nfragmentation and tariffs"],
                     "c": ["Inflation and UF", "Local long-term rates", "Consumption and GDP", "FX and capital flows"],
                     "m": ["UF debt: UF +3% = −CLP 38,691 MM; UF rents offset",
-                          "WACC +100 bp = target price −12.3%", "Tenant sales and footfall",
+                          "WACC +100 bp = target price −12.5%", "Tenant sales and footfall",
                           "Funding and country risk (1.41% CRP in Ke)"],
                     "r": ["MR1", "FR1", "MR1 · MR2", "FR1 · MR3"]}},
 }

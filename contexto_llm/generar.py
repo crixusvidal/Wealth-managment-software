@@ -32,6 +32,7 @@ FAMILIAS = {
     "fa_exhibits": ("analisis_financiero/modelos", r"Mallplaza_FA_Exhibits_v(\d+)\.xlsx"),
     "figuras_valuacion": ("valuacion/modelos", r"Mallplaza_Figuras_Valuacion_recalc\.xlsx"),
     "industria": ("industria/modelos", r"Excel_DATA_INDUSTRY\.xlsx"),
+    "eficiencia": ("industria/modelos", r"Eficiencia_EBITDA_GLA_2T26V(\d+)\.xlsx"),
     "negocio": ("negocio/modelos", r"Excel_bussines_para_armar_graficos\.xlsx"),
     "tornado": ("riesgos/modelos", r"Mallplaza_Tornado_Sensibilidad_Operacional_[\d_]+\.xlsx"),
     "esg": ("esg/modelos", r"ESG_sanciones_y_datos\.xlsx"),
@@ -144,7 +145,7 @@ def main():
     if ci.exists():                       # cifras que el informe calcula con la réplica del DCF y los datos del equipo (cifras_informe.py)
         k = json.loads(ci.read_text())
         fuente = "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
-        c.add("Escenarios", "esc_ponderado_po", "Precio objetivo ponderado 25/50/25, CLP", k["ponderado"]["po"], "clp", fuente)
+        c.add("Escenarios", "esc_ponderado_po", "Precio objetivo ponderado 30/60/10 (pesos de la matriz de riesgo), CLP", k["ponderado"]["po"], "clp", fuente)
         c.add("Pipeline", "pipeline_m2", "Pipeline con fecha 2026–2028 (m²)", k["pipeline_m2"], "n0", fuente)
         c.add("Pipeline", "pipeline_usd_mm", "Pipeline con fecha, inversión (USD MM)", k["pipeline_usd_mm"], "n0", fuente)
         c.add("Mercado", "consenso_po_12m", "Precio objetivo de consenso a 12 meses (Bloomberg, 14 fuentes), CLP", k["consenso"]["po_12m"], "clp", fuente)
@@ -157,7 +158,10 @@ def main():
     ef = ind["EF. OPERATIVA (CLPM2)"]
     for rr in range(6, 9):
         c.add("Industria", f"gla_{ef.cell(rr,1).value}".lower().replace(" ", "_"), f"GLA {ef.cell(rr,1).value} (m²)", ef.cell(rr, 3).value, "n0", ref("industria", "EF. OPERATIVA (CLPM2)", f"C{rr}"))
-        c.add("Industria", f"ebitda_m2_{ef.cell(rr,1).value}".lower().replace(" ", "_"), f"EBITDA por m² trimestral 2T26 {ef.cell(rr,1).value} (CLP)", ef.cell(rr, 4).value, "n0", ref("industria", "EF. OPERATIVA (CLPM2)", f"D{rr}"))
+    ee = abrir(arch["eficiencia"])["Eficiencia_EBITDA_GLA_2T26"]      # EBITDA/m² (Parque Arauco ajustado por multifamily)
+    filas_ee = [rr for rr in range(1, 12) if ee.cell(rr, 1).value in ("Mallplaza", "Cenco Malls", "Parque Arauco")]
+    for rr in filas_ee:
+        c.add("Industria", f"ebitda_m2_{ee.cell(rr,1).value}".lower().replace(" ", "_"), f"EBITDA por m² trimestral 2T26 {ee.cell(rr,1).value} (CLP)", ee.cell(rr, 6).value, "n0", ref("eficiencia", "Eficiencia_EBITDA_GLA_2T26", f"F{rr}"))
     neg = abrir(arch["negocio"])
     ws = neg["Grafico 1, 2 tortas"]
     for row in ws.iter_rows(min_row=1, values_only=True):

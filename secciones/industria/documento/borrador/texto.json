@@ -18,7 +18,7 @@
        "tipo": "p",
        "runs": [
         [
-         "En el retail real estate, los operadores de centros comerciales no venden productos, sino que arriendan metros cuadrados de superficie arrendable (GLA) a sus locatarios a cambio de un ingreso mayoritariamente fijo e indexado a la inflación de cada país. En Mallplaza, por ejemplo, el 93% del ingreso por arriendo es fijo. Por eso medimos la participación de mercado por GLA y no por ventas, y bajo esa óptica Mallplaza, Cenco Malls y Parque Arauco administran en conjunto 3,4 millones de m² solo en Chile.",
+         "En el retail real estate, los operadores de centros comerciales no venden productos, sino que arriendan metros cuadrados de superficie arrendable (GLA) a sus locatarios a cambio de un ingreso mayoritariamente fijo e indexado a la inflación de cada país. En Mallplaza, por ejemplo, el 93% del ingreso por arriendo es fijo. Por eso medimos la participación por GLA y no por ventas. No existe un GLA total de la industria: usamos el de los principales operadores de cada país, y bajo esa óptica Mallplaza, Cenco Malls y Parque Arauco (el trío) administran en conjunto 3,4 millones de m² en Chile (3,29 millones sin oficinas).",
          false,
          false
         ]
@@ -28,7 +28,7 @@
        "tipo": "p",
        "runs": [
         [
-         "La estructura del mercado, sin embargo, cambia de un país a otro (Figura 2). En Chile el trío concentra el 76% del GLA de los principales operadores (CR3) y el índice de concentración HHI parcial alcanza al menos 2.126 puntos, propio de un mercado altamente concentrado, con Mallplaza como líder (33%) seguido de Cenco (29%) y Parque Arauco (14%). En Perú y Colombia, en cambio, el trío reúne apenas el 37% y el 13% del GLA, el liderazgo lo ejerce un operador externo con 29% y 9%, respectivamente, y Mallplaza ocupa el segundo lugar en ambos mercados. En Perú ese líder es Real Plaza (InRetail), con 888.000 m² y una ocupación de 95,5%, frente a 618.093 m² y 93,8% de Mallplaza; aun así, Mallplaza genera más EBITDA por m² (S/ 159 frente a S/ 148 en el 2T26). La fragmentación es mayor en Colombia, donde la mayoría de los centros comerciales es de propiedad horizontal, lo que obliga a los operadores profesionales a crecer comprando activos de dueño único, como hará Mallplaza con Gran Plaza (179.667 m², adquisición anunciada).",
+         "La estructura del mercado, sin embargo, cambia de un país a otro (Figura 2). En Chile el trío concentra el 76% del GLA de los principales operadores (CR3) y el índice de concentración HHI parcial alcanza al menos 2.126 puntos, propio de un mercado altamente concentrado, con Mallplaza como líder (33%) seguido de Cenco (29%) y Parque Arauco (14%). En Perú y Colombia, en cambio, el trío reúne apenas el 37% y el 13% del GLA, el liderazgo lo ejerce un operador externo con 29% y 9%, respectivamente, y Mallplaza ocupa el segundo lugar en ambos mercados. En Perú ese líder es Real Plaza (InRetail), con 888.000 m² frente a 618.093 m² de Mallplaza, que aun así genera más EBITDA por m² (S/ 159 frente a S/ 148 en el 2T26). La fragmentación es mayor en Colombia, donde la mayoría de los centros comerciales es de propiedad horizontal, lo que obliga a los operadores profesionales a crecer comprando activos de dueño único, como hará Mallplaza con Gran Plaza (179.667 m², adquisición anunciada).",
          false,
          false
         ]
@@ -42,7 +42,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Entre 2026 y 2028 el trío agregará en Chile 219.900 m² orgánicos que competirán por el gasto de los consumidores, equivalentes al 5,1% del GLA de la industria en Chile. Ese GLA (≈4,3 millones de m²) lo estimamos dividiendo el GLA del trío sin oficinas (3,29 millones de m²) por su participación de 76% en el GLA de los principales operadores (supuestos en el Anexo 7); medir la oferta sobre el GLA del propio trío (6,7%) sobrestimaría la presión, porque excluye a los demás operadores. La cifra excluye las oficinas y el multifamily, que no dependen del consumo, y las adquisiciones, que solo cambian de dueño (detalle en el Anexo 3). En el mismo período el Banco Central proyecta un crecimiento acumulado de 6,4% del consumo privado (Figura 3), de modo que la oferta nueva avanza por debajo de la demanda esperada. El calendario, eso sí, no es parejo: 2026 casi no suma metros (+0,2%) y la presión se concentra en 2027, cuando la oferta (+2,2%) apenas supera al consumo (+2,1%); en 2028 vuelve a quedar bajo él (+2,6% frente a +2,7%). Solo medimos la oferta del trío, cuyo pipeline es público: si los demás operadores abren m² adicionales, la presión sería mayor.",
+         "Entre 2026 y 2028 el trío agregará en Chile 219.900 m² orgánicos que competirán por el gasto de los consumidores, equivalentes al 5,1% del GLA de los principales operadores en Chile. Ese GLA (≈4,3 millones de m²) resulta de dividir el GLA del trío sin oficinas (3,29 millones) por su participación de 76% (supuestos en el Anexo 7); medir la oferta sobre el GLA del propio trío (6,7%) sobrestimaría la presión, porque excluye a los demás operadores. La cifra excluye las oficinas y el multifamily, que no dependen del consumo, y las adquisiciones, que solo cambian de dueño (detalle en el Anexo 3). En el mismo período el Banco Central proyecta un crecimiento real acumulado de 6,4% del consumo privado (Figura 3), de modo que la oferta nueva avanza por debajo de la demanda esperada. El calendario no es parejo: 2026 casi no suma metros (+0,2%) y la presión se concentra en 2027, cuando la oferta (+2,2%) apenas supera al consumo (+2,1%); en 2028 vuelve a quedar bajo él (+2,6% frente a +2,7%). Solo medimos la oferta del trío, cuyo pipeline es público: si los demás operadores abren m² adicionales, la presión sería mayor.",
          false,
          false
         ]
@@ -52,7 +52,7 @@
        "tipo": "p",
        "runs": [
         [
-         "El punto de partida es exigente, porque en el 2T26 las ventas reales de los locatarios del trío en Chile cayeron 2,5% a/a. Mallplaza fue la única que creció en términos reales (+1,0%), frente a las caídas de Parque Arauco (−1,7%) y Cenco (−5,9%). Aun así, los locatarios siguen demandando espacio, y la ocupación consolidada de las tres empresas se ha movido entre 93% y 99% desde el 2T22, incluso durante el ciclo de inflación y tasas altas (Anexo 4). Fuera de Chile el balance es más holgado, ya que la oferta nueva con fecha se limita a ampliaciones de Mallplaza en Perú (55.800 m²), es prácticamente nula en Colombia y convive con ventas en mismas tiendas (SSS) de Mallplaza que crecieron 7,0% en Perú y 9,0% en Colombia en moneda local.",
+         "El punto de partida es débil: en el 2T26 las ventas reales de los locatarios del trío en Chile cayeron 2,5% a/a. Mallplaza fue la única que creció en términos reales (+1,0%), frente a las caídas de Parque Arauco (−1,7%) y Cenco (−5,9%). Aun así, los locatarios siguen demandando espacio, y la ocupación consolidada de las tres empresas se ha movido entre 93% y 99% desde el 2T22, incluso durante el ciclo de inflación y tasas altas (Anexo 4). Fuera de Chile el balance es más holgado, ya que la oferta nueva con fecha se limita a ampliaciones de Mallplaza en Perú (55.800 m²), es prácticamente nula en Colombia y convive con ventas en mismas tiendas (SSS) de Mallplaza que crecieron 7,0% en Perú y 9,0% en Colombia (nominales, en moneda local).",
          false,
          false
         ]
@@ -66,7 +66,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Para evaluar el atractivo de la industria analizamos las cinco fuerzas de Porter en cada país, en una escala de 1 (débil) a 5 (intensa), y las ponderamos por el GLA de Mallplaza en Chile (62%), Perú (26%) y Colombia (12%) (Figura 4; evidencia en Anexo 6). El resultado describe una industria atractiva, coherente con márgenes EBITDA que van de 71% a 90% en los tres operadores, y en la que la única fuerza intensa es la rivalidad.",
+         "Para evaluar el atractivo de la industria analizamos las cinco fuerzas de Porter en cada país, en una escala de 1 (débil) a 5 (intensa), y las ponderamos por el GLA de Mallplaza en Chile (62%), Perú (26%) y Colombia (12%) (Figura 4; evidencia en Anexo 6). El resultado describe una industria atractiva, coherente con márgenes EBITDA de 71% a 90% en los tres operadores.",
          false,
          false
         ]
@@ -86,7 +86,7 @@
          false
         ],
         [
-         " no se juega en precio, sino en experiencia y en activos. No hay señales de guerra de precios, ya que en el 2T26 los tres operadores subieron sus arriendos en mismas tiendas en Chile (Mallplaza +5,4%, Parque Arauco +3,8% y Cenco +0,8%, este último afectado por un menor arriendo variable ligado a las ventas), con una ocupación de 96-99% que no deja espacio vacío que llenar con descuentos (Anexo 6, tabla 6.2). Mallplaza destina más de la mitad de su GLA a formatos no tradicionales, experiencia y entretención, Cenco abrió QINTO con 30.000 m² de gastronomía en Costanera y Parque Arauco suma pisos gastronómicos en Kennedy, mientras la competencia por comprar activos se intensifica, con Minka y Plaza Central cambiando de dueño en el último año y Parque Arauco anunciando la compra de Quilín y Chicureo. No le asignamos la nota máxima porque las participaciones del trío en Chile se mantienen estables desde el 2T22 (Anexo 5) y los márgenes no muestran erosión.",
+         " no se juega en precio, sino en experiencia y en activos. No hay señales de guerra de precios, ya que en el 2T26 los tres operadores subieron sus arriendos nominales en mismas tiendas en Chile (Mallplaza +5,4%, Parque Arauco +3,8% y Cenco +0,8%, este último afectado por un menor arriendo variable ligado a las ventas), con una ocupación de 96-99% que no deja espacio vacío que llenar con descuentos (Anexo 6, tabla B). Mallplaza destina más de la mitad de su GLA a formatos no tradicionales, experiencia y entretención, Cenco abrió QINTO (30.000 m² de gastronomía) y Parque Arauco suma pisos gastronómicos en Kennedy, y la competencia por comprar activos se intensifica (Minka y Plaza Central cambiaron de dueño; Parque Arauco anunció Quilín y Chicureo). No le asignamos la nota máxima porque las participaciones del trío en Chile se mantienen estables desde el 2T22 (Anexo 5) y los márgenes no muestran erosión.",
          false,
          false
         ]
@@ -97,7 +97,7 @@
       {
        "tipo": "caption",
        "n": "Figura 2:",
-       "texto": "Participación de mercado por GLA y concentración, 2Q26"
+       "texto": "Participación de mercado por GLA y concentración, 2T26"
       },
       {
        "tipo": "imagen",
@@ -136,7 +136,7 @@
          false
         ],
         [
-         "reportes 2Q26 de Plaza S.A., Parque Arauco y Cenco Malls; Banco Central de Chile, IPoM sep-2026 (Tabla II.1); análisis del equipo. Solo GLA orgánico que depende del consumo.",
+         "reportes del 2T26 de Plaza S.A., Parque Arauco y Cenco Malls; Banco Central de Chile, IPoM sep-2026 (Tabla II.1); análisis del equipo. Solo GLA orgánico que depende del consumo.",
          false,
          true
         ]
@@ -203,13 +203,13 @@
       },
       {
        "tipo": "h1",
-       "texto": "MALLPLAZA CONVIERTE SU ESCALA EN EL M² MÁS PRODUCTIVO DEL TRÍO"
+       "texto": "MALLPLAZA TIENE EL M² MÁS PRODUCTIVO DEL TRÍO, PERO POR POCO"
       },
       {
        "tipo": "p",
        "runs": [
         [
-         "Mallplaza convierte su escala en el EBITDA por m² más alto del trío, con 59.451 CLP en el 2T26 frente a 58.384 de Cenco y 55.363 de Parque Arauco (Figura 5). Esa ventaja nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de una venta mensual por m² de 289.788 CLP en Chile, 5,8% superior a la de un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
+         "Mallplaza tiene el mayor EBITDA por m² del trío: CLP 59.451 en el 2T26 (trimestral, sin anualizar), frente a 58.384 de Cenco y 55.363 de Parque Arauco, ajustado por su NOI multifamily (55.738 sin ajuste; Figura 5). La ventaja es de 1,8% sobre Cenco y 7,4% sobre Parque Arauco. Nace de ubicaciones urbanas de alto tráfico, que en Chile recibieron 52,7 millones de visitas en el trimestre frente a 32,5 millones en Cenco, y de ventas mensuales por m² 5,8% mayores que un año antes. La brecha con Cenco es estrecha y en parte se explica porque Cenco incorporó Plaza Central en junio, con apenas un mes de EBITDA en el trimestre.",
          false,
          false
         ]
@@ -243,7 +243,7 @@
        "tipo": "p",
        "runs": [
         [
-         "En una industria atractiva, pero con rivalidad alta y una oferta que alcanzará al consumo en 2027, ganarán participación y rentabilidad los operadores con los activos más productivos y los contratos más estables. Mallplaza lidera en escala en Chile y en productividad por m², y es el único del trío con ventas reales crecientes, lo que lo deja bien posicionado para defender su rentabilidad. Su principal riesgo es la exposición a Chile, que concentra el 62% de su GLA y donde hoy el consumo se muestra más débil.",
+         "En una industria atractiva, pero con rivalidad alta y una oferta que alcanzará al consumo en 2027, ganarán participación y rentabilidad los operadores con los activos más productivos y los contratos más estables. Mallplaza lidera en escala en Chile y, aunque por poco, en productividad por m², y es el único del trío con ventas reales crecientes (2T26): su posición es defendible, pero la ventaja es pequeña. Su principal riesgo es la exposición a Chile, que concentra el 62% de su GLA y donde hoy el consumo se muestra más débil.",
          false,
          false
         ]
@@ -269,7 +269,7 @@
          false
         ],
         [
-         "análisis del equipo con datos de reportes 2Q26 (Anexo 6). 1 = fuerza débil; 5 = fuerza intensa.",
+         "análisis del equipo con datos de reportes del 2T26 (Anexo 6). 1 = fuerza débil; 5 = fuerza intensa.",
          false,
          true
         ]
@@ -302,7 +302,7 @@
       {
        "tipo": "caption",
        "n": "Figura 6:",
-       "texto": "Perfil de vencimiento de contratos (% del GLA) y duración promedio remanente, 2Q26"
+       "texto": "Perfil de vencimiento de contratos (% del GLA) y duración promedio remanente, 2T26"
       },
       {
        "tipo": "imagen",

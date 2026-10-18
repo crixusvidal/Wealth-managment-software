@@ -1,6 +1,6 @@
 # Cifras clave del informe (contexto para el LLM)
 
-Generado 2026-10-17 23:19 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
+Generado 2026-10-18 01:08 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
 Si una cifra de un texto contradice esta tabla, está mal el texto. Cada fila indica su fuente (archivo!hoja!celda).
 
 Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendación: VENDER.
@@ -88,7 +88,7 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio objetivo ponderado 25/50/25, CLP | CLP 2.001 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Precio objetivo ponderado 30/60/10 (pesos de la matriz de riesgo), CLP | CLP 2.001 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
 
 ## Pipeline
 
@@ -117,11 +117,11 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 | Cifra | Valor | Fuente |
 |---|---|---|
 | GLA Mallplaza (m²) | 2.360.135 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C6` |
-| EBITDA por m² trimestral 2T26 Mallplaza (CLP) | 59.451 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D6` |
 | GLA Cenco Malls (m²) | 1.538.391 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C7` |
-| EBITDA por m² trimestral 2T26 Cenco Malls (CLP) | 58.384 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D7` |
 | GLA Parque Arauco (m²) | 1.340.500 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C8` |
-| EBITDA por m² trimestral 2T26 Parque Arauco (CLP) | 55.738 | `Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D8` |
+| EBITDA por m² trimestral 2T26 Mallplaza (CLP) | 59.451 | `Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F6` |
+| EBITDA por m² trimestral 2T26 Cenco Malls (CLP) | 58.384 | `Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F7` |
+| EBITDA por m² trimestral 2T26 Parque Arauco (CLP) | 55.363 | `Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F8` |
 
 ## Negocio
 

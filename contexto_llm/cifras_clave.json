@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-17 23:19",
+ "generado": "2026-10-18 01:08",
  "modelos": {
   "valoracion": {
    "archivo": "Mallplaza_Valoracion_Consolidada_v4.xlsx",
@@ -16,6 +16,10 @@
   "industria": {
    "archivo": "Excel_DATA_INDUSTRY.xlsx",
    "sha256": "58b552bbeb"
+  },
+  "eficiencia": {
+   "archivo": "Eficiencia_EBITDA_GLA_2T26V2.xlsx",
+   "sha256": "fbcac658a1"
   },
   "negocio": {
    "archivo": "Excel_bussines_para_armar_graficos.xlsx",
@@ -378,7 +382,7 @@
   {
    "grupo": "Escenarios",
    "clave": "esc_ponderado_po",
-   "etiqueta": "Precio objetivo ponderado 25/50/25, CLP",
+   "etiqueta": "Precio objetivo ponderado 30/60/10 (pesos de la matriz de riesgo), CLP",
    "valor": 2000.5165560316636,
    "formato": "clp",
    "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
@@ -449,27 +453,11 @@
   },
   {
    "grupo": "Industria",
-   "clave": "ebitda_m2_mallplaza",
-   "etiqueta": "EBITDA por m² trimestral 2T26 Mallplaza (CLP)",
-   "valor": 59450.83649875961,
-   "formato": "n0",
-   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D6"
-  },
-  {
-   "grupo": "Industria",
    "clave": "gla_cenco_malls",
    "etiqueta": "GLA Cenco Malls (m²)",
    "valor": 1538391,
    "formato": "n0",
    "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!C7"
-  },
-  {
-   "grupo": "Industria",
-   "clave": "ebitda_m2_cenco_malls",
-   "etiqueta": "EBITDA por m² trimestral 2T26 Cenco Malls (CLP)",
-   "valor": 58384.37692368195,
-   "formato": "n0",
-   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D7"
   },
   {
    "grupo": "Industria",
@@ -481,11 +469,27 @@
   },
   {
    "grupo": "Industria",
+   "clave": "ebitda_m2_mallplaza",
+   "etiqueta": "EBITDA por m² trimestral 2T26 Mallplaza (CLP)",
+   "valor": 59450.8364987596,
+   "formato": "n0",
+   "fuente": "Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F6"
+  },
+  {
+   "grupo": "Industria",
+   "clave": "ebitda_m2_cenco_malls",
+   "etiqueta": "EBITDA por m² trimestral 2T26 Cenco Malls (CLP)",
+   "valor": 58384.376923682,
+   "formato": "n0",
+   "fuente": "Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F7"
+  },
+  {
+   "grupo": "Industria",
    "clave": "ebitda_m2_parque_arauco",
    "etiqueta": "EBITDA por m² trimestral 2T26 Parque Arauco (CLP)",
-   "valor": 55738.15740395375,
+   "valor": 55362.9242819843,
    "formato": "n0",
-   "fuente": "Excel_DATA_INDUSTRY.xlsx!EF. OPERATIVA (CLPM2)!D8"
+   "fuente": "Eficiencia_EBITDA_GLA_2T26V2.xlsx!Eficiencia_EBITDA_GLA_2T26!F8"
   },
   {
    "grupo": "Negocio",

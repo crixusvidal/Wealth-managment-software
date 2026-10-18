@@ -4,10 +4,10 @@ Entregables finales en español e inglés. **Entregar los PDF** (cuerpo maquetad
 
 | Archivo | Fecha | Páginas | Hash | Estado |
 |---|---|---|---|---|
-| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-17 23:22 | 20 | `5a4b4492358c` | actualizado ahora |
-| `vigente/Mallplaza_Informe_CFA_ES.docx` | 2026-10-17 23:17 | — | `b63529155fca` | sin cambios |
-| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-17 23:23 | 20 | `e959800a04b0` | actualizado ahora |
-| `vigente/Mallplaza_Informe_CFA_EN.docx` | 2026-10-17 23:18 | — | `c84048b596b0` | sin cambios |
+| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-18 01:08 | 20 | `4b2045d3b2f7` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_ES.docx` | 2026-10-18 01:06 | — | `d8f8d6a3aaaf` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-18 01:08 | 20 | `8843d5dd57bb` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_EN.docx` | 2026-10-18 01:07 | — | `186e9ad618a2` | actualizado ahora |
 
 - `vigente/`: la versión actual. `anterior/`: la penúltima (regla del proyecto: solo dos versiones).
 - Se actualiza con `python informe_consolidado/actualizar.py` (lo hace también `generar_todo.sh`); no editar a mano.

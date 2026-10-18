@@ -15,11 +15,11 @@ Mallplaza es un excelente negocio de arriendos (ingresos casi como un bono, marg
 | # | Sección | Rol en la historia | Mensaje clave | Carpeta |
 |---|---|---|---|---|
 | 1 | Business Description | Presentar el activo | Operador líder de centros comerciales en Chile, Perú y Colombia; el 81,4% de los ingresos son arriendos (93% renta fija). GLA: 61,9% Chile, 26,2% Perú, 11,9% Colombia. Las tiendas por departamento bajaron de 26,7% a 19,0% del GLA (2020–2T26) | `secciones/negocio` |
-| 2 | Industry | El negocio es bueno y defendible | Trío (Mallplaza, Cenco Malls, Parque Arauco) con 76% del GLA en Chile; ocupación alta; Porter favorable; Mallplaza es el más eficiente, pero por poco (EBITDA/m² trimestral 59,5k vs 58,4k Cenco y 55,7k PA, **brecha de solo 6,7%**) | `secciones/industria` |
+| 2 | Industry | El negocio es bueno y defendible | Trío (Mallplaza, Cenco Malls, Parque Arauco) con 76% del GLA en Chile; ocupación alta; Porter favorable; Mallplaza es el más eficiente, pero por poco (EBITDA/m² trimestral 59,5k vs 58,4k Cenco y 55,4k PA (ajustado por multifamily), **brecha de solo 7,4%**) | `secciones/industria` |
 | 3 | Financial Analysis | Separar el motor real del ruido contable | La utilidad reportada sigue al tasador (NIC 40); el FFO sigue al negocio. Crecimiento orgánico real ~3%; dos tercios del crecimiento 2025 fueron comprados (Perú). ROE normalizado 8–10%. Caja cubre el dividendo 2,6x. El AAA lo justifican los flujos, no el LTV | `secciones/analisis_financiero` |
 | 4 | Valuation | Cuantificar la brecha | DCF CLP 1.859 (80%) y múltiplos CLP 2.951 (20%) → CLP 2.077. Ningún método alcanza el precio; el precio objetivo queda bajo el mínimo de 52 semanas (CLP 2.470). El mercado paga cap rate de 6,0%; nuestro DCF implica 10,1%. Incluso el escenario bull (todo sale bien) da CLP 2.915 | `secciones/valuacion` |
-| 5 | Investment Risks | Qué podría romper la tesis | La tasa es el riesgo dominante (FR1: alta/alta). La operación mueve poco comparada con la tasa (WACC ±100 pb: −326/+430 CLP por acción; margen en su mínimo histórico: −190). La UF casi no mueve el valor (+1,1% con UF +3%). Riesgos no cuantificables (RR1, RR2) → análisis cualitativo | `secciones/riesgos` |
-| 6 | ESG | Calidad del gobierno y sostenibilidad | Perfil "verde" local fuerte pero puntaje Bloomberg bajo (3,39); 1 de 9 directores independiente; interlocking con Falabella (53,05%) | `secciones/esg` |
+| 5 | Investment Risks | Qué podría romper la tesis | La tasa es el riesgo dominante (FR1: alta/alta), pero un alza de tasas refuerza el VENDER; la tesis se rompe con una compresión de cap rates o una prima estructural Tier A. La operación mueve poco comparada con la tasa (WACC ±100 pb: −326/+430 CLP por acción; margen en su mínimo histórico: −190). La UF casi no mueve el valor (+1,1% con UF +3%). Riesgos no cuantificables (RR1, RR2) → análisis cualitativo | `secciones/riesgos` |
+| 6 | ESG | Calidad del gobierno y sostenibilidad | Perfil "verde" local fuerte pero puntaje Bloomberg bajo (3,39); 1 de 9 directores independiente; interlocking con Falabella (53,1%) | `secciones/esg` |
 | A | Anexos | Respaldo | WACC por período (Valuación), supuestos y estados resumidos (FA), macro 2022–2026, ESG | `*/anexo` |
 
 **Abstract.** Va al inicio del informe consolidado (ES/EN, en `informe_final/documento/informe_final.js`): tesis en un párrafo con las cifras ancla y una franja con recomendación, precio objetivo, precio y potencial. El Resumen de inversión va al final.
@@ -47,7 +47,7 @@ Las cifras vigentes con su celda de origen están en `contexto_llm/cifras_clave.
 | Margen EBITDA 2026E (año calendario) | 79,7% | v4 Forecast_Base |
 | DFN 30-jun-26 / DFN/EBITDA | CLP 1.285.740 MM / 2,36x → 3,5x (2031) | v4 Supuestos; Deuda |
 | Pipeline con fecha 2026–2028 | 170.200 m² (114.400 Chile + 55.800 Perú; incluye 46.500 m² de «otros proyectos Chile», apertura 2028), USD 613 MM | Exhibits v7 (D43 = 1, D44 = 2028) |
-| GLA real de la industria en Chile | ≈ 4,3 millones de m² (GLA del trío sin oficinas 3,29 M ÷ 76%) | Industria v7 |
+| GLA de referencia de la industria en Chile | ≈ 4,3 millones de m² = GLA de los principales operadores (trío sin oficinas 3,29 M ÷ 76%); el GLA total del mercado no está disponible | Industria v7 |
 | Cap rate implícito: mercado / DCF / pares Chile / libro / tasadores | 6,0% / 10,1% / 6,4% / 7,5% / 5,55% real | v4 Precio_Objetivo; DCF |
 | WACC que justifica el precio (nominal; desplaza toda la curva) | 7,60% (4,5% real), −281 pb | Figuras_Valuacion V6 (réplica) |
 | TIR de la firma al precio (tasa única, FCFF): nominal / real | 7,61% / 4,48% (−280 / −272 pb vs WACC 10,41% / 7,20%) | v4 TIR_Implicita; TIR_Accionista |
