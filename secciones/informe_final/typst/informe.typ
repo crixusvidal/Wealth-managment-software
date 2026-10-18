@@ -127,7 +127,9 @@
     let q = inicios.at(f.sec, default: a.location().position())
     let (p, y) = (q.page, q.y)
     // tope: los gráficos de una sección quedan antes de que empiece la siguiente (la última, en la página donde parte)
-    let tope = if f.sec + 1 < secs.len() { (secs.at(f.sec + 1).page, secs.at(f.sec + 1).y) } else { (secs.at(f.sec).page, ABAJO) }
+    // Negocio es corta (media página) y lleva tres gráficos: su columna de gráficos puede seguir junto al arranque de Industria
+    let nx = if D.secciones.at(f.sec).clave == "negocio" { 2 } else { 1 }
+    let tope = if f.sec + nx < secs.len() { (secs.at(f.sec + nx).page, secs.at(f.sec + nx).y) } else { (secs.at(f.sec).page, ABAJO) }
     let ok = false
     for _ in range(300) {
       y = calc.max(y, ARRIBA)

@@ -78,7 +78,7 @@ F.ANCHO = 11506; F.COL_TEXTO = 7740; F.MEDIA = (F.ANCHO - F.COL_SEP) / 2;
 const rango = (claves, desde) => Object.fromEntries(claves.map((k, i) => [k, desde + i]));
 const sub = (claves, anexo) => Object.fromEntries(claves.map((k, i) => [k, `${anexo}.${i + 1}`]));
 const MAPAS = {
-  negocio: { nombre: "Negocio", fig: { 1: 1 }, anx: { A: 1, B: 2 } },
+  negocio: { nombre: "Negocio", fig: { 1: 1, 2: 2, 3: 3 }, anx: {} },
   industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: { 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 } },
   esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5", "E6"], 7), ...sub(["S1", "S2", "S3", "S4", "S5"], 8) }, anx: { "[Y]": 8 } },
   fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: { ...rango(["1", "2", "3", "4", "5", "6"], 9), ...rango(["9", "10", "11", "12", "13", "14"], 9), 18: 18, "[B]": 15, "[C]": 16 } },
@@ -88,6 +88,16 @@ const MAPAS = {
   riesgos: { nombre: "Riesgos", fig: rango(["23", "24", "25", "26"], 28), anx: { "[X]": 20 } },
   macro: { nombre: "Macro", fig: { ...sub(["A1", "A2", "A3", "A4", "A5", "A6"], 20), ...rango(["24", "25", "26"], 29) }, anx: { "[X]": 20 } },
 };
+// Los gráficos de Negocio pasaron de anexos a figuras 2 y 3: las demás figuras suben 2 y los anexos bajan 2 (los anexos arrancan en Industria)
+const DESP = 2;
+for (const [k, m] of Object.entries(MAPAS)) {
+  if (k === "negocio") continue;
+  for (const t of Object.keys(m.fig)) {
+    const v = m.fig[t];
+    m.fig[t] = typeof v === "number" ? v + DESP : v.replace(/^(\d+)\./, (_, a) => `${Number(a) - DESP}.`);   // «8.1» = figura 1 del anexo 8
+  }
+  for (const t of Object.keys(m.anx)) m.anx[t] -= DESP;
+}
 const con = (clave, fn) => { MAPA = MAPAS[clave]; try { return fn(); } finally { MAPA = null; } };
 
 // Resumen de inversión: datos clave del modelo; el texto lo redacta el equipo ----------------------
@@ -223,7 +233,7 @@ function informe(lang = "es") {
   const archivoFin = path.join(MAQ, `finales_${lang}.json`);
   const finales = !MEDIR && fs.existsSync(archivoFin) ? JSON.parse(fs.readFileSync(archivoFin, "utf8")) : {};
   const cuerpo = C.hijos(plan, posiciones, (fig, fn) => con(fig.clave, fn), finales);
-  const anexos = [...d.negocio.sections[1].children, ...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),
+  const anexos = [...corrida("a_industria", d.industria.sections[1]), ...corrida("a_esg", d.esg.sections[1]),
     ...corrida("a_fa", d.fa.sections[1]), ...corrida("a_valuacion", d.valuacion.sections[1]), ...corrida("a_macro", d.macro.sections[0])];
   // Para Typst: solo los anexos o solo la página de Riesgos (renumerados), que se insertan como PDF
   if (SOLO === "anexos") return new Document({ styles: F.ESTILOS, sections: [seccion({ children: anexos }, NUEVA, { start: 1 }, A)] });

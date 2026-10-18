@@ -59,7 +59,9 @@ def ajustar(datos):
         tramo = {claves[i] for i in r["ids"]}
         pags = [p for k, (p, _) in r["asig"].items() if claves[int(k)] in tramo]
         pag0 = min(pags) if pags else 0
-        tramo |= {claves[int(k)] for k, (p, _) in r["asig"].items() if p >= pag0}
+        # solo se achican la sección que no cupo y las anteriores (liberan su espacio); las posteriores no se tocan
+        orden = list(dict.fromkeys(claves))
+        tramo |= set(orden[: max(orden.index(c) for c in tramo) + 1])
         # el tramo incluye desde la página 0 si ya no queda nada más por achicar (el mapa de la Figura 1 no se achica)
         if all(escalas.get(c, 1.0) <= FONDO + 1e-6 for c in tramo):
             tramo |= set(claves)
