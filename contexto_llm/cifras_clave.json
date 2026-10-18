@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-18 01:08",
+ "generado": "2026-10-18 01:30",
  "modelos": {
   "valoracion": {
    "archivo": "Mallplaza_Valoracion_Consolidada_v4.xlsx",
@@ -382,8 +382,8 @@
   {
    "grupo": "Escenarios",
    "clave": "esc_ponderado_po",
-   "etiqueta": "Precio objetivo ponderado 30/60/10 (pesos de la matriz de riesgo), CLP",
-   "valor": 2000.5165560316636,
+   "etiqueta": "Precio objetivo ponderado con las probabilidades de la matriz de riesgo, CLP",
+   "valor": 2075.3630608889725,
    "formato": "clp",
    "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
   },

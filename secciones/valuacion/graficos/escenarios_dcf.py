@@ -29,7 +29,7 @@ from matriz_datos import pesos_escenarios  # noqa: E402
 
 IMPUESTO_BULL = 0.23           # Ley de Reconstrucción (9-oct-26): 27% → 23%; no está en el modelo
 DW = 0.01                      # ±100 pb de WACC en todos los períodos
-PESO_PROB = pesos_escenarios()         # 30 / 60 / 10: se derivan de la matriz de riesgo (FR1 alta, OR1 media; regla en matriz_datos.py)
+PESO_PROB = pesos_escenarios()         # 0,5 / 99,4 / 0,1%: cada variable en su extremo es remota; probabilidad conjunta por riesgo (matriz_datos.py)
 
 
 def combinar(lista):

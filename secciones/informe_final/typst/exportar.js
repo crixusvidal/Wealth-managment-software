@@ -101,7 +101,6 @@ function secRiesgos() {
 const XR = TR.calcular(lang).resumen;
 XR.paginas = [{ texto: XR.bloques, figuras: XR.figs }];
 const secRes = I.con("resumen", () => modulo("resumen", XR, I.valuacion.FIG));
-secRes.datos = { titulo: XR.datos.titulo, filas: XR.datos.filas.map((a, i) => [a, XR.datos.valores[i]]) };
 
 const salida = {
   lang,

@@ -153,24 +153,24 @@
   "elemento": 95,
   "offset": 80,
   "pagina": 7,
-  "y": 196.2
+  "y": 222.5
  },
  "26": {
   "elemento": 102,
   "offset": 80,
   "pagina": 8,
-  "y": 559.5
+  "y": 663.6
  },
  "27": {
-  "elemento": 114,
+  "elemento": 111,
   "offset": 80,
   "pagina": 9,
-  "y": 263.0
+  "y": 295.4
  },
  "28": {
-  "elemento": 119,
-  "offset": 57,
+  "elemento": 114,
+  "offset": 1685,
   "pagina": 9,
-  "y": 409.6
+  "y": 451.6
  }
 }

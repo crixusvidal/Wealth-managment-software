@@ -604,7 +604,7 @@
    "i": 100,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "SELL · target price CLP 2,077 per share, 41.6% below the CLP 3,555 close (30-Sep-26): an excellent rental business that "
+   "inicio": "SELL · target price CLP 2,077 per share (base case), 41.6% below the CLP 3,555 close (30-Sep-26). Three theses on the sa"
   },
   {
    "i": 101,
@@ -628,97 +628,67 @@
    "i": 104,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "INVESTMENT THESIS"
+   "inicio": "BEAR CASE: EVERYTHING THAT COULD GO WRONG, GOES WRONG"
   },
   {
    "i": 105,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Mallplaza is an excellent business: contractual, UF-indexed rents (81.4% of revenue; 93% fixed), an 80% EBITDA margin, 9"
+   "inicio": "Nominal WACC rises 100 bp and, at the same time, margin, occupancy, rent, sales, visitors and real growth fall to their "
   },
   {
    "i": 106,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "WHY IT IS EXPENSIVE"
+   "inicio": "BASE CASE: EVERYTHING AS WE PROJECT IT"
   },
   {
    "i": 107,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The stock rose ~90% from the low of CLP 2,470 (10-Oct-25) to the high of CLP 4,700 (27-Apr-26) without the business chan"
+   "inicio": "EBITDA margin of 79.7% in 2026E, occupancy of 95.6%, UF-indexed rents, a dated pipeline of 170,200 m² (USD 613 MM), cont"
   },
   {
    "i": 108,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "SCENARIOS"
+   "inicio": "BULL CASE: EVERYTHING IN OUR FAVOR"
   },
   {
    "i": 109,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We define three scenarios with the same levers as the Risks tornado, from the standpoint of the stock's value. Bear is e"
+   "inicio": "Nominal WACC falls 100 bp, every operating variable reaches its historical high (price and sales rise together through v"
   },
   {
    "i": 110,
    "tipo": "ancho",
    "barrera": false,
-   "inicio": "Scenarios: bear (everything goes wrong), base (central) and bull (everything goes right)"
+   "inicio": "The three theses: variables, individual probability (in brackets) and value"
   },
   {
    "i": 111,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "SENSITIVITIES"
+   "inicio": "ASSUMPTIONS AND PROBABILITIES"
   },
   {
    "i": 112,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the pr"
+   "inicio": "Valuation at 30-Jun-26 and price at 30-Sep-26; FCFF in nominal CLP with mid-period convention; inflation 3.0% (UF); term"
   },
   {
    "i": 113,
-   "tipo": "ancho",
+   "tipo": "texto",
    "barrera": false,
-   "inicio": "Sensitivity of DCF value per share (base CLP 1,859)"
+   "inicio": "VERSUS THE CONSENSUS AND CATALYSTS"
   },
   {
    "i": 114,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "VERSUS THE CONSENSUS"
-  },
-  {
-   "i": 115,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "The Bloomberg consensus (14 sources; 1 buy, 10 hold, 2 sell) sets a 12-month target of CLP 4,111, 49.5% above ours. The "
-  },
-  {
-   "i": 116,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "BASE-CASE ASSUMPTIONS"
-  },
-  {
-   "i": 117,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "Valuation at 30-Jun-26 and price at 30-Sep-26. FCFF in nominal CLP, mid-period convention; inflation 3.0% (UF). Nominal "
-  },
-  {
-   "i": 118,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "CATALYSTS AND RISKS"
-  },
-  {
-   "i": 119,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward "
+   "inicio": "The Bloomberg consensus (14 sources) sets CLP 4,111 at 12 months; the gap is the discount rate (Figure R3): at the appra"
   }
  ],
  "figuras": [
@@ -907,21 +877,21 @@
   {
    "id": 26,
    "n": "Figure R1:",
-   "cita": 107,
+   "cita": 103,
    "clave": "resumen",
-   "alto": 1.9800000000000004
+   "alto": 1.87
   },
   {
    "id": 27,
    "n": "Figure R2:",
-   "cita": 109,
+   "cita": 105,
    "clave": "resumen",
    "alto": 2.115
   },
   {
    "id": 28,
    "n": "Figure R3:",
-   "cita": 115,
+   "cita": 114,
    "clave": "resumen",
    "alto": 1.87
   }

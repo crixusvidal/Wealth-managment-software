@@ -1,6 +1,6 @@
 # Archivos vigentes
 
-Generado 2026-10-18 01:08. Vigente = versión más alta de cada familia; los demás son viejos.
+Generado 2026-10-18 01:30. Vigente = versión más alta de cada familia; los demás son viejos.
 
 ## Modelos
 
@@ -17,7 +17,7 @@ Generado 2026-10-18 01:08. Vigente = versión más alta de cada familia; los dem
 
 ## Documentos finales
 
-- `informe_final/documento/Mallplaza_Informe_CFA_EN.docx` — 2026-10-18 01:07
-- `informe_final/documento/Mallplaza_Informe_CFA_EN.pdf` — 2026-10-18 01:08
-- `informe_final/documento/Mallplaza_Informe_CFA_ES.docx` — 2026-10-18 01:06
-- `informe_final/documento/Mallplaza_Informe_CFA_ES.pdf` — 2026-10-18 01:08
+- `informe_final/documento/Mallplaza_Informe_CFA_EN.docx` — 2026-10-18 01:29
+- `informe_final/documento/Mallplaza_Informe_CFA_EN.pdf` — 2026-10-18 01:30
+- `informe_final/documento/Mallplaza_Informe_CFA_ES.docx` — 2026-10-18 01:28
+- `informe_final/documento/Mallplaza_Informe_CFA_ES.pdf` — 2026-10-18 01:30

@@ -147,18 +147,18 @@
   "elemento": 102,
   "offset": 80,
   "pagina": 8,
-  "y": 348.7
+  "y": 366.2
  },
  "27": {
-  "elemento": 114,
-  "offset": 80,
+  "elemento": 113,
+  "offset": -464,
   "pagina": 9,
-  "y": 58.5
+  "y": 10.0
  },
  "28": {
-  "elemento": 119,
-  "offset": 252,
+  "elemento": 114,
+  "offset": 2398,
   "pagina": 9,
-  "y": 214.8
+  "y": 166.3
  }
 }

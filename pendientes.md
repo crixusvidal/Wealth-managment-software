@@ -14,7 +14,7 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 
 ## Valuación
 - [x] Modelo v4: lo construye `valuacion/graficos/modelo_v4.py`; no se necesita un modelo externo.
-- [ ] Pesos de los escenarios (30/60/10): salen de la matriz de riesgo con baja 10%, media 30% y alta 50% a 12 meses; validar esa conversión cualitativa → numérica (`riesgos/graficos/matriz_datos.py`).
+- [ ] Probabilidades de los escenarios (bear 0,5%, base 99,4%, bull 0,1%): derivadas de la matriz de riesgo con baja 2%, media 5% y alta 10% por variable en su extremo (`riesgos/graficos/matriz_datos.py`); supuestos del equipo, validar la escala.
 - [ ] Comparar los dos cap rates sobre la misma base (6,0% del mercado y 5,55% real de los tasadores) con una conversión explícita.
 - [ ] TIR del accionista por escenario (bear y bull): exige rehacer la trayectoria de deuda de cada caso (hoy solo TIR de la firma).
 - [ ] Llevar el DCF al 30-sep-26 (~CLP 2.119) o dejar explícito que no se aplica (inconsistencia 4; el texto lo dice).

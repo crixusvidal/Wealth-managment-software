@@ -145,7 +145,7 @@ def main():
     if ci.exists():                       # cifras que el informe calcula con la réplica del DCF y los datos del equipo (cifras_informe.py)
         k = json.loads(ci.read_text())
         fuente = "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
-        c.add("Escenarios", "esc_ponderado_po", "Precio objetivo ponderado 30/60/10 (pesos de la matriz de riesgo), CLP", k["ponderado"]["po"], "clp", fuente)
+        c.add("Escenarios", "esc_ponderado_po", "Precio objetivo ponderado con las probabilidades de la matriz de riesgo, CLP", k["ponderado"]["po"], "clp", fuente)
         c.add("Pipeline", "pipeline_m2", "Pipeline con fecha 2026–2028 (m²)", k["pipeline_m2"], "n0", fuente)
         c.add("Pipeline", "pipeline_usd_mm", "Pipeline con fecha, inversión (USD MM)", k["pipeline_usd_mm"], "n0", fuente)
         c.add("Mercado", "consenso_po_12m", "Precio objetivo de consenso a 12 meses (Bloomberg, 14 fuentes), CLP", k["consenso"]["po_12m"], "clp", fuente)

@@ -1309,7 +1309,7 @@
     {
      "p": [
       [
-       "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure 29), instead of moving only the discount rate; bear and bull are defined from the standpoint of the stock's value, not of the recommendation. Bear is everything going wrong at once: nominal WACC +100 bp and every operating lever at its historical minimum. Bull is everything going right: nominal WACC −100 bp, every lever at its historical maximum and a 23% tax rate (Reconstruction Law). Base is the model's central estimate. Same-store rent (price) and tenants' sales move together; nominal g stays at 3.0% in all three. The weights come from the risk matrix on the Risks page: the bear combines FR1 (rates, high likelihood) and OR1 (operating deterioration, medium) and, because they happen together, carries the weight of the less likely one (medium, 30%); the bull combines their opposites (low and medium) and carries 10%; the base is the remainder, 60%. With low = 10%, medium = 30% and high = 50% over 12 months (team assumption), the weighted target price is CLP 2,001 (−43.7%).",
+       "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure 29), instead of moving only the discount rate; bear and bull are defined from the standpoint of the stock's value, not of the recommendation. Bear is everything going wrong at once: nominal WACC +100 bp and every operating lever at its historical minimum. Bull is everything going right: nominal WACC −100 bp, every lever at its historical maximum and a 23% tax rate (Reconstruction Law). Base is the model's central estimate. Same-store rent (price) and tenants' sales move together; nominal g stays at 3.0% in all three. The probabilities come from the risk matrix on the Risks page. Every bear or bull variable is a historical extreme, and reaching an extreme is remote: it happened once in the ~11 quarterly observations (≈9%). Each variable on its own therefore has a 2% to 10% chance of reaching its extreme in 12 months (low 2%, medium 5%, high 10%, team assumptions): +100 bp of WACC belongs to FR1 (high, 10%), the operating levers to OR1 (medium, 5%) and their opposites invert the category (−100 bp: 2%). Levers of the same risk move together and different risks are independent, so the bear has a joint probability of 0.5%, the bull 0.1% and the base holds the rest (99.4%). Weighted, the target price is CLP 2,075 (−41.6%): the extremes barely move it.",
        false,
        false
       ]
@@ -1393,9 +1393,9 @@
        ],
        [
         "Probability (from the risk matrix)",
-        "30%",
-        "60%",
-        "10%"
+        "0.5%",
+        "99.4%",
+        "0.1%"
        ]
       ],
       "anchos": [
@@ -1413,7 +1413,7 @@
        8,
        9
       ],
-      "nota": "Operating levers are the historical extremes of the Risks tornado; nominal WACC and g; rent (price) and sales move together. Terminal nominal g 3.0% in all three. Weighted 30/60/10%: DCF CLP 1,763, target price CLP 2,001 (−43.7%). Source: DCF v4 replica (Appendix 18); Team analysis."
+      "nota": "Operating levers are the historical extremes of the Risks tornado; nominal WACC and g; rent (price) and sales move together. Terminal nominal g 3.0% in all three. Weighted 0.5/99.4/0.1%: DCF CLP 1,856, target price CLP 2,075 (−41.6%). Source: DCF v4 replica (Appendix 18); Team analysis."
      }
     },
     {
@@ -1570,7 +1570,7 @@
     {
      "p": [
       [
-       "Figure 28 classifies each risk by likelihood and by its impact on value per share (Figures 29, 30 and 31). Risks that could not be quantified are classified according to the team's qualitative analysis of the company. This matrix sets the scenario weights in Valuation: the bear combines FR1 (high likelihood) and OR1 (medium), and the bull their opposites.",
+       "Figure 28 classifies each risk by likelihood and by its impact on value per share (Figures 29, 30 and 31). Risks that could not be quantified are classified according to the team's qualitative analysis of the company. This matrix sets the scenario probabilities in Valuation: reaching a historical extreme is remote (2% to 10% per variable) and the bear and bull combine those extremes at once.",
        false,
        false
       ]
@@ -1983,7 +1983,7 @@
   {
    "clave": "resumen",
    "titulo": "INVESTMENT SUMMARY",
-   "lead": "SELL · target price CLP 2,077 per share, 41.6% below the CLP 3,555 close (30-Sep-26): an excellent rental business that the market prices as if its cash flows were nearly risk-free.",
+   "lead": "SELL · target price CLP 2,077 per share (base case), 41.6% below the CLP 3,555 close (30-Sep-26). Three theses on the same valuation assumptions: in the bear case everything that could go wrong goes wrong, in the base case everything happens as we project it and in the bull case everything works in our favor. None reaches the price.",
    "bloques": [
     {
      "h1": "RECOMMENDATION AND TARGET PRICE"
@@ -1991,43 +1991,43 @@
     {
      "p": [
       [
-       "We recommend SELL on Mallplaza (MALLPLAZ CI) with a target price of CLP 2,077 per share, 41.6% below the 30-Sep-26 close (−39.6% total return with an expected dividend of CLP 69, 2.0%). The target price weights the DCF value 80% (CLP 1,859, at 30-Jun-26) and the peer LTM EV/EBITDA multiple value 20% (CLP 2,951; 14.4x). It sits even below the 52-week low (CLP 2,470).",
+       "We recommend SELL on Mallplaza (MALLPLAZ CI) with a target price of CLP 2,077 per share, 41.6% below the 30-Sep-26 close (−39.6% total return with an expected dividend of CLP 69, 2.0%). The target price weights the DCF value 80% (CLP 1,859, at 30-Jun-26) and the peer LTM EV/EBITDA multiple value 20% (CLP 2,951; 14.4x), and sits below the 52-week low (CLP 2,470). Mallplaza is an excellent business (UF-indexed rents, 80% EBITDA margin, 95.6% occupancy, net debt/EBITDA of 2.36x and a local AAA rating); the disagreement is about price: the stock rose ~90% with no change in the business (Figure 32) and pays a nominal WACC of 7.60% (4.5% real), 281 bp below our 10.41%.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "INVESTMENT THESIS"
+     "h1": "BEAR CASE: EVERYTHING THAT COULD GO WRONG, GOES WRONG"
     },
     {
      "p": [
       [
-       "Mallplaza is an excellent business: contractual, UF-indexed rents (81.4% of revenue; 93% fixed), an 80% EBITDA margin, 95.6% occupancy, 2.36x net debt/EBITDA and a local AAA rating. But the price pays more than those cash flows can deliver, for three reasons. First, the discount rate: the price requires a nominal WACC of 7.60% (4.5% real), 281 bp below ours; the asset IRR at the price is 7.61% nominal (4.48% real), 280 bp below the nominal WACC. Second, growth does not create value: each new m² yields 7.3% real before tax on its cost, a 5.3% real RONIC, and its IRR is 4.84% real (7.98% nominal), 236 bp below the real WACC; even the full pipeline (170,200 m², USD 613 MM) adds revenue, not value. Third, cash flows are not the problem: we project a 79.7% EBITDA margin in 2026E and the BEst consensus expects 12-month EBITDA only ~3% above ours.",
+       "Nominal WACC rises 100 bp and, at the same time, margin, occupancy, rent, sales, visitors and real growth fall to their historical low, with maintenance capex at its high. DCF value falls to CLP 1,190 and the target price to CLP 1,542 (−56.6%; total return −54.7%). Each variable on its own is a remote possibility (+100 bp of WACC, 10%, under FR1; each operating lever, 5%, under OR1), and because the operating levers move together and rates are independent, the joint probability is 0.5% (Figure 33).",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "WHY IT IS EXPENSIVE"
+     "h1": "BASE CASE: EVERYTHING AS WE PROJECT IT"
     },
     {
      "p": [
       [
-       "The stock rose ~90% from the low of CLP 2,470 (10-Oct-25) to the high of CLP 4,700 (27-Apr-26) without the business changing (EBITDA +5% to +10% a year): the push came from the Chilean market (+56% in 2025), the joint re-rating of malls, passive buying from the MSCI EM Mid Cap inclusion (per Morgan Stanley) and analysts extrapolating growth (JPMorgan projects ~11% annual FFO growth). The subsequent fall to CLP 3,555 is a partial correction: the stock trades 91% above the DCF and at 1.61x its fair-value book value (Figure 32).",
+       "EBITDA margin of 79.7% in 2026E, occupancy of 95.6%, UF-indexed rents, a dated pipeline of 170,200 m² (USD 613 MM), continuous expansion and a terminal nominal WACC of 10.41% (7.20% real). It gives CLP 2,077 (−41.6%; total return −39.6%) and holds the rest of the distribution (99.4%): growth earns less than the cost of capital (real RONIC 5.3% against a real WACC of 7.2%), so expansion adds revenue, not value.",
        false,
        false
       ]
      ]
     },
     {
-     "h1": "SCENARIOS"
+     "h1": "BULL CASE: EVERYTHING IN OUR FAVOR"
     },
     {
      "p": [
       [
-       "We define three scenarios with the same levers as the Risks tornado, from the standpoint of the stock's value. Bear is everything going wrong at once (nominal WACC +100 bp and every operating lever at its historical minimum): CLP 1,542 (−56.6%). Base is the model's central estimate: CLP 2,077 (−41.6%). Bull is everything going right (nominal WACC −100 bp, every lever at its historical maximum, 23% tax): CLP 2,915 (−18.0%). Weights from the risk matrix (bear 30%: FR1 high and OR1 medium, together; bull 10%: their opposites; base 60%; low 10%, medium 30%, high 50%, team assumptions): CLP 2,001. No scenario reaches the price (Figure 33; Appendix 18).",
+       "Nominal WACC falls 100 bp, every operating variable reaches its historical high (price and sales rise together through variable rent) and the long-run tax rate falls to 23% (Reconstruction Law, outside the probability). DCF value rises to CLP 2,906 and the target price to CLP 2,915 (−18.0%; total return −16.0%): even with everything in our favor the price stays 18% higher. Each variable is remote (−100 bp of WACC, 2%; operating, 5%) and the joint probability is 0.1%.",
        false,
        false
       ]
@@ -2035,56 +2035,92 @@
     },
     {
      "tabla": {
-      "titulo": "Scenarios: bear (everything goes wrong), base (central) and bull (everything goes right)",
+      "titulo": "The three theses: variables, individual probability (in brackets) and value",
       "cols": [
-       "Assumption (all at once)",
+       "Variable (all at once)",
        "Bear",
        "Base",
        "Bull"
       ],
       "filas": [
        [
-        "Terminal nominal WACC (all periods)",
-        "+100 bp (11.41%; 8.17% real)",
+        "Terminal nominal WACC (real)",
+        "11.41% (8.17% real) (10%)",
         "10.41% (7.20% real)",
-        "−100 bp (9.41%; 6.23% real)"
+        "9.41% (6.23% real) (2%)"
        ],
        [
-        "EBITDA margin (historical quarterly min / max)",
-        "75.8%",
-        "79.7% (2026E)",
-        "81.3%"
+        "EBITDA margin",
+        "75.8% (5%)",
+        "79.7%",
+        "81.3% (5%)"
        ],
        [
-        "Consolidated occupancy",
-        "95.1%",
+        "Occupancy",
+        "95.1% (5%)",
         "95.6%",
-        "96.6%"
+        "96.6% (5%)"
        ],
        [
-        "DCF value / 80/20 target price (CLP)",
-        "1,190 / 1,542",
-        "1,859 / 2,077",
-        "2,906 / 2,915"
+        "Same-store rent 2027–28, nominal",
+        "3.7% (5%)",
+        "5.4%",
+        "9.4% (5%)"
        ],
        [
-        "Target price vs CLP 3,555",
-        "−56.6%",
-        "−41.6%",
-        "−18.0%"
+        "Tenant sales 2027–28, nominal",
+        "3.7% (5%)",
+        "3.7%",
+        "9.9% (5%)"
        ],
        [
-        "Probability (from the risk matrix)",
-        "30%",
-        "60%",
-        "10%"
+        "Real rent growth 2029–31",
+        "Note 11 floor (5%)",
+        "model",
+        "Note 11 ceiling (5%)"
+       ],
+       [
+        "Maintenance + IT capex, % of revenue",
+        "6.6% (5%)",
+        "5.5%",
+        "4.8% (5%)"
+       ],
+       [
+        "Visitors 2027–28, organic growth",
+        "5.6% (5%)",
+        "9.8%",
+        "17.3% (5%)"
+       ],
+       [
+        "Long-run tax rate",
+        "27%",
+        "16.8% → 27%",
+        "23%"
+       ],
+       [
+        "Joint probability",
+        "0.5%",
+        "99.4%",
+        "0.1%"
+       ],
+       [
+        "Target price (CLP)",
+        "1,542",
+        "2,077",
+        "2,915"
+       ],
+       [
+        "Vs. CLP 3,555 / total return",
+        "−56.6% / −54.7%",
+        "−41.6% / −39.6%",
+        "−18.0% / −16.0%"
        ]
       ],
       "anchos": [
-       2700,
-       1750,
-       1650,
-       1750
+       3300,
+       1700,
+       1500,
+       1700
       ],
       "derecha": [
        1,
@@ -2092,110 +2128,32 @@
        3
       ],
       "destacar": [
-       3,
-       4
+       9,
+       10,
+       11
       ],
-      "nota": "Full assumptions in Appendix 18 and in the Valuation table. Source: DCF v4 replica; Team analysis."
+      "nota": "Each variable at its historical extreme is a remote possibility: individual 12-month probability in brackets (high 10%, medium 5%, low 2%; risk matrix; team assumptions). Nominal g 3.0% in all three cases. Source: DCF v4 replica (Appendix 18); Team analysis."
      }
     },
     {
-     "h1": "SENSITIVITIES"
+     "h1": "ASSUMPTIONS AND PROBABILITIES"
     },
     {
      "p": [
       [
-       "No lever alone explains the price: the largest, cutting nominal WACC by 100 bp, adds CLP 430 (23%) and the gap to the price is CLP 1,696, which no single lever closes.",
+       "Valuation at 30-Jun-26 and price at 30-Sep-26; FCFF in nominal CLP with mid-period convention; inflation 3.0% (UF); terminal g 3.0% nominal (0% real); Ke 11.93% and after-tax Kd 5.11% in the base case. The probabilities are team assumptions based on the risk matrix: reaching a historical extreme happened once in ~11 quarters (≈9%), and the individual 12-month probability is low 2%, medium 5% and high 10%. The weighted value is CLP 2,075 (−41.6%): the extremes barely move it.",
        false,
        false
       ]
      ]
     },
     {
-     "tabla": {
-      "titulo": "Sensitivity of DCF value per share (base CLP 1,859)",
-      "cols": [
-       "Lever (change)",
-       "Δ value (CLP)",
-       "Δ value (% of DCF)"
-      ],
-      "filas": [
-       [
-        "Nominal WACC −100 bp / +100 bp",
-        "+430 / −326",
-        "23% / −18%"
-       ],
-       [
-        "Same-store rent 2027–28 (nominal) +1 pp",
-        "+45",
-        "2.4%"
-       ],
-       [
-        "Real rent growth 2029–31 +1 pp",
-        "+57",
-        "3.1%"
-       ],
-       [
-        "EBITDA margin +1 pp",
-        "+39",
-        "2.1%"
-       ],
-       [
-        "Occupancy +1 pp",
-        "+25",
-        "1.3%"
-       ],
-       [
-        "Tenant sales 2027–28 +1 pp (variable rent)",
-        "+2.6",
-        "0.14%"
-       ]
-      ],
-      "anchos": [
-       4300,
-       2100,
-       2750
-      ],
-      "derecha": [
-       1,
-       2
-      ],
-      "destacar": [
-       0
-      ],
-      "nota": "Each row moves one lever with the others at base. Source: DCF v4 replica; Team analysis."
-     }
-    },
-    {
-     "h1": "VERSUS THE CONSENSUS"
+     "h1": "VERSUS THE CONSENSUS AND CATALYSTS"
     },
     {
      "p": [
       [
-       "The Bloomberg consensus (14 sources; 1 buy, 10 hold, 2 sell) sets a 12-month target of CLP 4,111, 49.5% above ours. The difference is the discount rate: at the appraisers' WACC (8.72% nominal) the DCF rises to CLP 2,679, and at the implied WACC (7.60%) it equals the price. The rest is horizon (CLP 4,111 is worth ~CLP 3,673 today at our Ke) and growth that the market values at the cap rate (Figure 34).",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "h1": "BASE-CASE ASSUMPTIONS"
-    },
-    {
-     "p": [
-      [
-       "Valuation at 30-Jun-26 and price at 30-Sep-26. FCFF in nominal CLP, mid-period convention; inflation 3.0% (UF). Nominal WACC 10.54% in 2H26E and 10.41% terminal (7.20% real): USD Rf 4.98% (10Y UST), market risk premium 4.14%, weighted country risk 1.41%, re-levered beta 1.14, nominal Ke 11.93%, nominal after-tax Kd 5.11% (real coupon 3.6% + spread) and net debt/EBITDA from 2.36x to 3.5x in 2031. Terminal g 3.0% nominal (0% real). EBITDA margin 79.7% in 2026E; cash tax rate of 16.8% converging to 27% by 2030; maintenance + IT capex 5.5% of revenue; working capital 15.6% of revenue. Dated pipeline of 170,200 m² (USD 613 MM) and continuous expansion of 27,075 m² a year from 2029.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "h1": "CATALYSTS AND RISKS"
-    },
-    {
-     "p": [
-      [
-       "Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward our value, and the normalization of cash tax from 16.8% to 27%. Risks to the thesis: a further compression of long-term rates (a rise reinforces it); a structural premium for Tier A assets; the cut in corporate tax to 23% (+5.2% to the target price, not yet included); and corporate governance (Falabella controls 53.1% and only 1 of 9 directors is independent; expansion earns less than its cost of capital, with incentives still to be verified). ESG savings (~CLP 2 per share) do not change the conclusion.",
+       "The Bloomberg consensus (14 sources) sets CLP 4,111 at 12 months; the gap is the discount rate (Figure 34): at the appraisers' WACC (8.72% nominal) the DCF rises to CLP 2,679. Catalysts: high long-term rates (nominal 10Y UST at 5.22%), each new appraisal (Note 11) that moves the cap rate toward our value and the normalization of the cash tax rate from 16.8% to 27%. Risks to the thesis: cap-rate compression or a structural premium for Tier A assets, the cut to a 23% tax rate (+5.2% to the target price) and corporate governance (Falabella controls 53.1%).",
        false,
        false
       ]
@@ -2209,27 +2167,27 @@
      "archivo": "/valuacion/graficos/figuras/en_V14_trayectoria.png",
      "fuente": [
       [
-       "Milestone prices taken from the team's documents (low, high and close; notes by LarrainVial, Morgan Stanley and Diario Financiero). The line only joins milestones: it is not the daily series. Source: team documents; Team analysis.",
+       "Milestone prices taken from the team's documents. The line only joins milestones: it is not the daily series. Source: team documents; Team analysis.",
        false,
        false
       ]
      ],
      "ancha": false,
-     "ancla": 5
+     "ancla": 1
     },
     {
      "n": "Figure 33:",
-     "titulo": "Scenarios: even with everything in our favor the target price stays 18% below the price (CLP per share)",
+     "titulo": "Bear, base and bull: even with everything in our favor the target price stays 18% below the price (CLP per share)",
      "archivo": "/valuacion/graficos/figuras/en_V10_escenarios.png",
      "fuente": [
       [
-       "Bear: everything goes wrong; base: central estimate; bull: everything goes right (definitions in Appendix 18). Team illustrations. Source: DCF v4 replica; Team analysis.",
+       "Bear: everything that could go wrong, goes wrong; base: everything as we project it; bull: everything in our favor (Appendix 18). Team illustrations. Source: DCF v4 replica; Team analysis.",
        false,
        false
       ]
      ],
      "ancha": false,
-     "ancla": 7
+     "ancla": 3
     },
     {
      "n": "Figure 34:",
@@ -2243,62 +2201,9 @@
       ]
      ],
      "ancha": false,
-     "ancla": 13
+     "ancla": 12
     }
-   ],
-   "datos": {
-    "titulo": "KEY DATA",
-    "filas": [
-     [
-      "Recommendation",
-      "SELL"
-     ],
-     [
-      "Target price (CLP)",
-      "2,077"
-     ],
-     [
-      "Price 30-Sep-26 (CLP)",
-      "3,555"
-     ],
-     [
-      "Upside / downside",
-      "−41.6%"
-     ],
-     [
-      "DCF / multiples value (CLP)",
-      "1,859 / 2,951"
-     ],
-     [
-      "DCF / multiples weight",
-      "80% / 20%"
-     ],
-     [
-      "Bear / base / bull (CLP)",
-      "1,542 / 2,077 / 2,915"
-     ],
-     [
-      "Market cap (CLP bn)",
-      "7,785"
-     ],
-     [
-      "52-week range (CLP)",
-      "2,470 – 4,700"
-     ],
-     [
-      "Expected dividend 2027E (CLP)",
-      "69 (2.0%)"
-     ],
-     [
-      "Nominal / real WACC",
-      "10.41% / 7.20%"
-     ],
-     [
-      "Net debt / LTM EBITDA 2Q26",
-      "2.36x"
-     ]
-    ]
-   }
+   ]
   }
  ]
 }
