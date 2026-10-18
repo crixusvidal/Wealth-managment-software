@@ -2,10 +2,10 @@
  "es": {
   "titulo_general": "ANEXOS: INDUSTRIA Y POSICIONAMIENTO COMPETITIVO",
   "a3_titulo": "ANEXO 3: OFERTA NUEVA DE GLA, 2026-2028",
-  "a3_intro": "El trío agregará 432.030 m² entre 2026 y 2028, de los cuales 334.030 m² son orgánicos (6,4% de su GLA total actual; en Chile, 219.900 m², equivalentes al 5,1% del GLA de la industria en Chile y al 6,7% del GLA del propio trío). Las adquisiciones (98.000 m², todas de Parque Arauco) cambian de dueño pero no suman oferta a la industria; por eso el análisis de oferta vs demanda en Chile (Figura 3) usa solo el GLA orgánico.",
+  "a3_intro": "El trío agregará 432.030 m² entre 2026 y 2028, de los cuales 334.030 m² son orgánicos (6,4% de su GLA total actual; en Chile, 219.900 m², equivalentes al 5,1% del GLA de los principales operadores en Chile y al 6,7% del GLA del propio trío). Las adquisiciones (98.000 m², todas de Parque Arauco) cambian de dueño pero no suman oferta a la industria; por eso el análisis de oferta vs demanda en Chile (Figura 3) usa solo el GLA orgánico.",
   "a3_subA": "A. PIPELINE POR EMPRESA (m²)",
   "a3_subB": "B. GLA POR AÑO DE APERTURA (m²)",
-  "a3_notaB": "Org./GLA = GLA orgánico 2026-2028 sobre GLA consolidado al 2Q26. Mallplaza: el 2028 incluye 46.500 m² de \"Otros proyectos Chile\", fechados en 2028 por la Memoria 2025 (p.45). Parque Arauco: 2026 = 2S26 (adquisiciones). Cenco: entregas en rango ubicadas al final del rango. En Chile, la oferta orgánica del trío (219.900 m²) equivale al 5,1% del GLA estimado de la industria (≈4,3 millones de m²: 3,29 millones del trío sin oficinas ÷ 76%, su participación en los principales operadores).",
+  "a3_notaB": "Org./GLA = GLA orgánico 2026-2028 sobre GLA consolidado al 2Q26. Mallplaza: el 2028 incluye 46.500 m² de \"Otros proyectos Chile\", fechados en 2028 por la Memoria 2025 (p.45). Parque Arauco: 2026 = 2S26 (adquisiciones). Cenco: entregas en rango ubicadas al final del rango. En Chile, la oferta orgánica del trío (219.900 m²) equivale al 5,1% del GLA de los principales operadores (≈4,3 millones de m²: 3,29 millones del trío sin oficinas ÷ 76%, su participación en ese universo; no se dispone del GLA total del mercado).",
   "a3_fuente": "Fuente: Plaza S.A., Release 2Q26 (p.13) y Memoria 2025 (p.45); Parque Arauco, Investor Presentation 2Q26 (slide 23); Cenco Malls, Corporate Presentation 2Q26 (slides 15-17). Solo proyectos con fecha.",
   "a4_titulo": "ANEXO 4: OCUPACIÓN",
   "a4_intro": "La ocupación consolidada de los tres operadores se ha mantenido entre 93% y 99% desde el 2T22, incluso durante el ciclo de inflación y tasas altas. Cada empresa define la ocupación de forma distinta, por lo que se comparan tendencias y no niveles.",
@@ -74,7 +74,7 @@
   "a7_textos": [
    "Medido por GLA (no por ventas) sobre los principales operadores de cada país (slide 7, Presentación Institucional 2Q26). HHI parcial: considera solo a los operadores identificados en la slide 7, por lo que es un piso (el HHI real es igual o mayor); se clasifica con los umbrales de las Merger Guidelines DOJ/FTC 2023 (sobre 1.800 = altamente concentrado). Colombia pro forma: incluye Gran Plaza (adquisición anunciada de 179.667 m²; Release 2Q26); sin ella, la participación de Mallplaza sería 4,3%.",
    "Solo proyectos con fecha en reportes oficiales al 2Q26 y Memoria 2025; fechas en rango al final del rango; las adquisiciones no son oferta nueva para la industria.",
-   "Solo Chile y solo m² que dependen del consumo (excluye oficinas y multifamily); GLA base sin las oficinas de Cenco. El consumo privado del IPoM sep-2026 se usa como indicador de demanda, no como proyección de ventas. GLA de la industria en Chile ≈ GLA del trío sin oficinas ÷ 76% (participación del trío en los principales operadores, slide 7); la oferta del trío es una cota inferior de la oferta de la industria.",
+   "Solo Chile y solo m² que dependen del consumo (excluye oficinas y multifamily); GLA base sin las oficinas de Cenco. El consumo privado del IPoM sep-2026 se usa como indicador de demanda, no como proyección de ventas. GLA de los principales operadores en Chile ≈ GLA del trío sin oficinas ÷ 76% (participación del trío en ese universo, slide 7); no se dispone del GLA total del mercado, y la oferta del trío es una cota inferior de la oferta de la industria.",
    "EBITDA según la definición de cada empresa (ninguna incluye la revalorización bajo NIC 40); EBITDA del 2T26 sin anualizar; GLA consolidado al 100% de los activos controlados. Parque Arauco: se resta el NOI multifamily (503 MM CLP), cuyo tamaño se reporta en unidades y no en m²; efecto −0,7%, no cambia el orden.",
    "Perfil y duración ponderados por GLA. Cenco lo indica explícitamente; Parque Arauco presenta su perfil de vencimientos en % del GLA, pero no indica la base de su duración promedio; Mallplaza no publica la base. En ambos casos se asume GLA.",
    "Ventas de locatarios en Chile 2T26 vs 2T25 deflactadas con el IPC a 12 meses de junio 2026 (4,3%; INE, comunicado del 08-07-2026). Cenco 2T25 calculado desde su variación publicada (−1,9%).",
@@ -97,7 +97,7 @@
     ],
     [
      "Oferta vs demanda",
-     "Solo Chile y solo m² que dependen del consumo (excluye oficinas y multifamily); GLA base sin las oficinas de Cenco. El consumo privado del IPoM sep-2026 se usa como indicador de demanda, no como proyección de ventas. GLA de la industria en Chile ≈ GLA del trío sin oficinas ÷ 76% (participación del trío en los principales operadores, slide 7); la oferta del trío es una cota inferior de la oferta de la industria."
+     "Solo Chile y solo m² que dependen del consumo (excluye oficinas y multifamily); GLA base sin las oficinas de Cenco. El consumo privado del IPoM sep-2026 se usa como indicador de demanda, no como proyección de ventas. GLA de los principales operadores en Chile ≈ GLA del trío sin oficinas ÷ 76% (participación del trío en ese universo, slide 7); no se dispone del GLA total del mercado, y la oferta del trío es una cota inferior de la oferta de la industria."
     ],
     [
      "EBITDA por m²",
@@ -317,10 +317,10 @@
  "en": {
   "titulo_general": "APPENDICES: INDUSTRY AND COMPETITIVE POSITIONING",
   "a3_titulo": "APPENDIX 3: NEW GLA SUPPLY, 2026-2028",
-  "a3_intro": "The trio will add 432,030 m² between 2026 and 2028, of which 334,030 m² are organic (6.4% of their current total GLA; in Chile, 219,900 m², equivalent to 5.1% of the industry's GLA in Chile and 6.7% of the trio's own GLA). Acquisitions (98,000 m², all by Parque Arauco) change owner but add no supply to the industry; the supply-versus-demand analysis for Chile (Figure 3) therefore uses organic GLA only.",
+  "a3_intro": "The trio will add 432,030 m² between 2026 and 2028, of which 334,030 m² are organic (6.4% of their current total GLA; in Chile, 219,900 m², equivalent to 5.1% of the main operators' GLA in Chile and 6.7% of the trio's own GLA). Acquisitions (98,000 m², all by Parque Arauco) change owner but add no supply to the industry; the supply-versus-demand analysis for Chile (Figure 3) therefore uses organic GLA only.",
   "a3_subA": "A. PIPELINE BY COMPANY (m²)",
   "a3_subB": "B. GLA BY OPENING YEAR (m²)",
-  "a3_notaB": "Org./GLA = organic GLA 2026-2028 over consolidated GLA at 2Q26. Mallplaza: 2028 includes 46,500 m² of “Other projects Chile”, dated 2028 by the 2025 Annual Report (p.45). Parque Arauco: 2026 = 2H26 (acquisitions). Cenco: deliveries given as a range are placed at the end of the range. In Chile, the trio's organic supply (219,900 m²) equals 5.1% of the estimated industry GLA (≈4.3 million m²: 3.29 million of the trio excluding offices ÷ 76%, its share of the main operators).",
+  "a3_notaB": "Org./GLA = organic GLA 2026-2028 over consolidated GLA at 2Q26. Mallplaza: 2028 includes 46,500 m² of “Other projects Chile”, dated 2028 by the 2025 Annual Report (p.45). Parque Arauco: 2026 = 2H26 (acquisitions). Cenco: deliveries given as a range are placed at the end of the range. In Chile, the trio's organic supply (219,900 m²) equals 5.1% of the main operators' GLA (≈4.3 million m²: 3.29 million of the trio excluding offices ÷ 76%, its share of that universe; total market GLA is not available).",
   "a3_fuente": "Source: Plaza S.A., 2Q26 Release (p.13) and 2025 Annual Report (p.45); Parque Arauco, 2Q26 Investor Presentation (slide 23); Cenco Malls, 2Q26 Corporate Presentation (slides 15-17). Dated projects only.",
   "a4_titulo": "APPENDIX 4: OCCUPANCY",
   "a4_intro": "The consolidated occupancy of the three operators has stayed between 93% and 99% since 2Q22, even through the inflation and high-rate cycle. Each company defines occupancy differently, so trends are compared rather than levels.",
@@ -389,7 +389,7 @@
   "a7_textos": [
    "Measured by GLA (not by sales) over each country's main operators (slide 7, 2Q26 Institutional Presentation). Partial HHI: considers only the operators identified on slide 7, so it is a floor (the real HHI is equal or higher); classified with the 2023 DOJ/FTC Merger Guidelines thresholds (above 1,800 = highly concentrated). Colombia pro forma: includes Gran Plaza (announced acquisition of 179,667 m²; 2Q26 Release); without it, Mallplaza's share would be 4.3%.",
    "Only dated projects in official reports at 2Q26 and the 2025 Annual Report; dates given as a range are placed at the end of the range; acquisitions are not new supply for the industry.",
-   "Chile only and only m² that depend on consumption (excludes offices and multifamily); base GLA excludes Cenco's offices. Private consumption from the September 2026 IPoM is used as a demand indicator, not as a sales projection. Industry GLA in Chile ≈ trio GLA excluding offices ÷ 76% (the trio's share of the main operators, slide 7); the trio's supply is a lower bound of the industry's supply.",
+   "Chile only and only m² that depend on consumption (excludes offices and multifamily); base GLA excludes Cenco's offices. Private consumption from the September 2026 IPoM is used as a demand indicator, not as a sales projection. Main-operators GLA in Chile ≈ trio GLA excluding offices ÷ 76% (the trio's share of that universe, slide 7); total market GLA is not available, and the trio's supply is a lower bound of the industry's supply.",
    "EBITDA per each company's definition (none includes the IAS 40 revaluation); 2Q26 EBITDA not annualized; GLA consolidated at 100% of controlled assets. Parque Arauco: multifamily NOI (CLP 503 million) is subtracted, since its size is reported in units and not in m²; effect −0.7%, does not change the ranking.",
    "Profile and duration weighted by GLA. Cenco states it explicitly; Parque Arauco presents its maturity profile as % of GLA but does not state the basis of its average duration; Mallplaza does not publish the basis. In both cases GLA is assumed.",
    "Tenant sales in Chile 2Q26 vs 2Q25 deflated with the 12-month CPI of June 2026 (4.3%; INE, release of 08-07-2026). Cenco 2Q25 calculated from its published change (−1.9%).",
@@ -412,7 +412,7 @@
     ],
     [
      "Supply vs demand",
-     "Chile only and only m² that depend on consumption (excludes offices and multifamily); base GLA excludes Cenco's offices. Private consumption from the September 2026 IPoM is used as a demand indicator, not as a sales projection. Industry GLA in Chile ≈ trio GLA excluding offices ÷ 76% (the trio's share of the main operators, slide 7); the trio's supply is a lower bound of the industry's supply."
+     "Chile only and only m² that depend on consumption (excludes offices and multifamily); base GLA excludes Cenco's offices. Private consumption from the September 2026 IPoM is used as a demand indicator, not as a sales projection. Main-operators GLA in Chile ≈ trio GLA excluding offices ÷ 76% (the trio's share of that universe, slide 7); total market GLA is not available, and the trio's supply is a lower bound of the industry's supply."
     ],
     [
      "EBITDA per m²",

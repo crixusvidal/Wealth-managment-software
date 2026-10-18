@@ -1,9 +1,8 @@
 """Figuras nuevas del Resumen de inversión (junto a V10, escenarios con el oso y el toro):
 
-  V14  Trayectoria de la acción entre los hitos (oct-25 a sep-26) frente al precio objetivo y al valor DCF.
-       Solo hay tres precios confirmados con Bloomberg (mínimo 10-oct-25, máximo 27-abr-26 y cierre 30-sep-26); los demás hitos
-       (9-oct-25, 6-nov-25, 25-may-26) son precios IMPLÍCITOS en las notas de prensa (objetivo / (1 + potencial)) y se dibujan
-       huecos y con «~»: la línea que une los hitos es solo una guía, no la serie diaria. El 15-dic-25 (elección) no tiene precio.
+  V14  Trayectoria de la acción entre los hitos (oct-25 a sep-26) frente al precio objetivo y al valor DCF. Los precios de los hitos
+       se toman tal cual de los documentos del equipo (no se validan con otra fuente); la línea que los une es solo una guía, no la
+       serie diaria. El 15-dic-25 (elección) no tiene precio.
   V15  Escalera de valores por acción: del DCF propio al precio de mercado y al consenso de 12 meses (Bloomberg, 14 fuentes).
 
 Cifras del modelo v4 (informe_final/graficos/cifras.json). Sin título ni fuente en la imagen: van en el documento.
@@ -34,9 +33,9 @@ HITOS = [(D(2025, 10, 9), 2500, False, "", "", (0, 0)),
          (D(2026, 4, 27), 4700, True, "Máx. 52 sem.", "52-wk high", (-2, 8)),
          (D(2026, 5, 25), 3900, False, "Recorte JPM", "JPM cut", (6, 4)),
          (D(2026, 9, 30), 3555, True, "Cierre", "Close", (-6, -17))]
-T = {"es": {"po": "Precio objetivo", "dcf": "Valor DCF", "aprox": "~", "leyenda": ["Confirmado (Bloomberg)", "Implícito en notas de prensa"], "eje": "CLP por acción",
+T = {"es": {"po": "Precio objetivo", "dcf": "Valor DCF", "aprox": "~", "leyenda": ["Precios de los documentos del equipo"], "eje": "CLP por acción",
             "eleccion": "Elección 15-dic"},
-     "en": {"po": "Target price", "dcf": "DCF value", "aprox": "~", "leyenda": ["Confirmed (Bloomberg)", "Implied in press notes"], "eje": "CLP per share",
+     "en": {"po": "Target price", "dcf": "DCF value", "aprox": "~", "leyenda": ["Prices from the team's documents"], "eje": "CLP per share",
             "eleccion": "Election 15-Dec"}}
 
 
@@ -48,11 +47,11 @@ def trayectoria(lang, salida):
     y = [h[1] for h in HITOS]
     ax.plot(x, y, color=TINTA_SECUNDARIA, linewidth=0.6, linestyle=(0, (2, 2)), zorder=2)
     for fecha, precio, ok, es, en, (dx, dy) in HITOS:
-        ax.scatter([fecha], [precio], s=11, facecolor=AZUL if ok else "white", edgecolor=AZUL, linewidth=0.8, zorder=4)
+        ax.scatter([fecha], [precio], s=11, facecolor=AZUL, edgecolor=AZUL, linewidth=0.8, zorder=4)
         rotulo = (es if lang == "es" else en)
         if not rotulo:
             continue
-        valor = num(precio, lang) if ok else t["aprox"] + num(precio, lang)
+        valor = num(precio, lang)
         ax.annotate(f"{rotulo}\n{valor}", (fecha, precio), textcoords="offset points", xytext=(dx, dy), fontsize=3.8, color=NEGRO,
                     ha="left" if dx >= 0 else "right", va="center", linespacing=1.05)
     ax.axhline(K["po"], color=ROJO, linewidth=0.8, linestyle=(0, (4, 2)))
@@ -71,7 +70,7 @@ def trayectoria(lang, salida):
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
     ax.set_ylabel(t["eje"], fontsize=4.0, color=TINTA_SECUNDARIA, labelpad=2)
-    for i, (txt, lleno) in enumerate(zip(t["leyenda"], (True, False))):
+    for i, (txt, lleno) in enumerate(zip(t["leyenda"], (True,))):
         xx = 0.15 + i * 0.42
         fig.add_artist(plt.Line2D([xx], [0.945], marker="o", markersize=3.2, markerfacecolor=AZUL if lleno else "white", markeredgecolor=AZUL, linestyle="none",
                                   transform=fig.transFigure))

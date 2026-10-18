@@ -8,12 +8,12 @@ Una sola lista para todo lo que sigue abierto. Al cerrar un pendiente, pasarlo a
 - [ ] Verificar el dato de Gran Plaza (cap rate 9,4% en la Figura 26; −CLP 10,7 por acción) (inconsistencia 6).
 - [ ] Verificar una por una las URL de las fuentes políticas de RR2 en Riesgos (inconsistencia 10).
 - [ ] Valores exactos de los tramos de inflación y moneda de la Figura 15 de FA, hoy derivados de los totales del borrador (inconsistencia 8).
-- [ ] Precios de Bloomberg de los hitos de la Figura R1 (trayectoria): solo el mínimo (10-oct-25), el máximo (27-abr-26) y el cierre (30-sep-26) están confirmados; 9-oct-25, 6-nov-25 y 25-may-26 son precios implícitos en notas de prensa (objetivo / (1 + potencial)); el 15-dic-25 no tiene precio.
-- [ ] GLA total de la industria en Chile (≈4,3 millones de m², estimado como GLA del trío sin oficinas ÷ 76%): confirmar con la CChC u otra fuente; de él depende la presión de oferta (5,1%).
+- [x] Precios de los hitos de la Figura R1: se usan los de los documentos del equipo, sin validar.
+- [x] GLA de la industria: no se dispone del GLA total del mercado; el análisis usa el GLA de los principales operadores (≈4,3 millones de m², GLA del trío sin oficinas ÷ 76%) y así lo dice el texto.
 - [ ] Renta variable: 5,1% del ingreso (1S26) frente a 5,7% (UDM); el texto rotula cada cifra con su período; unificar cuando el equipo defina cuál usar.
 
 ## Valuación
-- [ ] Modelo v4 propio: el equipo no entregó su v4; `valuacion/graficos/modelo_v4.py` construye la v4 (v3 + pipeline con fecha desde Exhibits v7). Reemplazar por el modelo del equipo si difiere y correr `generar_todo.sh`.
+- [x] Modelo v4: lo construye `valuacion/graficos/modelo_v4.py`; no se necesita un modelo externo.
 - [ ] Pesos de los escenarios (30/60/10): salen de la matriz de riesgo con baja 10%, media 30% y alta 50% a 12 meses; validar esa conversión cualitativa → numérica (`riesgos/graficos/matriz_datos.py`).
 - [ ] Comparar los dos cap rates sobre la misma base (6,0% del mercado y 5,55% real de los tasadores) con una conversión explícita.
 - [ ] TIR del accionista por escenario (bear y bull): exige rehacer la trayectoria de deuda de cada caso (hoy solo TIR de la firma).

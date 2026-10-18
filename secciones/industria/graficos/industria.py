@@ -241,15 +241,15 @@ def oferta_demanda(wb, lang):
         "es": ("Nueva oferta de GLA vs consumo privado, Chile 2026–2028",
                "GLA orgánico del trío en Chile como % del GLA de la industria vs crecimiento esperado "
                "del consumo privado real",
-               ["Solo GLA orgánico (oferta que depende del consumo). GLA de la industria en Chile ≈ GLA del trío ÷ 76% (participación "
-                "en los principales operadores); no incluye la oferta nueva de otros operadores.",
+               ["Solo GLA orgánico (oferta que depende del consumo). GLA de los principales operadores en Chile ≈ GLA del trío ÷ 76% (participación "
+                "del trío en ese universo; no se dispone del GLA total del mercado); no incluye la oferta nueva de otros operadores.",
                 "Fuente: reportes 2T26 de Plaza S.A., Parque Arauco y Cenco Malls; Banco Central de "
                 "Chile, IPoM sep-2026 (Tabla II.1); análisis del equipo."]),
         "en": ("New GLA supply vs private consumption, Chile 2026–2028",
                "Trio organic GLA in Chile as % of industry GLA vs expected real private "
                "consumption growth",
-               ["Organic GLA only (consumption-dependent supply). Industry GLA in Chile ≈ trio GLA ÷ 76% (share of the main "
-                "operators); excludes new supply from other operators.",
+               ["Organic GLA only (consumption-dependent supply). Main-operators GLA in Chile ≈ trio GLA ÷ 76% (trio's share of that "
+                "universe; total market GLA is not available); excludes new supply from other operators.",
                 "Source: 2Q26 reports of Plaza S.A., Parque Arauco and Cenco Malls; Central Bank "
                 "of Chile, IPoM Sep-2026 (Table II.1); Team analysis."]),
     }
