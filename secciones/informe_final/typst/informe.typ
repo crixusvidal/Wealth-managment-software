@@ -207,10 +207,13 @@
 
 // Secciones -----------------------------------------------------------------------------------------
 #let k0 = 0
+// Tamaño del texto por sección: se aprovecha el espacio libre de cada tramo sin pasar de 20 páginas
+#let TAM = (negocio: 8.4pt, industria: 8.4pt, esg: 8.4pt, fa: 8.4pt, valuacion: 8.7pt, riesgos: 8.4pt, resumen: 8.7pt)
 #for (si, s) in D.secciones.enumerate() {
   // Análisis Financiero y Riesgos empiezan arriba de una página nueva
   if s.clave in ("fa", "valuacion", "riesgos", "resumen") { pagebreak(weak: true) }
   [#metadata(si) <sec-ini>]
+  set text(size: TAM.at(s.clave, default: 8.4pt))
   let base = D.secciones.slice(0, si).map(x => x.figuras.len()).sum(default: 0)
   ancho({
     titulo(s.titulo)
