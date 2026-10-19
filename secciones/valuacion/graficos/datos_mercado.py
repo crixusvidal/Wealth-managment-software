@@ -19,13 +19,11 @@ import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))
 import estilo  # noqa: E402,F401
-from estilo import AMARILLO, AZUL, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA, num  # noqa: E402
+from estilo import AMARILLO, AZUL, CELESTE, GRILLA, MORADO_CENCOSUD, NEGRO, ROJO, TINTA_SECUNDARIA, VERDE_PARQUE_ARAUCO, num  # noqa: E402
 
 LIBRO = Path(__file__).resolve().parents[2] / "valuacion/modelos/Mallplaza_Datos_Graficos_Informe.xlsx"
 FIGS = Path(__file__).parent / "figuras"
 ANCHO, DPI = 3550 / 1440, 400
-CELESTE_CLARO = "#B5D8F0"
-GRIS_BARRA = "#D5D9E0"
 
 
 def leer():
@@ -57,7 +55,7 @@ def caprate(cr, lang, salida):
     fig = plt.figure(figsize=(ANCHO, 2.05))
     ax = fig.add_axes([0.09, 0.2, 0.78, 0.64])
     ax2 = ax.twinx()
-    ax2.bar(x, spr, color=GRIS_BARRA, width=0.7, zorder=1)
+    ax2.bar(x, spr, color=AMARILLO, width=0.7, zorder=1)
     ax2.axhline(prom, color=ROJO, linewidth=0.7, linestyle=(0, (3, 2)), zorder=2)
     ax2.set_ylim(0, 1100)
     ax2.text(0, prom + 25, (f"Prom. 4T22–3T25: {num(prom, lang)} pb" if es else f"Avg. 4Q22–3Q25: {num(prom, lang)} bp"), fontsize=3.6, color=ROJO, va="bottom")
@@ -73,12 +71,12 @@ def caprate(cr, lang, salida):
     ejes(ax, lang)
     for s in ("top",): ax2.spines[s].set_visible(False)
     ax.text(x[-1] - 0.15, cap[-1] + 0.55, f"{num(cap[-1], lang, 2)}%", fontsize=4.2, color=AZUL, fontweight="bold", va="bottom", ha="center")
-    ax.text(x[-1] - 0.15, bcu[-1] + 0.5, f"{num(bcu[-1], lang, 2)}%", fontsize=4.2, color="#2A86C5", fontweight="bold", va="bottom", ha="center")
+    ax.text(x[-1] - 0.15, bcu[-1] + 0.5, f"{num(bcu[-1], lang, 2)}%", fontsize=4.2, color=AZUL, fontweight="bold", va="bottom", ha="center")
     ax2.text(x[-1] - 0.15, 105, f"{num(spr[-1], lang)} pb" if es else f"{num(spr[-1], lang)} bp", fontsize=4.0, color=NEGRO, fontweight="bold", ha="center", rotation=90, va="center")
     # leyenda
     for i, (txt, col, tipo) in enumerate(((("Cap rate pro forma" if es else "Pro forma cap rate"), AZUL, "l"),
                                           (("BCU 10 años" if es else "10-year BCU"), CELESTE, "l"),
-                                          (("Spread (pb, eje derecho)" if es else "Spread (bp, right axis)"), GRIS_BARRA, "b"))):
+                                          (("Spread (pb, eje derecho)" if es else "Spread (bp, right axis)"), AMARILLO, "b"))):
         xx = 0.10 + i * (0.36 if i == 0 else 0.22) + (0.0 if i == 0 else 0.0)
         xx = (0.10, 0.36, 0.56)[i]
         fig.add_artist(plt.Line2D([xx, xx + 0.03], [0.95, 0.95], color=col, linewidth=2.2 if tipo == "b" else 1.0, transform=fig.transFigure))
@@ -90,7 +88,7 @@ def caprate(cr, lang, salida):
 def precio(pr, lang, salida):
     es = lang == "es"
     f = [r[0] for r in pr]
-    series = [("Mallplaza", 6, AZUL, 1.3, "-"), ("IPSA", 7, TINTA_SECUNDARIA, 0.8, "-"), ("Parque Arauco", 8, CELESTE, 0.8, "-"), ("Cenco Malls", 9, CELESTE_CLARO, 0.9, (0, (2, 1.5)))]
+    series = [("Mallplaza", 6, AZUL, 1.3, "-"), ("IPSA", 7, NEGRO, 0.7, "-"), ("Parque Arauco", 8, VERDE_PARQUE_ARAUCO, 0.9, "-"), ("Cenco Malls", 9, MORADO_CENCOSUD, 0.9, (0, (2, 1.5)))]
     fig = plt.figure(figsize=(ANCHO, 2.05))
     ax = fig.add_axes([0.10, 0.12, 0.87, 0.73])
     fin = sorted([(pr[-1][c], nombre, col) for nombre, c, col, lw, ls in series])
@@ -100,7 +98,7 @@ def precio(pr, lang, salida):
     for nombre, c, col, lw, ls in series:
         ax.plot(f, [r[c] for r in pr], color=col, linewidth=lw, linestyle=ls, zorder=4 if nombre == "Mallplaza" else 3)
     for y, v, nombre, col in ys:
-        ax.text(f[-1] + dt.timedelta(days=22), y, f"{num(v, lang)}", fontsize=3.8, color=col if col != CELESTE_CLARO else "#6AAAD6", va="center", fontweight="bold")
+        ax.text(f[-1] + dt.timedelta(days=22), y, f"{num(v, lang)}", fontsize=3.8, color=col, va="center", fontweight="bold")
     hitos = [(dt.datetime(2025, 10, 10), 2470, "Mín. 10-oct-25\n2.470" if es else "Low 10-Oct-25\n2,470", (dt.datetime(2024, 1, 15), 335)),
              (dt.datetime(2025, 11, 25), None, "MSCI 25-nov-25" if es else "MSCI 25-Nov-25", (dt.datetime(2024, 1, 15), 425)),
              (dt.datetime(2026, 4, 27), 4700, "Máx. 27-abr-26\n4.700" if es else "High 27-Apr-26\n4,700", (dt.datetime(2025, 1, 10), 520)),
@@ -129,7 +127,7 @@ def pnav(nav, lang, salida):
     es = lang == "es"
     v = nav["P/NAV ajustado"]
     nombres = ["Mallplaza", "Parque Arauco", "Cenco Malls"]
-    cols = [AZUL, CELESTE, CELESTE_CLARO]
+    cols = [AZUL, VERDE_PARQUE_ARAUCO, MORADO_CENCOSUD]
     fig = plt.figure(figsize=(ANCHO, 1.5))
     ax = fig.add_axes([0.26, 0.18, 0.68, 0.74])
     y = np.arange(3)[::-1]
