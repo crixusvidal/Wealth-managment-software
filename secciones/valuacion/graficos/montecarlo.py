@@ -120,15 +120,15 @@ def histograma(r, po, lang, salida):
     fig = plt.figure(figsize=(ANCHO, 2.05))
     ax = fig.add_axes([0.10, 0.17, 0.87, 0.74])
     pesos = np.ones_like(po) * 100 / len(po)
-    ax.hist(po, bins=40, weights=pesos, color=AZUL, edgecolor="white", linewidth=0.3, zorder=3)
+    ax.hist(po, bins=40, weights=pesos, color=ROJO, edgecolor="white", linewidth=0.3, zorder=3)
     top = ax.get_ylim()[1]
     ax.set_xlim(1400, 5100)
-    for v, c, txt, dy, ha, dx in ((r["po_base"], ROJO, t["obj"], 0.97, "left", 25), (r["precio"], NEGRO, t["precio"], 0.80, "right", -25),
-                                  (r["consenso"], AMARILLO, t["cons"], 0.97, "left", 25)):
+    for v, c, txt, dy, ha, dx in ((r["po_base"], NEGRO, t["obj"], 0.97, "left", 25), (r["precio"], NEGRO, t["precio"], 0.80, "right", -25),
+                                  (r["consenso"], NEGRO, t["cons"], 0.97, "left", 25)):
         ax.axvline(v, color=c, linewidth=0.9, linestyle=(0, (4, 2)), zorder=4)
         ax.text(v + dx, top * dy, txt.format(v=num(v, lang)), fontsize=4.2, color=NEGRO if c == AMARILLO else c, va="top", ha=ha, fontweight="bold")
     ax.text(0.34, 0.62, t["bajo"].format(p=num(round(r["p_bajo_precio"] * 100, 1), lang, 0 if r["p_bajo_precio"] > 0.9995 else 1)), transform=ax.transAxes, fontsize=4.4,
-            color=AZUL, fontweight="bold", va="top", ha="left")
+            color=NEGRO, fontweight="bold", va="top", ha="left")
     ax.set_xlabel(t["eje"], fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
     ax.set_ylabel(t["y"], fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
     ax.tick_params(labelsize=4.0, length=1.5, colors=TINTA_SECUNDARIA)

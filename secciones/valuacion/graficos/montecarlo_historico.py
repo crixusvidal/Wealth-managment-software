@@ -31,12 +31,12 @@ FIGS = Path(__file__).parent / "figuras"
 def hist_base(lang, datos, lineas, xlabel, salida, xlim, anot):
     fig = plt.figure(figsize=(ANCHO, 2.05))
     ax = fig.add_axes([0.10, 0.17, 0.87, 0.74])
-    ax.hist(datos, bins=45, weights=np.ones_like(datos) * 100 / len(datos), color=AZUL, edgecolor="white", linewidth=0.3, zorder=3)
+    ax.hist(datos, bins=45, weights=np.ones_like(datos) * 100 / len(datos), color=ROJO, edgecolor="white", linewidth=0.3, zorder=3)
     top = ax.get_ylim()[1]
     for v, col, txt, dy, ha, dx in lineas:
         ax.axvline(v, color=col, linewidth=0.9, linestyle=(0, (4, 2)), zorder=4)
         ax.text(v + dx, top * dy, txt, fontsize=4.2, color=NEGRO if col == AMARILLO else col, va="top", ha=ha, fontweight="bold")
-    ax.text(0.95, 0.62, anot, transform=ax.transAxes, fontsize=4.4, color=AZUL, fontweight="bold", va="top", ha="right", linespacing=1.3)
+    ax.text(0.95, 0.62, anot, transform=ax.transAxes, fontsize=4.4, color=NEGRO, fontweight="bold", va="top", ha="right", linespacing=1.3)
     ax.set_xlim(*xlim)
     ax.set_xlabel(xlabel, fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
     ax.set_ylabel("Simulaciones (%)" if lang == "es" else "Simulations (%)", fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
@@ -82,10 +82,10 @@ if __name__ == "__main__":
     v, pr = r["valor_implicito"], r["precio_52s"]
     for lang in ("es", "en"):
         es = lang == "es"
-        hist_base(lang, valor, [(OBJETIVO, ROJO, ("Objetivo " if es else "Target ") + num(OBJETIVO, lang), 0.97, "right", -40), (PRECIO, NEGRO, ("Precio " if es else "Price ") + num(PRECIO, lang), 0.97, "left", 40)],
+        hist_base(lang, valor, [(OBJETIVO, NEGRO, ("Objetivo " if es else "Target ") + num(OBJETIVO, lang), 0.97, "right", -40), (PRECIO, NEGRO, ("Precio " if es else "Price ") + num(PRECIO, lang), 0.97, "left", 40)],
                   "Valor por acción implícito (CLP)" if es else "Implied value per share (CLP)", FIGS / f"{lang}_V21_mc_cap_rate.png", (1000, 4400),
                   f"{num(v['p_bajo_precio'] * 100, lang, 0)}% de las\nsimulaciones\nbajo el precio" if es else f"{num(v['p_bajo_precio'] * 100, lang, 0)}% of\nsimulations\nbelow the price")
-        hist_base(lang, final, [(OBJETIVO, ROJO, ("Objetivo\n" if es else "Target\n") + num(OBJETIVO, lang), 0.97, "left", 40), (PRECIO, NEGRO, ("Precio actual " if es else "Current price ") + num(PRECIO, lang), 0.985, "left", 40)],
+        hist_base(lang, final, [(OBJETIVO, NEGRO, ("Objetivo\n" if es else "Target\n") + num(OBJETIVO, lang), 0.97, "left", 40), (PRECIO, NEGRO, ("Precio actual " if es else "Current price ") + num(PRECIO, lang), 0.985, "left", 40)],
                   "Precio simulado a 52 semanas (CLP)" if es else "Simulated price at 52 weeks (CLP)", FIGS / f"{lang}_V22_mc_precio_52s.png", (1000, 7500),
                   f"{num(pr['p_bajo_objetivo'] * 100, lang, 0)}% de las\ntrayectorias\ntermina bajo\nel objetivo" if es else f"{num(pr['p_bajo_objetivo'] * 100, lang, 0)}% of paths\nend below\nthe target")
         # copias con nombre y fuente
