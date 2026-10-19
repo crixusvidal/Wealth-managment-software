@@ -43,7 +43,7 @@ T = {
            "v2": {"Bono en UF 10 años BCCh (real)": "Bono UF 10a (BCCh)",
                   "Bono en pesos 10 años BCCh (nominal)": "Bono en pesos 10a (BCCh)",
                   "Base del modelo: Rf UST + CRP Chile, convertida a CLP": "Rf del modelo (UST + CRP)",
-                  "Kd Mallplaza (cupón última emisión UF)": "Kd Mallplaza (emisión UF)",
+                  "Kd Mallplaza (cupón última emisión UF)": "Kd Mallplaza (cupón UF 3,6%)",
                   "WACC implícita en el precio actual (DCF inverso)": "WACC implícita en el precio",
                   "WACC real de la tasación (Nota 11, Chile jun-26)": "WACC de la tasación (Nota 11)",
                   "Nuestra WACC terminal": "Nuestra WACC terminal", "Nuestro Ke terminal": "Nuestro Ke terminal"},
@@ -79,7 +79,7 @@ T = {
            "v2": {"Bono en UF 10 años BCCh (real)": "10Y UF bond (BCCh)",
                   "Bono en pesos 10 años BCCh (nominal)": "10Y peso bond (BCCh)",
                   "Base del modelo: Rf UST + CRP Chile, convertida a CLP": "Model Rf (UST + CRP)",
-                  "Kd Mallplaza (cupón última emisión UF)": "Mallplaza Kd (UF issue)",
+                  "Kd Mallplaza (cupón última emisión UF)": "Mallplaza Kd (UF coupon, 3.6%)",
                   "WACC implícita en el precio actual (DCF inverso)": "WACC implied by the price",
                   "WACC real de la tasación (Nota 11, Chile jun-26)": "Appraisal WACC (Note 11)",
                   "Nuestra WACC terminal": "Our terminal WACC", "Nuestro Ke terminal": "Our terminal Ke"},
@@ -182,7 +182,7 @@ def v7(lang, wb, salida):
     pares = [(ws[f"A{r}"].value, ws[f"B{r}"].value, ws[f"C{r}"].value, ws[f"E{r}"].value, ws[f"F{r}"].value)
              for r in range(8, 14)]
     med = {"Chile": (ws["C15"].value, ws["F15"].value), "Brasil": (ws["C16"].value, ws["F16"].value)}
-    corto = {"Mallplaza (precio actual)": "Mallplaza", "Cencosud Shopping": "Cencosud S."}
+    corto = {"Mallplaza (precio actual)": "Mallplaza", "Cencosud Shopping": "Cenco Malls"}
     color = {"Chile": ROJO, "Brasil": AMARILLO}
     fig = figura("V7")
     # Panel A: múltiplo vs bono real local (etiquetas separadas verticalmente dentro de cada país)
@@ -480,7 +480,7 @@ def v9(lang, ruta_v2, salida):
     ax.set_xlabel(t["cpa"], fontsize=4.6, color=TINTA_SECUNDARIA, labelpad=1.5)
     punto = lambda c, txt: plt.Line2D([], [], marker="o", linestyle="", markersize=3, markerfacecolor=c,
                                       markeredgecolor="white", label=txt)
-    fig.legend(handles=[punto(VERDE_PARQUE_ARAUCO, "Parque Arauco"), punto(MORADO_CENCOSUD, "Cencosud"),
+    fig.legend(handles=[punto(VERDE_PARQUE_ARAUCO, "Parque Arauco"), punto(MORADO_CENCOSUD, "Cenco Malls"),
                         punto(AZUL, "Multiplan, Allos, Iguatemi, IRSA"),
                         plt.Line2D([], [], color=NEGRO, linewidth=1.4, label="Ponderado" if lang == "es" else "Weighted")],
                loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4, frameon=False, fontsize=3.9,

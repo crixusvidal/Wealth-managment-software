@@ -1,4 +1,5 @@
-"""Área apilada: ingresos combinados de Mallplaza, Parque Arauco y Cencosud Shopping y la
+"""Área apilada: ingresos combinados de Mallplaza, Parque Arauco y Cenco Malls (antes Cencosud Shopping; el nombre de
+Bloomberg sigue siendo la clave de los datos) y la
 participación de cada uno (FY2020–FY2025). FY2022–FY2025 de Bloomberg; FY2020–FY2021 de fuentes
 públicas (ver EXTERNOS).
 
@@ -41,6 +42,7 @@ EXTERNOS = {
     },
 }
 ESTIMADOS = {("Cencosud Shopping", 2021)}
+NOMBRE = {"Cencosud Shopping": "Cenco Malls"}   # nombre visible en el gráfico (la clave de los datos es la de Bloomberg)
 
 
 def leer(ruta):
@@ -71,7 +73,7 @@ def graficar(ruta, salida):
     fig.add_artist(Rectangle((0.05, 0.905), 0.008, 0.055, color=ROJO, transform=fig.transFigure))
     fig.text(0.065, 0.915, "LISTED CHILEAN MALL OPERATORS: REVENUE AND SHARE", fontsize=20,
              fontweight="bold", color=NEGRO)
-    fig.text(0.05, 0.87, f"Mallplaza, Parque Arauco and Cencosud Shopping · combined revenue (CLP bn): "
+    fig.text(0.05, 0.87, f"Mallplaza, Parque Arauco and Cenco Malls · combined revenue (CLP bn): "
              f"+{cagr:.0%}/yr since the 2020 COVID trough, +{cagr_post:.0%}/yr since 2022",
              fontsize=11, color=TINTA_SECUNDARIA)
 
@@ -94,7 +96,7 @@ def graficar(ruta, salida):
                                          box_alignment=(0, 0.5), frameon=False,
                                          annotation_clip=False))
         else:
-            ax.text(años[-1] + 0.08, base[-1] + fila[-1] / 2, nombre, ha="left", va="center",
+            ax.text(años[-1] + 0.08, base[-1] + fila[-1] / 2, NOMBRE.get(nombre, nombre), ha="left", va="center",
                     fontsize=11, fontweight="bold", color=NEGRO)
         base = base + fila
     for i, (x, t) in enumerate(zip(años, total)):
@@ -116,10 +118,10 @@ def graficar(ruta, salida):
 
     fig.text(0.05, 0.09, "Mallplaza FY2025 includes 12 months of the Peruvian assets acquired from "
              "Falabella (1 month in FY2024).", fontsize=8.5, color=TINTA_SECUNDARIA)
-    fig.text(0.05, 0.07, "* Cencosud Shopping FY2021 estimated from its reported +33.4% revenue growth "
+    fig.text(0.05, 0.07, "* Cenco Malls FY2021 estimated from its reported +33.4% revenue growth "
              "in FY2022.", fontsize=8.5, color=TINTA_SECUNDARIA)
     fig.text(0.05, 0.045, "FY2020–FY2021: company filings via Feller Rate, Humphreys, bond prospectus "
-             "and press (DF); to be verified against CMF financial statements.", fontsize=8.5,
+             "and press (DF).", fontsize=8.5,
              color=TINTA_SECUNDARIA)
     fig.text(0.05, 0.02, "Source: Bloomberg (SALES_REV_TURN, consolidated revenue in CLP); Team "
              "analysis.", fontsize=8.5, color=TINTA_SECUNDARIA)

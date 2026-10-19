@@ -1,6 +1,6 @@
 # Cifras clave del informe (contexto para el LLM)
 
-Generado 2026-10-18 01:30 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
+Generado 2026-10-19 19:30 por `contexto_llm/generar.py` a partir de los modelos **vigentes**. No editar a mano: se reemplaza completo en cada ejecución.
 Si una cifra de un texto contradice esta tabla, está mal el texto. Cada fila indica su fuente (archivo!hoja!celda).
 
 Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendación: VENDER.
@@ -84,11 +84,12 @@ Reglas del informe: ver `CLAUDE.md` y `narrativa_y_coherencia.md`. Recomendació
 | Dividendo esperado 2027E, CLP por acción | 69,4 | `datos_resumen.json (modelo vigente, hoja Deuda)` |
 | Capitalización bursátil (CLP MM) | 7.785.450 | `datos_resumen.json` |
 
-## Escenarios
+## Monte Carlo
 
 | Cifra | Valor | Fuente |
 |---|---|---|
-| Precio objetivo ponderado con las probabilidades de la matriz de riesgo, CLP | CLP 2.075 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Precio objetivo simulado (10.000 iteraciones), mediana, CLP | CLP 2.047 | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
+| Simulaciones con precio objetivo bajo el precio (3.555) | 100,0% | `informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)` |
 
 ## Pipeline
 

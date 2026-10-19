@@ -1,4 +1,4 @@
-"""Figura de supuestos fuertes de la valoración: cascada del precio objetivo + tabla de efectos individuales.
+"""Figura de supuestos discrecionales del equipo en la valoración: cascada del precio objetivo + tabla de efectos individuales.
 
 Misma forma que la figura de capital de trabajo (V4): arriba una cascada, abajo una tabla. La cascada parte del precio
 objetivo (CLP 2.076) y suma, en orden y de forma acumulada, las alternativas que un comprador podría defender

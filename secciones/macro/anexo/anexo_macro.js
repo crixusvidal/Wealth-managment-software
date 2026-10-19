@@ -34,7 +34,7 @@ const L = {
     lead: "Entre 2022 y 2026 la economía mundial absorbió dos shocks de oferta de origen geopolítico y un alza estructural de las tasas largas. El resultado es un entorno de presiones estanflacionarias y mayor costo de capital que llega a Chile por tres canales —inflación, tasas y consumo— y que está detrás de los dos riesgos más severos del informe (FR1 y MR1). En los gráficos, la línea punteada azul marca la fecha de valoración (30-06-2026); los datos posteriores se muestran como contexto. Las figuras cubren la transmisión del shock (Figura A1), el petróleo (Figura A2), las tasas soberanas (Figura A3), los spreads (Figura A4), el crecimiento e inflación mundial (Figura A5) y Chile (Figura A6).",
     kpis: [
       ["USD 114", "Brent, promedio sep-26", "+61% vs feb-26, antes del conflicto"],
-      ["5,22%", "UST 10Y, 8-oct-26", "máximo desde 2002 (por verificar)"],
+      ["5,22%", "UST 10Y, 8-oct-26", "Rf del modelo: 4,98%"],
       ["117 pb", "Spread Francia–Alemania", "30-sep-26; ~150 pb a inicios de oct."],
       ["3,0% | 4,7%", "FMI 2026: PIB | inflación", "crecimiento recortado; desinflación detenida"],
       ["0,25–0,75%", "PIB Chile 2026 (BCCh)", "desde 2–3% proyectado en dic-25"],
@@ -47,7 +47,7 @@ const L = {
       "**Dos shocks de oferta.** La invasión rusa de Ucrania (feb-22) llevó el Brent a USD 123 en junio de 2022. En 2026, el conflicto en el estrecho de Ormuz —por donde pasa más de un cuarto del petróleo transportado por mar— lo subió de USD 71 en febrero a USD 117 en abril; tras una tregua en junio, los ataques lo devolvieron a USD 114 en septiembre.",
       "Fuente: EIA (Brent spot, promedio mensual; STEO abr-26, sep-26 y oct-26); Statista."],
     a2: ["Figura A3:", "Rendimiento soberano a 10 años, 2022–2026 (%)",
-      "**Las tasas largas suben juntas.** El UST 10Y pasó de 1,8% (ene-22) a 5,0% (sep-26) y tocó 5,22% el 8 de octubre, su nivel más alto desde 2002 (por verificar); el Bund pasó de −0,1% a 3,6%. Los déficits fiscales presionan la tasa libre de riesgo y Chile acompaña el movimiento desde mediados de 2026.",
+      "**Las tasas largas suben juntas.** El UST 10Y pasó de 1,8% (ene-22) a 5,0% (sep-26) y tocó 5,22% el 8 de octubre; el Bund pasó de −0,1% a 3,6%. Los déficits fiscales presionan la tasa libre de riesgo y Chile acompaña el movimiento desde mediados de 2026.",
       "Fuente: FRED (GS10), Bundesbank, Banque de France (vía OCDE) y BCCh (BCP 10 años); promedios mensuales."],
     s3: "3. PRIMA FISCAL Y ESTANFLACIÓN",
     a3: ["Figura A4:", "Spreads a 10 años: Francia–Alemania y Chile–EE.UU. (pb)",
@@ -61,7 +61,7 @@ const L = {
       "Fuente: BCCh (IPoM dic-25, jun-26 y sep-26) e INE. PIB 2026: punto medio del rango 0,25–0,75%."],
     chile: [
       "**Menos crecimiento.** El Banco Central recortó el PIB 2026 a 0,25–0,75%, desde 2–3% en diciembre de 2025, con un mercado laboral más débil y confianza a la baja.",
-      "**Inflación persistente.** El IPC sube a 3,9%, sobre la meta de 3%, y la TPM se mantiene en 4,5%: no hay espacio para estimular el consumo, motor de las ventas de los locatarios (MR1).",
+      "**Inflación persistente.** El IPC proyectado en el IPoM sube a 3,9% (4,3% a 12 meses a junio), sobre la meta de 3%, y la TPM se mantiene en 4,5%: no hay espacio para estimular el consumo, motor de las ventas de los locatarios (MR1).",
       "**Fragmentación geopolítica.** Alianzas debilitadas y una política comercial de EE.UU. poco predecible encarecen la cobertura de riesgos y reducen los flujos hacia emergentes. Para Chile, Perú y Colombia esto significa monedas más volátiles y financiamiento más caro, que el modelo recoge con un CRP ponderado de 1,41% en el Ke.",
     ],
     s5: "5. QUÉ SIGNIFICA PARA MALLPLAZA",
@@ -70,7 +70,7 @@ const L = {
       filas: [
         ["Energía e inflación", "Brent USD 71 → 114 (feb–sep-26); inflación mundial 4,1% → 4,7%", "Reajusta la deuda en UF (79% del total); los arriendos en UF compensan", "UF +3% = −CLP 38.691 MM de utilidad (Fig. 26)", "MR1"],
         ["Tasas largas", "UST 10Y 4,1% → 5,2%; Bund 2,9% → 3,6% (dic-25 → oct-26)", "Mayor WACC y costo de refinanciar el pipeline", "Rf 4,98%; WACC +100 pb = precio objetivo −12,5% (Fig. 25)", "FR1"],
-        ["Consumo y PIB", "PIB Chile 2026: 0,25–0,75%; IPC 3,9%", "Menores ventas de locatarios, tráfico y nuevos formatos", "Tornado: tráfico −1,3% / +2,5% del valor (Fig. 24)", "MR1 · MR2"],
+        ["Consumo y PIB", "PIB Chile 2026: 0,25–0,75%; IPC proyectado 3,9%", "Menores ventas de locatarios, tráfico y nuevos formatos", "Tornado: tráfico −1,3% / +2,5% del valor (Fig. 24)", "MR1 · MR2"],
         ["Fragmentación", "Aranceles de EE.UU.; menores flujos a emergentes", "Monedas volátiles y financiamiento más caro", "CRP ponderado 1,41% en el Ke; deuda en moneda local y derivados de cobertura (Análisis Razonado 2T26)", "FR1 · MR3"],
       ],
       anchos: [1650, 2700, 2700, 2616, 1000],
@@ -79,7 +79,7 @@ const L = {
       filas: [
         ["UST 10Y", "5,22% (8-oct-26)", "Sobre 5,5% de forma sostenida", "≈ WACC +50 pb: precio objetivo de CLP 2.077 a ~1.940 (Fig. 25)"],
         ["Brent", "USD 114 (sep-26)", "Sobre USD 120 o cierre prolongado de Ormuz", "Más inflación y UF: mayor reajuste de la deuda (MR1)"],
-        ["IPC Chile", "3,9% (IPoM jun-26)", "Sobre 4% por dos trimestres", "TPM sin recortes; consumo y ventas de locatarios débiles"],
+        ["IPC Chile", "3,9% proyectado (IPoM jun-26); 4,3% a 12 meses a jun-26", "Sobre 4% por dos trimestres", "TPM sin recortes; consumo y ventas de locatarios débiles"],
         ["PIB Chile", "0,25–0,75% 2026 (IPoM)", "Contracción en dos trimestres", "Menor tráfico y ventas; presión sobre la ocupación (Fig. 24)"],
         ["Spread Francia–Alemania", "117 pb (30-sep-26)", "Sobre 150 pb", "Contagio fiscal: más presión sobre las tasas largas globales (FR1)"],
       ], anchos: [1900, 1900, 2700, 4166] },
@@ -91,7 +91,7 @@ const L = {
     lead: "Between 2022 and 2026 the world economy absorbed two geopolitical supply shocks and a structural rise in long-term rates. The result is a backdrop of stagflationary pressure and a higher cost of capital that reaches Chile through three channels — inflation, rates and consumption — and that sits behind the two most severe risks in the report (FR1 and MR1). In the charts, the dotted blue line marks the valuation date (30-Jun-2026); later data are shown for context. The figures cover the shock transmission (Figure A1), oil (Figure A2), sovereign yields (Figure A3), spreads (Figure A4), world growth and inflation (Figure A5) and Chile (Figure A6).",
     kpis: [
       ["USD 114", "Brent, Sep-26 average", "+61% vs Feb-26, before the conflict"],
-      ["5.22%", "10Y UST, 8-Oct-26", "highest since 2002 (to be verified)"],
+      ["5.22%", "10Y UST, 8-Oct-26", "model Rf: 4.98%"],
       ["117 bp", "France–Germany spread", "30-Sep-26; ~150 bp in early Oct."],
       ["3.0% | 4.7%", "IMF 2026: GDP | inflation", "growth cut; disinflation stalled"],
       ["0.25–0.75%", "Chile 2026 GDP (BCCh)", "down from 2–3% expected in Dec-25"],
@@ -104,7 +104,7 @@ const L = {
       "**Two supply shocks.** Russia's invasion of Ukraine (Feb-22) pushed Brent to USD 123 in June 2022. In 2026, the conflict in the Strait of Hormuz — which carries more than a quarter of seaborne oil — lifted it from USD 71 in February to USD 117 in April; after a truce in June, renewed attacks took it back to USD 114 in September.",
       "Source: EIA (Brent spot, monthly average; STEO Apr-26, Sep-26 and Oct-26); Statista."],
     a2: ["Figure A3:", "10-year sovereign yields, 2022–2026 (%)",
-      "**Long-term rates rise together.** The 10Y UST moved from 1.8% (Jan-22) to 5.0% (Sep-26) and touched 5.22% on 8 October, the highest since 2002 (to be verified); the Bund went from −0.1% to 3.6%. Fiscal deficits push up the risk-free rate, and Chile has followed the move since mid-2026.",
+      "**Long-term rates rise together.** The 10Y UST moved from 1.8% (Jan-22) to 5.0% (Sep-26) and touched 5.22% on 8 October; the Bund went from −0.1% to 3.6%. Fiscal deficits push up the risk-free rate, and Chile has followed the move since mid-2026.",
       "Source: FRED (GS10), Bundesbank, Banque de France (via OECD) and BCCh (10Y BCP); monthly averages."],
     s3: "3. FISCAL PREMIUM AND STAGFLATION",
     a3: ["Figure A4:", "10-year spreads: France–Germany and Chile–US (bp)",
@@ -118,7 +118,7 @@ const L = {
       "Source: BCCh (Monetary Policy Reports Dec-25, Jun-26 and Sep-26) and INE. 2026 GDP: midpoint of the 0.25–0.75% range."],
     chile: [
       "**Slower growth.** The Central Bank cut 2026 GDP growth to 0.25–0.75%, from 2–3% in December 2025, with a weaker labour market and falling confidence.",
-      "**Sticky inflation.** CPI rises to 3.9%, above the 3% target, and the policy rate stays at 4.5%: there is no room to support consumption, the driver of tenant sales (MR1).",
+      "**Sticky inflation.** The MPR-projected CPI rises to 3.9% (4.3% over 12 months to June), above the 3% target, and the policy rate stays at 4.5%: there is no room to support consumption, the driver of tenant sales (MR1).",
       "**Geopolitical fragmentation.** Weaker alliances and unpredictable US trade policy raise hedging costs and reduce flows to emerging markets. For Chile, Peru and Colombia this means more volatile currencies and costlier funding, which the model captures with a 1.41% weighted CRP in the cost of equity.",
     ],
     s5: "5. WHAT IT MEANS FOR MALLPLAZA",
@@ -127,7 +127,7 @@ const L = {
       filas: [
         ["Energy and inflation", "Brent USD 71 → 114 (Feb–Sep-26); world inflation 4.1% → 4.7%", "Indexes UF debt (79% of total); UF-linked rents offset it", "UF +3% = −CLP 38,691 MM of earnings (Fig. 26)", "MR1"],
         ["Long-term rates", "10Y UST 4.1% → 5.2%; Bund 2.9% → 3.6% (Dec-25 → Oct-26)", "Higher WACC and cost of refinancing the pipeline", "Rf 4.98%; WACC +100 bp = target price −12.5% (Fig. 25)", "FR1"],
-        ["Consumption and GDP", "Chile 2026 GDP: 0.25–0.75%; CPI 3.9%", "Lower tenant sales, footfall and demand for new formats", "Tornado: traffic −1.3% / +2.5% of value (Fig. 24)", "MR1 · MR2"],
+        ["Consumption and GDP", "Chile 2026 GDP: 0.25–0.75%; projected CPI 3.9%", "Lower tenant sales, footfall and demand for new formats", "Tornado: traffic −1.3% / +2.5% of value (Fig. 24)", "MR1 · MR2"],
         ["Fragmentation", "US tariffs; lower flows to emerging markets", "Volatile currencies and costlier funding", "1.41% weighted CRP in Ke; debt in local currency and hedging derivatives (MD&A 2Q26)", "FR1 · MR3"],
       ],
       anchos: [1650, 2700, 2700, 2616, 1000],
@@ -136,7 +136,7 @@ const L = {
       filas: [
         ["10Y UST", "5.22% (8-Oct-26)", "Sustained above 5.5%", "≈ WACC +50 bp: target price from CLP 2,077 to ~1,940 (Fig. 25)"],
         ["Brent", "USD 114 (Sep-26)", "Above USD 120 or a prolonged Hormuz closure", "Higher inflation and UF: larger debt indexation (MR1)"],
-        ["Chile CPI", "3.9% (Jun-26 MPR)", "Above 4% for two quarters", "No rate cuts; weak consumption and tenant sales"],
+        ["Chile CPI", "3.9% projected (Jun-26 MPR); 4.3% over 12 months to Jun-26", "Above 4% for two quarters", "No rate cuts; weak consumption and tenant sales"],
         ["Chile GDP", "0.25–0.75% 2026 (MPR)", "Two quarters of contraction", "Lower footfall and sales; pressure on occupancy (Fig. 24)"],
         ["France–Germany spread", "117 bp (30-Sep-26)", "Above 150 bp", "Fiscal contagion: more pressure on global long-term rates (FR1)"],
       ], anchos: [1900, 1900, 2700, 4166] },
@@ -169,7 +169,7 @@ function dosColumnas(izq, der) {
     rows: [new TableRow({ children: [celda(MEDIA, izq), celda(SEP, [new Paragraph({ children: [] })]), celda(MEDIA, der)] })] });
 }
 function bloqueFigura(lang, cod, f, conTexto = true) {
-  const out = [caption(f[0], f[1]), imagen(`${lang}_${cod}.png`, MEDIA / 1440, ALTO[cod.slice(0, 2)])];
+  const out = [caption(f[0], f[1]), imagen(`${lang}_${cod}.png`, 0.66 * MEDIA / 1440, 0.66 * ALTO[cod.slice(0, 2)])];
   if (conTexto) out.push(texto(f[2], 20));
   out.push(fuente(f[f.length - 1]));
   return out;
@@ -225,7 +225,7 @@ function documento(lang) {
     kpis(X),
     seccion(X.s1, 160),
     caption(X.a0[0], X.a0[1]),
-    imagen(`${lang}_A0_mapa.png`, ANCHO / 1440, ALTO.A0),
+    imagen(`${lang}_A0_mapa.png`, 0.8 * ANCHO / 1440, 0.8 * ALTO.A0),
     fuente(X.a0[2]),
     seccion(X.s2),
     dosColumnas(bloqueFigura(lang, "A1_brent", X.a1), bloqueFigura(lang, "A2_tasas", X.a2)),

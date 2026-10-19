@@ -40,29 +40,29 @@ const L = {
       lead: "La WACC se calcula por período: el D/E converge linealmente desde la estructura actual (20,0%) hasta la objetivo (28,5%, DFN/EBITDA 3,5x) en 2031. El Ke se construye en dólares (Rf del Tesoro de EE.UU. + beta re-apalancada × ERP + CRP ponderado por ingresos) y se convierte a pesos con el diferencial de inflación.",
       formulas: ["βL = βU × [1 + (1 − t) × D/E]  (Hamada)", "Ke USD = Rf + βL × ERP + CRP ponderado", "Ke CLP = (1 + Ke USD) × (1 + π Chile) / (1 + π EE.UU.) − 1", "Kd CLP = (1 + Kd real + spread) × (1 + π Chile) − 1", "WACC = E/V × Ke CLP + D/V × Kd CLP × (1 − t)"],
       sA: "A. SUPUESTOS DE MERCADO Y ESTRUCTURA",
-      inputs: [["Rf: bono del Tesoro EE.UU. 10 años", "rf", "%", "Tasa_WACC (FFCF)"], ["Prima por riesgo de mercado (ERP)", "erp", "%", "Damodaran"],
+      inputs: [["Rf: bono del Tesoro EE.UU. 10 años", "rf", "%", "Análisis del equipo"], ["Prima por riesgo de mercado (ERP)", "erp", "%", "Damodaran"],
         ["Inflación de largo plazo Chile", "pi_cl", "%", "Meta BCCh"], ["Inflación de largo plazo EE.UU. (breakeven 10Y)", "pi_us", "%", "Bloomberg, jun-26"],
-        ["Tasa de impuesto Chile", "tax", "%", "Ley de la Renta"], ["Kd real: cupón última emisión en UF", "kd_real", "%", "Mallplaza"],
+        ["Tasa de impuesto Chile", "tax", "%", "Ley de la Renta"], ["Kd real: cupón real de la última emisión en UF (caso base)", "kd_real", "%", "Mallplaza"],
         ["Aumento del Kd real por vuelta de DFN/EBITDA", "spread", "%", "Supuesto del equipo"], ["DFN/EBITDA inicial (30-06-26) → objetivo", "dfn", "x", "Release 2Q26; supuesto del equipo"],
-        ["Deuda bruta / market cap (estructura actual, MM CLP)", "estructura", "", "Tasa_WACC (FFCF)"]],
+        ["Deuda bruta (dic-25) / market cap a CLP 3.610 por acción (estructura actual, CLP mil MM)", "estructura", "", "Análisis del equipo"]],
       colsA: ["Supuesto", "Valor", "Fuente"],
       sB: "B. BETA: PARES DESAPALANCADOS",
       colsB: ["Empresa", "β apalancada", "Deuda (MM CLP)", "Market cap (MM CLP)", "Impuesto", "β desapalancada"],
-      medianaB: "Mediana (6 pares incluidos)", notaB: "Fuente: Bloomberg (betas), Tasa_WACC. Costa Verde se excluye porque no está en el set de comparables.",
+      medianaB: "Mediana (6 pares incluidos)", notaB: "Fuente: Bloomberg (betas); análisis del equipo. Costa Verde se excluye porque no está en el set de comparables.",
       sC: "C. RIESGO PAÍS PONDERADO POR INGRESOS",
       colsC: ["País", "Ponderación (ingresos UDM)", "CRP (Damodaran)", "Aporte"], paises: ["Chile", "Perú", "Colombia"], totalC: "CRP ponderado",
       sD: "D. WACC POR PERÍODO",
       filasD: [["53", "DFN/EBITDA", "x"], ["56", "D/E", "%"], ["57", "D/V", "%"], ["59", "Beta re-apalancada", "b"], ["60", "Ke USD", "%2"], ["61", "Ke nominal CLP", "%2"],
         ["62", "Kd real (UF) con spread", "%2"], ["63", "Kd nominal CLP", "%2"], ["64", "Kd después de impuestos", "%2"], ["65", "WACC nominal CLP", "%2"], ["66", "WACC real", "%2"]],
       per: ["2S26E", "2027E", "2028E", "2029E", "2030E", "2031E", "Terminal"],
-      fW: ["Figura Z1:", "WACC nominal y D/E por período", "Control: la réplica coincide con la hoja WACC del modelo v2 (diferencia 0 pb en todos los períodos). Fuente: Damodaran; Bloomberg; BCCh; análisis del equipo."],
+      fW: ["Figura Z1:", "WACC nominal y D/E por período", "Control: la réplica del DCF coincide con el cálculo de la WACC (diferencia 0 pb en todos los períodos). Fuente: Damodaran; Bloomberg; BCCh; análisis del equipo."],
       sF: "E. ELECCIÓN DE LA TASA LIBRE DE RIESGO",
       colsF: ["Alternativa", "Valor"],
       filasF: [["Base del modelo: Rf EE.UU. + CRP Chile, en CLP", "base", "%2"], ["Bono en pesos 10 años BCCh (30-06-26)", "bono", "%2"], ["Diferencia", "dif", "pb"],
         ["Efecto en la WACC terminal (diferencia × E/V)", "efecto", "pb"], ["Valor DCF con el bono en pesos (CLP)", "dcf", "clp"], ["Precio objetivo 80/20 en ese caso (CLP)", "po", "clp"]],
       notasF: ["Por qué UST + CRP y no el bono en pesos: el bono local ya incluye el riesgo Chile, y sumarle el CRP lo contaría dos veces; además, un 28% de los ingresos viene de Perú y Colombia, cuyo riesgo se agrega con el CRP ponderado.",
         "Es la elección más conservadora: con el bono en pesos el precio objetivo sube a ~CLP 2.439, todavía 31% bajo el precio de CLP 3.555. La recomendación no cambia.",
-        "Fuente: BCCh, Informativo Diario 2-jul-26; réplica del DCF v2 con la WACC desplazada en todos los períodos."],
+        "Fuente: BCCh, Informativo Diario 2-jul-26; análisis del equipo (WACC desplazada en todos los períodos)."],
     },
   },
   en: {
@@ -72,29 +72,29 @@ const L = {
       lead: "The WACC is computed per period: D/E converges linearly from the current structure (20.0%) to the target (28.5%, net debt/EBITDA 3.5x) in 2031. The cost of equity is built in dollars (US Treasury Rf + re-levered beta × ERP + revenue-weighted CRP) and converted to pesos with the inflation differential.",
       formulas: ["βL = βU × [1 + (1 − t) × D/E]  (Hamada)", "Ke USD = Rf + βL × ERP + weighted CRP", "Ke CLP = (1 + Ke USD) × (1 + π Chile) / (1 + π US) − 1", "Kd CLP = (1 + real Kd + spread) × (1 + π Chile) − 1", "WACC = E/V × Ke CLP + D/V × Kd CLP × (1 − t)"],
       sA: "A. MARKET AND CAPITAL STRUCTURE ASSUMPTIONS",
-      inputs: [["Rf: 10Y US Treasury", "rf", "%", "Tasa_WACC (FFCF)"], ["Equity risk premium (ERP)", "erp", "%", "Damodaran"],
+      inputs: [["Rf: 10Y US Treasury", "rf", "%", "Team analysis"], ["Equity risk premium (ERP)", "erp", "%", "Damodaran"],
         ["Long-term inflation, Chile", "pi_cl", "%", "Central Bank target"], ["Long-term inflation, US (10Y breakeven)", "pi_us", "%", "Bloomberg, Jun-26"],
-        ["Chilean tax rate", "tax", "%", "Income Tax Law"], ["Real Kd: latest UF bond coupon", "kd_real", "%", "Mallplaza"],
+        ["Chilean tax rate", "tax", "%", "Income Tax Law"], ["Real Kd: real coupon of the latest UF issue (base case)", "kd_real", "%", "Mallplaza"],
         ["Real Kd increase per turn of net debt/EBITDA", "spread", "%", "Team assumption"], ["Net debt/EBITDA initial (30-Jun-26) → target", "dfn", "x", "2Q26 release; team assumption"],
-        ["Gross debt / market cap (current structure, CLP MM)", "estructura", "", "Tasa_WACC (FFCF)"]],
+        ["Gross debt (Dec-25) / market cap at CLP 3,610 per share (current structure, CLP bn)", "estructura", "", "Team analysis"]],
       colsA: ["Assumption", "Value", "Source"],
       sB: "B. BETA: UNLEVERED PEERS",
       colsB: ["Company", "Levered β", "Debt (CLP MM)", "Market cap (CLP MM)", "Tax rate", "Unlevered β"],
-      medianaB: "Median (6 peers included)", notaB: "Source: Bloomberg (betas), Tasa_WACC. Costa Verde is excluded because it is not in the comparables set.",
+      medianaB: "Median (6 peers included)", notaB: "Source: Bloomberg (betas); Team analysis. Costa Verde is excluded because it is not in the comparables set.",
       sC: "C. REVENUE-WEIGHTED COUNTRY RISK",
       colsC: ["Country", "Weight (LTM revenue)", "CRP (Damodaran)", "Contribution"], paises: ["Chile", "Peru", "Colombia"], totalC: "Weighted CRP",
       sD: "D. WACC BY PERIOD",
       filasD: [["53", "Net debt/EBITDA", "x"], ["56", "D/E", "%"], ["57", "D/V", "%"], ["59", "Re-levered beta", "b"], ["60", "Ke USD", "%2"], ["61", "Nominal Ke CLP", "%2"],
         ["62", "Real Kd (UF) incl. spread", "%2"], ["63", "Nominal Kd CLP", "%2"], ["64", "After-tax Kd", "%2"], ["65", "Nominal WACC CLP", "%2"], ["66", "Real WACC", "%2"]],
       per: ["2H26E", "2027E", "2028E", "2029E", "2030E", "2031E", "Terminal"],
-      fW: ["Figure Z1:", "Nominal WACC and D/E by period", "Control: the replica matches the WACC sheet of model v2 (0 bp difference in every period). Source: Damodaran; Bloomberg; Central Bank of Chile; Team analysis."],
+      fW: ["Figure Z1:", "Nominal WACC and D/E by period", "Control: the DCF replica matches the WACC calculation (0 bp difference in every period). Source: Damodaran; Bloomberg; Central Bank of Chile; Team analysis."],
       sF: "E. CHOICE OF THE RISK-FREE RATE",
       colsF: ["Alternative", "Value"],
       filasF: [["Model base: US Rf + Chile CRP, in CLP", "base", "%2"], ["10Y peso bond, Central Bank (30-Jun-26)", "bono", "%2"], ["Difference", "dif", "pb"],
         ["Effect on terminal WACC (difference × E/V)", "efecto", "pb"], ["DCF value using the peso bond (CLP)", "dcf", "clp"], ["80/20 target price in that case (CLP)", "po", "clp"]],
       notasF: ["Why UST + CRP and not the peso bond: the local bond already embeds Chile risk, so adding the CRP would double-count it; also, 28% of revenue comes from Peru and Colombia, whose risk enters through the weighted CRP.",
         "It is the more conservative choice: with the peso bond the target price rises to ~CLP 2,439, still 31% below the CLP 3,555 share price. The recommendation does not change.",
-        "Source: Central Bank of Chile, Informativo Diario 2-Jul-26; DCF v2 replica with the WACC shifted in every period."],
+        "Source: Central Bank of Chile, Informativo Diario 2-Jul-26; Team analysis (WACC shifted in every period)."],
     },
   },
 };
@@ -110,8 +110,6 @@ for (const lang of ["es", "en"]) {
   Z.notasF[1] = lang === "es"
     ? `Es la elección más conservadora: con el bono en pesos el precio objetivo sube a ~CLP ${f.n(K.rf_pesos_po)}, todavía ${f.pc(Math.abs(K.rf_pesos_po / K.precio - 1), 0)} bajo el precio de CLP ${f.n(K.precio)}. La recomendación no cambia.`
     : `It is the more conservative choice: with the peso bond the target price rises to ~CLP ${f.n(K.rf_pesos_po)}, still ${f.pc(Math.abs(K.rf_pesos_po / K.precio - 1), 0)} below the CLP ${f.n(K.precio)} share price. The recommendation does not change.`;
-  Z.notasF[2] = Z.notasF[2].replace("réplica del DCF v2", "réplica del DCF v4").replace("DCF v2 replica", "DCF v4 replica");
-  Z.fW[2] = Z.fW[2].replace("modelo v2", "modelo v4").replace("model v2", "model v4");
   Z.sD = `${Z.sD} (${lang === "es" ? "Figura" : "Figure"} Z1)`;   // la figura del anexo se cita en su propio anexo
   L[lang].paginas = [{ texto: T.p1.map(tabla), figuras: T.figs1 }, { texto: T.p2.map(tabla), figuras: T.figs2 }];
 }
@@ -233,10 +231,10 @@ function bloqueTabla(lang, t) {
 function anexo(lang) {
   const A = L[lang].anexo, f = fmt(lang), I = D.inputs;
   const pc = (x, dec = 2) => f(x * 100, dec) + "%";
-  const val = (k, u) => k === "dfn" ? `${f(I.dfn0, 2)}x → ${f(I.dfn_obj, 1)}x` : k === "estructura" ? `${f(I.deuda / 1000, 0)} / ${f(I.mcap / 1000, 0)} mil` .replace(" mil", lang === "es" ? " (miles)" : " (thousands)") : pc(I[k]);
+  const val = (k, u) => k === "dfn" ? `${f(I.dfn0, 2)}x → ${f(I.dfn_obj, 1)}x` : k === "estructura" ? `${f(I.deuda / 1000, 0)} / ${f(I.mcap / 1000, 0)}` : pc(I[k]);
   const filasA = A.inputs.map(([n, k, u, s]) => [n, val(k, u), s]);
   const incl = D.betas.filter((b) => b[6] === 1);
-  const filasB = incl.map((b) => [b[0], f(b[1], 3), f(b[2], 0), f(b[3], 0), pc(b[4], 0), f(b[5], 3)]);
+  const filasB = incl.map((b) => [b[0] === "Cencosud Shopping" ? "Cenco Malls" : b[0], f(b[1], 3), f(b[2], 0), f(b[3], 0), pc(b[4], 0), f(b[5], 3)]);
   filasB.push([A.medianaB, "", "", "", "", f(D.beta_u, 4)]);
   const crps = [I.crp_cl, I.crp_pe, I.crp_co];
   const filasC = A.paises.map((p, i) => [p, pc(D.crp.w[i], 1), pc(crps[i]), pc(D.crp.w[i] * crps[i])]);
@@ -270,7 +268,7 @@ const dosColumnas = (izq, der) => new Table({ width: { size: ANCHO, type: WidthT
   borders: { ...sinBordes, insideHorizontal: nada, insideVertical: nada },
   rows: [new TableRow({ cantSplit: true, children: [celda(MEDIA, izq), celda(COL_SEP, [vacia()]), celda(MEDIA, der)] })] });
 
-const anexosValuacion = (lang) => require("./anexo_valuacion")({ titulo, lead, subtitulo, tabla, fuente, dosColumnas, fmt, DA, NB, caption, vacia, celda, imagen, run, AZUL, GRIS, TINTA }).construir(lang);
+const anexosValuacion = (lang) => require("./anexo_valuacion")({ titulo, lead, subtitulo, tabla, fuente, dosColumnas, fmt, DA, NB, caption, vacia, celda, imagen, run, AZUL, GRIS, TINTA, MEDIA, Paragraph }).construir(lang);
 
 const encabezado = () => new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT,
   border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: "D5D9E0", space: 2 } },

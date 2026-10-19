@@ -28,7 +28,7 @@ DPI = 400
 # ---- Datos (Memoria 2025 / Bloomberg) -----------------------------------------------------------
 BLOOMBERG = [("ESG", 3.39), ("amb", 2.64), ("soc", 5.62), ("gob", 3.78)]
 METAS = [  # (clave, avance %, meta)
-    ("res", 94.8), ("agua", 100.9), ("hcfc", 14.9), ("ener", 35.5), ("elec", 89.3)]
+    ("res", 77.0), ("agua", 100.9), ("hcfc", 14.9), ("ener", 35.5), ("elec", 89.3)]
 ENERGIA = {"renovable": 339_850.6, "no_renovable": 34_009.2}            # MWh 2025
 RESIDUOS_VALORIZADOS = 46.2                                                # % de no peligrosos
 VALORIZACION = [("biogas", 40.4), ("recic", 36.1), ("compost", 23.5)]     # % de lo valorizado
@@ -36,7 +36,7 @@ NPS = [(2022, -8), (2023, 8), (2024, 11), (2025, 13)]
 REMUNERACION = [("esg", 33.3), ("otros_nf", 27.7), ("fin", 39.0)]
 ACCIONISTAS = [("ctrl", 53.10), ("afp", 23.80), ("may", 11.40), ("fondos", 8.25), ("otros", 3.45)]
 RESIDUOS_PAIS = [("Chile", 76), ("Colombia", 16), ("Perú", 7)]
-PARES_ESG = [("Cencomalls", [3.74, 3.26, 7.17, 3.41]), ("Parque Arauco", [4.04, 3.86, 5.62, 3.80])]   # general, E, S, G (Bloomberg, beta 4.1)
+PARES_ESG = [("Cenco Malls", [3.74, 3.26, 7.17, 3.41]), ("Parque Arauco", [4.04, 3.86, 5.62, 3.80])]   # general, E, S, G (Bloomberg, beta 4.1)
 COLOR_PARES = [AZUL, CELESTE, AMARILLO, NEGRO]
 
 T = {

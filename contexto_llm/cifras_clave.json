@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-18 01:30",
+ "generado": "2026-10-19 19:30",
  "modelos": {
   "valoracion": {
    "archivo": "Mallplaza_Valoracion_Consolidada_v4.xlsx",
-   "sha256": "4b30ad0442"
+   "sha256": "930400902f"
   },
   "fa_exhibits": {
    "archivo": "Mallplaza_FA_Exhibits_v7.xlsx",
@@ -380,11 +380,19 @@
    "fuente": "datos_resumen.json"
   },
   {
-   "grupo": "Escenarios",
-   "clave": "esc_ponderado_po",
-   "etiqueta": "Precio objetivo ponderado con las probabilidades de la matriz de riesgo, CLP",
-   "valor": 2075.3630608889725,
+   "grupo": "Monte Carlo",
+   "clave": "mc_mediana",
+   "etiqueta": "Precio objetivo simulado (10.000 iteraciones), mediana, CLP",
+   "valor": 2046.571100070261,
    "formato": "clp",
+   "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
+  },
+  {
+   "grupo": "Monte Carlo",
+   "clave": "mc_p_bajo_precio",
+   "etiqueta": "Simulaciones con precio objetivo bajo el precio (3.555)",
+   "valor": 1.0,
+   "formato": "pct1",
    "fuente": "informe_final/graficos/cifras.json (cifras_informe.py; réplica del DCF v4)"
   },
   {

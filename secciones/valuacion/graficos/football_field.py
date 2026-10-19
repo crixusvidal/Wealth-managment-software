@@ -121,7 +121,7 @@ def graficar(ruta, salida):
     punto = lambda color, texto: Line2D([], [], marker="o", linestyle="", markersize=8,
                                         markerfacecolor=color, markeredgecolor="white", label=texto)
     fig.legend(handles=[punto(VERDE_PARQUE_ARAUCO, "Parque Arauco"),
-                        punto(MORADO_CENCOSUD, "Cencosud Shopping"),
+                        punto(MORADO_CENCOSUD, "Cenco Malls"),
                         punto(CELESTE, "Multiplan, Allos, Iguatemi, IRSA"),
                         Line2D([], [], color=NEGRO, linewidth=3, label="Weighted multiple"),
                         Patch(facecolor=ROJO_CLARO, label="DCF sensitivity range")],

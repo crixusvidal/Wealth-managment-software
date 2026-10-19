@@ -14,7 +14,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura E1); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales REM de la región. ",
+         "Más allá del negocio, el enfoque ESG de PLAZA atraviesa sus decisiones y busca, además de contribuir a un desarrollo sostenible, acceder a beneficios financieros propios y externos. Bloomberg califica a la empresa con 3,39 puntos, bajo la media global de la industria (5-6 puntos) y bajo su competencia directa en Chile (figura E1); esto se compensa en parte con su perfil «verde» local, pues figura entre las principales empresas inmobiliarias de la región. ",
          false,
          false
         ],
@@ -24,7 +24,7 @@
          false
         ],
         [
-         " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: en Chile, la ley de I+D (CORFO) permite hasta 55% de rebaja del impuesto de primera categoría; Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura E1).",
+         " en la operación, el sistema de gestión de la energía (SGE) certificado ISO 50001 mejora el desempeño energético y reduce costos operativos. Entre los beneficios externos locales: Perú reconoce a la empresa con 2 de 4 estrellas en «Huella de Carbono Perú», lo que facilita permisos y licencias; y Colombia, con la ley 2.099 de 2021, otorga descuentos de renta por inversiones ambientales. Además, la empresa mantiene certificaciones y participa en índices como el DJSI MILA (figura E1).",
          false,
          false
         ],
@@ -83,7 +83,7 @@
          false
         ],
         [
-         " valorizar 60% de los residuos generados en 2025 (46,2% valorizado; la Memoria informa 94,8% de avance; figura E3 y Anexo [Y], figura S4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
+         " valorizar 60% de los residuos generados en 2025 (46,2% valorizado, 77% de la meta; figura E3 y Anexo [Y], figura S4) y desviar 75% de los residuos sólidos de los vertederos al 2027; informa haber eliminado 97% de los plásticos de un solo uso. ",
          false,
          false
         ],
@@ -157,7 +157,7 @@
        "tipo": "fuente",
        "runs": [
         [
-         "Fuente: Memoria Mallplaza 2025.",
+         "Fuente: Memoria Mallplaza 2025; residuos: 46,2% valorizado sobre la meta de 60% (cálculo del equipo).",
          false,
          false
         ]
@@ -268,7 +268,7 @@
          false
         ],
         [
-         "pesa el gobierno, no los ahorros ESG. Con Falabella como controlador, empresas relacionadas que aportan 15,7% de los ingresos y un directorio con un solo independiente, hay que verificar que la expansión, cuyo retorno es menor que su costo de capital, no beneficie más al controlador que al minoritario (ver Valuación y Riesgos, RR1).",
+         "pesa el gobierno, no los ahorros ESG. Con Falabella como controlador, empresas relacionadas que aportan 15,7% de los ingresos y un directorio con un solo independiente, la pregunta es si la expansión, cuyo retorno es menor que su costo de capital, beneficia más al controlador que al minoritario (ver Valuación y Riesgos, RR1).",
          false,
          false
         ]
@@ -308,7 +308,7 @@
        "tipo": "fuente",
        "runs": [
         [
-         "Escenario: los precios unitarios (energía CLP 110/kWh, agua CLP 1.500/m³, residuos CLP 10.000/t), el 25% del ahorro que retiene Mallplaza y la rebaja de 25 pb en Kd y Ke son supuestos del equipo, no datos de las fuentes. Volúmenes: Memoria Mallplaza 2025. Fuente: modelo v4_ESG, hoja ESG_Ahorros; análisis del equipo.",
+         "Escenario: los precios unitarios (energía CLP 110/kWh, agua CLP 1.500/m³, residuos CLP 10.000/t), el 25% del ahorro que retiene Mallplaza y la rebaja de 25 pb en Kd y Ke son supuestos del equipo, no datos de las fuentes. Volúmenes: Memoria Mallplaza 2025. Fuente: análisis del equipo.",
          false,
          false
         ]

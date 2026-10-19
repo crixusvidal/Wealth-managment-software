@@ -14,7 +14,7 @@
        "tipo": "p",
        "runs": [
         [
-         "Beyond the business, PLAZA's ESG approach cuts across its decisions and aims, besides contributing to sustainable development, to access financial benefits both of its own and from external sources. Bloomberg rates the company at 3.39 points, below the global industry average (5–6 points) and below its direct competitors in Chile (Figure E1); this is partly offset by its local “green” profile, as it ranks among the leading REM companies in the region. ",
+         "Beyond the business, PLAZA's ESG approach cuts across its decisions and aims, besides contributing to sustainable development, to access financial benefits both of its own and from external sources. Bloomberg rates the company at 3.39 points, below the global industry average (5–6 points) and below its direct competitors in Chile (Figure E1); this is partly offset by its local “green” profile, as it ranks among the leading real estate companies in the region. ",
          false,
          false
         ],
@@ -24,7 +24,7 @@
          false
         ],
         [
-         " in operations, the energy management system (EnMS) certified under ISO 50001 improves energy performance and lowers operating costs. Among local external benefits: in Chile, the R&D Law (CORFO) allows up to a 55% reduction in first-category tax; Peru recognizes the company with 2 of 4 stars in “Huella de Carbono Perú”, which eases permits and licenses; and Colombia, under Law 2099 of 2021, grants income-tax deductions for environmental investments. The company also holds certifications and belongs to indices such as DJSI MILA (Figure E1).",
+         " in operations, the energy management system (EnMS) certified under ISO 50001 improves energy performance and lowers operating costs. Among local external benefits: Peru recognizes the company with 2 of 4 stars in “Huella de Carbono Perú”, which eases permits and licenses; and Colombia, under Law 2099 of 2021, grants income-tax deductions for environmental investments. The company also holds certifications and belongs to indices such as DJSI MILA (Figure E1).",
          false,
          false
         ],
@@ -83,7 +83,7 @@
          false
         ],
         [
-         " recover 60% of the waste generated in 2025 (46.2% recovered; the Annual Report reports 94.8% progress; Figure E3 and Appendix [Y], Figure S4) and divert 75% of solid waste from landfills by 2027; it reports having eliminated 97% of single-use plastics. ",
+         " recover 60% of the waste generated in 2025 (46.2% recovered, 77% of the target; Figure E3 and Appendix [Y], Figure S4) and divert 75% of solid waste from landfills by 2027; it reports having eliminated 97% of single-use plastics. ",
          false,
          false
         ],
@@ -157,7 +157,7 @@
        "tipo": "fuente",
        "runs": [
         [
-         "Source: Mallplaza 2025 Annual Report.",
+         "Source: Mallplaza 2025 Annual Report; waste: 46.2% recovered over the 60% target (team calculation).",
          false,
          false
         ]
@@ -268,7 +268,7 @@
          false
         ],
         [
-         "governance matters, not ESG savings. With Falabella as controller, related companies contributing 15.7% of revenue and a board with a single independent director, it must be verified that expansion, whose return is below its cost of capital, does not benefit the controller more than minority shareholders (see Valuation and Risks, RR1).",
+         "governance matters, not ESG savings. With Falabella as controller, related companies contributing 15.7% of revenue and a board with a single independent director, the question is whether expansion, whose return is below its cost of capital, benefits the controller more than minority shareholders (see Valuation and Risks, RR1).",
          false,
          false
         ]
@@ -308,7 +308,7 @@
        "tipo": "fuente",
        "runs": [
         [
-         "Scenario: unit prices (energy CLP 110/kWh, water CLP 1,500/m³, waste CLP 10,000/t), the 25% of savings retained by Mallplaza and the 25 bp cut in Kd and Ke are team assumptions, not data from the sources. Volumes: Mallplaza 2025 Annual Report. Source: model v4_ESG, ESG_Ahorros sheet; Team analysis.",
+         "Scenario: unit prices (energy CLP 110/kWh, water CLP 1,500/m³, waste CLP 10,000/t), the 25% of savings retained by Mallplaza and the 25 bp cut in Kd and Ke are team assumptions, not data from the sources. Volumes: Mallplaza 2025 Annual Report. Source: Team analysis.",
          false,
          false
         ]

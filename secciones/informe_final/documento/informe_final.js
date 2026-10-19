@@ -79,13 +79,13 @@ F.ANCHO = 11506; F.COL_TEXTO = 7740; F.MEDIA = (F.ANCHO - F.COL_SEP) / 2;
 
 // Mapas: etiqueta original de cada sección → número final ---------------------------------------
 const rango = (claves, desde) => Object.fromEntries(claves.map((k, i) => [k, desde + i]));
-const sub = (claves, anexo) => Object.fromEntries(claves.map((k, i) => [k, `${anexo}.${i + 1}`]));
+const sub = (claves, anexo) => Object.fromEntries(claves.map((k, i) => [k, `A${anexo}.${i + 1}`]));   // figuras de anexos: A8.1, A19.1, A20.1…
 const MAPAS = {
   negocio: { nombre: "Negocio", fig: { 1: 1 }, anx: { A: 1, B: 2 } },
   industria: { nombre: "Industria", fig: rango(["2", "3", "4", "5", "6"], 2), anx: { 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 } },
   esg: { nombre: "ESG", fig: { ...rango(["E1", "E2", "E3", "E4", "E5", "E6"], 7), ...sub(["S1", "S2", "S3", "S4", "S5"], 8) }, anx: { "[Y]": 8 } },
   fa: { nombre: "Análisis Financiero", fig: rango(["1", "2", "3", "4", "5", "6", "7"], 13), anx: { ...rango(["1", "2", "3", "4", "5", "6"], 9), ...rango(["9", "10", "11", "12", "13", "14"], 9), 18: 18, "[B]": 15, "[C]": 16 } },
-  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19), T: 29, F7: 19, "6": 18, R1: 32, R2: 33, R3: 34 },
+  valuacion: { nombre: "Valuación", fig: { ...rango(["27", "28", "29", "30", "31", "32", "33", "34"], 20), ...sub(["Z1"], 19), ...sub(["M1"], 18), T: 29, F7: 19, "6": 18, R1: 32, R2: 33, R3: 34 },
     anx: { ...rango(["9", "10", "11", "12", "13", "14"], 9), "[B]": 15, "[C]": 16, "[E]": 17, "[F]": 18, "[Z]": 19, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19 } },
   resumen: { nombre: "Resumen", fig: { R1: 32, R2: 33, R3: 34 }, anx: { 16: 16, 18: 18 } },
   riesgos: { nombre: "Riesgos", fig: rango(["23", "24", "25", "26"], 28), anx: { "[X]": 20 } },
@@ -97,7 +97,7 @@ for (const [k, m] of Object.entries(MAPAS)) {
   if (k === "negocio") continue;
   for (const t of Object.keys(m.fig)) {
     const v = m.fig[t];
-    m.fig[t] = typeof v === "number" ? v + DESP : v.replace(/^(\d+)\./, (_, a) => `${Number(a) - DESP}.`);   // «8.1» = figura 1 del anexo 8
+    m.fig[t] = typeof v === "number" ? v + DESP : v.replace(/^A(\d+)\./, (_, a) => `A${Number(a) - DESP}.`);   // «8.1» = figura 1 del anexo 8
   }
   for (const t of Object.keys(m.anx)) m.anx[t] -= DESP;
 }

@@ -135,13 +135,13 @@ def ocupacion(wb, lang):
         "es": (f"Tasa de ocupación consolidada, {p0}–{p1}",
                "Mallplaza, Parque Arauco y Cenco Malls · ocupación al cierre de cada 2T (Chile, Perú y Colombia)",
                ["Cada empresa define la ocupación de forma distinta: comparar tendencias, no niveles. "
-                "Cenco 2T26 incluye Plaza Central (Bogotá, adquirida en jun-26).",
+                "Cenco Malls 2T26 incluye Plaza Central (Bogotá, adquirida en jun-26).",
                 "Fuente: reportes de resultados 2T22–2T26 de Mallplaza, Parque Arauco y Cenco Malls; "
                 "análisis del equipo."]),
         "en": (f"Consolidated occupancy rate, {p0}–{p1}",
                "Mallplaza, Parque Arauco and Cenco Malls · occupancy at the end of each 2Q (Chile, Peru and Colombia)",
                ["Each company defines occupancy differently: compare trends rather than levels. "
-                "Cenco 2Q26 includes Plaza Central (Bogotá, acquired Jun-26).",
+                "Cenco Malls 2Q26 includes Plaza Central (Bogotá, acquired Jun-26).",
                 "Source: Mallplaza, Parque Arauco and Cenco Malls 2Q22–2Q26 earnings reports; "
                 "Team analysis."]),
     }
@@ -555,14 +555,14 @@ def market_share_chile(wb, lang):
                f"Mallplaza, Parque Arauco y Cenco Malls · GLA en Chile (miles de m²) y participación "
                f"dentro del trío · índice {periodos[0]} = 100 · {pc(cagr, lang, 1, True)} anual",
                ["Parque Arauco 2T25 incluye la compra de Kennedy Oriente (70.000 m²). El GLA de "
-                "Cenco incluye las oficinas de Costanera.",
+                "Cenco Malls incluye las oficinas de Costanera.",
                 "Participación dentro del trío, no del mercado total.",
                 "Fuente: reportes de resultados 2T22–2T26 de Mallplaza, Cenco Malls y Parque Arauco; "
                 "análisis del equipo."]),
         "en": (f"Chilean GLA of listed mall operators, {periodos[0]}–{periodos[-1]}",
                f"Mallplaza, Parque Arauco and Cenco Malls · GLA in Chile (thousand m²) and share "
                f"of the trio · index {periodos[0]} = 100 · {pc(cagr, lang, 1, True)}/yr",
-               ["Parque Arauco 2Q25 includes the Kennedy Oriente acquisition (70,000 m²). Cenco "
+               ["Parque Arauco 2Q25 includes the Kennedy Oriente acquisition (70,000 m²). Cenco Malls "
                 "GLA includes Costanera office space.",
                 "Share within the trio, not of the total market.",
                 "Source: Mallplaza, Cenco Malls and Parque Arauco 2Q22–2Q26 earnings reports; "

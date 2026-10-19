@@ -23,7 +23,7 @@ python3 valuacion/graficos/valuacion.py $V/Mallplaza_Figuras_Valuacion_recalc.xl
 python3 valuacion/graficos/anexos_valuacion.py $V4 $V/Mallplaza_Figuras_Valuacion_recalc.xlsx $FA $TOR
 python3 valuacion/graficos/tir_valuacion.py $V4   # TIR firma/accionista (nominal y real) → figuras/datos_tir.json (lo lee valuacion.js)
 python3 valuacion/graficos/tir_proyecto.py $V4   # TIR del proyecto nuevo (1 m² de expansión), hoja TIR_Proyecto del modelo v3 → figuras/datos_tir_proyecto.json
-python3 valuacion/graficos/supuestos_cascada.py $V4 $FA $TOR   # cascada de supuestos fuertes (Figura 29) → figuras/{es,en}_V13_supuestos_cascada.png + datos_supuestos.json (escudo tributario)
+python3 valuacion/graficos/supuestos_cascada.py $V4 $FA $TOR   # cascada de supuestos discrecionales del equipo (Figura 29) → figuras/{es,en}_V13_supuestos_cascada.png + datos_supuestos.json (escudo tributario)
 python3 valuacion/graficos/sensibilidad_tasas.py $V4 $V/Mallplaza_Tasas_Historico.xlsx   # sensibilidad a tasas largas e inflación → modelos/Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx + figuras V11/V12 (recalcular el Excel con LibreOffice)
 python3 /root/.claude/skills/synced/508cc6bc-ad76-422f-ada9-ad0fc4279625_0b2a2ef9-bf53-46a5-b8ed-72255cce463a/xlsx/scripts/recalc.py $V/Mallplaza_Sensibilidad_Tasas_Inflacion.xlsx >/dev/null   # el script escribe fórmulas sin valores: recalcular con LibreOffice
 python3 valuacion/graficos/football_field.py $V4
