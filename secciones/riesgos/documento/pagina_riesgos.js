@@ -28,7 +28,7 @@ const LANG = {
     mitigantes: "Mitigantes: ",
     secciones: [
       { titulo: "EVALUACIÓN DE RIESGOS", parrafos: [
-        "La Figura 23 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 24, 25 y 26). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa. Esta matriz fija las probabilidades de los escenarios de Valuación: llegar a un extremo histórico es remoto (2% a 10% por variable) y el bear y el bull reúnen esos extremos a la vez."] },
+        "La Figura 23 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 24, 25 y 26). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa."] },
       { titulo: "RIESGOS OPERACIONALES", riesgos: [
         { cod: "OR1", nombre: "Deterioro operacional.", texto: "Caídas de margen EBITDA, rentas, tráfico u ocupación hacia sus mínimos históricos. El peor caso, un margen de 75,8%, reduce el valor DCF a CLP 1.671 (−10,0%), y el piso histórico del crecimiento de rentas en mismas tiendas lo lleva a CLP 1.782 (−4,0%) (Figura 24).", tag: "No sistemático · Prob. media · Impacto medio",
           mit: "métricas estables: margen EBITDA anual de 76,2% (2022) a 80,5% (2025) y ocupación entre 95,1% y 96,6% en 4T23–2T26. Tras el COVID, los ingresos del 1T22 ya superaban en 18% a los del 1T19." },
@@ -68,7 +68,7 @@ const LANG = {
     mitigantes: "Mitigants: ",
     secciones: [
       { titulo: "RISK ASSESSMENT", parrafos: [
-        "Figure 23 classifies each risk by likelihood and by its impact on value per share (Figures 24, 25 and 26). Risks that could not be quantified are classified according to the team's qualitative analysis of the company. This matrix sets the scenario probabilities in Valuation: reaching a historical extreme is remote (2% to 10% per variable) and the bear and bull combine those extremes at once."] },
+        "Figure 23 classifies each risk by likelihood and by its impact on value per share (Figures 24, 25 and 26). Risks that could not be quantified are classified according to the team's qualitative analysis of the company."] },
       { titulo: "OPERATIONAL RISKS", riesgos: [
         { cod: "OR1", nombre: "Operating deterioration.", texto: "EBITDA margin, rents, footfall or occupancy falling to their historical lows. The worst case, a 75.8% margin, cuts DCF value to CLP 1,671 (−10.0%), and the historical floor of same-store rent growth takes it to CLP 1,782 (−4.0%) (Figure 24).", tag: "Non‑systematic · Medium likelihood · Medium impact",
           mit: "stable metrics: annual EBITDA margin rose from 76.2% (2022) to 80.5% (2025) and occupancy held between 95.1% and 96.6% in 4Q23–2Q26. After COVID, 1Q22 revenue was already 18% above 1Q19." },

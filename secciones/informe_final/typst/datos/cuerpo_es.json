@@ -1314,128 +1314,6 @@
      ]
     },
     {
-     "h1": "ESCENARIOS: LO QUE TENDRÍA QUE PASAR"
-    },
-    {
-     "p": [
-      [
-       "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura 29), en vez de mover solo la tasa; bear y bull se definen desde el valor de la acción, no desde la recomendación. Bear es todo lo que sale mal a la vez: WACC nominal +100 pb y cada palanca operacional en su mínimo histórico. Bull es todo lo que sale bien: WACC nominal −100 pb, cada palanca en su máximo histórico e impuesto de 23% (Ley de Reconstrucción). Base es la estimación central del modelo. El arriendo en mismas tiendas (precio) y las ventas de los locatarios se mueven juntos; g nominal se mantiene en 3,0% en los tres. Las probabilidades salen de la matriz de riesgo de la página de Riesgos. Cada variable del bear o del bull es un extremo histórico, y llegar a un extremo es remoto: ocurrió una sola vez en las ~11 observaciones trimestrales (≈9%). Por eso cada variable por separado tiene entre 2% y 10% de llegar a su extremo en 12 meses (baja 2%, media 5%, alta 10%, supuestos del equipo): +100 pb de WACC pertenece a FR1 (alta, 10%), las palancas operacionales a OR1 (media, 5%) y sus contrarios invierten la categoría (−100 pb: 2%). Las palancas de un mismo riesgo se mueven juntas y los riesgos distintos son independientes, así que el bear tiene 0,5% de probabilidad conjunta, el bull 0,1% y el base concentra el resto (99,4%). Ponderado, el precio objetivo es CLP 2.075 (−41,6%): los extremos casi no lo mueven.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "tabla": {
-      "titulo": "Escenarios: bear (todo sale mal), base (central) y bull (todo sale bien)",
-      "cols": [
-       "Supuesto (todos a la vez)",
-       "Bear",
-       "Base",
-       "Bull"
-      ],
-      "filas": [
-       [
-        "WACC nominal terminal (todos los períodos)",
-        "+100 pb (11,41%; 8,17% real)",
-        "10,41% (7,20% real)",
-        "−100 pb (9,41%; 6,23% real)"
-       ],
-       [
-        "Margen EBITDA (mín. / máx. histórico trimestral)",
-        "75,8%",
-        "79,7% (2026E)",
-        "81,3%"
-       ],
-       [
-        "Ocupación consolidada",
-        "95,1%",
-        "95,6%",
-        "96,6%"
-       ],
-       [
-        "Arriendo en mismas tiendas 2027–28 (precio, nominal)",
-        "3,7%",
-        "5,4%",
-        "9,4%"
-       ],
-       [
-        "Ventas de locatarios 2027–28 (renta variable, 5,7% del ingreso UDM)",
-        "3,7%",
-        "3,7%",
-        "9,9%"
-       ],
-       [
-        "Crecimiento real del arriendo 2029–31",
-        "piso Nota 11",
-        "modelo",
-        "techo Nota 11"
-       ],
-       [
-        "Capex de mantención + TI (% de ingresos)",
-        "6,6%",
-        "5,5%",
-        "4,8%"
-       ],
-       [
-        "Impuesto de largo plazo",
-        "27%",
-        "16,8% → 27%",
-        "23%"
-       ],
-       [
-        "Valor DCF / precio objetivo 80/20 (CLP)",
-        "1.190 / 1.542",
-        "1.859 / 2.077",
-        "2.906 / 2.915"
-       ],
-       [
-        "Precio objetivo vs CLP 3.555",
-        "−56,6%",
-        "−41,6%",
-        "−18,0%"
-       ],
-       [
-        "TIR de la firma al precio (nom.) / brecha vs WACC",
-        "6,95% / −446 pb",
-        "7,61% / −280 pb",
-        "8,51% / −90 pb"
-       ],
-       [
-        "Probabilidad (de la matriz de riesgo)",
-        "0,5%",
-        "99,4%",
-        "0,1%"
-       ]
-      ],
-      "anchos": [
-       2700,
-       1750,
-       1650,
-       1750
-      ],
-      "derecha": [
-       1,
-       2,
-       3
-      ],
-      "destacar": [
-       8,
-       9
-      ],
-      "nota": "Las palancas operacionales son los extremos históricos del tornado de Riesgos; WACC y g nominales; arriendo (precio) y ventas se mueven juntos. g nominal terminal 3,0% en los tres. Ponderado 0,5/99,4/0,1%: DCF CLP 1.856, precio objetivo CLP 2.075 (−41,6%). Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
-     }
-    },
-    {
-     "p": [
-      [
-       "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al precio de mercado casi no cambia entre escenarios (tabla) y queda siempre bajo la WACC de cada uno (446, 280 y 90 pb nominales): ni el bull deja margen de seguridad. El APV (CLP 1.895), una Rf basada en el bono en pesos (~CLP 2.449) y otros objetivos de deuda (DCF de CLP 1.820 a 1.897) llevan a la misma conclusión (Anexo 18).",
-       false,
-       false
-      ]
-     ]
-    },
-    {
      "p": [
       [
        "El APV también aísla el valor de la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin deuda y CLP 265 a los escudos fiscales de la deuda proyectada: apalancarse hasta 3,5x agrega valor, pero ni sumándolo se acerca al precio. La elección de la tasa libre de riesgo es la conservadora: usar el bono nominal en pesos (5,43%) y además sumar el riesgo país contaría dos veces el riesgo Chile, y aun así el precio objetivo solo subiría a ~CLP 2.449, 31% bajo el precio. Con un dividendo esperado de ~CLP 69 por acción (2,0%), el retorno total esperado es −39,6%.",
@@ -1580,7 +1458,7 @@
     {
      "p": [
       [
-       "La Figura 28 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 29, 30 y 31). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa. Esta matriz fija las probabilidades de los escenarios de Valuación: llegar a un extremo histórico es remoto (2% a 10% por variable) y el bear y el bull reúnen esos extremos a la vez.",
+       "La Figura 28 clasifica cada riesgo según su probabilidad y su impacto sobre el valor por acción (Figuras 29, 30 y 31). Los riesgos que no se pudieron cuantificar se clasifican según el análisis cualitativo del equipo sobre la empresa.",
        false,
        false
       ]
@@ -2013,7 +1891,7 @@
     {
      "p": [
       [
-       "La WACC nominal sube 100 pb y, a la vez, margen, ocupación, arriendo, ventas, visitas y crecimiento real caen a su mínimo histórico, con el capex de mantención en su máximo. El valor DCF baja a CLP 1.190 y el precio objetivo a CLP 1.542 (−56,6%; retorno total −54,7%). Cada variable por separado es una posibilidad remota (+100 pb de WACC, 10%, por FR1; cada palanca operacional, 5%, por OR1), y como las operacionales se mueven juntas y las tasas son independientes, la probabilidad conjunta es 0,5% (Figura 33).",
+       "La WACC nominal sube 100 pb y, a la vez, margen, ocupación, arriendo, ventas, visitas y crecimiento real caen a su mínimo histórico, con el capex de mantención en su máximo. El valor DCF baja a CLP 1.190 y el precio objetivo a CLP 1.542 (−56,6%; retorno total −54,7%). (Figura 33).",
        false,
        false
       ]
@@ -2025,7 +1903,7 @@
     {
      "p": [
       [
-       "Margen EBITDA de 79,7% en 2026E, ocupación de 95,6%, rentas reajustadas por UF, pipeline con fecha de 170.200 m² (USD 613 MM), expansión continua y WACC nominal terminal de 10,41% (7,20% real). Da CLP 2.077 (−41,6%; retorno total −39,6%) y concentra el resto de la distribución (99,4%): crecer rinde menos que el costo de capital (RONIC 5,3% real frente a una WACC real de 7,2%), de modo que la expansión suma ingresos, no valor.",
+       "Margen EBITDA de 79,7% en 2026E, ocupación de 95,6%, rentas reajustadas por UF, pipeline con fecha de 170.200 m² (USD 613 MM), expansión continua y WACC nominal terminal de 10,41% (7,20% real). Da CLP 2.077 (−41,6%; retorno total −39,6%: crecer rinde menos que el costo de capital (RONIC 5,3% real frente a una WACC real de 7,2%), de modo que la expansión suma ingresos, no valor.",
        false,
        false
       ]
@@ -2037,121 +1915,7 @@
     {
      "p": [
       [
-       "La WACC nominal baja 100 pb, cada variable operacional llega a su máximo histórico (precio y ventas suben juntos por la renta variable) y el impuesto de largo plazo baja a 23% (Ley de Reconstrucción, fuera de la probabilidad). El valor DCF sube a CLP 2.906 y el precio objetivo a CLP 2.915 (−18,0%; retorno total −16,0%): aun con todo a favor el precio queda 18% por encima. Cada variable es remota (−100 pb de WACC, 2%; operacionales, 5%) y la probabilidad conjunta es 0,1%.",
-       false,
-       false
-      ]
-     ]
-    },
-    {
-     "tabla": {
-      "titulo": "Las tres tesis: variables, probabilidad individual (entre paréntesis) y valor",
-      "cols": [
-       "Variable (todas a la vez)",
-       "Bear",
-       "Base",
-       "Bull"
-      ],
-      "filas": [
-       [
-        "WACC nominal terminal (real)",
-        "11,41% (8,17% real) (10%)",
-        "10,41% (7,20% real)",
-        "9,41% (6,23% real) (2%)"
-       ],
-       [
-        "Margen EBITDA",
-        "75,8% (5%)",
-        "79,7%",
-        "81,3% (5%)"
-       ],
-       [
-        "Ocupación",
-        "95,1% (5%)",
-        "95,6%",
-        "96,6% (5%)"
-       ],
-       [
-        "Arriendo mismas tiendas 2027–28, nominal",
-        "3,7% (5%)",
-        "5,4%",
-        "9,4% (5%)"
-       ],
-       [
-        "Ventas de locatarios 2027–28, nominal",
-        "3,7% (5%)",
-        "3,7%",
-        "9,9% (5%)"
-       ],
-       [
-        "Crecimiento real del arriendo 2029–31",
-        "piso Nota 11 (5%)",
-        "modelo",
-        "techo Nota 11 (5%)"
-       ],
-       [
-        "Capex de mantención + TI, % de ingresos",
-        "6,6% (5%)",
-        "5,5%",
-        "4,8% (5%)"
-       ],
-       [
-        "Visitas 2027–28, crecimiento orgánico",
-        "5,6% (5%)",
-        "9,8%",
-        "17,3% (5%)"
-       ],
-       [
-        "Impuesto de largo plazo",
-        "27%",
-        "16,8% → 27%",
-        "23%"
-       ],
-       [
-        "Probabilidad conjunta",
-        "0,5%",
-        "99,4%",
-        "0,1%"
-       ],
-       [
-        "Precio objetivo (CLP)",
-        "1.542",
-        "2.077",
-        "2.915"
-       ],
-       [
-        "Vs. CLP 3.555 / retorno total",
-        "−56,6% / −54,7%",
-        "−41,6% / −39,6%",
-        "−18,0% / −16,0%"
-       ]
-      ],
-      "anchos": [
-       3300,
-       1700,
-       1500,
-       1700
-      ],
-      "derecha": [
-       1,
-       2,
-       3
-      ],
-      "destacar": [
-       9,
-       10,
-       11
-      ],
-      "nota": "Cada variable en su extremo histórico es una posibilidad remota: probabilidad individual a 12 meses entre paréntesis (alta 10%, media 5%, baja 2%; matriz de riesgo; supuestos del equipo). g nominal 3,0% en los tres casos. Fuente: réplica del DCF v4 (Anexo 18); análisis del equipo."
-     }
-    },
-    {
-     "h1": "SUPUESTOS Y PROBABILIDADES"
-    },
-    {
-     "p": [
-      [
-       "Valoración al 30-jun-26 y precio al 30-sep-26; FCFF en CLP nominales con convención de mitad de período; inflación 3,0% (UF); g terminal 3,0% nominal (0% real); Ke 11,93% y Kd después de impuestos 5,11% en el caso base. Las probabilidades son supuestos del equipo basados en la matriz de riesgo: llegar a un extremo histórico ocurrió una vez en ~11 trimestres (≈9%), y la probabilidad individual a 12 meses es baja 2%, media 5% y alta 10%. El ponderado es CLP 2.075 (−41,6%): los extremos casi no lo mueven.",
+       "La WACC nominal baja 100 pb, cada variable operacional llega a su máximo histórico (precio y ventas suben juntos por la renta variable) y el impuesto de largo plazo baja a 23% (Ley de Reconstrucción). El valor DCF sube a CLP 2.906 y el precio objetivo a CLP 2.915 (−18,0%; retorno total −16,0%): aun con todo a favor el precio queda 18% por encima.",
        false,
        false
       ]
@@ -2211,7 +1975,7 @@
       ]
      ],
      "ancha": false,
-     "ancla": 12
+     "ancla": 9
     }
    ]
   }

@@ -137,7 +137,8 @@
         r.at(0) < y + h + HUECO and y < r.at(1) + HUECO)
       if choques.len() > 0 { y = calc.max(..choques.map(r => r.at(1))) + HUECO; continue }
       if y + h > ABAJO { p += 1; y = ARRIBA; continue }
-      if not antes((p, y + h), barrera) or not antes((p, y + h), tope) { break }
+      let ultima = f.sec + 1 >= secs.len()   // en la última sección los gráficos pueden pasar del final del texto
+      if (not ultima and not antes((p, y + h), barrera)) or not antes((p, y + h), tope) { break }
       ok = true
       break
     }
