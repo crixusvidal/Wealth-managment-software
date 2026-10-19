@@ -94,7 +94,7 @@ def anexo_f(wb, wf, ruta_fa, ruta_modelo, ruta_tor):
     a, w = wb["APV"], wf["WACC_Construccion"]
     t2 = wb["Sensibilidad"]
     return {
-        "esc": r["esc"], "ponderado": r["ponderado"], "prob": r["prob"], "efectos": r["efectos"],
+        "esc": r["esc"], "efectos": r["efectos"],
         "param": {"dw_bear": p["dw"], "dw_bull": -p["dw"], "g_bull": p["g"], "m_lo": p["m_lo"], "m_hi": p["m_hi"],
                   "margen26": p["margen26"], "tax_bull": p["tax_bull"], "wacc_tas": p["wacc_tas"],
                   "wacc_tas_real": p["wacc_tas_real"], "wacc_t": p["wacc_t"], "g": p["g"], "share_var": p["share_var"],

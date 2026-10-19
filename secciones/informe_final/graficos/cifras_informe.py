@@ -125,7 +125,7 @@ def main(ruta_modelo, ruta_fa, ruta_fig):
         # --- APV, otras pruebas ---
         "apv": apv["C21"].value, "apv_sin_deuda": apv["C22"].value, "apv_escudos": apv["C23"].value, "apv_ku": apv["C5"].value,
         "dcf_vf": d["C61"].value, "wacc_vf": s["B109"].value, "rf_pesos_dcf": da["F"]["rf"]["dcf"], "rf_pesos_po": da["F"]["rf"]["po"],
-        "deuda_tabla": da["F"]["deuda"], "esc": esc, "ponderado": da["F"]["ponderado"], "prob": da["F"]["prob"], "efectos": da["F"]["efectos"],
+        "deuda_tabla": da["F"]["deuda"], "esc": esc, "efectos": da["F"]["efectos"],
         "esc_param": da["F"]["param"],
         # --- TIR ---
         "tir": tir, "tir_proyecto": tp,
@@ -170,6 +170,7 @@ def main(ruta_modelo, ruta_fa, ruta_fig):
         "precio_vs_tasadores": precio / esc["tas"]["dcf"] - 1,
         "precio_vs_dcf_pct": precio / d["C49"].value - 1,
         "mult_pe": 8644, "pb_precio": precio * acc / 4820898, "pb_po": po_v * acc / 4820898,
+        "mc": json.loads((FIG_VAL / "datos_montecarlo.json").read_text()),   # simulación de Monte Carlo (valuacion/graficos/montecarlo.py)
         "consenso": {"po_12m": 4111, "bajo": 3377, "alto": 4600, "fuentes": 14, "valor": 2.85},
     }
     # FFO = utilidad distribuible + reajuste UF antes de impuestos (2026E: año completo de Exhibits; después, hoja Deuda)

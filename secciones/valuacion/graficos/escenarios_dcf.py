@@ -25,11 +25,9 @@ import openpyxl
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "riesgos" / "graficos"))
 from tornado_operacional import escenarios as palancas_tornado  # noqa: E402
 from tornado_operacional import leer_modelo, leer_rangos, proyectar  # noqa: E402
-from matriz_datos import pesos_escenarios  # noqa: E402
 
 IMPUESTO_BULL = 0.23           # Ley de Reconstrucción (9-oct-26): 27% → 23%; no está en el modelo
 DW = 0.01                      # ±100 pb de WACC en todos los períodos
-PESO_PROB = pesos_escenarios()         # 0,5 / 99,4 / 0,1%: cada variable en su extremo es remota; probabilidad conjunta por riesgo (matriz_datos.py)
 
 
 def combinar(lista):
@@ -70,14 +68,12 @@ def calcular(ruta_fa, ruta_modelo, ruta_tor):
     efectos += [{"palanca": "WACC ±100 pb", "rango": "±100 pb", "bajo": proyectar(m, d_wacc=DW)[2] - base,
                  "alto": proyectar(m, d_wacc=-DW)[2] - base},
                 {"palanca": "Impuesto 23%", "rango": "27% → 23%", "bajo": 0.0, "alto": proyectar(bull_m)[2] - base}]
-    prob = sum(PESO_PROB[k] * esc[k]["po"] for k in PESO_PROB)
-    ponderado = {"po": prob, "dcf": sum(PESO_PROB[k] * esc[k]["dcf"] for k in PESO_PROB), "vs": prob / precio - 1}
     margen26 = wb["Forecast_Base"]["C7"].value / wb["Forecast_Base"]["C5"].value
     _, m_lo, m_hi = rangos["Margen EBITDA"]
     return {
         "esc": {k: {a: b for a, b in v.items() if a != "fcff"} for k, v in esc.items()},
         "fcff": {k: v["fcff"] for k, v in esc.items()},
-        "ponderado": ponderado, "prob": PESO_PROB, "efectos": efectos,
+        "efectos": efectos,
         "param": {"dw": DW, "m_lo": m_lo, "m_hi": m_hi, "margen26": margen26, "tax_bull": IMPUESTO_BULL, "wacc_tas": wacc_tas_nom,
                   "wacc_tas_real": wacc_tas, "wacc_t": m["wacc_t"], "g": m["g"], "share_var": m["share_var"],
                   "rangos": {k: list(v) for k, v in rangos.items()}, "bajo": {k: v for k, v in bajo.items() if k != "ss_largo"},
@@ -93,6 +89,5 @@ if __name__ == "__main__":
                  str(raiz / "riesgos/modelos/Mallplaza_Tornado_Sensibilidad_Operacional_2026_2028.xlsx"))
     for k, v in r["esc"].items():
         print(k, {a: round(b, 4 if a == "vs" else 1) for a, b in v.items()})
-    print("ponderado", {a: round(b, 3) for a, b in r["ponderado"].items()})
     for e in r["efectos"]:
         print(e["palanca"], e["rango"], round(e["bajo"], 1), round(e["alto"], 1))
