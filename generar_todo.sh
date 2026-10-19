@@ -38,6 +38,7 @@ python3 esg/graficos/esg_ahorro.py $V/Mallplaza_Valoracion_Consolidada_v4_ESG.xl
 python3 macro/graficos/anexo_macro.py
 python3 plantilla_informe/graficos/figuras_informe.py $FA $V4 $TOR
 python3 valuacion/graficos/datos_mercado.py   # V18 spread cap rate vs BCU, V19 precio base 100, V20 P/NAV (libro Mallplaza_Datos_Graficos_Informe.xlsx)
+python3 valuacion/graficos/montecarlo_historico.py   # V21/V22: Monte Carlo con distribuciones históricas + copias _titulado de V16–V22
 python3 valuacion/graficos/montecarlo.py   # Monte Carlo del precio objetivo (10.000 iteraciones, semilla 42) → figuras V16/V17 y datos_montecarlo.json
 python3 informe_final/graficos/cifras_informe.py $V4 $FA $V/Mallplaza_Figuras_Valuacion_recalc.xlsx   # cifras.json: única fuente de números de los textos (comun/cifras.js)
 python3 valuacion/graficos/resumen_figuras.py   # Resumen: trayectoria de la acción (V14) y escalera DCF → precio → consenso (V15)
