@@ -38,7 +38,7 @@ def flotantes(body):
 
 def a_pdf(docx, carpeta):
     subprocess.run([sys.executable, SOFFICE, "--headless", "--convert-to", "pdf", "--outdir", str(carpeta), str(docx)],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=240)
     return Path(carpeta) / (Path(docx).stem + ".pdf")
 
 
@@ -64,7 +64,15 @@ def cuadrar(entrada, salida, vueltas=8, lista=False):
         z = zipfile.ZipFile(work)
         root = etree.fromstring(z.read("word/document.xml"))
         fl = flotantes(root.find(W + "body"))
-        pos = posiciones(a_pdf(work, tmp))
+        try:
+            pos = posiciones(a_pdf(work, tmp))
+        except subprocess.TimeoutExpired:                      # LibreOffice se cuelga con esta disposición: vuelve a la anterior
+            print("conversión colgada: se conserva la última disposición convertible", flush=True)
+            subprocess.run(["pkill", "-x", "soffice.bin"])
+            if (tmp / "previo.docx").exists():
+                shutil.copy(tmp / "previo.docx", work)
+            break
+        shutil.copy(work, tmp / "previo.docx")
         orden = sorted((f for f in fl if f[2] in pos), key=lambda f: pos[f[2]])
         cambios, fondo = 0, {}
         for i, tbl, et, alto in orden:
