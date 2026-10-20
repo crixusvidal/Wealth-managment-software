@@ -4,10 +4,10 @@ Entregables finales en español e inglés. **Entregar los PDF** (cuerpo maquetad
 
 | Archivo | Fecha | Páginas | Hash | Estado |
 |---|---|---|---|---|
-| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-19 19:30 | 20 | `49aa8e17a622` | actualizado ahora |
-| `vigente/Mallplaza_Informe_CFA_ES.docx` | 2026-10-18 01:28 | — | `453ec912fb25` | sin cambios |
-| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-19 19:30 | 20 | `07b2cb2e0bbf` | actualizado ahora |
-| `vigente/Mallplaza_Informe_CFA_EN.docx` | 2026-10-18 01:29 | — | `010b377c0893` | sin cambios |
+| `vigente/Mallplaza_Informe_CFA_ES.pdf` | 2026-10-19 23:59 | 19 | `29b25c069e9a` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_ES.docx` | 2026-10-19 23:59 | — | `05ebc921607d` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_EN.pdf` | 2026-10-20 00:02 | 18 | `ab850582bcfe` | actualizado ahora |
+| `vigente/Mallplaza_Informe_CFA_EN.docx` | 2026-10-20 00:02 | — | `cea35e89ae6d` | actualizado ahora |
 
 - `vigente/`: la versión actual. `anterior/`: la penúltima (regla del proyecto: solo dos versiones).
 - Se actualiza con `python informe_consolidado/actualizar.py` (lo hace también `generar_todo.sh`); no editar a mano.

@@ -268,7 +268,7 @@
    "i": 44,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "In our reading, growth depends more on contracts than on sales: variable rent is 5.1% of 1H26 revenue and fell 1.1% whil"
+   "inicio": "In our reading, growth depends more on contracts than on sales: variable rent is 5.1% of 1H26 revenue and fell 1.1% even"
   },
   {
    "i": 45,
@@ -334,7 +334,7 @@
    "i": 55,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Gross debt of CLP 1,633bn is 79% UF, 14% PEN and 7% COP, matching revenue currencies; 95% is long term, with a 6.6-year "
+   "inicio": "Gross debt of CLP 1,633bn at Jun-26 is 79% UF, 14% PEN and 7% COP (2Q26 release), matching revenue currencies; 95% is lo"
   },
   {
    "i": 56,
@@ -346,7 +346,7 @@
    "i": 57,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cencosud"
+   "inicio": "Our base case spends that headroom. Net debt/EBITDA converges linearly from 2.36x to 3.5x by end-2031E, between Cenco Ma"
   },
   {
    "i": 58,
@@ -436,7 +436,7 @@
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "The first signal is the asset (firm) IRR: the single rate that equates FCFF and terminal value to the enterprise value t"
+   "inicio": "The first signal is the implied rate of the asset (the firm): the one that equates FCFF and terminal value to the enterp"
   },
   {
    "i": 73,
@@ -490,7 +490,7 @@
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "If growth earns less than the cost of capital, what pushes management to keep going? We put forward four hypotheses, to "
+   "inicio": "If growth earns less than the cost of capital, what pushes management to keep going? We put forward four hypotheses. Fir"
   },
   {
    "i": 82,
@@ -514,7 +514,7 @@
    "i": 85,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Quality does not justify the premium either. Mallplaza trades 29% above Cenco Malls (Cencosud Shopping in the models), y"
+   "inicio": "Quality does not justify the premium either. Mallplaza trades 29% above Cenco Malls, yet its EBITDA per m² is only 1.8% "
   },
   {
    "i": 86,
@@ -550,142 +550,100 @@
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Bloomberg shows 14 sources with an average recommendation of 2.85 (1-to-5 scale; 1 buy, 10 hold, 2 sell) and a 12-month "
+   "inicio": "Bloomberg shows 14 sources with an average recommendation of 2.85 (Bloomberg scale: 5 = buy, 3 = hold, 1 = sell; 13 of t"
   },
   {
    "i": 92,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "SCENARIOS: WHAT WOULD HAVE TO HAPPEN"
+   "inicio": "The APV also isolates the value of debt. Of its CLP 1,895 per share, CLP 1,630 is the unlevered firm and CLP 265 the tax"
   },
   {
    "i": 93,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "We push the thesis to its extremes with three scenarios defined with the same levers as the Risks tornado (Figure T), in"
+   "inicio": "That is how we get to CLP 2,077 (80% × 1,859 + 20% × 2,951): 10.8x EBITDA, a real cap rate of 9.3% (1 / EV/EBITDA) and 0"
   },
   {
    "i": 94,
-   "tipo": "ancho",
-   "barrera": false,
-   "inicio": "Scenarios: bear (everything goes wrong), base (central) and bull (everything goes right)"
-  },
-  {
-   "i": 95,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "The result is robust: even with everything in its favour the target price (CLP 2,915) does not reach the quote. The firm"
-  },
-  {
-   "i": 96,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "The APV also isolates the value of debt. Of its CLP 1,895 per share, CLP 1,630 is the unlevered firm and CLP 265 the tax"
-  },
-  {
-   "i": 97,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "That is how we get to CLP 2,077 (80% × 1,859 + 20% × 2,951): 10.8x EBITDA, a real cap rate of 6.1% and 0.94x book value."
-  },
-  {
-   "i": 98,
    "tipo": "ancho",
    "barrera": true,
    "inicio": "INVESTMENT RISKS"
   },
   {
-   "i": 99,
+   "i": 95,
    "tipo": "texto",
    "barrera": false,
    "inicio": "INVESTMENT SUMMARY"
   },
   {
-   "i": 100,
+   "i": 96,
    "tipo": "texto",
    "barrera": false,
    "inicio": "SELL · target price CLP 2,077 per share (base case), 41.6% below the CLP 3,555 close (30-Sep-26). Three theses on the sa"
   },
   {
-   "i": 101,
+   "i": 97,
    "tipo": "ancho",
    "barrera": false,
    "inicio": "KEY DATA"
   },
   {
-   "i": 102,
+   "i": 98,
    "tipo": "texto",
    "barrera": false,
    "inicio": "RECOMMENDATION AND TARGET PRICE"
   },
   {
-   "i": 103,
+   "i": 99,
    "tipo": "texto",
    "barrera": false,
    "inicio": "We recommend SELL on Mallplaza (MALLPLAZ CI) with a target price of CLP 2,077 per share, 41.6% below the 30-Sep-26 close"
   },
   {
-   "i": 104,
+   "i": 100,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BEAR CASE: EVERYTHING THAT COULD GO WRONG, GOES WRONG"
   },
   {
-   "i": 105,
+   "i": 101,
    "tipo": "texto",
    "barrera": false,
    "inicio": "Nominal WACC rises 100 bp and, at the same time, margin, occupancy, rent, sales, visitors and real growth fall to their "
   },
   {
-   "i": 106,
+   "i": 102,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BASE CASE: EVERYTHING AS WE PROJECT IT"
   },
   {
-   "i": 107,
+   "i": 103,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "EBITDA margin of 79.7% in 2026E, occupancy of 95.6%, UF-indexed rents, a dated pipeline of 170,200 m² (USD 613 MM), cont"
+   "inicio": "EBITDA margin of 79.7% in 2026E, consolidated occupancy of 95.6% (2Q26), UF-indexed rents, a dated pipeline of 170,200 m"
   },
   {
-   "i": 108,
+   "i": 104,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BULL CASE: EVERYTHING IN OUR FAVOR"
   },
   {
-   "i": 109,
+   "i": 105,
    "tipo": "texto",
    "barrera": false,
    "inicio": "Nominal WACC falls 100 bp, every operating variable reaches its historical high (price and sales rise together through v"
   },
   {
-   "i": 110,
-   "tipo": "ancho",
-   "barrera": false,
-   "inicio": "The three theses: variables, individual probability (in brackets) and value"
-  },
-  {
-   "i": 111,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "ASSUMPTIONS AND PROBABILITIES"
-  },
-  {
-   "i": 112,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "Valuation at 30-Jun-26 and price at 30-Sep-26; FCFF in nominal CLP with mid-period convention; inflation 3.0% (UF); term"
-  },
-  {
-   "i": 113,
+   "i": 106,
    "tipo": "texto",
    "barrera": false,
    "inicio": "VERSUS THE CONSENSUS AND CATALYSTS"
   },
   {
-   "i": 114,
+   "i": 107,
    "tipo": "texto",
    "barrera": false,
    "inicio": "The Bloomberg consensus (14 sources) sets CLP 4,111 at 12 months; the gap is the discount rate (Figure R3): at the appra"
@@ -697,7 +655,7 @@
    "n": "Figure 1:",
    "cita": 3,
    "clave": "negocio",
-   "alto": 2.5000000000000004
+   "alto": 2.3740000000000006
   },
   {
    "id": 1,
@@ -718,7 +676,7 @@
    "n": "Figure 4:",
    "cita": 16,
    "clave": "industria",
-   "alto": 2.365
+   "alto": 2.2390000000000003
   },
   {
    "id": 4,
@@ -739,49 +697,49 @@
    "n": "Figure E1:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.365
+   "alto": 1.7350000000000003
   },
   {
    "id": 7,
    "n": "Figure E2:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.205197205318909
+   "alto": 1.7350000000000003
   },
   {
    "id": 8,
    "n": "Figure E3:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.5000000000000004
+   "alto": 1.87
   },
   {
    "id": 9,
    "n": "Figure E4:",
    "cita": 30,
    "clave": "esg",
-   "alto": 2.2651915708812265
+   "alto": 1.7350000000000003
   },
   {
    "id": 10,
    "n": "Figure E5:",
    "cita": 33,
    "clave": "esg",
-   "alto": 2.155191570881226
+   "alto": 1.6250000000000004
   },
   {
    "id": 11,
    "n": "Figure E6:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.72
+   "alto": 2.0900000000000003
   },
   {
    "id": 12,
    "n": "Figure 2:",
    "cita": 39,
    "clave": "fa",
-   "alto": 2.115
+   "alto": 2.2250000000000005
   },
   {
    "id": 13,
@@ -809,12 +767,12 @@
    "n": "Figure 6:",
    "cita": 55,
    "clave": "fa",
-   "alto": 1.9800000000000004
+   "alto": 2.0900000000000003
   },
   {
    "id": 17,
    "n": "Figure 7:",
-   "cita": 52,
+   "cita": 59,
    "clave": "fa",
    "alto": 2.2250000000000005
   },
@@ -837,7 +795,7 @@
    "n": "Figure 29:",
    "cita": 76,
    "clave": "valuacion",
-   "alto": 2.115
+   "alto": 2.0050000000000003
   },
   {
    "id": 21,
@@ -877,21 +835,21 @@
   {
    "id": 26,
    "n": "Figure R1:",
-   "cita": 103,
+   "cita": 99,
    "clave": "resumen",
    "alto": 1.87
   },
   {
    "id": 27,
    "n": "Figure R2:",
-   "cita": 105,
+   "cita": 101,
    "clave": "resumen",
    "alto": 2.115
   },
   {
    "id": 28,
    "n": "Figure R3:",
-   "cita": 114,
+   "cita": 107,
    "clave": "resumen",
    "alto": 1.87
   }

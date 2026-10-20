@@ -334,7 +334,7 @@
    "i": 55,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La deuda bruta de CLP 1.633 mil MM está 79% en UF, 14% en PEN y 7% en COP, en línea con las monedas de los ingresos; el "
+   "inicio": "La deuda bruta de CLP 1.633 mil MM a jun-26 está 79% en UF, 14% en PEN y 7% en COP (release 2T26), en línea con las mone"
   },
   {
    "i": 56,
@@ -346,7 +346,7 @@
    "i": 57,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cencosud S"
+   "inicio": "Nuestro caso base usa esa holgura. La DFN/EBITDA converge linealmente de 2,36x a 3,5x a fines de 2031E, entre Cenco Mall"
   },
   {
    "i": 58,
@@ -436,7 +436,7 @@
    "i": 72,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "La primera señal es la TIR del activo (la firma): la tasa única que iguala el FCFF y el valor terminal al valor de empre"
+   "inicio": "La primera señal es la tasa implícita del activo (la firma): la que iguala el FCFF y el valor terminal al valor de empre"
   },
   {
    "i": 73,
@@ -490,7 +490,7 @@
    "i": 81,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Si crecer rinde menos que el costo de capital, ¿qué empuja a la administración a seguir? Planteamos cuatro hipótesis, po"
+   "inicio": "Si crecer rinde menos que el costo de capital, ¿qué empuja a la administración a seguir? Planteamos cuatro hipótesis. Pr"
   },
   {
    "i": 82,
@@ -514,7 +514,7 @@
    "i": 85,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cenco Malls (Cencosud Shopping en los modelos), pero s"
+   "inicio": "Tampoco la calidad justifica la prima. Mallplaza transa 29% sobre Cenco Malls, pero su EBITDA por m² es solo 1,8% mayor "
   },
   {
    "i": 86,
@@ -550,142 +550,100 @@
    "i": 91,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (escala de 1 a 5; 1 comprar, 10 mantener, 2 vender) "
+   "inicio": "Bloomberg muestra 14 fuentes con una recomendación promedio de 2,85 (escala de Bloomberg: 5 = comprar, 3 = mantener, 1 ="
   },
   {
    "i": 92,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "ESCENARIOS: LO QUE TENDRÍA QUE PASAR"
+   "inicio": "El APV también aísla el valor de la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin deuda y "
   },
   {
    "i": 93,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Llevamos la tesis a sus extremos con tres escenarios definidos con las mismas palancas del tornado de Riesgos (Figura T)"
+   "inicio": "Así llegamos a CLP 2.077 (80% × 1.859 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 9,3% (1 / EV/EBITDA) y 0,94x el "
   },
   {
    "i": 94,
-   "tipo": "ancho",
-   "barrera": false,
-   "inicio": "Escenarios: bear (todo sale mal), base (central) y bull (todo sale bien)"
-  },
-  {
-   "i": 95,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "El resultado es robusto: ni con todo a favor el precio objetivo (CLP 2.915) alcanza la cotización. La TIR de la firma al"
-  },
-  {
-   "i": 96,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "El APV también aísla el valor de la deuda. De sus CLP 1.895 por acción, CLP 1.630 corresponden a la empresa sin deuda y "
-  },
-  {
-   "i": 97,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "Así llegamos a CLP 2.077 (80% × 1.859 + 20% × 2.951): 10,8x EBITDA, un cap rate real de 6,1% y 0,94x el valor libro. Lle"
-  },
-  {
-   "i": 98,
    "tipo": "ancho",
    "barrera": true,
    "inicio": "RIESGOS DE INVERSIÓN"
   },
   {
-   "i": 99,
+   "i": 95,
    "tipo": "texto",
    "barrera": false,
    "inicio": "RESUMEN DE INVERSIÓN"
   },
   {
-   "i": 100,
+   "i": 96,
    "tipo": "texto",
    "barrera": false,
    "inicio": "VENDER · precio objetivo CLP 2.077 por acción (caso base), 41,6% bajo el cierre de CLP 3.555 (30-sep-26). Tres tesis con"
   },
   {
-   "i": 101,
+   "i": 97,
    "tipo": "ancho",
    "barrera": false,
    "inicio": "DATOS CLAVE"
   },
   {
-   "i": 102,
+   "i": 98,
    "tipo": "texto",
    "barrera": false,
    "inicio": "RECOMENDACIÓN Y PRECIO OBJETIVO"
   },
   {
-   "i": 103,
+   "i": 99,
    "tipo": "texto",
    "barrera": false,
    "inicio": "Recomendamos VENDER Mallplaza (MALLPLAZ CI) con un precio objetivo de CLP 2.077 por acción, 41,6% bajo el cierre del 30-"
   },
   {
-   "i": 104,
+   "i": 100,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BEAR CASE: TODO LO QUE PODRÍA SALIR MAL, SALE MAL"
   },
   {
-   "i": 105,
+   "i": 101,
    "tipo": "texto",
    "barrera": false,
    "inicio": "La WACC nominal sube 100 pb y, a la vez, margen, ocupación, arriendo, ventas, visitas y crecimiento real caen a su mínim"
   },
   {
-   "i": 106,
+   "i": 102,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BASE CASE: TODO COMO LO PROYECTAMOS"
   },
   {
-   "i": 107,
+   "i": 103,
    "tipo": "texto",
    "barrera": false,
-   "inicio": "Margen EBITDA de 79,7% en 2026E, ocupación de 95,6%, rentas reajustadas por UF, pipeline con fecha de 170.200 m² (USD 61"
+   "inicio": "Margen EBITDA de 79,7% en 2026E, ocupación consolidada de 95,6% (2T26), rentas reajustadas por UF, pipeline con fecha de"
   },
   {
-   "i": 108,
+   "i": 104,
    "tipo": "texto",
    "barrera": false,
    "inicio": "BULL CASE: TODO A FAVOR"
   },
   {
-   "i": 109,
+   "i": 105,
    "tipo": "texto",
    "barrera": false,
    "inicio": "La WACC nominal baja 100 pb, cada variable operacional llega a su máximo histórico (precio y ventas suben juntos por la "
   },
   {
-   "i": 110,
-   "tipo": "ancho",
-   "barrera": false,
-   "inicio": "Las tres tesis: variables, probabilidad individual (entre paréntesis) y valor"
-  },
-  {
-   "i": 111,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "SUPUESTOS Y PROBABILIDADES"
-  },
-  {
-   "i": 112,
-   "tipo": "texto",
-   "barrera": false,
-   "inicio": "Valoración al 30-jun-26 y precio al 30-sep-26; FCFF en CLP nominales con convención de mitad de período; inflación 3,0% "
-  },
-  {
-   "i": 113,
+   "i": 106,
    "tipo": "texto",
    "barrera": false,
    "inicio": "FRENTE AL CONSENSO Y CATALIZADORES"
   },
   {
-   "i": 114,
+   "i": 107,
    "tipo": "texto",
    "barrera": false,
    "inicio": "El consenso de Bloomberg (14 fuentes) fija CLP 4.111 a 12 meses; la diferencia es de tasa (Figura R3): con la WACC de lo"
@@ -739,49 +697,49 @@
    "n": "Figura E1:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.1472
+   "alto": 2.5000000000000004
   },
   {
    "id": 7,
    "n": "Figura E2:",
    "cita": 28,
    "clave": "esg",
-   "alto": 1.9022000000000001
+   "alto": 2.3151972053189094
   },
   {
    "id": 8,
    "n": "Figura E3:",
    "cita": 28,
    "clave": "esg",
-   "alto": 2.1472
+   "alto": 2.5000000000000004
   },
   {
    "id": 9,
    "n": "Figura E4:",
    "cita": 30,
    "clave": "esg",
-   "alto": 2.0122
+   "alto": 2.2651915708812265
   },
   {
    "id": 10,
    "n": "Figura E5:",
    "cita": 33,
    "clave": "esg",
-   "alto": 2.0372000000000003
+   "alto": 2.290191570881226
   },
   {
    "id": 11,
    "n": "Figura E6:",
    "cita": 26,
    "clave": "esg",
-   "alto": 2.4772000000000003
+   "alto": 2.72
   },
   {
    "id": 12,
    "n": "Figura 2:",
    "cita": 39,
    "clave": "fa",
-   "alto": 2.115
+   "alto": 2.2250000000000005
   },
   {
    "id": 13,
@@ -795,7 +753,7 @@
    "n": "Figura 4:",
    "cita": 49,
    "clave": "fa",
-   "alto": 2.0900000000000003
+   "alto": 2.2250000000000005
   },
   {
    "id": 15,
@@ -814,7 +772,7 @@
   {
    "id": 17,
    "n": "Figura 7:",
-   "cita": 52,
+   "cita": 59,
    "clave": "fa",
    "alto": 2.2250000000000005
   },
@@ -837,7 +795,7 @@
    "n": "Figura 29:",
    "cita": 76,
    "clave": "valuacion",
-   "alto": 1.9800000000000004
+   "alto": 2.0050000000000003
   },
   {
    "id": 21,
@@ -877,21 +835,21 @@
   {
    "id": 26,
    "n": "Figura R1:",
-   "cita": 103,
+   "cita": 99,
    "clave": "resumen",
    "alto": 1.9800000000000004
   },
   {
    "id": 27,
    "n": "Figura R2:",
-   "cita": 105,
+   "cita": 101,
    "clave": "resumen",
    "alto": 2.115
   },
   {
    "id": 28,
    "n": "Figura R3:",
-   "cita": 114,
+   "cita": 107,
    "clave": "resumen",
    "alto": 1.87
   }
