@@ -1,7 +1,8 @@
 """Cuadra las figuras flotantes (columna derecha) de un Word ya armado: mide en el PDF dónde cae cada una y
 corrige tblpY para que no se pisen ni queden dentro del margen inferior. No toca texto ni cifras.
 
-Uso: python3 cuadrar_docx.py entrada.docx salida.docx [--lista]
+Uso: python3 cuadrar_docx.py entrada.docx salida.docx [--lista] [--escala=0.8]
+--escala reduce las figuras de Valuación y pasa a la derecha las de la grilla de cierre.
 """
 import re, shutil, subprocess, sys, tempfile, zipfile
 from pathlib import Path
@@ -56,10 +57,83 @@ def posiciones(pdf):
     return pos
 
 
-def cuadrar(entrada, salida, vueltas=8, lista=False):
+A_NS = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+ANCHO_COL = 3550 * 635                                         # EMU: ancho de la columna derecha
+
+
+def seccion(body, ini, fin):
+    """Índices de body entre el título que calza con ini y el que calza con fin."""
+    i0 = next(i for i, e in enumerate(body) if e.tag == W + "p" and re.match(ini, texto(e).strip()))
+    i1 = next(i for i, e in enumerate(body) if i > i0 and e.tag == W + "p" and re.match(fin, texto(e).strip()))
+    return i0, i1
+
+
+def escalar(tbl, f):
+    for e in tbl.iter(WP + "extent", A_NS + "ext"):
+        if e.get("cx"):
+            e.set("cx", str(round(int(e.get("cx")) * f)))
+            e.set("cy", str(round(int(e.get("cy")) * f)))
+
+
+def preparar(root, escala, ini, fin):
+    """Reduce las figuras de la sección y pasa a la columna derecha las de la grilla de cierre (junto a su cita)."""
+    import copy
+    body = root.find(W + "body")
+    i0, i1 = seccion(body, ini, fin)
+    sec = list(body)[i0:i1]
+    plantilla = next(t for t in sec if t.tag == W + "tbl" and t.find(W + "tblPr").find(W + "tblpPr") is not None
+                     and list(t.iter(WP + "inline")))
+    for t in sec:
+        if t.tag == W + "tbl" and t.find(W + "tblPr").find(W + "tblpPr") is not None and list(t.iter(WP + "inline")):
+            escalar(t, escala)
+    for t in sec:
+        grid = [int(g.get(W + "w")) for g in t.find(W + "tblGrid")] if t.tag == W + "tbl" else []
+        if len(grid) != 3 or t.find(W + "tblPr").find(W + "tblpPr") is not None:
+            continue
+        for celda in t.iter(W + "tc"):
+            if not list(celda.iter(WP + "inline")):
+                continue
+            ps = [p for p in celda if p.tag == W + "p"]
+            cap = next((texto(p) for p in ps if re.match(r"(Figure|Figura) \d+[A-Z]?:", texto(p))), None)
+            if not cap:
+                continue
+            n = re.match(r"(?:Figure|Figura) (\d+[A-Z]?):", cap).group(1)
+            nueva = copy.deepcopy(plantilla)
+            tc = nueva.find(W + "tr").find(W + "tc")
+            for hijo in list(tc):
+                if hijo.tag != W + "tcPr":
+                    tc.remove(hijo)
+            for p in ps:
+                tc.append(copy.deepcopy(p))
+            cx = max(int(e.get("cx")) for e in nueva.iter(WP + "extent"))
+            if cx > ANCHO_COL:
+                escalar(nueva, ANCHO_COL / cx)
+            nueva.find(W + "tblPr").find(W + "tblpPr").set(W + "tblpY", "0")
+            cita = re.compile(r"\((?:Figure|Figura)s? [^)]*\b" + re.escape(n) + r"\b")
+            lugar = next((e for e in sec if e.tag == W + "p" and cita.search(texto(e))), None)
+            lugar = lugar if lugar is not None else next(e for e in reversed(sec) if e.tag == W + "p" and len(texto(e)) > 200)
+            lugar.addnext(nueva)
+            for p in ps:
+                celda.remove(p)
+            celda.append(etree.SubElement(celda, W + "p"))
+        if not any(texto(c).strip() or list(c.iter(WP + "inline")) for c in t.iter(W + "tc")):
+            t.getparent().remove(t)
+
+
+def cuadrar(entrada, salida, vueltas=8, lista=False, escala=None):
     tmp = Path(tempfile.mkdtemp())
     work = tmp / "doc.docx"
     shutil.copy(entrada, work)
+    if escala:
+        z = zipfile.ZipFile(work)
+        root = etree.fromstring(z.read("word/document.xml"))
+        preparar(root, escala, r"(VALUACIÓN|VALUATION)$", r"(RIESGOS DE INVERSIÓN|INVESTMENT RISKS)")
+        out = tmp / "prep.docx"
+        with zipfile.ZipFile(work) as zin, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zout:
+            for it in zin.infolist():
+                zout.writestr(it, etree.tostring(root, xml_declaration=True, encoding="UTF-8", standalone=True)
+                              if it.filename == "word/document.xml" else zin.read(it.filename))
+        shutil.move(out, work)
     for v in range(vueltas):
         z = zipfile.ZipFile(work)
         root = etree.fromstring(z.read("word/document.xml"))
@@ -105,4 +179,5 @@ def cuadrar(entrada, salida, vueltas=8, lista=False):
 
 
 if __name__ == "__main__":
-    cuadrar(sys.argv[1], sys.argv[2], lista="--lista" in sys.argv)
+    esc = next((float(a.split("=")[1]) for a in sys.argv if a.startswith("--escala=")), None)
+    cuadrar(sys.argv[1], sys.argv[2], lista="--lista" in sys.argv, escala=esc)
