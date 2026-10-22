@@ -127,19 +127,19 @@ def pnav(nav, lang, salida):
     es = lang == "es"
     v = nav["P/NAV ajustado"]
     nombres = ["Mallplaza", "Parque Arauco", "Cenco Malls"]
-    cols = [AZUL, VERDE_PARQUE_ARAUCO, MORADO_CENCOSUD]
+    cols = [ROJO, VERDE_PARQUE_ARAUCO, MORADO_CENCOSUD]
     fig = plt.figure(figsize=(ANCHO, 1.5))
     ax = fig.add_axes([0.26, 0.18, 0.68, 0.74])
     y = np.arange(3)[::-1]
     ax.barh(y, v, color=cols, height=0.55, zorder=3)
-    ax.axvline(1.0, color=ROJO, linewidth=0.8, linestyle=(0, (4, 2)), zorder=4)
+    ax.axvline(1.0, color=NEGRO, linewidth=0.8, linestyle=(0, (4, 2)), zorder=4)
     for yy, val in zip(y, v):
         ax.text(val + 0.03, yy, f"{num(val, lang, 2)}x", fontsize=4.6, fontweight="bold", color=NEGRO, va="center")
     ax.set_yticks(y); ax.set_yticklabels(nombres, fontsize=4.6, color=NEGRO)
     ax.set_xlim(0, 1.8)
     ax.xaxis.set_major_formatter(lambda t, _: f"{num(t, lang, 1)}x")
     ax.set_ylim(-0.6, 2.75)
-    ax.text(1.0, 2.42, "NAV = 1,0x" if es else "NAV = 1.0x", fontsize=3.8, color=ROJO, ha="center", va="bottom")
+    ax.text(1.0, 2.42, "NAV = 1,0x" if es else "NAV = 1.0x", fontsize=3.8, color=NEGRO, ha="center", va="bottom", bbox=dict(facecolor="white", edgecolor="none", pad=0.6))
     ax.tick_params(labelsize=4.0, length=1.5, colors=TINTA_SECUNDARIA)
     ax.grid(axis="x", color=GRILLA, linewidth=0.4, zorder=0)
     for s in ("top", "right"):
