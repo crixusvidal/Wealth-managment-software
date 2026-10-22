@@ -50,7 +50,7 @@ T = {
            "pb": "pb",
            "v3": {"cols": ["g nominal", "g real", "Reinversión", "Valor DCF", "Δ"],
                   "series": ["RONIC 5,0% (Mallplaza)", "RONIC = WACC (7,2%)", "RONIC 10,0%"],
-                  "eje": "g real", "indice": "Valor terminal (g = 0 → 100)"},
+                  "eje": "g real", "indice": "Valor terminal (g = 0 → 100)", "crea": "Crea valor", "destruye": "Destruye valor"},
            "v4": {"comp": ["Deudores", "CxC\nrelac.", "CxP", "CxP\nrelac.", "Arriendos\nanticip.", "CTN"],
                   "cols": ["Escenario", "CTN/ingresos", "Precio objetivo", "Δ"],
                   "esc": ["Sin capital de trabajo", "Mitad", "Base (dic-25)", "+50%", "Doble"],
@@ -86,7 +86,7 @@ T = {
            "pb": "bp",
            "v3": {"cols": ["Nominal g", "Real g", "Reinvestment", "DCF value", "Δ"],
                   "series": ["RONIC 5.0% (Mallplaza)", "RONIC = WACC (7.2%)", "RONIC 10.0%"],
-                  "eje": "Real g", "indice": "Terminal value (g = 0 → 100)"},
+                  "eje": "Real g", "indice": "Terminal value (g = 0 → 100)", "crea": "Value creation", "destruye": "Value destruction"},
            "v4": {"comp": ["Receiv-\nables", "Rel.-party\nreceiv.", "Payables", "Rel.-party\npayables", "Advance\nrents", "NWC"],
                   "cols": ["Scenario", "NWC/revenue", "Target price", "Δ"],
                   "esc": ["No working capital", "Half", "Base (Dec-25)", "+50%", "Double"],
@@ -269,43 +269,60 @@ def v2(lang, wb, salida):
 
 # V3 · Value driver: tabla + ilustración ----------------------------------------------------------
 def v3(lang, wb, salida):
+    """Value driver: tabla con fichas de color (Δ del valor DCF) + curvas del valor terminal según el RONIC, con las zonas de creación y destrucción de valor."""
+    from matplotlib.patches import FancyBboxPatch
     t = T[lang]["v3"]
     ws = wb["V3_ValueDriver"]
     tabla = [f for f in celdas(ws, "A14:F17") if f[0] >= 0.03]          # la nota pide mostrar 3,0–4,0%
-    fig = figura("V3")
+    fig = plt.figure(figsize=(ANCHO, 2.15))
+    fig.patch.set_facecolor("white")
     # Tabla
-    axt = fig.add_axes([0.03, 0.6, 0.94, 0.38])
+    axt = fig.add_axes([0.02, 0.6, 0.96, 0.38])
     axt.axis("off")
-    xs = [0.0, 0.22, 0.46, 0.7, 0.9]
-    alin = ["left", "right", "right", "right", "right"]
-    for x, c, a in zip(xs, t["cols"], alin):
-        axt.text(x + (0.08 if a == "right" else 0.01), 0.9, c, ha=a, va="center", fontsize=4.8, fontweight="bold",
-                 color="white", transform=axt.transAxes)
-    axt.add_patch(Rectangle((0, 0.78), 1, 0.24, color=AZUL, transform=axt.transAxes))
+    axt.set_xlim(0, 1); axt.set_ylim(0, 1)
+    xs = [0.18, 0.34, 0.585, 0.775, 0.985]
+    axt.add_patch(FancyBboxPatch((0, 0.76), 1, 0.24, boxstyle="round,pad=0,rounding_size=0.03", color=AZUL, linewidth=0))
+    for x, c in zip(xs, t["cols"]):
+        axt.text(x, 0.88, c, ha="right", va="center", fontsize=4.3, fontweight="bold", color="white")
+    n = len(tabla)
+    alto = 0.74 / n
     for k, (gn, gr, reinv, _, valor, delta) in enumerate(tabla):
-        y = 0.62 - k * 0.22
+        y0 = 0.74 - (k + 1) * alto
+        yc = y0 + alto / 2
         base = abs(gn - 0.03) < 1e-9
         if base:
-            axt.add_patch(Rectangle((0, y - 0.11), 1, 0.22, color=AMARILLO, transform=axt.transAxes))
-        vals = [pct(gn, lang), pct(gr, lang), pct(reinv, lang), num(valor, lang),
-                ("±0,0%" if lang == "es" else "±0.0%") if base else pct(delta, lang)]
-        for x, v, a in zip(xs, vals, alin):
-            axt.text(x + (0.08 if a == "right" else 0.01), y, v, ha=a, va="center", fontsize=4.8,
-                     fontweight="bold" if base else "normal", color=NEGRO, transform=axt.transAxes)
-    # Línea (panel C)
-    ax = fig.add_axes([0.13, 0.12, 0.84, 0.4])
+            axt.add_patch(Rectangle((0, y0 + 0.012), 1, alto - 0.024, color=AMARILLO, alpha=0.35, linewidth=0))
+        elif k % 2 == 0:
+            axt.add_patch(Rectangle((0, y0 + 0.012), 1, alto - 0.024, color=CELESTE, alpha=0.12, linewidth=0))
+        vals = [pct(gn, lang), pct(gr, lang), pct(reinv, lang), num(valor, lang)]
+        for x, v in zip(xs[:4], vals):
+            axt.text(x, yc, v, ha="right", va="center", fontsize=4.9, fontweight="bold" if (base or x == xs[3]) else "normal", color=NEGRO)
+        txt = ("±0,0%" if lang == "es" else "±0.0%") if base else pct(delta, lang)
+        if base:
+            axt.text(xs[4], yc, txt, ha="right", va="center", fontsize=4.9, fontweight="bold", color=NEGRO)
+        else:
+            axt.add_patch(FancyBboxPatch((xs[4] - 0.135, yc - alto * 0.34), 0.14, alto * 0.68, boxstyle="round,pad=0,rounding_size=0.02", color=ROJO, linewidth=0))
+            axt.text(xs[4] - 0.003, yc, txt, ha="right", va="center", fontsize=4.7, fontweight="bold", color="white")
+    # Curvas de RONIC (valor terminal relativo)
+    ax = fig.add_axes([0.1, 0.12, 0.87, 0.4])
     serie = celdas(ws, "A24:D27")
     gs = [f[0] * 100 for f in serie]
-    for j, (color, nombre) in enumerate(zip([ROJO, NEGRO, CELESTE], t["series"])):
-        ys = [f[j + 1] for f in serie]
-        ax.plot(gs, ys, color=color, linewidth=1.2, marker="o", markersize=2.4, markeredgecolor="white",
-                markeredgewidth=0.4)
-        ax.text(gs[-1] + 0.05, ys[-1], nombre, fontsize=4.2, color=color,
-                va="center", fontweight="bold")
-    ax.set_xlim(-0.05, 2.6)
-    ax.set_ylim(85, 110)
+    y_roj, y_neg, y_cel = ([f[j] for f in serie] for j in (1, 2, 3))
+    ax.fill_between(gs, y_neg, y_cel, color=CELESTE, alpha=0.18, linewidth=0, zorder=1)
+    ax.fill_between(gs, y_roj, y_neg, color=ROJO, alpha=0.12, linewidth=0, zorder=1)
+    for ys, color, lw in ((y_cel, CELESTE, 1.4), (y_neg, NEGRO, 1.0), (y_roj, ROJO, 1.5)):
+        ax.plot(gs, ys, color=color, linewidth=lw, marker="o", markersize=2.6, markeredgecolor="white", markeredgewidth=0.5, zorder=3)
+    for ys, nombre, color, dy in ((y_cel, t["series"][2], CELESTE, 2.4), (y_neg, t["series"][1], NEGRO, 2.4), (y_roj, t["series"][0], ROJO, -2.4)):
+        ax.text(gs[-1] + 0.02, ys[-1] + dy, nombre, fontsize=4.1, color="white" if color != CELESTE else AZUL, va="center", ha="right", fontweight="bold",
+                bbox=dict(boxstyle="round,pad=0.28,rounding_size=0.4", facecolor=color, edgecolor="none"), zorder=5)
+    ax.text(0.05, 110.2, t["crea"], fontsize=4.0, color=AZUL, style="italic", va="center")
+    ax.text(0.05, 88.0, t["destruye"], fontsize=4.0, color=ROJO, style="italic", va="center")
+    ax.set_xlim(-0.05, 1.58)
+    ax.set_ylim(86, 112)
     ax.set_xticks(gs, [pct(g / 100, lang) for g in gs])
+    ax.set_yticks([90, 100, 110])
     estilo(ax, grilla="y")
+    ax.axhline(100, color=TINTA_SECUNDARIA, linewidth=0.4, linestyle=(0, (2, 2)), zorder=2)
     ax.set_xlabel(t["eje"], fontsize=4.6, color=TINTA_SECUNDARIA, labelpad=1.5)
     ax.set_ylabel(t["indice"], fontsize=4.3, color=TINTA_SECUNDARIA, labelpad=2)
     guardar(fig, salida)

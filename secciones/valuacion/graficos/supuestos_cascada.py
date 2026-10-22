@@ -97,49 +97,70 @@ def calcular(v3, ruta_fa, ruta_tor):
 
 
 def figura(lang, r, salida):
+    """Cascada del precio objetivo + tabla de efectos individuales con fichas de color (mismo color que el paso de la cascada)."""
+    from matplotlib.patches import FancyBboxPatch
     t = T[lang]
-    fig = plt.figure(figsize=(3550 / 1440, 2.3), dpi=400)
+    fig = plt.figure(figsize=(3550 / 1440, 2.62), dpi=400)
     fig.patch.set_facecolor("white")
-    ax = fig.add_axes([0.13, 0.48, 0.85, 0.5])
+    ax = fig.add_axes([0.115, 0.505, 0.865, 0.455])
     acum = r["acum"]
     n = len(acum)
-    ax.bar(0, acum[0], width=0.62, color=AZUL, linewidth=0)
-    ax.text(0, acum[0] + 40, num(acum[0], lang), ha="center", va="bottom", fontsize=4.4, fontweight="bold", color=AZUL)
+    precio = r["precio"]
+    ax.set_axisbelow(True)
+    ax.axhspan(acum[-1], precio, xmin=0, xmax=1, color=ROJO, alpha=0.06, linewidth=0)          # brecha frente al precio
+    ax.bar(0, acum[0], width=0.66, color=AZUL, linewidth=0, zorder=3)
+    ax.text(0, acum[0] + 45, num(acum[0], lang), ha="center", va="bottom", fontsize=4.8, fontweight="bold", color=AZUL)
     for k in range(1, n):
         d = acum[k] - acum[k - 1]
-        ax.bar(k, d, bottom=acum[k - 1], width=0.62, color=CELESTE if d > 0 else ROJO, linewidth=0)
-        ax.text(k, max(acum[k], acum[k - 1]) + 40, ("+" if d > 0 else "−") + num(abs(d), lang), ha="center", va="bottom", fontsize=4.4, color=NEGRO)
-        ax.plot([k - 0.69, k - 0.31], [acum[k - 1]] * 2, color=NEGRO, linewidth=0.3)
-    ax.bar(n, acum[-1], width=0.62, color=NEGRO, linewidth=0)
-    ax.text(n, acum[-1] + 40, num(acum[-1], lang), ha="center", va="bottom", fontsize=4.6, fontweight="bold", color=NEGRO)
-    ax.axhline(r["precio"], color=ROJO, linewidth=0.8, linestyle=(0, (4, 2)))
-    ax.text(-0.45, r["precio"] + 40, t["precio"].format(p=num(r["precio"], lang)), ha="left", va="bottom", fontsize=4.6, fontweight="bold", color=ROJO)
-    ax.text(n + 0.4, r["precio"] + 40, t["brecha"].format(b=num(r["precio"] - acum[-1], lang)), ha="right", va="bottom", fontsize=4.4, color=ROJO)
-    ax.set_xticks(range(n + 1), t["pasos"], fontsize=4.2, linespacing=1.05)
+        col = CELESTE if d > 0 else ROJO
+        ax.bar(k, d, bottom=acum[k - 1], width=0.66, color=col, linewidth=0, zorder=3)
+        ax.plot([k - 1 + 0.33, k - 0.33], [acum[k - 1]] * 2, color=TINTA_SECUNDARIA, linewidth=0.35, zorder=2)
+        ax.text(k, max(acum[k], acum[k - 1]) + 45, ("+" if d > 0 else "−") + num(abs(d), lang), ha="center", va="bottom",
+                fontsize=4.5, fontweight="bold", color=AZUL if d > 0 else ROJO)
+    ax.plot([n - 1 + 0.33, n - 0.33], [acum[-1]] * 2, color=TINTA_SECUNDARIA, linewidth=0.35, zorder=2)
+    ax.bar(n, acum[-1], width=0.66, color=NEGRO, linewidth=0, zorder=3)
+    ax.text(n, acum[-1] + 45, num(acum[-1], lang), ha="center", va="bottom", fontsize=4.8, fontweight="bold", color=NEGRO)
+    ax.axhline(precio, color=ROJO, linewidth=0.9, linestyle=(0, (4, 2)), zorder=4)
+    ax.text(-0.5, precio + 50, t["precio"].format(p=num(precio, lang)), ha="left", va="bottom", fontsize=4.8, fontweight="bold", color=ROJO)
+    # llave de la brecha entre «todo a favor» y el precio
+    xb = n + 0.52
+    ax.annotate("", xy=(xb, precio), xytext=(xb, acum[-1]), arrowprops=dict(arrowstyle="<->", color=ROJO, linewidth=0.6, shrinkA=0, shrinkB=0), annotation_clip=False)
+    ax.text(xb - 0.08, (precio + acum[-1]) / 2, t["brecha"].format(b=num(precio - acum[-1], lang)), ha="right", va="center",
+            fontsize=4.6, fontweight="bold", color=ROJO)
+    ax.set_xticks(range(n + 1), t["pasos"], fontsize=4.1, linespacing=1.05)
     ax.set_ylim(1500, 3900)
-    ax.set_xlim(-0.55, n + 0.55)
+    ax.set_xlim(-0.55, n + 0.62)
     ax.yaxis.set_major_formatter(lambda y, _: num(y, lang))
-    ax.tick_params(labelsize=4.2, length=1.5, colors=TINTA_SECUNDARIA)
+    ax.set_yticks([1500, 2000, 2500, 3000, 3500])
+    ax.tick_params(labelsize=4.1, length=0, colors=TINTA_SECUNDARIA, pad=1.5)
     ax.grid(axis="y", color=GRILLA, linewidth=0.4)
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    ax.set_ylabel(t["mm"], fontsize=4.2, color=TINTA_SECUNDARIA, labelpad=2)
-    # tabla de efectos individuales
-    axt = fig.add_axes([0.03, 0.0, 0.94, 0.36])
+    for s_ in ("top", "right", "left", "bottom"):
+        ax.spines[s_].set_visible(False)
+    ax.set_ylabel(t["mm"], fontsize=4.1, color=TINTA_SECUNDARIA, labelpad=2)
+    # tabla de efectos individuales (fichas)
+    axt = fig.add_axes([0.03, 0.01, 0.94, 0.4])
     axt.axis("off")
-    xs, alin = [0.0, 0.87, 0.99], ["left", "right", "right"]
-    axt.add_patch(Rectangle((0, 0.87), 1, 0.13, color=AZUL, transform=axt.transAxes))
-    for x, c, a in zip(xs, t["cols"], alin):
-        axt.text(x + (0.01 if a == "left" else 0), 0.935, c, ha=a, va="center", fontsize=4.6, fontweight="bold", color="white", transform=axt.transAxes)
+    axt.set_xlim(0, 1); axt.set_ylim(0, 1)
+    axt.add_patch(FancyBboxPatch((0, 0.875), 1, 0.125, boxstyle="round,pad=0,rounding_size=0.02", color=AZUL, linewidth=0))
+    cx = [0.045, 0.80, 0.975]
+    for x, c, a in zip(cx, t["cols"], ["left", "right", "right"]):
+        axt.text(x, 0.938, c, ha=a, va="center", fontsize=4.4, fontweight="bold", color="white")
+    nf = len(r["indiv"])
+    alto = 0.84 / nf
     for k, (clave, d) in enumerate(r["indiv"]):
-        y = 0.79 - k * 0.1175
-        if clave in ("kd", "goodwill"):
-            axt.add_patch(Rectangle((0, y - 0.055), 1, 0.11, color=AMARILLO, linewidth=0, transform=axt.transAxes))
-        vals = [t["filas"][k], ("+" if d > 0 else "−") + num(abs(d), lang),
-                ("+" if d > 0 else "−") + num(abs(d) / r["base"] * 100, lang, 1) + "%"]
-        for x, v, a in zip(xs, vals, alin):
-            axt.text(x + (0.01 if a == "left" else 0), y, v, ha=a, va="center", fontsize=4.6, color=NEGRO, transform=axt.transAxes)
-    axt.set_xlim(0, 1)
+        y0 = 0.84 - (k + 1) * alto
+        yc = y0 + alto / 2
+        en_contra = clave in ("kd", "goodwill")
+        if en_contra:
+            axt.add_patch(Rectangle((0, y0 + 0.006), 1, alto - 0.012, color=AMARILLO, alpha=0.28, linewidth=0))
+        elif k % 2 == 0:
+            axt.add_patch(Rectangle((0, y0 + 0.006), 1, alto - 0.012, color=CELESTE, alpha=0.12, linewidth=0))
+        col = CELESTE if d > 0 else ROJO
+        axt.add_patch(Rectangle((0.012, yc - 0.03), 0.014, 0.06, color=col, linewidth=0))
+        axt.text(0.045, yc, t["filas"][k], ha="left", va="center", fontsize=4.2, color=NEGRO)
+        sg = "+" if d > 0 else "−"
+        axt.text(0.80, yc, sg + num(abs(d), lang), ha="right", va="center", fontsize=4.3, fontweight="bold", color=AZUL if d > 0 else ROJO)
+        axt.text(0.975, yc, sg + num(abs(d) / r["base"] * 100, lang, 1) + "%", ha="right", va="center", fontsize=4.3, color=AZUL if d > 0 else ROJO)
     fig.savefig(salida, facecolor="white")
     plt.close(fig)
 
