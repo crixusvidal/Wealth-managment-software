@@ -88,7 +88,7 @@ def caprate(cr, lang, salida):
 def precio(pr, lang, salida):
     es = lang == "es"
     f = [r[0] for r in pr]
-    series = [("Mallplaza", 6, AZUL, 1.3, "-"), ("IPSA", 7, NEGRO, 0.7, "-"), ("Parque Arauco", 8, VERDE_PARQUE_ARAUCO, 0.9, "-"), ("Cenco Malls", 9, MORADO_CENCOSUD, 0.9, (0, (2, 1.5)))]
+    series = [("Mallplaza", 6, ROJO, 1.3, "-"), ("IPSA", 7, NEGRO, 0.7, "-"), ("Parque Arauco", 8, VERDE_PARQUE_ARAUCO, 0.9, "-"), ("Cenco Malls", 9, MORADO_CENCOSUD, 0.9, (0, (2, 1.5)))]
     fig = plt.figure(figsize=(ANCHO, 2.05))
     ax = fig.add_axes([0.10, 0.12, 0.87, 0.73])
     fin = sorted([(pr[-1][c], nombre, col) for nombre, c, col, lw, ls in series])
@@ -107,7 +107,7 @@ def precio(pr, lang, salida):
     for fecha, p, txt, (dx, dy) in hitos:
         i = min(range(len(f)), key=lambda k: abs(f[k] - fecha))
         y = pr[i][6]
-        ax.scatter([f[i]], [y], s=9, facecolor="white", edgecolor=AZUL, linewidth=0.8, zorder=6)
+        ax.scatter([f[i]], [y], s=9, facecolor="white", edgecolor=ROJO, linewidth=0.8, zorder=6)
         t = txt if es or "Mín" not in txt else txt
         ax.annotate(t, (f[i], y), xytext=(dx, dy), fontsize=3.8, color=NEGRO, ha="left", va="center", linespacing=1.05, arrowprops=dict(arrowstyle="-", color=TINTA_SECUNDARIA, linewidth=0.4))
     ax.axhline(100, color=GRILLA, linewidth=0.6, zorder=1)
@@ -116,7 +116,7 @@ def precio(pr, lang, salida):
     ejes(ax, lang)
     ax.set_ylabel("Base 100 = 1-oct-21" if es else "Base 100 = 1-Oct-21", fontsize=3.8, color=TINTA_SECUNDARIA, labelpad=1)
     for i, (nombre, c, col, lw, ls) in enumerate(series):
-        xx = 0.11 + i * 0.2
+        xx = (0.09, 0.27, 0.43, 0.68)[i]
         fig.add_artist(plt.Line2D([xx, xx + 0.035], [0.95, 0.95], color=col, linewidth=lw + 0.4, linestyle=ls, transform=fig.transFigure))
         fig.text(xx + 0.045, 0.95, nombre, fontsize=4.0, color=NEGRO, va="center")
     fig.savefig(salida, dpi=DPI, facecolor="white")
