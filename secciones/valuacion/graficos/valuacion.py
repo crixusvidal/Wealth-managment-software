@@ -18,7 +18,7 @@ from matplotlib.patches import Patch, Rectangle
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "comun"))  # paleta institucional y rutas compartidas
 import estilo  # noqa: E402,F401  (registra las carpetas graficos/ de todas las secciones)
-from estilo import num, pct, tinte
+from estilo import VERDE_PARQUE_ARAUCO, MORADO_CENCOSUD, num, pct, tinte
 from estilo import AMARILLO, CELESTE, GRILLA, NEGRO, ROJO, TINTA_SECUNDARIA
 
 AZUL = "#14284B"
@@ -184,6 +184,8 @@ def v7(lang, wb, salida):
     med = {"Chile": (ws["C15"].value, ws["F15"].value), "Brasil": (ws["C16"].value, ws["F16"].value)}
     corto = {"Mallplaza (precio actual)": "Mallplaza", "Cencosud Shopping": "Cenco Malls"}
     color = {"Chile": ROJO, "Brasil": AMARILLO}
+    # Mallplaza en rojo; Parque Arauco y Cenco Malls con su color de identificación (solo para reconocerlos)
+    por_nombre = {"Mallplaza": ROJO, "Parque Arauco": VERDE_PARQUE_ARAUCO, "Cenco Malls": MORADO_CENCOSUD}
     fig = figura("V7")
     # Panel A: múltiplo vs bono real local (etiquetas separadas verticalmente dentro de cada país)
     ax = fig.add_axes([0.1, 0.6, 0.86, 0.32])
@@ -193,11 +195,11 @@ def v7(lang, wb, salida):
         for nombre, _, mult, bono, _ in grupo:
             mp = nombre.startswith("Mallplaza")
             ax.scatter(bono * 100, mult, s=16 if mp else 9, marker="D" if mp else "o", zorder=4,
-                       color=AZUL if mp else color[pais], edgecolor="white", linewidth=0.4)
+                       color=por_nombre.get(corto.get(nombre, nombre), color[pais]), edgecolor="white", linewidth=0.4)
             y_lab = mult if y_prev is None else min(mult, y_prev - 1.25)
             y_prev = y_lab
             ax.text(bono * 100 + 0.3, y_lab, f"{corto.get(nombre, nombre)} {num(mult, lang, 1)}x", fontsize=3.8,
-                    va="center", color=AZUL if mp else NEGRO, fontweight="bold" if mp else "normal")
+                    va="center", color=NEGRO, fontweight="bold" if mp else "normal")
     for pais, (m, _) in med.items():
         x = (0.025 if pais == "Chile" else ws["E6"].value) * 100
         ax.plot([x - 0.6, x + 0.2], [m, m], color=color[pais], linewidth=0.8, linestyle=(0, (2, 1)))
@@ -220,11 +222,11 @@ def v7(lang, wb, salida):
     for k, (nombre, pais, sp) in enumerate(filas):
         y = len(filas) - 1 - k
         es_med, mp = nombre.startswith(t["med"]), nombre == "Mallplaza"
-        ax.barh(y, sp, height=0.66, color=AZUL if mp else (NEGRO if es_med else color[pais]), zorder=3)
+        ax.barh(y, sp, height=0.66, color=NEGRO if es_med else por_nombre.get(nombre, color[pais]), zorder=3)
         ax.text(sp + 8, y, num(sp, lang), va="center", fontsize=3.9, fontweight="bold" if es_med else "normal",
                 color=NEGRO)
         ax.text(-12, y, nombre, ha="right", va="center", fontsize=3.9, fontweight="bold" if es_med or mp else "normal",
-                color=AZUL if mp else NEGRO)
+                color=NEGRO)
     ax.set_xlim(0, 600)
     ax.set_ylim(-0.6, len(filas) - 0.4)
     ax.set_xticks([])
